@@ -1,0 +1,83 @@
+﻿bun : $ next dev
+In riga:1 car:57
++ ... s\Ric\Desktop\project\saas-boilerplate-max'; bun run dev 2>&1 | Out-F ...
++                                                  ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ next dev:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Ôû▓ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.15:3000
+- Environments: .env
+Ô£ô Ready in 415ms
+- Experiments (use with caution):
+  ┬À clientTraceMetadata
+
+ GET / 307 in 3.1s (next.js: 2.7s, application-code: 412ms)
+ GET /en 200 in 2.6s (next.js: 1888ms, application-code: 740ms)
+Error: INVALID_MESSAGE: Incorrect locale information provided (undefined)
+    at Footer (src\components\layout\Footer.tsx:68:14)
+  66 |         <div className="mt-12 pt-8 border-t">
+  67 |           <p className="text-sm text-muted-foreground text-center">
+> 68 |             {t("copyright", { year })}
+     |              ^
+  69 |           </p>
+  70 |         </div>
+  71 |       </div> {
+  code: 'INVALID_MESSAGE',
+  originalMessage: 'Incorrect locale information provided (undefined)'
+}
+ GET /favicon.ico 200 in 530ms (next.js: 20ms, application-code: 510ms)
+ GET /api/auth/get-session 200 in 2.5s (next.js: 2.5s, application-code: 30ms)
+ GET /sign-up 200 in 154ms (next.js: 18ms, application-code: 136ms)
+[browser] Error: INVALID_MESSAGE: Invalid language tag: sign-up (undefined)
+    at Footer (src/components/layout/Footer.tsx:68:14)
+    at MarketingLayout (src\app\[locale]\(marketing)\layout.tsx:16:7)
+  66 |         <div className="mt-12 pt-8 border-t">
+  67 |           <p className="text-sm text-muted-foreground text-center">
+> 68 |             {t("copyright", { year })}
+     |              ^
+  69 |           </p>
+  70 |         </div>
+  71 |       </div> (src/components/layout/Footer.tsx:68:14)
+Error: INVALID_MESSAGE: Incorrect locale information provided (undefined)
+    at Footer (src\components\layout\Footer.tsx:68:14)
+  66 |         <div className="mt-12 pt-8 border-t">
+  67 |           <p className="text-sm text-muted-foreground text-center">
+> 68 |             {t("copyright", { year })}
+     |              ^
+  69 |           </p>
+  70 |         </div>
+  71 |       </div> {
+  code: 'INVALID_MESSAGE',
+  originalMessage: 'Incorrect locale information provided (undefined)'
+}
+[browser] Error: INVALID_MESSAGE: Invalid language tag: sign-up (undefined)
+    at Footer (src/components/layout/Footer.tsx:68:14)
+    at MarketingLayout (src\app\[locale]\(marketing)\layout.tsx:16:7)
+  66 |         <div className="mt-12 pt-8 border-t">
+  67 |           <p className="text-sm text-muted-foreground text-center">
+> 68 |             {t("copyright", { year })}
+     |              ^
+  69 |           </p>
+  70 |         </div>
+  71 |       </div> (src/components/layout/Footer.tsx:68:14)
+ GET /favicon.ico 200 in 348ms (next.js: 8ms, application-code: 340ms)
+ GET /sign-up/sign-up 200 in 1327ms (next.js: 1295ms, application-code: 32ms)
+ GET /sign-up/sign-in 200 in 1191ms (next.js: 1116ms, application-code: 75ms)
+ GET /sign-up/sign-in 200 in 40ms (next.js: 12ms, application-code: 28ms)
+Error: INVALID_MESSAGE: Incorrect locale information provided (undefined)
+    at Footer (src\components\layout\Footer.tsx:68:14)
+  66 |         <div className="mt-12 pt-8 border-t">
+  67 |           <p className="text-sm text-muted-foreground text-center">
+> 68 |             {t("copyright", { year })}
+     |              ^
+  69 |           </p>
+  70 |         </div>
+  71 |       </div> {
+  code: 'INVALID_MESSAGE',
+  originalMessage: 'Incorrect locale information provided (undefined)'
+}
+ GET /favicon.ico 200 in 323ms (next.js: 13ms, application-code: 310ms)
+2026-07-06T18:44:31.307Z WARN [Better Auth]: User not found
+ POST /api/auth/sign-in/email 401 in 210ms (next.js: 14ms, application-code: 197ms)

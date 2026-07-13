@@ -1,0 +1,148 @@
+{
+  "site": {
+    "title": "Riccardo Bozzato",
+    "tagline": "Head of Ops & AI Security Builder",
+    "description": "Operations leader building the tools I wish existed."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "trova": "Trova",
+    "freebie": "Free Guide",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Hi, I'm Riccardo",
+    "heroRole": "Head of Ops & Builder",
+    "heroTagline": "I lead operations and build security tools. Sometimes both at once.",
+    "heroCta": "See My Work",
+    "heroCta2": "Get the Free Guide",
+    "featuredTitle": "Featured Projects",
+    "featuredSubtitle": "Tools and platforms I've built from the ground up.",
+    "viewProject": "View Project →",
+    "aboutTitle": "Operations meets Engineering",
+    "aboutText": "I'm Head of Ops at Ciao Elsa, where I keep a pension-fund brokerage running smoothly. Outside work, I build things: VulnClaw (AI-driven penetration testing) and Trova (a SaaS boilerplate so good I use it myself).",
+    "aboutCta": "Read My Story →",
+    "freebieTitle": "Free: The AI Ops Security Playbook",
+    "freebieDesc": "5 strategies I use to keep operations secure without slowing innovation. No fluff, just tactics.",
+    "freebieCta": "Download Free →"
+  },
+  "footer": {
+    "copyright": "© {year} Riccardo Bozzato. All rights reserved.",
+    "builtWith": "Built with Next.js & shadcn/ui",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Tools I've built because the existing ones weren't good enough.",
+    "vulnclaw": {
+      "title": "VulnClaw",
+      "subtitle": "AI-Driven Penetration Testing CLI",
+      "description": "An intelligent CLI agent that automates security assessments. AI-powered reconnaissance, vulnerability scanning, and exploitation — all from your terminal.",
+      "features": [
+        "AI-driven recon and target analysis",
+        "Automated vulnerability scanning",
+        "Smart exploitation suggestions",
+        "Beautiful terminal UI with Rich"
+      ],
+      "cta": "Learn More"
+    },
+    "trova": {
+      "title": "Trova",
+      "subtitle": "SaaS Boilerplate That Ships",
+      "description": "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend emails, Stripe, shadcn/ui. Everything you need to launch a SaaS in days, not weeks.",
+      "features": [
+        "Next.js 16 + Turbopack",
+        "Better Auth (magic link, OAuth, 2FA)",
+        "Drizzle ORM + PostgreSQL",
+        "i18n (en/it) out of the box",
+        "Resend + React Email templates",
+        "Stripe billing ready"
+      ],
+      "cta": "Get Trova"
+    }
+  },
+  "trova": {
+    "title": "Trova",
+    "tagline": "The SaaS boilerplate that actually ships.",
+    "description": "Stop rebuilding auth, emails, billing, and i18n for every project. Trova gives you a production-ready foundation so you can focus on what makes your SaaS unique.",
+    "features": {
+      "auth": "Better Auth – magic links, OAuth (Google, GitHub), 2FA, session management",
+      "database": "Drizzle ORM – type-safe, migration-ready, PostgreSQL",
+      "email": "Resend + React Email – beautiful transactional emails, 5 templates included",
+      "i18n": "next-intl – English and Italian out of the box, easy to extend",
+      "billing": "Stripe – subscription plans, webhooks, customer portal",
+      "ui": "shadcn/ui + Tailwind v4 – dark mode, responsive, customizable"
+    },
+    "pricing": {
+      "title": "Simple Pricing",
+      "subtitle": "One price. Everything included.",
+      "price": "€49",
+      "period": "one-time",
+      "includes": "Full source code, lifetime updates, priority support",
+      "cta": "Buy Trova",
+      "guarantee": "30-day money-back guarantee"
+    }
+  },
+  "freebie": {
+    "title": "The AI Ops Security Playbook",
+    "subtitle": "5 strategies to secure your operations without slowing down innovation.",
+    "description": "After years running ops at a fintech-adjacent company while building security tools in my spare time, I've learned what actually works. This playbook distills the tactics I use daily.",
+    "whatsInside": [
+      "The ops-security alignment framework",
+      "3 automation plays that save 10+ hours/week",
+      "How to build a security culture without fear",
+      "The toolchain I actually use (open source)",
+      "My personal incident response checklist"
+    ],
+    "form": {
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@company.com",
+      "cta": "Send Me the Playbook",
+      "sending": "Sending...",
+      "success": "Check your inbox! The playbook is on its way.",
+      "privacy": "No spam. Unsubscribe anytime."
+    }
+  },
+  "about": {
+    "title": "About Riccardo",
+    "subtitle": "Operations leader. Tool builder. Automation obsessive.",
+    "intro": "I'm Head of Ops at Ciao Elsa, a pension-fund brokerage and partner of Allianz. My job is to keep the machine running while making sure we're ready for tomorrow.",
+    "story": [
+      "I started in operations because I couldn't stand inefficiency. Over the years, I realized the best way to fix broken processes was to build the tools myself. That's how VulnClaw and Trova were born.",
+      "Today I split my time between leading operations at a fintech-adjacent company and building open-core security tools. I believe the best operators are also builders.",
+      "When I'm not working, you'll find me experimenting with new tech, contributing to open source, or planning my next build."
+    ],
+    "philosophy": "My philosophy? Build the tool you wish existed. If it helps you, it'll help someone else."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Building something interesting? Let's talk.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "message": "Message",
+      "messagePlaceholder": "What are you building?",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thanks! I'll get back to you within 24 hours.",
+      "error": "Something went wrong. Try emailing me directly."
+    },
+    "email": "riccardobozzato@gmail.com",
+    "github": "github.com/Riccardobozzato94",
+    "linkedin": "LinkedIn"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "This page doesn't exist.",
+    "description": "Either it never did, or I broke something. Either way, let's get you back on track.",
+    "cta": "Go Home"
+  }
+}
