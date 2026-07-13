@@ -7,6 +7,7 @@
   "nav": {
     "home": "Home",
     "projects": "Progetti",
+    "panificio": "Panificio",
     "trova": "Trova",
     "freebie": "Guida Gratuita",
     "about": "Chi Sono",
@@ -67,6 +68,21 @@
         "Fatturazione Stripe già configurata"
       ],
       "cta": "Ottieni Trova"
+    },
+    "panificio": {
+      "title": "Panificio Da Sergio",
+      "subtitle": "Panetteria Artigianale & E-Commerce",
+      "description": "Un sito e-commerce Next.js completo per un panificio tradizionale italiano. Catalogo prodotti, supporto multilingua, ottimizzato SEO e ordinazioni online. Realizzato come regalo per la famiglia.",
+      "features": [
+        "Catalogo prodotti completo con categorie",
+        "Multi-lingua (EN/IT)",
+        "Ottimizzato SEO per la ricerca locale",
+        "Dashboard admin per la gestione ordini",
+        "Design responsivo"
+      ],
+      "techstack": ["Next.js", "Tailwind CSS", "TypeScript", "i18n", "PostgreSQL"],
+      "cta": "Vedi Progetto",
+      "note": "Un regalo per la famiglia"
     }
   },
   "trova": {

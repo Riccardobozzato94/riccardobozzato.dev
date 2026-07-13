@@ -16,6 +16,11 @@ export default async function ProjectsPage() {
       tags: ["Next.js", "SaaS", "TypeScript"],
       href: "/trova",
     },
+    {
+      key: "panificio",
+      tags: ["Next.js", "E-Commerce", "Family"],
+      href: "/projects/panificio",
+    },
   ];
 
   return (
@@ -26,7 +31,7 @@ export default async function ProjectsPage() {
           {t("subtitle")}
         </p>
       </div>
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {projects.map(({ key, tags, href }) => (
           <ProjectCard
             key={key}

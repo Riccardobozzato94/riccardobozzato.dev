@@ -7,6 +7,7 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
+    "panificio": "Panificio",
     "trova": "Trova",
     "freebie": "Free Guide",
     "about": "About",
@@ -67,6 +68,21 @@
         "Stripe billing ready"
       ],
       "cta": "Get Trova"
+    },
+    "panificio": {
+      "title": "Panificio Da Sergio",
+      "subtitle": "Artisan Bakery & E-Commerce",
+      "description": "A full-featured Next.js e-commerce site for a traditional Italian bakery. Product catalog, multi-language support, SEO-optimized, and online ordering. Built as a gift for family.",
+      "features": [
+        "Full product catalog with categories",
+        "Multi-language (EN/IT)",
+        "SEO-optimized for local search",
+        "Admin dashboard for order management",
+        "Responsive design"
+      ],
+      "techstack": ["Next.js", "Tailwind CSS", "TypeScript", "i18n", "PostgreSQL"],
+      "cta": "View Project",
+      "note": "A gift for family"
     }
   },
   "trova": {

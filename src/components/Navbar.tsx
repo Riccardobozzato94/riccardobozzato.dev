@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { Menu, X } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
+import { Menu, X, Languages } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 const NAV_ITEMS = [
   { key: "home", href: "/" },
   { key: "projects", href: "/projects" },
+  { key: "panificio", href: "/projects/panificio" },
   { key: "trova", href: "/trova" },
   { key: "freebie", href: "/freebie" },
   { key: "about", href: "/about" },
@@ -18,8 +19,10 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const otherLocale = locale === "en" ? "it" : "en";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
@@ -54,15 +57,26 @@ export default function Navbar() {
           })}
         </nav>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </Button>
+        <div className="flex items-center gap-2">
+          <Link
+            href={pathname}
+            locale={otherLocale}
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground hover:border-foreground/30"
+          >
+            <Languages className="size-3.5" />
+            {otherLocale.toUpperCase()}
+          </Link>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </Button>
+        </div>
       </div>
 
       {open && (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 const SOCIAL_LINKS = [
@@ -40,6 +40,19 @@ export default function Footer() {
             <p className="mt-2 text-sm text-muted-foreground">
               Head of Ops & AI Security Builder
             </p>
+            <div className="mt-4 space-y-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin className="size-4 shrink-0" />
+                <span>Legnaro, PD, Italy</span>
+              </div>
+              <a
+                href="tel:+393892139542"
+                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
+              >
+                <Phone className="size-4 shrink-0" />
+                <span>+39 389 213 9542</span>
+              </a>
+            </div>
             <div className="mt-4 flex items-center gap-3">
               {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
                 <a
@@ -47,10 +60,11 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-accent"
+                  className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-accent"
                   aria-label={t(`social.${label}`)}
                 >
-                  <Icon className="size-5" />
+                  <Icon className="size-4" />
+                  <span className="hidden sm:inline">{t(`social.${label}`)}</span>
                 </a>
               ))}
             </div>
