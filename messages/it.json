@@ -1,8 +1,8 @@
 {
   "site": {
     "title": "Riccardo Bozzato",
-    "tagline": "Head of Ops & AI Security Builder",
-    "description": "Operazioni leader, costruisco gli strumenti che avrei voluto esistessero."
+    "tagline": "Head of Operations | Guido team, automatizzo processi e trasformo il caos operativo in dashboard misurabili (PMP®)",
+    "description": "Head of Operations in Ciao Elsa. Leader operativo certificato PMP® che costruisce strumenti di sicurezza (VulnClaw) e boilerplate SaaS (Trova) nel tempo libero. Trasformo colli di bottiglia in processi prevedibili basati sui dati."
   },
   "nav": {
     "home": "Home",
@@ -14,23 +14,23 @@
   },
   "home": {
     "heroTitle": "Ciao, sono Riccardo",
-    "heroRole": "Head of Ops & Builder",
-    "heroTagline": "Gestisco operazioni e costruisco strumenti di sicurezza. A volte entrambi contemporaneamente.",
-    "heroCta": "Vedi i Miei Progetti",
+    "heroRole": "Head of Operations & Builder",
+    "heroTagline": "Gestisco le operations in Ciao Elsa e costruisco strumenti di sicurezza. Quando le aziende crescono, le operations o reggono il peso o soffocano. Faccio in modo che sia la prima opzione.",
+    "heroCta": "Vedi i Miei Lavori",
     "heroCta2": "Scarica la Guida Gratuita",
     "featuredTitle": "Progetti in Evidenza",
-    "featuredSubtitle": "Strumenti e piattaforme costruiti da zero.",
+    "featuredSubtitle": "Strumenti che ho costruito perché quelli esistenti non bastavano.",
     "viewProject": "Vedi Progetto →",
-    "aboutTitle": "Operazioni incontra Ingegneria",
-    "aboutText": "Sono Head of Ops presso Ciao Elsa, dove gestisco una brokeraggio di fondi pensione. Fuori dal lavoro costruisco cose: VulnClaw (penetration testing basato su AI) e Trova (un boilerplate SaaS talmente buono che lo uso io stesso).",
+    "aboutTitle": "Operations incontra Ingegneria",
+    "aboutText": "Sono Head of Operations in Ciao Elsa (brokeraggio fondi pensione, partner Allianz), dove costruisco architetture operative scalabili — CRM, sistemi KPI, governance dei team — che permettono all'azienda di crescere senza rompersi. Certificato PMP®. Fuori dal lavoro sviluppo VulnClaw (penetration testing con AI) e Trova (un boilerplate SaaS).",
     "aboutCta": "Leggi la Mia Storia →",
     "freebieTitle": "Gratis: AI Ops Security Playbook",
-    "freebieDesc": "5 strategie che uso per mantenere le operazioni sicure senza rallentare l'innovazione. Solo tattiche, niente fronzoli.",
+    "freebieDesc": "5 strategie che uso per tenere al sicuro le operations senza rallentare l'innovazione. Niente teoria, solo tattiche dal campo.",
     "freebieCta": "Scarica Gratis →"
   },
   "footer": {
     "copyright": "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
-    "builtWith": "Costruito con Next.js & shadcn/ui",
+    "builtWith": "Realizzato con Next.js & shadcn/ui",
     "social": {
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -43,26 +43,28 @@
     "vulnclaw": {
       "title": "VulnClaw",
       "subtitle": "CLI per Penetration Testing con AI",
-      "description": "Un agente CLI intelligente che automatizza le valutazioni di sicurezza. Ricognizione AI, scansione vulnerabilità e exploitation — tutto dal tuo terminale.",
+      "description": "Un agente CLI intelligente che automatizza le valutazioni di sicurezza. Ricognizione basata su AI, scansione vulnerabilità e exploitation — tutto dal terminale.",
       "features": [
         "Ricognizione AI e analisi dei target",
         "Scansione automatica delle vulnerabilità",
-        "Suggerimenti intelligenti per exploitation",
-        "Interfaccia terminale con Rich"
+        "Suggerimenti intelligenti per l'exploitation",
+        "Interfaccia terminale con Rich e prompt_toolkit"
       ],
-      "cta": "Scopri di Più"
+      "techstack": ["Python", "Typer", "Rich", "Prompt Toolkit", "AI/LLM"],
+      "cta": "Scopri di Più",
+      "status": "Alpha v0.3.2"
     },
     "trova": {
       "title": "Trova",
       "subtitle": "Il Boilerplate SaaS che Va in Produzione",
-      "description": "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, email Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non settimane.",
+      "description": "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, email con Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non in settimane.",
       "features": [
         "Next.js 16 + Turbopack",
         "Better Auth (magic link, OAuth, 2FA)",
         "Drizzle ORM + PostgreSQL",
-        "i18n (en/it) già pronto",
-        "Template email Resend + React Email",
-        "Fatturazione Stripe pronta"
+        "i18n (en/it) già pronto all'uso",
+        "Template email con Resend + React Email",
+        "Fatturazione Stripe già configurata"
       ],
       "cta": "Ottieni Trova"
     }
@@ -72,12 +74,12 @@
     "tagline": "Il boilerplate SaaS che va davvero in produzione.",
     "description": "Smetti di re-inventare autenticazione, email, fatturazione e i18n per ogni progetto. Trova ti dà una base pronta per la produzione, così puoi concentrarti su ciò che rende unico il tuo SaaS.",
     "features": {
-      "auth": "Better Auth – magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
-      "database": "Drizzle ORM – type-safe, migration-ready, PostgreSQL",
-      "email": "Resend + React Email – email transazionali belle, 5 template inclusi",
-      "i18n": "next-intl – Inglese e Italiano già pronti, facili da estendere",
-      "billing": "Stripe – piani di abbonamento, webhook, portale clienti",
-      "ui": "shadcn/ui + Tailwind v4 – dark mode, responsive, personalizzabile"
+      "auth": "Better Auth — magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
+      "database": "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
+      "email": "Resend + React Email — email transazionali bellissime, 5 template inclusi",
+      "i18n": "next-intl — Inglese e Italiano già pronti, facili da estendere",
+      "billing": "Stripe — piani di abbonamento, webhook, portale clienti",
+      "ui": "shadcn/ui + Tailwind v4 — dark mode, responsive, personalizzabile"
     },
     "pricing": {
       "title": "Prezzo Semplice",
@@ -91,38 +93,53 @@
   },
   "freebie": {
     "title": "AI Ops Security Playbook",
-    "subtitle": "5 strategie per proteggere le tue operazioni senza rallentare l'innovazione.",
-    "description": "Dopo anni di gestione operativa in un'azienda fintech-adjacent mentre costruivo strumenti di sicurezza nel tempo libero, ho imparato cosa funziona davvero. Questo playbook racchiude le tattiche che uso ogni giorno.",
+    "subtitle": "5 strategie per proteggere le tue operations senza rallentare l'innovazione.",
+    "description": "Dopo anni di gestione operativa in un'azienda fintech e la costruzione di strumenti di sicurezza nel tempo libero, ho imparato cosa funziona davvero. Questo playbook racchiude le tattiche che uso ogni giorno — niente teoria, solo pratiche testate sul campo.",
     "whatsInside": [
-      "Il framework di allineamento operazioni-sicurezza",
-      "3 automazioni che fanno risparmiare 10+ ore/settimana",
+      "Il framework per allineare operations e sicurezza",
+      "3 automazioni che fanno risparmiare 10+ ore a settimana",
       "Come costruire una cultura della sicurezza senza paura",
-      "La toolchain che uso davvero (open source)",
-      "La mia checklist personale di incident response"
+      "La toolchain che uso davvero (tutta open source)",
+      "La mia checklist personale per l'incident response"
     ],
     "form": {
       "namePlaceholder": "Il tuo nome",
       "emailPlaceholder": "tu@azienda.com",
       "cta": "Inviami il Playbook",
       "sending": "Invio in corso...",
-      "success": "Controlla la tua email! Il playbook è in arrivo.",
+      "success": "Controlla la tua casella! Il playbook è in arrivo.",
       "privacy": "Niente spam. Ti puoi cancellare quando vuoi."
     }
   },
   "about": {
-    "title": "Chi Sono",
-    "subtitle": "Operations leader. Costruttore di strumenti. Ossessionato dall'automazione.",
-    "intro": "Sono Head of Ops presso Ciao Elsa, una brokeraggio di fondi pensione partner di Allianz. Il mio lavoro è mantenere la macchina in funzione assicurandomi che siamo pronti per domani.",
+    "title": "Su Riccardo",
+    "subtitle": "Leader delle operations. Costruttore di strumenti. Ossessionato dall'automazione. Certificato PMP®.",
+    "intro": "Sono Head of Operations in Ciao Elsa, una brokeraggio di fondi pensione partner di Allianz. Gestisco oltre 800 casi attivi con un TrustScore di 4.9/5, dashboard SLA in tempo reale e un sistema centralizzato di knowledge management che ha eliminato i tempi di onboarding.",
     "story": [
-      "Ho iniziato nelle operations perché non sopportavo l'inefficienza. Con gli anni ho capito che il modo migliore per risolvere processi rotti era costruire gli strumenti da solo. È così che sono nati VulnClaw e Trova.",
-      "Oggi divido il mio tempo tra la gestione operativa in un'azienda fintech-adjacent e la costruzione di strumenti di sicurezza open-core. Credo che i migliori operatori siano anche costruttori.",
-      "Quando non lavoro, mi trovi a sperimentare con nuove tecnologie, contribuire all'open source o pianificare il prossimo progetto."
+      "Ho iniziato nelle operations retail con In's Mercato, Aldi e Terranova — imparando sul campo la gestione dei team, la pianificazione dei turni, il controllo costi e i KPI operativi. Poi sono passato all'IT in Accenture, dove ho sviluppato applicazioni web e introdotto nuove procedure operative che hanno portato a +30% di efficienza e -15% di errori amministrativi già dal primo trimestre.",
+      "In Esse Solutions ho gestito un portafoglio di progetti digitali enterprise da oltre €500K, coordinando team distribuiti di 8-12 persone tra BE/FE, UX/UI e integratori su soluzioni eCommerce B2B e PIM/DAM. Ho introdotto processi Agile che hanno aumentato la produttività del team del 25% e ridotto il time-to-market del 40%.",
+      "Oggi, come Head of Operations in Ciao Elsa, costruisco architetture operative scalabili — CRM, sistemi KPI, governance dei team — che trasformano la complessità della consulenza pensionistica in processi automatizzati. Fuori dal lavoro sviluppo VulnClaw (pentesting con AI) e Trova (boilerplate SaaS), perché i migliori operatori sono anche costruttori."
     ],
-    "philosophy": "La mia filosofia? Costruisci lo strumento che avresti voluto esistesse. Se aiuta te, aiuterà qualcun altro."
+    "philosophy": "Molte aziende faticano a crescere perché le operations implodono sotto il peso di nuovi clienti. Il mio lavoro è fare in modo che questo non accada. Combino rigore metodologico (PMP®) con la velocità di una startup, trasformando i colli di bottiglia in processi prevedibili basati sui dati.",
+    "certifications": [
+      "PMP® — Project Management Professional (2026)",
+      "Cisco Cybersecurity Operation Associate (2024)",
+      "Google Data Analyst Certificate (2023)",
+      "Pimcore Consultant Certified (2024)"
+    ],
+    "skills": [
+      "Project Management", "Agile/Scrum/Kanban", "Budget & Risk Management",
+      "eCommerce (Adobe Commerce/Magento, Shopware)", "PIM/DAM (Pimcore)",
+      "SAP UI5", "JavaScript", "Python", "SQL", "HTML/CSS",
+      "Jira", "Confluence", "MS Project",
+      "Data Analysis & Reporting", "Process Documentation",
+      "AI Tools for Operations", "Knowledge Management"
+    ],
+    "cta": "Parliamone"
   },
   "contact": {
     "title": "Contattami",
-    "subtitle": "Stai costruendo qualcosa di interessante? Parliamone.",
+    "subtitle": "Stai costruendo qualcosa di interessante? Parliamo di operations, sicurezza o strumenti.",
     "form": {
       "name": "Nome",
       "namePlaceholder": "Il tuo nome",
@@ -137,12 +154,12 @@
     },
     "email": "riccardobozzato@gmail.com",
     "github": "github.com/Riccardobozzato94",
-    "linkedin": "LinkedIn"
+    "linkedin": "linkedin.com/in/riccardobozzato"
   },
   "notFound": {
     "title": "404",
     "subtitle": "Questa pagina non esiste.",
-    "description": "O non è mai esistita, o ho rotto qualcosa. In ogni caso, rimettiamoti in carreggiata.",
+    "description": "O non è mai esistita, o ho combinato un pasticcio. In ogni caso, rimettiamoti in carreggiata.",
     "cta": "Torna alla Home"
   }
 }

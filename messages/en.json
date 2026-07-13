@@ -1,8 +1,8 @@
 {
   "site": {
     "title": "Riccardo Bozzato",
-    "tagline": "Head of Ops & AI Security Builder",
-    "description": "Operations leader building the tools I wish existed."
+    "tagline": "Head of Operations | I scale teams, automate processes, and turn operational chaos into measurable dashboards (PMP®)",
+    "description": "Head of Operations at Ciao Elsa. PMP® certified operations leader building security tools (VulnClaw) and SaaS boilerplates (Trova) in my spare time. I turn bottlenecks into predictable, data-driven processes."
   },
   "nav": {
     "home": "Home",
@@ -14,18 +14,18 @@
   },
   "home": {
     "heroTitle": "Hi, I'm Riccardo",
-    "heroRole": "Head of Ops & Builder",
-    "heroTagline": "I lead operations and build security tools. Sometimes both at once.",
+    "heroRole": "Head of Operations & Builder",
+    "heroTagline": "I lead operations at Ciao Elsa and build security tools. When companies scale, operations either carry the growth or choke it. I make sure it's the first one.",
     "heroCta": "See My Work",
     "heroCta2": "Get the Free Guide",
     "featuredTitle": "Featured Projects",
-    "featuredSubtitle": "Tools and platforms I've built from the ground up.",
+    "featuredSubtitle": "Tools I built because the existing ones weren't good enough.",
     "viewProject": "View Project →",
     "aboutTitle": "Operations meets Engineering",
-    "aboutText": "I'm Head of Ops at Ciao Elsa, where I keep a pension-fund brokerage running smoothly. Outside work, I build things: VulnClaw (AI-driven penetration testing) and Trova (a SaaS boilerplate so good I use it myself).",
+    "aboutText": "I'm Head of Operations at Ciao Elsa (pension-fund brokerage, Allianz partner), where I build scalable operational architectures — CRM, KPI systems, team governance — that let the company grow without breaking. PMP® certified. Outside work, I build VulnClaw (AI-driven penetration testing) and Trova (a SaaS boilerplate).",
     "aboutCta": "Read My Story →",
     "freebieTitle": "Free: The AI Ops Security Playbook",
-    "freebieDesc": "5 strategies I use to keep operations secure without slowing innovation. No fluff, just tactics.",
+    "freebieDesc": "5 strategies I use to keep operations secure without slowing innovation. No fluff, just tactics from the field.",
     "freebieCta": "Download Free →"
   },
   "footer": {
@@ -48,9 +48,11 @@
         "AI-driven recon and target analysis",
         "Automated vulnerability scanning",
         "Smart exploitation suggestions",
-        "Beautiful terminal UI with Rich"
+        "Beautiful terminal UI with Rich and prompt_toolkit"
       ],
-      "cta": "Learn More"
+      "techstack": ["Python", "Typer", "Rich", "Prompt Toolkit", "AI/LLM"],
+      "cta": "Learn More",
+      "status": "Alpha v0.3.2"
     },
     "trova": {
       "title": "Trova",
@@ -72,12 +74,12 @@
     "tagline": "The SaaS boilerplate that actually ships.",
     "description": "Stop rebuilding auth, emails, billing, and i18n for every project. Trova gives you a production-ready foundation so you can focus on what makes your SaaS unique.",
     "features": {
-      "auth": "Better Auth – magic links, OAuth (Google, GitHub), 2FA, session management",
-      "database": "Drizzle ORM – type-safe, migration-ready, PostgreSQL",
-      "email": "Resend + React Email – beautiful transactional emails, 5 templates included",
-      "i18n": "next-intl – English and Italian out of the box, easy to extend",
-      "billing": "Stripe – subscription plans, webhooks, customer portal",
-      "ui": "shadcn/ui + Tailwind v4 – dark mode, responsive, customizable"
+      "auth": "Better Auth — magic links, OAuth (Google, GitHub), 2FA, session management",
+      "database": "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
+      "email": "Resend + React Email — beautiful transactional emails, 5 templates included",
+      "i18n": "next-intl — English and Italian out of the box, easy to extend",
+      "billing": "Stripe — subscription plans, webhooks, customer portal",
+      "ui": "shadcn/ui + Tailwind v4 — dark mode, responsive, customizable"
     },
     "pricing": {
       "title": "Simple Pricing",
@@ -92,7 +94,7 @@
   "freebie": {
     "title": "The AI Ops Security Playbook",
     "subtitle": "5 strategies to secure your operations without slowing down innovation.",
-    "description": "After years running ops at a fintech-adjacent company while building security tools in my spare time, I've learned what actually works. This playbook distills the tactics I use daily.",
+    "description": "After years running operations at a fintech-adjacent company while building security tools in my spare time, I've learned what actually works. This playbook distills the tactics I use daily — no theory, just field-tested practices.",
     "whatsInside": [
       "The ops-security alignment framework",
       "3 automation plays that save 10+ hours/week",
@@ -111,18 +113,33 @@
   },
   "about": {
     "title": "About Riccardo",
-    "subtitle": "Operations leader. Tool builder. Automation obsessive.",
-    "intro": "I'm Head of Ops at Ciao Elsa, a pension-fund brokerage and partner of Allianz. My job is to keep the machine running while making sure we're ready for tomorrow.",
+    "subtitle": "Operations leader. Tool builder. Automation obsessive. PMP® certified.",
+    "intro": "I'm Head of Operations at Ciao Elsa, a pension-fund brokerage and partner of Allianz. I manage 800+ active cases with a TrustScore of 4.9/5, real-time SLA dashboards, and a centralized knowledge management system that eliminated onboarding time.",
     "story": [
-      "I started in operations because I couldn't stand inefficiency. Over the years, I realized the best way to fix broken processes was to build the tools myself. That's how VulnClaw and Trova were born.",
-      "Today I split my time between leading operations at a fintech-adjacent company and building open-core security tools. I believe the best operators are also builders.",
-      "When I'm not working, you'll find me experimenting with new tech, contributing to open source, or planning my next build."
+      "I started in operations retail management at In's Mercato, Aldi, and Terranova — learning team leadership, shift planning, cost control, and operational KPIs on the ground. Then I moved into IT at Accenture, where I built web applications and introduced new operational procedures that delivered +30% efficiency and -15% administrative errors in the first quarter.",
+      "At Esse Solutions, I managed an enterprise digital project portfolio worth €500K+, coordinating distributed teams of 8-12 across BE/FE, UX/UI, and integrators on eCommerce B2B and PIM/DAM solutions. I introduced Agile processes that boosted team productivity by 25% and reduced time-to-market by 40%.",
+      "Today, as Head of Operations at Ciao Elsa, I build scalable operational architectures — CRM, KPI systems, team governance — that transform pension advisory complexity into automated processes. Outside work, I build VulnClaw (AI-driven pentesting) and Trova (SaaS boilerplate) because the best operators are also builders."
     ],
-    "philosophy": "My philosophy? Build the tool you wish existed. If it helps you, it'll help someone else."
+    "philosophy": "Most companies struggle to grow because operations implode under the weight of new clients. My job is to make sure that doesn't happen. I combine methodological rigor (PMP®) with startup velocity, turning bottlenecks into predictable, data-driven processes.",
+    "certifications": [
+      "PMP® — Project Management Professional (2026)",
+      "Cisco Cybersecurity Operation Associate (2024)",
+      "Google Data Analyst Certificate (2023)",
+      "Pimcore Consultant Certified (2024)"
+    ],
+    "skills": [
+      "Project Management", "Agile/Scrum/Kanban", "Budget & Risk Management",
+      "eCommerce (Adobe Commerce/Magento, Shopware)", "PIM/DAM (Pimcore)",
+      "SAP UI5", "JavaScript", "Python", "SQL", "HTML/CSS",
+      "Jira", "Confluence", "MS Project",
+      "Data Analysis & Reporting", "Process Documentation",
+      "AI Tools for Operations", "Knowledge Management"
+    ],
+    "cta": "Let's Talk"
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Building something interesting? Let's talk.",
+    "subtitle": "Building something interesting? Let's talk operations, security, or tools.",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your name",
@@ -137,7 +154,7 @@
     },
     "email": "riccardobozzato@gmail.com",
     "github": "github.com/Riccardobozzato94",
-    "linkedin": "LinkedIn"
+    "linkedin": "linkedin.com/in/riccardobozzato"
   },
   "notFound": {
     "title": "404",
