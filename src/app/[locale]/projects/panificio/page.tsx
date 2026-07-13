@@ -61,6 +61,31 @@ export default async function PanificioPage() {
         </div>
       </Section>
 
+      {/* Screenshots */}
+      <Section>
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-6">Screenshots</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/panificio-home.png"
+                alt="Panificio Da Sergio home page"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Home page — warm bakery theme</p>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/panificio-mobile.png"
+                alt="Panificio Da Sergio mobile view"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Mobile responsive view</p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* Note */}
       <Section className="bg-muted/30">
         <div className="max-w-2xl mx-auto text-center">
