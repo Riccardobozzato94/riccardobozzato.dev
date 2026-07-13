@@ -111,6 +111,67 @@ export default async function TrovaPage() {
         </div>
       </Section>
 
+      {/* Demo Video */}
+      <Section>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Quick Demo</h2>
+          <div className="rounded-xl border border-border overflow-hidden bg-card">
+            <video
+              src="/images/demo-preview.mp4"
+              controls
+              poster="/images/trova-home.png"
+              className="w-full"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-sm text-muted-foreground mt-3">
+            13-second walkthrough of the full site
+          </p>
+        </div>
+      </Section>
+
+      {/* Screenshots */}
+      <Section className="bg-muted/30">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">See It In Action</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/trova-home.png"
+                alt="Trova Home page"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Home page</p>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/trova-projects.png"
+                alt="Trova Projects page"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Projects portfolio</p>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/trova-trova.png"
+                alt="Trova sales page"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Trova sales page</p>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/trova-freebie.png"
+                alt="Trova Freebie page"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Freebie download</p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* Pricing */}
       <Section>
         <div className="max-w-xl mx-auto text-center">

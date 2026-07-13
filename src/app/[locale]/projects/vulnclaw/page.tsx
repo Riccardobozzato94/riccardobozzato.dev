@@ -65,19 +65,35 @@ export default async function VulnClawPage() {
         </div>
       </Section>
 
-      {/* Screenshots placeholder */}
+      {/* Screenshots */}
       <Section className="bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-6">Screenshots</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[1, 2].map((i) => (
-              <div
-                key={i}
-                className="aspect-video rounded-xl border border-border bg-card flex items-center justify-center"
-              >
-                <p className="text-muted-foreground">Screenshot {i}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/vulnclaw-help.png"
+                alt="VulnClaw CLI help screen"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">CLI help & commands</p>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/vulnclaw-scan.png"
+                alt="VulnClaw scan in progress"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Live reconnaissance scan</p>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <img
+                src="/images/vulnclaw-results.png"
+                alt="VulnClaw scan results"
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-muted-foreground p-2">Findings & results</p>
+            </div>
           </div>
         </div>
       </Section>
