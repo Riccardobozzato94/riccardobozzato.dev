@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, FileText, ArrowRight, Download } from "lucide-react";
+import { CheckCircle2, FileText, ArrowRight, Download, Lock } from "lucide-react";
 
 export default function FreebiePage() {
   const t = useTranslations("freebie");
@@ -16,6 +16,7 @@ export default function FreebiePage() {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const [directDownload, setDirectDownload] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -30,7 +31,11 @@ export default function FreebiePage() {
 
       if (!res.ok) throw new Error("Failed");
 
+      const data = await res.json();
       setStatus("success");
+      if (data.directDownload && data.downloadUrl) {
+        setDirectDownload(data.downloadUrl);
+      }
     } catch {
       setStatus("error");
     }
@@ -69,17 +74,43 @@ export default function FreebiePage() {
               ))}
             </ul>
           </div>
+
+          {/* Direct download link for quick access */}
+          <div className="text-center pt-4 border-t border-border/50">
+            <p className="text-xs text-muted-foreground mb-2">
+              <Lock className="size-3 inline mr-1" />
+              Want it instantly? No email required:
+            </p>
+            <a
+              href="/files/ai-ops-security-playbook.pdf"
+              download
+              className="inline-flex items-center gap-1.5 text-sm text-accent underline-offset-4 hover:underline transition-colors"
+            >
+              <Download className="size-4" />
+              Download PDF directly
+            </a>
+          </div>
         </div>
 
         {/* Right: Form */}
         <Card className="border-accent/40">
           <CardContent className="p-8 space-y-6">
             {status === "success" ? (
-              <div className="flex flex-col items-center justify-center py-8 text-center space-y-3">
+              <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
                 <div className="size-14 rounded-full bg-accent/10 flex items-center justify-center">
                   <Download className="size-7 text-accent" />
                 </div>
                 <p className="text-lg font-medium">{t("form.success")}</p>
+                {directDownload && (
+                  <a
+                    href={directDownload}
+                    download
+                    className="inline-flex items-center justify-center h-10 rounded-md bg-primary text-primary-foreground shadow hover:bg-primary/90 px-6 text-sm transition-colors"
+                  >
+                    <Download className="mr-2 size-4" />
+                    Download Playbook
+                  </a>
+                )}
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -130,6 +161,11 @@ export default function FreebiePage() {
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">
                   {t("form.privacy")}
+                </p>
+                <p className="text-xs text-muted-foreground/50 text-center">
+                  <Lock className="size-3 inline mr-1" />
+                  Your data is safe.{" "}
+                  <a href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">Privacy Policy</a>
                 </p>
               </form>
             )}

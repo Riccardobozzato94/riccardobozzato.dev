@@ -10,6 +10,7 @@
                 "panificio":  "Panificio",
                 "trova":  "Trova",
                 "freebie":  "Free Guide",
+        "blog":  "Blog",
                 "about":  "About",
                 "contact":  "Contact"
             },
@@ -59,7 +60,7 @@
                                                         "AI/LLM"
                                                     ],
                                       "cta":  "Learn More",
-                                      "status":  "Alpha v0.3.2"
+                                      "status":  "Alpha v0.4.0"
                                   },
                      "trova":  {
                                    "title":  "Trova",
@@ -199,6 +200,46 @@
                     "email":  "riccardobozzato@gmail.com",
                     "github":  "github.com/Riccardobozzato94",
                     "linkedin":  "linkedin.com/in/riccardobozzato"
+                },
+    "privacy":  {
+                    "title":  "Privacy Policy",
+                    "lastUpdated":  "Last updated: July 15, 2026",
+                    "intro":  "This Privacy Policy explains how Riccardo Bozzato (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;) collects, uses, and protects your personal data when you visit my website or use my services.",
+                    "sections":  [
+                                     {
+                                         "title":  "1. Data Controller",
+                                         "content":  "Riccardo Bozzato<br>Legnaro, PD, Italy<br>Email: riccardobozzato@gmail.com"
+                                     },
+                                     {
+                                         "title":  "2. Data I Collect",
+                                         "content":  "Contact form: name, email address, and message you submit.<br>Freebie downloads: name and email address.<br>Analytics: anonymous page views (no cookies, no tracking scripts)."
+                                     },
+                                     {
+                                         "title":  "3. How I Use Your Data",
+                                         "content":  "To respond to your inquiries.<br>To send you the free guide you requested.<br>To improve my website based on anonymous usage data.<br>I do not sell, rent, or share your data with third parties."
+                                     },
+                                     {
+                                         "title":  "4. Legal Basis (GDPR)",
+                                         "content":  "I process your data based on your consent (via form submission) and legitimate interest (responding to your inquiries). You can withdraw consent at any time."
+                                     },
+                                     {
+                                         "title":  "5. Data Retention",
+                                         "content":  "I keep your data for as long as necessary to fulfill the purpose for which you provided it, or as required by law. You can request deletion at any time."
+                                     },
+                                     {
+                                         "title":  "6. Your Rights",
+                                         "content":  "Under GDPR, you have the right to: access your data, correct inaccurate data, delete your data, restrict processing, data portability, and withdraw consent. To exercise these rights, email me at riccardobozzato@gmail.com."
+                                     },
+                                     {
+                                         "title":  "7. Third-Party Services",
+                                         "content":  "Resend — transactional email delivery (privacy policy: resend.com/privacy).<br>Netlify — website hosting (privacy policy: netlify.com/privacy).<br>GitHub — source code hosting (privacy policy: github.com/privacy)."
+                                     },
+                                     {
+                                         "title":  "8. Contact",
+                                         "content":  "For any questions about this privacy policy, email: riccardobozzato@gmail.com"
+                                     }
+                                 ],
+                    "nav":  "Privacy"
                 },
     "notFound":  {
                     "title":  "404",

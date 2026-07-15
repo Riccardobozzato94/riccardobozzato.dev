@@ -28,13 +28,15 @@ export async function POST(request: Request) {
       );
     }
 
-    // If Resend is not configured, log and return success (dev mode)
+    // If Resend is not configured, log and return direct download link (dev mode)
     const resend = getResend();
     if (!resend) {
       console.log("📬 [DEV] Freebie download request:", { name, email });
       return NextResponse.json({
         success: true,
-        message: "Check your inbox! The playbook is on its way. (dev mode — no email sent)",
+        directDownload: true,
+        downloadUrl: "/files/ai-ops-security-playbook.pdf",
+        message: "Here's your playbook! Download it directly below.",
       });
     }
 

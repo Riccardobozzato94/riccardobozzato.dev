@@ -20,7 +20,7 @@ export default async function ProjectsPage() {
           title={t("trova.title")}
           subtitle={t("trova.subtitle")}
           description={t("trova.description")}
-          tags={["Next.js 16", "SaaS", "TypeScript", "$149"]}
+          tags={["Next.js 16", "SaaS", "TypeScript", "€49"]}
           href="/trova"
           image="/images/trova-home.png"
           badge="Product"

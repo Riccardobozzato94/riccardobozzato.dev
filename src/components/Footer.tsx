@@ -70,10 +70,16 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex items-center md:justify-center">
+          <div className="flex flex-col items-center gap-2">
             <p className="text-sm text-muted-foreground">
               {t("builtWith")}
             </p>
+            <Link
+              href="/privacy"
+              className="text-xs text-muted-foreground/60 transition-colors hover:text-accent"
+            >
+              Privacy Policy
+            </Link>
           </div>
 
           <div className="flex items-center md:justify-end">

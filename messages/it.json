@@ -10,6 +10,7 @@
                 "panificio":  "Panificio",
                 "trova":  "Trova",
                 "freebie":  "Guida Gratuita",
+        "blog":  "Blog",
                 "about":  "Chi Sono",
                 "contact":  "Contatti"
             },
@@ -59,7 +60,7 @@
                                                         "AI/LLM"
                                                     ],
                                       "cta":  "Scopri di Più",
-                                      "status":  "Alpha v0.3.2"
+                                      "status":  "Alpha v0.4.0"
                                   },
                      "trova":  {
                                    "title":  "Trova",
@@ -199,6 +200,46 @@
                     "email":  "riccardobozzato@gmail.com",
                     "github":  "github.com/Riccardobozzato94",
                     "linkedin":  "linkedin.com/in/riccardobozzato"
+                },
+    "privacy":  {
+                    "title":  "Privacy Policy",
+                    "lastUpdated":  "Ultimo aggiornamento: 15 Luglio 2026",
+                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;mi&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web o utilizzi i miei servizi.",
+                    "sections":  [
+                                     {
+                                         "title":  "1. Titolare del Trattamento",
+                                         "content":  "Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com"
+                                     },
+                                     {
+                                         "title":  "2. Dati Raccolti",
+                                         "content":  "Modulo di contatto: nome, indirizzo email e messaggio che invii.<br>Download guide: nome e indirizzo email.<br>Analytics: visualizzazioni anonime delle pagine (nessun cookie, nessun script di tracciamento)."
+                                     },
+                                     {
+                                         "title":  "3. Come Utilizzo i Tuoi Dati",
+                                         "content":  "Per rispondere alle tue richieste.<br>Per inviarti la guida gratuita che hai richiesto.<br>Per migliorare il sito web basandomi su dati anonimi di utilizzo.<br>Non vendo, affitto o condivido i tuoi dati con terze parti."
+                                     },
+                                     {
+                                         "title":  "4. Base Giuridica (GDPR)",
+                                         "content":  "Tratto i tuoi dati in base al tuo consenso (tramite invio modulo) e al legittimo interesse (rispondere alle tue richieste). Puoi revocare il consenso in qualsiasi momento."
+                                     },
+                                     {
+                                         "title":  "5. Conservazione dei Dati",
+                                         "content":  "Conservo i tuoi dati per il tempo necessario a soddisfare lo scopo per cui li hai forniti, o come richiesto dalla legge. Puoi richiedere la cancellazione in qualsiasi momento."
+                                     },
+                                     {
+                                         "title":  "6. I Tuoi Diritti",
+                                         "content":  "Ai sensi del GDPR, hai il diritto di: accedere ai tuoi dati, rettificare dati inesatti, cancellare i tuoi dati, limitare il trattamento, portabilità dei dati e revocare il consenso. Per esercitare questi diritti, scrivimi a riccardobozzato@gmail.com."
+                                     },
+                                     {
+                                         "title":  "7. Servizi di Terze Parti",
+                                         "content":  "Resend — consegna email transazionali (privacy: resend.com/privacy).<br>Netlify — hosting del sito (privacy: netlify.com/privacy).<br>GitHub — hosting del codice sorgente (privacy: github.com/privacy)."
+                                     },
+                                     {
+                                         "title":  "8. Contatti",
+                                         "content":  "Per qualsiasi domanda su questa privacy policy, scrivi a: riccardobozzato@gmail.com"
+                                     }
+                                 ],
+                    "nav":  "Privacy"
                 },
     "notFound":  {
                      "title":  "404",
