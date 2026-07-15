@@ -11,6 +11,7 @@
                 "trova":  "Trova",
                 "freebie":  "Guida Gratuita",
         "blog":  "Blog",
+                "services":  "Servizi",
                 "about":  "Chi Sono",
                 "contact":  "Contatti"
             },
@@ -62,7 +63,80 @@
                                       "cta":  "Scopri di Più",
                                       "status":  "Alpha v0.4.0"
                                   },
-                     "trova":  {
+    "services":  {
+                     "title":  "Servizi",
+                     "subtitle":  "Operations, architettura e strumenti — consegnati.",
+                     "heroDesc":  "Aiuto aziende digitali a costruire architetture operative scalabili, lanciare prodotti più velocemente e allineare sicurezza e velocità. Ecco come posso aiutarti.",
+                     "cta":  "Prenota una Call Gratuita",
+                     "packages":  [
+                                      {
+                                          "title":  "SaaS Architecture Review",
+                                          "price":  "€500 – €1.500",
+                                          "desc":  "Analisi approfondita di 2 ore della tua architettura Next.js/SaaS. Identifico bottleneck, gap di sicurezza e opportunità di ottimizzazione.",
+                                          "features":  [
+                                                           "Code review del tuo stack",
+                                                           "Audit sicurezza (auth, API, infra)",
+                                                           "Roadmap di ottimizzazione performance",
+                                                           "Report scritto con findings actionable"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Security Ops Alignment",
+                                          "price":  "€2.000 – €5.000",
+                                          "desc":  "Implementa il framework Ops-Security Alignment nella tua organizzazione. Trasforma la sicurezza da blocco a moltiplicatore di forza.",
+                                          "features":  [
+                                                           "Audit completo ops-sicurezza",
+                                                           "Implementazione policy-as-code",
+                                                           "Setup framework metriche",
+                                                           "Formazione team e documentazione"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Consulenza Integrazione AI",
+                                          "price":  "€150 – €250 / ora",
+                                          "desc":  "Aiuto il tuo team a integrare LLM nei flussi di lavoro, costruire agenti AI e automatizzare le operations senza perdere il controllo.",
+                                          "features":  [
+                                                           "Scoperta e prioritizzazione use case",
+                                                           "Design architetturale",
+                                                           "Sviluppo prototipo",
+                                                           "Formazione del team"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Custom Boilerplate",
+                                          "price":  "€3.000 – €8.000",
+                                          "desc":  "Una fondazione personalizzata come Trova, costruita sul tuo stack e modello di business specifico. Auth, billing, email, i18n — pronto per la produzione.",
+                                          "features":  [
+                                                           "Il tuo stack, i tuoi requisiti",
+                                                           "Auth, billing, email, i18n inclusi",
+                                                           "Setup pipeline CI/CD",
+                                                           "1 mese di supporto prioritario"
+                                                       ]
+                                      }
+                                  ],
+                     "approach":  {
+                                     "title":  "Come Lavoro",
+                                     "steps":  [
+                                                   {
+                                                       "step":  "1. Discovery",
+                                                       "desc":  "Iniziamo con una comprensione profonda del tuo stato attuale, obiettivi e vincoli."
+                                                   },
+                                                   {
+                                                       "step":  "2. Strategia",
+                                                       "desc":  "Progetto un approccio su misura — niente template, niente soluzioni preconfezionate."
+                                                   },
+                                                   {
+                                                       "step":  "3. Esecuzione",
+                                                       "desc":  "Implementazione pratica con checkpoint regolari e risultati misurabili."
+                                                   },
+                                                   {
+                                                       "step":  "4. Formazione",
+                                                       "desc":  "Il tuo team acquisisce gli strumenti e le conoscenze per mantenere ed evolvere."
+                                                   }
+                                               ]
+                                 }
+                 },
+    "trova":  {
                                    "title":  "Trova",
                                    "subtitle":  "SaaS Boilerplate che va in produzione",
                                    "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non in settimane.",

@@ -11,6 +11,7 @@
                 "trova":  "Trova",
                 "freebie":  "Free Guide",
         "blog":  "Blog",
+                "services":  "Services",
                 "about":  "About",
                 "contact":  "Contact"
             },
@@ -62,7 +63,80 @@
                                       "cta":  "Learn More",
                                       "status":  "Alpha v0.4.0"
                                   },
-                     "trova":  {
+    "services":  {
+                     "title":  "Services",
+                     "subtitle":  "Operations, architecture, and tools — delivered.",
+                     "heroDesc":  "I help digital companies build scalable operational architectures, ship products faster, and align security with velocity. Here's how I can help you.",
+                     "cta":  "Book a Free Call",
+                     "packages":  [
+                                      {
+                                          "title":  "SaaS Architecture Review",
+                                          "price":  "€500 – €1,500",
+                                          "desc":  "Two-hour deep dive into your Next.js/SaaS architecture. I'll identify bottlenecks, security gaps, and optimization opportunities.",
+                                          "features":  [
+                                                           "Code review of your stack",
+                                                           "Security audit (auth, API, infra)",
+                                                           "Performance optimization roadmap",
+                                                           "Written report with actionable findings"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Security Ops Alignment",
+                                          "price":  "€2,000 – €5,000",
+                                          "desc":  "Implement the Ops-Security Alignment Framework in your organization. Turn security from a blocker into a force multiplier.",
+                                          "features":  [
+                                                           "Full ops-security audit",
+                                                           "Policy-as-code implementation",
+                                                           "Metric framework setup",
+                                                           "Team training & documentation"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "AI Integration Consulting",
+                                          "price":  "€150 – €250 / hr",
+                                          "desc":  "Help your team integrate LLMs into workflows, build AI agents, and automate operations without sacrificing control.",
+                                          "features":  [
+                                                           "Use case discovery & prioritization",
+                                                           "Architecture design",
+                                                           "Prototype development",
+                                                           "Team enablement"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Custom Boilerplate",
+                                          "price":  "€3,000 – €8,000",
+                                          "desc":  "A custom Trova-like foundation built for your specific stack and business model. Auth, billing, email, i18n — production-ready.",
+                                          "features":  [
+                                                           "Your stack, your requirements",
+                                                           "Auth, billing, email, i18n included",
+                                                           "CI/CD pipeline setup",
+                                                           "1 month priority support"
+                                                       ]
+                                      }
+                                  ],
+                     "approach":  {
+                                     "title":  "How I Work",
+                                     "steps":  [
+                                                   {
+                                                       "step":  "1. Discovery",
+                                                       "desc":  "We start with a deep understanding of your current state, goals, and constraints."
+                                                   },
+                                                   {
+                                                       "step":  "2. Strategy",
+                                                       "desc":  "I design a tailored approach — no templates, no one-size-fits-all."
+                                                   },
+                                                   {
+                                                       "step":  "3. Execution",
+                                                       "desc":  "Hands-on implementation with regular checkpoints and measurable outcomes."
+                                                   },
+                                                   {
+                                                       "step":  "4. Enablement",
+                                                       "desc":  "Your team walks away with the knowledge and tools to maintain and evolve."
+                                                   }
+                                               ]
+                                 }
+                 },
+    "trova":  {
                                    "title":  "Trova",
                                    "subtitle":  "SaaS Boilerplate That Ships",
                                    "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Everything you need to launch a SaaS in days, not weeks.",

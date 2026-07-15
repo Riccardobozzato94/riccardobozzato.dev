@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { Menu, X, Languages, Hexagon } from "lucide-react";
+import { Menu, X, Languages, Hexagon, Sparkles } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
+  { key: "services", href: "/services" },
   { key: "projects", href: "/projects" },
-  { key: "freebie", href: "/freebie" },
   { key: "blog", href: "/blog" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
@@ -80,6 +80,15 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* Free Playbook CTA */}
+          <Link
+            href="/freebie"
+            className="hidden md:inline-flex items-center gap-1.5 h-8 rounded-full bg-accent/10 hover:bg-accent/20 border border-accent/20 px-3.5 text-xs font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Sparkles className="size-3" />
+            Free Playbook
+          </Link>
+
           {/* Language Switcher */}
           <Link
             href={pathname}
@@ -140,6 +149,15 @@ export default function Navbar() {
               </Link>
             );
           })}
+          {/* Mobile Free Playbook CTA */}
+          <Link
+            href="/freebie"
+            onClick={() => setOpen(false)}
+            className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-accent/10 border border-accent/20 px-3.5 py-2.5 text-sm font-medium text-accent transition-colors"
+          >
+            <Sparkles className="size-4" />
+            Free Playbook
+          </Link>
         </nav>
       </div>
     </header>

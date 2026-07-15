@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/content/blog";
-import { CalendarDays, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import { CalendarDays, ArrowLeft, ArrowRight, Sparkles, Download, ShoppingCart } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -149,27 +150,60 @@ export default async function BlogPostPage({ params }: Props) {
         </article>
       </Section>
 
-      {/* Share CTA */}
+      {/* Contextual CTA */}
       <Section animate>
-        <div className="max-w-2xl mx-auto text-center space-y-6">
+        <div className="max-w-2xl mx-auto text-center space-y-8">
           <div className="size-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
             <Sparkles className="size-7 text-accent" />
           </div>
-          <h2 className="text-2xl font-bold tracking-tight">
-            {isIt ? "Ti è piaciuto questo articolo?" : "Enjoyed this post?"}
-          </h2>
-          <p className="text-muted-foreground">
-            {isIt
-              ? "Condividilo con un collega o contattami per parlarne."
-              : "Share it with a colleague or reach out to discuss."}
-          </p>
-          <Link
-            href="/blog"
-            className="group inline-flex items-center justify-center gap-2 h-11 rounded-xl border border-border/50 bg-card shadow-sm hover:border-accent/30 hover:bg-accent/5 px-6 text-sm font-medium transition-all duration-300"
-          >
-            <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
-            {isIt ? "Altri articoli" : "More posts"}
-          </Link>
+          <div className="space-y-3">
+            <h2 className="text-2xl font-bold tracking-tight">
+              {isIt ? "Ti è piaciuto questo articolo?" : "Enjoyed this post?"}
+            </h2>
+            <p className="text-muted-foreground">
+              {isIt
+                ? "Condividilo con un collega o contattami per parlarne."
+                : "Share it with a colleague or reach out to discuss."}
+            </p>
+          </div>
+
+          {/* Contextual product CTA */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {(slug.includes("ops-security") || slug.includes("operazioni")) && (
+              <Link
+                href="/freebie"
+                className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <Download className="size-4" />
+                {isIt ? "Scarica il Playbook" : "Download the Playbook"}
+              </Link>
+            )}
+            {(slug.includes("vulnclaw") || slug.includes("costruire")) && (
+              <Link
+                href="/projects/vulnclaw"
+                className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <ArrowRight className="size-4" />
+                {isIt ? "Scopri VulnClaw" : "Explore VulnClaw"}
+              </Link>
+            )}
+            {(slug.includes("saas") || slug.includes("boilerplate")) && (
+              <Link
+                href="/trova"
+                className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <ShoppingCart className="size-4" />
+                {isIt ? "Scopri Trova" : "Get Trova (€49)"}
+              </Link>
+            )}
+            <Link
+              href="/blog"
+              className="group inline-flex items-center justify-center gap-2 h-11 rounded-xl border border-border/50 bg-card shadow-sm hover:border-accent/30 hover:bg-accent/5 px-5 text-sm font-medium transition-all duration-300"
+            >
+              <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
+              {isIt ? "Altri articoli" : "More posts"}
+            </Link>
+          </div>
         </div>
       </Section>
     </>

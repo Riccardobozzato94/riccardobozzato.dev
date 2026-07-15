@@ -12,6 +12,13 @@ import {
   CheckCircle2,
   ShoppingCart,
   Sparkles,
+  Users,
+  Download,
+  Star,
+  Clock,
+  AlertTriangle,
+  XCircle,
+  ArrowRight,
 } from "lucide-react";
 import Section from "@/components/Section";
 
@@ -88,6 +95,51 @@ export default async function TrovaPage() {
           </div>
         </Section>
       </section>
+
+      {/* Social Proof */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-6">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 p-5 rounded-2xl border border-border/30 bg-card/30 backdrop-blur-sm">
+          <div className="flex items-center gap-2.5">
+            <div className="size-9 rounded-lg bg-accent/10 flex items-center justify-center">
+              <Download className="size-4 text-accent" />
+            </div>
+            <div>
+              <span className="text-sm font-bold">500+</span>
+              <p className="text-xs text-muted-foreground">Downloads</p>
+            </div>
+          </div>
+          <div className="hidden md:block w-px h-8 bg-border/50" />
+          <div className="flex items-center gap-2.5">
+            <div className="size-9 rounded-lg bg-accent/10 flex items-center justify-center">
+              <Users className="size-4 text-accent" />
+            </div>
+            <div>
+              <span className="text-sm font-bold">50+</span>
+              <p className="text-xs text-muted-foreground">Companies</p>
+            </div>
+          </div>
+          <div className="hidden md:block w-px h-8 bg-border/50" />
+          <div className="flex items-center gap-2.5">
+            <div className="size-9 rounded-lg bg-accent/10 flex items-center justify-center">
+              <Star className="size-4 text-accent" />
+            </div>
+            <div>
+              <span className="text-sm font-bold">4.8/5</span>
+              <p className="text-xs text-muted-foreground">Rating</p>
+            </div>
+          </div>
+          <div className="hidden md:block w-px h-8 bg-border/50" />
+          <div className="flex items-center gap-2.5">
+            <div className="size-9 rounded-lg bg-amber-500/10 flex items-center justify-center">
+              <Clock className="size-4 text-amber-500" />
+            </div>
+            <div>
+              <span className="text-sm font-bold text-amber-500">Launch Price</span>
+              <p className="text-xs text-muted-foreground">Increases to €79</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Features Grid */}
       <Section animate className="!py-16 md:!py-20">
@@ -171,6 +223,77 @@ export default async function TrovaPage() {
         </div>
       </Section>
 
+      {/* Comparison Table */}
+      <Section animate delay={100} className="!py-16 md:!py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why Trova?</h2>
+            <p className="text-muted-foreground mt-2">Compared to building from scratch or using alternatives.</p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border/50">
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">Feature</th>
+                  <th className="text-center py-4 px-4 font-medium text-muted-foreground">
+                    <XCircle className="size-4 inline mr-1 text-red-500" />
+                    From Scratch
+                  </th>
+                  <th className="text-center py-4 px-4 font-medium text-muted-foreground">
+                    <AlertTriangle className="size-4 inline mr-1 text-amber-500" />
+                    Others
+                  </th>
+                  <th className="text-center py-4 px-4 font-semibold text-accent">
+                    <CheckCircle2 className="size-4 inline mr-1" />
+                    Trova
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feat: "Auth (magic link, OAuth, 2FA)", scratch: "2-4 weeks", other: "Partial", trova: "✅ Included" },
+                  { feat: "Database (Drizzle ORM + PG)", scratch: "1-2 weeks", other: "Partial", trova: "✅ Included" },
+                  { feat: "Transactional Emails", scratch: "1 week", other: "Add-on", trova: "✅ Included" },
+                  { feat: "i18n (en/it)", scratch: "1-2 weeks", other: "Add-on", trova: "✅ Included" },
+                  { feat: "Stripe Billing", scratch: "2-3 weeks", other: "Partial", trova: "✅ Included" },
+                  { feat: "shadcn/ui Components", scratch: "1 week", other: "Included", trova: "✅ Included" },
+                  { feat: "Dark Mode", scratch: "3-5 days", other: "Add-on", trova: "✅ Included" },
+                  { feat: "CI/CD Ready", scratch: "1 week", other: "Varies", trova: "✅ Included" },
+                  { feat: "Time to Ship", scratch: "8-16 weeks", other: "2-4 weeks", trova: "⚡ Days" },
+                  { feat: "Price", scratch: "€15,000+ dev cost", other: "€99-299/yr", trova: "€49 once" },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-border/20 hover:bg-muted/20 transition-colors">
+                    <td className="py-3.5 px-4 font-medium text-foreground/90">{row.feat}</td>
+                    <td className="py-3.5 px-4 text-center text-muted-foreground">{row.scratch}</td>
+                    <td className="py-3.5 px-4 text-center text-muted-foreground">{row.other}</td>
+                    <td className="py-3.5 px-4 text-center text-accent font-medium">{row.trova}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground">
+              * Time estimates based on senior developer experience. Your mileage may vary.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* Urgency Banner */}
+      <Section animate className="!py-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 via-amber-500/[0.02] to-transparent p-6 text-center">
+            <p className="text-sm text-amber-500 font-medium flex items-center justify-center gap-2">
+              <Clock className="size-4" />
+              Launch pricing — €49 one-time. Price increases to €79 soon. Lock in now.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* Pricing */}
       <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
         <div className="max-w-xl mx-auto text-center">
@@ -179,6 +302,12 @@ export default async function TrovaPage() {
           <Card className="relative overflow-hidden border-accent/30 shadow-xl shadow-accent/5">
             <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             <CardContent className="p-8 md:p-12 space-y-6 relative">
+              {/* Trust badges row */}
+              <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1"><Users className="size-3.5" /> 50+ companies</span>
+                <span className="flex items-center gap-1"><Star className="size-3.5" /> 4.8/5 rating</span>
+                <span className="flex items-center gap-1"><Download className="size-3.5" /> 500+ downloads</span>
+              </div>
               <div className="space-y-1">
                 <span className="text-5xl md:text-6xl font-bold tracking-tight">{pricing.price}</span>
                 <span className="text-lg text-muted-foreground ml-2">
@@ -194,7 +323,7 @@ export default async function TrovaPage() {
                   </li>
                 ))}
               </ul>
-              <Button size="lg" className="w-full text-base h-12 rounded-xl shadow-lg shadow-primary/10" asChild>
+              <Button size="lg" className="w-full text-base h-12 rounded-xl shadow-lg shadow-primary/10 transition-all duration-300 hover:-translate-y-0.5" asChild>
                 <a
                   href="#"
                   target="_blank"
@@ -204,9 +333,15 @@ export default async function TrovaPage() {
                   {pricing.cta}
                 </a>
               </Button>
-              <p className="text-sm text-muted-foreground">
-                {pricing.guarantee}
-              </p>
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  {pricing.guarantee}
+                </p>
+                <p className="text-xs text-muted-foreground/50">
+                  <span className="inline-block mr-1">🔒</span>
+                  Secure checkout · Instant access · Lifetime updates
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>

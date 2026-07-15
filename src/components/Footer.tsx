@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Github, Linkedin, Mail, Phone, MapPin, Hexagon, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, Hexagon, ArrowUpRight, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +25,7 @@ const SOCIAL_LINKS = [
 
 const FOOTER_LINKS = [
   { key: "home", href: "/" },
+  { key: "services", href: "/services" },
   { key: "projects", href: "/projects" },
   { key: "freebie", href: "/freebie" },
   { key: "blog", href: "/blog" },
@@ -120,26 +121,43 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social & Copyright */}
+          {/* Newsletter & Social */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              Connect
+              Free Playbook
             </h4>
-            <div className="flex flex-wrap gap-3">
-              {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center size-10 rounded-xl border border-border/60 text-muted-foreground transition-all duration-200 hover:border-accent/40 hover:text-accent hover:bg-accent/5 hover:-translate-y-0.5"
-                  aria-label={t(`social.${label}`)}
-                >
-                  <Icon className="size-4.5" />
-                </a>
-              ))}
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              Get the AI Ops Security Playbook — 5 field-tested strategies
+              to align security with operations.
+            </p>
+            <Link
+              href="/freebie"
+              className="group inline-flex items-center gap-2 h-10 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-4 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <Sparkles className="size-4" />
+              Download Free
+              <ArrowUpRight className="size-3.5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
+            </Link>
+            <div className="mt-6">
+              <h5 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-3">
+                Connect
+              </h5>
+              <div className="flex flex-wrap gap-3">
+                {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center size-10 rounded-xl border border-border/60 text-muted-foreground transition-all duration-200 hover:border-accent/40 hover:text-accent hover:bg-accent/5 hover:-translate-y-0.5"
+                    aria-label={t(`social.${label}`)}
+                  >
+                    <Icon className="size-4.5" />
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className="mt-8 space-y-2">
+            <div className="mt-6 space-y-2">
               <Link
                 href="/privacy"
                 className={cn(

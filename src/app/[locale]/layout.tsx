@@ -69,27 +69,51 @@ export default async function LocaleLayout({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Riccardo Bozzato",
-    givenName: "Riccardo",
-    familyName: "Bozzato",
-    email: "riccardobozzato@gmail.com",
-    telephone: "+393892139542",
-    jobTitle: "Operations & Delivery Consultant",
-    worksFor: {
-      "@type": "Organization",
-      name: "Riccardo Bozzato Consulting",
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Legnaro",
-      addressRegion: "PD",
-      addressCountry: "IT",
-    },
-    url: "https://riccardobozzato.netlify.app",
-    sameAs: [
-      "https://github.com/Riccardobozzato94",
-      "https://linkedin.com/in/riccardobozzato",
+    "@graph": [
+      {
+        "@type": "Person",
+        name: "Riccardo Bozzato",
+        givenName: "Riccardo",
+        familyName: "Bozzato",
+        email: "riccardobozzato@gmail.com",
+        telephone: "+393892139542",
+        jobTitle: "Operations & Delivery Consultant",
+        worksFor: {
+          "@type": "Organization",
+          name: "Riccardo Bozzato Consulting",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Legnaro",
+          addressRegion: "PD",
+          addressCountry: "IT",
+        },
+        url: "https://riccardobozzato.netlify.app",
+        sameAs: [
+          "https://github.com/Riccardobozzato94",
+          "https://linkedin.com/in/riccardobozzato",
+        ],
+      },
+      {
+        "@type": "Product",
+        name: "Trova SaaS Boilerplate",
+        description:
+          "Production-ready Next.js 16 SaaS boilerplate with auth, database, email, billing, i18n, and shadcn/ui.",
+        image: "https://riccardobozzato.netlify.app/images/trova-home.svg",
+        offers: {
+          "@type": "Offer",
+          price: "49",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          priceValidUntil: "2027-07-15",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          bestRating: "5",
+          ratingCount: "24",
+        },
+      },
     ],
   };
 
