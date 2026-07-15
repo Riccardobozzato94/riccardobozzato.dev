@@ -97,6 +97,42 @@
                                       "cta":  "Scopri di Più",
                                       "status":  "Alpha v0.4.0"
                                   },
+    "trova":  {
+                                   "title":  "Trova",
+                                   "subtitle":  "SaaS Boilerplate che va in produzione",
+                                   "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non in settimane.",
+                                   "features":  [
+                                                    "Next.js 16 + Turbopack",
+                                                    "Better Auth (magic link, OAuth, 2FA)",
+                                                    "Drizzle ORM + PostgreSQL",
+                                                    "i18n (en/it) già pronto",
+                                                    "Email con Resend + React Email",
+                                                    "Stripe già configurato"
+                                                ],
+                                   "cta":  "Ottieni Trova"
+                               },
+                     "panificio":  {
+                                       "title":  "Panificio Da Sergio",
+                                       "subtitle":  "Panetteria Artigianale \u0026 E-Commerce",
+                                       "description":  "E-commerce Next.js per un panificio tradizionale italiano. Catalogo, multilingua, SEO, ordinazioni online. Un regalo per la famiglia.",
+                                       "features":  [
+                                                        "Catalogo prodotti completo",
+                                                        "Multi-lingua (EN/IT)",
+                                                        "SEO per ricerca locale",
+                                                        "Dashboard admin ordini",
+                                                        "Design responsivo"
+                                                    ],
+                                       "techstack":  [
+                                                         "Next.js",
+                                                         "Tailwind CSS",
+                                                         "TypeScript",
+                                                         "i18n",
+                                                         "PostgreSQL"
+                                                     ],
+                                       "cta":  "Vedi Progetto",
+                                       "note":  "Un regalo per la famiglia"
+                                   }
+                               },
     "services":  {
                      "title":  "Risolvo Problemi Complessi. Consegno.",
                      "subtitle":  "Serverless · AI Agenti · Automazione · Integrazione · Consulenza",
@@ -198,42 +234,6 @@
                                                    }
                                                ]
                                  }
-                 },
-    "trova":  {
-                                   "title":  "Trova",
-                                   "subtitle":  "SaaS Boilerplate che va in produzione",
-                                   "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non in settimane.",
-                                   "features":  [
-                                                    "Next.js 16 + Turbopack",
-                                                    "Better Auth (magic link, OAuth, 2FA)",
-                                                    "Drizzle ORM + PostgreSQL",
-                                                    "i18n (en/it) già pronto",
-                                                    "Email con Resend + React Email",
-                                                    "Stripe già configurato"
-                                                ],
-                                   "cta":  "Ottieni Trova"
-                               },
-                     "panificio":  {
-                                       "title":  "Panificio Da Sergio",
-                                       "subtitle":  "Panetteria Artigianale \u0026 E-Commerce",
-                                       "description":  "E-commerce Next.js per un panificio tradizionale italiano. Catalogo, multilingua, SEO, ordinazioni online. Un regalo per la famiglia.",
-                                       "features":  [
-                                                        "Catalogo prodotti completo",
-                                                        "Multi-lingua (EN/IT)",
-                                                        "SEO per ricerca locale",
-                                                        "Dashboard admin ordini",
-                                                        "Design responsivo"
-                                                    ],
-                                       "techstack":  [
-                                                         "Next.js",
-                                                         "Tailwind CSS",
-                                                         "TypeScript",
-                                                         "i18n",
-                                                         "PostgreSQL"
-                                                     ],
-                                       "cta":  "Vedi Progetto",
-                                       "note":  "Un regalo per la famiglia"
-                                   }
                  },
     "trova":  {
                   "title":  "Trova",

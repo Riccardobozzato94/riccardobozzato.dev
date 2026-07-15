@@ -97,6 +97,42 @@
                                       "cta":  "Learn More",
                                       "status":  "Alpha v0.4.0"
                                   },
+    "trova":  {
+                                   "title":  "Trova",
+                                   "subtitle":  "SaaS Boilerplate That Ships",
+                                   "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Everything you need to launch a SaaS in days, not weeks.",
+                                   "features":  [
+                                                    "Next.js 16 + Turbopack",
+                                                    "Better Auth (magic link, OAuth, 2FA)",
+                                                    "Drizzle ORM + PostgreSQL",
+                                                    "i18n (en/it) out of the box",
+                                                    "Resend + React Email templates",
+                                                    "Stripe billing ready"
+                                                ],
+                                   "cta":  "Get Trova"
+                               },
+                     "panificio":  {
+                                       "title":  "Panificio Da Sergio",
+                                       "subtitle":  "Artisan Bakery & E-Commerce",
+                                       "description":  "A full Next.js e-commerce site for a traditional Italian bakery. Product catalog, multi-language, SEO, online ordering. A gift for family.",
+                                       "features":  [
+                                                        "Full product catalog",
+                                                        "Multi-language (EN/IT)",
+                                                        "SEO for local search",
+                                                        "Admin order dashboard",
+                                                        "Responsive design"
+                                                    ],
+                                       "techstack":  [
+                                                         "Next.js",
+                                                         "Tailwind CSS",
+                                                         "TypeScript",
+                                                         "i18n",
+                                                         "PostgreSQL"
+                                                     ],
+                                       "cta":  "View Project",
+                                       "note":  "A gift for family"
+                                   }
+                               },
     "services":  {
                      "title":  "I Solve Complex Problems. Delivered.",
                      "subtitle":  "Serverless · AI Agents · Automation · Integration · Consulting",
@@ -198,42 +234,6 @@
                                                    }
                                                ]
                                  }
-                 },
-    "trova":  {
-                                   "title":  "Trova",
-                                   "subtitle":  "SaaS Boilerplate That Ships",
-                                   "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Everything you need to launch a SaaS in days, not weeks.",
-                                   "features":  [
-                                                    "Next.js 16 + Turbopack",
-                                                    "Better Auth (magic link, OAuth, 2FA)",
-                                                    "Drizzle ORM + PostgreSQL",
-                                                    "i18n (en/it) out of the box",
-                                                    "Resend + React Email templates",
-                                                    "Stripe billing ready"
-                                                ],
-                                   "cta":  "Get Trova"
-                               },
-                     "panificio":  {
-                                       "title":  "Panificio Da Sergio",
-                                       "subtitle":  "Artisan Bakery & E-Commerce",
-                                       "description":  "A full Next.js e-commerce site for a traditional Italian bakery. Product catalog, multi-language, SEO, online ordering. A gift for family.",
-                                       "features":  [
-                                                        "Full product catalog",
-                                                        "Multi-language (EN/IT)",
-                                                        "SEO for local search",
-                                                        "Admin order dashboard",
-                                                        "Responsive design"
-                                                    ],
-                                       "techstack":  [
-                                                         "Next.js",
-                                                         "Tailwind CSS",
-                                                         "TypeScript",
-                                                         "i18n",
-                                                         "PostgreSQL"
-                                                     ],
-                                       "cta":  "View Project",
-                                       "note":  "A gift for family"
-                                   }
                  },
     "trova":  {
                   "title":  "Trova",
