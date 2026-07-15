@@ -1,17 +1,21 @@
 import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Quote, ArrowRight } from "lucide-react";
+import { Quote } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
 const skills = [
-  "TypeScript",
+  "PMP®",
+  "Project Management",
+  "Agile/Scrum/Kanban",
+  "eCommerce (Magento, Shopware)",
+  "PIM/DAM (Pimcore)",
+  "SAP UI5",
+  "JavaScript",
   "Python",
-  "React",
+  "SQL",
   "Next.js",
   "Docker",
-  "PostgreSQL",
   "AI/ML",
   "Ops",
   "Security",
@@ -93,16 +97,16 @@ export default async function AboutPage() {
       {/* CTA */}
       <Section className="bg-muted/30 text-center">
         <div className="max-w-2xl mx-auto space-y-4">
-          <h2 className="text-2xl font-bold">Let&apos;s Build Something</h2>
+          <h2 className="text-2xl font-bold">{t("ctaTitle")}</h2>
           <p className="text-muted-foreground text-lg">
-            Have a project, idea, or just want to chat? I&apos;m always open to
-            interesting conversations.
+            {t("ctaDesc")}
           </p>
-          <Button asChild size="lg">
-            <Link href="/contact">
-              Get in Touch <ArrowRight className="ml-2 size-4" />
-            </Link>
-          </Button>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-1 h-10 rounded-md bg-primary text-primary-foreground shadow hover:bg-primary/90 px-8 text-base transition-colors"
+          >
+            Get in Touch
+          </Link>
         </div>
       </Section>
     </>

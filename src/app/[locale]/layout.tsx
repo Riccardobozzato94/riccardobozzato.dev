@@ -75,10 +75,10 @@ export default async function LocaleLayout({
     familyName: "Bozzato",
     email: "riccardobozzato@gmail.com",
     telephone: "+393892139542",
-    jobTitle: "Head of Operations",
+    jobTitle: "Operations & Delivery Consultant",
     worksFor: {
       "@type": "Organization",
-      name: "Ciao Elsa S.R.L.",
+      name: "Riccardo Bozzato Consulting",
     },
     address: {
       "@type": "PostalAddress",

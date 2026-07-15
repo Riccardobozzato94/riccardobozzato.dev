@@ -2,7 +2,7 @@
   "name": "riccardobozzato",
   "version": "1.0.0",
   "private": true,
-  "description": "Riccardo Bozzato — Head of Ops & AI Security Builder. Personal brand & portfolio.",
+  "description": "Riccardo Bozzato — Operations & Delivery Consultant | PMP®. Personal brand & portfolio.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

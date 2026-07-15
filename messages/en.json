@@ -1,181 +1,209 @@
 {
-  "site": {
-    "title": "Riccardo Bozzato",
-    "tagline": "Head of Operations | I scale teams, automate processes, and turn operational chaos into measurable dashboards (PMP®)",
-    "description": "Head of Operations at Ciao Elsa. PMP® certified operations leader building security tools (VulnClaw) and SaaS boilerplates (Trova) in my spare time. I turn bottlenecks into predictable, data-driven processes."
-  },
-  "nav": {
-    "home": "Home",
-    "projects": "Projects",
-    "panificio": "Panificio",
-    "trova": "Trova",
-    "freebie": "Free Guide",
-    "about": "About",
-    "contact": "Contact"
-  },
-  "home": {
-    "heroTitle": "Hi, I'm Riccardo",
-    "heroRole": "Head of Operations & Builder",
-    "heroTagline": "I lead operations at Ciao Elsa and build security tools. When companies scale, operations either carry the growth or choke it. I make sure it's the first one.",
-    "heroCta": "See My Work",
-    "heroCta2": "Get the Free Guide",
-    "featuredTitle": "Featured Projects",
-    "featuredSubtitle": "Tools I built because the existing ones weren't good enough.",
-    "viewProject": "View Project →",
-    "aboutTitle": "Operations meets Engineering",
-    "aboutText": "I'm Head of Operations at Ciao Elsa (pension-fund brokerage, Allianz partner), where I build scalable operational architectures — CRM, KPI systems, team governance — that let the company grow without breaking. PMP® certified. Outside work, I build VulnClaw (AI-driven penetration testing) and Trova (a SaaS boilerplate).",
-    "aboutCta": "Read My Story →",
-    "freebieTitle": "Free: The AI Ops Security Playbook",
-    "freebieDesc": "5 strategies I use to keep operations secure without slowing innovation. No fluff, just tactics from the field.",
-    "freebieCta": "Download Free →"
-  },
-  "footer": {
-    "copyright": "© {year} Riccardo Bozzato. All rights reserved.",
-    "builtWith": "Built with Next.js & shadcn/ui",
-    "social": {
-      "github": "GitHub",
-      "linkedin": "LinkedIn",
-      "email": "Email"
-    }
-  },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "Tools I've built because the existing ones weren't good enough.",
-    "vulnclaw": {
-      "title": "VulnClaw",
-      "subtitle": "AI-Driven Penetration Testing CLI",
-      "description": "An intelligent CLI agent that automates security assessments. AI-powered reconnaissance, vulnerability scanning, and exploitation — all from your terminal.",
-      "features": [
-        "AI-driven recon and target analysis",
-        "Automated vulnerability scanning",
-        "Smart exploitation suggestions",
-        "Beautiful terminal UI with Rich and prompt_toolkit"
-      ],
-      "techstack": ["Python", "Typer", "Rich", "Prompt Toolkit", "AI/LLM"],
-      "cta": "Learn More",
-      "status": "Alpha v0.3.2"
-    },
-    "trova": {
-      "title": "Trova",
-      "subtitle": "SaaS Boilerplate That Ships",
-      "description": "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend emails, Stripe, shadcn/ui. Everything you need to launch a SaaS in days, not weeks.",
-      "features": [
-        "Next.js 16 + Turbopack",
-        "Better Auth (magic link, OAuth, 2FA)",
-        "Drizzle ORM + PostgreSQL",
-        "i18n (en/it) out of the box",
-        "Resend + React Email templates",
-        "Stripe billing ready"
-      ],
-      "cta": "Get Trova"
-    },
-    "panificio": {
-      "title": "Panificio Da Sergio",
-      "subtitle": "Artisan Bakery & E-Commerce",
-      "description": "A full-featured Next.js e-commerce site for a traditional Italian bakery. Product catalog, multi-language support, SEO-optimized, and online ordering. Built as a gift for family.",
-      "features": [
-        "Full product catalog with categories",
-        "Multi-language (EN/IT)",
-        "SEO-optimized for local search",
-        "Admin dashboard for order management",
-        "Responsive design"
-      ],
-      "techstack": ["Next.js", "Tailwind CSS", "TypeScript", "i18n", "PostgreSQL"],
-      "cta": "View Project",
-      "note": "A gift for family"
-    }
-  },
-  "trova": {
-    "title": "Trova",
-    "tagline": "The SaaS boilerplate that actually ships.",
-    "description": "Stop rebuilding auth, emails, billing, and i18n for every project. Trova gives you a production-ready foundation so you can focus on what makes your SaaS unique.",
-    "features": {
-      "auth": "Better Auth — magic links, OAuth (Google, GitHub), 2FA, session management",
-      "database": "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
-      "email": "Resend + React Email — beautiful transactional emails, 5 templates included",
-      "i18n": "next-intl — English and Italian out of the box, easy to extend",
-      "billing": "Stripe — subscription plans, webhooks, customer portal",
-      "ui": "shadcn/ui + Tailwind v4 — dark mode, responsive, customizable"
-    },
-    "pricing": {
-      "title": "Simple Pricing",
-      "subtitle": "One price. Everything included.",
-      "price": "€49",
-      "period": "one-time",
-      "includes": "Full source code, lifetime updates, priority support",
-      "cta": "Buy Trova",
-      "guarantee": "30-day money-back guarantee"
-    }
-  },
-  "freebie": {
-    "title": "The AI Ops Security Playbook",
-    "subtitle": "5 strategies to secure your operations without slowing down innovation.",
-    "description": "After years running operations at a fintech-adjacent company while building security tools in my spare time, I've learned what actually works. This playbook distills the tactics I use daily — no theory, just field-tested practices.",
-    "whatsInside": [
-      "The ops-security alignment framework",
-      "3 automation plays that save 10+ hours/week",
-      "How to build a security culture without fear",
-      "The toolchain I actually use (open source)",
-      "My personal incident response checklist"
-    ],
-    "form": {
-      "namePlaceholder": "Your name",
-      "emailPlaceholder": "you@company.com",
-      "cta": "Send Me the Playbook",
-      "sending": "Sending...",
-      "success": "Check your inbox! The playbook is on its way.",
-      "privacy": "No spam. Unsubscribe anytime."
-    }
-  },
-  "about": {
-    "title": "About Riccardo",
-    "subtitle": "Operations leader. Tool builder. Automation obsessive. PMP® certified.",
-    "intro": "I'm Head of Operations at Ciao Elsa, a pension-fund brokerage and partner of Allianz. I manage 800+ active cases with a TrustScore of 4.9/5, real-time SLA dashboards, and a centralized knowledge management system that eliminated onboarding time.",
-    "story": [
-      "I started in operations retail management at In's Mercato, Aldi, and Terranova — learning team leadership, shift planning, cost control, and operational KPIs on the ground. Then I moved into IT at Accenture, where I built web applications and introduced new operational procedures that delivered +30% efficiency and -15% administrative errors in the first quarter.",
-      "At Esse Solutions, I managed an enterprise digital project portfolio worth €500K+, coordinating distributed teams of 8-12 across BE/FE, UX/UI, and integrators on eCommerce B2B and PIM/DAM solutions. I introduced Agile processes that boosted team productivity by 25% and reduced time-to-market by 40%.",
-      "Today, as Head of Operations at Ciao Elsa, I build scalable operational architectures — CRM, KPI systems, team governance — that transform pension advisory complexity into automated processes. Outside work, I build VulnClaw (AI-driven pentesting) and Trova (SaaS boilerplate) because the best operators are also builders."
-    ],
-    "philosophy": "Most companies struggle to grow because operations implode under the weight of new clients. My job is to make sure that doesn't happen. I combine methodological rigor (PMP®) with startup velocity, turning bottlenecks into predictable, data-driven processes.",
-    "certifications": [
-      "PMP® — Project Management Professional (2026)",
-      "Cisco Cybersecurity Operation Associate (2024)",
-      "Google Data Analyst Certificate (2023)",
-      "Pimcore Consultant Certified (2024)"
-    ],
-    "skills": [
-      "Project Management", "Agile/Scrum/Kanban", "Budget & Risk Management",
-      "eCommerce (Adobe Commerce/Magento, Shopware)", "PIM/DAM (Pimcore)",
-      "SAP UI5", "JavaScript", "Python", "SQL", "HTML/CSS",
-      "Jira", "Confluence", "MS Project",
-      "Data Analysis & Reporting", "Process Documentation",
-      "AI Tools for Operations", "Knowledge Management"
-    ],
-    "cta": "Let's Talk"
-  },
-  "contact": {
-    "title": "Get in Touch",
-    "subtitle": "Building something interesting? Let's talk operations, security, or tools.",
-    "form": {
-      "name": "Name",
-      "namePlaceholder": "Your name",
-      "email": "Email",
-      "emailPlaceholder": "you@company.com",
-      "message": "Message",
-      "messagePlaceholder": "What are you building?",
-      "submit": "Send Message",
-      "sending": "Sending...",
-      "success": "Thanks! I'll get back to you within 24 hours.",
-      "error": "Something went wrong. Try emailing me directly."
-    },
-    "email": "riccardobozzato@gmail.com",
-    "github": "github.com/Riccardobozzato94",
-    "linkedin": "linkedin.com/in/riccardobozzato"
-  },
-  "notFound": {
-    "title": "404",
-    "subtitle": "This page doesn't exist.",
-    "description": "Either it never did, or I broke something. Either way, let's get you back on track.",
-    "cta": "Go Home"
-  }
+    "site":  {
+                 "title":  "Riccardo Bozzato",
+                 "tagline":  "Operations & Delivery Consultant | PMP® | I bring order to growing companies: processes, projects, teams.",
+                 "description":  "I bring order to growing digital companies. PMP® certified, enterprise project portfolio worth €500K+, teams of up to 12, 40% time-to-market reduction. Turning operational chaos into predictable, data-driven processes. Also building tools: VulnClaw (AI security) and Trova (SaaS boilerplate)."
+             },
+    "nav":  {
+                "home":  "Home",
+                "projects":  "Projects",
+                "panificio":  "Panificio",
+                "trova":  "Trova",
+                "freebie":  "Free Guide",
+                "about":  "About",
+                "contact":  "Contact"
+            },
+    "home":  {
+                 "heroTitle":  "Hi, I'm Riccardo",
+                 "heroRole":  "Operations & Delivery Consultant | PMP®",
+                 "heroTagline":  "I bring order to growing digital companies. €500K+ portfolio, cross-functional teams, data-driven processes. My job? Making sure operations carry the weight of growth — so everything else follows.",
+                 "heroCta":  "See My Work",
+                 "heroCta2":  "Get the Free Guide",
+                 "featuredTitle":  "Featured Projects",
+                 "featuredSubtitle":  "Things I built because the existing ones weren't good enough.",
+                 "viewProject":  "View Project →",
+                 "aboutTitle":  "Operational order. On-time delivery.",
+                 "aboutText":  "I work as an Operations & Delivery Consultant for companies that are growing and need structure without losing speed. PMP® certified, managed enterprise projects worth €500K+ coordinating teams of 8-12 across eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). In my spare time I build things: VulnClaw (AI pentesting) and Trova (SaaS boilerplate).",
+                 "aboutCta":  "Read My Story →",
+                 "freebieTitle":  "Free: The AI Ops Security Playbook",
+                 "freebieDesc":  "5 strategies I use to keep operations secure without slowing innovation. No theory — just field-tested tactics.",
+                 "freebieCta":  "Download Free →"
+             },
+    "footer":  {
+                   "copyright":  "© {year} Riccardo Bozzato. All rights reserved.",
+                   "builtWith":  "Built with Next.js & shadcn/ui",
+                   "social":  {
+                                  "github":  "GitHub",
+                                  "linkedin":  "LinkedIn",
+                                  "email":  "Email"
+                              }
+               },
+    "projects":  {
+                     "title":  "Projects",
+                     "subtitle":  "Things I built because the existing ones weren't good enough.",
+                     "vulnclaw":  {
+                                      "title":  "VulnClaw",
+                                      "subtitle":  "AI-Driven Penetration Testing CLI",
+                                      "description":  "An intelligent CLI agent that automates security assessments. AI-powered recon, vulnerability scanning, and exploitation — all from your terminal. Open source.",
+                                      "features":  [
+                                                       "AI-driven recon and target analysis",
+                                                       "Automated vulnerability scanning",
+                                                       "Smart exploitation suggestions",
+                                                       "Terminal UI with Rich and prompt_toolkit"
+                                                   ],
+                                      "techstack":  [
+                                                        "Python",
+                                                        "Typer",
+                                                        "Rich",
+                                                        "Prompt Toolkit",
+                                                        "AI/LLM"
+                                                    ],
+                                      "cta":  "Learn More",
+                                      "status":  "Alpha v0.3.2"
+                                  },
+                     "trova":  {
+                                   "title":  "Trova",
+                                   "subtitle":  "SaaS Boilerplate That Ships",
+                                   "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Everything you need to launch a SaaS in days, not weeks.",
+                                   "features":  [
+                                                    "Next.js 16 + Turbopack",
+                                                    "Better Auth (magic link, OAuth, 2FA)",
+                                                    "Drizzle ORM + PostgreSQL",
+                                                    "i18n (en/it) out of the box",
+                                                    "Resend + React Email templates",
+                                                    "Stripe billing ready"
+                                                ],
+                                   "cta":  "Get Trova"
+                               },
+                     "panificio":  {
+                                       "title":  "Panificio Da Sergio",
+                                       "subtitle":  "Artisan Bakery & E-Commerce",
+                                       "description":  "A full Next.js e-commerce site for a traditional Italian bakery. Product catalog, multi-language, SEO, online ordering. A gift for family.",
+                                       "features":  [
+                                                        "Full product catalog",
+                                                        "Multi-language (EN/IT)",
+                                                        "SEO for local search",
+                                                        "Admin order dashboard",
+                                                        "Responsive design"
+                                                    ],
+                                       "techstack":  [
+                                                         "Next.js",
+                                                         "Tailwind CSS",
+                                                         "TypeScript",
+                                                         "i18n",
+                                                         "PostgreSQL"
+                                                     ],
+                                       "cta":  "View Project",
+                                       "note":  "A gift for family"
+                                   }
+                 },
+    "trova":  {
+                  "title":  "Trova",
+                  "tagline":  "The SaaS boilerplate that actually ships.",
+                  "description":  "Stop rebuilding auth, emails, billing, and i18n for every project. Trova gives you a production-ready foundation so you can focus on what makes your SaaS unique.",
+                  "features":  {
+                                   "auth":  "Better Auth — magic links, OAuth (Google, GitHub), 2FA, session management",
+                                   "database":  "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
+                                   "email":  "Resend + React Email — transactional emails, 5 templates included",
+                                   "i18n":  "next-intl — English and Italian out of the box, easy to extend",
+                                   "billing":  "Stripe — subscriptions, webhooks, customer portal",
+                                   "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, customizable"
+                               },
+                  "pricing":  {
+                                  "title":  "Simple Pricing",
+                                  "subtitle":  "One price. Everything included.",
+                                  "price":  "€49",
+                                  "period":  "one-time",
+                                  "includes":  "Full source code, lifetime updates, priority support",
+                                  "cta":  "Buy Trova",
+                                  "guarantee":  "30-day money-back guarantee"
+                              }
+              },
+    "freebie":  {
+                    "title":  "The AI Ops Security Playbook",
+                    "subtitle":  "5 strategies to secure your operations without slowing down innovation.",
+                    "description":  "After years running operations while building security tools, I've distilled what actually works. This playbook contains the tactics I use daily — no theory, just field-tested practice.",
+                    "whatsInside":  [
+                                        "The ops-security alignment framework",
+                                        "3 automation plays that save 10+ hours/week",
+                                        "How to build a security culture without fear",
+                                        "The open source toolchain I actually use",
+                                        "My personal incident response checklist"
+                                    ],
+                    "form":  {
+                                 "namePlaceholder":  "Your name",
+                                 "emailPlaceholder":  "you@company.com",
+                                 "cta":  "Send Me the Playbook",
+                                 "sending":  "Sending...",
+                                 "success":  "Check your inbox! The playbook is on its way.",
+                                 "privacy":  "No spam. Unsubscribe anytime.",
+                                 "name":  "Name",
+                                 "email":  "Email",
+                                 "error":  "Something went wrong. Try again."
+                             }
+                 },
+    "about":  {
+                  "title":  "About Riccardo",
+                  "subtitle":  "Operations & Delivery. PMP\u00ae. Build-at-heart.",
+                  "intro":  "I'm an Operations & Delivery Consultant, PMP\u00ae certified. I bring order to growing digital companies: enterprise projects, cross-functional teams, data-driven processes. \u20ac500K+ portfolio.",
+                  "story":  [
+                                "My path started in retail management \u2014 In\u2019s Mercato, Aldi, Terranova \u2014 learning operational leadership, team management, and KPIs on the ground. Then the jump to Accenture: enterprise application development (SAP UI5, JavaScript), process automation with measurable results: +30% efficiency, -15% administrative errors.",
+                                "At Esse Solutions I managed a digital project portfolio worth \u20ac500K, coordinating distributed teams of 8-12 across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). I introduced structured Agile processes with concrete outcomes: +25% team productivity, -40% time-to-market, -20% project completion times.",
+                                "Today I work as an independent consultant. I help digital companies build scalable operational architectures \u2014 processes, KPIs, governance \u2014 that turn complexity into automation. In my spare time I build tools: VulnClaw (AI pentesting) and Trova (SaaS boilerplate). Because the best operations builders are also product builders."
+                            ],
+                  "philosophy":  "The problem isn\u2019t a lack of talent or ideas. The problem is that operations collapse under the weight of growth. My job is to build the operational architecture that turns potential into predictable execution. I combine methodological rigor (PMP\u00ae), enterprise experience, and operational speed. No bloat. No friction. Just processes that work.",
+                  "certifications":  [
+                                         "PMP\u00ae \u2014 Project Management Professional (2026)",
+                                         "Cisco Cybersecurity Operation Associate (2024)",
+                                         "Google Data Analyst Certificate (2023)",
+                                         "Pimcore Consultant Certified (2024)"
+                                     ],
+                  "skills":  [
+                                 "Project Management",
+                                 "Agile/Scrum/Kanban",
+                                 "Budget & Risk Management",
+                                 "eCommerce (Adobe Commerce/Magento, Shopware)",
+                                 "PIM/DAM (Pimcore)",
+                                 "SAP UI5",
+                                 "JavaScript",
+                                 "Python",
+                                 "SQL",
+                                 "HTML/CSS",
+                                 "Jira",
+                                 "Confluence",
+                                 "MS Project",
+                                 "Data Analysis & Reporting",
+                                 "Process Documentation",
+                                 "AI Tools for Operations",
+                                 "Knowledge Management"
+                             ],
+                  "cta":  "Let's Talk",
+                  "ctaTitle":  "Let's Build Something",
+                  "ctaDesc":  "Have a project, idea, or just want to chat? I'm always open to interesting conversations."
+              },
+    "contact":  {
+                    "title":  "Get in Touch",
+                    "subtitle":  "Building something interesting? Let's talk operations, security, or tools.",
+                    "form":  {
+                                 "name":  "Name",
+                                 "namePlaceholder":  "Your name",
+                                 "email":  "Email",
+                                 "emailPlaceholder":  "you@company.com",
+                                 "message":  "Message",
+                                 "messagePlaceholder":  "What are you building?",
+                                 "submit":  "Send Message",
+                                 "sending":  "Sending...",
+                                 "success":  "Thanks! I'll get back to you within 24 hours.",
+                                 "error":  "Something went wrong. Try emailing me directly."
+                             },
+                    "email":  "riccardobozzato@gmail.com",
+                    "github":  "github.com/Riccardobozzato94",
+                    "linkedin":  "linkedin.com/in/riccardobozzato"
+                },
+    "notFound":  {
+                    "title":  "404",
+                    "subtitle":  "This page doesn't exist.",
+                    "description":  "Either it never did, or I broke something. Either way, let's get you back on track.",
+                    "cta":  "Go Home"
+                }
 }

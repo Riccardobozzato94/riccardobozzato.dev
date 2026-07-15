@@ -1,7 +1,7 @@
 # Riccardo Bozzato — Personal Brand & Portfolio
 
-> Head of Ops & AI Security Builder.
-> Operations leader building the tools I wish existed.
+> Operations & Delivery Consultant | PMP®.
+> Building the tools I wish existed.
 
 Built with [Next.js 16](https://nextjs.org/), [Tailwind v4](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/), and [next-intl](https://next-intl.dev/).
 

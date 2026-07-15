@@ -1,7 +1,7 @@
 # Riccardo Bozzato — Design System MASTER
 
 ## Identity
-- **Head of Ops** at Ciao Elsa (pension-fund broker, Allianz partner)
+- **Operations & Delivery Consultant** | PMP® — Enterprise delivery, scalable operations
 - **Security Tool Builder** — VulnClaw (AI pentesting CLI)
 - **Boilerplate Creator** — Trova (SaaS boilerplate)
 - **Vibe**: "Midnight precision with a spark of innovation" — Dark, professional, tech-forward, warm accents

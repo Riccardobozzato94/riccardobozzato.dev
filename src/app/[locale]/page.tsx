@@ -1,8 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download } from "lucide-react";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
@@ -10,30 +8,6 @@ import ProjectCard from "@/components/ProjectCard";
 export default async function HomePage() {
   const t = await getTranslations("home");
   const tp = await getTranslations("projects");
-
-  const projects = [
-    {
-      title: tp("vulnclaw.title"),
-      subtitle: tp("vulnclaw.subtitle"),
-      description: tp("vulnclaw.description"),
-      tags: ["AI", "Security", "Python"],
-      href: "/projects/vulnclaw",
-    },
-    {
-      title: tp("trova.title"),
-      subtitle: tp("trova.subtitle"),
-      description: tp("trova.description"),
-      tags: ["Next.js", "SaaS", "TypeScript"],
-      href: "/trova",
-    },
-    {
-      title: tp("panificio.title"),
-      subtitle: tp("panificio.subtitle"),
-      description: tp("panificio.description"),
-      tags: ["Next.js", "E-Commerce", "Family"],
-      href: "/projects/panificio",
-    },
-  ];
 
   return (
     <>
@@ -55,16 +29,18 @@ export default async function HomePage() {
               {t("heroTagline")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button asChild size="lg">
-                <Link href="/projects">
-                  {t("heroCta")} <ArrowRight className="ml-1 size-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/freebie">
-                  <Download className="mr-1 size-4" /> {t("heroCta2")}
-                </Link>
-              </Button>
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-center gap-1 h-10 rounded-md bg-primary text-primary-foreground shadow hover:bg-primary/90 px-8 text-base transition-colors"
+              >
+                {t("heroCta")} <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                href="/freebie"
+                className="inline-flex items-center justify-center gap-1 h-10 rounded-md border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground px-8 text-base transition-colors"
+              >
+                <Download className="size-4" /> {t("heroCta2")}
+              </Link>
             </div>
           </div>
         </div>
@@ -80,17 +56,42 @@ export default async function HomePage() {
             {t("featuredSubtitle")}
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+        <div className="max-w-6xl mx-auto space-y-8">
+          {/* Featured: Trova */}
+          <ProjectCard
+            title={tp("trova.title")}
+            subtitle={tp("trova.subtitle")}
+            description={tp("trova.description")}
+            tags={["Next.js 16", "SaaS", "TypeScript", "$149"]}
+            href="/trova"
+            image="/images/trova-home.png"
+            badge="Product"
+            badgeColor="bg-accent/10 text-accent"
+            featured
+          />
+          {/* VulnClaw + Panificio */}
+          <div className="grid md:grid-cols-2 gap-8">
             <ProjectCard
-              key={project.title}
-              title={project.title}
-              subtitle={project.subtitle}
-              description={project.description}
-              tags={project.tags}
-              href={project.href}
+              title={tp("vulnclaw.title")}
+              subtitle={tp("vulnclaw.subtitle")}
+              description={tp("vulnclaw.description")}
+              tags={["AI", "Security", "Python"]}
+              href="/projects/vulnclaw"
+              image="/images/vulnclaw-scan.png"
+              badge="CLI Tool"
+              badgeColor="bg-blue-500/10 text-blue-400"
             />
-          ))}
+            <ProjectCard
+              title={tp("panificio.title")}
+              subtitle={tp("panificio.subtitle")}
+              description={tp("panificio.description")}
+              tags={["Next.js", "E-Commerce", "Family"]}
+              href="/projects/panificio"
+              image="/images/panificio-home.png"
+              badge="Family Gift"
+              badgeColor="bg-amber-500/10 text-amber-400"
+            />
+          </div>
         </div>
       </Section>
 
@@ -103,11 +104,9 @@ export default async function HomePage() {
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">
             {t("aboutText")}
           </p>
-          <Button variant="link" asChild>
-            <Link href="/about" className="text-lg">
-              {t("aboutCta")}
-            </Link>
-          </Button>
+          <Link href="/about" className="text-lg text-primary underline-offset-4 hover:underline">
+            {t("aboutCta")}
+          </Link>
         </div>
       </Section>
 
@@ -121,11 +120,12 @@ export default async function HomePage() {
             <p className="text-muted-foreground text-lg">
               {t("freebieDesc")}
             </p>
-            <Button asChild size="lg" className="mt-2">
-              <Link href="/freebie">
-                {t("freebieCta")}
-              </Link>
-            </Button>
+            <Link
+              href="/freebie"
+              className="inline-flex items-center justify-center h-10 rounded-md bg-primary text-primary-foreground shadow hover:bg-primary/90 px-8 text-base transition-colors mt-2"
+            >
+              {t("freebieCta")}
+            </Link>
           </CardContent>
         </Card>
       </Section>

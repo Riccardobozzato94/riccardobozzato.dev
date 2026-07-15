@@ -142,7 +142,7 @@ export default function ContactPage() {
                 </div>
               </a>
               <a
-                href="#"
+                href={`https://${t("linkedin")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"

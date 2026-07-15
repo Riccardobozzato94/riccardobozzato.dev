@@ -1,181 +1,209 @@
 {
-  "site": {
-    "title": "Riccardo Bozzato",
-    "tagline": "Head of Operations | Guido team, automatizzo processi e trasformo il caos operativo in dashboard misurabili (PMP®)",
-    "description": "Head of Operations in Ciao Elsa. Leader operativo certificato PMP® che costruisce strumenti di sicurezza (VulnClaw) e boilerplate SaaS (Trova) nel tempo libero. Trasformo colli di bottiglia in processi prevedibili basati sui dati."
-  },
-  "nav": {
-    "home": "Home",
-    "projects": "Progetti",
-    "panificio": "Panificio",
-    "trova": "Trova",
-    "freebie": "Guida Gratuita",
-    "about": "Chi Sono",
-    "contact": "Contatti"
-  },
-  "home": {
-    "heroTitle": "Ciao, sono Riccardo",
-    "heroRole": "Head of Operations & Builder",
-    "heroTagline": "Gestisco le operations in Ciao Elsa e costruisco strumenti di sicurezza. Quando le aziende crescono, le operations o reggono il peso o soffocano. Faccio in modo che sia la prima opzione.",
-    "heroCta": "Vedi i Miei Lavori",
-    "heroCta2": "Scarica la Guida Gratuita",
-    "featuredTitle": "Progetti in Evidenza",
-    "featuredSubtitle": "Strumenti che ho costruito perché quelli esistenti non bastavano.",
-    "viewProject": "Vedi Progetto →",
-    "aboutTitle": "Operations incontra Ingegneria",
-    "aboutText": "Sono Head of Operations in Ciao Elsa (brokeraggio fondi pensione, partner Allianz), dove costruisco architetture operative scalabili — CRM, sistemi KPI, governance dei team — che permettono all'azienda di crescere senza rompersi. Certificato PMP®. Fuori dal lavoro sviluppo VulnClaw (penetration testing con AI) e Trova (un boilerplate SaaS).",
-    "aboutCta": "Leggi la Mia Storia →",
-    "freebieTitle": "Gratis: AI Ops Security Playbook",
-    "freebieDesc": "5 strategie che uso per tenere al sicuro le operations senza rallentare l'innovazione. Niente teoria, solo tattiche dal campo.",
-    "freebieCta": "Scarica Gratis →"
-  },
-  "footer": {
-    "copyright": "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
-    "builtWith": "Realizzato con Next.js & shadcn/ui",
-    "social": {
-      "github": "GitHub",
-      "linkedin": "LinkedIn",
-      "email": "Email"
-    }
-  },
-  "projects": {
-    "title": "Progetti",
-    "subtitle": "Strumenti che ho costruito perché quelli esistenti non erano abbastanza buoni.",
-    "vulnclaw": {
-      "title": "VulnClaw",
-      "subtitle": "CLI per Penetration Testing con AI",
-      "description": "Un agente CLI intelligente che automatizza le valutazioni di sicurezza. Ricognizione basata su AI, scansione vulnerabilità e exploitation — tutto dal terminale.",
-      "features": [
-        "Ricognizione AI e analisi dei target",
-        "Scansione automatica delle vulnerabilità",
-        "Suggerimenti intelligenti per l'exploitation",
-        "Interfaccia terminale con Rich e prompt_toolkit"
-      ],
-      "techstack": ["Python", "Typer", "Rich", "Prompt Toolkit", "AI/LLM"],
-      "cta": "Scopri di Più",
-      "status": "Alpha v0.3.2"
-    },
-    "trova": {
-      "title": "Trova",
-      "subtitle": "Il Boilerplate SaaS che Va in Produzione",
-      "description": "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, email con Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non in settimane.",
-      "features": [
-        "Next.js 16 + Turbopack",
-        "Better Auth (magic link, OAuth, 2FA)",
-        "Drizzle ORM + PostgreSQL",
-        "i18n (en/it) già pronto all'uso",
-        "Template email con Resend + React Email",
-        "Fatturazione Stripe già configurata"
-      ],
-      "cta": "Ottieni Trova"
-    },
-    "panificio": {
-      "title": "Panificio Da Sergio",
-      "subtitle": "Panetteria Artigianale & E-Commerce",
-      "description": "Un sito e-commerce Next.js completo per un panificio tradizionale italiano. Catalogo prodotti, supporto multilingua, ottimizzato SEO e ordinazioni online. Realizzato come regalo per la famiglia.",
-      "features": [
-        "Catalogo prodotti completo con categorie",
-        "Multi-lingua (EN/IT)",
-        "Ottimizzato SEO per la ricerca locale",
-        "Dashboard admin per la gestione ordini",
-        "Design responsivo"
-      ],
-      "techstack": ["Next.js", "Tailwind CSS", "TypeScript", "i18n", "PostgreSQL"],
-      "cta": "Vedi Progetto",
-      "note": "Un regalo per la famiglia"
-    }
-  },
-  "trova": {
-    "title": "Trova",
-    "tagline": "Il boilerplate SaaS che va davvero in produzione.",
-    "description": "Smetti di re-inventare autenticazione, email, fatturazione e i18n per ogni progetto. Trova ti dà una base pronta per la produzione, così puoi concentrarti su ciò che rende unico il tuo SaaS.",
-    "features": {
-      "auth": "Better Auth — magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
-      "database": "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
-      "email": "Resend + React Email — email transazionali bellissime, 5 template inclusi",
-      "i18n": "next-intl — Inglese e Italiano già pronti, facili da estendere",
-      "billing": "Stripe — piani di abbonamento, webhook, portale clienti",
-      "ui": "shadcn/ui + Tailwind v4 — dark mode, responsive, personalizzabile"
-    },
-    "pricing": {
-      "title": "Prezzo Semplice",
-      "subtitle": "Un prezzo. Tutto incluso.",
-      "price": "€49",
-      "period": "una tantum",
-      "includes": "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
-      "cta": "Acquista Trova",
-      "guarantee": "Garanzia rimborso 30 giorni"
-    }
-  },
-  "freebie": {
-    "title": "AI Ops Security Playbook",
-    "subtitle": "5 strategie per proteggere le tue operations senza rallentare l'innovazione.",
-    "description": "Dopo anni di gestione operativa in un'azienda fintech e la costruzione di strumenti di sicurezza nel tempo libero, ho imparato cosa funziona davvero. Questo playbook racchiude le tattiche che uso ogni giorno — niente teoria, solo pratiche testate sul campo.",
-    "whatsInside": [
-      "Il framework per allineare operations e sicurezza",
-      "3 automazioni che fanno risparmiare 10+ ore a settimana",
-      "Come costruire una cultura della sicurezza senza paura",
-      "La toolchain che uso davvero (tutta open source)",
-      "La mia checklist personale per l'incident response"
-    ],
-    "form": {
-      "namePlaceholder": "Il tuo nome",
-      "emailPlaceholder": "tu@azienda.com",
-      "cta": "Inviami il Playbook",
-      "sending": "Invio in corso...",
-      "success": "Controlla la tua casella! Il playbook è in arrivo.",
-      "privacy": "Niente spam. Ti puoi cancellare quando vuoi."
-    }
-  },
-  "about": {
-    "title": "Su Riccardo",
-    "subtitle": "Leader delle operations. Costruttore di strumenti. Ossessionato dall'automazione. Certificato PMP®.",
-    "intro": "Sono Head of Operations in Ciao Elsa, una brokeraggio di fondi pensione partner di Allianz. Gestisco oltre 800 casi attivi con un TrustScore di 4.9/5, dashboard SLA in tempo reale e un sistema centralizzato di knowledge management che ha eliminato i tempi di onboarding.",
-    "story": [
-      "Ho iniziato nelle operations retail con In's Mercato, Aldi e Terranova — imparando sul campo la gestione dei team, la pianificazione dei turni, il controllo costi e i KPI operativi. Poi sono passato all'IT in Accenture, dove ho sviluppato applicazioni web e introdotto nuove procedure operative che hanno portato a +30% di efficienza e -15% di errori amministrativi già dal primo trimestre.",
-      "In Esse Solutions ho gestito un portafoglio di progetti digitali enterprise da oltre €500K, coordinando team distribuiti di 8-12 persone tra BE/FE, UX/UI e integratori su soluzioni eCommerce B2B e PIM/DAM. Ho introdotto processi Agile che hanno aumentato la produttività del team del 25% e ridotto il time-to-market del 40%.",
-      "Oggi, come Head of Operations in Ciao Elsa, costruisco architetture operative scalabili — CRM, sistemi KPI, governance dei team — che trasformano la complessità della consulenza pensionistica in processi automatizzati. Fuori dal lavoro sviluppo VulnClaw (pentesting con AI) e Trova (boilerplate SaaS), perché i migliori operatori sono anche costruttori."
-    ],
-    "philosophy": "Molte aziende faticano a crescere perché le operations implodono sotto il peso di nuovi clienti. Il mio lavoro è fare in modo che questo non accada. Combino rigore metodologico (PMP®) con la velocità di una startup, trasformando i colli di bottiglia in processi prevedibili basati sui dati.",
-    "certifications": [
-      "PMP® — Project Management Professional (2026)",
-      "Cisco Cybersecurity Operation Associate (2024)",
-      "Google Data Analyst Certificate (2023)",
-      "Pimcore Consultant Certified (2024)"
-    ],
-    "skills": [
-      "Project Management", "Agile/Scrum/Kanban", "Budget & Risk Management",
-      "eCommerce (Adobe Commerce/Magento, Shopware)", "PIM/DAM (Pimcore)",
-      "SAP UI5", "JavaScript", "Python", "SQL", "HTML/CSS",
-      "Jira", "Confluence", "MS Project",
-      "Data Analysis & Reporting", "Process Documentation",
-      "AI Tools for Operations", "Knowledge Management"
-    ],
-    "cta": "Parliamone"
-  },
-  "contact": {
-    "title": "Contattami",
-    "subtitle": "Stai costruendo qualcosa di interessante? Parliamo di operations, sicurezza o strumenti.",
-    "form": {
-      "name": "Nome",
-      "namePlaceholder": "Il tuo nome",
-      "email": "Email",
-      "emailPlaceholder": "tu@azienda.com",
-      "message": "Messaggio",
-      "messagePlaceholder": "Cosa stai costruendo?",
-      "submit": "Invia Messaggio",
-      "sending": "Invio in corso...",
-      "success": "Grazie! Ti risponderò entro 24 ore.",
-      "error": "Qualcosa è andato storto. Prova a scrivermi direttamente via email."
-    },
-    "email": "riccardobozzato@gmail.com",
-    "github": "github.com/Riccardobozzato94",
-    "linkedin": "linkedin.com/in/riccardobozzato"
-  },
-  "notFound": {
-    "title": "404",
-    "subtitle": "Questa pagina non esiste.",
-    "description": "O non è mai esistita, o ho combinato un pasticcio. In ogni caso, rimettiamoti in carreggiata.",
-    "cta": "Torna alla Home"
-  }
+    "site":  {
+                 "title":  "Riccardo Bozzato",
+                 "tagline":  "Operations & Delivery Consultant | PMP® | Porto ordine nelle aziende che crescono: processi, progetti, team.",
+                 "description":  "Porto ordine nelle aziende digitali che crescono. Certificato PMP®, portfolio progetti enterprise da €500K, team fino a 12 persone, -40% time-to-market. Trasformo il caos operativo in processi prevedibili e data-driven. Costruisco anche strumenti: VulnClaw (AI security) e Trova (SaaS boilerplate)."
+             },
+    "nav":  {
+                "home":  "Home",
+                "projects":  "Progetti",
+                "panificio":  "Panificio",
+                "trova":  "Trova",
+                "freebie":  "Guida Gratuita",
+                "about":  "Chi Sono",
+                "contact":  "Contatti"
+            },
+    "home":  {
+                 "heroTitle":  "Ciao, sono Riccardo",
+                 "heroRole":  "Operations & Delivery Consultant | PMP®",
+                 "heroTagline":  "Porto ordine nelle aziende digitali che crescono. Portfolio da €500K, team cross-funzionali, processi data-driven. Il mio lavoro? Fare in modo che le operations reggano il peso della crescita — così tutto il resto segue.",
+                 "heroCta":  "Vedi i Miei Lavori",
+                 "heroCta2":  "Scarica la Guida Gratuita",
+                 "featuredTitle":  "Progetti in Evidenza",
+                 "featuredSubtitle":  "Cose che ho costruito perché quelle esistenti non erano abbastanza buone.",
+                 "viewProject":  "Vedi Progetto →",
+                 "aboutTitle":  "Ordine operativo. Consegna puntuale.",
+                 "aboutText":  "Opero come consulente Operations & Delivery per aziende che crescono e hanno bisogno di struttura senza perdere velocità. Certificato PMP®, ho gestito progetti enterprise da €500K+ coordinando team di 8-12 persone su piattaforme eCommerce (Magento, Shopware) e PIM/DAM (Pimcore). Nel tempo libero costruisco strumenti: VulnClaw (pentesting AI) e Trova (boilerplate SaaS).",
+                 "aboutCta":  "Leggi la Mia Storia →",
+                 "freebieTitle":  "Gratis: AI Ops Security Playbook",
+                 "freebieDesc":  "5 strategie che uso per tenere al sicuro le operations senza frenare l\u0027innovazione. Niente teoria: solo tattiche testate sul campo.",
+                 "freebieCta":  "Scarica Gratis →"
+             },
+    "footer":  {
+                   "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
+                   "builtWith":  "Realizzato con Next.js \u0026 shadcn/ui",
+                   "social":  {
+                                  "github":  "GitHub",
+                                  "linkedin":  "LinkedIn",
+                                  "email":  "Email"
+                              }
+               },
+    "projects":  {
+                     "title":  "Progetti",
+                     "subtitle":  "Cose che ho costruito perché quelle esistenti non erano abbastanza buone.",
+                     "vulnclaw":  {
+                                      "title":  "VulnClaw",
+                                      "subtitle":  "CLI per Penetration Testing con AI",
+                                      "description":  "Un agente CLI che automatizza le valutazioni di sicurezza. Ricognizione basata su AI, scansione vulnerabilità e exploitation — tutto dal terminale. Open source.",
+                                      "features":  [
+                                                       "Ricognizione AI e analisi dei target",
+                                                       "Scansione automatica delle vulnerabilità",
+                                                       "Suggerimenti intelligenti per l\u0027exploitation",
+                                                       "Interfaccia terminale con Rich e prompt_toolkit"
+                                                   ],
+                                      "techstack":  [
+                                                        "Python",
+                                                        "Typer",
+                                                        "Rich",
+                                                        "Prompt Toolkit",
+                                                        "AI/LLM"
+                                                    ],
+                                      "cta":  "Scopri di Più",
+                                      "status":  "Alpha v0.3.2"
+                                  },
+                     "trova":  {
+                                   "title":  "Trova",
+                                   "subtitle":  "SaaS Boilerplate che va in produzione",
+                                   "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non in settimane.",
+                                   "features":  [
+                                                    "Next.js 16 + Turbopack",
+                                                    "Better Auth (magic link, OAuth, 2FA)",
+                                                    "Drizzle ORM + PostgreSQL",
+                                                    "i18n (en/it) già pronto",
+                                                    "Email con Resend + React Email",
+                                                    "Stripe già configurato"
+                                                ],
+                                   "cta":  "Ottieni Trova"
+                               },
+                     "panificio":  {
+                                       "title":  "Panificio Da Sergio",
+                                       "subtitle":  "Panetteria Artigianale \u0026 E-Commerce",
+                                       "description":  "E-commerce Next.js per un panificio tradizionale italiano. Catalogo, multilingua, SEO, ordinazioni online. Un regalo per la famiglia.",
+                                       "features":  [
+                                                        "Catalogo prodotti completo",
+                                                        "Multi-lingua (EN/IT)",
+                                                        "SEO per ricerca locale",
+                                                        "Dashboard admin ordini",
+                                                        "Design responsivo"
+                                                    ],
+                                       "techstack":  [
+                                                         "Next.js",
+                                                         "Tailwind CSS",
+                                                         "TypeScript",
+                                                         "i18n",
+                                                         "PostgreSQL"
+                                                     ],
+                                       "cta":  "Vedi Progetto",
+                                       "note":  "Un regalo per la famiglia"
+                                   }
+                 },
+    "trova":  {
+                  "title":  "Trova",
+                  "tagline":  "Il boilerplate SaaS che va davvero in produzione.",
+                  "description":  "Smetti di re-inventare autenticazione, email, fatturazione e i18n per ogni progetto. Trova ti dà una base pronta per la produzione, così puoi concentrarti su ciò che rende unico il tuo SaaS.",
+                  "features":  {
+                                   "auth":  "Better Auth — magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
+                                   "database":  "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
+                                   "email":  "Resend + React Email — email transazionali, 5 template inclusi",
+                                   "i18n":  "next-intl — Inglese e Italiano già pronti, estendibili",
+                                   "billing":  "Stripe — piani abbonamento, webhook, portale clienti",
+                                   "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, custom"
+                               },
+                  "pricing":  {
+                                  "title":  "Prezzo Semplice",
+                                  "subtitle":  "Un prezzo. Tutto incluso.",
+                                  "price":  "€49",
+                                  "period":  "una tantum",
+                                  "includes":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
+                                  "cta":  "Acquista Trova",
+                                  "guarantee":  "Garanzia rimborso 30 giorni"
+                              }
+              },
+    "freebie":  {
+                    "title":  "AI Ops Security Playbook",
+                    "subtitle":  "5 strategie per proteggere le operations senza rallentare l\u0027innovazione.",
+                    "description":  "Dopo anni di gestione operativa e costruzione di strumenti di sicurezza, ho distillato ciò che funziona davvero. Questo playbook contiene le tattiche che uso — niente teoria, solo pratica testata sul campo.",
+                    "whatsInside":  [
+                                        "Il framework per allineare operations e sicurezza",
+                                        "3 automazioni che recuperano 10+ ore a settimana",
+                                        "Come costruire cultura della sicurezza senza paura",
+                                        "La toolchain open source che uso davvero",
+                                        "La mia checklist personale per incident response"
+                                    ],
+                    "form":  {
+                                 "namePlaceholder":  "Il tuo nome",
+                                 "emailPlaceholder":  "tu@azienda.com",
+                                 "cta":  "Inviami il Playbook",
+                                 "sending":  "Invio in corso...",
+                                 "success":  "Controlla la tua casella! Il playbook è in arrivo.",
+                                 "privacy":  "Niente spam. Ti cancelli quando vuoi.",
+                                 "name":  "Nome",
+                                 "email":  "Email",
+                                 "error":  "Qualcosa è andato storto. Riprova."
+                             }
+                },
+    "about":  {
+                  "title":  "Su Riccardo",
+                  "subtitle":  "Operations & Delivery. PMP®. Build-at-heart.",
+                  "intro":  "Sono un consulente Operations & Delivery certificato PMP®. Porto ordine nelle aziende digitali che crescono: progetti enterprise, team cross-funzionali, processi data-driven. Portfolio da €500K+.",
+                  "story":  [
+                                "Il mio percorso inizia nel retail management — In\u0027s Mercato, Aldi, Terranova — dove ho imparato leadership operativa, gestione team e KPI sul campo. Poi il salto in Accenture: sviluppo applicazioni enterprise (SAP UI5, JavaScript), automazione processi con risultati misurabili: +30% efficienza, -15% errori amministrativi.",
+                                "In Esse Solutions ho gestito un portfolio progetti digitali da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto processi Agile strutturati con risultati concreti: +25% produttività team, -40% time-to-market, -20% tempi di completamento.",
+                                "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire architetture operative scalabili — processi, KPI, governance — che trasformano la complessità in automazione. Nel tempo libero costruisco strumenti: VulnClaw (pentesting AI) e Trova (boilerplate SaaS). Perché chi costruisce operations migliori è anche chi costruisce prodotti."
+                            ],
+                  "philosophy":  "Il problema non è la mancanza di talento o di idee. Il problema è che le operations collassano sotto il peso della crescita. Il mio lavoro è costruire l\u0027architettura operativa che trasforma il potenziale in esecuzione prevedibile. Combino rigore metodologico (PMP®), esperienza enterprise e velocità operativa. Niente buffer. Niente attriti. Solo processi che funzionano.",
+                  "certifications":  [
+                                         "PMP® — Project Management Professional (2026)",
+                                         "Cisco Cybersecurity Operation Associate (2024)",
+                                         "Google Data Analyst Certificate (2023)",
+                                         "Pimcore Consultant Certified (2024)"
+                                     ],
+                  "skills":  [
+                                 "Project Management",
+                                 "Agile/Scrum/Kanban",
+                                 "Budget \u0026 Risk Management",
+                                 "eCommerce (Adobe Commerce/Magento, Shopware)",
+                                 "PIM/DAM (Pimcore)",
+                                 "SAP UI5",
+                                 "JavaScript",
+                                 "Python",
+                                 "SQL",
+                                 "HTML/CSS",
+                                 "Jira",
+                                 "Confluence",
+                                 "MS Project",
+                                 "Data Analysis \u0026 Reporting",
+                                 "Process Documentation",
+                                 "AI Tools for Operations",
+                                 "Knowledge Management"
+                             ],
+                  "cta":  "Parliamone",
+                "ctaTitle":  "Parliamone",
+                "ctaDesc":  "Hai un progetto, un'idea o semplicemente curiosità? Sono sempre aperto a conversazioni interessanti."
+              },
+    "contact":  {
+                    "title":  "Contattami",
+                    "subtitle":  "Stai costruendo qualcosa di interessante? Parliamo di operations, sicurezza o strumenti.",
+                    "form":  {
+                                 "name":  "Nome",
+                                 "namePlaceholder":  "Il tuo nome",
+                                 "email":  "Email",
+                                 "emailPlaceholder":  "tu@azienda.com",
+                                 "message":  "Messaggio",
+                                 "messagePlaceholder":  "Cosa stai costruendo?",
+                                 "submit":  "Invia Messaggio",
+                                 "sending":  "Invio in corso...",
+                                 "success":  "Grazie! Ti risponderò entro 24 ore.",
+                                 "error":  "Qualcosa è andato storto. Prova a scrivermi direttamente via email."
+                             },
+                    "email":  "riccardobozzato@gmail.com",
+                    "github":  "github.com/Riccardobozzato94",
+                    "linkedin":  "linkedin.com/in/riccardobozzato"
+                },
+    "notFound":  {
+                     "title":  "404",
+                     "subtitle":  "Questa pagina non esiste.",
+                     "description":  "O non è mai esistita, o ho combinato un pasticcio. In ogni caso, rimettiamoti in carreggiata.",
+                     "cta":  "Torna alla Home"
+                 }
 }

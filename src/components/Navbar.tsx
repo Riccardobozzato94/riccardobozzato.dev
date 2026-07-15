@@ -10,8 +10,6 @@ import { Button } from "@/components/ui/button";
 const NAV_ITEMS = [
   { key: "home", href: "/" },
   { key: "projects", href: "/projects" },
-  { key: "panificio", href: "/projects/panificio" },
-  { key: "trova", href: "/trova" },
   { key: "freebie", href: "/freebie" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },

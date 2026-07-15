@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
 import Section from "@/components/Section";
 
 export default function NotFound() {
@@ -17,9 +16,12 @@ export default function NotFound() {
       <p className="mt-2 max-w-md text-sm text-muted-foreground">
         {t("description")}
       </p>
-      <Button asChild className="mt-8">
-        <Link href="/">{t("cta")}</Link>
-      </Button>
+      <Link
+        href="/"
+        className="mt-8 inline-flex items-center justify-center h-10 rounded-md bg-primary text-primary-foreground shadow hover:bg-primary/90 px-8 text-base transition-colors"
+      >
+        {t("cta")}
+      </Link>
     </Section>
   );
 }

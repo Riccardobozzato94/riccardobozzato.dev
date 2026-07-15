@@ -38,7 +38,7 @@ export default function Footer() {
               Riccardo Bozzato
             </Link>
             <p className="mt-2 text-sm text-muted-foreground">
-              Head of Ops & AI Security Builder
+              Operations & Delivery Consultant | PMP®
             </p>
             <div className="mt-4 space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">

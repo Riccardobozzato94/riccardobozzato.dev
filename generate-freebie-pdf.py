@@ -105,7 +105,7 @@ pdf.cell(0, 7, "Riccardo Bozzato", align="C")
 pdf.ln(8)
 pdf.set_text_color(130, 130, 145)
 pdf.set_font("Arial", "I", 10)
-pdf.cell(0, 6, "Head of Operations & AI Security Builder", align="C")
+pdf.cell(0, 6, "Operations & Delivery Consultant | PMP®", align="C")
 pdf.ln(30)
 
 pdf.set_text_color(90, 90, 105)
@@ -130,7 +130,7 @@ pdf.body_text(
 )
 pdf.ln(2)
 pdf.body_text(
-    "My name is Riccardo Bozzato. I am a Head of Operations with a passion for building "
+    "My name is Riccardo Bozzato. I am an Operations & Delivery Consultant with a passion for building "
     "secure, resilient systems. My work spans cloud infrastructure, incident response, "
     "compliance automation, and open-source security tooling. I believe that security and "
     "operations are not opposing forces \u2014 when aligned correctly, they amplify each other."
@@ -363,19 +363,15 @@ pdf.accent_line(pdf.get_x(), pdf.get_y(), 50)
 pdf.ln(10)
 
 pdf.body_text(
-    "Riccardo Bozzato is a Head of Operations and AI Security Builder with a track record "
-    "of building secure, high-velocity infrastructure. He has spent years bridging the gap "
-    "between operations and security \u2014 proving that the two disciplines are strongest when "
-    "they work in lockstep."
+    "Riccardo Bozzato is an Operations & Delivery Consultant (PMP\u00ae) who helps digital "
+    "companies bring order to their operations. With a track record of managing enterprise "
+    "projects worth \u20ac500K+ and coordinating teams of up to 12 people, he combines "
+    "methodological rigor with operational speed."
 )
 pdf.body_text(
-    "He is the creator of VulnClaw, an AI-driven penetration testing CLI, and Trova, an "
-    "intelligent search and discovery tool. Both projects are open source and reflect his "
-    "belief that security tooling should be accessible, transparent, and community-driven."
-)
-pdf.body_text(
-    "When not architecting ops pipelines or pentesting infrastructure, Riccardo writes "
-    "about security operations, automation, and building resilient systems."
+    "He is the creator of VulnClaw, an AI-driven penetration testing CLI, and Trova, a "
+    "SaaS boilerplate. Both projects reflect his belief that the best operators are also "
+    "builders."
 )
 pdf.ln(6)
 

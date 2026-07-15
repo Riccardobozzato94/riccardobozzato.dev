@@ -60,7 +60,7 @@ export async function POST(request: Request) {
           </p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
           <p style="color: #999; font-size: 12px;">
-            Riccardo Bozzato — Head of Ops & AI Security Builder<br>
+            Riccardo Bozzato — Operations & Delivery Consultant | PMP®<br>
             <a href="https://riccardobozzato.netlify.app" style="color: #22C55E;">riccardobozzato.netlify.app</a>
           </p>
         </div>

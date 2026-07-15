@@ -85,7 +85,7 @@ export default function FreebiePage() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
-                    Name
+                    {t("form.name")}
                   </label>
                   <Input
                     id="name"
@@ -97,7 +97,7 @@ export default function FreebiePage() {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
-                    Email
+                    {t("form.email")}
                   </label>
                   <Input
                     id="email"
@@ -110,7 +110,7 @@ export default function FreebiePage() {
                 </div>
                 {status === "error" && (
                   <p className="text-sm text-destructive">
-                    Something went wrong. Try again.
+                    {t("form.error")}
                   </p>
                 )}
                 <Button
