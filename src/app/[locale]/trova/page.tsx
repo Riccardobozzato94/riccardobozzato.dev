@@ -127,20 +127,18 @@ export default async function TrovaPage() {
         </div>
       </Section>
 
-      {/* Demo Video */}
+      {/* Demo Showcase */}
       <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Quick Demo</h2>
-          <p className="text-muted-foreground mb-8">13-second walkthrough of the full site</p>
-          <div className="rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl">
-            <video
-              src="/images/demo-preview.mp4"
-              controls
-              poster="/images/trova-home.png"
-              className="w-full"
-            >
-              Your browser does not support the video tag.
-            </video>
+          <p className="text-muted-foreground mb-8">A walkthrough of the full site experience</p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
+              <img src="/images/trova-home.svg" alt="Trova Home page" className="w-full h-auto" />
+            </div>
+            <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
+              <img src="/images/trova-projects.svg" alt="Trova Projects page" className="w-full h-auto" />
+            </div>
           </div>
         </div>
       </Section>
@@ -152,10 +150,10 @@ export default async function TrovaPage() {
           <p className="text-muted-foreground mb-8">Real pages from the boilerplate</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { src: "/images/trova-home.png", label: "Home page" },
-              { src: "/images/trova-projects.png", label: "Projects portfolio" },
-              { src: "/images/trova-trova.png", label: "Trova sales page" },
-              { src: "/images/trova-freebie.png", label: "Freebie download" },
+              { src: "/images/trova-home.svg", label: "Home page" },
+              { src: "/images/trova-projects.svg", label: "Projects portfolio" },
+              { src: "/images/trova-trova.svg", label: "Trova sales page" },
+              { src: "/images/trova-freebie.svg", label: "Freebie download" },
             ].map((img, idx) => (
               <div
                 key={idx}

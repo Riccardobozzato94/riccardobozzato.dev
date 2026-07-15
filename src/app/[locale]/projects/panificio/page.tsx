@@ -80,7 +80,7 @@ export default async function PanificioPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <img
-                src="/images/panificio-home.png"
+                src="/images/panificio-home.svg"
                 alt="Panificio Da Sergio home page"
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
               />
@@ -88,7 +88,7 @@ export default async function PanificioPage() {
             </div>
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <img
-                src="/images/panificio-mobile.png"
+                src="/images/panificio-mobile.svg"
                 alt="Panificio Da Sergio mobile view"
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
               />

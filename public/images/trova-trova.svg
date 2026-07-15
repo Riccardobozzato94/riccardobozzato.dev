@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#16a34a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#16a34a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pricingGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16a34a" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#15803d" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg)"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="600" cy="200" rx="450" ry="300" fill="url(#glow)"/>
+
+  <!-- Navbar -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0a0a0a" opacity="0.9"/>
+  <rect x="0" y="64" width="1200" height="1" fill="#222"/>
+
+  <polygon points="40,32 50,26 60,32 60,44 50,50 40,44" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  <circle cx="50" cy="38" r="2" fill="#16a34a"/>
+  <text x="72" y="44" fill="#fff" font-family="system-ui" font-size="18" font-weight="600">riccardobozzato.dev</text>
+
+  <!-- Tech badge -->
+  <rect x="468" y="100" width="264" height="28" rx="14" fill="#16a34a" opacity="0.08"/>
+  <text x="600" y="119" fill="#16a34a" font-family="system-ui" font-size="12" text-anchor="middle" font-weight="500">Next.js 16 · Tailwind v4 · shadcn/ui</text>
+
+  <!-- Hero -->
+  <text x="600" y="165" fill="#fff" font-family="system-ui" font-size="52" font-weight="700" text-anchor="middle">Trova</text>
+  <text x="600" y="208" fill="#16a34a" font-family="system-ui" font-size="20" font-weight="600" text-anchor="middle">Ship Your Next SaaS in Days, Not Weeks</text>
+  <text x="600" y="240" fill="#888" font-family="system-ui" font-size="15" text-anchor="middle">A production-ready Next.js 16 boilerplate with auth, database, email, billing, i18n, and UI — all included.</text>
+
+  <!-- CTA -->
+  <rect x="490" y="270" width="140" height="42" rx="10" fill="url(#accent)" filter="url(#shadow)"/>
+  <text x="560" y="296" fill="#fff" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">Get Trova</text>
+  <rect x="650" y="270" width="140" height="42" rx="10" fill="none" stroke="#333"/>
+  <text x="720" y="296" fill="#ccc" font-family="system-ui" font-size="14" text-anchor="middle">Live Demo</text>
+
+  <!-- Features row -->
+  <text x="600" y="355" fill="#fff" font-family="system-ui" font-size="22" font-weight="700" text-anchor="middle">Everything You Need to Ship</text>
+
+  <rect x="80" y="385" width="240" height="90" rx="10" fill="#111" stroke="#222"/>
+  <text x="100" y="415" fill="#16a34a" font-family="system-ui" font-size="16" font-weight="700">🔐</text>
+  <text x="135" y="412" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">Auth</text>
+  <text x="100" y="440" fill="#666" font-family="system-ui" font-size="11">Magic links, OAuth, 2FA,</text>
+  <text x="100" y="456" fill="#666" font-family="system-ui" font-size="11">session rotation</text>
+
+  <rect x="340" y="385" width="240" height="90" rx="10" fill="#111" stroke="#222"/>
+  <text x="360" y="415" fill="#16a34a" font-family="system-ui" font-size="16" font-weight="700">🗄️</text>
+  <text x="395" y="412" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">Database</text>
+  <text x="360" y="440" fill="#666" font-family="system-ui" font-size="11">Drizzle ORM, PostgreSQL,</text>
+  <text x="360" y="456" fill="#666" font-family="system-ui" font-size="11">migrations & seeds</text>
+
+  <rect x="600" y="385" width="240" height="90" rx="10" fill="#111" stroke="#222"/>
+  <text x="620" y="415" fill="#16a34a" font-family="system-ui" font-size="16" font-weight="700">✉️</text>
+  <text x="655" y="412" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">Email</text>
+  <text x="620" y="440" fill="#666" font-family="system-ui" font-size="11">Resend integration, React</text>
+  <text x="620" y="456" fill="#666" font-family="system-ui" font-size="11">Email templates</text>
+
+  <rect x="860" y="385" width="240" height="90" rx="10" fill="#111" stroke="#222"/>
+  <text x="880" y="415" fill="#16a34a" font-family="system-ui" font-size="16" font-weight="700">🌐</text>
+  <text x="915" y="412" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">i18n</text>
+  <text x="880" y="440" fill="#666" font-family="system-ui" font-size="11">English/Italian, next-intl,</text>
+  <text x="880" y="456" fill="#666" font-family="system-ui" font-size="11">day-1 i18n support</text>
+
+  <rect x="200" y="495" width="240" height="90" rx="10" fill="#111" stroke="#222"/>
+  <text x="220" y="525" fill="#16a34a" font-family="system-ui" font-size="16" font-weight="700">💳</text>
+  <text x="255" y="522" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">Billing</text>
+  <text x="220" y="550" fill="#666" font-family="system-ui" font-size="11">Stripe, webhooks, checkout,</text>
+  <text x="220" y="566" fill="#666" font-family="system-ui" font-size="11">subscription management</text>
+
+  <rect x="460" y="495" width="240" height="90" rx="10" fill="#111" stroke="#222"/>
+  <text x="480" y="525" fill="#16a34a" font-family="system-ui" font-size="16" font-weight="700">🎨</text>
+  <text x="515" y="522" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">UI</text>
+  <text x="480" y="550" fill="#666" font-family="system-ui" font-size="11">shadcn/ui, dark theme,</text>
+  <text x="480" y="566" fill="#666" font-family="system-ui" font-size="11">responsive components</text>
+
+  <!-- Pricing card -->
+  <rect x="760" y="490" width="320" height="260" rx="16" fill="#111" stroke="#16a34a" stroke-opacity="0.3" fill="url(#pricingGlow)" stroke-width="1.5"/>
+
+  <text x="920" y="530" fill="#888" font-family="system-ui" font-size="13" text-anchor="middle">One-time purchase</text>
+  <text x="920" y="570" fill="#fff" font-family="system-ui" font-size="44" font-weight="700" text-anchor="middle">€49</text>
+  <text x="920" y="598" fill="#666" font-family="system-ui" font-size="13" text-anchor="middle">Full source code, lifetime updates</text>
+
+  <text x="790" y="625" fill="#ccc" font-family="system-ui" font-size="12">✅ Full source code</text>
+  <text x="790" y="648" fill="#ccc" font-family="system-ui" font-size="12">✅ Lifetime updates</text>
+  <text x="790" y="671" fill="#ccc" font-family="system-ui" font-size="12">✅ Priority support</text>
+  <text x="790" y="694" fill="#ccc" font-family="system-ui" font-size="12">✅ 30-day money-back</text>
+
+  <rect x="790" y="718" width="260" height="38" rx="10" fill="url(#accent)"/>
+  <text x="920" y="743" fill="#fff" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">Buy Now →</text>
+</svg>

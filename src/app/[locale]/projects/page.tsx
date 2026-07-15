@@ -38,7 +38,7 @@ export default async function ProjectsPage() {
             description={t("trova.description")}
             tags={["Next.js 16", "SaaS", "TypeScript", "€49"]}
             href="/trova"
-            image="/images/trova-home.png"
+            image="/images/trova-home.svg"
             badge="Product"
             badgeColor="bg-accent/10 text-accent"
             featured
@@ -52,7 +52,7 @@ export default async function ProjectsPage() {
               description={t("vulnclaw.description")}
               tags={["AI", "Security", "Python"]}
               href="/projects/vulnclaw"
-              image="/images/vulnclaw-scan.png"
+              image="/images/vulnclaw-scan.svg"
               badge="CLI Tool"
               badgeColor="bg-blue-500/10 text-blue-400"
             />
@@ -62,7 +62,7 @@ export default async function ProjectsPage() {
               description={t("panificio.description")}
               tags={["Next.js", "E-Commerce", "Family"]}
               href="/projects/panificio"
-              image="/images/panificio-home.png"
+              image="/images/panificio-home.svg"
               badge="Family Gift"
               badgeColor="bg-amber-500/10 text-amber-400"
             />

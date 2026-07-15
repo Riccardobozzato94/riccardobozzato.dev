@@ -83,9 +83,9 @@ export default async function VulnClawPage() {
           <p className="text-muted-foreground mb-8">Terminal-first experience</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { src: "/images/vulnclaw-help.png", label: "CLI help & commands" },
-              { src: "/images/vulnclaw-scan.png", label: "Live reconnaissance scan" },
-              { src: "/images/vulnclaw-results.png", label: "Findings & results" },
+              { src: "/images/vulnclaw-help.svg", label: "CLI help & commands" },
+              { src: "/images/vulnclaw-scan.svg", label: "Live reconnaissance scan" },
+              { src: "/images/vulnclaw-results.svg", label: "Findings & results" },
             ].map((img, idx) => (
               <div
                 key={idx}
