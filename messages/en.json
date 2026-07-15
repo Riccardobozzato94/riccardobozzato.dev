@@ -241,6 +241,31 @@
                                  ],
                     "nav":  "Privacy"
                 },
+    "unsubscribe":  {
+                        "processing":  "Processing your request...",
+                        "successTitle":  "Unsubscribed Successfully",
+                        "successMessage":  "You've been removed from the email list. You won't receive any more emails from this series.",
+                        "alreadyTitle":  "Already Unsubscribed",
+                        "alreadyMessage":  "You're already unsubscribed. No further emails will be sent.",
+                        "errorTitle":  "Something Went Wrong",
+                        "errorMessage":  "We couldn't process your unsubscribe request. The link may be invalid or expired.",
+                        "backHome":  "Back to Home"
+                    },
+    "thankYou":  {
+                     "title":  "You're All Set! 🎉",
+                     "subtitle":  "Your AI Ops Security Playbook is ready. Check your inbox — I've sent it there too so you don't lose it.",
+                     "downloadAgain":  "Download Again",
+                     "whatsNextTitle":  "What's Next?",
+                     "whatsNextText":  "Over the next two weeks, I'll send you a series of emails with practical tactics you can apply immediately:",
+                     "email1":  "The #1 ops-security mistake and how to fix it (Day 1)",
+                     "email2":  "3 automation plays that save 10+ hours/week (Day 3)",
+                     "email3":  "A real case study with measurable results (Day 5)",
+                     "email4":  "The hidden cost of operational chaos (Day 7)",
+                     "email5":  "A final offer for a free consultation (Day 14)",
+                     "exploreTitle":  "In the Meantime, Explore",
+                     "readBlog":  "Read the Blog",
+                     "viewProjects":  "View Projects"
+                 },
     "notFound":  {
                     "title":  "404",
                     "subtitle":  "This page doesn't exist.",

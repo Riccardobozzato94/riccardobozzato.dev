@@ -241,6 +241,31 @@
                                  ],
                     "nav":  "Privacy"
                 },
+    "unsubscribe":  {
+                        "processing":  "Elaborazione in corso...",
+                        "successTitle":  "Disiscrizione Completata",
+                        "successMessage":  "Sei stato rimosso dalla lista email. Non riceverai più email da questa serie.",
+                        "alreadyTitle":  "Già Disiscritto",
+                        "alreadyMessage":  "Sei già disiscritto. Non ti invieremo ulteriori email.",
+                        "errorTitle":  "Qualcosa è Andato Storto",
+                        "errorMessage":  "Non abbiamo potuto elaborare la tua richiesta. Il link potrebbe non essere valido o essere scaduto.",
+                        "backHome":  "Torna alla Home"
+                    },
+    "thankYou":  {
+                     "title":  "Tutto Pronto! 🎉",
+                     "subtitle":  "Il tuo AI Ops Security Playbook è pronto. Controlla la tua casella — te l'ho inviato anche lì così non lo perdi.",
+                     "downloadAgain":  "Scarica di Nuovo",
+                     "whatsNextTitle":  "Prossimi Passi",
+                     "whatsNextText":  "Nelle prossime due settimane, ti invierò una serie di email con tattiche pratiche che puoi applicare subito:",
+                     "email1":  "L'errore #1 tra operations e sicurezza e come risolverlo (Giorno 1)",
+                     "email2":  "3 automazioni che recuperano 10+ ore a settimana (Giorno 3)",
+                     "email3":  "Un case study con risultati misurabili (Giorno 5)",
+                     "email4":  "Il costo nascosto del caos operativo (Giorno 7)",
+                     "email5":  "Un'offerta finale per una consulenza gratuita (Giorno 14)",
+                     "exploreTitle":  "Nel Frattempo, Esplora",
+                     "readBlog":  "Leggi il Blog",
+                     "viewProjects":  "Vedi i Progetti"
+                 },
     "notFound":  {
                      "title":  "404",
                      "subtitle":  "Questa pagina non esiste.",

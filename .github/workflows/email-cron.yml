@@ -1,0 +1,24 @@
+name: Email Sequence Cron
+
+on:
+  schedule:
+    # Run every day at 10:00 UTC (11:00 CET / 12:00 CEST)
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+    # Allow manual trigger from GitHub UI
+
+jobs:
+  process-sequence:
+    name: Process Email Sequence
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Email Sequence Endpoint
+        run: |
+          curl -s -X GET "${{ secrets.CRON_ENDPOINT }}" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            -H "User-Agent: GitHub-Actions-Cron" \
+            --max-time 120
+
+      - name: Log Result
+        run: echo "Email sequence cron completed at $(date -u)"

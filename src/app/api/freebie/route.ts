@@ -1,13 +1,8 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-
-function getResend(): Resend | null {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return null;
-  return new Resend(key);
-}
-
-const fromEmail = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
+import { getResendClient, FROM_EMAIL, TO_EMAIL } from "@/lib/resend";
+import { createLead, markStepSent } from "@/lib/lead-store";
+import { welcomeTemplate } from "@/lib/email/templates";
+import { SEQUENCE } from "@/lib/email/sequence";
 
 export async function POST(request: Request) {
   try {
@@ -28,8 +23,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // If Resend is not configured, log and return direct download link (dev mode)
-    const resend = getResend();
+    // Resend client
+    const resend = getResendClient();
     if (!resend) {
       console.log("📬 [DEV] Freebie download request:", { name, email });
       return NextResponse.json({
@@ -40,41 +35,43 @@ export async function POST(request: Request) {
       });
     }
 
-    // Send the playbook via Resend
-    await resend.emails.send({
-      from: `Riccardo Bozzato <${fromEmail}>`,
-      to: email,
-      subject: "Your AI Ops Security Playbook is here!",
-      html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #22C55E;">Your Playbook Has Arrived 🚀</h1>
-          <p>Hey ${name},</p>
-          <p>Thanks for downloading the <strong>AI Ops Security Playbook</strong>.</p>
-          <p>Here's your download link:</p>
-          <p style="text-align: center; margin: 32px 0;">
-            <a href="${process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app"}/files/ai-ops-security-playbook.pdf"
-               style="background: #22C55E; color: #000; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-              Download the Playbook →
-            </a>
-          </p>
-          <p style="color: #666; font-size: 14px;">
-            If the button doesn't work, reply to this email and I'll send it directly.
-          </p>
-          <hr style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
-          <p style="color: #999; font-size: 12px;">
-            Riccardo Bozzato — Operations & Delivery Consultant | PMP®<br>
-            <a href="https://riccardobozzato.netlify.app" style="color: #22C55E;">riccardobozzato.netlify.app</a>
-          </p>
-        </div>
-      `,
+    // ── 1. Save the lead ──
+    const lead = await createLead(name, email);
+
+    // ── 2. Send Welcome Email (Step 0) ──
+    const welcomeHtml = welcomeTemplate({
+      name: lead.name,
+      email: lead.email,
+      unsubscribeToken: lead.unsubscribeToken,
     });
 
-    // Also notify me
     await resend.emails.send({
-      from: `Freebie Alert <${fromEmail}>`,
-      to: "riccardobozzato@gmail.com",
-      subject: `New Playbook Download: ${name} <${email}>`,
-      html: `<p>New download: ${name} (${email})</p>`,
+      from: `Riccardo Bozzato <${FROM_EMAIL}>`,
+      to: lead.email,
+      subject: SEQUENCE[0].subject,
+      html: welcomeHtml,
+    });
+
+    // Mark step 0 as sent
+    await markStepSent(lead.email, 0);
+
+    // ── 3. Notify me ──
+    await resend.emails.send({
+      from: `Freebie Alert <${FROM_EMAIL}>`,
+      to: TO_EMAIL,
+      subject: `🎯 New Lead: ${lead.name} <${lead.email}>`,
+      html: `
+        <h2>New Playbook Download</h2>
+        <table style="border-collapse:collapse;width:100%;max-width:400px;">
+          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Name</td><td style="padding:8px;border:1px solid #ddd;">${lead.name}</td></tr>
+          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Email</td><td style="padding:8px;border:1px solid #ddd;">${lead.email}</td></tr>
+          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Date</td><td style="padding:8px;border:1px solid #ddd;">${new Date().toLocaleString()}</td></tr>
+          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Lead ID</td><td style="padding:8px;border:1px solid #ddd;">${lead.id}</td></tr>
+        </table>
+        <p style="margin-top:16px;font-size:13px;color:#666;">
+          Welcome email sent. Follow-up sequence started (Day 1 in 24h).
+        </p>
+      `,
     });
 
     return NextResponse.json({
