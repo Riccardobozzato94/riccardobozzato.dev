@@ -1,9 +1,9 @@
 {
     "site":  {
-                 "title":  "Riccardo Bozzato",
-                 "tagline":  "Operations & Delivery Consultant | PMP® | Porto ordine nelle aziende che crescono: processi, progetti, team.",
-                 "description":  "Porto ordine nelle aziende digitali che crescono. Certificato PMP®, portfolio progetti enterprise da €500K, team fino a 12 persone, -40% time-to-market. Trasformo il caos operativo in processi prevedibili e data-driven. Costruisco anche strumenti: VulnClaw (AI security) e Trova (SaaS boilerplate)."
-             },
+                  "title":  "Riccardo Bozzato",
+                  "tagline":  "Problemi complessi. Soluzioni chiavi in mano. Serverless, AI agenti, automazione — costruisco sistemi che scalano la tua azienda senza scalare i costi.",
+                  "description":  "Risolvo problemi operativi complessi con soluzioni chiavi in mano: architettura serverless al costo più basso possibile, workflow con AI agenti, system integration e automazione. Certificato PMP®, portfolio enterprise da €500K+. La tua azienda funziona meglio — o non paghi."
+              },
     "nav":  {
                 "home":  "Home",
                 "projects":  "Progetti",
@@ -16,21 +16,55 @@
                 "contact":  "Contatti"
             },
     "home":  {
-                 "heroTitle":  "Ciao, sono Riccardo",
-                 "heroRole":  "Operations & Delivery Consultant | PMP®",
-                 "heroTagline":  "Porto ordine nelle aziende digitali che crescono. Portfolio da €500K, team cross-funzionali, processi data-driven. Il mio lavoro? Fare in modo che le operations reggano il peso della crescita — così tutto il resto segue.",
-                 "heroCta":  "Vedi i Miei Lavori",
-                 "heroCta2":  "Scarica la Guida Gratuita",
-                 "featuredTitle":  "Progetti in Evidenza",
-                 "featuredSubtitle":  "Cose che ho costruito perché quelle esistenti non erano abbastanza buone.",
-                 "viewProject":  "Vedi Progetto →",
-                 "aboutTitle":  "Ordine operativo. Consegna puntuale.",
-                 "aboutText":  "Opero come consulente Operations & Delivery per aziende che crescono e hanno bisogno di struttura senza perdere velocità. Certificato PMP®, ho gestito progetti enterprise da €500K+ coordinando team di 8-12 persone su piattaforme eCommerce (Magento, Shopware) e PIM/DAM (Pimcore). Nel tempo libero costruisco strumenti: VulnClaw (pentesting AI) e Trova (boilerplate SaaS).",
-                 "aboutCta":  "Leggi la Mia Storia →",
-                 "freebieTitle":  "Gratis: AI Ops Security Playbook",
-                 "freebieDesc":  "5 strategie che uso per tenere al sicuro le operations senza frenare l\u0027innovazione. Niente teoria: solo tattiche testate sul campo.",
-                 "freebieCta":  "Scarica Gratis →"
-             },
+                  "heroTitle":  "Problemi Complessi. Soluzioni Chiavi in Mano.",
+                  "heroRole":  "Serverless · AI Agenti · Automazione · System Integration",
+                  "heroTagline":  "Costruisco sistemi che risolvono i tuoi problemi operativi più complessi — workflow con AI agenti, architettura serverless al costo più basso, automazione end-to-end e system integration. Certificato PMP®, €500K+ consegnati. La tua azienda funziona meglio, o non paghi.",
+                  "heroCta":  "Vedi i Miei Lavori",
+                  "heroCta2":  "Prenota una Call Gratuita",
+                  "featuredTitle":  "Cosa Costruisco",
+                  "featuredSubtitle": "Prodotti e strumenti che ho costruito perché quelli esistenti non erano abbastanza buoni.",
+                  "viewProject":  "Vedi Progetto →",
+                  "aboutTitle":  "Risolvo problemi. Costruisco sistemi. Consegno.",
+                  "aboutText":  "Sono un consulente indipendente specializzato in problemi operativi complessi. Architettura serverless, workflow con AI agenti, system integration e automazione aziendale. Certificato PMP®, portfolio enterprise da €500K+ su eCommerce e PIM/DAM. Ho costruito Trova (boilerplate SaaS) e VulnClaw (pentesting AI) perché gli strumenti esistenti non erano abbastanza buoni. Ora faccio lo stesso per la tua azienda — soluzioni chiavi in mano che funzionano.",
+                  "aboutCta":  "Lavora Con Me →",
+                  "freebieTitle":  "Gratis: AI Ops Security Playbook",
+                  "freebieDesc":  "5 strategie per allineare sicurezza e operations con workflow AI. Usato da 500+ professionisti.",
+                  "freebieCta":  "Scarica Gratis →",
+                  "servicesTitle": "Cosa Posso Fare Per Te",
+                  "servicesSubtitle": "Soluzioni chiavi in mano. Prezzi fissi. Consegnate.",
+                  "serviceList": [
+                    {
+                      "icon": "cpu",
+                      "title": "AI Agent Workflow",
+                      "desc": "Agenti AI personalizzati per i tuoi processi aziendali — customer support, pipeline dati, operations dei contenuti. Costruiti su misura per il tuo flusso di lavoro."
+                    },
+                    {
+                      "icon": "cloud",
+                      "title": "Architettura Serverless",
+                      "desc": "Infrastruttura auto-scalante al costo più basso. Paghi solo quello che usi. Dal prototipo alla produzione in giorni, non mesi."
+                    },
+                    {
+                      "icon": "zap",
+                      "title": "Workflow di Automazione",
+                      "desc": "Automazione end-to-end dei processi. Collega i tuoi strumenti, elimina il lavoro manuale e misura il ROI — tipicamente 10-40 ore/settimana recuperate."
+                    },
+                    {
+                      "icon": "git-branch",
+                      "title": "System Integration",
+                      "desc": "Fai parlare i tuoi strumenti tra loro. ERP, CRM, PIM, eCommerce — costruisco i ponti che rendono il tuo stack un sistema unico."
+                    },
+                    {
+                      "icon": "lightbulb",
+                      "title": "Consulenza Tech Business",
+                      "desc": "Consulenza strategica da qualcuno che ha costruito. Revisioni architetturali, selezione tecnologica, valutazione fornitori e road map esecutive."
+                    },
+                    {
+                      "icon": "package",
+                      "title": "Soluzioni Chiavi in Mano",
+                      "desc": "Soluzioni a prezzo fisso. Definisci il problema una volta — mi occupo di architettura, implementazione, deployment e consegna."
+                    }
+                  ]
+              },
     "footer":  {
                    "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
                    "builtWith":  "Realizzato con Next.js \u0026 shadcn/ui",
@@ -64,74 +98,103 @@
                                       "status":  "Alpha v0.4.0"
                                   },
     "services":  {
-                     "title":  "Servizi",
-                     "subtitle":  "Operations, architettura e strumenti — consegnati.",
-                     "heroDesc":  "Aiuto aziende digitali a costruire architetture operative scalabili, lanciare prodotti più velocemente e allineare sicurezza e velocità. Ecco come posso aiutarti.",
+                     "title":  "Risolvo Problemi Complessi. Consegno.",
+                     "subtitle":  "Serverless · AI Agenti · Automazione · Integrazione · Consulenza",
+                     "heroDesc":  "Hai un problema operativo complesso. Progetto e consegno la soluzione — prezzo fisso, in tempo, pronta per la produzione. Dagli agenti AI che automatizzano i tuoi workflow all'infrastruttura serverless che costa penny a scala. Certificato PMP®, €500K+ consegnati. La tua azienda funziona meglio, o non paghi.",
                      "cta":  "Prenota una Call Gratuita",
                      "packages":  [
                                       {
-                                          "title":  "SaaS Architecture Review",
-                                          "price":  "€500 – €1.500",
-                                          "desc":  "Analisi approfondita di 2 ore della tua architettura Next.js/SaaS. Identifico bottleneck, gap di sicurezza e opportunità di ottimizzazione.",
+                                          "title":  "AI Agent Workflow",
+                                          "price":  "Da €2.500",
+                                          "desc":  "Agenti AI personalizzati per i tuoi processi aziendali. Automazione customer support, pipeline dati, operations contenuti — progettati, costruiti e deployati.",
                                           "features":  [
-                                                           "Code review del tuo stack",
-                                                           "Audit sicurezza (auth, API, infra)",
-                                                           "Roadmap di ottimizzazione performance",
-                                                           "Report scritto con findings actionable"
+                                                           "Architettura AI agente personalizzata",
+                                                           "Integrazione con i tuoi strumenti esistenti",
+                                                           "Human-in-the-loop dove serve",
+                                                           "Monitoraggio performance e ottimizzazione",
+                                                           "Documentazione e formazione"
                                                        ]
                                       },
                                       {
-                                          "title":  "Security Ops Alignment",
-                                          "price":  "€2.000 – €5.000",
-                                          "desc":  "Implementa il framework Ops-Security Alignment nella tua organizzazione. Trasforma la sicurezza da blocco a moltiplicatore di forza.",
+                                          "title":  "Architettura Serverless",
+                                          "price":  "Da €1.500",
+                                          "desc":  "Infrastruttura auto-scalante al costo più basso. Pay-as-you-go, zero costo idle, deployment globale. AWS Lambda, Cloudflare Workers o il tuo provider preferito.",
                                           "features":  [
-                                                           "Audit completo ops-sicurezza",
-                                                           "Implementazione policy-as-code",
-                                                           "Setup framework metriche",
-                                                           "Formazione team e documentazione"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "Consulenza Integrazione AI",
-                                          "price":  "€150 – €250 / ora",
-                                          "desc":  "Aiuto il tuo team a integrare LLM nei flussi di lavoro, costruire agenti AI e automatizzare le operations senza perdere il controllo.",
-                                          "features":  [
-                                                           "Scoperta e prioritizzazione use case",
-                                                           "Design architetturale",
-                                                           "Sviluppo prototipo",
-                                                           "Formazione del team"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "Custom Boilerplate",
-                                          "price":  "€3.000 – €8.000",
-                                          "desc":  "Una fondazione personalizzata come Trova, costruita sul tuo stack e modello di business specifico. Auth, billing, email, i18n — pronto per la produzione.",
-                                          "features":  [
-                                                           "Il tuo stack, i tuoi requisiti",
-                                                           "Auth, billing, email, i18n inclusi",
+                                                           "Design architetturale e modellazione costi",
+                                                           "Implementazione e deployment",
                                                            "Setup pipeline CI/CD",
-                                                           "1 mese di supporto prioritario"
+                                                           "Monitoraggio e alerting",
+                                                           "Ottimizzazione costi (20-60% risparmio)"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Automazione Processi",
+                                          "price":  "Da €3.000",
+                                          "desc":  "Automazione end-to-end dei tuoi flussi di lavoro operativi. Dall'analisi dello stato attuale all'automazione deployata — tipicamente recupera 10-40 ore a settimana.",
+                                          "features":  [
+                                                           "Audit dei processi attuali",
+                                                           "Mappatura opportunità di automazione",
+                                                           "Sviluppo e deployment pipeline",
+                                                           "Design gestione eccezioni",
+                                                           "Dashboard misurazione ROI"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "System Integration",
+                                          "price":  "Da €2.000",
+                                          "desc":  "Fai funzionare i tuoi strumenti come un sistema unico. ERP ↔ CRM, PIM ↔ eCommerce, legacy ↔ cloud. Progetto e costruisco il layer di integrazione.",
+                                          "features":  [
+                                                           "Design architettura integrazione",
+                                                           "Sviluppo API e middleware",
+                                                           "Migrazione e sincronizzazione dati",
+                                                           "Gestione errori e recovery",
+                                                           "Test e documentazione"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Consulenza Tech Business",
+                                          "price":  "€200 – €300 / ora",
+                                          "desc":  "Consulenza tecnologica strategica da qualcuno che ha costruito e consegnato. Revisioni architetturali, selezione tecnologica, valutazione fornitori, strutturazione team, road map esecutive.",
+                                          "features":  [
+                                                           "Review architettura e codice",
+                                                           "Valutazione stack tecnologico",
+                                                           "Supporto selezione e negoziazione fornitori",
+                                                           "Design struttura team e processi",
+                                                           "Disponibile ritainer trimestrale"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Soluzione Chiavi in Mano",
+                                          "price":  "Preventivo personalizzato",
+                                          "desc":  "Definisci il problema una volta. Gestisco tutto: architettura, implementazione, deployment, documentazione, consegna. Prezzo fisso. Nessuna sorpresa.",
+                                          "features":  [
+                                                           "Raccolta requisiti completa",
+                                                           "Architettura e design soluzione",
+                                                           "Implementazione end-to-end",
+                                                           "Test e quality assurance",
+                                                           "Deployment e formazione finale"
                                                        ]
                                       }
                                   ],
                      "approach":  {
-                                     "title":  "Come Lavoro",
+                                     "title": "Come Consegno",
+                                     "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
                                      "steps":  [
                                                    {
                                                        "step":  "1. Discovery",
-                                                       "desc":  "Iniziamo con una comprensione profonda del tuo stato attuale, obiettivi e vincoli."
+                                                       "desc":  "Definiamo il problema, vincoli e criteri di successo. Consegno architettura e preventivo a prezzo fisso — nessun impegno."
                                                    },
                                                    {
-                                                       "step":  "2. Strategia",
-                                                       "desc":  "Progetto un approccio su misura — niente template, niente soluzioni preconfezionate."
+                                                       "step":  "2. Costruzione",
+                                                       "desc":  "Costruisco la soluzione end-to-end con checkpoint settimanali, progresso trasparente e feedback continuo."
                                                    },
                                                    {
-                                                       "step":  "3. Esecuzione",
-                                                       "desc":  "Implementazione pratica con checkpoint regolari e risultati misurabili."
+                                                       "step":  "3. Deploy",
+                                                       "desc":  "Deployment in produzione con monitoraggio, documentazione e passaggio di consegne. Il tuo team può gestirlo in autonomia."
                                                    },
                                                    {
-                                                       "step":  "4. Formazione",
-                                                       "desc":  "Il tuo team acquisisce gli strumenti e le conoscenze per mantenere ed evolvere."
+                                                       "step":  "4. Evoluzione",
+                                                       "desc":  "Ritainer opzionale per ottimizzazione continua, nuove funzionalità e supporto. Il tuo sistema scala con te."
                                                    }
                                                ]
                                  }
@@ -278,39 +341,51 @@
     "privacy":  {
                     "title":  "Privacy Policy",
                     "lastUpdated":  "Ultimo aggiornamento: 15 Luglio 2026",
-                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;mi&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web o utilizzi i miei servizi.",
+                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse o richiedi i miei servizi di consulenza. Prendo la tua privacy sul serio — seguo il GDPR e mantengo la raccolta dati al minimo necessario.",
                     "sections":  [
                                      {
                                          "title":  "1. Titolare del Trattamento",
-                                         "content":  "Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com"
+                                         "content":  "Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542"
                                      },
                                      {
                                          "title":  "2. Dati Raccolti",
-                                         "content":  "Modulo di contatto: nome, indirizzo email e messaggio che invii.<br>Download guide: nome e indirizzo email.<br>Analytics: visualizzazioni anonime delle pagine (nessun cookie, nessun script di tracciamento)."
+                                         "content":  "<strong>Modulo di contatto:</strong> nome, indirizzo email e messaggio che invii volontariamente.<br><strong>Download risorse gratuite (playbook):</strong> nome e indirizzo email — utilizzati per consegnare il PDF e inviare la sequenza email (max 6 email in 30 giorni).<br><strong>Richiesta di consulenza:</strong> nome, email, azienda e dettagli del progetto che condividi — utilizzati per preparare proposte ed erogare servizi.<br><strong>Analytics:</strong> visualizzazioni anonime e aggregate delle pagine. Nessun cookie, nessun tracciamento personale, nessun fingerprinting."
                                      },
                                      {
                                          "title":  "3. Come Utilizzo i Tuoi Dati",
-                                         "content":  "Per rispondere alle tue richieste.<br>Per inviarti la guida gratuita che hai richiesto.<br>Per migliorare il sito web basandomi su dati anonimi di utilizzo.<br>Non vendo, affitto o condivido i tuoi dati con terze parti."
+                                         "content":  "Per rispondere alle tue richieste e preparare proposte.<br>Per inviarti risorse gratuite (playbook PDF) e la sequenza email associata.<br>Per comunicare riguardo a consulenze in corso.<br>Per migliorare il sito web basandomi su dati anonimi di utilizzo.<br>Non vendo, affitto, scambio o condivido i tuoi dati personali con terze parti per i loro scopi di marketing."
                                      },
                                      {
-                                         "title":  "4. Base Giuridica (GDPR)",
-                                         "content":  "Tratto i tuoi dati in base al tuo consenso (tramite invio modulo) e al legittimo interesse (rispondere alle tue richieste). Puoi revocare il consenso in qualsiasi momento."
+                                         "title":  "4. Email Marketing (Consenso & Disiscrizione)",
+                                         "content":  "Quando scarichi il playbook gratuito, acconsenti a ricevere una sequenza educativa di 6 email in circa 30 giorni. Ogni email include un link per disiscriverti. Puoi revocare il consenso in qualsiasi momento — la tua richiesta viene elaborata immediatamente e non riceverai ulteriori email. La disiscrizione non influisce sulle comunicazioni relative a consulenze in corso."
                                      },
                                      {
-                                         "title":  "5. Conservazione dei Dati",
-                                         "content":  "Conservo i tuoi dati per il tempo necessario a soddisfare lo scopo per cui li hai forniti, o come richiesto dalla legge. Puoi richiedere la cancellazione in qualsiasi momento."
+                                         "title":  "5. Base Giuridica (GDPR)",
+                                         "content":  "Tratto i tuoi dati in base a:<br><strong>Consenso:</strong> quando invii un modulo (contatto, download playbook). Puoi revocarlo in qualsiasi momento.<br><strong>Necessità contrattuale:</strong> quando richiedi i miei servizi di consulenza — il trattamento è necessario per erogare il lavoro concordato.<br><strong>Legittimo interesse:</strong> rispondere a richieste pre-vendita e migliorare i miei servizi."
                                      },
                                      {
-                                         "title":  "6. I Tuoi Diritti",
-                                         "content":  "Ai sensi del GDPR, hai il diritto di: accedere ai tuoi dati, rettificare dati inesatti, cancellare i tuoi dati, limitare il trattamento, portabilità dei dati e revocare il consenso. Per esercitare questi diritti, scrivimi a riccardobozzato@gmail.com."
+                                         "title":  "6. Conservazione dei Dati",
+                                         "content":  "Richieste dal modulo di contatto: cancellate dopo 12 mesi di inattività.<br>Iscritti alla newsletter playbook: conservati fino alla disiscrizione (più 30 giorni di tolleranza per re-engagement).<br>Dati di clienti di consulenza: conservati per la durata dell'incarico più 24 mesi per conformità fiscale/legale (come richiesto dalla legge italiana).<br>Puoi richiedere la cancellazione dei tuoi dati in qualsiasi momento scrivendo a riccardobozzato@gmail.com."
                                      },
                                      {
-                                         "title":  "7. Servizi di Terze Parti",
-                                         "content":  "Resend — consegna email transazionali (privacy: resend.com/privacy).<br>Netlify — hosting del sito (privacy: netlify.com/privacy).<br>GitHub — hosting del codice sorgente (privacy: github.com/privacy)."
+                                         "title":  "7. I Tuoi Diritti (GDPR)",
+                                         "content":  "Hai il diritto di:<br>Accedere ai tuoi dati — richiedere una copia di tutto ciò che conservo su di te.<br>Rettificare dati inesatti — chiedermi di correggere o completare le tue informazioni.<br>Cancellare i tuoi dati — richiedere la cancellazione (salvo obblighi di conservazione legale).<br>Limitare il trattamento — limitare come utilizzo i tuoi dati.<br>Portabilità dei dati — ricevere i tuoi dati in formato strutturato e leggibile.<br>Revocare il consenso — in qualsiasi momento, per qualsiasi trattamento basato sul consenso.<br>Per esercitare questi diritti, scrivi a riccardobozzato@gmail.com. Risponderò entro 30 giorni."
                                      },
                                      {
-                                         "title":  "8. Contatti",
-                                         "content":  "Per qualsiasi domanda su questa privacy policy, scrivi a: riccardobozzato@gmail.com"
+                                         "title":  "8. Servizi di Terze Parti",
+                                         "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR:<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali e automazione sequenze email. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — hosting del sito e CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti Trova. Privacy: stripe.com/privacy<br><strong>Iubenda</strong> (iubenda.com) — generazione privacy policy e gestione consensi. Privacy: iubenda.com/privacy<br><br>I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC)."
+                                     },
+                                     {
+                                         "title":  "9. Sicurezza dei Dati",
+                                         "content":  "Implemento misure tecniche e organizzative adeguate per proteggere i tuoi dati: connessioni crittografate (HTTPS), controlli di accesso sui database, principio di minimizzazione dei dati e revisioni periodiche di sicurezza. Nessuna trasmissione dati su internet è sicura al 100%, ma seguo le migliori pratiche del settore per ridurre al minimo i rischi."
+                                     },
+                                     {
+                                         "title":  "10. Modifiche a Questa Policy",
+                                         "content":  "Potrei aggiornare questa privacy policy periodicamente. Le modifiche sostanziali verranno comunicate via email (se ho il tuo contatto per servizi attivi) o tramite un avviso su questo sito. La data di &ldquo;Ultimo aggiornamento&rdquo; all'inizio della pagina riflette la revisione più recente."
+                                     },
+                                     {
+                                         "title":  "11. Contatti",
+                                         "content":  "Per qualsiasi domanda, richiesta o dubbio su questa privacy policy o su come gestisco i tuoi dati:<br><br>Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542<br><br>Hai anche il diritto di presentare un reclamo al Garante per la Protezione dei Dati Personali (garanteprivacy.it)."
                                      }
                                  ],
                     "nav":  "Privacy"

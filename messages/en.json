@@ -1,9 +1,9 @@
 {
     "site":  {
-                 "title":  "Riccardo Bozzato",
-                 "tagline":  "Operations & Delivery Consultant | PMP® | I bring order to growing companies: processes, projects, teams.",
-                 "description":  "I bring order to growing digital companies. PMP® certified, enterprise project portfolio worth €500K+, teams of up to 12, 40% time-to-market reduction. Turning operational chaos into predictable, data-driven processes. Also building tools: VulnClaw (AI security) and Trova (SaaS boilerplate)."
-             },
+                  "title":  "Riccardo Bozzato",
+                  "tagline":  "Complex problems. Turnkey solutions. Serverless, AI agents, automation — I build systems that scale your business without scaling your costs.",
+                  "description":  "I solve complex operational problems with turnkey solutions: serverless architecture at the lowest possible cost, AI agent workflows, system integration, and automation. PMP® certified, €500K+ enterprise portfolio. Your business runs better — or you don't pay."
+              },
     "nav":  {
                 "home":  "Home",
                 "projects":  "Projects",
@@ -16,21 +16,55 @@
                 "contact":  "Contact"
             },
     "home":  {
-                 "heroTitle":  "Hi, I'm Riccardo",
-                 "heroRole":  "Operations & Delivery Consultant | PMP®",
-                 "heroTagline":  "I bring order to growing digital companies. €500K+ portfolio, cross-functional teams, data-driven processes. My job? Making sure operations carry the weight of growth — so everything else follows.",
-                 "heroCta":  "See My Work",
-                 "heroCta2":  "Get the Free Guide",
-                 "featuredTitle":  "Featured Projects",
-                 "featuredSubtitle":  "Things I built because the existing ones weren't good enough.",
-                 "viewProject":  "View Project →",
-                 "aboutTitle":  "Operational order. On-time delivery.",
-                 "aboutText":  "I work as an Operations & Delivery Consultant for companies that are growing and need structure without losing speed. PMP® certified, managed enterprise projects worth €500K+ coordinating teams of 8-12 across eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). In my spare time I build things: VulnClaw (AI pentesting) and Trova (SaaS boilerplate).",
-                 "aboutCta":  "Read My Story →",
-                 "freebieTitle":  "Free: The AI Ops Security Playbook",
-                 "freebieDesc":  "5 strategies I use to keep operations secure without slowing innovation. No theory — just field-tested tactics.",
-                 "freebieCta":  "Download Free →"
-             },
+                  "heroTitle":  "Complex Problems. Turnkey Solutions.",
+                  "heroRole":  "Serverless · AI Agents · Automation · System Integration",
+                  "heroTagline":  "I build systems that solve your hardest operational problems — AI agent workflows, serverless architecture at the lowest possible cost, end-to-end automation, and system integration. PMP® certified, €500K+ delivered. Your business runs better, or you don't pay.",
+                  "heroCta":  "See My Work",
+                  "heroCta2":  "Book a Free Call",
+                  "featuredTitle":  "What I Build",
+                  "featuredSubtitle": "Products and tools I've built because the existing ones weren't good enough.",
+                  "viewProject":  "View Project →",
+                  "aboutTitle":  "I solve problems. I build systems. I deliver.",
+                  "aboutText":  "I'm an independent consultant specializing in complex operational problems. Serverless architecture, AI agent workflows, system integration, and business automation. PMP® certified, €500K+ enterprise portfolio across eCommerce and PIM/DAM. I built Trova (SaaS boilerplate) and VulnClaw (AI pentesting) because existing tools weren't good enough. Now I do the same for your business — turnkey solutions that work.",
+                  "aboutCta":  "Work With Me →",
+                  "freebieTitle":  "Free: AI Ops Security Playbook",
+                  "freebieDesc":  "5 strategies to align security with operations using AI-driven workflows. Used by 500+ professionals.",
+                  "freebieCta":  "Download Free →",
+                  "servicesTitle": "What I Can Do For You",
+                  "servicesSubtitle": "Turnkey solutions. Fixed prices. Delivered.",
+                  "serviceList": [
+                    {
+                      "icon": "cpu",
+                      "title": "Agentic AI Workflows",
+                      "desc": "AI agents that automate complex business processes — customer support, data pipelines, content operations. Custom-built for your workflow."
+                    },
+                    {
+                      "icon": "cloud",
+                      "title": "Serverless Architecture",
+                      "desc": "Lowest-cost, auto-scaling infrastructure. Pay only for what you use. From prototype to production in days, not months."
+                    },
+                    {
+                      "icon": "zap",
+                      "title": "Automation Workflows",
+                      "desc": "End-to-end process automation. Connect your tools, eliminate manual work, and measure the ROI — typically 10-40 hours/week saved."
+                    },
+                    {
+                      "icon": "git-branch",
+                      "title": "System Integration",
+                      "desc": "Make your tools talk to each other. ERP, CRM, PIM, eCommerce — I build the bridges that make your stack work as one."
+                    },
+                    {
+                      "icon": "lightbulb",
+                      "title": "Tech Business Consulting",
+                      "desc": "Strategic advisory from someone who's built it. Architecture reviews, technology selection, vendor evaluation, and execution roadmaps."
+                    },
+                    {
+                      "icon": "package",
+                      "title": "Turnkey Solutions",
+                      "desc": "Fixed-price, delivered solutions. Define the problem once — I handle architecture, implementation, deployment, and handover."
+                    }
+                  ]
+              },
     "footer":  {
                    "copyright":  "© {year} Riccardo Bozzato. All rights reserved.",
                    "builtWith":  "Built with Next.js & shadcn/ui",
@@ -64,74 +98,103 @@
                                       "status":  "Alpha v0.4.0"
                                   },
     "services":  {
-                     "title":  "Services",
-                     "subtitle":  "Operations, architecture, and tools — delivered.",
-                     "heroDesc":  "I help digital companies build scalable operational architectures, ship products faster, and align security with velocity. Here's how I can help you.",
+                     "title":  "I Solve Complex Problems. Delivered.",
+                     "subtitle":  "Serverless · AI Agents · Automation · Integration · Consulting",
+                     "heroDesc":  "You have a complex operational problem. I design and deliver the solution — fixed price, on time, production-ready. From AI agents that automate your workflows to serverless infrastructure that costs pennies at scale. PMP® certified, €500K+ delivered. Your business runs better, or you don't pay.",
                      "cta":  "Book a Free Call",
                      "packages":  [
                                       {
-                                          "title":  "SaaS Architecture Review",
-                                          "price":  "€500 – €1,500",
-                                          "desc":  "Two-hour deep dive into your Next.js/SaaS architecture. I'll identify bottlenecks, security gaps, and optimization opportunities.",
+                                          "title":  "Agentic AI Workflows",
+                                          "price":  "From €2,500",
+                                          "desc":  "AI agents custom-built for your business processes. Customer support automation, data pipelines, content operations, workflow orchestration — designed, built, and deployed.",
                                           "features":  [
-                                                           "Code review of your stack",
-                                                           "Security audit (auth, API, infra)",
-                                                           "Performance optimization roadmap",
-                                                           "Written report with actionable findings"
+                                                           "Custom AI agent architecture",
+                                                           "Integration with your existing tools",
+                                                           "Human-in-the-loop where needed",
+                                                           "Performance monitoring & optimization",
+                                                           "Documentation & handover training"
                                                        ]
                                       },
                                       {
-                                          "title":  "Security Ops Alignment",
-                                          "price":  "€2,000 – €5,000",
-                                          "desc":  "Implement the Ops-Security Alignment Framework in your organization. Turn security from a blocker into a force multiplier.",
+                                          "title":  "Serverless Architecture",
+                                          "price":  "From €1,500",
+                                          "desc":  "Lowest-cost, auto-scaling infrastructure. Pay-as-you-go, zero idle cost, global deployment. AWS Lambda, Cloudflare Workers, or your provider of choice.",
                                           "features":  [
-                                                           "Full ops-security audit",
-                                                           "Policy-as-code implementation",
-                                                           "Metric framework setup",
-                                                           "Team training & documentation"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "AI Integration Consulting",
-                                          "price":  "€150 – €250 / hr",
-                                          "desc":  "Help your team integrate LLMs into workflows, build AI agents, and automate operations without sacrificing control.",
-                                          "features":  [
-                                                           "Use case discovery & prioritization",
-                                                           "Architecture design",
-                                                           "Prototype development",
-                                                           "Team enablement"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "Custom Boilerplate",
-                                          "price":  "€3,000 – €8,000",
-                                          "desc":  "A custom Trova-like foundation built for your specific stack and business model. Auth, billing, email, i18n — production-ready.",
-                                          "features":  [
-                                                           "Your stack, your requirements",
-                                                           "Auth, billing, email, i18n included",
+                                                           "Architecture design & cost modeling",
+                                                           "Implementation & deployment",
                                                            "CI/CD pipeline setup",
-                                                           "1 month priority support"
+                                                           "Monitoring & alerting",
+                                                           "Cost optimization (20-60% savings)"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Process Automation",
+                                          "price":  "From €3,000",
+                                          "desc":  "End-to-end automation of your operational workflows. From current-state analysis to deployed automation — typically saves 10-40 hours per week.",
+                                          "features":  [
+                                                           "Current-state process audit",
+                                                           "Automation opportunity mapping",
+                                                           "Pipeline development & deployment",
+                                                           "Exception handling design",
+                                                           "ROI measurement dashboard"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "System Integration",
+                                          "price":  "From €2,000",
+                                          "desc":  "Make your tools work as one. ERP ↔ CRM, PIM ↔ eCommerce, legacy ↔ cloud. I design and build the integration layer that connects your stack.",
+                                          "features":  [
+                                                           "Integration architecture design",
+                                                           "API development & middleware",
+                                                           "Data migration & synchronization",
+                                                           "Error handling & recovery",
+                                                           "Testing & documentation"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Tech Business Consulting",
+                                          "price":  "€200 – €300 / hr",
+                                          "desc":  "Strategic technology advisory from someone who's built and delivered. Architecture reviews, technology selection, vendor evaluation, team structuring, execution roadmaps.",
+                                          "features":  [
+                                                           "Architecture & code review",
+                                                           "Technology stack evaluation",
+                                                           "Vendor selection & negotiation support",
+                                                           "Team structure & process design",
+                                                           "Quarterly advisory retainer available"
+                                                       ]
+                                      },
+                                      {
+                                          "title":  "Turnkey Solution",
+                                          "price":  "Custom quote",
+                                          "desc":  "Define the problem once. I handle everything: architecture, implementation, deployment, documentation, handover. Fixed price. No surprises.",
+                                          "features":  [
+                                                           "Full requirements gathering",
+                                                           "Architecture & solution design",
+                                                           "End-to-end implementation",
+                                                           "Testing & quality assurance",
+                                                           "Deployment & handover training"
                                                        ]
                                       }
                                   ],
                      "approach":  {
-                                     "title":  "How I Work",
+                                     "title": "How I Deliver",
+                                     "subtitle": "Fixed price. On time. Production-ready.",
                                      "steps":  [
                                                    {
                                                        "step":  "1. Discovery",
-                                                       "desc":  "We start with a deep understanding of your current state, goals, and constraints."
+                                                       "desc":  "We define the problem, constraints, and success criteria. I deliver a solution architecture and fixed-price quote — no commitment."
                                                    },
                                                    {
-                                                       "step":  "2. Strategy",
-                                                       "desc":  "I design a tailored approach — no templates, no one-size-fits-all."
+                                                       "step":  "2. Build",
+                                                       "desc":  "I build the solution end-to-end with weekly checkpoints, transparent progress, and continuous feedback integration."
                                                    },
                                                    {
-                                                       "step":  "3. Execution",
-                                                       "desc":  "Hands-on implementation with regular checkpoints and measurable outcomes."
+                                                       "step":  "3. Deploy",
+                                                       "desc":  "Production deployment with monitoring, documentation, and knowledge transfer. Your team can run it independently."
                                                    },
                                                    {
-                                                       "step":  "4. Enablement",
-                                                       "desc":  "Your team walks away with the knowledge and tools to maintain and evolve."
+                                                       "step":  "4. Evolve",
+                                                       "desc":  "Optional retainer for ongoing optimization, feature additions, and support. Your system scales as you grow."
                                                    }
                                                ]
                                  }
@@ -278,39 +341,51 @@
     "privacy":  {
                     "title":  "Privacy Policy",
                     "lastUpdated":  "Last updated: July 15, 2026",
-                    "intro":  "This Privacy Policy explains how Riccardo Bozzato (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;) collects, uses, and protects your personal data when you visit my website or use my services.",
+                    "intro":  "This Privacy Policy explains how Riccardo Bozzato (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;) collects, uses, and protects your personal data when you visit my website, download resources, or engage my consulting services. I take your privacy seriously — I follow GDPR and keep data collection to the minimum necessary.",
                     "sections":  [
                                      {
                                          "title":  "1. Data Controller",
-                                         "content":  "Riccardo Bozzato<br>Legnaro, PD, Italy<br>Email: riccardobozzato@gmail.com"
+                                         "content":  "Riccardo Bozzato<br>Legnaro, PD, Italy<br>Email: riccardobozzato@gmail.com<br>Phone: +39 389 213 9542"
                                      },
                                      {
                                          "title":  "2. Data I Collect",
-                                         "content":  "Contact form: name, email address, and message you submit.<br>Freebie downloads: name and email address.<br>Analytics: anonymous page views (no cookies, no tracking scripts)."
+                                         "content":  "<strong>Contact form:</strong> name, email address, and message you submit voluntarily.<br><strong>Freebie downloads (playbook):</strong> name and email address — used to deliver the PDF and send the email sequence (max 6 emails over 30 days).<br><strong>Consulting inquiries:</strong> name, email, company, and project details you share — used to prepare proposals and deliver services.<br><strong>Analytics:</strong> anonymous, aggregated page views. No cookies, no personal tracking, no fingerprinting."
                                      },
                                      {
                                          "title":  "3. How I Use Your Data",
-                                         "content":  "To respond to your inquiries.<br>To send you the free guide you requested.<br>To improve my website based on anonymous usage data.<br>I do not sell, rent, or share your data with third parties."
+                                         "content":  "To respond to your inquiries and prepare proposals.<br>To deliver free resources (playbook PDF) and the associated email sequence.<br>To communicate about active consulting engagements.<br>To improve my website based on anonymous usage patterns.<br>I do <strong>not</strong> sell, rent, trade, or share your personal data with any third party for their marketing purposes."
                                      },
                                      {
-                                         "title":  "4. Legal Basis (GDPR)",
-                                         "content":  "I process your data based on your consent (via form submission) and legitimate interest (responding to your inquiries). You can withdraw consent at any time."
+                                         "title":  "4. Email Marketing (Consent & Unsubscribe)",
+                                         "content":  "When you download the free playbook, you consent to receive a 6-email educational sequence over approximately 30 days. Each email includes an unsubscribe link. You can withdraw consent at any time — your request is processed immediately and you will receive no further emails. Unsubscribing does not affect communications related to active consulting engagements."
                                      },
                                      {
-                                         "title":  "5. Data Retention",
-                                         "content":  "I keep your data for as long as necessary to fulfill the purpose for which you provided it, or as required by law. You can request deletion at any time."
+                                         "title":  "5. Legal Basis (GDPR)",
+                                         "content":  "I process your data based on:<br><strong>Consent:</strong> when you submit a form (contact, freebie download). You can withdraw at any time.<br><strong>Contractual necessity:</strong> when you engage my consulting services — data processing is required to deliver the agreed work.<br><strong>Legitimate interest:</strong> responding to pre-sales inquiries and improving my services."
                                      },
                                      {
-                                         "title":  "6. Your Rights",
-                                         "content":  "Under GDPR, you have the right to: access your data, correct inaccurate data, delete your data, restrict processing, data portability, and withdraw consent. To exercise these rights, email me at riccardobozzato@gmail.com."
+                                         "title":  "6. Data Retention",
+                                         "content":  "Contact form inquiries: deleted after 12 months of inactivity.<br>Freebie subscribers: retained until you unsubscribe (plus 30 days grace for re-engagement).<br>Consulting client data: retained for the duration of the engagement plus 24 months for tax/legal compliance (as required by Italian law).<br>You can request deletion of your data at any time by emailing riccardobozzato@gmail.com."
                                      },
                                      {
-                                         "title":  "7. Third-Party Services",
-                                         "content":  "Resend — transactional email delivery (privacy policy: resend.com/privacy).<br>Netlify — website hosting (privacy policy: netlify.com/privacy).<br>GitHub — source code hosting (privacy policy: github.com/privacy)."
+                                         "title":  "7. Your Rights (GDPR)",
+                                         "content":  "You have the right to:<br>Access your data — request a copy of everything I hold about you.<br>Rectify inaccurate data — ask me to correct or complete your information.<br>Delete your data — request erasure (subject to legal retention requirements).<br>Restrict processing — limit how I use your data.<br>Data portability — receive your data in a structured, machine-readable format.<br>Withdraw consent — at any time, for any processing based on consent.<br>To exercise any of these rights, email riccardobozzato@gmail.com. I will respond within 30 days."
                                      },
                                      {
-                                         "title":  "8. Contact",
-                                         "content":  "For any questions about this privacy policy, email: riccardobozzato@gmail.com"
+                                         "title":  "8. Third-Party Processors",
+                                         "content":  "I use the following third-party services to operate this site and deliver services. Each has been vetted for GDPR compliance:<br><br><strong>Resend</strong> (resend.com) — transactional email delivery and email sequence automation. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — website hosting and CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — source code hosting and project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — payment processing for Trova purchases. Privacy: stripe.com/privacy<br><strong>Iubenda</strong> (iubenda.com) — privacy policy generation and consent management. Privacy: iubenda.com/privacy<br><br>Data is processed within the EU and US (under SCC agreements)."
+                                     },
+                                     {
+                                         "title":  "9. Data Security",
+                                         "content":  "I implement appropriate technical and organizational measures to protect your data: encrypted connections (HTTPS), access controls on databases, minimal data collection principle, and regular security reviews. No data transmission over the internet is 100% secure, but I follow industry best practices to minimize risk."
+                                     },
+                                     {
+                                         "title":  "10. Changes to This Policy",
+                                         "content":  "I may update this privacy policy from time to time. Material changes will be communicated via email (if I have your contact for active services) or via a notice on this website. The &ldquo;Last updated&rdquo; date at the top of this page reflects the most recent revision."
+                                     },
+                                     {
+                                         "title":  "11. Contact",
+                                         "content":  "For any questions, requests, or concerns about this privacy policy or how I handle your data:<br><br>Riccardo Bozzato<br>Legnaro, PD, Italy<br>Email: riccardobozzato@gmail.com<br>Phone: +39 389 213 9542<br><br>You also have the right to lodge a complaint with the Italian Data Protection Authority (Garante per la Protezione dei Dati Personali) at garanteprivacy.it."
                                      }
                                  ],
                     "nav":  "Privacy"

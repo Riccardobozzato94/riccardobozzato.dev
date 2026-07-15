@@ -1,12 +1,23 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Download, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Download, CheckCircle2, Sparkles, Cpu, Cloud, Zap, GitBranch, Lightbulb, Package, Calendar } from "lucide-react";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
+
+const serviceIcons: Record<string, React.ReactNode> = {
+  cpu: <Cpu className="size-6" />,
+  cloud: <Cloud className="size-6" />,
+  zap: <Zap className="size-6" />,
+  "git-branch": <GitBranch className="size-6" />,
+  lightbulb: <Lightbulb className="size-6" />,
+  package: <Package className="size-6" />,
+};
 
 export default async function HomePage() {
   const t = await getTranslations("home");
   const tp = await getTranslations("projects");
+
+  const serviceList = t.raw("serviceList") as { icon: string; title: string; desc: string }[];
 
   return (
     <>
@@ -33,34 +44,33 @@ export default async function HomePage() {
           {/* Pill badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-8 animate-fade-in-up">
             <Sparkles className="size-3.5" />
-            Operations & Delivery Consultant | PMP®
+            {t("heroRole")}
           </div>
 
           <div className="animate-fade-in-up space-y-8" style={{ animationDelay: "0.1s" }}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tighter">
-              <span className="gradient-text">Hi, I&apos;m Riccardo</span>
+              <span className="gradient-text">{t("heroTitle")}</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
               {t("heroTagline")}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
-                href="/projects"
+                href="/services"
                 className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 px-8 text-base font-medium transition-all duration-300 hover:-translate-y-0.5"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  {t("heroCta")}
+                  {t("heroCta2")}
                   <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Link>
               <Link
-                href="/freebie"
+                href="/projects"
                 className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl border border-border/60 bg-background/50 backdrop-blur-sm px-8 text-base font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5 hover:shadow-lg hover:shadow-accent/5"
               >
-                <Download className="size-4" />
-                {t("heroCta2")}
+                {t("heroCta")}
               </Link>
             </div>
           </div>
@@ -73,6 +83,49 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ════════════════════════════════════════════
+           SERVICES
+         ════════════════════════════════════════════ */}
+      <Section animate>
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
+            <Sparkles className="size-3.5" />
+            {t("servicesTitle")}
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+            {t("servicesTitle")}
+          </h2>
+          <p className="text-muted-foreground mt-3 text-lg max-w-xl mx-auto">
+            {t("servicesSubtitle")}
+          </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {serviceList.map((svc, i) => (
+            <Link
+              key={i}
+              href="/services"
+              className="group rounded-2xl border border-border/50 bg-card/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5 hover:border-accent/30"
+            >
+              <div className="size-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:scale-105 transition-all duration-300">
+                <span className="text-accent">{serviceIcons[svc.icon]}</span>
+              </div>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-accent transition-colors">{svc.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{svc.desc}</p>
+            </Link>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/services"
+            className="group inline-flex items-center gap-2 h-11 rounded-xl border border-accent/30 bg-accent/5 hover:bg-accent/10 px-6 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+          >
+            View All Services <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
+      </Section>
 
       {/* ════════════════════════════════════════════
            FEATURED PROJECTS
@@ -98,7 +151,7 @@ export default async function HomePage() {
             description={tp("trova.description")}
             tags={["Next.js 16", "SaaS", "TypeScript", "€49"]}
             href="/trova"
-            image="/images/trova-home.png"
+            image="/images/trova-home.svg"
             badge="Product"
             badgeColor="bg-accent/10 text-accent"
             featured
@@ -112,7 +165,7 @@ export default async function HomePage() {
               description={tp("vulnclaw.description")}
               tags={["AI", "Security", "Python"]}
               href="/projects/vulnclaw"
-              image="/images/vulnclaw-scan.png"
+              image="/images/vulnclaw-scan.svg"
               badge="CLI Tool"
               badgeColor="bg-blue-500/10 text-blue-400"
             />
@@ -122,7 +175,7 @@ export default async function HomePage() {
               description={tp("panificio.description")}
               tags={["Next.js", "E-Commerce", "Family"]}
               href="/projects/panificio"
-              image="/images/panificio-home.png"
+              image="/images/panificio-home.svg"
               badge="Family Gift"
               badgeColor="bg-amber-500/10 text-amber-400"
             />
