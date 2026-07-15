@@ -1,57 +1,74 @@
 import { getTranslations } from "next-intl/server";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
+import { Sparkles } from "lucide-react";
 
 export default async function ProjectsPage() {
   const t = await getTranslations("projects");
 
   return (
-    <Section>
-      <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold">{t("title")}</h1>
-        <p className="text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
-          {t("subtitle")}
-        </p>
-      </div>
-
-      <div className="max-w-6xl mx-auto space-y-8">
-        {/* Featured: Trova — full width */}
-        <ProjectCard
-          title={t("trova.title")}
-          subtitle={t("trova.subtitle")}
-          description={t("trova.description")}
-          tags={["Next.js 16", "SaaS", "TypeScript", "€49"]}
-          href="/trova"
-          image="/images/trova-home.png"
-          badge="Product"
-          badgeColor="bg-accent/10 text-accent"
-          featured
-        />
-
-        {/* VulnClaw + Panificio — side by side */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <ProjectCard
-            title={t("vulnclaw.title")}
-            subtitle={t("vulnclaw.subtitle")}
-            description={t("vulnclaw.description")}
-            tags={["AI", "Security", "Python"]}
-            href="/projects/vulnclaw"
-            image="/images/vulnclaw-scan.png"
-            badge="CLI Tool"
-            badgeColor="bg-blue-500/10 text-blue-400"
-          />
-          <ProjectCard
-            title={t("panificio.title")}
-            subtitle={t("panificio.subtitle")}
-            description={t("panificio.description")}
-            tags={["Next.js", "E-Commerce", "Family"]}
-            href="/projects/panificio"
-            image="/images/panificio-home.png"
-            badge="Family Gift"
-            badgeColor="bg-amber-500/10 text-amber-400"
-          />
+    <>
+      {/* Hero */}
+      <section className="relative pt-28 pb-8 md:pt-36 md:pb-12 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px]" />
         </div>
-      </div>
-    </Section>
+        <Section className="!pt-0 !pb-0 text-center relative">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
+              <Sparkles className="size-3.5" />
+              Portfolio
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
+              {t("title")}
+            </h1>
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
+              {t("subtitle")}
+            </p>
+          </div>
+        </Section>
+      </section>
+
+      <Section animate className="!pt-0">
+        <div className="max-w-6xl mx-auto space-y-8">
+          {/* Featured: Trova */}
+          <ProjectCard
+            title={t("trova.title")}
+            subtitle={t("trova.subtitle")}
+            description={t("trova.description")}
+            tags={["Next.js 16", "SaaS", "TypeScript", "€49"]}
+            href="/trova"
+            image="/images/trova-home.png"
+            badge="Product"
+            badgeColor="bg-accent/10 text-accent"
+            featured
+          />
+
+          {/* Two-column layout */}
+          <div className="grid md:grid-cols-2 gap-8">
+            <ProjectCard
+              title={t("vulnclaw.title")}
+              subtitle={t("vulnclaw.subtitle")}
+              description={t("vulnclaw.description")}
+              tags={["AI", "Security", "Python"]}
+              href="/projects/vulnclaw"
+              image="/images/vulnclaw-scan.png"
+              badge="CLI Tool"
+              badgeColor="bg-blue-500/10 text-blue-400"
+            />
+            <ProjectCard
+              title={t("panificio.title")}
+              subtitle={t("panificio.subtitle")}
+              description={t("panificio.description")}
+              tags={["Next.js", "E-Commerce", "Family"]}
+              href="/projects/panificio"
+              image="/images/panificio-home.png"
+              badge="Family Gift"
+              badgeColor="bg-amber-500/10 text-amber-400"
+            />
+          </div>
+        </div>
+      </Section>
+    </>
   );
 }

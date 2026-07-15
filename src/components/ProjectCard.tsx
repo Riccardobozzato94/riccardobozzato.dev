@@ -5,14 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
 
 interface ProjectCardProps {
   title: string;
@@ -42,16 +34,25 @@ export default function ProjectCard({
   const t = useTranslations("home");
 
   return (
-    <Link href={href} className="group block">
-      <Card
+    <Link href={href} className="group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-xl">
+      <div
         className={cn(
-          "overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5",
+          "relative overflow-hidden rounded-xl border transition-all duration-500",
           featured
             ? "border-accent/20 hover:border-accent/40"
             : "border-border/60 hover:border-border",
+          "hover:-translate-y-1.5",
+          featured
+            ? "shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-accent/5"
+            : "shadow-sm shadow-black/10 hover:shadow-lg hover:shadow-black/15",
+          "bg-gradient-to-b from-card to-card/80",
           className,
         )}
       >
+        {/* Subtle gradient overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-accent/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+        {/* Image */}
         {image ? (
           <div
             className={cn(
@@ -62,81 +63,79 @@ export default function ProjectCard({
             <img
               src={image}
               alt={title}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
             />
           </div>
         ) : (
           <div
             className={cn(
-              "w-full bg-gradient-to-br from-accent/10 to-accent/5",
+              "w-full bg-gradient-to-br from-accent/10 via-accent/5 to-card",
               featured ? "aspect-[16/7]" : "aspect-video",
             )}
           />
         )}
 
-        <CardHeader className={cn(featured && "p-6 md:p-8")}>
-          <div className="flex items-center justify-between gap-2 mb-1">
-            <CardTitle className={cn(featured ? "text-2xl md:text-3xl" : "text-lg")}>
+        {/* Content */}
+        <div className={cn(featured ? "p-6 md:p-8" : "p-5")}>
+          <div className="flex items-start justify-between gap-3 mb-2">
+            <h3 className={cn(
+              "font-heading font-bold tracking-tight",
+              featured ? "text-2xl md:text-3xl" : "text-lg",
+            )}>
               {title}
-            </CardTitle>
+            </h3>
             {badge && (
               <Badge
                 variant="secondary"
-                className={cn("shrink-0 text-xs", badgeColor)}
+                className={cn("shrink-0 text-xs font-medium", badgeColor)}
               >
                 {badge}
               </Badge>
             )}
           </div>
+
           {subtitle && (
             <p
               className={cn(
-                "text-muted-foreground",
+                "text-muted-foreground/80",
                 featured ? "text-base" : "text-sm",
               )}
             >
               {subtitle}
             </p>
           )}
-          <CardDescription
+
+          <p
             className={cn(
-              "leading-relaxed",
-              featured ? "text-base mt-2" : "text-sm mt-1",
+              "text-muted-foreground leading-relaxed mt-2",
+              featured ? "text-base" : "text-sm",
             )}
           >
             {description}
-          </CardDescription>
-        </CardHeader>
+          </p>
 
-        <CardContent className={cn(featured && "px-6 md:px-8")}>
-          <div className="flex flex-wrap gap-2">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1.5 mt-4">
             {tags.map((tag) => (
-              <Badge
+              <span
                 key={tag}
-                variant="secondary"
-                className={cn(
-                  "text-xs",
-                  featured && "text-sm px-3 py-1",
-                )}
+                className="inline-flex items-center rounded-md border border-border/50 bg-muted/30 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
               >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
-        </CardContent>
 
-        <CardFooter
-          className={cn(
-            "border-t border-border/50",
-            featured && "px-6 md:px-8 py-4",
-          )}
-        >
-          <span className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors group-hover:text-accent/80">
-            {t("viewProject")}
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </span>
-        </CardFooter>
-      </Card>
+          {/* CTA */}
+          <div className="mt-5 pt-4 border-t border-border/30">
+            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-accent group/cta">
+              {t("viewProject")}
+              <ArrowRight className="size-4 transition-all duration-300 group-hover/cta:translate-x-1" />
+            </span>
+          </div>
+        </div>
+      </div>
     </Link>
   );
 }

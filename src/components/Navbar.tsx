@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { Menu, X, Languages } from "lucide-react";
+import { Menu, X, Languages, Hexagon } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
@@ -21,19 +20,40 @@ export default function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const otherLocale = locale === "en" ? "it" : "en";
 
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-500",
+        scrolled
+          ? "bg-background/70 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-black/5"
+          : "bg-transparent border-transparent",
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        {/* Logo */}
         <Link
           href="/"
-          className="text-lg font-bold tracking-tight transition-opacity hover:opacity-80"
+          className="group flex items-center gap-2.5"
         >
-          Riccardo Bozzato
+          <div className="relative flex items-center justify-center size-8 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+            <Hexagon className="size-5 text-accent" />
+          </div>
+          <span className="text-base font-bold tracking-tight">
+            Riccardo<span className="text-accent">.</span>Bozzato
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        {/* Desktop Nav */}
+        <nav className="hidden items-center gap-0.5 md:flex">
           {NAV_ITEMS.map((item) => {
             const isActive =
               item.href === "/"
@@ -44,10 +64,76 @@ export default function Navbar() {
                 key={item.key}
                 href={item.href}
                 className={cn(
-                  "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                  "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-200",
                   isActive
                     ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground",
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
+                )}
+              >
+                {t(item.key)}
+                {isActive && (
+                  <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 size-1 rounded-full bg-accent" />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="flex items-center gap-2">
+          {/* Language Switcher */}
+          <Link
+            href={pathname}
+            locale={otherLocale}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-200",
+              scrolled
+                ? "border-border/60 text-muted-foreground hover:border-accent/40 hover:text-accent"
+                : "border-white/10 text-white/70 hover:border-white/30 hover:text-white",
+            )}
+          >
+            <Languages className="size-3.5" />
+            {otherLocale.toUpperCase()}
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className={cn(
+              "inline-flex items-center justify-center size-9 rounded-lg md:hidden transition-colors",
+              scrolled
+                ? "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                : "text-white/70 hover:text-white hover:bg-white/10",
+            )}
+            aria-label={open ? "Close menu" : "Toggle menu"}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={cn(
+          "md:hidden transition-all duration-300 overflow-hidden",
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+        )}
+      >
+        <nav className="flex flex-col gap-1 border-t border-border/50 bg-background/95 backdrop-blur-xl px-4 pb-5 pt-3">
+          {NAV_ITEMS.map((item) => {
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.key}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors",
+                  isActive
+                    ? "text-accent bg-accent/5"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
                 )}
               >
                 {t(item.key)}
@@ -55,56 +141,7 @@ export default function Navbar() {
             );
           })}
         </nav>
-
-        <div className="flex items-center gap-2">
-          <Link
-            href={pathname}
-            locale={otherLocale}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground hover:border-foreground/30"
-          >
-            <Languages className="size-3.5" />
-            {otherLocale.toUpperCase()}
-          </Link>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </Button>
-        </div>
       </div>
-
-      {open && (
-        <div className="border-t border-border md:hidden">
-          <nav className="flex flex-col gap-1 px-4 pb-4 pt-2">
-            {NAV_ITEMS.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
-              return (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                    isActive
-                      ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  {t(item.key)}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-      )}
     </header>
   );
 }

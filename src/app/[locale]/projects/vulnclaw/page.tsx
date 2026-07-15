@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ExternalLink, Mail } from "lucide-react";
+import { CheckCircle2, ExternalLink, Mail, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
@@ -15,36 +15,47 @@ export default async function VulnClawPage() {
   return (
     <>
       {/* Hero */}
-      <Section className="text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />
-              <span className="relative inline-flex size-2 rounded-full bg-accent" />
-            </span>
-            AI • CLI • Security
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            {t("title")}
-          </h1>
-          <p className="text-xl text-muted-foreground mb-6">
-            {t("subtitle")}
-          </p>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            {t("description")}
-          </p>
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/8 blur-[120px]" />
         </div>
-      </Section>
+        <Section className="!pt-0 !pb-0 text-center relative">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />
+                <span className="relative inline-flex size-2 rounded-full bg-accent" />
+              </span>
+              AI • CLI • Security
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+              {t("title")}
+            </h1>
+            <p className="text-xl text-muted-foreground/80 mb-6">
+              {t("subtitle")}
+            </p>
+            <p className="text-muted-foreground/80 text-lg max-w-2xl mx-auto leading-relaxed">
+              {t("description")}
+            </p>
+          </div>
+        </Section>
+      </section>
 
       {/* Features */}
-      <Section className="bg-muted/30">
+      <Section animate className="!py-16 md:!py-20">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 text-center">Features</h2>
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
+              <Sparkles className="size-3.5" />
+              Features
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Capabilities</h2>
+          </div>
           <div className="space-y-4">
             {features.map((feature: string, i: number) => (
-              <div key={i} className="flex items-start gap-3">
+              <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card/50 border border-border/30">
                 <CheckCircle2 className="size-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-lg">{feature}</span>
+                <span className="text-lg text-foreground/90">{feature}</span>
               </div>
             ))}
           </div>
@@ -52,12 +63,12 @@ export default async function VulnClawPage() {
       </Section>
 
       {/* Tech Stack */}
-      <Section>
+      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-6">Tech Stack</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">Tech Stack</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {techStack.map((tech) => (
-              <Badge key={tech} variant="secondary" className="text-sm px-4 py-1.5">
+              <Badge key={tech} variant="secondary" className="text-sm px-4 py-1.5 font-normal border border-border/50 bg-card">
                 {tech}
               </Badge>
             ))}
@@ -66,49 +77,43 @@ export default async function VulnClawPage() {
       </Section>
 
       {/* Screenshots */}
-      <Section className="bg-muted/30">
+      <Section animate delay={100}>
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-6">Screenshots</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">Screenshots</h2>
+          <p className="text-muted-foreground mb-8">Terminal-first experience</p>
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="rounded-xl border border-border overflow-hidden bg-card">
-              <img
-                src="/images/vulnclaw-help.png"
-                alt="VulnClaw CLI help screen"
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-muted-foreground p-2">CLI help & commands</p>
-            </div>
-            <div className="rounded-xl border border-border overflow-hidden bg-card">
-              <img
-                src="/images/vulnclaw-scan.png"
-                alt="VulnClaw scan in progress"
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-muted-foreground p-2">Live reconnaissance scan</p>
-            </div>
-            <div className="rounded-xl border border-border overflow-hidden bg-card">
-              <img
-                src="/images/vulnclaw-results.png"
-                alt="VulnClaw scan results"
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-muted-foreground p-2">Findings & results</p>
-            </div>
+            {[
+              { src: "/images/vulnclaw-help.png", label: "CLI help & commands" },
+              { src: "/images/vulnclaw-scan.png", label: "Live reconnaissance scan" },
+              { src: "/images/vulnclaw-results.png", label: "Findings & results" },
+            ].map((img, idx) => (
+              <div
+                key={idx}
+                className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-blue-500/30"
+              >
+                <img
+                  src={img.src}
+                  alt={img.label}
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <p className="text-xs text-muted-foreground p-2.5">{img.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
 
       {/* CTA */}
-      <Section>
-        <Card className="max-w-2xl mx-auto border-accent/30 text-center">
-          <CardContent className="p-8 md:p-12 space-y-4">
-            <h2 className="text-2xl font-bold">Get VulnClaw</h2>
+      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
+        <Card className="max-w-2xl mx-auto border-accent/30 shadow-lg shadow-accent/5 text-center">
+          <CardContent className="p-8 md:p-12 space-y-5">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Get VulnClaw</h2>
             <p className="text-muted-foreground">
               VulnClaw is proprietary. Contact me for licensing inquiries or
               check out the project on GitHub.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <Button asChild>
+              <Button asChild className="h-11 rounded-xl shadow-lg shadow-primary/10">
                 <a
                   href="https://github.com/Riccardobozzato94"
                   target="_blank"
@@ -118,7 +123,7 @@ export default async function VulnClawPage() {
                   GitHub
                 </a>
               </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline" asChild className="h-11 rounded-xl">
                 <Link href="/contact">
                   <Mail className="mr-2 size-4" />
                   Contact for License

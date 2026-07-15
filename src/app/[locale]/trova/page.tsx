@@ -11,6 +11,7 @@ import {
   Palette,
   CheckCircle2,
   ShoppingCart,
+  Sparkles,
 } from "lucide-react";
 import Section from "@/components/Section";
 
@@ -18,21 +19,23 @@ interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  delay: number;
 }
 
-function FeatureCard({ icon, title, description }: FeatureCardProps) {
+function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
   return (
-    <Card className="border-border/60 hover:border-accent/30 transition-colors">
-      <CardContent className="p-6 space-y-3">
-        <div className="size-10 rounded-lg bg-accent/10 flex items-center justify-center">
-          {icon}
-        </div>
-        <h3 className="font-semibold text-lg">{title}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          {description}
-        </p>
-      </CardContent>
-    </Card>
+    <div
+      className="group rounded-2xl border border-border/50 bg-card/50 p-6 space-y-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 hover:border-accent/30"
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className="size-11 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:scale-105 transition-all duration-300">
+        {icon}
+      </div>
+      <h3 className="font-semibold text-lg">{title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        {description}
+      </p>
+    </div>
   );
 }
 
@@ -63,31 +66,43 @@ export default async function TrovaPage() {
   return (
     <>
       {/* Hero */}
-      <Section className="text-center">
-        <div className="max-w-4xl mx-auto">
-          <Badge variant="secondary" className="mb-4 text-sm px-4 py-1.5">
-            Next.js 16 • Tailwind v4 • shadcn/ui
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            {t("title")}
-          </h1>
-          <p className="text-xl md:text-2xl text-accent font-semibold mb-6">
-            {t("tagline")}
-          </p>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            {t("description")}
-          </p>
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-accent/8 blur-[150px]" />
+          <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[100px]" />
         </div>
-      </Section>
+        <Section className="!pt-0 !pb-0 text-center relative">
+          <div className="max-w-4xl mx-auto">
+            <Badge variant="secondary" className="mb-6 text-sm px-4 py-1.5 font-normal border border-border/50 bg-card">
+              Next.js 16 • Tailwind v4 • shadcn/ui
+            </Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
+              {t("title")}
+            </h1>
+            <p className="text-xl md:text-2xl text-accent font-semibold mb-6">
+              {t("tagline")}
+            </p>
+            <p className="text-muted-foreground/80 text-lg max-w-2xl mx-auto leading-relaxed">
+              {t("description")}
+            </p>
+          </div>
+        </Section>
+      </section>
 
       {/* Features Grid */}
-      <Section className="bg-muted/30">
+      <Section animate className="!py-16 md:!py-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Everything You Need to Ship
-          </h2>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
+              <Sparkles className="size-3.5" />
+              Features
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Everything You Need to Ship
+            </h2>
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featureKeys.map((key) => (
+            {featureKeys.map((key, idx) => (
               <FeatureCard
                 key={key}
                 icon={iconMap[key]}
@@ -105,6 +120,7 @@ export default async function TrovaPage() {
                             : "UI"
                 }
                 description={features[key]}
+                delay={idx * 100}
               />
             ))}
           </div>
@@ -112,10 +128,11 @@ export default async function TrovaPage() {
       </Section>
 
       {/* Demo Video */}
-      <Section>
+      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Quick Demo</h2>
-          <div className="rounded-xl border border-border overflow-hidden bg-card">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Quick Demo</h2>
+          <p className="text-muted-foreground mb-8">13-second walkthrough of the full site</p>
+          <div className="rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl">
             <video
               src="/images/demo-preview.mp4"
               controls
@@ -125,62 +142,47 @@ export default async function TrovaPage() {
               Your browser does not support the video tag.
             </video>
           </div>
-          <p className="text-sm text-muted-foreground mt-3">
-            13-second walkthrough of the full site
-          </p>
         </div>
       </Section>
 
       {/* Screenshots */}
-      <Section className="bg-muted/30">
+      <Section animate delay={100}>
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">See It In Action</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-            <div className="rounded-xl border border-border overflow-hidden bg-card">
-              <img
-                src="/images/trova-home.png"
-                alt="Trova Home page"
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-muted-foreground p-2">Home page</p>
-            </div>
-            <div className="rounded-xl border border-border overflow-hidden bg-card">
-              <img
-                src="/images/trova-projects.png"
-                alt="Trova Projects page"
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-muted-foreground p-2">Projects portfolio</p>
-            </div>
-            <div className="rounded-xl border border-border overflow-hidden bg-card">
-              <img
-                src="/images/trova-trova.png"
-                alt="Trova sales page"
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-muted-foreground p-2">Trova sales page</p>
-            </div>
-            <div className="rounded-xl border border-border overflow-hidden bg-card">
-              <img
-                src="/images/trova-freebie.png"
-                alt="Trova Freebie page"
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-muted-foreground p-2">Freebie download</p>
-            </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">See It In Action</h2>
+          <p className="text-muted-foreground mb-8">Real pages from the boilerplate</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { src: "/images/trova-home.png", label: "Home page" },
+              { src: "/images/trova-projects.png", label: "Projects portfolio" },
+              { src: "/images/trova-trova.png", label: "Trova sales page" },
+              { src: "/images/trova-freebie.png", label: "Freebie download" },
+            ].map((img, idx) => (
+              <div
+                key={idx}
+                className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30"
+              >
+                <img
+                  src={img.src}
+                  alt={img.label}
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <p className="text-xs text-muted-foreground p-2.5">{img.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
 
       {/* Pricing */}
-      <Section>
+      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-2">{pricing.title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">{pricing.title}</h2>
           <p className="text-muted-foreground mb-8">{pricing.subtitle}</p>
-          <Card className="border-accent/40">
-            <CardContent className="p-8 md:p-12 space-y-6">
+          <Card className="relative overflow-hidden border-accent/30 shadow-xl shadow-accent/5">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <CardContent className="p-8 md:p-12 space-y-6 relative">
               <div className="space-y-1">
-                <span className="text-5xl font-bold">{pricing.price}</span>
+                <span className="text-5xl md:text-6xl font-bold tracking-tight">{pricing.price}</span>
                 <span className="text-lg text-muted-foreground ml-2">
                   {pricing.period}
                 </span>
@@ -194,7 +196,7 @@ export default async function TrovaPage() {
                   </li>
                 ))}
               </ul>
-              <Button size="lg" className="w-full text-base" asChild>
+              <Button size="lg" className="w-full text-base h-12 rounded-xl shadow-lg shadow-primary/10" asChild>
                 <a
                   href="#"
                   target="_blank"

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/content/blog";
-import { CalendarDays, ArrowLeft } from "lucide-react";
+import { CalendarDays, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +9,6 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-// Post content registry — maps slugs to their full content
 const postContent: Record<string, { body: string[] }> = {
   "ops-security-alignment": {
     body: [
@@ -94,47 +93,54 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       {/* Back link */}
-      <Section className="pb-0">
-        <div className="max-w-3xl mx-auto">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
-          >
-            <ArrowLeft className="size-4" />
-            {isIt ? "Torna al blog" : "Back to blog"}
-          </Link>
-        </div>
-      </Section>
+      <div className="pt-28 md:pt-36">
+        <Section className="!pt-0 !pb-0">
+          <div className="max-w-3xl mx-auto">
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
+            >
+              <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
+              {isIt ? "Torna al blog" : "Back to blog"}
+            </Link>
+          </div>
+        </Section>
+      </div>
 
       {/* Post header */}
-      <Section className="pt-8">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
-            <span className="flex items-center gap-1">
-              <CalendarDays className="size-4" />
-              {post.date}
-            </span>
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-            {post.title}
-          </h1>
-          <div className="flex flex-wrap gap-2 mb-8">
-            {post.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
-          </div>
+      <section className="relative pt-8 pb-8 md:pb-12 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-accent/6 blur-[120px]" />
         </div>
-      </Section>
+        <Section className="!pt-0 !pb-0 relative">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
+              <span className="flex items-center gap-1.5">
+                <CalendarDays className="size-4" />
+                {post.date}
+              </span>
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight tracking-tight">
+              {post.title}
+            </h1>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {post.tags.map((tag) => (
+                <Badge key={tag} variant="secondary" className="font-normal border border-border/50">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </Section>
+      </section>
 
       {/* Post body */}
-      <Section className="bg-muted/30">
-        <article className="max-w-3xl mx-auto prose prose-neutral dark:prose-invert">
+      <Section animate className="bg-muted/30 !py-16 md:!py-20">
+        <article className="max-w-3xl mx-auto">
           {content.body.map((paragraph, i) => (
             <p
               key={i}
-              className="text-lg leading-relaxed text-muted-foreground mb-4"
+              className="text-lg leading-relaxed text-muted-foreground mb-6"
               dangerouslySetInnerHTML={paragraph.startsWith("<strong>") ? { __html: paragraph } : undefined}
             >
               {paragraph.startsWith("<strong>") ? undefined : paragraph}
@@ -144,9 +150,12 @@ export default async function BlogPostPage({ params }: Props) {
       </Section>
 
       {/* Share CTA */}
-      <Section className="text-center">
-        <div className="max-w-2xl mx-auto space-y-4">
-          <h2 className="text-xl font-bold">
+      <Section animate>
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+          <div className="size-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
+            <Sparkles className="size-7 text-accent" />
+          </div>
+          <h2 className="text-2xl font-bold tracking-tight">
             {isIt ? "Ti è piaciuto questo articolo?" : "Enjoyed this post?"}
           </h2>
           <p className="text-muted-foreground">
@@ -154,15 +163,13 @@ export default async function BlogPostPage({ params }: Props) {
               ? "Condividilo con un collega o contattami per parlarne."
               : "Share it with a colleague or reach out to discuss."}
           </p>
-          <div className="flex items-center justify-center gap-4">
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center h-10 rounded-md border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground px-6 text-sm transition-colors"
-            >
-              <ArrowLeft className="mr-2 size-4" />
-              {isIt ? "Altri articoli" : "More posts"}
-            </Link>
-          </div>
+          <Link
+            href="/blog"
+            className="group inline-flex items-center justify-center gap-2 h-11 rounded-xl border border-border/50 bg-card shadow-sm hover:border-accent/30 hover:bg-accent/5 px-6 text-sm font-medium transition-all duration-300"
+          >
+            <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
+            {isIt ? "Altri articoli" : "More posts"}
+          </Link>
         </div>
       </Section>
     </>
