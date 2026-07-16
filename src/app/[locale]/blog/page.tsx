@@ -1,9 +1,45 @@
 import { blogPosts, type BlogPost } from "@/content/blog";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { CalendarDays, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const isIt = locale === "it";
+  const site = await getTranslations("site");
+
+  const title = isIt ? "Blog" : "Blog";
+  const description = isIt
+    ? "Pensieri, progetti e lezioni imparate costruendo cose."
+    : "Thoughts, projects, and lessons learned building things.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title: `${title} | ${site("title")}`,
+      description,
+      url: `${baseUrl}/${locale}/blog`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/blog`,
+      languages: {
+        en: `${baseUrl}/en/blog`,
+        it: `${baseUrl}/it/blog`,
+      },
+    },
+  };
+}
 
 function getPostsForLocale(locale: string): BlogPost[] {
   return blogPosts
@@ -11,11 +47,7 @@ function getPostsForLocale(locale: string): BlogPost[] {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
-
-export default async function BlogIndexPage({ params }: Props) {
+export default async function BlogIndexPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const posts = getPostsForLocale(locale);
   const isIt = locale === "it";

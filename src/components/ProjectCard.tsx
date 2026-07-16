@@ -49,6 +49,9 @@ export default function ProjectCard({
           className,
         )}
       >
+        {/* Gradient border glow on hover */}
+        <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-br from-accent/40 via-accent/10 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -z-10 blur-[2px]" />
+
         {/* Subtle gradient overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-accent/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 

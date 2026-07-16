@@ -1,8 +1,8 @@
 {
     "site":  {
                   "title":  "Riccardo Bozzato",
-                  "tagline":  "Complex problems. Turnkey solutions. Serverless, AI agents, automation — I build systems that scale your business without scaling your costs.",
-                  "description":  "I solve complex operational problems with turnkey solutions: serverless architecture at the lowest possible cost, AI agent workflows, system integration, and automation. PMP® certified, €500K+ enterprise portfolio. Your business runs better — or you don't pay."
+                  "tagline":  "Serverless architecture, AI agents, automation — from €1,500. PMP® certified, €500K+ delivered across eCommerce and PIM/DAM.",
+                  "description":  "Operations & Delivery Consultant (PMP®) from Legnaro, PD. I design and deliver turnkey solutions: serverless infra at lowest cost, AI agent workflows, system integration, end-to-end automation. €500K+ enterprise portfolio across eCommerce (Magento, Shopware) and PIM/DAM (Pimcore)."
               },
     "nav":  {
                 "home":  "Home",
@@ -16,9 +16,9 @@
                 "contact":  "Contact"
             },
     "home":  {
-                  "heroTitle":  "Complex Problems. Turnkey Solutions.",
+                  "heroTitle":  "Build Systems. Deliver Results.",
                   "heroRole":  "Serverless · AI Agents · Automation · System Integration",
-                  "heroTagline":  "I build systems that solve your hardest operational problems — AI agent workflows, serverless architecture at the lowest possible cost, end-to-end automation, and system integration. PMP® certified, €500K+ delivered. Your business runs better, or you don't pay.",
+                  "heroTagline":  "From Legnaro, PD — I design and deliver production-ready solutions: serverless infra at the lowest possible cost, AI agents that automate workflows, system integration that makes your stack work as one. PMP® certified, €500K+ delivered across eCommerce and PIM/DAM.",
                   "heroCta":  "See My Work",
                   "heroCta2":  "Book a Free Call",
                   "featuredTitle":  "What I Build",
@@ -134,9 +134,9 @@
                                    }
                                },
     "services":  {
-                     "title":  "I Solve Complex Problems. Delivered.",
-                     "subtitle":  "Serverless · AI Agents · Automation · Integration · Consulting",
-                     "heroDesc":  "You have a complex operational problem. I design and deliver the solution — fixed price, on time, production-ready. From AI agents that automate your workflows to serverless infrastructure that costs pennies at scale. PMP® certified, €500K+ delivered. Your business runs better, or you don't pay.",
+                      "title":  "What I Deliver — On Time, Fixed Price",
+                      "subtitle":  "From €1,500. Production-ready. No surprises.",
+                      "heroDesc":  "You have an operational problem. I design and deliver the solution — fixed price, on time, production-ready. From AI agents that automate your workflows to serverless infrastructure that costs pennies at scale. PMP® certified, €500K+ portfolio across Magento, Shopware, Pimcore and custom platforms.",
                      "cta":  "Book a Free Call",
                      "packages":  [
                                       {
@@ -414,6 +414,13 @@
                      "exploreTitle":  "In the Meantime, Explore",
                      "readBlog":  "Read the Blog",
                      "viewProjects":  "View Projects"
+                 },
+    "cookies":  {
+                     "title":  "This site uses cookies",
+                     "description":  "We use technical and anonymized analytics cookies to improve your experience. No profiling cookies.",
+                     "accept":  "Accept All",
+                     "reject":  "Only Necessary",
+                     "privacyLink":  "Privacy Policy"
                  },
     "notFound":  {
                     "title":  "404",

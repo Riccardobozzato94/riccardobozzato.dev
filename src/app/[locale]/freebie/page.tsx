@@ -314,28 +314,10 @@ export default function FreebiePage() {
         </div>
       </Section>
 
-      {/* ═══════════════ DIRECT DOWNLOAD ═══════════════ */}
-      <Section animate delay={100}>
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="rounded-2xl border border-border/50 bg-card/50 p-8 md:p-10">
-            <div className="size-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-              <Lock className="size-6 text-accent" />
-            </div>
-            <h3 className="text-xl font-bold tracking-tight mb-2">Want It Instantly?</h3>
-            <p className="text-muted-foreground text-sm mb-6">
-              No email required. Download the PDF directly.
-            </p>
-            <a
-              href="/files/ai-ops-security-playbook.pdf"
-              download
-              className="group inline-flex items-center justify-center gap-2 h-12 rounded-xl border border-accent/30 bg-accent/5 hover:bg-accent/10 px-8 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
-            >
-              <Download className="size-4 transition-transform group-hover:translate-y-0.5" />
-              Download PDF Directly
-            </a>
-          </div>
-        </div>
-      </Section>
+      {/* ═══════════════ DIRECT DOWNLOAD REMOVED ═══════════════ */}
+      {/* Direct download section removed to avoid conversion cannibalization.
+          Users must submit the form to access the PDF, ensuring email capture
+          for the nurturing sequence. See GAP-12 in the audit. */}
 
       {/* ═══════════════ FINAL CTA ═══════════════ */}
       <Section animate className="bg-muted/30 !py-16 md:!py-20">

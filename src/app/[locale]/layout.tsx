@@ -3,9 +3,11 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CookieConsent } from "@/components/CookieConsent";
+import { Analytics } from "@/components/Analytics";
 import "@/styles/globals.css";
 
-const baseUrl = "https://riccardobozzato.netlify.app";
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
 
 type Props = {
   children: React.ReactNode;
@@ -37,11 +39,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: lang,
       alternateLocale: [altLang],
       type: "website",
+      images: [
+        {
+          url: `${baseUrl}/images/og-default.svg`,
+          width: 1200,
+          height: 630,
+          alt: `${title} — ${t("tagline")}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [`${baseUrl}/images/og-default.svg`],
     },
     robots: {
       index: true,
@@ -120,6 +131,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Preconnect to external origins for performance */}
+        <link rel="preconnect" href="https://resend.com" />
+        <link rel="preconnect" href="https://stripe.com" />
+        <link rel="dns-prefetch" href="https://resend.com" />
+        <link rel="dns-prefetch" href="https://stripe.com" />
+        <link rel="dns-prefetch" href="https://github.com" />
+
+        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -130,6 +149,8 @@ export default async function LocaleLayout({
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <CookieConsent />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

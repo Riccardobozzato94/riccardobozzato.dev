@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { blogPosts } from "@/content/blog";
 import { CalendarDays, ArrowLeft, ArrowRight, Sparkles, Download, ShoppingCart } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -6,9 +7,38 @@ import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug && p.locale === locale);
+
+  if (!post) {
+    return { title: "Post Not Found" };
+  }
+
+  const canonicalSlug = slug;
+
+  return {
+    title: `${post.title} — Blog`,
+    description: post.excerpt,
+    openGraph: {
+      title: `${post.title} | Riccardo Bozzato`,
+      description: post.excerpt,
+      url: `${baseUrl}/${locale}/blog/${canonicalSlug}`,
+      type: "article",
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/blog/${canonicalSlug}`,
+    },
+  };
+}
 
 const postContent: Record<string, { body: string[] }> = {
   "ops-security-alignment": {

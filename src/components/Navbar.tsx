@@ -92,21 +92,19 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-0.5 md:flex">
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.map((item, i) => (
             <Link
               key={item.key}
               href={item.href}
               className={cn(
-                "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-200",
+                "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-200 animate-in fade-in",
                 isActive(item.href)
-                  ? "text-accent"
+                  ? "text-accent after:absolute after:bottom-0.5 after:left-1/2 after:-translate-x-1/2 after:size-1 after:rounded-full after:bg-accent"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
               )}
+              style={{ animationDelay: `${(i + 1) * 50}ms`, animationFillMode: "both" }}
             >
               {t(item.key)}
-              {isActive(item.href) && (
-                <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 size-1 rounded-full bg-accent" />
-              )}
             </Link>
           ))}
 
@@ -134,8 +132,10 @@ export default function Navbar() {
             </button>
 
             {demoOpen && (
-              <div className="absolute right-0 top-full mt-1 w-56 rounded-xl border border-border/50 bg-card shadow-xl shadow-black/10 p-1.5 animate-in fade-in slide-in-from-top-2 duration-200">
-                {DEMO_ITEMS.map((item) => {
+              <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-border/50 bg-card shadow-xl shadow-black/10 p-1.5 animate-in fade-in slide-in-from-top-2 duration-200">
+                {/* Small arrow */}
+                <div className="absolute -top-[5px] right-6 size-2.5 rotate-45 border-l border-t border-border/50 bg-card" />
+                {DEMO_ITEMS.map((item, i) => {
                   const Icon = item.icon;
                   return (
                     <Link
@@ -143,11 +143,12 @@ export default function Navbar() {
                       href={item.href}
                       onClick={() => setDemoOpen(false)}
                       className={cn(
-                        "flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-colors",
+                        "flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-all duration-200 animate-in fade-in",
                         pathname === item.href
                           ? "bg-accent/10 text-accent"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
                       )}
+                      style={{ animationDelay: `${i * 30}ms`, animationFillMode: "both" }}
                     >
                       <Icon className="size-4 shrink-0" />
                       {item.key}
@@ -162,13 +163,13 @@ export default function Navbar() {
           <Link
             href="/login"
             className={cn(
-              "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-200",
+              "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-200 group",
               pathname.startsWith("/login")
                 ? "text-accent"
                 : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
             )}
           >
-            <LogIn className="size-3.5 inline mr-1" />
+            <LogIn className="size-3.5 inline mr-1 transition-transform duration-200 group-hover:-translate-y-0.5" />
             Login
           </Link>
         </nav>
@@ -177,9 +178,9 @@ export default function Navbar() {
           {/* Free Playbook CTA */}
           <Link
             href="/freebie"
-            className="hidden md:inline-flex items-center gap-1.5 h-8 rounded-full bg-accent/10 hover:bg-accent/20 border border-accent/20 px-3.5 text-xs font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+            className="hidden md:inline-flex items-center gap-1.5 h-8 rounded-full bg-accent/10 hover:bg-accent/20 border border-accent/20 px-3.5 text-xs font-medium text-accent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/10 group"
           >
-            <Sparkles className="size-3" />
+            <Sparkles className="size-3 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
             Free Playbook
           </Link>
 
@@ -188,13 +189,13 @@ export default function Navbar() {
             href={pathname}
             locale={otherLocale}
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-200",
+              "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-200 group",
               scrolled
                 ? "border-border/60 text-muted-foreground hover:border-accent/40 hover:text-accent"
                 : "border-white/10 text-white/70 hover:border-white/30 hover:text-white",
             )}
           >
-            <Languages className="size-3.5" />
+            <Languages className="size-3.5 transition-transform duration-300 group-hover:scale-110" />
             {otherLocale.toUpperCase()}
           </Link>
 
@@ -222,17 +223,18 @@ export default function Navbar() {
         )}
       >
         <nav className="flex flex-col gap-1 border-t border-border/50 bg-background/95 backdrop-blur-xl px-4 pb-5 pt-3">
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.map((item, i) => (
             <Link
               key={item.key}
               href={item.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors",
+                "rounded-lg px-3.5 py-2.5 text-sm font-medium transition-all duration-200 animate-in fade-in slide-in-from-left-2",
                 isActive(item.href)
                   ? "text-accent bg-accent/5"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
               )}
+              style={{ animationDelay: `${i * 40}ms`, animationFillMode: "both" }}
             >
               {t(item.key)}
             </Link>
@@ -243,7 +245,7 @@ export default function Navbar() {
             <div className="px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/50">
               Demos
             </div>
-            {DEMO_ITEMS.map((item) => {
+            {DEMO_ITEMS.map((item, i) => {
               const Icon = item.icon;
               return (
                 <Link
@@ -251,11 +253,12 @@ export default function Navbar() {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors",
+                    "flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-all duration-200 animate-in fade-in slide-in-from-left-2",
                     pathname === item.href
                       ? "text-accent bg-accent/5"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
                   )}
+                  style={{ animationDelay: `${(NAV_ITEMS.length + i + 1) * 40}ms`, animationFillMode: "both" }}
                 >
                   <Icon className="size-4 shrink-0" />
                   {item.key}

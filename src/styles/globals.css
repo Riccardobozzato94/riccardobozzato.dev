@@ -75,6 +75,14 @@
   --animate-shimmer: shimmer 2s linear infinite;
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  /* Unique animations */
+  --animate-type-line: type-line 0.6s steps(30) forwards;
+  --animate-blink-cursor: blink-cursor 1s step-end infinite;
+  --animate-drift-slow: drift-slow 12s ease-in-out infinite;
+  --animate-ring-pulse: ring-pulse 2s ease-out infinite;
+  --animate-gradient-shift: gradient-shift 6s ease infinite;
+  --animate-count-glow: count-glow 3s ease-in-out infinite;
 }
 
 /* ───── Keyframes ───── */
@@ -106,6 +114,47 @@
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
+}
+
+/* ───── Unique Animations ───── */
+
+/* Terminal cursor blink */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Terminal line reveal (typewriter) */
+@keyframes type-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Slow drift for background elements */
+@keyframes drift-slow {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(20px, -15px) rotate(1deg); }
+  66% { transform: translate(-10px, 10px) rotate(-0.5deg); }
+}
+
+/* Pulse ring for stat numbers */
+@keyframes ring-pulse {
+  0% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.4); }
+  70% { box-shadow: 0 0 0 10px hsl(var(--accent) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0); }
+}
+
+/* Gradient shift for unique cards */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Count-up shimmer for numbers */
+@keyframes count-glow {
+  0%, 100% { text-shadow: 0 0 20px hsl(var(--accent) / 0.2); }
+  50% { text-shadow: 0 0 40px hsl(var(--accent) / 0.5), 0 0 80px hsl(var(--accent) / 0.2); }
 }
 
 @keyframes accordion-down {
@@ -237,4 +286,134 @@ h1, h2, h3, h4, h5, h6 {
 :focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
+}
+
+/* ───── Noise Texture ───── */
+/* Subtle film grain overlay for depth — applied via class */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ───── Terminal Mockup ───── */
+.terminal-window {
+  background: hsl(0 0% 4%);
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  box-shadow: 0 0 40px hsl(var(--accent) / 0.06), 0 20px 60px hsl(0 0% 0% / 0.5);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: hsl(0 0% 7%);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal-dot.close { background: #ff5f57; }
+.terminal-dot.minimize { background: #febc2e; }
+.terminal-dot.maximize { background: #28c840; }
+
+.terminal-body {
+  padding: 16px 20px;
+  min-height: 220px;
+}
+
+.terminal-line {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.terminal-prompt { color: hsl(var(--accent)); }
+.terminal-command { color: hsl(var(--foreground) / 0.9); }
+.terminal-output { color: hsl(var(--muted-foreground)); }
+.terminal-success { color: hsl(152 70% 45%); }
+.terminal-error { color: hsl(0 70% 55%); }
+
+/* ───── Signature / Hand-drawn elements ───── */
+.signature-squiggle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-signature 1.5s ease-in-out forwards;
+}
+
+@keyframes draw-signature {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ───── Stat counter glow ───── */
+.stat-glow {
+  animation: count-glow 3s ease-in-out infinite;
+}
+
+/* ───── Timeline ───── */
+.timeline-line {
+  position: relative;
+}
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, hsl(var(--accent) / 0.6), hsl(var(--accent) / 0.1));
+}
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: hsl(var(--accent));
+  border: 2px solid hsl(var(--background));
+  box-shadow: 0 0 0 2px hsl(var(--accent) / 0.3);
+  flex-shrink: 0;
+}
+
+/* ───── Asymmetric card sizing ───── */
+.card-tall {
+  grid-row: span 2;
+}
+.card-wide {
+  grid-column: span 2;
+}
+
+/* ───── Gradient border ───── */
+.gradient-border {
+  position: relative;
+  background: hsl(var(--card));
+  border-radius: var(--radius);
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, hsl(var(--accent) / 0.3), transparent, hsl(var(--accent) / 0.1));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.gradient-border:hover::before {
+  opacity: 1;
 }

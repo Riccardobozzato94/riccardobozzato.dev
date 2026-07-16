@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,35 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Heart, Mail, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations("projects.panificio");
+  const site = await getTranslations("site");
+
+  return {
+    title: `${t("title")} — ${t("subtitle")}`,
+    description: t("description"),
+    openGraph: {
+      title: `${t("title")} | ${site("title")}`,
+      description: t("description"),
+      url: `${baseUrl}/${locale}/projects/panificio`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/projects/panificio`,
+      languages: {
+        en: `${baseUrl}/en/projects/panificio`,
+        it: `${baseUrl}/it/projects/panificio`,
+      },
+    },
+  };
+}
 
 export default async function PanificioPage() {
   const t = await getTranslations("projects.panificio");
@@ -82,6 +112,7 @@ export default async function PanificioPage() {
               <img
                 src="/images/panificio-home.svg"
                 alt="Panificio Da Sergio home page"
+                loading="lazy"
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
               />
               <p className="text-xs text-muted-foreground p-3">Home page — warm bakery theme</p>
@@ -90,6 +121,7 @@ export default async function PanificioPage() {
               <img
                 src="/images/panificio-mobile.svg"
                 alt="Panificio Da Sergio mobile view"
+                loading="lazy"
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
               />
               <p className="text-xs text-muted-foreground p-3">Mobile responsive view</p>

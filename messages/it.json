@@ -1,8 +1,8 @@
 {
     "site":  {
                   "title":  "Riccardo Bozzato",
-                  "tagline":  "Problemi complessi. Soluzioni chiavi in mano. Serverless, AI agenti, automazione — costruisco sistemi che scalano la tua azienda senza scalare i costi.",
-                  "description":  "Risolvo problemi operativi complessi con soluzioni chiavi in mano: architettura serverless al costo più basso possibile, workflow con AI agenti, system integration e automazione. Certificato PMP®, portfolio enterprise da €500K+. La tua azienda funziona meglio — o non paghi."
+                  "tagline":  "Architettura serverless, AI agenti, automazione — da €1.500. PMP®, €500K+ consegnati su eCommerce e PIM/DAM.",
+                  "description":  "Consulente Operations & Delivery (PMP®) da Legnaro, PD. Progetto e consegno soluzioni chiavi in mano: infrastruttura serverless al costo più basso, workflow AI agenti, system integration, automazione end-to-end. Portfolio enterprise da €500K+ su eCommerce (Magento, Shopware) e PIM/DAM (Pimcore)."
               },
     "nav":  {
                 "home":  "Home",
@@ -16,9 +16,9 @@
                 "contact":  "Contatti"
             },
     "home":  {
-                  "heroTitle":  "Problemi Complessi. Soluzioni Chiavi in Mano.",
+                  "heroTitle":  "Costruisco Sistemi. Consegno Risultati.",
                   "heroRole":  "Serverless · AI Agenti · Automazione · System Integration",
-                  "heroTagline":  "Costruisco sistemi che risolvono i tuoi problemi operativi più complessi — workflow con AI agenti, architettura serverless al costo più basso, automazione end-to-end e system integration. Certificato PMP®, €500K+ consegnati. La tua azienda funziona meglio, o non paghi.",
+                  "heroTagline":  "Da Legnaro, PD — progetto e consegno soluzioni pronte per la produzione: infrastruttura serverless al costo più basso, agenti AI che automatizzano i workflow, system integration che unifica il tuo stack. Certificato PMP®, €500K+ consegnati su eCommerce e PIM/DAM.",
                   "heroCta":  "Vedi i Miei Lavori",
                   "heroCta2":  "Prenota una Call Gratuita",
                   "featuredTitle":  "Cosa Costruisco",
@@ -134,9 +134,9 @@
                                    }
                                },
     "services":  {
-                     "title":  "Risolvo Problemi Complessi. Consegno.",
-                     "subtitle":  "Serverless · AI Agenti · Automazione · Integrazione · Consulenza",
-                     "heroDesc":  "Hai un problema operativo complesso. Progetto e consegno la soluzione — prezzo fisso, in tempo, pronta per la produzione. Dagli agenti AI che automatizzano i tuoi workflow all'infrastruttura serverless che costa penny a scala. Certificato PMP®, €500K+ consegnati. La tua azienda funziona meglio, o non paghi.",
+                      "title":  "Cosa Consegno — In Tempo, Prezzo Fisso",
+                      "subtitle":  "Da €1.500. Pronto per la produzione. Zero sorprese.",
+                      "heroDesc":  "Hai un problema operativo. Progetto e consegno la soluzione — prezzo fisso, in tempo, pronta per la produzione. Dagli agenti AI che automatizzano i workflow all'infrastruttura serverless che costa penny a scala. Certificato PMP®, portfolio €500K+ su Magento, Shopware, Pimcore e piattaforme custom.",
                      "cta":  "Prenota una Call Gratuita",
                      "packages":  [
                                       {
@@ -414,6 +414,13 @@
                      "exploreTitle":  "Nel Frattempo, Esplora",
                      "readBlog":  "Leggi il Blog",
                      "viewProjects":  "Vedi i Progetti"
+                 },
+    "cookies":  {
+                     "title":  "Questo sito utilizza cookie",
+                     "description":  "Utilizziamo cookie tecnici e analytics anonimizzati per migliorare la tua esperienza. Nessun cookie di profilazione.",
+                     "accept":  "Accetta tutti",
+                     "reject":  "Solo necessari",
+                     "privacyLink":  "Privacy Policy"
                  },
     "notFound":  {
                      "title":  "404",

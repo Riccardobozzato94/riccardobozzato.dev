@@ -1,7 +1,37 @@
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
 import { Sparkles } from "lucide-react";
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations("projects");
+  const site = await getTranslations("site");
+
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    openGraph: {
+      title: `${t("title")} | ${site("title")}`,
+      description: t("subtitle"),
+      url: `${baseUrl}/${locale}/projects`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/projects`,
+      languages: {
+        en: `${baseUrl}/en/projects`,
+        it: `${baseUrl}/it/projects`,
+      },
+    },
+  };
+}
 
 export default async function ProjectsPage() {
   const t = await getTranslations("projects");

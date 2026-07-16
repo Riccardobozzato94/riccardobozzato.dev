@@ -1,8 +1,41 @@
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { CheckCircle2, ArrowRight, Sparkles, Calendar } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations("services");
+  const site = await getTranslations("site");
+
+  const title = t("title");
+  const description = t("heroDesc");
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title: `${title} | ${site("title")}`,
+      description,
+      url: `${baseUrl}/${locale}/services`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/services`,
+      languages: {
+        en: `${baseUrl}/en/services`,
+        it: `${baseUrl}/it/services`,
+      },
+    },
+  };
+}
 
 interface Package {
   title: string;

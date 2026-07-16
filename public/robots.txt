@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /login
+Disallow: /en/login
+Disallow: /demo
+Disallow: /en/demo
+Disallow: /api/
+Disallow: /en/api/
 
-Sitemap: https://riccardobozzato.netlify.app/sitemap.xml
+# Sitemaps
+Sitemap: https://riccardobozzato.dev/sitemap.xml

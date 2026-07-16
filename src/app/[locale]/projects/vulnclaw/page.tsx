@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,35 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, ExternalLink, Mail, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations("projects.vulnclaw");
+  const site = await getTranslations("site");
+
+  return {
+    title: `${t("title")} — ${t("subtitle")}`,
+    description: t("description"),
+    openGraph: {
+      title: `${t("title")} | ${site("title")}`,
+      description: t("description"),
+      url: `${baseUrl}/${locale}/projects/vulnclaw`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/projects/vulnclaw`,
+      languages: {
+        en: `${baseUrl}/en/projects/vulnclaw`,
+        it: `${baseUrl}/it/projects/vulnclaw`,
+      },
+    },
+  };
+}
 
 const techStack = ["Python", "Typer", "Rich", "Prompt Toolkit", "AI"];
 

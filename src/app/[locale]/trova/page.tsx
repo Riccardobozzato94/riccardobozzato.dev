@@ -186,10 +186,10 @@ export default async function TrovaPage() {
           <p className="text-muted-foreground mb-8">A walkthrough of the full site experience</p>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/images/trova-home.svg" alt="Trova Home page" className="w-full h-auto" />
+              <img src="/images/trova-home.svg" alt="Trova Home page" loading="lazy" className="w-full h-auto" />
             </div>
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/images/trova-projects.svg" alt="Trova Projects page" className="w-full h-auto" />
+              <img src="/images/trova-projects.svg" alt="Trova Projects page" loading="lazy" className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -214,6 +214,7 @@ export default async function TrovaPage() {
                 <img
                   src={img.src}
                   alt={img.label}
+                  loading="lazy"
                   className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <p className="text-xs text-muted-foreground p-2.5">{img.label}</p>
