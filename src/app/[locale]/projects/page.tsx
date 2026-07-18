@@ -98,6 +98,18 @@ export default async function ProjectsPage() {
               badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>
+
+          {/* Hermes: full width */}
+          <ProjectCard
+            title="Hermes — Il mio Second Brain AI-Nativo"
+            subtitle="Obsidian Vault | 9000+ note | RAG | LLM Wiki | Agent Memory"
+            description="Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. MCP integration per agenti AI."
+            tags={["AI", "Obsidian", "RAG", "Knowledge Mgmt", "Python"]}
+            href="/projects/hermes"
+            image="/assets/hermes-banner-1600x900.png"
+            badge="Second Brain"
+            badgeColor="bg-purple-500/10 text-purple-400"
+          />
         </div>
       </Section>
     </>

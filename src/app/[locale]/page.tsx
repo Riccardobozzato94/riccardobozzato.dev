@@ -355,21 +355,21 @@ export default async function HomePage({ params }: Props) {
               </p>
             </Link>
 
-            {/* Trova */}
+            {/* Hermes - Second Brain */}
             <Link
-              href="/trova"
+              href="/projects/hermes"
               className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
             >
               <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
-                SaaS
+                {isIt ? "SECOND BRAIN" : "SECOND BRAIN"}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                Trova
+                Hermes
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {isIt
-                  ? "Boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n). €49, una tantum."
-                  : "Production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n). €49 one-time."}
+                  ? "Vault Obsidian 9000+ note con AI integrata: RAG semantico, LLM Wiki, Agent Memory. Il mio Second Brain."
+                  : "Obsidian vault with 9000+ notes + integrated AI: semantic RAG, LLM Wiki, Agent Memory. My Second Brain."}
               </p>
             </Link>
           </div>
