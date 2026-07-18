@@ -2,7 +2,7 @@
     "site":  {
                     "title":  "Riccardo Bozzato",
                     "tagline":  "Senior Delivery Manager | Head of Operations | PMP® — operations, execution, flussi AI-enabled.",
-                    "description":  "Senior Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Costruisco architetture operative che scalano: process design, team leadership, delivery eCommerce/PIM-DAM, operations AI-enabled. Portfolio enterprise €500K+, team 8-12 persone, 25-40% miglioramento efficienza."
+                    "description":  "Senior Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Rendo i team digitali più veloci, meno caotici e più prevedibili. Process design, team leadership, delivery eCommerce/PIM-DAM, operations AI-enabled. €500K+ consegnati, team 8-12, 25-40% miglioramento efficienza."
               },
     "nav":  {
                 "home":  "Home",
@@ -16,9 +16,9 @@
                 "contact":  "Contatti"
             },
     "home":  {
-                   "heroTitle":  "Operations, delivery ed execution — con una mentalità da builder.",
+                    "heroTitle":  "Operations, delivery ed execution. Con una mentalità da builder.",
                    "heroRole":  "Niente caos. Solo processi che funzionano.",
-                   "heroTagline":  "Senior Delivery Manager & Head of Operations (PMP®). Costruisco l'architettura operativa — processi, KPI, governance, automazione — che trasforma il caos della crescita in esecuzione prevedibile. Portfolio enterprise €500K+, team 8-12, -40% time-to-market.",
+                    "heroTagline":  "Senior Delivery Manager & Head of Operations (PMP®). Costruisco i sistemi — processi, KPI, struttura del team — che permettono alle aziende digitali di crescere senza implodere. €500K+ consegnati tra enterprise e startup, team 8-12, -40% time-to-market.",
                    "heroCta":  "Parliamone",
                    "heroCta2":  "Vedi i Risultati",
                    "featuredTitle":  "Risultati Misurabili",
@@ -28,32 +28,32 @@
                    "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). Head of Operations da Ciao Elsa (2026). PMP® certificato. Ora aiuto team digitali a scalare senza implodere.",
                    "aboutCta":  "Storia Completa →",
                    "freebieTitle":  "Gratis: Operational Chaos Diagnostic",
-                   "freebieDesc":  "Un framework da 3 ore per mappare, misurare e prioritizzare il debito operativo — prima che diventi crisi.",
+                    "freebieDesc":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
                    "freebieCta":  "Scarica Gratis →",
-                  "servicesTitle": "Come Ti Aiuto",
-                  "servicesSubtitle": "Tre modi per portare ordine nelle operations.",
-                  "serviceList": [
-                    {
-                      "icon": "git-branch",
-                      "title": "Delivery & Process Design",
-                      "desc": "Agile, Scrum, Kanban. Release planning, capacity management, risk mitigation. Team 8-12, portfolio €500K+. Riduzione time-to-market 20-40%."
-                    },
-                    {
-                      "icon": "package",
-                      "title": "eCommerce & PIM-DAM Operations",
-                      "desc": "Pimcore, Magento, Shopware. Implementazioni enterprise, integrazione piattaforme, governance del dato. Riduzione time-to-market del 40% su progetti PIM."
-                    },
-                    {
-                      "icon": "zap",
-                      "title": "AI-Assisted Operations",
-                      "desc": "Automazione flussi, dashboard KPI real-time, knowledge base centralizzata. Documentazione processi + AI workflow = 10-40 ore/settimana recuperate."
-                    },
-                    {
-                      "icon": "cpu",
-                      "title": "Fractional Head of Ops / Delivery",
-                      "desc": "Per startup early-stage che non hanno ancora un Head of Operations interno. Interim o part-time. Costruisco l'architettura, formo il team, lascio il sistema funzionante."
-                    }
-                  ]
+                   "servicesTitle": "Come Ti Aiuto",
+                   "servicesSubtitle": "Quattro modi per portare ordine nelle operations.",
+                   "serviceList": [
+                     {
+                       "icon": "git-branch",
+                       "title": "Delivery & Process Design",
+                       "desc": "Agile, Scrum, Kanban — ma su misura per il tuo team, non copiati da un manuale. Release planning, capacity management, risk mitigation per team 8-12. 20-40% time-to-market più veloce."
+                     },
+                     {
+                       "icon": "package",
+                       "title": "eCommerce & PIM-DAM Operations",
+                       "desc": "Pimcore, Magento, Shopware — li ho implementati tutti. Integrazioni enterprise, migrazioni piattaforma, governance del dato. 40% time-to-market più veloce su progetti PIM."
+                     },
+                     {
+                       "icon": "zap",
+                       "title": "AI-Assisted Operations",
+                       "desc": "Automatizza le cose noiose. Dashboard KPI real-time, knowledge base centralizzate, flussi AI che funzionano davvero. Risultato tipico: 10-40 ore/settimana recuperate."
+                     },
+                     {
+                       "icon": "cpu",
+                       "title": "Fractional Head of Ops / Delivery",
+                       "desc": "Per startup che non sono pronte per un Head of Operations full-time — ma che ne hanno comunque bisogno. Interim o part-time. Costruisco il sistema, formo il team, consegno le chiavi."
+                     }
+                   ]
               },
     "footer":  {
                    "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
@@ -66,7 +66,7 @@
                },
     "projects":  {
                       "title":  "Case Studies",
-                      "subtitle":  "Prodotti, progetti e processi che ho costruito — con tutto quello che ho imparato lungo la strada.",
+                      "subtitle":  "Progetti reali, problemi reali, soluzioni reali. Lezioni incluse.",
                       "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
@@ -124,49 +124,49 @@
     "services":  {
                        "title":  "Operations & Delivery — Risultati Misurabili",
                        "subtitle":  "Prezzo fisso. Consegnato.",
-                       "heroDesc":  "Hai un problema operativo? Costruisco l'architettura — processi, KPI, team, automazione — che trasforma il caos in esecuzione prevedibile. PMP® certificato, portfolio €500K+, team 8-12, -40% time-to-market. Niente fuffa: solo quello che serve per scalare.",
+                       "heroDesc":  "Hai un problema operativo. Magari il tuo team cresce più veloce dei processi. Magari passi il tempo a spegnere incendi invece che a costruire. Progetto e implemento i sistemi — flussi di lavoro, framework KPI, struttura del team — che lo risolvono. PMP® certificato, €500K+ consegnati, team 8-12.",
                        "cta":  "Parliamone",
                       "packages":  [
                                        {
                                            "title":  "Delivery & Process Design",
                                            "price":  "Da €1.500",
-                                           "desc":  "Agile transformation, release planning, capacity management, risk mitigation. Per team digital che vogliono prevedibilità senza burocrazia.",
-                                           "features":  [
-                                                            "Audit processi attuali e gap analysis",
-                                                            "Implementazione framework Agile/Scrum/Kanban",
-                                                            "Release planning e capacity modeling",
-                                                            "Framework risk management e mitigazione",
-                                                            "Dashboard KPI: velocity, quality, predictability"
-                                                        ]
-                                       },
-                                       {
-                                           "title":  "eCommerce & PIM-DAM Operations",
-                                           "price":  "Da €2.000",
-                                           "desc":  "Pimcore, Magento, Shopware — implementazioni enterprise, integrazioni, governance del dato. Riduzione time-to-market 20-40%.",
-                                           "features":  [
-                                                            "Architettura e implementazione PIM/DAM",
-                                                            "Integrazione piattaforme eCommerce",
-                                                            "Data governance e framework qualità",
-                                                            "Automazione flussi contenuti prodotto",
-                                                            "Formazione team e knowledge transfer"
-                                                        ]
-                                       },
-                                       {
-                                           "title":  "AI-Assisted Operations",
-                                           "price":  "Da €2.500",
-                                           "desc":  "Automazione flussi operativi, dashboard KPI real-time, knowledge management centralizzato. Recupera 10-40 ore/settimana.",
-                                           "features":  [
-                                                            "Documentazione processi e knowledge base",
-                                                            "Automazione flussi AI (supporto, dati, contenuti)",
-                                                            "Dashboard KPI real-time e alerting",
-                                                            "Middleware e integrazione strumenti",
-                                                            "Framework misurazione ROI"
-                                                        ]
-                                       },
-                                       {
-                                           "title":  "Fractional Head of Ops / Delivery",
-                                           "price":  "Da €3.000/mese",
-                                           "desc":  "Interim o part-time per startup early-stage. Costruisco l'architettura operativa, formo il team, lascio il sistema funzionante.",
+                                            "desc":  "Smetti di spegnere incendi. Ti aiuto a impostare i framework di pianificazione, capacità e rischio che permettono al tuo team di shippare in modo prevedibile. Niente Agile teatro — solo le pratiche che funzionano per la tua dimensione.",
+                                            "features":  [
+                                                             "Audit processi attuali e gap analysis",
+                                                             "Implementazione framework Agile/Scrum/Kanban",
+                                                             "Release planning e capacity modeling",
+                                                             "Framework risk management e mitigazione",
+                                                             "Dashboard KPI: velocity, quality, predictability"
+                                                         ]
+                                        },
+                                        {
+                                            "title":  "eCommerce & PIM-DAM Operations",
+                                            "price":  "Da €2.000",
+                                            "desc":  "Pimcore, Magento, Shopware — implementazioni enterprise, migrazioni, governance del dato. Velocità e qualità, senza compromessi.",
+                                            "features":  [
+                                                             "Architettura e implementazione PIM/DAM",
+                                                             "Integrazione piattaforme eCommerce",
+                                                             "Data governance e framework qualità",
+                                                             "Automazione flussi contenuti prodotto",
+                                                             "Formazione team e knowledge transfer"
+                                                         ]
+                                        },
+                                        {
+                                            "title":  "AI-Assisted Operations",
+                                            "price":  "Da €2.500",
+                                            "desc":  "Automazione dei flussi operativi, dashboard KPI in tempo reale, knowledge management centralizzato. Recupera 10-40 ore/settimana.",
+                                            "features":  [
+                                                             "Documentazione processi e knowledge base",
+                                                             "Automazione flussi AI (supporto, dati, contenuti)",
+                                                             "Dashboard KPI real-time e alerting",
+                                                             "Middleware e integrazione strumenti",
+                                                             "Framework misurazione ROI"
+                                                         ]
+                                        },
+                                        {
+                                            "title":  "Fractional Head of Ops / Delivery",
+                                            "price":  "Da €3.000/mese",
+                                            "desc":  "Interim o part-time per startup early-stage. Costruisco il sistema operativo, formo il team, consegno le chiavi.",
                                            "features":  [
                                                             "Design architettura operations",
                                                             "Team structure e supporto hiring",
@@ -180,22 +180,22 @@
                                       "title": "Come Lavoro",
                                       "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
                                      "steps":  [
-                                                   {
-                                                       "step":  "1. Discovery",
-                                                       "desc":  "Definiamo il problema, vincoli e criteri di successo. Consegno architettura e preventivo a prezzo fisso — nessun impegno."
-                                                   },
-                                                   {
-                                                       "step":  "2. Costruzione",
-                                                       "desc":  "Costruisco la soluzione end-to-end con checkpoint settimanali, progresso trasparente e feedback continuo."
-                                                   },
-                                                   {
-                                                       "step":  "3. Deploy",
-                                                       "desc":  "Deployment in produzione con monitoraggio, documentazione e passaggio di consegne. Il tuo team può gestirlo in autonomia."
-                                                   },
-                                                   {
-                                                       "step":  "4. Evoluzione",
-                                                       "desc":  "Ritainer opzionale per ottimizzazione continua, nuove funzionalità e supporto. Il tuo sistema scala con te."
-                                                   }
+                    {
+                                                          "step":  "1. Discovery",
+                                                          "desc":  "Passo la prima settimana dentro le tue operations — parlo con il team, mappo i flussi di lavoro, trovo i colli di bottiglia. Ricevi un piano d'azione prioritizzato, non un report da 50 pagine."
+                                                      },
+                                                      {
+                                                          "step":  "2. Costruzione",
+                                                          "desc":  "Progetto il sistema che ti serve: flussi di processo, regole di governance, metriche che contano. Tutto documentato, tutto con un proprietario."
+                                                      },
+                                                      {
+                                                          "step":  "3. Deploy",
+                                                          "desc":  "Implemento con checkpoint settimanali e progresso trasparente. Il tuo team lavora al mio fianco, così il sistema è loro dal giorno uno."
+                                                      },
+                                                      {
+                                                          "step":  "4. Consegna",
+                                                          "desc":  "Documentazione completa, team formato, criteri di successo misurabili. Il tuo sistema funziona senza di me. Supporto opzionale per iterare."
+                                                      }
                                                ]
                                  }
                  },
@@ -223,8 +223,8 @@
               },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
-                    "subtitle":  "Un framework da 3 ore per mappare, misurare e prioritizzare il debito operativo — prima che diventi crisi.",
-                    "description":  "Un worksheet testato sul campo basato sullo stesso framework che uso nelle consulenze. Mappa i tuoi processi, misura le metriche di base e costruisci la matrice di priorità in tre sessioni mirate.",
+                    "subtitle":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
+                    "description":  "Lo stesso framework che uso con i miei clienti di consulenza — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
                     "whatsInside":  [
                                         "La Process Map: visualizzazione end-to-end dei flussi di lavoro",
                                         "La Metric Baseline: lead time, active time, wait time",
@@ -246,16 +246,16 @@
                  },
     "about":  {
                     "title":  "Su Riccardo",
-                   "subtitle":  "Operations & Delivery. PMP®. Dalla trincea alla cabina di regia.",
-                   "intro":  "Senior Delivery Manager & Head of Operations (PMP®). 7+ anni a costruire architetture operative che scalano. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Ora aiuto team digitali a scalare senza implodere.",
-                   "story":  [
-                                 "Il mio percorso inizia nel retail management — In\u0027s Mercato, Aldi, Terranova — dove ho imparato leadership operativa, gestione team e KPI sul campo, gestendo turni, costi e performance di punto vendita.",
-                                 "Poi Accenture: sviluppo applicazioni enterprise (SAP UI5, JavaScript), automazione processi con risultati misurabili: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. La prima volta che ho capito che i processi giusti battono il talento grezzo.",
-                                 "In Esse Solutions ho gestito un portfolio progetti digitali da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Introdotto Agile strutturato: +25% produttività, -40% time-to-market, -20% tempi di completamento.",
-                                 "In Ciao Elsa ho ricoperto il ruolo di Head of Operations, costruendo l'architettura operativa da zero per una startup AI-native. Processi, KPI, struttura del team, governance — da zero a operations funzionanti in 8 settimane. Un engagement breve ma intenso, che ha dimostrato come il playbook funzioni anche a velocità startup.",
-                                 "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire architetture operative scalabili — processi, KPI, governance, automazione — che trasformano il caos in esecuzione prevedibile. Certificato PMP®. Nel tempo libero costruisco strumenti (Trova, VulnClaw), perché chi costruisce operations migliori è anche chi costruisce prodotti."
+                   "subtitle":  "Operations & Delivery. PMP®. Ho iniziato nel retail, ora guido delivery.",
+                   "intro":  "Senior Delivery Manager & Head of Operations (PMP®). 7+ anni a rendere i team più veloci e meno caotici. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Il filo conduttore: costruisco sistemi che permettono alle brave persone di fare il loro miglior lavoro.",
+                   "story": [
+                                 "Il mio percorso inizia nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
+                                 "Poi Accenture. Ho costruito applicazioni enterprise (SAP UI5, JavaScript) e automatizzato processi che erano manuali da anni: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. È stata la prima volta che ho capito che il processo giusto batte il talento grezzo — sempre.",
+                                 "In Esse Solutions gestivo un portfolio digitale da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto Agile strutturato dove non c'era niente: produttività +25%, time-to-market -40%, tempi di completamento -20%.",
+                                 "In Ciao Elsa sono stato Head of Operations per 8 settimane — per scelta. La startup aveva bisogno di una funzione operations da zero: processi, KPI, struttura del team, governance. L'ho costruita, consegnata, e me ne sono andato. Un engagement breve che ha dimostrato che l'approccio funziona anche a velocità startup.",
+                                 "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire il sistema operativo per la loro crescita — processi, metriche, struttura del team — che trasforma le buone idee in prodotti shippati. Certificato PMP®. Nel tempo libero costruisco strumenti (Trova, VulnClaw), perché non puoi progettare buoni sistemi se non hai mai costruito niente."
                              ],
-                  "philosophy":  "Il problema non è la mancanza di talento o di idee. Il problema è che le operations collassano sotto il peso della crescita. Il mio lavoro è costruire l'architettura operativa che trasforma il potenziale in esecuzione prevedibile. Combino rigore metodologico (PMP®), esperienza enterprise e velocità operativa. Niente buffer. Niente attriti. Solo processi che funzionano.",
+                   "philosophy":  "La maggior parte delle aziende non fallisce per mancanza di talento o idee. Fallisce perché le operations non reggono il peso della crescita. Costruisco il sistema operativo che risolve il problema — combinando il rigore del PMP® con la velocità di chi è stato in trincea. Niente gergo. Niente teatro. Solo sistemi che funzionano.",
                   "certifications":  [
                                          "PMP® — Project Management Professional (2026)",
                                          "Cisco Cybersecurity Operation Associate (2024)",
@@ -367,16 +367,16 @@
                         "backHome":  "Torna alla Home"
                     },
     "thankYou":  {
-                     "title":  "Tutto Pronto! 🎉",
-                     "subtitle":  "Il tuo AI Ops Security Playbook è pronto. Controlla la tua casella — te l'ho inviato anche lì così non lo perdi.",
-                     "downloadAgain":  "Scarica di Nuovo",
-                     "whatsNextTitle":  "Prossimi Passi",
-                     "whatsNextText":  "Nelle prossime due settimane, ti invierò una serie di email con tattiche pratiche che puoi applicare subito:",
-                     "email1":  "L'errore #1 tra operations e sicurezza e come risolverlo (Giorno 1)",
-                     "email2":  "3 automazioni che recuperano 10+ ore a settimana (Giorno 3)",
-                     "email3":  "Un case study con risultati misurabili (Giorno 5)",
-                     "email4":  "Il costo nascosto del caos operativo (Giorno 7)",
-                     "email5":  "Un'offerta finale per una consulenza gratuita (Giorno 14)",
+                      "title":  "Tutto Pronto! 🎉",
+                      "subtitle":  "Il tuo Operational Chaos Diagnostic è pronto. Controlla la tua casella — te l'ho inviato anche lì così non lo perdi.",
+                      "downloadAgain":  "Scarica di Nuovo",
+                      "whatsNextTitle":  "Prossimi Passi",
+                      "whatsNextText":  "Nelle prossime due settimane, ti invierò tattiche pratiche che puoi applicare subito:",
+                      "email1":  "Il punto cieco operativo più comune (Giorno 1)",
+                      "email2":  "3 fix rapidi che recuperano 10+ ore/settimana (Giorno 3)",
+                      "email3":  "Un case study con numeri reali (Giorno 5)",
+                      "email4":  "Il costo nascosto del debito operativo (Giorno 7)",
+                      "email5":  "Offerta finale: diagnostica gratuita da 30 min (Giorno 14)",
                      "exploreTitle":  "Nel Frattempo, Esplora",
                      "readBlog":  "Leggi il Blog",
                      "viewProjects":  "Vedi i Progetti"

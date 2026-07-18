@@ -2,7 +2,7 @@
     "site":  {
                     "title":  "Riccardo Bozzato",
                     "tagline":  "Senior Delivery Manager | Head of Operations | PMP® — operations, execution, AI-enabled workflows.",
-                    "description":  "Senior Delivery Manager & Head of Operations (PMP®). I build operational architectures that scale: process design, team leadership, eCommerce/PIM-DAM delivery, and AI-enabled operations. €500K+ enterprise portfolio, 8-12 person teams, 25-40% efficiency gains."
+                    "description":  "Senior Delivery Manager & Head of Operations (PMP®). I make digital teams faster, less chaotic, and more predictable. Process design, team leadership, eCommerce/PIM-DAM delivery, AI-enabled operations. €500K+ delivered, teams of 8-12, 25-40% efficiency gains."
               },
     "nav":  {
                 "home":  "Home",
@@ -16,9 +16,9 @@
                 "contact":  "Contact"
             },
     "home":  {
-                   "heroTitle":  "Operations, delivery, and execution — with a builder mindset.",
+                    "heroTitle":  "Operations, delivery, and execution. With a builder mindset.",
                    "heroRole":  "No chaos. Just processes that work.",
-                   "heroTagline":  "Senior Delivery Manager & Head of Operations (PMP®). I build the operational architecture — processes, KPIs, governance, automation — that turns growth chaos into predictable execution. €500K+ enterprise portfolio, teams of 8-12, 40% faster time-to-market.",
+                    "heroTagline":  "Senior Delivery Manager & Head of Operations (PMP®). I build the systems — processes, KPIs, team structure — that let digital companies grow without breaking. €500K+ delivered across enterprise and startup environments, teams of 8-12, 40% faster time-to-market.",
                    "heroCta":  "Let's Talk",
                    "heroCta2":  "See Results",
                    "featuredTitle":  "Measurable Results",
@@ -32,28 +32,28 @@
                    "freebieCta":  "Download Free →",
                    "servicesTitle": "How I Help",
                    "servicesSubtitle": "Four ways to bring order to your operations.",
-                   "serviceList": [
-                     {
-                       "icon": "git-branch",
-                       "title": "Delivery & Process Design",
-                       "desc": "Agile, Scrum, Kanban. Release planning, capacity management, risk mitigation. Teams of 8-12, €500K+ portfolio. 20-40% faster time-to-market."
-                     },
-                     {
-                       "icon": "package",
-                       "title": "eCommerce & PIM-DAM Operations",
-                       "desc": "Pimcore, Magento, Shopware. Enterprise implementations, platform integration, data governance. 40% faster time-to-market on PIM projects."
-                     },
-                     {
-                       "icon": "zap",
-                       "title": "AI-Assisted Operations",
-                       "desc": "Workflow automation, real-time KPI dashboards, centralized knowledge base. Process documentation + AI workflows = 10-40 hours/week recovered."
-                     },
-                     {
-                       "icon": "cpu",
-                       "title": "Fractional Head of Ops / Delivery",
-                       "desc": "For early-stage startups that don't yet have an internal Head of Operations. Interim or part-time. I build the architecture, train the team, leave a working system."
-                     }
-                   ]
+                    "serviceList": [
+                      {
+                        "icon": "git-branch",
+                        "title": "Delivery & Process Design",
+                        "desc": "Agile, Scrum, Kanban — but tailored to your team, not copied from a textbook. Release planning, capacity management, risk mitigation for teams of 8-12. 20-40% faster time-to-market."
+                      },
+                      {
+                        "icon": "package",
+                        "title": "eCommerce & PIM-DAM Operations",
+                        "desc": "Pimcore, Magento, Shopware — I've implemented them all. Enterprise integrations, platform migrations, data governance. 40% faster time-to-market on PIM projects."
+                      },
+                      {
+                        "icon": "zap",
+                        "title": "AI-Assisted Operations",
+                        "desc": "Automate the boring stuff. Real-time KPI dashboards, centralized knowledge bases, AI workflows that actually work. Typical result: 10-40 hours/week recovered."
+                      },
+                      {
+                        "icon": "cpu",
+                        "title": "Fractional Head of Ops / Delivery",
+                        "desc": "For startups that aren't ready for a full-time Head of Operations — but need one anyway. Interim or part-time. I build the system, train your team, and hand over the keys."
+                      }
+                    ]
               },
     "footer":  {
                    "copyright":  "© {year} Riccardo Bozzato. All rights reserved.",
@@ -66,7 +66,7 @@
                },
     "projects":  {
                       "title":  "Case Studies",
-                      "subtitle":  "Products, projects, and processes I've built — and everything I learned along the way.",
+                       "subtitle":  "Real projects, real problems, real solutions. Lessons included.",
                       "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Stakeholder Delivery: E-Commerce for a Family Bakery",
@@ -124,13 +124,13 @@
     "services":  {
                        "title":  "Operations & Delivery — Measurable Results",
                        "subtitle":  "Fixed price. Delivered.",
-                       "heroDesc":  "Have an operational problem? I build the architecture — processes, KPIs, team, automation — that turns chaos into a predictable system. PMP® certified, €500K+ portfolio, teams of 8-12, 40% faster time-to-market. No fluff: just what it takes to scale.",
+                       "heroDesc":  "You have an operations problem. Maybe your team is growing faster than your processes. Maybe you're firefighting instead of building. I design and implement the systems — process workflows, KPI frameworks, team structures — that fix it. PMP® certified, €500K+ delivered, teams of 8-12.",
                        "cta":  "Let's Talk",
                        "packages":  [
                                         {
                                             "title":  "Delivery & Process Design",
-                                            "price":  "From €1,500",
-                                            "desc":  "Agile transformation, release planning, capacity management, risk mitigation. For digital teams that want predictability without bureaucracy.",
+                                             "price":  "From €1,500",
+                                             "desc":  "Stop firefighting. I'll help you set up the planning, capacity, and risk frameworks that let your team ship predictably. No Agile theater — just the practices that actually work for your team size.",
                                             "features":  [
                                                              "Current-state process audit & gap analysis",
                                                              "Agile/Scrum/Kanban framework implementation",
@@ -176,28 +176,28 @@
                                                          ]
                                         }
                                     ],
-                       "approach":  {
-                                      "title": "How I Work",
-                                      "subtitle": "Fixed price. On time. Production-ready.",
-                                      "steps":  [
-                                                   {
-                                                         "step":  "1. Diagnosis",
-                                                         "desc":  "I analyze the current state: processes, resources, KPIs, bottlenecks. In 1 week I deliver a chaos map and a prioritized action plan."
-                                                     },
-                                                     {
-                                                         "step":  "2. Architecture",
-                                                         "desc":  "I design the operational architecture: processes, governance, metrics, automation. Everything documented, everything measurable."
-                                                     },
-                                                     {
-                                                         "step":  "3. Execution",
-                                                         "desc":  "I implement the system with weekly checkpoints, transparent progress, and continuous feedback. I train the team, I leave skills."
-                                                     },
-                                                     {
-                                                         "step":  "4. Handover",
-                                                         "desc":  "Complete documentation, knowledge transfer, success metrics. Your team operates autonomously. Optional support for evolution."
-                                                     }
-                                                ]
-                                  }
+                        "approach":  {
+                                       "title": "How I Work",
+                                       "subtitle": "Fixed price. On time. Production-ready.",
+                                       "steps":  [
+                                                    {
+                                                          "step":  "1. Diagnosis",
+                                                          "desc":  "I spend the first week inside your operations — talking to your team, mapping your workflows, finding the bottlenecks. You get a prioritized action plan, not a 50-page report."
+                                                      },
+                                                      {
+                                                          "step":  "2. Architecture",
+                                                          "desc":  "I design the system you need: process flows, governance rules, metrics that matter. Everything is documented, everything has an owner."
+                                                      },
+                                                      {
+                                                          "step":  "3. Execution",
+                                                          "desc":  "I implement with weekly checkpoints and real progress updates. Your team works alongside me, so they own the system from day one."
+                                                      },
+                                                      {
+                                                          "step":  "4. Handover",
+                                                          "desc":  "Full documentation, trained team, measurable success criteria. Your system runs without me. Optional support if you need to iterate."
+                                                      }
+                                                 ]
+                                   }
                  },
     "trova":  {
                   "title":  "Trova",
@@ -223,8 +223,8 @@
               },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
-                    "subtitle":  "A 3-hour framework to map, measure, and prioritize operational debt — before it becomes a crisis.",
-                    "description":  "A field-tested worksheet based on the same framework I use in consulting engagements. Map your processes, baseline your metrics, and build your priority matrix in three focused sessions.",
+                    "subtitle":  "Three hours. A whiteboard. A clear picture of what's broken and how to fix it.",
+                    "description":  "This is the same framework I use with my consulting clients — stripped of the consulting overhead. Map your workflows, baseline your metrics, and build a priority matrix in three focused hours. Works on a whiteboard or Miro.",
                     "whatsInside":  [
                                         "The Process Map: end-to-end workflow visualization",
                                         "The Metric Baseline: lead time, active time, wait time",
@@ -246,16 +246,16 @@
                  },
     "about":  {
                    "title":  "About Riccardo",
-                   "subtitle":  "Operations & Delivery. PMP\u00ae. From the trenches to the control room.",
-                   "intro":  "Senior Delivery Manager & Head of Operations (PMP\u00ae). 7+ years building operational architectures that scale. Enterprise portfolio \u20ac500K+, teams of 8-12, 40% faster time-to-market. Started in retail, moved through Accenture, led operations at Ciao Elsa. Now I help digital teams scale without imploding.",
+                   "subtitle":  "Operations & Delivery. PMP\u00ae. I started in retail, now I run delivery.",
+                   "intro":  "Senior Delivery Manager & Head of Operations (PMP\u00ae). 7+ years making teams faster and less chaotic. Enterprise portfolio \u20ac500K+, teams of 8-12, 40% faster time-to-market. Started in retail, moved through Accenture, led operations at Ciao Elsa. The common thread: I build systems that let good people do their best work.",
                    "story":  [
-                                 "My career started in retail management \u2014 In\u2019s Mercato, Aldi, Terranova \u2014 where I learned operational leadership, team management, and KPIs on the ground: managing shifts, costs, and store performance.",
-                                 "Then Accenture: enterprise application development (SAP UI5, JavaScript), process automation with measurable results: +30% efficiency, -15% administrative errors, -20% response times. The first time I understood that the right processes beat raw talent.",
-                                 "At Esse Solutions I managed a \u20ac500K digital project portfolio, coordinating distributed teams of 8-12 on B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). Introduced structured Agile: +25% productivity, -40% time-to-market, -20% completion times.",
-                                 "At Ciao Elsa I served as Head of Operations, building the operational architecture from the ground up for an AI-native startup. Defined processes, KPIs, team structure, and governance \u2014 from zero to functional operations in 8 weeks. A short, intense engagement that proved the playbook works even at startup speed.",
-                                 "Today I work as an independent consultant. I help digital companies build scalable operational architectures \u2014 processes, KPIs, governance, automation \u2014 that turn chaos into predictable execution. PMP\u00ae certified. In my free time I build tools (Trova, VulnClaw), because those who build better operations also build better products."
-                             ],
-                   "philosophy":  "The problem isn't a lack of talent or ideas. The problem is that operations collapse under the weight of growth. My job is to build the operational architecture that turns potential into predictable execution. I combine methodological rigor (PMP\u00ae), enterprise experience, and operational speed. No buffers. No friction. Just processes that work.",
+                                  "My career started in retail management — In\u2019s Mercato, Aldi, Terranova. I learned operations the hard way: managing inventory, scheduling shifts, coaching teams, explaining to the regional manager why we missed target. It was the best possible training for delivery management, even if I didn\u2019t know it yet.",
+                                  "Then Accenture. I built enterprise applications (SAP UI5, JavaScript) and automated processes that had been manual for years: +30% efficiency, -15% administrative errors, -20% response times. It was the first time I saw that the right process beats raw talent — every time.",
+                                  "At Esse Solutions I owned a \u20ac500K portfolio of digital projects, coordinating distributed teams of 8-12 across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). I introduced structured Agile where there was none: productivity went up 25%, time-to-market dropped 40%, completion times shrank 20%.",
+                                  "At Ciao Elsa I was Head of Operations for 8 weeks — by design. The startup needed an operations function from scratch: processes, KPIs, team structure, governance. I built it, handed it over, and left. A short engagement that proved the approach works even at startup speed.",
+                                  "Today I consult independently. I help digital companies build the operating system for their growth — the processes, metrics, and team structures that turn good ideas into shipped products. PMP\u00ae certified. In my spare time I build tools like Trova and VulnClaw, because you can't design good systems if you've never built anything."
+                              ],
+                    "philosophy":  "Most companies don't fail because they lack talent or ideas. They fail because their operations can't handle the weight of their own growth. I build the operating system that fixes that — combining the rigor of PMP\u00ae with the speed of someone who's been in the trenches. No jargon. No theater. Just systems that work.",
                    "certifications":  [
                                           "PMP\u00ae \u2014 Project Management Professional (2026)",
                                           "Cisco Cybersecurity Operation Associate (2024)",
@@ -368,15 +368,15 @@
                     },
     "thankYou":  {
                      "title":  "You're All Set! 🎉",
-                     "subtitle":  "Your AI Ops Security Playbook is ready. Check your inbox — I've sent it there too so you don't lose it.",
-                     "downloadAgain":  "Download Again",
-                     "whatsNextTitle":  "What's Next?",
-                     "whatsNextText":  "Over the next two weeks, I'll send you a series of emails with practical tactics you can apply immediately:",
-                     "email1":  "The #1 ops-security mistake and how to fix it (Day 1)",
-                     "email2":  "3 automation plays that save 10+ hours/week (Day 3)",
-                     "email3":  "A real case study with measurable results (Day 5)",
-                     "email4":  "The hidden cost of operational chaos (Day 7)",
-                     "email5":  "A final offer for a free consultation (Day 14)",
+                      "subtitle":  "Your Operational Chaos Diagnostic is ready. Check your inbox — I've sent it there too so you don't lose it.",
+                      "downloadAgain":  "Download Again",
+                      "whatsNextTitle":  "What's Next?",
+                      "whatsNextText":  "Over the next two weeks, I'll send you practical tactics you can apply immediately:",
+                      "email1":  "The most common operational blind spot (Day 1)",
+                      "email2":  "3 quick fixes that recover 10+ hours/week (Day 3)",
+                      "email3":  "A real case study with real numbers (Day 5)",
+                      "email4":  "The hidden cost of not fixing process debt (Day 7)",
+                      "email5":  "A final offer: free 30-min diagnostic call (Day 14)",
                      "exploreTitle":  "In the Meantime, Explore",
                      "readBlog":  "Read the Blog",
                      "viewProjects":  "View Projects"
