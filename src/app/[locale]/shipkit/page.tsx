@@ -57,8 +57,8 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const featureKeys = ["auth", "database", "email", "i18n", "billing", "ui"];
 
-export default async function TrovaPage() {
-  const t = await getTranslations("trova");
+export default async function ShipKitPage() {
+  const t = await getTranslations("shipkit");
 
   const features = t.raw("features") as Record<string, string>;
   const pricing = t.raw("pricing") as Record<string, string>;
@@ -186,10 +186,10 @@ export default async function TrovaPage() {
           <p className="text-muted-foreground mb-8">A walkthrough of the full site experience</p>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/assets/trova-dashboard-1600x1000.png" alt="Trova Home page" loading="lazy" className="w-full h-auto" />
+              <img src="/assets/shipkit-dashboard-1600x1000.png" alt="ShipKit Home page" loading="lazy" className="w-full h-auto" />
             </div>
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/assets/trova-dashboard-1200x760.png" alt="Trova Projects page" loading="lazy" className="w-full h-auto" />
+              <img src="/assets/shipkit-dashboard-1200x760.png" alt="ShipKit Projects page" loading="lazy" className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -202,10 +202,10 @@ export default async function TrovaPage() {
           <p className="text-muted-foreground mb-8">Real pages from the boilerplate</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { src: "/assets/trova-dashboard-1600x1000.png", label: "Home page" },
-              { src: "/assets/trova-dashboard-1200x760.png", label: "Projects portfolio" },
-              { src: "/assets/trova-banner-1600x900.png", label: "Trova sales page" },
-              { src: "/assets/trova-banner-1200x630.png", label: "Freebie download" },
+              { src: "/assets/shipkit-dashboard-1600x1000.png", label: "Home page" },
+              { src: "/assets/shipkit-dashboard-1200x760.png", label: "Projects portfolio" },
+              { src: "/assets/shipkit-banner-1600x900.png", label: "ShipKit sales page" },
+              { src: "/assets/shipkit-banner-1200x630.png", label: "Freebie download" },
             ].map((img, idx) => (
               <div
                 key={idx}
@@ -228,7 +228,7 @@ export default async function TrovaPage() {
       <Section animate delay={100} className="py-16! md:!py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why Trova?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why ShipKit?</h2>
             <p className="text-muted-foreground mt-2">Compared to building from scratch or using alternatives.</p>
           </div>
 
@@ -247,28 +247,28 @@ export default async function TrovaPage() {
                   </th>
                   <th className="text-center py-4 px-4 font-semibold text-accent">
                     <CheckCircle2 className="size-4 inline mr-1" />
-                    Trova
+                    ShipKit
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { feat: "Auth (magic link, OAuth, 2FA)", scratch: "2-4 weeks", other: "Partial", trova: "✅ Included" },
-                  { feat: "Database (Drizzle ORM + PG)", scratch: "1-2 weeks", other: "Partial", trova: "✅ Included" },
-                  { feat: "Transactional Emails", scratch: "1 week", other: "Add-on", trova: "✅ Included" },
-                  { feat: "i18n (en/it)", scratch: "1-2 weeks", other: "Add-on", trova: "✅ Included" },
-                  { feat: "Stripe Billing", scratch: "2-3 weeks", other: "Partial", trova: "✅ Included" },
-                  { feat: "shadcn/ui Components", scratch: "1 week", other: "Included", trova: "✅ Included" },
-                  { feat: "Dark Mode", scratch: "3-5 days", other: "Add-on", trova: "✅ Included" },
-                  { feat: "CI/CD Ready", scratch: "1 week", other: "Varies", trova: "✅ Included" },
-                  { feat: "Time to Ship", scratch: "8-16 weeks", other: "2-4 weeks", trova: "⚡ Days" },
-                  { feat: "Price", scratch: "€15,000+ dev cost", other: "€99-299/yr", trova: "€49 once" },
+                  { feat: "Auth (magic link, OAuth, 2FA)", scratch: "2-4 weeks", other: "Partial", shipkit: "✅ Included" },
+                  { feat: "Database (Drizzle ORM + PG)", scratch: "1-2 weeks", other: "Partial", shipkit: "✅ Included" },
+                  { feat: "Transactional Emails", scratch: "1 week", other: "Add-on", shipkit: "✅ Included" },
+                  { feat: "i18n (en/it)", scratch: "1-2 weeks", other: "Add-on", shipkit: "✅ Included" },
+                  { feat: "Stripe Billing", scratch: "2-3 weeks", other: "Partial", shipkit: "✅ Included" },
+                  { feat: "shadcn/ui Components", scratch: "1 week", other: "Included", shipkit: "✅ Included" },
+                  { feat: "Dark Mode", scratch: "3-5 days", other: "Add-on", shipkit: "✅ Included" },
+                  { feat: "CI/CD Ready", scratch: "1 week", other: "Varies", shipkit: "✅ Included" },
+                  { feat: "Time to Ship", scratch: "8-16 weeks", other: "2-4 weeks", shipkit: "⚡ Days" },
+                  { feat: "Price", scratch: "€15,000+ dev cost", other: "€99-299/yr", shipkit: "€49 once" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-border/20 hover:bg-muted/20 transition-colors">
                     <td className="py-3.5 px-4 font-medium text-foreground/90">{row.feat}</td>
                     <td className="py-3.5 px-4 text-center text-muted-foreground">{row.scratch}</td>
                     <td className="py-3.5 px-4 text-center text-muted-foreground">{row.other}</td>
-                    <td className="py-3.5 px-4 text-center text-accent font-medium">{row.trova}</td>
+                    <td className="py-3.5 px-4 text-center text-accent font-medium">{row.shipkit}</td>
                   </tr>
                 ))}
               </tbody>

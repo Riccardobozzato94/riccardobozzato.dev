@@ -10,6 +10,7 @@
 import type { Lead } from "./email/types";
 import * as fs from "fs";
 import * as path from "path";
+import * as crypto from "crypto";
 
 /* ────────── Utils ────────── */
 
@@ -20,6 +21,10 @@ function generateToken(): string {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return result;
+}
+
+function generateConfirmToken(): string {
+  return crypto.randomBytes(32).toString("hex");
 }
 
 /* ────────── Local JSON Store ────────── */
@@ -109,10 +114,12 @@ export async function createLead(name: string, email: string): Promise<Lead> {
   // Check if lead already exists
   const existing = leads.find((l) => l.email === email);
   if (existing) {
-    // Re-activate if unsubscribed, reset sequence
+    // Re-activate if unsubscribed, reset sequence, require re-confirmation
     existing.name = name;
     existing.lastStepSent = -1;
     existing.unsubscribed = false;
+    existing.status = "pending";
+    existing.confirmToken = generateConfirmToken();
     existing.signupDate = new Date().toISOString();
     await writeLeads(leads);
     return existing;
@@ -126,6 +133,8 @@ export async function createLead(name: string, email: string): Promise<Lead> {
     lastStepSent: -1,
     unsubscribed: false,
     unsubscribeToken: generateToken(),
+    status: "pending",
+    confirmToken: generateConfirmToken(),
   };
 
   leads.push(lead);
@@ -141,6 +150,22 @@ export async function getLeadByEmail(email: string): Promise<Lead | undefined> {
 export async function getLeadByToken(token: string): Promise<Lead | undefined> {
   const leads = await readLeads();
   return leads.find((l) => l.unsubscribeToken === token);
+}
+
+export async function getLeadByConfirmToken(token: string): Promise<Lead | undefined> {
+  const leads = await readLeads();
+  return leads.find((l) => l.confirmToken === token);
+}
+
+export async function confirmLead(token: string): Promise<Lead | null> {
+  const leads = await readLeads();
+  const idx = leads.findIndex((l) => l.confirmToken === token);
+  if (idx === -1) return null;
+  if (leads[idx].status === "confirmed") return leads[idx];
+  leads[idx].status = "confirmed";
+  leads[idx].lastStepSent = 0; // confirmation counts as step 0
+  await writeLeads(leads);
+  return leads[idx];
 }
 
 export async function unsubscribeLead(token: string): Promise<boolean> {
@@ -172,6 +197,9 @@ export async function getLeadsDueForStep(
   return leads.filter((lead) => {
     // Skip unsubscribed
     if (lead.unsubscribed) return false;
+
+    // Skip pending leads (not yet confirmed via double opt-in)
+    if (lead.status && lead.status !== "confirmed") return false;
 
     // Skip if already sent this step or beyond
     if (lead.lastStepSent >= step) return false;

@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "saas-boilerplate-lessons",
     title: "5 Operations Lessons from Building and Shipping a Product",
-    excerpt: "What building Trova (a SaaS boilerplate) taught me about delivery, scope, and why the last 10% takes 50% of the time.",
+    excerpt: "What building ShipKit (a SaaS boilerplate) taught me about delivery, scope, and why the last 10% takes 50% of the time.",
     date: "2026-06-28",
     tags: ["Delivery", "Product", "Lessons", "Scoping"],
     locale: "en",
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "lezioni-operazioni-prodotto",
     title: "5 Lezioni di Operations da Aver Costruito e Shippato un Prodotto",
-    excerpt: "Cosa ho imparato costruendo Trova (un boilerplate SaaS) su delivery, scope, e perché l'ultimo 10% prende il 50% del tempo.",
+    excerpt: "Cosa ho imparato costruendo ShipKit (un boilerplate SaaS) su delivery, scope, e perché l'ultimo 10% prende il 50% del tempo.",
     date: "2026-06-28",
     tags: ["Delivery", "Prodotto", "Lezioni", "Scoping"],
     locale: "it",

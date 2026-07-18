@@ -61,6 +61,12 @@ export default function Footer() {
               <li><span className="text-sm text-muted-foreground/40">Terms of Service</span></li>
             </ul>
           </div>
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">CMS</h4>
+            <ul className="space-y-4">
+              <li><a href="/admin/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog Admin</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 

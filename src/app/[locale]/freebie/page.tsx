@@ -146,7 +146,7 @@ export default function FreebiePage() {
                         <div className="space-y-2">
                           <p className="text-2xl font-bold tracking-tight">{t("form.success")}</p>
                           <p className="text-muted-foreground text-sm">
-                            Check your inbox — your diagnostic worksheet is on its way.
+                            Check your inbox for the confirmation link — then download your diagnostic.
                           </p>
                         </div>
                         {directDownload && (

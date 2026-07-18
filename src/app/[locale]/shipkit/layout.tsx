@@ -10,7 +10,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations("trova");
+  const t = await getTranslations("shipkit");
   const site = await getTranslations("site");
 
   return {
@@ -19,19 +19,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${t("title")} SaaS Boilerplate | ${site("title")}`,
       description: t("description"),
-      url: `${baseUrl}/${locale}/trova`,
+      url: `${baseUrl}/${locale}/shipkit`,
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/trova`,
+      canonical: `${baseUrl}/${locale}/shipkit`,
       languages: {
-        en: `${baseUrl}/en/trova`,
-        it: `${baseUrl}/it/trova`,
+        en: `${baseUrl}/en/shipkit`,
+        it: `${baseUrl}/it/shipkit`,
       },
     },
   };
 }
 
-export default function TrovaLayout({
+export default function ShipKitLayout({
   children,
 }: {
   children: React.ReactNode;

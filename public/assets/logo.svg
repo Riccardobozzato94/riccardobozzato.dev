@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#0f0f13"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4edea3"/>
+      <stop offset="100%" stop-color="#2dd48e"/>
+    </linearGradient>
+    <linearGradient id="accent-glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4edea3" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#2dd48e" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="195" fill="url(#bg)" stroke="#27272a" stroke-width="1.5"/>
+
+  <!-- Decorative outer ring -->
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#4edea3" stroke-opacity="0.06" stroke-width="0.5"/>
+
+  <!-- Glow effect behind R -->
+  <ellipse cx="185" cy="195" rx="70" ry="70" fill="url(#accent-glow)" filter="url(#glow)" opacity="0.4"/>
+
+  <!-- Letter R — geometric construction -->
+  <g filter="url(#glow)">
+    <!-- R vertical stem -->
+    <rect x="148" y="150" width="9" height="110" rx="2" fill="url(#accent)"/>
+    <!-- R top arc (curved bowl) -->
+    <path d="M157 150 C157 150, 210 148, 215 170 C220 192, 215 195, 210 200 C205 205, 195 205, 180 205 L157 205 L157 150Z"
+          fill="url(#accent)" opacity="0.9"/>
+    <!-- R leg -->
+    <path d="M195 205 L220 260 L208 260 L183 205Z" fill="url(#accent)" opacity="0.85"/>
+  </g>
+
+  <!-- Letter B — geometric construction -->
+  <g filter="url(#glow)">
+    <!-- B vertical stem -->
+    <rect x="235" y="150" width="9" height="110" rx="2" fill="url(#accent)" opacity="0.7"/>
+    <!-- B top bowl -->
+    <path d="M244 150 C244 150, 282 148, 282 172 C282 196, 270 200, 260 200 L244 200Z"
+          fill="url(#accent)" opacity="0.75"/>
+    <!-- B bottom bowl -->
+    <path d="M244 200 C244 200, 282 198, 282 222 C282 246, 270 260, 260 260 L244 260Z"
+          fill="url(#accent)" opacity="0.8"/>
+  </g>
+
+  <!-- Connecting line between R and B -->
+  <line x1="157" y1="180" x2="235" y2="180" stroke="#4edea3" stroke-opacity="0.15" stroke-width="0.5"/>
+
+  <!-- Subtle decorative dots -->
+  <circle cx="130" cy="130" r="1.5" fill="#4edea3" opacity="0.2"/>
+  <circle cx="270" cy="130" r="1" fill="#4edea3" opacity="0.15"/>
+  <circle cx="130" cy="270" r="1" fill="#4edea3" opacity="0.15"/>
+  <circle cx="270" cy="270" r="1.5" fill="#4edea3" opacity="0.2"/>
+  <circle cx="155" cy="290" r="0.8" fill="#4edea3" opacity="0.1"/>
+  <circle cx="245" cy="125" r="0.8" fill="#4edea3" opacity="0.1"/>
+
+  <!-- Small orbital rings -->
+  <circle cx="130" cy="265" r="3" fill="none" stroke="#4edea3" stroke-opacity="0.12" stroke-width="0.3"/>
+  <circle cx="270" cy="135" r="3" fill="none" stroke="#4edea3" stroke-opacity="0.12" stroke-width="0.3"/>
+
+  <!-- RB tagline -->
+  <text x="200" y="320" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="400" fill="#a1a1aa" letter-spacing="3" opacity="0.6">OPERATIONS  ·  DELIVERY  ·  AI</text>
+</svg>

@@ -12,4 +12,6 @@ export interface Lead {
   lastStepSent: number; // -1 = none sent yet
   unsubscribed: boolean;
   unsubscribeToken: string;
+  status: "pending" | "confirmed";
+  confirmToken: string;
 }

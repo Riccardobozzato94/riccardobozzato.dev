@@ -15,7 +15,6 @@ OUTPUT_DIR = r"C:\Users\Ric\Desktop\riccardobozzato.dev\public\assets"
 WIKI_RE = re.compile(r'\[\[([^\]|]+?)(?:\|[^\]]+)?\]\]')
 SKIP_DIRS = {'.trash', '.git', '__pycache__', '.obsidian', '.github'}
 
-# Map actual folder names to display labels (strip emoji)
 FOLDER_LABELS = {
     'llm_wiki': 'LLM Wiki',
     '☁️ Drive': 'Drive',
@@ -81,10 +80,8 @@ def build_graph(vault_path):
 
         for match in WIKI_RE.finditer(content):
             raw = match.group(1).strip()
-            # Skip template variables and dynamic refs
             if raw.startswith('"') or raw.startswith("'") or '=' in raw:
                 continue
-            # Skip non-md extensions
             ext = os.path.splitext(raw)[1].lower()
             if ext and ext != '.md':
                 continue
@@ -99,7 +96,7 @@ def build_graph(vault_path):
 
 
 def compute_layout(G, node_info):
-    print("Computing layout...")
+    print("Computing galaxy layout...")
     t0 = time.time()
 
     isolated = [n for n in G.nodes() if G.degree(n) == 0]
@@ -109,46 +106,76 @@ def compute_layout(G, node_info):
 
     pos = {}
 
+    # ── Tier 1: Core — Connected graph ──────────────────────────────
     if connected:
         subG = G.subgraph(connected)
-        comps = list(nx.connected_components(subG))
-        comps.sort(key=len, reverse=True)
-        print(f"  {len(comps)} connected components (largest: {len(comps[0])} nodes)")
+        pos_core = nx.spring_layout(subG, k=0.5, iterations=30, seed=42)
+        points = np.array([pos_core[n] for n in connected])
+        points -= points.mean(axis=0)
+        scale_val = 3.0 / max(np.abs(points).max(), 1)
+        points *= scale_val
+        for i, n in enumerate(connected):
+            pos[n] = points[i]
+        print(f"  Core: {len(connected)} nodes in force-directed layout")
 
-        if len(comps) == 1:
-            pos.update(nx.spring_layout(subG, k=0.3, iterations=20, seed=42))
-        else:
-            cols = int(np.ceil(np.sqrt(len(comps))))
-            for idx, comp in enumerate(comps):
-                c_sub = subG.subgraph(comp)
-                c_pos = nx.spring_layout(c_sub, k=0.5, iterations=15, seed=42 + idx)
-                row, col = idx // cols, idx % cols
-                cx, cy = col * 3 - (cols - 1) * 1.5, -row * 3
-                pts = np.array([c_pos[n] for n in comp])
-                pts -= pts.mean(axis=0)
-                pts *= 0.8
-                for i, n in enumerate(comp):
-                    pos[n] = pts[i] + np.array([cx, cy])
+    # ── Tier 2: Inner Ring — Folder-cluster orbits ─────────────────
+    # Group isolated nodes by top-level folder
+    iso_by_folder = defaultdict(list)
+    for n in isolated:
+        folder = node_info[n][1]
+        iso_by_folder[folder].append(n)
 
-    if isolated:
-        print(f"  Arranging {len(isolated)} isolated nodes in grid...")
-        n_iso = len(isolated)
-        cols = int(np.ceil(np.sqrt(n_iso)))
-        spacing = 0.025
-        if pos:
-            min_y = min(p[1] for p in pos.values())
-        else:
-            min_y = 0
-        gy = min_y - 1.0
-        for i, node in enumerate(isolated):
-            r, c = divmod(i, cols)
-            pos[node] = np.array([c * spacing - (cols * spacing) / 2, gy - r * spacing])
+    # Sort folders by count descending, keep top N for orbits
+    sorted_folders = sorted(iso_by_folder.items(), key=lambda x: -len(x[1]))
+    orbit_folders = sorted_folders[:20]       # Tier 2
+    halo_nodes = []                           # Tier 3
+
+    for folder, nodes in sorted_folders[20:]:
+        halo_nodes.extend(nodes)
+
+    orbit_radius_start = 4.0
+    orbit_spacing = 0.6
+    orbit_labels = []
+
+    for i, (folder, nodes) in enumerate(orbit_folders):
+        if not nodes:
+            continue
+        radius = orbit_radius_start + i * orbit_spacing
+        angles = np.linspace(0, 2 * np.pi, len(nodes), endpoint=False)
+        offset_angle = i * 0.1
+        for j, node in enumerate(nodes):
+            angle = angles[j] + offset_angle
+            pos[node] = np.array([radius * np.cos(angle), radius * np.sin(angle)])
+
+        # Store info for a cluster label (average position of first few nodes)
+        if len(nodes) > 0:
+            mid_angle = offset_angle + np.pi / 2
+            label_r = radius + 0.5
+            orbit_labels.append({
+                'folder': folder,
+                'count': len(nodes),
+                'x': label_r * np.cos(mid_angle),
+                'y': label_r * np.sin(mid_angle),
+            })
+        print(f"  Orbit {i+1}: {clean_folder_name(folder)} ({len(nodes)} nodes) @ r={radius:.1f}")
+
+    # ── Tier 3: Outer Halo ─────────────────────────────────────────
+    if halo_nodes:
+        n_halo = len(halo_nodes)
+        halo_radius = orbit_radius_start + len(orbit_folders) * orbit_spacing + 0.8
+        rng = np.random.RandomState(42)
+        for node in halo_nodes:
+            angle = rng.uniform(0, 2 * np.pi)
+            r_jitter = rng.uniform(-0.3, 0.3)
+            r = halo_radius + r_jitter
+            pos[node] = np.array([r * np.cos(angle), r * np.sin(angle)])
+        print(f"  Halo: {n_halo} nodes @ r≈{halo_radius:.1f}")
 
     print(f"  Layout done in {time.time()-t0:.1f}s")
-    return pos
+    return pos, orbit_labels
 
 
-def render_graph(G, pos, node_info, output_path, figsize, dpi=150):
+def render_graph(G, pos, node_info, output_path, figsize, orbit_labels=None, dpi=150):
     print(f"Rendering {os.path.basename(output_path)} ...")
     t0 = time.time()
 
@@ -157,7 +184,7 @@ def render_graph(G, pos, node_info, output_path, figsize, dpi=150):
     fig.patch.set_facecolor('#0f0f13')
     ax.set_facecolor('#0f0f13')
 
-    # --- colour mapping ---
+    # ── Folder colour mapping ───────────────────────────────────────
     folder_counts = defaultdict(int)
     for _, (_, folder) in node_info.items():
         folder_counts[folder] += 1
@@ -166,9 +193,9 @@ def render_graph(G, pos, node_info, output_path, figsize, dpi=150):
     top_folders = sorted_folders[:15]
 
     palette = [
-        '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7',
-        '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9',
-        '#F0B27A', '#82E0AA', '#F1948A', '#AEB6BF', '#73C6B6',
+        '#4edea3', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4',
+        '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE',
+        '#85C1E9', '#F0B27A', '#82E0AA', '#F1948A', '#AEB6BF',
     ]
     folder_to_color = {
         folder: palette[i % len(palette)]
@@ -176,44 +203,96 @@ def render_graph(G, pos, node_info, output_path, figsize, dpi=150):
     }
     folder_to_color['__other__'] = '#555555'
 
-    # --- node colours & sizes ---
+    # ── Separate connected / isolated for styling ───────────────────
+    isolated_set = {n for n in G.nodes() if G.degree(n) == 0}
+    connected_list = [n for n in G.nodes() if G.degree(n) > 0]
+    isolated_list = list(isolated_set)
+
     degrees = dict(G.degree())
-    deg_vals = list(degrees.values())
-    dmin, dmax = min(deg_vals), max(deg_vals)
+    deg_vals = [d for n, d in degrees.items() if G.degree(n) > 0]
+    dmin = min(deg_vals) if deg_vals else 0
+    dmax = max(deg_vals) if deg_vals else 1
 
-    node_colours, node_sizes = [], []
-    for n in G.nodes():
-        folder = node_info[n][1]
-        node_colours.append(folder_to_color.get(folder, folder_to_color['__other__']))
-        if dmax == dmin:
-            node_sizes.append(3)
-        else:
-            node_sizes.append(3 + 12 * (degrees[n] - dmin) / (dmax - dmin))
-
-    # --- edges (LineCollection) ---
-    e_positions, e_colours = [], []
+    # ── Edges (LineCollection — only connected graph) ──────────────
+    e_positions = []
     for u, v in G.edges():
-        e_positions.append([pos[u], pos[v]])
-        c = folder_to_color.get(node_info[u][1], '#555555')
-        e_colours.append(c)
+        if u in pos and v in pos:
+            e_positions.append([pos[u], pos[v]])
     if e_positions:
         ax.add_collection(
-            LineCollection(e_positions, colors=e_colours, alpha=0.06, linewidths=0.15)
+            LineCollection(
+                e_positions,
+                colors='#4edea3',
+                alpha=0.08,
+                linewidths=0.2,
+                zorder=2,
+            )
         )
 
-    # --- nodes ---
-    xs = [pos[n][0] for n in G.nodes()]
-    ys = [pos[n][1] for n in G.nodes()]
-    ax.scatter(xs, ys, s=node_sizes, c=node_colours, alpha=0.85,
-               edgecolors='none', zorder=5)
+    # ── Connected nodes (Tier 1) ────────────────────────────────────
+    if connected_list:
+        c_colours, c_sizes = [], []
+        c_xs, c_ys = [], []
+        for n in connected_list:
+            c_xs.append(pos[n][0])
+            c_ys.append(pos[n][1])
+            folder = node_info[n][1]
+            c_colours.append(folder_to_color.get(folder, folder_to_color['__other__']))
+            if dmax == dmin:
+                c_sizes.append(15)
+            else:
+                c_sizes.append(10 + 40 * (degrees[n] - dmin) / (dmax - dmin))
+        ax.scatter(
+            c_xs, c_ys, s=c_sizes, c=c_colours, alpha=0.85,
+            edgecolors='#ffffff', linewidths=0.15, zorder=10,
+        )
 
-    # --- title ---
+    # ── Isolated nodes (Tier 2 & 3) ─────────────────────────────────
+    if isolated_list:
+        i_colours, i_sizes = [], []
+        i_xs, i_ys = [], []
+        for n in isolated_list:
+            i_xs.append(pos[n][0])
+            i_ys.append(pos[n][1])
+            folder = node_info[n][1]
+            i_colours.append(folder_to_color.get(folder, folder_to_color['__other__']))
+            i_sizes.append(4)
+        ax.scatter(
+            i_xs, i_ys, s=i_sizes, c=i_colours, alpha=0.30,
+            edgecolors='none', zorder=5,
+        )
+
+    # ── Orbit cluster labels (Tier 2) ───────────────────────────────
+    if orbit_labels:
+        for ol in orbit_labels:
+            label = clean_folder_name(ol['folder'])
+            colour = folder_to_color.get(ol['folder'], folder_to_color['__other__'])
+            ax.text(
+                ol['x'], ol['y'], f"{label} ({ol['count']})",
+                color=colour, fontsize=5.5, alpha=0.7, ha='center', va='center',
+                fontweight='bold', zorder=20,
+            )
+
+    # ── Decorative outer ring (glow) ────────────────────────────────
+    all_pos = np.array(list(pos.values()))
+    if len(all_pos) > 0:
+        max_r = np.max(np.linalg.norm(all_pos, axis=1))
+        ring_r = max_r + 0.8
+        ring_angles = np.linspace(0, 2 * np.pi, 300)
+        ring_x = ring_r * np.cos(ring_angles)
+        ring_y = ring_r * np.sin(ring_angles)
+        ax.plot(
+            ring_x, ring_y, color='#4edea3', alpha=0.07,
+            linewidth=0.5, linestyle='--', zorder=1,
+        )
+
+    # ── Title ───────────────────────────────────────────────────────
     ax.set_title(
         f"ric2brain  —  {G.number_of_nodes():,} note vault graph",
-        color='#cccccc', fontsize=20, pad=15, fontweight='bold'
+        color='#cccccc', fontsize=20, pad=15, fontweight='bold',
     )
 
-    # --- legend ---
+    # ── Legend ──────────────────────────────────────────────────────
     patches = []
     for folder in top_folders:
         label = clean_folder_name(folder)
@@ -231,11 +310,13 @@ def render_graph(G, pos, node_info, output_path, figsize, dpi=150):
     legend = ax.legend(
         handles=patches, loc='upper left', framealpha=0.15,
         facecolor='#1a1a24', edgecolor='#333333', fontsize=7,
-        labelcolor='#cccccc'
+        labelcolor='#cccccc',
     )
     legend.get_frame().set_linewidth(0.5)
 
     ax.axis('off')
+    ax.set_xlim(None, None)
+    ax.set_ylim(None, None)
 
     fig.savefig(output_path, dpi=dpi, facecolor='#0f0f13',
                 edgecolor='none', bbox_inches='tight', pad_inches=0.3)
@@ -247,17 +328,17 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     G, node_info = build_graph(VAULT_PATH)
-    pos = compute_layout(G, node_info)
+    pos, orbit_labels = compute_layout(G, node_info)
 
     render_graph(
         G, pos, node_info,
         os.path.join(OUTPUT_DIR, "ric2brain-graph-1200x1600.png"),
-        figsize=(12, 16),
+        figsize=(12, 16), orbit_labels=orbit_labels,
     )
     render_graph(
         G, pos, node_info,
         os.path.join(OUTPUT_DIR, "ric2brain-banner-1600x900.png"),
-        figsize=(16, 9),
+        figsize=(16, 9), orbit_labels=orbit_labels,
     )
 
     print(f"\nDone! Both images saved to {OUTPUT_DIR}")

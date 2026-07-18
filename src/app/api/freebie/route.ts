@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
-import { getResendClient, FROM_EMAIL, TO_EMAIL } from "@/lib/resend";
-import { createLead, markStepSent } from "@/lib/lead-store";
-import { welcomeTemplate } from "@/lib/email/templates";
-import { SEQUENCE } from "@/lib/email/sequence";
+import { getResendClient, FROM_EMAIL, TO_EMAIL, APP_URL } from "@/lib/resend";
+import { createLead } from "@/lib/lead-store";
+import { confirmationTemplate } from "@/lib/email/templates";
 import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
@@ -59,33 +58,32 @@ export async function POST(request: Request) {
       });
     }
 
-    // ── 1. Save the lead ──
+    // ── 1. Save the lead (status = pending, confirmToken generated) ──
     const lead = await createLead(name, email);
 
-    // ── 2. Send Welcome Email (Step 0) ──
-    const welcomeHtml = welcomeTemplate({
+    // ── 2. Send Confirmation Email (double opt-in) ──
+    const confirmUrl = `${APP_URL}/confirm?token=${lead.confirmToken}`;
+    const confirmHtml = confirmationTemplate({
       name: lead.name,
       email: lead.email,
+      confirmUrl,
       unsubscribeToken: lead.unsubscribeToken,
     });
 
     await resend.emails.send({
       from: `Riccardo Bozzato <${FROM_EMAIL}>`,
       to: lead.email,
-      subject: SEQUENCE[0].subject,
-      html: welcomeHtml,
+      subject: "Please confirm your subscription",
+      html: confirmHtml,
     });
 
-    // Mark step 0 as sent
-    await markStepSent(lead.email, 0);
-
-    // ── 3. Notify me ──
+    // ── 3. Notify me about the new pending lead ──
     await resend.emails.send({
       from: `Freebie Alert <${FROM_EMAIL}>`,
       to: TO_EMAIL,
-      subject: `🎯 New Lead: ${lead.name} <${lead.email}>`,
+      subject: `🎯 New Pending Lead: ${lead.name} <${lead.email}>`,
       html: `
-        <h2>New Playbook Download</h2>
+        <h2>New Playbook Download (Pending Confirmation)</h2>
         <table style="border-collapse:collapse;width:100%;max-width:400px;">
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Name</td><td style="padding:8px;border:1px solid #ddd;">${lead.name}</td></tr>
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Email</td><td style="padding:8px;border:1px solid #ddd;">${lead.email}</td></tr>
@@ -93,14 +91,14 @@ export async function POST(request: Request) {
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Lead ID</td><td style="padding:8px;border:1px solid #ddd;">${lead.id}</td></tr>
         </table>
         <p style="margin-top:16px;font-size:13px;color:#666;">
-          Welcome email sent. Follow-up sequence started (Day 1 in 24h).
+          Confirmation email sent. Sequence will start after they confirm via double opt-in.
         </p>
       `,
     });
 
     return NextResponse.json({
       success: true,
-      message: "Check your inbox! The playbook is on its way.",
+      message: "Check your inbox! Click the confirmation link to get your playbook.",
     });
   } catch (error) {
     console.error("Freebie download error:", error);

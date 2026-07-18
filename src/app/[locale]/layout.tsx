@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: `${baseUrl}/assets/trova-banner-1600x900.png`,
+          url: `${baseUrl}/assets/shipkit-banner-1600x900.png`,
           width: 1600,
           height: 900,
           alt: `${title} — ${t("tagline")}`,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [`${baseUrl}/assets/trova-banner-1600x900.png`],
+      images: [`${baseUrl}/assets/shipkit-banner-1600x900.png`],
     },
     robots: {
       index: true,
@@ -108,10 +108,10 @@ export default async function LocaleLayout({
       },
       {
         "@type": "Product",
-        name: "Trova SaaS Boilerplate",
+        name: "ShipKit SaaS Kit",
         description:
           "Production-ready Next.js 16 SaaS boilerplate with auth, database, email, billing, i18n, and shadcn/ui.",
-        image: `${SITE_URL}/assets/trova-banner-1600x900.png`,
+        image: `${SITE_URL}/assets/shipkit-banner-1600x900.png`,
         offers: {
           "@type": "Offer",
           price: "49",

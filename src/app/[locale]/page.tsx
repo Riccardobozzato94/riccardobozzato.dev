@@ -57,18 +57,18 @@ export default async function HomePage({ params }: Props) {
          ════════════════════════════════════════════ */}
       <section className="max-w-[1200px] mx-auto px-4 md:px-16 py-[120px] relative">
         <div className="flex flex-col lg:flex-row items-center gap-[64px]">
-          {/* Portrait */}
-          <div className="w-full lg:w-5/12">
-            <div className="aspect-[3/4] bg-surface-container-highest border border-outline-variant relative overflow-hidden group">
+          {/* Logo */}
+          <div className="w-full lg:w-5/12 flex items-center justify-center">
+            <div className="relative w-full max-w-[400px] aspect-square">
               <Image
-                src="/images/riccardo-bozzato-photo-hero.jpg"
-                alt="Riccardo Bozzato — Delivery Manager & Head of Operations"
+                src="/assets/logo.svg"
+                alt="Riccardo Bozzato — Operations & Delivery"
                 fill
-                className="object-cover grayscale opacity-80 mix-blend-luminosity group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                className="object-contain drop-shadow-2xl"
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
 

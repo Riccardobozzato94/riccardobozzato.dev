@@ -89,7 +89,7 @@ export const SERVICES: Service[] = [
     name: "Production SaaS Foundation",
     tagline: "Ship the boring 80% in days, not months.",
     description:
-      "Turnkey foundation for new SaaS products — auth, email, i18n, billing, and CI/CD wired up on a serverless, lowest-cost stack (based on the Trova blueprint).",
+      "Turnkey foundation for new SaaS products — auth, email, i18n, billing, and CI/CD wired up on a serverless, lowest-cost stack (based on the ShipKit blueprint).",
     deliverables: [
       "Auth, email, i18n, billing scaffolding",
       "Serverless infra + CI/CD",

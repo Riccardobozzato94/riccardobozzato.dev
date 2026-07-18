@@ -24,13 +24,15 @@ export interface SequenceStep {
 /**
  * The complete email nurture sequence.
  *
- * Timing:
- *   Step 0: Welcome  — immediately after signup
- *   Step 1: Day 1    — 1 day after signup
- *   Step 2: Day 3    — 3 days after signup
- *   Step 3: Day 5    — 5 days after signup
- *   Step 4: Day 7    — 7 days after signup
- *   Step 5: Day 14   — 14 days after signup
+ * Timing (after double opt-in confirmation):
+ *   Step 0: Confirmation — sent immediately after signup (marks step 0 as sent on confirm)
+ *   Step 1: Day 1        — 1 day after signup
+ *   Step 2: Day 3        — 3 days after signup
+ *   Step 3: Day 5        — 5 days after signup
+ *   Step 4: Day 7        — 7 days after signup
+ *   Step 5: Day 14       — 14 days after signup
+ *
+ * Only confirmed leads (status === "confirmed") are processed by the cron.
  */
 export const SEQUENCE: SequenceStep[] = [
   {

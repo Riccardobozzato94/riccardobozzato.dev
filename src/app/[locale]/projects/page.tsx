@@ -62,14 +62,14 @@ export default async function ProjectsPage() {
 
       <Section animate className="pt-0!">
         <div className="max-w-6xl mx-auto space-y-8">
-          {/* Featured: Trova */}
+          {/* Featured: ShipKit */}
           <ProjectCard
-            title={t("trova.title")}
-            subtitle={t("trova.subtitle")}
-            description={t("trova.description")}
+            title={t("shipkit.title")}
+            subtitle={t("shipkit.subtitle")}
+            description={t("shipkit.description")}
             tags={["SaaS", "Product Delivery", "Process Design"]}
-            href="/trova"
-            image="/assets/trova-banner-1600x900.png"
+            href="/shipkit"
+            image="/assets/shipkit-banner-1600x900.png"
             badge="Case Study"
             badgeColor="bg-accent/10 text-accent"
             featured

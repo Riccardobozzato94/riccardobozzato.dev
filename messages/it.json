@@ -11,7 +11,7 @@
         "journey": "Il Viaggio",
                 "projects":  "Progetti",
                 "panificio":  "Panificio",
-                "trova":  "Trova",
+                "shipkit":  "ShipKit",
                 "freebie":  "Diagnostica Gratuita",
         "blog":  "Blog",
                 "services":  "Servizi",
@@ -114,9 +114,9 @@
                                         "cta":  "Leggi il Case Study",
                                         "status":  "Shippato v0.4.0 · 1.2K+ GitHub ⭐"
                                     },
-     "trova":  {
-                                    "title":  "Trova",
-                                    "subtitle":  "Prodotto SaaS: dall'Idea al Prodotto a Pagamento (€49)",
+     "shipkit":  {
+                                    "title":  "ShipKit",
+                                    "subtitle":  "SaaS Kit: dall'Idea al Prodotto a Pagamento (€49)",
                                     "description":  "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: raccolta requisiti, controllo scope, integrazione pagamenti, documentazione e supporto clienti. Il prodotto include architettura multi-tenant, fatturazione automatizzata con webhook Stripe, autenticazione Google OAuth + magic link, e i18n completo. Venduto a €49/one-time con aggiornamenti a vita. 12 clienti reali nei primi 3 mesi.",
                                     "features":  [
                                                      "Ciclo di vita completo: validazione concept → architettura → build → ship → supporto → iterazione",
@@ -207,28 +207,28 @@
                                                ]
                                  }
                  },
-    "trova":  {
-                  "title":  "Trova",
-                  "tagline":  "Il boilerplate SaaS che va davvero in produzione.",
-                  "description":  "Smetti di re-inventare autenticazione, email, fatturazione e i18n per ogni progetto. Trova ti dà una base pronta per la produzione, così puoi concentrarti su ciò che rende unico il tuo SaaS.",
-                  "features":  {
-                                   "auth":  "Better Auth — magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
-                                   "database":  "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
-                                   "email":  "Resend + React Email — email transazionali, 5 template inclusi",
-                                   "i18n":  "next-intl — Inglese e Italiano già pronti, estendibili",
-                                   "billing":  "Stripe — piani abbonamento, webhook, portale clienti",
-                                   "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, custom"
-                               },
-                  "pricing":  {
-                                  "title":  "Prezzo Semplice",
-                                  "subtitle":  "Un prezzo. Tutto incluso.",
-                                  "price":  "€49",
-                                  "period":  "una tantum",
-                                  "includes":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
-                                  "cta":  "Acquista Trova",
-                                  "guarantee":  "Garanzia rimborso 30 giorni"
-                              }
-              },
+     "shipkit":  {
+                   "title":  "ShipKit",
+                   "tagline":  "Il SaaS kit che va davvero in produzione.",
+                   "description":  "Smetti di re-inventare autenticazione, email, fatturazione e i18n per ogni progetto. ShipKit ti dà una base pronta per la produzione, così puoi concentrarti su ciò che rende unico il tuo SaaS.",
+                   "features":  {
+                                    "auth":  "Better Auth — magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
+                                    "database":  "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
+                                    "email":  "Resend + React Email — email transazionali, 5 template inclusi",
+                                    "i18n":  "next-intl — Inglese e Italiano già pronti, estendibili",
+                                    "billing":  "Stripe — piani abbonamento, webhook, portale clienti",
+                                    "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, custom"
+                                },
+                   "pricing":  {
+                                   "title":  "Prezzo Semplice",
+                                   "subtitle":  "Un prezzo. Tutto incluso.",
+                                   "price":  "€49",
+                                   "period":  "una tantum",
+                                   "includes":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
+                                   "cta":  "Acquista ShipKit",
+                                   "guarantee":  "Garanzia rimborso 30 giorni"
+                               }
+               },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
                     "subtitle":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
@@ -245,7 +245,7 @@
                                  "emailPlaceholder":  "tu@azienda.com",
                                  "cta":  "Inviami il Diagnostic",
                                  "sending":  "Invio in corso...",
-                                 "success":  "Controlla la tua casella! Il diagnostic è in arrivo.",
+                                 "success":  "Controlla la tua casella! Clicca il link di conferma per ricevere il diagnostic.",
                                  "privacy":  "Niente spam. Ti cancelli quando vuoi.",
                                  "name":  "Nome",
                                  "email":  "Email",
@@ -261,7 +261,7 @@
                                  "Poi Accenture. Ho costruito applicazioni enterprise (SAP UI5, JavaScript) e automatizzato processi che erano manuali da anni: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. È stata la prima volta che ho capito che il processo giusto batte il talento grezzo — sempre.",
                                  "In Esse Solutions gestivo un portfolio digitale da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto Agile strutturato dove non c'era niente: produttività +25%, time-to-market -40%, tempi di completamento -20%.",
                                  "In Ciao Elsa sono stato Head of Operations per 8 settimane — per scelta. La startup aveva bisogno di una funzione operations da zero: processi, KPI, struttura del team, governance. L'ho costruita, consegnata, e me ne sono andato. Un engagement breve che ha dimostrato che l'approccio funziona anche a velocità startup.",
-                                  "Oggi sono in fase di transizione — ho chiuso l'esperienza da Ciao Elsa e sono aperto a nuove opportunità. Porto con me un bagaglio solido: architetture operative costruite in contesti enterprise e startup, certificazione PMP®, e la convinzione che i processi giusti battono il talento grezzo — sempre. Nel frattempo costruisco strumenti (Trova, VulnClaw) perché non puoi progettare buoni sistemi se non hai mai costruito niente."
+                                  "Oggi sono in fase di transizione — ho chiuso l'esperienza da Ciao Elsa e sono aperto a nuove opportunità. Porto con me un bagaglio solido: architetture operative costruite in contesti enterprise e startup, certificazione PMP®, e la convinzione che i processi giusti battono il talento grezzo — sempre. Nel frattempo costruisco strumenti (ShipKit, VulnClaw) perché non puoi progettare buoni sistemi se non hai mai costruito niente."
                              ],
                    "philosophy":  "La maggior parte delle aziende non fallisce per mancanza di talento o idee. Fallisce perché le operations non reggono il peso della crescita. Costruisco il sistema operativo che risolve il problema — combinando il rigore del PMP® con la velocità di chi è stato in trincea. Niente gergo. Niente teatro. Solo processi che funzionano.",
                   "certifications":  [
@@ -347,7 +347,7 @@
                                      },
                                      {
                                         "title":  "8. Servizi di Terze Parti",
-                                        "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR:<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali e automazione sequenze email. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — hosting del sito e CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti Trova. Privacy: stripe.com/privacy<br><br>I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC)."
+                                        "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR:<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali e automazione sequenze email. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — hosting del sito e CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti ShipKit. Privacy: stripe.com/privacy<br><br>I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC)."
                                      },
                                      {
                                          "title":  "9. Sicurezza dei Dati",
@@ -363,6 +363,17 @@
                                      }
                                  ],
                     "nav":  "Privacy"
+                },
+    "confirm":  {
+                    "processing":  "Conferma della sottoscrizione in corso...",
+                    "successTitle":  "Sottoscrizione Confermata! 🎉",
+                    "successMessage":  "Tutto pronto! Ti stiamo reindirizzando alla pagina di download...",
+                    "alreadyTitle":  "Già Confermato",
+                    "alreadyMessage":  "La tua email era già stata confermata. Vai alla pagina di download per ricevere il playbook.",
+                    "errorTitle":  "Link Non Valido o Scaduto",
+                    "errorMessage":  "Questo link di conferma non è valido o è scaduto. Prova a registrarti di nuovo.",
+                    "backHome":  "Torna alla Home",
+                    "goToDownload":  "Vai al Download"
                 },
     "unsubscribe":  {
                         "processing":  "Elaborazione in corso...",

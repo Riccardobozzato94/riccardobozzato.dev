@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Github, Linkedin, Send, MessageSquare, Sparkles } from "lucide-react";
+import { Mail, Github, Linkedin, Send, MessageSquare, Sparkles, Download } from "lucide-react";
 import { useLocale } from "next-intl";
 import Section from "@/components/Section";
 
@@ -200,6 +200,32 @@ export default function ContactPage() {
             </div>
           </Section>
         </div>
+
+        {/* CV Download */}
+        <Section animate delay={200} className="max-w-5xl mx-auto mt-8">
+          <Card className="border-accent/20 bg-gradient-to-br from-accent/5 via-card to-card shadow-lg shadow-black/5">
+            <CardContent className="p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h2 className="text-xl font-bold mb-1">
+                  {isIt ? "Scarica il mio CV" : "Download My CV"}
+                </h2>
+                <p className="text-sm text-muted-foreground/80">
+                  {isIt
+                    ? "Scopri il mio percorso professionale e le mie competenze."
+                    : "Explore my professional background and expertise."}
+                </p>
+              </div>
+              <a
+                href="/files/CV-Riccardo-Bozzato.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 px-6 py-3 text-sm font-medium transition-colors shrink-0"
+              >
+                <Download className="size-4" />
+                {isIt ? "Scarica PDF" : "Download PDF"}
+              </a>
+            </CardContent>
+          </Card>
+        </Section>
       </div>
     </>
   );

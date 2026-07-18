@@ -11,7 +11,7 @@
         "journey": "The Journey",
                 "projects":  "Projects",
                 "panificio":  "Panificio",
-                "trova":  "Trova",
+                "shipkit":  "ShipKit",
                 "freebie":  "Free Diagnostic",
         "blog":  "Blog",
                 "services":  "Services",
@@ -114,9 +114,9 @@
                                         "cta":  "Read Case Study",
                                         "status":  "Shipped v0.4.0 · 1.2K+ GitHub ⭐"
                                     },
-     "trova":  {
-                                    "title":  "Trova",
-                                    "subtitle":  "SaaS Product: From Idea to €49 Paid Product",
+     "shipkit":  {
+                                    "title":  "ShipKit",
+                                    "subtitle":  "SaaS Kit: From Idea to €49 Paid Product",
                                     "description":  "Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements gathering, scope control, payment integration, documentation, and customer support. The product ships with multi-tenant architecture, automated billing with Stripe webhooks, Google OAuth + magic link auth, and full i18n support. Sold at €49/one-time with lifetime updates. 12 real customers in the first 3 months.",
                                     "features":  [
                                                      "Full product lifecycle: concept validation → architecture → build → ship → support → iteration",
@@ -207,28 +207,28 @@
                                                  ]
                                    }
                  },
-    "trova":  {
-                  "title":  "Trova",
-                  "tagline":  "The SaaS boilerplate that actually ships.",
-                  "description":  "Stop rebuilding auth, emails, billing, and i18n for every project. Trova gives you a production-ready foundation so you can focus on what makes your SaaS unique.",
-                  "features":  {
-                                   "auth":  "Better Auth — magic links, OAuth (Google, GitHub), 2FA, session management",
-                                   "database":  "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
-                                   "email":  "Resend + React Email — transactional emails, 5 templates included",
-                                   "i18n":  "next-intl — English and Italian out of the box, easy to extend",
-                                   "billing":  "Stripe — subscriptions, webhooks, customer portal",
-                                   "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, customizable"
-                               },
-                  "pricing":  {
-                                  "title":  "Simple Pricing",
-                                  "subtitle":  "One price. Everything included.",
-                                  "price":  "€49",
-                                  "period":  "one-time",
-                                  "includes":  "Full source code, lifetime updates, priority support",
-                                  "cta":  "Buy Trova",
-                                  "guarantee":  "30-day money-back guarantee"
-                              }
-              },
+     "shipkit":  {
+                   "title":  "ShipKit",
+                   "tagline":  "The SaaS kit that actually ships.",
+                   "description":  "Stop rebuilding auth, emails, billing, and i18n for every project. ShipKit gives you a production-ready foundation so you can focus on what makes your SaaS unique.",
+                   "features":  {
+                                    "auth":  "Better Auth — magic links, OAuth (Google, GitHub), 2FA, session management",
+                                    "database":  "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
+                                    "email":  "Resend + React Email — transactional emails, 5 templates included",
+                                    "i18n":  "next-intl — English and Italian out of the box, easy to extend",
+                                    "billing":  "Stripe — subscriptions, webhooks, customer portal",
+                                    "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, customizable"
+                                },
+                   "pricing":  {
+                                   "title":  "Simple Pricing",
+                                   "subtitle":  "One price. Everything included.",
+                                   "price":  "€49",
+                                   "period":  "one-time",
+                                   "includes":  "Full source code, lifetime updates, priority support",
+                                   "cta":  "Buy ShipKit",
+                                   "guarantee":  "30-day money-back guarantee"
+                               }
+               },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
                     "subtitle":  "Three hours. A whiteboard. A clear picture of what's broken and how to fix it.",
@@ -245,7 +245,7 @@
                                  "emailPlaceholder":  "you@company.com",
                                  "cta":  "Send Me the Diagnostic",
                                  "sending":  "Sending...",
-                                 "success":  "Check your inbox! The diagnostic is on its way.",
+                                 "success":  "Check your inbox! Click the confirmation link to get your diagnostic.",
                                  "privacy":  "No spam. Unsubscribe anytime.",
                                  "name":  "Name",
                                  "email":  "Email",
@@ -261,7 +261,7 @@
                                   "Then Accenture. I built enterprise applications (SAP UI5, JavaScript) and automated processes that had been manual for years: +30% efficiency, -15% administrative errors, -20% response times. It was the first time I saw that the right process beats raw talent — every time.",
                                   "At Esse Solutions I owned a \u20ac500K portfolio of digital projects, coordinating distributed teams of 8-12 across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). I introduced structured Agile where there was none: productivity went up 25%, time-to-market dropped 40%, completion times shrank 20%.",
                                   "At Ciao Elsa I was Head of Operations for 8 weeks — by design. The startup needed an operations function from scratch: processes, KPIs, team structure, governance. I built it, handed it over, and left. A short engagement that proved the approach works even at startup speed.",
-                                  "I'm currently in transition — my Ciao Elsa engagement has concluded and I'm open to new opportunities. I bring a strong track record: operational architectures built in both enterprise and startup environments, PMP\u00ae certification, and the conviction that the right process beats raw talent — every time. In the meantime, I build tools (Trova, VulnClaw) because you can't design good systems if you've never built anything."
+                                  "I'm currently in transition — my Ciao Elsa engagement has concluded and I'm open to new opportunities. I bring a strong track record: operational architectures built in both enterprise and startup environments, PMP\u00ae certification, and the conviction that the right process beats raw talent — every time. In the meantime, I build tools (ShipKit, VulnClaw) because you can't design good systems if you've never built anything."
                               ],
                     "philosophy":  "Most companies don't fail because they lack talent or ideas. They fail because their operations can't handle the weight of their own growth. I build the operating system that fixes that — combining the rigor of PMP\u00ae with the speed of someone who's been in the trenches. No jargon. No theater. Just systems that work.",
                    "certifications":  [
@@ -347,7 +347,7 @@
                                      },
                                      {
                                         "title":  "8. Third-Party Processors",
-                                        "content":  "I use the following third-party services to operate this site and deliver services. Each has been vetted for GDPR compliance:<br><br><strong>Resend</strong> (resend.com) — transactional email delivery and email sequence automation. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — website hosting and CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — source code hosting and project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — payment processing for Trova purchases. Privacy: stripe.com/privacy<br><br>Data is processed within the EU and US (under SCC agreements)."
+                                        "content":  "I use the following third-party services to operate this site and deliver services. Each has been vetted for GDPR compliance:<br><br><strong>Resend</strong> (resend.com) — transactional email delivery and email sequence automation. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — website hosting and CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — source code hosting and project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — payment processing for ShipKit purchases. Privacy: stripe.com/privacy<br><br>Data is processed within the EU and US (under SCC agreements)."
                                      },
                                      {
                                          "title":  "9. Data Security",
@@ -363,6 +363,17 @@
                                      }
                                  ],
                     "nav":  "Privacy"
+                },
+    "confirm":  {
+                    "processing":  "Confirming your subscription...",
+                    "successTitle":  "Subscription Confirmed! 🎉",
+                    "successMessage":  "You're all set! Redirecting you to your download page...",
+                    "alreadyTitle":  "Already Confirmed",
+                    "alreadyMessage":  "Your email was already confirmed. Head to the download page to get your playbook.",
+                    "errorTitle":  "Invalid or Expired Link",
+                    "errorMessage":  "This confirmation link is invalid or has expired. Please try signing up again.",
+                    "backHome":  "Back to Home",
+                    "goToDownload":  "Go to Download Page"
                 },
     "unsubscribe":  {
                         "processing":  "Processing your request...",

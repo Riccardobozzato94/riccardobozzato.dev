@@ -109,6 +109,54 @@ function signature(email: string): string {
   </table>`;
 }
 
+/* ───────── CONFIRMATION TEMPLATE INPUT ───────── */
+
+export interface ConfirmationTemplateInput {
+  name: string;
+  email: string;
+  confirmUrl: string;
+  unsubscribeToken: string;
+}
+
+/* ───────── CONFIRMATION TEMPLATE ───────── */
+
+/**
+ * Confirmation email — Double opt-in
+ * Sent immediately after signup. Asks the user to confirm their subscription.
+ * The playbook is delivered on the thank-you page after confirmation.
+ */
+export function confirmationTemplate({ name, email, confirmUrl, unsubscribeToken }: ConfirmationTemplateInput): string {
+  const body = `
+    <h1 style="margin:0 0 8px 0;font-size:24px;color:#18181b;letter-spacing:-0.5px;line-height:1.3;">
+      Please Confirm Your Subscription
+    </h1>
+    <p style="margin:0 0 24px 0;font-size:15px;color:#52525b;line-height:1.6;">
+      Hey ${name},
+    </p>
+    <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
+      Thanks for signing up for the <strong style="color:#18181b;">AI Ops Security Playbook</strong>.
+      You're almost there — just one more step to get your free copy.
+    </p>
+    <p style="margin:0 0 8px 0;font-size:15px;color:#52525b;line-height:1.6;">
+      Click the button below to confirm your email address and start receiving the email sequence:
+    </p>
+    ${ctaButton(confirmUrl, "Confirm My Subscription")}
+    <p style="margin:16px 0 0 0;font-size:13px;color:#71717a;line-height:1.5;">
+      If the button doesn't work, copy this URL into your browser:<br/>
+      <span style="color:#52525b;">${confirmUrl}</span>
+    </p>
+    <p style="margin:20px 0 0 0;font-size:15px;color:#52525b;line-height:1.6;">
+      Once confirmed, you'll be redirected to the download page for the playbook and I'll start
+      sending you practical operations tactics over the next two weeks.
+    </p>
+    <p style="margin:16px 0 0 0;font-size:13px;color:#71717a;line-height:1.5;">
+      Didn't sign up? You can ignore this email — no further messages will be sent.
+    </p>
+    ${signature(email)}
+  `;
+  return baseLayout(body, unsubscribeToken);
+}
+
 /* ───────── TEMPLATES ───────── */
 
 interface TemplateInput {

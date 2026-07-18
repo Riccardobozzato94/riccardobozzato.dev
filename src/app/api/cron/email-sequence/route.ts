@@ -6,8 +6,9 @@ import { SEQUENCE } from "@/lib/email/sequence";
 /**
  * CRON endpoint — called daily by GitHub Actions (or similar).
  *
- * Checks every lead and sends the next email in the sequence if it's due.
- * Step 0 (welcome) is sent immediately at signup, so this handles steps 1-5.
+ * Checks every **confirmed** lead and sends the next email in the sequence if it's due.
+ * Step 0 (confirmation) is sent at signup and marked as sent on confirmation,
+ * so this handles steps 1-5 for confirmed leads only.
  */
 export async function GET(request: Request) {
   // Verify cron secret to prevent unauthorized access
