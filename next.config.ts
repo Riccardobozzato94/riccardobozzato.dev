@@ -5,6 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 
 // Security headers applied by Next for every route (works in dev + prod,
 // independent of the hosting platform's static header config).
+// Aligned with netlify.toml for consistency — Netlify edge headers take
+// precedence in production, but Next headers apply in dev/preview.
 const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -17,10 +19,13 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "img-src 'self' data: https:",
-      "script-src 'self' 'unsafe-inline'",
+      "script-src 'self' https://unpkg.com",
       "style-src 'self' 'unsafe-inline'",
       "font-src 'self'",
       "connect-src 'self' https://api.resend.com",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "frame-ancestors 'none'",
     ].join("; "),
   },
 ];

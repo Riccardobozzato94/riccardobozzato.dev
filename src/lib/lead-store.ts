@@ -15,12 +15,7 @@ import * as crypto from "crypto";
 /* ────────── Utils ────────── */
 
 function generateToken(): string {
-  const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
-  let result = "";
-  for (let i = 0; i < 24; i++) {
-    result += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return result;
+  return crypto.randomBytes(24).toString("base64url");
 }
 
 function generateConfirmToken(): string {

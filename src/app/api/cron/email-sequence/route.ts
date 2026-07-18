@@ -11,11 +11,11 @@ import { SEQUENCE } from "@/lib/email/sequence";
  * so this handles steps 1-5 for confirmed leads only.
  */
 export async function GET(request: Request) {
-  // Verify cron secret to prevent unauthorized access
+  // Verify cron secret to prevent unauthorized access (fail-closed)
   const authHeader = request.headers.get("authorization");
   const cronSecret = process.env.CRON_SECRET;
 
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+  if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

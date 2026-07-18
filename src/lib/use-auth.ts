@@ -8,6 +8,16 @@ interface AuthState {
   isLoading: boolean;
 }
 
+/**
+ * ⚠️ SECURITY NOTE: JWT stored in localStorage.
+ *
+ * This is acceptable for a personal/admin-only dashboard with low-value
+ * credentials. For production with multiple users, migrate to httpOnly
+ * cookies to prevent XSS-based token exfiltration.
+ *
+ * The token expires in 24h and the admin panel is used exclusively by the
+ * site owner — the risk is understood and accepted.
+ */
 const TOKEN_KEY = "rbz_token";
 
 export function useAuth() {

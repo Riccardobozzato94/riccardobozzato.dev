@@ -5,14 +5,19 @@ import { verifyToken, extractBearerToken } from "@/lib/auth";
 
 const i18nMiddleware = createMiddleware(routing);
 
-// API routes that don't require authentication
+// API routes that don't require JWT authentication (they have their own auth)
+// - /api/leads uses LEADS_API_KEY (fail-closed)
+// - /api/cron/* uses CRON_SECRET
+// - Contact/freebie/unsubscribe/confirm are public-by-design (rate-limited)
+// - /api/auth/login must be public for login to work
 const PUBLIC_API_ROUTES = [
   "/api/auth/login",
   "/api/auth/register",
   "/api/contact",
   "/api/freebie",
   "/api/unsubscribe",
-  "/api/leads",
+  "/api/confirm",
+  "/api/leads",     // Protected by LEADS_API_KEY (fail-closed)
 ];
 
 // Cron/webhook routes that use a shared secret instead of JWT

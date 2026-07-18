@@ -58,7 +58,7 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">{isIt ? "STRUMENTI" : "TOOLS"}</h4>
             <ul className="space-y-4">
-              <li><a href={`https://www.amazon.${isIt ? "it" : "com"}?tag=riccardobozz-21`} target="_blank" rel="noopener noreferrer sponsored" className="text-sm text-muted-foreground hover:text-primary transition-colors">Amazon {isIt ? " (Affiliato)" : " (Affiliate)"}</a></li>
+              <li><a href={`https://www.amazon.${isIt ? "it" : "com"}?tag=rikbozz-21`} target="_blank" rel="noopener noreferrer sponsored" className="text-sm text-muted-foreground hover:text-primary transition-colors">Amazon {isIt ? " (Affiliato)" : " (Affiliate)"}</a></li>
               <li><a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Vercel</a></li>
               <li><a href="https://netlify.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Netlify</a></li>
               <li><a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Resend</a></li>

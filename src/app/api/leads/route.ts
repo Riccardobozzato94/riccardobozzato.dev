@@ -27,7 +27,8 @@ export async function GET(request: Request) {
   const authHeader = request.headers.get("authorization");
   const adminKey = process.env.LEADS_API_KEY;
 
-  if (adminKey && authHeader !== `Bearer ${adminKey}`) {
+  // Fail-closed: if LEADS_API_KEY is not set, block access instead of allowing it
+  if (!adminKey || authHeader !== `Bearer ${adminKey}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

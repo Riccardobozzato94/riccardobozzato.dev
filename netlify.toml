@@ -8,10 +8,11 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    # CSP hardened: removed 'unsafe-inline' from script-src / style-src to close
-    # the XSS gap. If a future page strictly requires inline scripts/styles, use a
-    # per-request nonce instead (see comment at bottom of this file) rather than
-    # re-adding 'unsafe-inline'.
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    # CSP hardened: removed 'unsafe-inline' from script-src to close the XSS gap.
+    # Next.js serves its scripts from /_next/static/ ('self'), Decap CMS loads
+    # from unpkg. Inline styles are required by Next.js for CSS-in-JS hydration.
     Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://api.resend.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
 
 [[headers]]

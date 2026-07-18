@@ -15,7 +15,7 @@
  */
 
 const WINDOW_MS = 60_000;
-const MAX_REQUESTS = 5;
+const DEFAULT_MAX_REQUESTS = 5;
 
 // IP -> array of request timestamps (ms) within the current window.
 const store = new Map<string, number[]>();
@@ -37,7 +37,10 @@ export interface RateLimitResult {
   retryAfter: number;
 }
 
-export function rateLimit(request: Request): RateLimitResult {
+export function rateLimit(
+  request: Request,
+  maxRequests: number = DEFAULT_MAX_REQUESTS
+): RateLimitResult {
   const ip = getClientIp(request);
   const now = Date.now();
 
@@ -45,7 +48,7 @@ export function rateLimit(request: Request): RateLimitResult {
   // Drop timestamps outside the window.
   const recent = timestamps.filter((t) => now - t < WINDOW_MS);
 
-  if (recent.length >= MAX_REQUESTS) {
+  if (recent.length >= maxRequests) {
     const oldest = recent[0]!;
     const retryAfter = Math.ceil((oldest + WINDOW_MS - now) / 1000);
     store.set(ip, recent);
@@ -57,7 +60,7 @@ export function rateLimit(request: Request): RateLimitResult {
 
   return {
     limited: false,
-    remaining: Math.max(MAX_REQUESTS - recent.length, 0),
+    remaining: Math.max(maxRequests - recent.length, 0),
     retryAfter: 0,
   };
 }

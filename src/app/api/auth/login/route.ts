@@ -10,8 +10,25 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 import { createToken, validateCredentials } from "@/lib/auth";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: NextRequest) {
+  // ── Rate limiting (10 req/IP/60s) ──
+  const limit = rateLimit(request, 10);
+  if (limit.limited) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(limit.retryAfter),
+          "X-RateLimit-Limit": "10",
+          "X-RateLimit-Remaining": "0",
+        },
+      }
+    );
+  }
+
   try {
     const body = await request.json();
     const { username, password } = body;
