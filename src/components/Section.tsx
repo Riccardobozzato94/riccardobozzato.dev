@@ -11,7 +11,17 @@ interface SectionProps {
   animate?: boolean;
   /** Delay in ms before animation starts */
   delay?: number;
+  /** Animation variant: fade-up (default), fade-in, scale-up, slide-left, slide-right */
+  variant?: "fade-up" | "fade-in" | "scale-up" | "slide-left" | "slide-right";
 }
+
+const variantHidden: Record<string, string> = {
+  "fade-up": "opacity-0 translate-y-10",
+  "fade-in": "opacity-0",
+  "scale-up": "opacity-0 scale-95",
+  "slide-left": "opacity-0 translate-x-10",
+  "slide-right": "opacity-0 -translate-x-10",
+};
 
 export default function Section({
   children,
@@ -19,6 +29,7 @@ export default function Section({
   id,
   animate = false,
   delay = 0,
+  variant = "fade-up",
 }: SectionProps) {
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(!animate);
@@ -47,8 +58,8 @@ export default function Section({
       className={cn(
         "mx-auto max-w-6xl px-4 py-[clamp(80px,10vw,120px)] sm:px-6",
         animate && "transition-all duration-700 ease-out",
-        animate && !visible && "opacity-0 translate-y-8",
-        animate && visible && "opacity-100 translate-y-0",
+        animate && !visible && variantHidden[variant],
+        animate && visible && "opacity-100 translate-y-0 translate-x-0 scale-100",
         className,
       )}
     >

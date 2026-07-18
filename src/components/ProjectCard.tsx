@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -59,15 +60,17 @@ export default function ProjectCard({
         {image ? (
           <div
             className={cn(
-              "w-full overflow-hidden",
+              "relative w-full overflow-hidden",
               featured ? "aspect-[16/7]" : "aspect-video",
             )}
           >
-            <img
+            <Image
               src={image}
               alt={title}
+              fill
               loading="lazy"
-              className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
             />
           </div>
         ) : (

@@ -1,4 +1,5 @@
 ﻿import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -186,10 +187,14 @@ export default async function ShipKitPage() {
           <p className="text-muted-foreground mb-8">A walkthrough of the full site experience</p>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/assets/shipkit-dashboard-1600x1000.png" alt="ShipKit Home page" loading="lazy" className="w-full h-auto" />
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Image src="/assets/shipkit-dashboard-1600x1000.png" alt="ShipKit Home page" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              </div>
             </div>
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/assets/shipkit-dashboard-1200x760.png" alt="ShipKit Projects page" loading="lazy" className="w-full h-auto" />
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Image src="/assets/shipkit-dashboard-1200x760.png" alt="ShipKit Projects page" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              </div>
             </div>
           </div>
         </div>
@@ -211,12 +216,16 @@ export default async function ShipKitPage() {
                 key={idx}
                 className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30"
               >
-                <img
-                  src={img.src}
-                  alt={img.label}
-                  loading="lazy"
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
-                />
+                <div className="relative aspect-video w-full overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.label}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
                 <p className="text-xs text-muted-foreground p-2.5">{img.label}</p>
               </div>
             ))}

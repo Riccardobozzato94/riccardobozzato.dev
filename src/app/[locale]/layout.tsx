@@ -139,6 +139,10 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="https://stripe.com" />
         <link rel="dns-prefetch" href="https://github.com" />
 
+        {/* Preconnect for Google Fonts (used via @import in globals.css) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"

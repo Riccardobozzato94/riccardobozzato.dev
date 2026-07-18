@@ -1,10 +1,11 @@
 ﻿import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Heart, Mail, Sparkles } from "lucide-react";
+import { CheckCircle2, ExternalLink, Mail, Heart, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
@@ -110,21 +111,29 @@ export default async function PanificioPage() {
           <p className="text-muted-foreground mb-8">Responsive design in action</p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
-              <img
-                src="/assets/panificio-storefront-1600x1000.png"
-                alt="Panificio Da Sergio home page"
-                loading="lazy"
-                className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
-              />
+              <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <Image
+                  src="/assets/panificio-storefront-1600x1000.png"
+                  alt="Panificio Da Sergio home page"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
               <p className="text-xs text-muted-foreground p-3">Home page — warm bakery theme</p>
             </div>
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
-              <img
-                src="/assets/panificio-storefront-1200x760.png"
-                alt="Panificio Da Sergio mobile view"
-                loading="lazy"
-                className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
-              />
+              <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <Image
+                  src="/assets/panificio-storefront-1200x760.png"
+                  alt="Panificio Da Sergio mobile view"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
               <p className="text-xs text-muted-foreground p-3">Mobile responsive view</p>
             </div>
           </div>

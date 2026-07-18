@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,11 +125,16 @@ export default async function VulnClawPage({ params }: Props) {
                 key={idx}
                 className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-blue-500/30"
               >
-                <img
-                  src={img.src}
-                  alt={img.label}
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
-                />
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.label}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
                 <p className="text-xs text-muted-foreground p-2.5">{img.label}</p>
               </div>
             ))}
