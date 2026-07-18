@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-16 flex-1">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 flex-1">
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">
               {isIt ? "NAVIGA" : "NAVIGATE"}
@@ -56,6 +56,16 @@ export default function Footer() {
             </ul>
           </div>
           <div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">{isIt ? "STRUMENTI" : "TOOLS"}</h4>
+            <ul className="space-y-4">
+              <li><a href={`https://www.amazon.${isIt ? "it" : "com"}?tag=riccardobozz-21`} target="_blank" rel="noopener noreferrer sponsored" className="text-sm text-muted-foreground hover:text-primary transition-colors">Amazon {isIt ? " (Affiliato)" : " (Affiliate)"}</a></li>
+              <li><a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Vercel</a></li>
+              <li><a href="https://netlify.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Netlify</a></li>
+              <li><a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Resend</a></li>
+              <li><a href="https://plausible.io" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Plausible</a></li>
+            </ul>
+          </div>
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">LEGAL</h4>
             <ul className="space-y-4">
               <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
@@ -73,9 +83,16 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="max-w-[1200px] mx-auto px-4 md:px-16 mt-12 pt-6 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-muted-foreground/60">
-          &copy; {currentYear} Riccardo Bozzato. Strategic Execution. All rights reserved.
-        </p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-muted-foreground/60">
+            &copy; {currentYear} Riccardo Bozzato. Strategic Execution. All rights reserved.
+          </p>
+          <p className="text-[10px] text-muted-foreground/30">
+            {isIt
+              ? "Alcuni link sono link di affiliazione. Come acquirente Amazon Associate guadagno dagli acquisti idonei."
+              : "Some links are affiliate links. As an Amazon Associate I earn from qualifying purchases."}
+          </p>
+        </div>
         <div className="flex items-center gap-2 opacity-40 grayscale">
           <span className="text-[10px] font-mono text-muted-foreground">NEXT.JS</span>
           <span className="text-[10px] font-mono text-muted-foreground">SHADCN/UI</span>

@@ -400,12 +400,19 @@ export default async function BooksPage({ params }: Props) {
               ? "Ogni libro qui è stato letto e selezionato. Se cerchi qualcosa di specifico su operations, AI, security o product delivery, contattami — ti consiglio io."
               : "Every book here has been read and curated. If you're looking for something specific on operations, AI, security, or product delivery — reach out, I'll point you in the right direction."}
           </p>
-          <Button asChild className="mt-2">
-            <Link href="/contact">
-              {isIt ? "Contattami" : "Contact Me"}
-              <ArrowRight className="size-4 ml-2" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2">
+            <Button asChild variant="secondary">
+              <Link href="/freebie">
+                {isIt ? "Scarica la Diagnostica Gratuita" : "Get the Free Diagnostic"}
+              </Link>
+            </Button>
+            <Button asChild>
+              <Link href="/contact">
+                {isIt ? "Contattami" : "Contact Me"}
+                <ArrowRight className="size-4 ml-2" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </Section>
     </>
