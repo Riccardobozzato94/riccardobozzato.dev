@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="max-w-xs">
           <div className="text-xl font-bold text-foreground mb-4">Riccardo Bozzato</div>
           <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-            Senior Delivery Manager | Head of Operations | PMP®
+            Delivery Manager | Head of Operations | PMP®
           </p>
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">

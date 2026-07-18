@@ -62,7 +62,7 @@ export default async function HomePage({ params }: Props) {
             <div className="aspect-[3/4] bg-surface-container-highest border border-outline-variant relative overflow-hidden group">
               <Image
                 src="/images/riccardo-bozzato-photo-hero.jpg"
-                alt="Riccardo Bozzato — Senior Delivery Manager & Head of Operations"
+                alt="Riccardo Bozzato — Delivery Manager & Head of Operations"
                 fill
                 className="object-cover grayscale opacity-80 mix-blend-luminosity group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -90,8 +90,8 @@ export default async function HomePage({ params }: Props) {
 
             <p className="text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
               {isIt
-                ? "I leader visionari creano il futuro. Io costruisco l'infrastruttura per raggiungerlo. Come Senior Delivery Manager & Head of Operations (PMP®), trasformo idee ambiziose in esecuzione impeccabile."
-                : "Visionary leaders create the future. I build the infrastructure to reach it. As a Senior Delivery Manager & Head of Operations (PMP®), I turn ambitious ideas into flawless execution."}
+              ? "I leader visionari creano il futuro. Io costruisco l'infrastruttura per raggiungerlo. Come Delivery Manager & Head of Operations (PMP®), trasformo idee ambiziose in esecuzione impeccabile."
+              : "Visionary leaders create the future. I build the infrastructure to reach it. As a Delivery Manager & Head of Operations (PMP®), I turn ambitious ideas into flawless execution."}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-[120px]">
@@ -300,8 +300,121 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ════════════════════════════════════════════
-           JOURNEY — Il Viaggio Strategico (Timeline)
-         ════════════════════════════════════════════ */}
+            PROJECTS — Side Projects & Prodotti
+          ════════════════════════════════════════════ */}
+      <section className="py-[120px] bg-surface-container-low">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-16">
+          <div className="text-center mb-[64px]">
+            <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
+              {isIt ? "PROGETTI" : "PROJECTS"}
+            </p>
+            <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+              {isIt ? "Side Projects & Prodotti" : "Side Projects & Products"}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {isIt
+                ? "Strumenti che costruisco quando non costruisco sistemi per altri."
+                : "Tools I build when I'm not building systems for others."}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4 md:gap-6">
+            {/* Panificio Da Sergio */}
+            <Link
+              href="/projects/panificio"
+              className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
+            >
+              <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
+                {isIt ? "E-COMMERCE" : "E-COMMERCE"}
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                {isIt ? "Panificio Da Sergio" : "Panificio Da Sergio"}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "Piattaforma e-commerce per un panificio tradizionale. Gestione stakeholder, vincoli di budget, delivery."
+                  : "E-commerce platform for a traditional bakery. Stakeholder management, budget constraints, delivery."}
+              </p>
+            </Link>
+
+            {/* VulnClaw */}
+            <Link
+              href="/projects/vulnclaw"
+              className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
+            >
+              <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
+                {isIt ? "OPEN SOURCE" : "OPEN SOURCE"}
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                VulnClaw
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "CLI open-source per penetration testing con AI. 600+ stelle GitHub, rilasciato v0.4.0."
+                  : "AI-powered penetration testing CLI. 600+ GitHub stars, v0.4.0 released."}
+              </p>
+            </Link>
+
+            {/* Trova */}
+            <Link
+              href="/trova"
+              className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
+            >
+              <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
+                SaaS
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                Trova
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "Boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n). €49, una tantum."
+                  : "Production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n). €49 one-time."}
+              </p>
+            </Link>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-semibold group"
+            >
+              {isIt ? "Vedi tutti i progetti" : "View all projects"}
+              <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+            BLOG — Ultimi articoli
+          ════════════════════════════════════════════ */}
+      <section className="py-[120px]">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-16 text-center">
+          <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
+            {isIt ? "BLOG" : "BLOG"}
+          </p>
+          <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+            {isIt ? "Approfondimenti & Tactical Advice" : "Insights & Tactical Advice"}
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">
+            {isIt
+              ? "Operations, delivery, process design — senza gergo. Cose che funzionano."
+              : "Operations, delivery, process design — no jargon. Things that work."}
+          </p>
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 bg-primary text-black px-8 py-4 text-xs font-bold tracking-widest transition-all hover:brightness-110 luminous-glow"
+          >
+            {isIt ? "LEGGI IL BLOG" : "READ THE BLOG"}
+            <ArrowRight className="size-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+            JOURNEY — Il Viaggio Strategico (Timeline)
+          ════════════════════════════════════════════ */}
       <section id="journey" className="bg-surface-container-lowest py-[120px] border-y border-outline-variant relative">
         <div className="max-w-[1200px] mx-auto px-4 md:px-16">
           <div className="mb-[120px] text-center">
@@ -317,7 +430,7 @@ export default async function HomePage({ params }: Props) {
             {/* Event 4: Ciao Elsa (Current) */}
             <div className="relative pb-16">
               <div className="absolute -left-[41px] md:-left-[73px] top-1 w-5 h-5 bg-primary rounded-full shadow-[0_0_15px_rgba(78,222,163,0.5)] border-4 border-background z-10" />
-              <div className="text-xs text-primary mb-1 font-semibold tracking-wide">2026 — {isIt ? "PRESENTE" : "PRESENT"}</div>
+              <div className="text-xs text-primary mb-1 font-semibold tracking-wide">2026</div>
               <h3 className="text-2xl font-bold text-foreground mb-2">
                 {isIt ? "Head of Operations" : "Head of Operations"}
               </h3>
@@ -326,8 +439,8 @@ export default async function HomePage({ params }: Props) {
               </div>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {isIt
-                  ? "Costruzione da zero della governance operativa, definizione KPI strategici e strutturazione dei processi per la scalabilità del business."
-                  : "Built operational governance from scratch, defined strategic KPIs, and structured processes for business scalability."}
+                  ? "Costruzione da zero della governance operativa in una startup in fase di scaling: definizione KPI strategici, sistema di prioritizzazione impatto/urgenza, riduzione rework del 30%. Engagement completato."
+                  : "Built operational governance from scratch in a scaling startup: defined strategic KPIs, impact/urgency prioritization system, reduced rework by 30%. Engagement completed."}
               </p>
             </div>
 
@@ -336,7 +449,7 @@ export default async function HomePage({ params }: Props) {
               <div className="absolute -left-[41px] md:-left-[73px] top-1 w-5 h-5 bg-surface-container-high rounded-full border-4 border-background z-10" />
               <div className="text-xs text-muted-foreground mb-1 font-semibold tracking-wide">2024 — 2026</div>
               <h3 className="text-2xl font-bold text-foreground mb-2">
-                {isIt ? "Senior Delivery Manager" : "Senior Delivery Manager"}
+                {isIt ? "Delivery Manager" : "Delivery Manager"}
               </h3>
               <div className="text-xs tracking-[0.1em] text-muted-foreground mb-4">
                 {isIt ? "ESSE SOLUTIONS" : "ESSE SOLUTIONS"}

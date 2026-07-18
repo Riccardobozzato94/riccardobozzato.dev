@@ -1,8 +1,8 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Senior Delivery Manager | Head of Operations | PMP® — operations, execution, AI-enabled workflows.",
-                    "description":  "Senior Delivery Manager & Head of Operations (PMP®). I make digital teams faster, less chaotic, and more predictable. Process design, team leadership, eCommerce/PIM-DAM delivery, AI-enabled operations. €500K+ delivered, teams of 8-12, 25-40% efficiency gains."
+                    "tagline":  "Delivery Manager | Head of Operations | PMP® — operations, execution, AI-enabled workflows.",
+                    "description":  "Delivery Manager & Head of Operations (PMP®). I make digital teams faster, less chaotic, and more predictable. Process design, team leadership, eCommerce/PIM-DAM delivery, AI-enabled operations. €500K+ delivered, teams of 8-12, 25-40% efficiency gains."
               },
     "nav":  {
                 "home":  "Home",
@@ -21,7 +21,7 @@
     "home":  {
                     "heroTitle":  "Operations, delivery, and execution. With a builder mindset.",
                    "heroRole":  "No chaos. Just processes that work.",
-                    "heroTagline":  "Senior Delivery Manager & Head of Operations (PMP®). I build the systems — processes, KPIs, team structure — that let digital companies grow without breaking. €500K+ delivered across enterprise and startup environments, teams of 8-12, 40% faster time-to-market.",
+                    "heroTagline":  "Delivery Manager & Head of Operations (PMP®). I build the systems — processes, KPIs, team structure — that let digital companies grow without breaking. €500K+ delivered across enterprise and startup environments, teams of 8-12, 40% faster time-to-market.",
                    "heroCta":  "Let's Talk",
                    "heroCta2":  "See Results",
                    "featuredTitle":  "Measurable Results",
@@ -250,7 +250,7 @@
     "about":  {
                    "title":  "About Riccardo",
                    "subtitle":  "Operations & Delivery. PMP\u00ae. From retail to Head of Operations — with measurable results along the way.",
-                   "intro":  "Senior Delivery Manager & Head of Operations (PMP\u00ae). 7+ years making teams faster and less chaotic. Enterprise portfolio \u20ac500K+, teams of 8-12, 40% faster time-to-market. Started in retail, moved through Accenture, led operations at Ciao Elsa. PMP\u00ae certified. Now looking for the next challenge — if your team needs operational order, let's talk.",
+                   "intro":  "Delivery Manager & Head of Operations (PMP\u00ae). 7+ years making teams faster and less chaotic. Enterprise portfolio \u20ac500K+, teams of 8-12, 40% faster time-to-market. Started in retail, moved through Accenture, led operations at Ciao Elsa. PMP\u00ae certified. Now looking for the next challenge — if your team needs operational order, let's talk.",
                    "story":  [
                                   "My career started in retail management — In\u2019s Mercato, Aldi, Terranova. I learned operations the hard way: managing inventory, scheduling shifts, coaching teams, explaining to the regional manager why we missed target. It was the best possible training for delivery management, even if I didn\u2019t know it yet.",
                                   "Then Accenture. I built enterprise applications (SAP UI5, JavaScript) and automated processes that had been manual for years: +30% efficiency, -15% administrative errors, -20% response times. It was the first time I saw that the right process beats raw talent — every time.",
