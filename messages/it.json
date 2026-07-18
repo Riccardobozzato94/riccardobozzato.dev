@@ -1,8 +1,8 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Operations & Delivery Manager (PMP®). Portfolio €500K+, team 8-12, -40% time-to-market.",
-                    "description":  "Operations & Delivery Manager (PMP®) da Legnaro, PD. Costruisco architetture operative che scalano: process design, team leadership, delivery eCommerce/PIM-DAM, operations AI-assisted. Portfolio enterprise €500K+, team 8-12 persone, 25-40% miglioramento efficienza."
+                    "tagline":  "Senior Delivery Manager | Head of Operations | PMP® — operations, execution, flussi AI-enabled.",
+                    "description":  "Senior Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Costruisco architetture operative che scalano: process design, team leadership, delivery eCommerce/PIM-DAM, operations AI-enabled. Portfolio enterprise €500K+, team 8-12 persone, 25-40% miglioramento efficienza."
               },
     "nav":  {
                 "home":  "Home",
@@ -16,20 +16,20 @@
                 "contact":  "Contatti"
             },
     "home":  {
-                  "heroTitle":  "Operations & Delivery per team digital che scalano",
-                  "heroRole":  "Niente caos. Solo processi che funzionano.",
-                  "heroTagline":  "Operations & Delivery Leader certificato PMP®. Costruisco l'architettura operativa — processi, KPI, governance, automazione — che trasforma il caos della crescita in un sistema prevedibile. Portfolio enterprise €500K+, team 8-12, -40% time-to-market.",
-                  "heroCta":  "Parliamone",
-                  "heroCta2":  "Vedi i Risultati",
-                  "featuredTitle":  "Risultati Misurabili",
-                  "featuredSubtitle": "Numeri che parlano. Niente storie.",
-                  "viewProject":  "Dettagli →",
-                  "aboutTitle":  "Dal retail alla cabina di regia.",
-                  "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). PMP® certificato. Ora aiuto team digitali a scalare senza implodere.",
-                  "aboutCta":  "Storia Completa →",
-                  "freebieTitle":  "Gratis: AI Ops Security Playbook",
-                  "freebieDesc":  "5 strategie testate sul campo per allineare sicurezza e operations. Usato da 500+ professionisti.",
-                  "freebieCta":  "Scarica Gratis →",
+                   "heroTitle":  "Operations, delivery ed execution — con una mentalità da builder.",
+                   "heroRole":  "Niente caos. Solo processi che funzionano.",
+                   "heroTagline":  "Senior Delivery Manager & Head of Operations (PMP®). Costruisco l'architettura operativa — processi, KPI, governance, automazione — che trasforma il caos della crescita in esecuzione prevedibile. Portfolio enterprise €500K+, team 8-12, -40% time-to-market.",
+                   "heroCta":  "Parliamone",
+                   "heroCta2":  "Vedi i Risultati",
+                   "featuredTitle":  "Risultati Misurabili",
+                   "featuredSubtitle": "Numeri che parlano. Niente storie.",
+                   "viewProject":  "Dettagli →",
+                   "aboutTitle":  "Dal retail alla cabina di regia.",
+                   "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). Head of Operations da Ciao Elsa (2026). PMP® certificato. Ora aiuto team digitali a scalare senza implodere.",
+                   "aboutCta":  "Storia Completa →",
+                   "freebieTitle":  "Gratis: Operational Chaos Diagnostic",
+                   "freebieDesc":  "Un framework da 3 ore per mappare, misurare e prioritizzare il debito operativo — prima che diventi crisi.",
+                   "freebieCta":  "Scarica Gratis →",
                   "servicesTitle": "Come Ti Aiuto",
                   "servicesSubtitle": "Tre modi per portare ordine nelle operations.",
                   "serviceList": [
@@ -59,76 +59,73 @@
                    "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
                    "builtWith":  "Realizzato con Next.js \u0026 shadcn/ui",
                     "social":  {
-                                   "github":  "GitHub",
-                                   "linkedin":  "LinkedIn",
-                                   "email":  "Email",
-                                   "instagram":  "Instagram",
-                                   "youtube":  "YouTube",
-                                   "twitch":  "Twitch"
-                               }
+                                    "github":  "GitHub",
+                                    "linkedin":  "LinkedIn",
+                                    "email":  "Email"
+                                }
                },
     "projects":  {
-                     "title":  "Case Studies",
-                     "subtitle":  "Prodotti, progetti e processi che ho costruito — con tutto quello che ho imparato lungo la strada.",
-                     "vulnclaw":  {
-                                      "title":  "VulnClaw",
-                                      "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
-                                      "description":  "Ho costruito un CLI open-source di penetration testing AI da zero. Gestione dello scope, contributi della community, priorità roadmap e shipping della v0.4.0 con utenti attivi. Lezione chiave: iniziare stretto batte costruire largo ogni volta.",
-                                      "features":  [
-                                                       "Product scoping: da port scanner ad agente AI in 6 mesi",
-                                                       "Community management: triage di PR, issue e feature request",
-                                                       "Prioritizzazione roadmap: dire \"no\" alle buone idee per ship quelle essenziali",
-                                                       "Open source come strategia di delivery"
-                                                   ],
-                                      "techstack":  [
-                                                        "Python",
-                                                        "Typer",
-                                                        "Rich",
-                                                        "Prompt Toolkit",
-                                                        "AI/LLM"
-                                                    ],
-                                      "cta":  "Leggi il Case Study",
-                                      "status":  "Shippato v0.4.0"
-                                  },
-    "trova":  {
-                                   "title":  "Trova",
-                                   "subtitle":  "Prodotto SaaS: dall'Idea al Prodotto a Pagamento (€49)",
-                                   "description":  "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: requisiti, controllo scope, pagamenti, documentazione e supporto.",
-                                   "features":  [
-                                                    "Ciclo di vita completo del prodotto: concept → build → ship → supporto",
-                                                    "Controllo dello scope: 12 mesi compressi in 8 con priorità spietate",
-                                                    "Integrazione pagamenti: Stripe, webhook, idempotenza, recovery fallimenti",
-                                                    "Internazionalizzazione: i18n nell'architettura dal giorno uno",
-                                                    "Documentazione come delivery: guide setup, API ref, migrazioni"
-                                                ],
-                                   "cta":  "Leggi il Case Study"
-                               },
-                     "panificio":  {
-                                       "title":  "Panificio Da Sergio",
-                                       "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
-                                       "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali.",
+                      "title":  "Case Studies",
+                      "subtitle":  "Prodotti, progetti e processi che ho costruito — con tutto quello che ho imparato lungo la strada.",
+                      "panificio":  {
+                                        "title":  "Panificio Da Sergio",
+                                        "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
+                                        "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali.",
+                                        "features":  [
+                                                         "Gestione stakeholder: tradurre bisogni familiari in requisiti tecnici",
+                                                         "Delivery con budget limitato: e-commerce completo sotto vincoli reali",
+                                                         "Multi-lingua (EN/IT) con SEO locale",
+                                                         "End-to-end: catalogo prodotti → ordini → dashboard admin"
+                                                     ],
+                                        "techstack":  [
+                                                          "Next.js",
+                                                          "Tailwind CSS",
+                                                          "TypeScript",
+                                                          "i18n",
+                                                          "PostgreSQL"
+                                                      ],
+                                        "cta":  "Leggi il Case Study",
+                                        "note":  "Progetto familiare, consegnato sotto budget"
+                                    },
+                      "vulnclaw":  {
+                                       "title":  "VulnClaw",
+                                       "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
+                                       "description":  "Ho costruito un CLI open-source di penetration testing AI da zero. Gestione dello scope, contributi della community, priorità roadmap e shipping della v0.4.0 con utenti attivi. Lezione chiave: iniziare stretto batte costruire largo ogni volta.",
                                        "features":  [
-                                                        "Gestione stakeholder: tradurre bisogni familiari in requisiti tecnici",
-                                                        "Delivery con budget limitato: e-commerce completo sotto vincoli reali",
-                                                        "Multi-lingua (EN/IT) con SEO locale",
-                                                        "End-to-end: catalogo prodotti → ordini → dashboard admin"
+                                                        "Product scoping: da port scanner ad agente AI in 6 mesi",
+                                                        "Community management: triage di PR, issue e feature request",
+                                                        "Prioritizzazione roadmap: dire \"no\" alle buone idee per ship quelle essenziali",
+                                                        "Open source come strategia di delivery"
                                                     ],
                                        "techstack":  [
-                                                         "Next.js",
-                                                         "Tailwind CSS",
-                                                         "TypeScript",
-                                                         "i18n",
-                                                         "PostgreSQL"
+                                                         "Python",
+                                                         "Typer",
+                                                         "Rich",
+                                                         "Prompt Toolkit",
+                                                         "AI/LLM"
                                                      ],
                                        "cta":  "Leggi il Case Study",
-                                       "note":  "Progetto familiare, consegnato sotto budget"
-                                   }
-                               },
+                                       "status":  "Shippato v0.4.0"
+                                   },
+     "trova":  {
+                                    "title":  "Trova",
+                                    "subtitle":  "Prodotto SaaS: dall'Idea al Prodotto a Pagamento (€49)",
+                                    "description":  "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: requisiti, controllo scope, pagamenti, documentazione e supporto.",
+                                    "features":  [
+                                                     "Ciclo di vita completo del prodotto: concept → build → ship → supporto",
+                                                     "Controllo dello scope: 12 mesi compressi in 8 con priorità spietate",
+                                                     "Integrazione pagamenti: Stripe, webhook, idempotenza, recovery fallimenti",
+                                                     "Internazionalizzazione: i18n nell'architettura dal giorno uno",
+                                                     "Documentazione come delivery: guide setup, API ref, migrazioni"
+                                                 ],
+                                    "cta":  "Leggi il Case Study"
+                                }
+                                },
     "services":  {
-                      "title":  "Operations & Delivery — Risultati Misurabili",
-                      "subtitle":  "Prezzo fisso. Consegnato.",
-                      "heroDesc":  "Hai un problema operativo? Costruisco l'architettura — processi, KPI, team, automazione — che trasforma il caos in un sistema prevedibile. PMP® certificato, portfolio €500K+, team 8-12, -40% time-to-market. Niente fuffa: solo quello che serve per scalare.",
-                      "cta":  "Parliamone",
+                       "title":  "Operations & Delivery — Risultati Misurabili",
+                       "subtitle":  "Prezzo fisso. Consegnato.",
+                       "heroDesc":  "Hai un problema operativo? Costruisco l'architettura — processi, KPI, team, automazione — che trasforma il caos in esecuzione prevedibile. PMP® certificato, portfolio €500K+, team 8-12, -40% time-to-market. Niente fuffa: solo quello che serve per scalare.",
+                       "cta":  "Parliamone",
                       "packages":  [
                                        {
                                            "title":  "Delivery & Process Design",
@@ -248,15 +245,16 @@
                              }
                  },
     "about":  {
-                   "title":  "Su Riccardo",
-                  "subtitle":  "Operations & Delivery. PMP®. Dalla trincea alla cabina di regia.",
-                  "intro":  "Operations & Delivery Manager (PMP®). 7+ anni a costruire architetture operative che scalano. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ora aiuto team digitali a scalare senza implodere.",
-                  "story":  [
-                                "Il mio percorso inizia nel retail management — In\u0027s Mercato, Aldi, Terranova — dove ho imparato leadership operativa, gestione team e KPI sul campo, gestendo turni, costi e performance di punto vendita.",
-                                "Poi Accenture: sviluppo applicazioni enterprise (SAP UI5, JavaScript), automazione processi con risultati misurabili: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. La prima volta che ho capito che i processi giusti battono il talento grezzo.",
-                                "In Esse Solutions ho gestito un portfolio progetti digitali da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Introdotto Agile strutturato: +25% produttività, -40% time-to-market, -20% tempi di completamento.",
-                                "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire architetture operative scalabili — processi, KPI, governance, automazione — che trasformano il caos in esecuzione prevedibile. Certificato PMP®. Nel tempo libero costruisco strumenti (Trova, VulnClaw), perché chi costruisce operations migliori è anche chi costruisce prodotti."
-                            ],
+                    "title":  "Su Riccardo",
+                   "subtitle":  "Operations & Delivery. PMP®. Dalla trincea alla cabina di regia.",
+                   "intro":  "Senior Delivery Manager & Head of Operations (PMP®). 7+ anni a costruire architetture operative che scalano. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Ora aiuto team digitali a scalare senza implodere.",
+                   "story":  [
+                                 "Il mio percorso inizia nel retail management — In\u0027s Mercato, Aldi, Terranova — dove ho imparato leadership operativa, gestione team e KPI sul campo, gestendo turni, costi e performance di punto vendita.",
+                                 "Poi Accenture: sviluppo applicazioni enterprise (SAP UI5, JavaScript), automazione processi con risultati misurabili: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. La prima volta che ho capito che i processi giusti battono il talento grezzo.",
+                                 "In Esse Solutions ho gestito un portfolio progetti digitali da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Introdotto Agile strutturato: +25% produttività, -40% time-to-market, -20% tempi di completamento.",
+                                 "In Ciao Elsa ho ricoperto il ruolo di Head of Operations, costruendo l'architettura operativa da zero per una startup AI-native. Processi, KPI, struttura del team, governance — da zero a operations funzionanti in 8 settimane. Un engagement breve ma intenso, che ha dimostrato come il playbook funzioni anche a velocità startup.",
+                                 "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire architetture operative scalabili — processi, KPI, governance, automazione — che trasformano il caos in esecuzione prevedibile. Certificato PMP®. Nel tempo libero costruisco strumenti (Trova, VulnClaw), perché chi costruisce operations migliori è anche chi costruisce prodotti."
+                             ],
                   "philosophy":  "Il problema non è la mancanza di talento o di idee. Il problema è che le operations collassano sotto il peso della crescita. Il mio lavoro è costruire l'architettura operativa che trasforma il potenziale in esecuzione prevedibile. Combino rigore metodologico (PMP®), esperienza enterprise e velocità operativa. Niente buffer. Niente attriti. Solo processi che funzionano.",
                   "certifications":  [
                                          "PMP® — Project Management Professional (2026)",

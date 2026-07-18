@@ -1,8 +1,8 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Operations & Delivery Manager (PMP®). €500K+ portfolio, team 8-12, -40% time-to-market.",
-                    "description":  "Operations & Delivery Manager (PMP®) from Legnaro, PD. I build operational architectures that scale: process design, team leadership, eCommerce/PIM-DAM delivery, and AI-assisted operations. €500K+ enterprise portfolio, 8-12 person teams, 25-40% efficiency gains."
+                    "tagline":  "Senior Delivery Manager | Head of Operations | PMP® — operations, execution, AI-enabled workflows.",
+                    "description":  "Senior Delivery Manager & Head of Operations (PMP®). I build operational architectures that scale: process design, team leadership, eCommerce/PIM-DAM delivery, and AI-enabled operations. €500K+ enterprise portfolio, 8-12 person teams, 25-40% efficiency gains."
               },
     "nav":  {
                 "home":  "Home",
@@ -16,191 +16,188 @@
                 "contact":  "Contact"
             },
     "home":  {
-                  "heroTitle":  "Operations & Delivery per team digital che scalano",
-                  "heroRole":  "No caos. Solo processi che funzionano.",
-                  "heroTagline":  "PMP® certified Operations & Delivery leader. Costruisco l'architettura operativa — processi, KPI, governance, automazione — che trasforma il caos della crescita in un sistema prevedibile. €500K+ portfolio enterprise, team 8-12, -40% time-to-market.",
-                  "heroCta":  "Parliamone",
-                  "heroCta2":  "Vedi i Risultati",
-                  "featuredTitle":  "Risultati Misurabili",
-                  "featuredSubtitle": "Numeri che parlano. Nessuna storia.",
-                  "viewProject":  "Dettagli →",
-                  "aboutTitle":  "Dal retail alla cabina di regia.",
-                  "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). PMP® certificato. Ora aiuto team digitali a scalare senza implodere.",
-                  "aboutCta":  "Storia Completa →",
-                  "freebieTitle":  "Free: AI Ops Security Playbook",
-                  "freebieDesc":  "5 field-tested strategies to align security with operations. Used by 500+ professionals.",
-                  "freebieCta":  "Download Free →",
-                  "servicesTitle": "Come Ti Aiuto",
-                  "servicesSubtitle": "Tre modi per portare ordine nelle operations.",
-                  "serviceList": [
-                    {
-                      "icon": "git-branch",
-                      "title": "Delivery & Process Design",
-                      "desc": "Agile, Scrum, Kanban. Release planning, capacity management, risk mitigation. Team 8-12, portfolio €500K+. Riduzione time-to-market 20-40%."
-                    },
-                    {
-                      "icon": "package",
-                      "title": "eCommerce & PIM-DAM Operations",
-                      "desc": "Pimcore, Magento, Shopware. Implementazioni enterprise, integrazione piattaforme, governance del dato. Riduzione time-to-market del 40% su progetti PIM."
-                    },
-                    {
-                      "icon": "zap",
-                      "title": "AI-Assisted Operations",
-                      "desc": "Automazione flussi, dashboard KPI real-time, knowledge base centralizzata. Documentazione processi + AI workflow = 10-40 ore/settimana recuperate."
-                    },
-                    {
-                      "icon": "cpu",
-                      "title": "Fractional Head of Ops / Delivery",
-                      "desc": "Per startup early-stage che non hanno ancora un Head of Operations interno. Interim o part-time. Costruisco l'architettura, formo il team, lascio il sistema funzionante."
-                    }
-                  ]
+                   "heroTitle":  "Operations, delivery, and execution — with a builder mindset.",
+                   "heroRole":  "No chaos. Just processes that work.",
+                   "heroTagline":  "Senior Delivery Manager & Head of Operations (PMP®). I build the operational architecture — processes, KPIs, governance, automation — that turns growth chaos into predictable execution. €500K+ enterprise portfolio, teams of 8-12, 40% faster time-to-market.",
+                   "heroCta":  "Let's Talk",
+                   "heroCta2":  "See Results",
+                   "featuredTitle":  "Measurable Results",
+                   "featuredSubtitle": "Numbers don't lie. No stories.",
+                   "viewProject":  "Details →",
+                   "aboutTitle":  "From retail to the control room.",
+                   "aboutText":  "7+ years in operations. Started in retail (In's Mercato, Aldi), moved to Accenture (process automation, +30% efficiency), then Esse Solutions (€500K portfolio, teams of 8-12, Agile). Head of Operations at Ciao Elsa (2026). PMP® certified. Now I help digital teams scale without imploding.",
+                   "aboutCta":  "Full Story →",
+                   "freebieTitle":  "Free: Operational Chaos Diagnostic",
+                   "freebieDesc":  "A 3-hour framework to map, measure, and prioritize operational debt — before it becomes a crisis.",
+                   "freebieCta":  "Download Free →",
+                   "servicesTitle": "How I Help",
+                   "servicesSubtitle": "Four ways to bring order to your operations.",
+                   "serviceList": [
+                     {
+                       "icon": "git-branch",
+                       "title": "Delivery & Process Design",
+                       "desc": "Agile, Scrum, Kanban. Release planning, capacity management, risk mitigation. Teams of 8-12, €500K+ portfolio. 20-40% faster time-to-market."
+                     },
+                     {
+                       "icon": "package",
+                       "title": "eCommerce & PIM-DAM Operations",
+                       "desc": "Pimcore, Magento, Shopware. Enterprise implementations, platform integration, data governance. 40% faster time-to-market on PIM projects."
+                     },
+                     {
+                       "icon": "zap",
+                       "title": "AI-Assisted Operations",
+                       "desc": "Workflow automation, real-time KPI dashboards, centralized knowledge base. Process documentation + AI workflows = 10-40 hours/week recovered."
+                     },
+                     {
+                       "icon": "cpu",
+                       "title": "Fractional Head of Ops / Delivery",
+                       "desc": "For early-stage startups that don't yet have an internal Head of Operations. Interim or part-time. I build the architecture, train the team, leave a working system."
+                     }
+                   ]
               },
     "footer":  {
                    "copyright":  "© {year} Riccardo Bozzato. All rights reserved.",
                    "builtWith":  "Built with Next.js & shadcn/ui",
                     "social":  {
-                                   "github":  "GitHub",
-                                   "linkedin":  "LinkedIn",
-                                   "email":  "Email",
-                                   "instagram":  "Instagram",
-                                   "youtube":  "YouTube",
-                                   "twitch":  "Twitch"
-                               }
+                                    "github":  "GitHub",
+                                    "linkedin":  "LinkedIn",
+                                    "email":  "Email"
+                                }
                },
     "projects":  {
-                     "title":  "Case Studies",
-                     "subtitle":  "Prodotti, progetti e processi che ho costruito — con tutto quello che ho imparato lungo la strada.",
-                     "vulnclaw":  {
-                                      "title":  "VulnClaw",
-                                      "subtitle":  "Product Delivery: AI CLI from Zero to Open Source Community",
-                                      "description":  "Built an open-source AI penetration testing CLI from scratch. Managed scope, community contributions, roadmap prioritization, and shipping a v0.4.0 with active users. Key lesson: starting narrow beats building broad every time.",
-                                      "features":  [
-                                                       "Product scoping: from port scanner to full AI agent in 6 months",
-                                                       "Community management: triaging PRs, issues, and feature requests",
-                                                       "Roadmap prioritization: saying \"no\" to good ideas to ship the essential ones",
-                                                       "Open source as a delivery strategy"
-                                                   ],
-                                      "techstack":  [
-                                                        "Python",
-                                                        "Typer",
-                                                        "Rich",
-                                                        "Prompt Toolkit",
-                                                        "AI/LLM"
-                                                    ],
-                                      "cta":  "Read Case Study",
-                                      "status":  "Shipped v0.4.0"
-                                  },
-    "trova":  {
-                                   "title":  "Trova",
-                                   "subtitle":  "SaaS Product: From Idea to €49 Paid Product",
-                                   "description":  "Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements, scope control, payments, documentation, and support.",
-                                   "features":  [
-                                                    "Full product lifecycle management: concept → build → ship → support",
-                                                    "Scope control: 12-month project compressed to 8 with ruthless prioritization",
-                                                    "Payment integration: Stripe billing, webhooks, idempotency, failure recovery",
-                                                    "Internationalization: i18n baked into architecture from day one",
-                                                    "Documentation as delivery: setup guides, API refs, migration docs"
-                                                ],
-                                   "cta":  "Read Case Study"
-                               },
-                     "panificio":  {
-                                       "title":  "Panificio Da Sergio",
-                                       "subtitle":  "Stakeholder Delivery: E-Commerce for a Family Bakery",
-                                       "description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints.",
+                      "title":  "Case Studies",
+                      "subtitle":  "Products, projects, and processes I've built — and everything I learned along the way.",
+                      "panificio":  {
+                                        "title":  "Panificio Da Sergio",
+                                        "subtitle":  "Stakeholder Delivery: E-Commerce for a Family Bakery",
+                                        "description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints.",
+                                        "features":  [
+                                                         "Stakeholder management: translating family needs into technical requirements",
+                                                         "Budget-constrained delivery: full e-commerce under material constraints",
+                                                         "Multi-language (EN/IT) with local SEO",
+                                                         "End-to-end: product catalog → orders → admin dashboard"
+                                                     ],
+                                        "techstack":  [
+                                                          "Next.js",
+                                                          "Tailwind CSS",
+                                                          "TypeScript",
+                                                          "i18n",
+                                                          "PostgreSQL"
+                                                      ],
+                                        "cta":  "Read Case Study",
+                                        "note":  "Family project, delivered under budget"
+                                    },
+                      "vulnclaw":  {
+                                       "title":  "VulnClaw",
+                                       "subtitle":  "Product Delivery: AI CLI from Zero to Open Source Community",
+                                       "description":  "Built an open-source AI penetration testing CLI from scratch. Managed scope, community contributions, roadmap prioritization, and shipping a v0.4.0 with active users. Key lesson: starting narrow beats building broad every time.",
                                        "features":  [
-                                                        "Stakeholder management: translating family needs into technical requirements",
-                                                        "Budget-constrained delivery: full e-commerce under material constraints",
-                                                        "Multi-language (EN/IT) with local SEO",
-                                                        "End-to-end: product catalog → orders → admin dashboard"
+                                                        "Product scoping: from port scanner to full AI agent in 6 months",
+                                                        "Community management: triaging PRs, issues, and feature requests",
+                                                        "Roadmap prioritization: saying \"no\" to good ideas to ship the essential ones",
+                                                        "Open source as a delivery strategy"
                                                     ],
                                        "techstack":  [
-                                                         "Next.js",
-                                                         "Tailwind CSS",
-                                                         "TypeScript",
-                                                         "i18n",
-                                                         "PostgreSQL"
+                                                         "Python",
+                                                         "Typer",
+                                                         "Rich",
+                                                         "Prompt Toolkit",
+                                                         "AI/LLM"
                                                      ],
                                        "cta":  "Read Case Study",
-                                       "note":  "Family project, delivered under budget"
-                                   }
-                               },
+                                       "status":  "Shipped v0.4.0"
+                                   },
+     "trova":  {
+                                    "title":  "Trova",
+                                    "subtitle":  "SaaS Product: From Idea to €49 Paid Product",
+                                    "description":  "Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements, scope control, payments, documentation, and support.",
+                                    "features":  [
+                                                     "Full product lifecycle management: concept → build → ship → support",
+                                                     "Scope control: 12-month project compressed to 8 with ruthless prioritization",
+                                                     "Payment integration: Stripe billing, webhooks, idempotency, failure recovery",
+                                                     "Internationalization: i18n baked into architecture from day one",
+                                                     "Documentation as delivery: setup guides, API refs, migration docs"
+                                                 ],
+                                    "cta":  "Read Case Study"
+                                }
+                                },
     "services":  {
-                      "title":  "Operations & Delivery — Risultati Misurabili",
-                      "subtitle":  "Fixed price. Delivered.",
-                      "heroDesc":  "Hai un problema operativo? Costruisco l'architettura — processi, KPI, team, automazione — che trasforma il caos in un sistema prevedibile. PMP® certificato, portfolio €500K+, team 8-12, -40% time-to-market. Niente fuffa: solo quello che serve per scalare.",
-                      "cta":  "Parliamone",
-                      "packages":  [
-                                       {
-                                           "title":  "Delivery & Process Design",
-                                           "price":  "From €1,500",
-                                           "desc":  "Agile transformation, release planning, capacity management, risk mitigation. Per team digital che vogliono prevedibilità senza burocrazia.",
-                                           "features":  [
-                                                            "Current-state process audit & gap analysis",
-                                                            "Agile/Scrum/Kanban framework implementation",
-                                                            "Release planning & capacity modeling",
-                                                            "Risk management framework & mitigation",
-                                                            "KPI dashboard: velocity, quality, predictability"
-                                                        ]
-                                       },
-                                       {
-                                           "title":  "eCommerce & PIM-DAM Operations",
-                                           "price":  "From €2,000",
-                                           "desc":  "Pimcore, Magento, Shopware — implementazioni enterprise, integrazioni, governance del dato. Riduzione time-to-market 20-40%.",
-                                           "features":  [
-                                                            "PIM/DAM architecture & implementation",
-                                                            "eCommerce platform integration (Magento, Shopware)",
-                                                            "Data governance & quality frameworks",
-                                                            "Workflow automation for product content",
-                                                            "Team training & knowledge transfer"
-                                                        ]
-                                       },
-                                       {
-                                           "title":  "AI-Assisted Operations",
-                                           "price":  "From €2,500",
-                                           "desc":  "Automazione flussi operativi, dashboard KPI real-time, knowledge management centralizzato. Recupera 10-40 ore/settimana.",
-                                           "features":  [
-                                                            "Process documentation & knowledge base setup",
-                                                            "AI workflow automation (support, data, content)",
-                                                            "Real-time KPI dashboards & alerting",
-                                                            "Tool integration & middleware",
-                                                            "ROI measurement framework"
-                                                        ]
-                                       },
-                                       {
-                                           "title":  "Fractional Head of Ops / Delivery",
-                                           "price":  "From €3,000/mo",
-                                           "desc":  "Interim o part-time per startup early-stage. Costruisco l'architettura operativa, formo il team, lascio il sistema funzionante.",
-                                           "features":  [
-                                                            "Operations architecture design",
-                                                            "Team structure & hiring support",
-                                                            "Process governance & accountability",
-                                                            "SLA framework & escalation paths",
-                                                            "Handover documentation & training"
-                                                        ]
-                                       }
-                                   ],
-                      "approach":  {
-                                     "title": "Come Lavoro",
-                                     "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
-                                     "steps":  [
-                                                  {
-                                                        "step":  "1. Diagnosi",
-                                                        "desc":  "Analizzo lo stato attuale: processi, risorse, KPI, colli di bottiglia. In 1 settimana ti consegno una mappa del caos e un piano d'azione con priorità."
-                                                    },
-                                                    {
-                                                        "step":  "2. Architettura",
-                                                        "desc":  "Progetto l'architettura operativa: processi, governance, metriche, automazione. Tutto documentato, tutto misurabile."
-                                                    },
-                                                    {
-                                                        "step":  "3. Esecuzione",
-                                                        "desc":  "Implemento il sistema con checkpoint settimanali, progresso trasparente e feedback continuo. Formo il team, lascio competenze."
-                                                    },
-                                                    {
-                                                        "step":  "4. Passaggio",
-                                                        "desc":  "Documentazione completa, knowledge transfer, metriche di successo. Il tuo team opera in autonomia. Supporto opzionale per l'evoluzione."
-                                                    }
-                                               ]
-                                 }
+                       "title":  "Operations & Delivery — Measurable Results",
+                       "subtitle":  "Fixed price. Delivered.",
+                       "heroDesc":  "Have an operational problem? I build the architecture — processes, KPIs, team, automation — that turns chaos into a predictable system. PMP® certified, €500K+ portfolio, teams of 8-12, 40% faster time-to-market. No fluff: just what it takes to scale.",
+                       "cta":  "Let's Talk",
+                       "packages":  [
+                                        {
+                                            "title":  "Delivery & Process Design",
+                                            "price":  "From €1,500",
+                                            "desc":  "Agile transformation, release planning, capacity management, risk mitigation. For digital teams that want predictability without bureaucracy.",
+                                            "features":  [
+                                                             "Current-state process audit & gap analysis",
+                                                             "Agile/Scrum/Kanban framework implementation",
+                                                             "Release planning & capacity modeling",
+                                                             "Risk management framework & mitigation",
+                                                             "KPI dashboard: velocity, quality, predictability"
+                                                         ]
+                                        },
+                                        {
+                                            "title":  "eCommerce & PIM-DAM Operations",
+                                            "price":  "From €2,000",
+                                            "desc":  "Pimcore, Magento, Shopware — enterprise implementations, integrations, data governance. 20-40% faster time-to-market.",
+                                            "features":  [
+                                                             "PIM/DAM architecture & implementation",
+                                                             "eCommerce platform integration (Magento, Shopware)",
+                                                             "Data governance & quality frameworks",
+                                                             "Workflow automation for product content",
+                                                             "Team training & knowledge transfer"
+                                                         ]
+                                        },
+                                        {
+                                            "title":  "AI-Assisted Operations",
+                                            "price":  "From €2,500",
+                                            "desc":  "Operational workflow automation, real-time KPI dashboards, centralized knowledge management. Recover 10-40 hours/week.",
+                                            "features":  [
+                                                             "Process documentation & knowledge base setup",
+                                                             "AI workflow automation (support, data, content)",
+                                                             "Real-time KPI dashboards & alerting",
+                                                             "Tool integration & middleware",
+                                                             "ROI measurement framework"
+                                                         ]
+                                        },
+                                        {
+                                            "title":  "Fractional Head of Ops / Delivery",
+                                            "price":  "From €3,000/mo",
+                                            "desc":  "Interim or part-time for early-stage startups. I build the operational architecture, train the team, leave a working system.",
+                                            "features":  [
+                                                             "Operations architecture design",
+                                                             "Team structure & hiring support",
+                                                             "Process governance & accountability",
+                                                             "SLA framework & escalation paths",
+                                                             "Handover documentation & training"
+                                                         ]
+                                        }
+                                    ],
+                       "approach":  {
+                                      "title": "How I Work",
+                                      "subtitle": "Fixed price. On time. Production-ready.",
+                                      "steps":  [
+                                                   {
+                                                         "step":  "1. Diagnosis",
+                                                         "desc":  "I analyze the current state: processes, resources, KPIs, bottlenecks. In 1 week I deliver a chaos map and a prioritized action plan."
+                                                     },
+                                                     {
+                                                         "step":  "2. Architecture",
+                                                         "desc":  "I design the operational architecture: processes, governance, metrics, automation. Everything documented, everything measurable."
+                                                     },
+                                                     {
+                                                         "step":  "3. Execution",
+                                                         "desc":  "I implement the system with weekly checkpoints, transparent progress, and continuous feedback. I train the team, I leave skills."
+                                                     },
+                                                     {
+                                                         "step":  "4. Handover",
+                                                         "desc":  "Complete documentation, knowledge transfer, success metrics. Your team operates autonomously. Optional support for evolution."
+                                                     }
+                                                ]
+                                  }
                  },
     "trova":  {
                   "title":  "Trova",
@@ -248,45 +245,46 @@
                              }
                  },
     "about":  {
-                  "title":  "About Riccardo",
-                  "subtitle":  "Operations & Delivery. PMP\u00ae. Dalla trincea alla cabina di regia.",
-                  "intro":  "Operations & Delivery Manager (PMP\u00ae). 7+ anni a costruire architetture operative che scalano. Portfolio enterprise \u20ac500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ora aiuto team digitali a scalare senza implodere.",
-                  "story":  [
-                                "Il mio percorso inizia nel retail management \u2014 In\u2019s Mercato, Aldi, Terranova \u2014 dove ho imparato leadership operativa, gestione team e KPI sul campo, gestendo turni, costi e performance di punto vendita.",
-                                "Poi Accenture: sviluppo applicazioni enterprise (SAP UI5, JavaScript), automazione processi con risultati misurabili: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. La prima volta che ho capito che i processi giusti battono il talento grezzo.",
-                                "In Esse Solutions ho gestito un portfolio progetti digitali da \u20ac500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Introdotto Agile strutturato: +25% produttivit\u00e0, -40% time-to-market, -20% tempi di completamento.",
-                                "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire architetture operative scalabili \u2014 processi, KPI, governance, automazione \u2014 che trasformano il caos in esecuzione prevedibile. Certificato PMP\u00ae. Nel tempo libero costruisco strumenti (Trova, VulnClaw), perch\u00e9 chi costruisce operations migliori \u00e8 anche chi costruisce prodotti."
-                            ],
-                  "philosophy":  "Il problema non \u00e8 la mancanza di talento o di idee. Il problema \u00e8 che le operations collassano sotto il peso della crescita. Il mio lavoro \u00e8 costruire l'architettura operativa che trasforma il potenziale in esecuzione prevedibile. Combino rigore metodologico (PMP\u00ae), esperienza enterprise e velocit\u00e0 operativa. Niente buffer. Niente attriti. Solo processi che funzionano.",
-                  "certifications":  [
-                                         "PMP\u00ae \u2014 Project Management Professional (2026)",
-                                         "Cisco Cybersecurity Operation Associate (2024)",
-                                         "Google Data Analyst Certificate (2023)",
-                                         "Pimcore Consultant Certified (2024)"
-                                     ],
-                  "skills":  [
-                                 "Project Management",
-                                 "Agile/Scrum/Kanban",
-                                 "Budget & Risk Management",
-                                 "eCommerce (Adobe Commerce/Magento, Shopware)",
-                                 "PIM/DAM (Pimcore)",
-                                 "SAP UI5",
-                                 "JavaScript",
-                                 "Python",
-                                 "SQL",
-                                 "HTML/CSS",
-                                 "Jira",
-                                 "Confluence",
-                                 "MS Project",
-                                 "Data Analysis & Reporting",
-                                 "Process Documentation",
-                                 "AI Tools for Operations",
-                                 "Knowledge Management"
+                   "title":  "About Riccardo",
+                   "subtitle":  "Operations & Delivery. PMP\u00ae. From the trenches to the control room.",
+                   "intro":  "Senior Delivery Manager & Head of Operations (PMP\u00ae). 7+ years building operational architectures that scale. Enterprise portfolio \u20ac500K+, teams of 8-12, 40% faster time-to-market. Started in retail, moved through Accenture, led operations at Ciao Elsa. Now I help digital teams scale without imploding.",
+                   "story":  [
+                                 "My career started in retail management \u2014 In\u2019s Mercato, Aldi, Terranova \u2014 where I learned operational leadership, team management, and KPIs on the ground: managing shifts, costs, and store performance.",
+                                 "Then Accenture: enterprise application development (SAP UI5, JavaScript), process automation with measurable results: +30% efficiency, -15% administrative errors, -20% response times. The first time I understood that the right processes beat raw talent.",
+                                 "At Esse Solutions I managed a \u20ac500K digital project portfolio, coordinating distributed teams of 8-12 on B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). Introduced structured Agile: +25% productivity, -40% time-to-market, -20% completion times.",
+                                 "At Ciao Elsa I served as Head of Operations, building the operational architecture from the ground up for an AI-native startup. Defined processes, KPIs, team structure, and governance \u2014 from zero to functional operations in 8 weeks. A short, intense engagement that proved the playbook works even at startup speed.",
+                                 "Today I work as an independent consultant. I help digital companies build scalable operational architectures \u2014 processes, KPIs, governance, automation \u2014 that turn chaos into predictable execution. PMP\u00ae certified. In my free time I build tools (Trova, VulnClaw), because those who build better operations also build better products."
                              ],
-                  "cta":  "Let's Talk",
-                  "ctaTitle":  "Let's Build Something",
-                  "ctaDesc":  "Have a project, idea, or just want to chat? I'm always open to interesting conversations."
-              },
+                   "philosophy":  "The problem isn't a lack of talent or ideas. The problem is that operations collapse under the weight of growth. My job is to build the operational architecture that turns potential into predictable execution. I combine methodological rigor (PMP\u00ae), enterprise experience, and operational speed. No buffers. No friction. Just processes that work.",
+                   "certifications":  [
+                                          "PMP\u00ae \u2014 Project Management Professional (2026)",
+                                          "Cisco Cybersecurity Operation Associate (2024)",
+                                          "Google Data Analyst Certificate (2023)",
+                                          "Pimcore Consultant Certified (2024)"
+                                      ],
+                   "skills":  [
+                                  "Project Management",
+                                  "Agile/Scrum/Kanban",
+                                  "Budget & Risk Management",
+                                  "eCommerce (Adobe Commerce/Magento, Shopware)",
+                                  "PIM/DAM (Pimcore)",
+                                  "SAP UI5",
+                                  "JavaScript",
+                                  "Python",
+                                  "SQL",
+                                  "HTML/CSS",
+                                  "Jira",
+                                  "Confluence",
+                                  "MS Project",
+                                  "Data Analysis & Reporting",
+                                  "Process Documentation",
+                                  "AI Tools for Operations",
+                                  "Knowledge Management"
+                              ],
+                   "cta":  "Let's Talk",
+                   "ctaTitle":  "Let's Build Something",
+                   "ctaDesc":  "Have a project, idea, or just want to chat? I'm always open to interesting conversations."
+               },
     "contact":  {
                     "title":  "Get in Touch",
                     "subtitle":  "Building something interesting? Let's talk operations, security, or tools.",
