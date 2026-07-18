@@ -266,39 +266,39 @@ export default async function HomePage({ params }: Props) {
         </div>
 
         <div className="max-w-6xl mx-auto space-y-6">
-          {/* Case 1: Esse Solutions */}
+          {/* Project 1: Panificio Da Sergio (featured) */}
           <ProjectCard
-            title="€500K+ Portfolio — Esse Solutions"
-            subtitle="Project Manager | 19 mesi"
-            description="Gestito portfolio enterprise da €500K+, coordinato team distribuiti 8-12 persone. Introdotto Agile: +25% produttività, -20% tempi completamento. Implementato Pimcore per clienti manufacturing/food/furniture: -40% time-to-market."
-            tags={["PIM/DAM", "Agile", "Magento", "Shopware"]}
-            href="/about"
-            image="/assets/trova-banner-1600x900.png"
-            badge={isIt ? "Enterprise" : "Enterprise"}
+            title="Panificio Da Sergio"
+            subtitle="Stakeholder Delivery: E-Commerce for a Family Bakery"
+            description="Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints."
+            tags={["Next.js", "Stakeholder", "i18n", "Delivery"]}
+            href="/projects/panificio"
+            image="/assets/panificio-banner-1600x900.png"
+            badge={isIt ? "Delivery" : "Delivery"}
             badgeColor="bg-accent/10 text-accent"
             featured
           />
 
-          {/* Case 2: Accenture */}
+          {/* Project 2 + 3: VulnClaw + Trova */}
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <ProjectCard
-              title="Process Automation — Accenture"
-              subtitle="IT Systems Specialist | 2022-2024"
-              description="Automazione processi per clienti banking/insurance con SAP UI5 e JS. +30% efficienza operativa, -15% errori amministrativi, -20% tempi di risposta sistema. Team cross-funzionali, soluzioni enterprise."
-              tags={["Automation", "SAP UI5", "Enterprise"]}
-              href="/about"
+              title="VulnClaw"
+              subtitle="Product Delivery: AI CLI from Zero to Open Source"
+              description="Built an open-source AI penetration testing CLI from scratch. Managed scope, community contributions, roadmap prioritization, and shipping a v0.4.0 with active users. Key lesson: starting narrow beats building broad every time."
+              tags={["Python", "Open Source", "AI", "CLI"]}
+              href="/projects/vulnclaw"
               image="/assets/vulnclaw-banner-1600x900.png"
-              badge={isIt ? "Consulenza" : "Consulting"}
+              badge={isIt ? "Open Source" : "Open Source"}
               badgeColor="bg-blue-500/10 text-blue-400"
             />
             <ProjectCard
-              title="Trova + VulnClaw"
-              subtitle="Side projects | Product thinking"
-              description="Trova: SaaS boilerplate (Next.js 16, Stripe, Auth) — aiuta founder a lanciare in giorni. VulnClaw: AI pentesting CLI open-source (600+ GitHub stars). Proof che so costruire prodotti, non solo processi."
-              tags={["SaaS", "Open Source", "AI"]}
-              href="/projects"
-              image="/assets/panificio-banner-1600x900.png"
-              badge={isIt ? "Prodotti" : "Products"}
+              title="Trova"
+              subtitle="SaaS Product: From Idea to €49 Paid Product"
+              description="Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements, scope control, payments, documentation, and support."
+              tags={["SaaS", "Next.js", "Stripe", "Product"]}
+              href="/trova"
+              image="/assets/trova-banner-1600x900.png"
+              badge={isIt ? "Prodotto" : "Product"}
               badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>
