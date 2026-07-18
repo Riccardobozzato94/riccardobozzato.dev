@@ -123,6 +123,54 @@ const postContent: Record<string, { body: string[] }> = {
       "Sii spietato nelle priorità. La maggior parte dei team con cui ho lavorato ha trovato 3-5 item P1 risolvibili in 2-4 settimane. Sistemare solo quelli recupera tipicamente il 15-25% della capacità del team.",
       "Il framework è deliberatamente semplice perché la complessità operativa è il problema, non la soluzione. Non ti serve un tool o un consulente — ti servono una lavagna, tre ore, e la volontà di guardare onestamente ai tuoi processi."
     ]
+  },
+  "eight-weeks-head-of-ops-ai-startup": {
+    body: [
+      "Last month, I completed an 8-week engagement as Head of Operations at Ciao Elsa, an AI-native startup. It was short, intense, and by design. Here's the full story — the good, the messy, and why walking away was the right call.",
+      "When Ciao Elsa reached out, they had a familiar problem: a great product, early traction, and operational chaos. Processes were ad-hoc. Decisions were made in Slack threads. The team was talented but spent more time firefighting than building.",
+      "The ask was clear: build an operations function from zero. Not a report. Not a recommendation. A functioning system that the team could run without me.",
+      "The first week was pure diagnosis. I mapped every process I could find — customer onboarding, support tickets, internal workflows, delivery cycles. The gaps were predictable: no clear ownership, no KPIs, no escalation paths. What surprised me was how hungry the team was for structure. They weren't resisting process — they were drowning without it.",
+      "By week 3, we had a framework. By week 5, the first dashboard was live. By week 7, the team was running the new processes autonomously. Week 8 was handover: documentation, training, success metrics.",
+      "<strong>So why leave?</strong>",
+      "Every engagement has a natural lifespan. This one was designed to be short from the start — build the system, prove it works, hand it over. The team at Ciao Elsa didn't need a permanent Head of Operations. They needed someone to build the runway so they could take off.",
+      "Not every engagement needs to be a multi-year commitment. Some of the most impactful work I've done happened in 8 weeks. The key is knowing when to build and when to hand over.",
+      "This experience confirmed two things for me: the operational playbook works at any stage — from enterprise to startup speed — and clean handovers are the ultimate sign of a job well done."
+    ]
+  },
+  "otto-settimane-head-of-ops-startup-ai": {
+    body: [
+      "Il mese scorso ho completato un engagement di 8 settimane come Head of Operations in Ciao Elsa, una startup AI-native. Breve, intenso e per scelta. Ecco la storia completa — la parte buona, quella complicata, e perché andarmene è stata la decisione giusta.",
+      "Quando Ciao Elsa mi ha contattato, avevano un problema familiare: un buon prodotto, trazione iniziale e caos operativo. I processi erano ad-hoc. Le decisioni venivano prese nei thread di Slack. Il team era talentuoso ma passava più tempo a spegnere incendi che a costruire.",
+      "La richiesta era chiara: costruire una funzione operations da zero. Non un report. Non una raccomandazione. Un sistema funzionante che il team potesse gestire senza di me.",
+      "La prima settimana è stata pura diagnosi. Ho mappato ogni processo che ho trovato — onboarding clienti, ticket di supporto, flussi interni, cicli di delivery. Le lacune erano prevedibili: nessuna proprietà chiara, nessun KPI, nessun percorso di escalation. Quello che mi ha sorpreso è quanto il team avesse fame di struttura. Non stavano resistendo ai processi — stavano annegando senza.",
+      "Alla settimana 3 avevamo un framework. Alla settimana 5 la prima dashboard era live. Alla settimana 7 il team gestiva i nuovi processi in autonomia. La settimana 8 è stata la consegna: documentazione, formazione, metriche di successo.",
+      "<strong>Perché andarsene?</strong>",
+      "Ogni engagement ha un ciclo di vita naturale. Questo è stato progettato per essere breve dall'inizio — costruire il sistema, dimostrare che funziona, consegnarlo. Il team di Ciao Elsa non aveva bisogno di un Head of Operations permanente. Aveva bisogno di qualcuno che costruisse la pista in modo che potessero decollare.",
+      "Non tutti gli engagement devono essere impegni pluriennali. Alcuni dei lavori più impattanti che ho fatto sono durati 8 settimane. La chiave è sapere quando costruire e quando consegnare.",
+      "Questa esperienza ha confermato due cose per me: il playbook operativo funziona a qualsiasi stadio — dall'enterprise alla velocità startup — e le consegne pulite sono il segno definitivo di un lavoro ben fatto."
+    ]
+  },
+  "builder-mindset-operations-leaders": {
+    body: [
+      "People sometimes ask why I spend my evenings and weekends building tools like Trova (a SaaS boilerplate) and VulnClaw (an AI pen-testing CLI). Isn't operations about processes, not products?",
+      "My answer: building products makes me better at building operations. Here's why.",
+      "<strong>1. Scope teaches you everything.</strong> When you build a product from scratch, you learn scope management the hard way. Every feature request seems reasonable. Every edge case needs handling. The discipline of saying \"no\" to good ideas — to ship the essential ones — is exactly the same skill you need in operations. A project with 50 priorities has zero priorities.",
+      "<strong>2. You feel the pain of bad processes.</strong> When you're the one waiting for a CI pipeline, debugging a webhook failure, or chasing down a deployment approval, you experience operational friction firsthand. That changes how you design systems. You stop creating processes that look good on paper and start creating processes that actually work.",
+      "<strong>3. Metrics are not abstract.</strong> I track build times, deploy cycles, error rates, and customer issues for every tool I build. These are real numbers that bite back when they're bad. Operations leaders who build products don't just talk about KPIs — they live under them.",
+      "<strong>4. Documentation is not optional.</strong> Every tool I release comes with comprehensive docs — setup guides, API references, troubleshooting. Not because users demand it, but because I've learned that undocumented systems don't scale. Same truth applies to operations. A process that isn't documented is a single point of failure wearing tribal knowledge as armor.",
+      "The best operations leaders I know share this trait: they build things. Not because they need to — because understanding the act of creation makes you better at designing the systems that support it."
+    ]
+  },
+  "mentalita-da-builder-operations": {
+    body: [
+      "A volte le persone mi chiedono perché passo serate e weekend a costruire strumenti come Trova (un boilerplate SaaS) e VulnClaw (un CLI di penetration testing AI). Le operations non riguardano processi, non prodotti?",
+      "La mia risposta: costruire prodotti mi rende migliore nel costruire operations. Ecco perché.",
+      "<strong>1. Lo scope ti insegna tutto.</strong> Quando costruisci un prodotto da zero, impari la gestione dello scope nel modo più duro. Ogni richiesta di funzionalità sembra ragionevole. Ogni caso limite va gestito. La disciplina di dire \"no\" alle buone idee — per ship quelle essenziali — è esattamente la stessa competenza che ti serve nelle operations. Un progetto con 50 priorità ha zero priorità.",
+      "<strong>2. Senti il dolore dei processi inefficienti.</strong> Quando sei tu ad aspettare una CI pipeline, a debuggerare un fallimento di webhook, o a inseguire un'approvazione di deploy, provi l'attrito operativo in prima persona. Questo cambia il modo in cui progetti i sistemi. Smetti di creare processi che sembrano belli sulla carta e inizi a creare processi che funzionano davvero.",
+      "<strong>3. Le metriche non sono astratte.</strong> Traccio tempi di build, cicli di deploy, tassi di errore e segnalazioni utenti per ogni strumento che costruisco. Sono numeri reali che mordono quando sono sbagliati. I leader di operations che costruiscono prodotti non parlano solo di KPI — ci vivono sotto.",
+      "<strong>4. La documentazione non è opzionale.</strong> Ogni strumento che rilascio include documentazione completa — guide di setup, API reference, troubleshooting. Non perché gli utenti la richiedano, ma perché ho imparato che i sistemi non documentati non scalano. La stessa verità vale per le operations. Un processo non documentato è un singolo punto di fallimento vestito di conoscenza tribale.",
+      "I migliori operations leader che conosco condividono questo tratto: costruiscono cose. Non perché ne abbiano bisogno — perché capire l'atto della creazione ti rende migliore nel progettare i sistemi che la supportano."
+    ]
   }
 };
 
@@ -215,7 +263,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Contextual CTA */}
           <div className="flex flex-wrap justify-center gap-3">
-            {(slug.includes("chaos") || slug.includes("caos") || slug.includes("ops-security") || slug.includes("operazioni")) && (
+            {(slug.includes("chaos") || slug.includes("caos") || slug.includes("ops-security") || slug.includes("operazioni") || slug.includes("head-of-ops") || slug.includes("builder")) && (
               <Link
                 href="/freebie"
                 className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
