@@ -10,7 +10,7 @@ function getResend(): Resend | null {
   return new Resend(key);
 }
 
-const fromEmail = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
+const fromEmail = process.env.CONTACT_FROM_EMAIL || "riccardobozzato@gmail.com";
 const toEmail = process.env.CONTACT_TO_EMAIL || "riccardobozzato@gmail.com";
 
 export async function POST(request: Request) {

@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         success: true,
         directDownload: true,
-        downloadUrl: "/files/operational-chaos-diagnostic.pdf",
+        downloadUrl: "/files/ai-ops-security-playbook.pdf",
         message: "Here's your playbook! Download it directly below.",
       });
     }
