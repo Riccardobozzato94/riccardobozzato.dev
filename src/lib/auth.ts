@@ -8,8 +8,8 @@ if (!JWT_SECRET_VALUE) {
 }
 const JWT_SECRET = new TextEncoder().encode(JWT_SECRET_VALUE);
 
-const JWT_ISSUER = "riccardobozzato.dev";
-const JWT_AUDIENCE = "api.riccardobozzato.dev";
+const JWT_ISSUER = "riccardobozzato.com";
+const JWT_AUDIENCE = "api.riccardobozzato.com";
 const TOKEN_EXPIRY = "24h";
 
 export interface AuthPayload extends JWTPayload {

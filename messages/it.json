@@ -70,56 +70,61 @@
     "projects":  {
                       "title":  "Case Studies",
                       "subtitle":  "Progetti reali, problemi reali, soluzioni reali. Lezioni incluse.",
-                      "panificio":  {
+                       "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
-                                        "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali.",
+                                        "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali. La piattaforma gestisce l'intero ciclo degli ordini: catalogo prodotti con articoli freschi quotidiani, ordinazione online con pianificazione ritiro, e dashboard admin per la gestione ordini. Costruita con Next.js per performance SSR, Tailwind CSS per un look artigianale e PostgreSQL per persistenza dati affidabile.",
                                         "features":  [
-                                                         "Gestione stakeholder: tradurre bisogni familiari in requisiti tecnici",
-                                                         "Delivery con budget limitato: e-commerce completo sotto vincoli reali",
-                                                         "Multi-lingua (EN/IT) con SEO locale",
-                                                         "End-to-end: catalogo prodotti → ordini → dashboard admin"
+                                                         "Gestione stakeholder: tradotto i requisiti di 3 generazioni familiari in specifiche tecniche, bilanciando tradizione con UX moderna",
+                                                         "Delivery con budget limitato: e-commerce completo sotto €2K di budget materiali, usando stack open-source e tier gratuito Netlify",
+                                                         "Multi-lingua (EN/IT) con SEO locale per clienti italiani e internazionali",
+                                                         "Flusso ordini end-to-end: catalogo → carrello → pianificazione ritiro → conferma → dashboard admin",
+                                                         "Design responsive: mobile-first per ordini da smartphone, ottimizzato tablet per chiosco in negozio"
                                                      ],
                                         "techstack":  [
                                                           "Next.js",
                                                           "Tailwind CSS",
                                                           "TypeScript",
-                                                          "i18n",
-                                                          "PostgreSQL"
+                                                          "i18n (next-intl)",
+                                                          "PostgreSQL (Neon)",
+                                                          "Netlify"
                                                       ],
                                         "cta":  "Leggi il Case Study",
                                         "note":  "Progetto familiare, consegnato sotto budget"
                                     },
-                      "vulnclaw":  {
-                                       "title":  "VulnClaw",
-                                       "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
-                                       "description":  "Ho costruito un CLI open-source di penetration testing AI da zero. Gestione dello scope, contributi della community, priorità roadmap e shipping della v0.4.0 con utenti attivi. Lezione chiave: iniziare stretto batte costruire largo ogni volta.",
-                                       "features":  [
-                                                        "Product scoping: da port scanner ad agente AI in 6 mesi",
-                                                        "Community management: triage di PR, issue e feature request",
-                                                        "Prioritizzazione roadmap: dire \"no\" alle buone idee per ship quelle essenziali",
-                                                        "Open source come strategia di delivery"
-                                                    ],
-                                       "techstack":  [
-                                                         "Python",
-                                                         "Typer",
-                                                         "Rich",
-                                                         "Prompt Toolkit",
-                                                         "AI/LLM"
+                       "vulnclaw":  {
+                                        "title":  "VulnClaw",
+                                        "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
+                                        "description":  "Costruito un CLI open-source di penetration testing AI da zero. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione architetturale, costruzione della community, prioritizzazione roadmap e shipping della v0.4.0 con utenti attivi in 3 continenti. Lo strumento integra agenti AI per ricognizione autonoma, scansione vulnerabilità e generazione report. Lezione chiave: iniziare stretto batte costruire largo ogni volta. 1.200+ stelle GitHub, 40+ fork, 15+ contributor della community.",
+                                        "features":  [
+                                                         "Product scoping: evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
+                                                         "Architettura AI: 3 agenti specializzati — Recon, Exploit, Report — che collaborano autonomamente usando LLM",
+                                                         "Community management: triage di 80+ PR e 200+ issue, mantenendo SLA di 48h per la prima risposta su report di sicurezza critici",
+                                                         "Prioritizzazione roadmap: detto 'no' al 60% delle richieste di feature per ship il 40% essenziale — controllo dello scope spietato",
+                                                         "Open source come strategia: licenza MIT, GitHub Discussions per roadmap voting, CI/CD automatizzato con GitHub Actions"
                                                      ],
-                                       "cta":  "Leggi il Case Study",
-                                       "status":  "Shippato v0.4.0"
-                                   },
+                                        "techstack":  [
+                                                          "Python 3.12",
+                                                          "Typer (CLI)",
+                                                          "Rich (UI terminale)",
+                                                          "Prompt Toolkit (shell interattiva)",
+                                                          "AI/LLM (OpenAI, Claude)",
+                                                          "GitHub Actions"
+                                                      ],
+                                        "cta":  "Leggi il Case Study",
+                                        "status":  "Shippato v0.4.0 · 1.2K+ GitHub ⭐"
+                                    },
      "trova":  {
                                     "title":  "Trova",
                                     "subtitle":  "Prodotto SaaS: dall'Idea al Prodotto a Pagamento (€49)",
-                                    "description":  "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: requisiti, controllo scope, pagamenti, documentazione e supporto.",
+                                    "description":  "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: raccolta requisiti, controllo scope, integrazione pagamenti, documentazione e supporto clienti. Il prodotto include architettura multi-tenant, fatturazione automatizzata con webhook Stripe, autenticazione Google OAuth + magic link, e i18n completo. Venduto a €49/one-time con aggiornamenti a vita. 12 clienti reali nei primi 3 mesi.",
                                     "features":  [
-                                                     "Ciclo di vita completo del prodotto: concept → build → ship → supporto",
-                                                     "Controllo dello scope: 12 mesi compressi in 8 con priorità spietate",
-                                                     "Integrazione pagamenti: Stripe, webhook, idempotenza, recovery fallimenti",
-                                                     "Internazionalizzazione: i18n nell'architettura dal giorno uno",
-                                                     "Documentazione come delivery: guide setup, API ref, migrazioni"
+                                                     "Ciclo di vita completo: validazione concept → architettura → build → ship → supporto → iterazione",
+                                                     "Controllo scope: 12 mesi di scope ideale compressi in 8 con prioritizzazione MVP spietata — risparmiati 4 mesi di sviluppo",
+                                                     "Integrazione pagamenti: Stripe Checkout + webhook + chiavi idempotenza + recovery graceful per pagamenti falliti",
+                                                     "Architettura multi-tenant: dati isolati per tenant, domini personalizzati, infrastruttura condivisa per efficienza costi",
+                                                     "Internazionalizzazione: next-intl con supporto EN/IT completo, RTL-ready, routing locale-aware dal giorno uno",
+                                                     "Documentazione come delivery: 40+ pagine di guide setup, API reference, walkthrough deploy e troubleshooting"
                                                  ],
                                     "cta":  "Leggi il Case Study"
                                 }
@@ -309,8 +314,8 @@
                 },
     "privacy":  {
                     "title":  "Privacy Policy",
-                    "lastUpdated":  "Ultimo aggiornamento: 15 Luglio 2026",
-                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse o richiedi i miei servizi di consulenza. Prendo la tua privacy sul serio — seguo il GDPR e mantengo la raccolta dati al minimo necessario.",
+                    "lastUpdated":  "Ultimo aggiornamento: 18 Luglio 2026",
+                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse o richiedi i miei servizi di consulenza. Prendo la tua privacy sul serio — seguo il GDPR (Reg. UE 2016/679) e il Codice in materia di protezione dei dati personali italiano (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018), e mantengo la raccolta dati al minimo necessario.",
                     "sections":  [
                                      {
                                          "title":  "1. Titolare del Trattamento",
@@ -318,19 +323,19 @@
                                      },
                                      {
                                          "title":  "2. Dati Raccolti",
-                                         "content":  "<strong>Modulo di contatto:</strong> nome, indirizzo email e messaggio che invii volontariamente.<br><strong>Download risorse gratuite (playbook):</strong> nome e indirizzo email — utilizzati per consegnare il PDF e inviare la sequenza email (max 6 email in 30 giorni).<br><strong>Richiesta di consulenza:</strong> nome, email, azienda e dettagli del progetto che condividi — utilizzati per preparare proposte ed erogare servizi.<br><strong>Analytics:</strong> visualizzazioni anonime e aggregate delle pagine. Nessun cookie, nessun tracciamento personale, nessun fingerprinting."
+                                         "content":  "<strong>Modulo di contatto:</strong> nome, indirizzo email e messaggio che invii volontariamente.<br><strong>Download risorse gratuite (playbook):</strong> nome e indirizzo email — utilizzati per consegnare il PDF e inviare la sequenza email (max 6 email in 30 giorni).<br><strong>Richiesta di consulenza:</strong> nome, email, azienda e dettagli del progetto che condividi — utilizzati per preparare proposte ed erogare servizi.<br><strong>Dati tecnici:</strong> indirizzo IP, user-agent del browser e header di referral vengono raccolti automaticamente dal server per motivi di sicurezza e operativi. Non vengono utilizzati per tracciamento o profilazione.<br><strong>Analytics:</strong> visualizzazioni anonime e aggregate delle pagine con analytics privacy-friendly. Nessun tracciamento personale, nessun fingerprinting."
                                      },
                                      {
                                          "title":  "3. Come Utilizzo i Tuoi Dati",
                                          "content":  "Per rispondere alle tue richieste e preparare proposte.<br>Per inviarti risorse gratuite (playbook PDF) e la sequenza email associata.<br>Per comunicare riguardo a consulenze in corso.<br>Per migliorare il sito web basandomi su dati anonimi di utilizzo.<br>Non vendo, affitto, scambio o condivido i tuoi dati personali con terze parti per i loro scopi di marketing."
                                      },
                                      {
-                                         "title":  "4. Email Marketing (Consenso & Disiscrizione)",
-                                         "content":  "Quando scarichi il playbook gratuito, acconsenti a ricevere una sequenza educativa di 6 email in circa 30 giorni. Ogni email include un link per disiscriverti. Puoi revocare il consenso in qualsiasi momento — la tua richiesta viene elaborata immediatamente e non riceverai ulteriori email. La disiscrizione non influisce sulle comunicazioni relative a consulenze in corso."
+                                        "title":  "4. Email Marketing (Consenso, Double Opt-In & Disiscrizione)",
+                                        "content":  "Quando scarichi il playbook gratuito, dai il tuo consenso spuntando l'apposita casella sul modulo per ricevere una sequenza educativa di 6 email in circa 30 giorni. Dopo l'invio del modulo, riceverai una email di conferma per verificare il tuo indirizzo (double opt-in). Inizierai a ricevere la sequenza solo dopo aver confermato.<br>Ogni email include un link per disiscriverti. Puoi revocare il consenso in qualsiasi momento — la tua richiesta viene elaborata immediatamente e non riceverai ulteriori email. La disiscrizione non influisce sulle comunicazioni relative a consulenze in corso."
                                      },
                                      {
-                                         "title":  "5. Base Giuridica (GDPR)",
-                                         "content":  "Tratto i tuoi dati in base a:<br><strong>Consenso:</strong> quando invii un modulo (contatto, download playbook). Puoi revocarlo in qualsiasi momento.<br><strong>Necessità contrattuale:</strong> quando richiedi i miei servizi di consulenza — il trattamento è necessario per erogare il lavoro concordato.<br><strong>Legittimo interesse:</strong> rispondere a richieste pre-vendita e migliorare i miei servizi."
+                                        "title":  "5. Base Giuridica (GDPR) & Diritto di Opposizione",
+                                        "content":  "Tratto i tuoi dati in base a:<br><strong>Consenso:</strong> quando spunti la casella del consenso su un modulo (contatto, download playbook). Puoi revocarlo in qualsiasi momento.<br><strong>Necessità contrattuale:</strong> quando richiedi i miei servizi di consulenza — il trattamento è necessario per erogare il lavoro concordato.<br><strong>Legittimo interesse:</strong> rispondere a richieste pre-vendita e migliorare i miei servizi.<br><br><strong>Diritto di opposizione (Art. 21 GDPR):</strong> Se tratto i tuoi dati basandomi sul legittimo interesse, hai il diritto di opporti in qualsiasi momento contattandomi. Cesserò il trattamento a meno che non abbia motivi legittimi cogenti che prevalgano sui tuoi interessi."
                                      },
                                      {
                                          "title":  "6. Conservazione dei Dati",
@@ -338,11 +343,11 @@
                                      },
                                      {
                                          "title":  "7. I Tuoi Diritti (GDPR)",
-                                         "content":  "Hai il diritto di:<br>Accedere ai tuoi dati — richiedere una copia di tutto ciò che conservo su di te.<br>Rettificare dati inesatti — chiedermi di correggere o completare le tue informazioni.<br>Cancellare i tuoi dati — richiedere la cancellazione (salvo obblighi di conservazione legale).<br>Limitare il trattamento — limitare come utilizzo i tuoi dati.<br>Portabilità dei dati — ricevere i tuoi dati in formato strutturato e leggibile.<br>Revocare il consenso — in qualsiasi momento, per qualsiasi trattamento basato sul consenso.<br>Per esercitare questi diritti, scrivi a riccardobozzato@gmail.com. Risponderò entro 30 giorni."
+                                         "content":  "Hai il diritto di:<br>Accedere ai tuoi dati — richiedere una copia di tutto ciò che conservo su di te.<br>Rettificare dati inesatti — chiedermi di correggere o completare le tue informazioni.<br>Cancellare i tuoi dati — richiedere la cancellazione (salvo obblighi di conservazione legale).<br>Limitare il trattamento — limitare come utilizzo i tuoi dati.<br>Opporti al trattamento — opporti al trattamento basato sul legittimo interesse (Art. 21 GDPR).<br>Portabilità dei dati — ricevere i tuoi dati in formato strutturato e leggibile.<br>Revocare il consenso — in qualsiasi momento, per qualsiasi trattamento basato sul consenso.<br>Per esercitare questi diritti, scrivi a riccardobozzato@gmail.com. Risponderò entro 30 giorni."
                                      },
                                      {
-                                         "title":  "8. Servizi di Terze Parti",
-                                         "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR:<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali e automazione sequenze email. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — hosting del sito e CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti Trova. Privacy: stripe.com/privacy<br><strong>Iubenda</strong> (iubenda.com) — generazione privacy policy e gestione consensi. Privacy: iubenda.com/privacy<br><br>I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC)."
+                                        "title":  "8. Servizi di Terze Parti",
+                                        "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR:<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali e automazione sequenze email. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — hosting del sito e CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti Trova. Privacy: stripe.com/privacy<br><br>I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC)."
                                      },
                                      {
                                          "title":  "9. Sicurezza dei Dati",

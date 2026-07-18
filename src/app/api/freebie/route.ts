@@ -23,12 +23,19 @@ export async function POST(request: Request) {
   }
 
   try {
-    const { name, email } = await request.json();
+    const { name, email, consent } = await request.json();
 
     // Validation
     if (!name || !email) {
       return NextResponse.json(
         { error: "Name and email are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!consent) {
+      return NextResponse.json(
+        { error: "You must consent to receive the email sequence." },
         { status: 400 }
       );
     }

@@ -355,16 +355,16 @@ export default async function HomePage({ params }: Props) {
               </p>
             </Link>
 
-            {/* Hermes - Second Brain */}
+            {/* ric2brain - Second Brain */}
             <Link
-              href="/projects/hermes"
+              href="/projects/ric2brain"
               className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
             >
               <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
                 {isIt ? "SECOND BRAIN" : "SECOND BRAIN"}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                Hermes
+                ric2brain
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {isIt

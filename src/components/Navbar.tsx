@@ -47,8 +47,8 @@ export default function Navbar() {
     >
       <div className="flex justify-between items-center px-4 md:px-16 py-4 max-w-[1200px] mx-auto">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-primary tracking-tighter">
-          OPERATIONS_ELITE
+        <Link href="/" className="text-xl font-bold text-foreground tracking-tight">
+          Riccardo<span className="text-primary">.</span>Bozzato
         </Link>
 
         {/* Desktop Nav */}

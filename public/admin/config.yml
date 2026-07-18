@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog_en"
+    label: "Blog (English)"
+    folder: "content/blog/en"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    format: "frontmatter"
+    extension: "md"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["operations"] }
+      - { label: "Author", name: "author", widget: "hidden", default: "Riccardo Bozzato" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+  - name: "blog_it"
+    label: "Blog (Italiano)"
+    folder: "content/blog/it"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    format: "frontmatter"
+    extension: "md"
+    editor:
+      preview: true
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "it" }
+      - { label: "Descrizione", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["operations"] }
+      - { label: "Autore", name: "author", widget: "hidden", default: "Riccardo Bozzato" }
+      - { label: "Immagine", name: "image", widget: "image", required: false }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+      - { label: "Pubblicato", name: "published", widget: "boolean", default: true }

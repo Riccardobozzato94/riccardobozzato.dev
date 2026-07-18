@@ -3,19 +3,19 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Home -->
   <url>
-    <loc>https://riccardobozzato.dev/en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://riccardobozzato.dev/en"/>
+    <loc>https://riccardobozzato.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://riccardobozzato.com/en"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://riccardobozzato.dev/en"/>
+    <loc>https://riccardobozzato.com/it</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://riccardobozzato.com/en"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -23,17 +23,17 @@
 
   <!-- Services -->
   <url>
-    <loc>https://riccardobozzato.dev/en/services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/services"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/services"/>
+    <loc>https://riccardobozzato.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/services"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/services"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/services"/>
+    <loc>https://riccardobozzato.com/it/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/services"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -41,17 +41,17 @@
 
   <!-- Projects -->
   <url>
-    <loc>https://riccardobozzato.dev/en/projects</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/projects"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/projects"/>
+    <loc>https://riccardobozzato.com/en/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/projects"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/projects</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/projects"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/projects"/>
+    <loc>https://riccardobozzato.com/it/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/projects"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -59,33 +59,33 @@
 
   <!-- Project Details -->
   <url>
-    <loc>https://riccardobozzato.dev/en/projects/vulnclaw</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/projects/vulnclaw"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/projects/vulnclaw"/>
+    <loc>https://riccardobozzato.com/en/projects/vulnclaw</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/projects/vulnclaw"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/projects/vulnclaw"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/projects/vulnclaw</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/projects/vulnclaw"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/projects/vulnclaw"/>
+    <loc>https://riccardobozzato.com/it/projects/vulnclaw</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/projects/vulnclaw"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/projects/vulnclaw"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/en/projects/panificio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/projects/panificio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/projects/panificio"/>
+    <loc>https://riccardobozzato.com/en/projects/panificio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/projects/panificio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/projects/panificio"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/projects/panificio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/projects/panificio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/projects/panificio"/>
+    <loc>https://riccardobozzato.com/it/projects/panificio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/projects/panificio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/projects/panificio"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -93,17 +93,17 @@
 
   <!-- Trova -->
   <url>
-    <loc>https://riccardobozzato.dev/en/trova</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/trova"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/trova"/>
+    <loc>https://riccardobozzato.com/en/trova</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/trova"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/trova"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/trova</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/trova"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/trova"/>
+    <loc>https://riccardobozzato.com/it/trova</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/trova"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/trova"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -111,17 +111,17 @@
 
   <!-- About -->
   <url>
-    <loc>https://riccardobozzato.dev/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/about"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/about"/>
+    <loc>https://riccardobozzato.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/about"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/about"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/about"/>
+    <loc>https://riccardobozzato.com/it/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/about"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -129,17 +129,17 @@
 
   <!-- Blog -->
   <url>
-    <loc>https://riccardobozzato.dev/en/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/blog"/>
+    <loc>https://riccardobozzato.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/blog"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/blog"/>
+    <loc>https://riccardobozzato.com/it/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/blog"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -147,25 +147,25 @@
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://riccardobozzato.dev/it/blog/perche-operations-e-sicurezza-devono-essere-amici</loc>
+    <loc>https://riccardobozzato.com/it/blog/perche-operations-e-sicurezza-devono-essere-amici</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/blog/costruire-vulnclaw-un-cli-di-pentesting-ai-da-zero</loc>
+    <loc>https://riccardobozzato.com/it/blog/costruire-vulnclaw-un-cli-di-pentesting-ai-da-zero</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/en/blog/why-operations-and-security-must-be-friends</loc>
+    <loc>https://riccardobozzato.com/en/blog/why-operations-and-security-must-be-friends</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/en/blog/building-vulnclaw-an-ai-pentesting-cli-from-scratch</loc>
+    <loc>https://riccardobozzato.com/en/blog/building-vulnclaw-an-ai-pentesting-cli-from-scratch</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -173,17 +173,17 @@
 
   <!-- Freebie -->
   <url>
-    <loc>https://riccardobozzato.dev/en/freebie</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/freebie"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/freebie"/>
+    <loc>https://riccardobozzato.com/en/freebie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/freebie"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/freebie"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/freebie</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/freebie"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/freebie"/>
+    <loc>https://riccardobozzato.com/it/freebie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/freebie"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/freebie"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -191,17 +191,17 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://riccardobozzato.dev/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/contact"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/contact"/>
+    <loc>https://riccardobozzato.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/contact"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/contact"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/contact"/>
+    <loc>https://riccardobozzato.com/it/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/contact"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -209,17 +209,17 @@
 
   <!-- Privacy -->
   <url>
-    <loc>https://riccardobozzato.dev/en/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/privacy"/>
+    <loc>https://riccardobozzato.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/privacy"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://riccardobozzato.dev/it/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.dev/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.dev/it/privacy"/>
+    <loc>https://riccardobozzato.com/it/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/privacy"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

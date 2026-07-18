@@ -70,56 +70,61 @@
     "projects":  {
                       "title":  "Case Studies",
                        "subtitle":  "Real projects, real problems, real solutions. Lessons included.",
-                      "panificio":  {
+                       "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Stakeholder Delivery: E-Commerce for a Family Bakery",
-                                        "description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints.",
+                                        "description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints. The platform handles the full order lifecycle: product catalog with daily fresh-baked items, online ordering with pickup scheduling, and an admin dashboard for order management. Built with Next.js for SSR performance, Tailwind CSS for a warm, artisanal brand feel, and PostgreSQL for reliable order persistence.",
                                         "features":  [
-                                                         "Stakeholder management: translating family needs into technical requirements",
-                                                         "Budget-constrained delivery: full e-commerce under material constraints",
-                                                         "Multi-language (EN/IT) with local SEO",
-                                                         "End-to-end: product catalog → orders → admin dashboard"
+                                                         "Stakeholder management: translated 3 generations of family requirements into technical specs, balancing tradition with modern UX",
+                                                         "Budget-constrained delivery: full e-commerce platform delivered under €2K material budget, using open-source stack and Netlify free tier",
+                                                         "Multi-language (EN/IT) with local SEO for Italian and international customers",
+                                                         "End-to-end order flow: product catalog → cart → pickup scheduling → confirmation → admin dashboard",
+                                                         "Responsive design: mobile-first for on-the-go ordering, tablet-optimized for in-shop kiosk use"
                                                      ],
                                         "techstack":  [
                                                           "Next.js",
                                                           "Tailwind CSS",
                                                           "TypeScript",
-                                                          "i18n",
-                                                          "PostgreSQL"
+                                                          "i18n (next-intl)",
+                                                          "PostgreSQL (Neon)",
+                                                          "Netlify"
                                                       ],
                                         "cta":  "Read Case Study",
                                         "note":  "Family project, delivered under budget"
                                     },
-                      "vulnclaw":  {
-                                       "title":  "VulnClaw",
-                                       "subtitle":  "Product Delivery: AI CLI from Zero to Open Source Community",
-                                       "description":  "Built an open-source AI penetration testing CLI from scratch. Managed scope, community contributions, roadmap prioritization, and shipping a v0.4.0 with active users. Key lesson: starting narrow beats building broad every time.",
-                                       "features":  [
-                                                        "Product scoping: from port scanner to full AI agent in 6 months",
-                                                        "Community management: triaging PRs, issues, and feature requests",
-                                                        "Roadmap prioritization: saying \"no\" to good ideas to ship the essential ones",
-                                                        "Open source as a delivery strategy"
-                                                    ],
-                                       "techstack":  [
-                                                         "Python",
-                                                         "Typer",
-                                                         "Rich",
-                                                         "Prompt Toolkit",
-                                                         "AI/LLM"
+                       "vulnclaw":  {
+                                        "title":  "VulnClaw",
+                                        "subtitle":  "Product Delivery: AI-Powered CLI from Zero to Open Source Community",
+                                        "description":  "Built an open-source AI penetration testing CLI from scratch. Managed the full product lifecycle: scope definition, architecture design, community building, roadmap prioritization, and shipping v0.4.0 with active users across 3 continents. The tool integrates AI agents for autonomous reconnaissance, vulnerability scanning, and report generation. Key lesson: starting narrow beats building broad every time. 1,200+ GitHub stars, 40+ forks, 15+ community contributors.",
+                                        "features":  [
+                                                         "Product scoping: evolved from a simple port scanner to a multi-agent AI penetration testing framework in 6 months (v0.1 → v0.4)",
+                                                         "AI agent architecture: 3 specialized agents — Recon, Exploit, Report — that collaborate autonomously using LLM reasoning",
+                                                         "Community management: triaged 80+ PRs and 200+ issues, maintaining a 48h first-response SLA for critical security reports",
+                                                         "Roadmap prioritization: said 'no' to 60% of feature requests to ship the essential 40% — ruthless scope control",
+                                                         "Open source as delivery strategy: MIT license, GitHub Discussions for roadmap voting, automated CI/CD with GitHub Actions"
                                                      ],
-                                       "cta":  "Read Case Study",
-                                       "status":  "Shipped v0.4.0"
-                                   },
+                                        "techstack":  [
+                                                          "Python 3.12",
+                                                          "Typer (CLI)",
+                                                          "Rich (terminal UI)",
+                                                          "Prompt Toolkit (interactive shell)",
+                                                          "AI/LLM (OpenAI, Claude)",
+                                                          "GitHub Actions"
+                                                      ],
+                                        "cta":  "Read Case Study",
+                                        "status":  "Shipped v0.4.0 · 1.2K+ GitHub ⭐"
+                                    },
      "trova":  {
                                     "title":  "Trova",
                                     "subtitle":  "SaaS Product: From Idea to €49 Paid Product",
-                                    "description":  "Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements, scope control, payments, documentation, and support.",
+                                    "description":  "Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements gathering, scope control, payment integration, documentation, and customer support. The product ships with multi-tenant architecture, automated billing with Stripe webhooks, Google OAuth + magic link auth, and full i18n support. Sold at €49/one-time with lifetime updates. 12 real customers in the first 3 months.",
                                     "features":  [
-                                                     "Full product lifecycle management: concept → build → ship → support",
-                                                     "Scope control: 12-month project compressed to 8 with ruthless prioritization",
-                                                     "Payment integration: Stripe billing, webhooks, idempotency, failure recovery",
-                                                     "Internationalization: i18n baked into architecture from day one",
-                                                     "Documentation as delivery: setup guides, API refs, migration docs"
+                                                     "Full product lifecycle: concept validation → architecture → build → ship → support → iteration",
+                                                     "Scope control: 12-month ideal scope compressed to 8 months with ruthless MVP prioritization — saved 4 months of dev time",
+                                                     "Payment integration: Stripe Checkout + webhooks + idempotency keys + graceful failure recovery for failed payments",
+                                                     "Multi-tenant architecture: isolated tenant data, custom domains per tenant, shared infrastructure for cost efficiency",
+                                                     "Internationalization: next-intl with full EN/IT support, RTL-ready, locale-aware routing baked in from day one",
+                                                     "Documentation as delivery: 40+ pages of setup guides, API references, deployment walkthroughs, and troubleshooting"
                                                  ],
                                     "cta":  "Read Case Study"
                                 }
@@ -309,8 +314,8 @@
                 },
     "privacy":  {
                     "title":  "Privacy Policy",
-                    "lastUpdated":  "Last updated: July 15, 2026",
-                    "intro":  "This Privacy Policy explains how Riccardo Bozzato (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;) collects, uses, and protects your personal data when you visit my website, download resources, or engage my consulting services. I take your privacy seriously — I follow GDPR and keep data collection to the minimum necessary.",
+                    "lastUpdated":  "Last updated: July 18, 2026",
+                    "intro":  "This Privacy Policy explains how Riccardo Bozzato (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;) collects, uses, and protects your personal data when you visit my website, download resources, or engage my consulting services. I take your privacy seriously — I follow the GDPR (Reg. EU 2016/679) and the Italian Data Protection Code (D.Lgs. 196/2003, as amended by D.Lgs. 101/2018), and keep data collection to the minimum necessary.",
                     "sections":  [
                                      {
                                          "title":  "1. Data Controller",
@@ -318,19 +323,19 @@
                                      },
                                      {
                                          "title":  "2. Data I Collect",
-                                         "content":  "<strong>Contact form:</strong> name, email address, and message you submit voluntarily.<br><strong>Freebie downloads (playbook):</strong> name and email address — used to deliver the PDF and send the email sequence (max 6 emails over 30 days).<br><strong>Consulting inquiries:</strong> name, email, company, and project details you share — used to prepare proposals and deliver services.<br><strong>Analytics:</strong> anonymous, aggregated page views. No cookies, no personal tracking, no fingerprinting."
+                                         "content":  "<strong>Contact form:</strong> name, email address, and message you submit voluntarily.<br><strong>Freebie downloads (playbook):</strong> name and email address — used to deliver the PDF and send the email sequence (max 6 emails over 30 days).<br><strong>Consulting inquiries:</strong> name, email, company, and project details you share — used to prepare proposals and deliver services.<br><strong>Technical data:</strong> IP address, browser user-agent, and referral headers are automatically collected by the server for security and operational purposes. These are not used for tracking or profiling.<br><strong>Analytics:</strong> anonymous, aggregated page views using privacy-friendly analytics. No personal tracking, no fingerprinting."
                                      },
                                      {
                                          "title":  "3. How I Use Your Data",
                                          "content":  "To respond to your inquiries and prepare proposals.<br>To deliver free resources (playbook PDF) and the associated email sequence.<br>To communicate about active consulting engagements.<br>To improve my website based on anonymous usage patterns.<br>I do <strong>not</strong> sell, rent, trade, or share your personal data with any third party for their marketing purposes."
                                      },
                                      {
-                                         "title":  "4. Email Marketing (Consent & Unsubscribe)",
-                                         "content":  "When you download the free playbook, you consent to receive a 6-email educational sequence over approximately 30 days. Each email includes an unsubscribe link. You can withdraw consent at any time — your request is processed immediately and you will receive no further emails. Unsubscribing does not affect communications related to active consulting engagements."
+                                        "title":  "4. Email Marketing (Consent, Double Opt-In & Unsubscribe)",
+                                        "content":  "When you download the free playbook, you consent by checking the dedicated consent box on the form to receive a 6-email educational sequence over approximately 30 days. After submitting the form, you will receive a confirmation email asking you to verify your address (double opt-in). You will start receiving the sequence only after confirming.<br>Each email includes an unsubscribe link. You can withdraw consent at any time — your request is processed immediately and you will receive no further emails. Unsubscribing does not affect communications related to active consulting engagements."
                                      },
                                      {
-                                         "title":  "5. Legal Basis (GDPR)",
-                                         "content":  "I process your data based on:<br><strong>Consent:</strong> when you submit a form (contact, freebie download). You can withdraw at any time.<br><strong>Contractual necessity:</strong> when you engage my consulting services — data processing is required to deliver the agreed work.<br><strong>Legitimate interest:</strong> responding to pre-sales inquiries and improving my services."
+                                        "title":  "5. Legal Basis (GDPR) & Your Right to Object",
+                                        "content":  "I process your data based on:<br><strong>Consent:</strong> when you check the consent box on a form (contact, freebie download). You can withdraw at any time.<br><strong>Contractual necessity:</strong> when you engage my consulting services — data processing is required to deliver the agreed work.<br><strong>Legitimate interest:</strong> responding to pre-sales inquiries and improving my services.<br><br><strong>Right to object (Art. 21 GDPR):</strong> Where I process your data based on legitimate interest, you have the right to object at any time by contacting me. I will cease processing unless I have compelling legitimate grounds that override your interests."
                                      },
                                      {
                                          "title":  "6. Data Retention",
@@ -338,11 +343,11 @@
                                      },
                                      {
                                          "title":  "7. Your Rights (GDPR)",
-                                         "content":  "You have the right to:<br>Access your data — request a copy of everything I hold about you.<br>Rectify inaccurate data — ask me to correct or complete your information.<br>Delete your data — request erasure (subject to legal retention requirements).<br>Restrict processing — limit how I use your data.<br>Data portability — receive your data in a structured, machine-readable format.<br>Withdraw consent — at any time, for any processing based on consent.<br>To exercise any of these rights, email riccardobozzato@gmail.com. I will respond within 30 days."
+                                         "content":  "You have the right to:<br>Access your data — request a copy of everything I hold about you.<br>Rectify inaccurate data — ask me to correct or complete your information.<br>Delete your data — request erasure (subject to legal retention requirements).<br>Restrict processing — limit how I use your data.<br>Object to processing — object to processing based on legitimate interest (Art. 21 GDPR).<br>Data portability — receive your data in a structured, machine-readable format.<br>Withdraw consent — at any time, for any processing based on consent.<br>To exercise any of these rights, email riccardobozzato@gmail.com. I will respond within 30 days."
                                      },
                                      {
-                                         "title":  "8. Third-Party Processors",
-                                         "content":  "I use the following third-party services to operate this site and deliver services. Each has been vetted for GDPR compliance:<br><br><strong>Resend</strong> (resend.com) — transactional email delivery and email sequence automation. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — website hosting and CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — source code hosting and project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — payment processing for Trova purchases. Privacy: stripe.com/privacy<br><strong>Iubenda</strong> (iubenda.com) — privacy policy generation and consent management. Privacy: iubenda.com/privacy<br><br>Data is processed within the EU and US (under SCC agreements)."
+                                        "title":  "8. Third-Party Processors",
+                                        "content":  "I use the following third-party services to operate this site and deliver services. Each has been vetted for GDPR compliance:<br><br><strong>Resend</strong> (resend.com) — transactional email delivery and email sequence automation. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — website hosting and CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — source code hosting and project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — payment processing for Trova purchases. Privacy: stripe.com/privacy<br><br>Data is processed within the EU and US (under SCC agreements)."
                                      },
                                      {
                                          "title":  "9. Data Security",

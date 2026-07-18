@@ -44,7 +44,7 @@ function baseLayout(bodyHtml: string, unsubscribeToken?: string): string {
                   <td style="border-top:1px solid #e4e4e7;padding-top:20px;">
                     <p style="margin:0 0 8px 0;font-size:12px;color:#a1a1aa;line-height:1.6;text-align:center;">
                       Riccardo Bozzato — Operations &amp; Delivery Consultant | PMP®<br/>
-                      <a href="${APP_URL}" style="color:#18181b;text-decoration:underline;font-weight:500;">riccardobozzato.dev</a>
+                      <a href="${APP_URL}" style="color:#18181b;text-decoration:underline;font-weight:500;">riccardobozzato.com</a>
                     </p>
                     <p style="margin:12px 0 0 0;font-size:11px;color:#a1a1aa;line-height:1.6;text-align:center;">
                       ${APP_URL}

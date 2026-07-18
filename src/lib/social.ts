@@ -41,8 +41,8 @@ export const SOCIAL_PROFILES: SocialProfile[] = [
   {
     key: "instagram",
     label: "Instagram",
-    href: "https://instagram.com/riccardobozzato.dev",
-    handle: "@riccardobozzato.dev",
+    href: "https://instagram.com/riccardobozzato.com",
+    handle: "@riccardobozzato.com",
     placeholder: true, // collegato al brand faceless separato — non attivo qui
   },
   {

@@ -34,6 +34,7 @@ export default function FreebiePage() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
@@ -47,7 +48,7 @@ export default function FreebiePage() {
       const res = await fetch("/api/freebie", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, consent }),
       });
 
       if (!res.ok) throw new Error("Failed");
@@ -200,6 +201,24 @@ export default function FreebiePage() {
                           />
                         </div>
 
+                        {/* Consent checkbox */}
+                        <div className="flex items-start gap-2.5">
+                          <input
+                            id="consent"
+                            type="checkbox"
+                            checked={consent}
+                            onChange={(e) => setConsent(e.target.checked)}
+                            required
+                            className="mt-1 size-4 shrink-0 rounded border-border/60 bg-background/50 text-accent focus-visible:ring-accent/30 focus-visible:ring-2 focus-visible:ring-offset-2"
+                          />
+                          <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed select-none">
+                            I agree to receive the 6-email educational sequence about operations and security (unsubscribe anytime).{" "}
+                            <a href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
+                              Privacy Policy
+                            </a>
+                          </label>
+                        </div>
+
                         {status === "error" && (
                           <p className="text-sm text-destructive bg-destructive/5 rounded-lg p-3">
                             {t("form.error")}
@@ -210,7 +229,7 @@ export default function FreebiePage() {
                           type="submit"
                           className="w-full h-12 rounded-xl text-base font-medium shadow-lg shadow-accent/10 hover:shadow-xl hover:shadow-accent/20 transition-all duration-300"
                           size="lg"
-                          disabled={status === "loading"}
+                          disabled={status === "loading" || !consent}
                         >
                           {status === "loading" ? (
                             <span className="flex items-center gap-2">

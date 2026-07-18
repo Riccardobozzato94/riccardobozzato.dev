@@ -1,4 +1,4 @@
-﻿import { blogPosts, type BlogPost } from "@/content/blog";
+﻿import { getBlogPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -42,15 +42,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function getPostsForLocale(locale: string): BlogPost[] {
-  return blogPosts
-    .filter((p) => p.locale === locale)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-}
-
 export default async function BlogIndexPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const posts = getPostsForLocale(locale);
+  const posts = getBlogPosts(locale);
   const isIt = locale === "it";
 
   return (
@@ -106,7 +100,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
                         {post.title}
                       </CardTitle>
                       <CardDescription className="text-sm mt-2 leading-relaxed">
-                        {post.excerpt}
+                        {post.description}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
