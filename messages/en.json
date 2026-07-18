@@ -14,6 +14,7 @@
                 "shipkit":  "ShipKit",
                 "freebie":  "Free Diagnostic",
         "blog":  "Blog",
+                "books":  "Books",
                 "services":  "Services",
                 "about":  "About",
                 "contact":  "Contact"
@@ -293,6 +294,10 @@
                    "ctaTitle":  "Let's Build Something",
                    "ctaDesc":  "Have a project, idea, or just want to chat? I'm always open to interesting conversations."
                },
+    "books":  {
+                  "title":  "Bookshelf",
+                  "description":  "The books that shaped how I think about operations, technology, and building things. Curated, read, and recommended. Some links are Amazon affiliate links — you pay nothing extra, I get a small commission that helps keep this site running."
+              },
     "contact":  {
                     "title":  "Get in Touch",
                     "subtitle":  "Building something interesting? Let's talk operations, security, or tools.",

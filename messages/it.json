@@ -14,6 +14,7 @@
                 "shipkit":  "ShipKit",
                 "freebie":  "Diagnostica Gratuita",
         "blog":  "Blog",
+                "books":  "Libri",
                 "services":  "Servizi",
                 "about":  "Chi Sono",
                 "contact":  "Contatti"
@@ -292,6 +293,10 @@
                   "cta":  "Parliamone",
                 "ctaTitle":  "Parliamone",
                 "ctaDesc":  "Hai un progetto, un'idea o semplicemente curiosità? Sono sempre aperto a conversazioni interessanti."
+              },
+    "books":  {
+                  "title":  "Libreria",
+                  "description":  "I libri che hanno formato il mio modo di pensare su operations, tecnologia e costruzione di cose. Curati, letti e consigliati. Alcuni link sono link di affiliazione Amazon — a te non costa nulla, a me aiuta a mantenere il sito."
               },
     "contact":  {
                     "title":  "Contattami",
