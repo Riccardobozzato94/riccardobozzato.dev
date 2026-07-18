@@ -6,6 +6,9 @@
               },
     "nav":  {
                 "home":  "Home",
+        "vision": "La Visione",
+        "results": "Risultati",
+        "journey": "Il Viaggio",
                 "projects":  "Progetti",
                 "panificio":  "Panificio",
                 "trova":  "Trova",

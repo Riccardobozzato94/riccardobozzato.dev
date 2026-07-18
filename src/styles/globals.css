@@ -417,3 +417,103 @@ h1, h2, h3, h4, h5, h6 {
 .gradient-border:hover::before {
   opacity: 1;
 }
+
+/* ───── Nuovo Design System: OPERATIONS_ELITE ───── */
+
+/* Material Symbols icon font */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block');
+
+/* Geist font for OPERATIONS_ELITE design */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+/* Border radius overrides for new design */
+:root {
+  --radius-sm: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+/* Luminous glow button effect */
+.luminous-glow {
+  position: relative;
+  overflow: hidden;
+}
+.luminous-glow::before {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--accent) / 0.3) 0%, transparent 70%);
+  transition: width 0.6s ease, height 0.6s ease;
+  pointer-events: none;
+}
+.luminous-glow:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Timeline line — vertical bar for "Il Viaggio" */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, hsl(var(--accent) / 0.6), hsl(var(--accent) / 0.05));
+}
+
+/* Mono data label (small data labels like "IL PROBLEMA", "LA SOLUZIONE") */
+.font-mono-data {
+  font-family: 'Geist', 'Inter', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Label caps (uppercase labels) */
+.font-label-caps {
+  font-family: 'Geist', 'Inter', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+/* Headline font for new design */
+.font-headline-md {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 600;
+}
+.font-headline-lg {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.font-headline-xl {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+/* Body font for new design */
+.font-body-md {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 400;
+}
+.font-body-lg {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* Selection color for new theme */
+::selection {
+  background-color: hsl(var(--accent) / 0.3);
+  color: var(--color-on-primary, #000);
+}
+
+/* Material Symbols default styling */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
+}

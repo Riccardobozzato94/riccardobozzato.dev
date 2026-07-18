@@ -3,8 +3,7 @@ import Image from "next/image";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Download, Sparkles, Cpu, Cloud, Zap, GitBranch, Lightbulb, Package, MapPin, ArrowUpRight } from "lucide-react";
-import Section from "@/components/Section";
+import { ArrowRight, Cpu, Users, Gauge, Euro, Check, MapPin, Mail, BarChart3 } from "lucide-react";
 
 const baseUrl = SITE_URL;
 
@@ -19,9 +18,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${site("title")} — ${t("heroRole")}`,
-    description: `${t("heroTagline")} €500K+ delivered. Services: AI agents, serverless, automation, integration, consulting.`,
+    description: `${t("heroTagline")} €500K+ delivered.`,
     openGraph: {
-      title: `${site("title")} — ${t("heroTitle")}`,
+      title: `${site("title")} — Dal Caos al Controllo Totale.`,
       description: t("heroTagline"),
       url: `${baseUrl}/${locale}`,
     },
@@ -35,99 +34,107 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const serviceIcons: Record<string, React.ReactNode> = {
-  cpu: <Cpu className="size-6" />,
-  cloud: <Cloud className="size-6" />,
-  zap: <Zap className="size-6" />,
-  "git-branch": <GitBranch className="size-6" />,
-  lightbulb: <Lightbulb className="size-6" />,
-  package: <Package className="size-6" />,
-};
-
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations("home");
-  const tp = await getTranslations("projects");
   const isIt = locale === "it";
 
-  const serviceList = t.raw("serviceList") as { icon: string; title: string; desc: string }[];
+  const modelIcon = (name: string) => {
+    switch (name) {
+      case "cpu": return <Cpu className="size-6" />;
+      case "users": return <Users className="size-6" />;
+      case "speed": return <Gauge className="size-6" />;
+      case "euro": return <Euro className="size-6" />;
+      default: return <Cpu className="size-6" />;
+    }
+  };
 
   return (
     <>
+
       {/* ════════════════════════════════════════════
-            HERO — Operations & Delivery
-          ════════════════════════════════════════════ */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Single clean ambient glow */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-accent/8 blur-[160px]" />
-        </div>
+           HERO — Portrait + Copy
+         ════════════════════════════════════════════ */}
+      <section className="max-w-[1200px] mx-auto px-4 md:px-16 py-[120px] relative">
+        <div className="flex flex-col lg:flex-row items-center gap-[64px]">
+          {/* Portrait */}
+          <div className="w-full lg:w-5/12">
+            <div className="aspect-[3/4] bg-surface-container-highest border border-outline-variant relative overflow-hidden group">
+              <Image
+                src="/images/riccardo-bozzato-photo-hero.jpg"
+                alt="Riccardo Bozzato — Senior Delivery Manager & Head of Operations"
+                fill
+                className="object-cover grayscale opacity-80 mix-blend-luminosity group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            </div>
+          </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-24">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Foto + Role badge */}
-            <div className="flex flex-col items-center gap-4 mb-8">
-              <div className="size-20 rounded-full overflow-hidden ring-2 ring-accent/20 ring-offset-2 ring-offset-background">
-                <Image
-                  src="/images/riccardo-bozzato-photo-linkedin.jpg"
-                  alt="Riccardo Bozzato"
-                  width={80}
-                  height={80}
-                  className="object-cover size-full"
-                  priority
-                />
-              </div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent">
-                <MapPin className="size-3.5" />
-                <span>Legnaro, PD — {isIt ? "Senior Delivery Manager & Head of Operations" : "Senior Delivery Manager & Head of Operations"} | PMP®</span>
-              </div>
+          {/* Copy */}
+          <div className="w-full lg:w-7/12 relative z-10">
+            <div className="flex items-center gap-2 mb-8 border-b border-outline-variant pb-4 inline-block">
+              <span className="text-xs tracking-[0.1em] text-primary font-semibold">
+                {isIt ? "RICCARDO BOZZATO — STRATEGIC OPERATIONS" : "RICCARDO BOZZATO — STRATEGIC OPERATIONS"}
+              </span>
             </div>
 
-            <div className="space-y-6 mb-10">
-              <h1 className="font-heading text-[clamp(36px,6vw,72px)] font-bold leading-[1.05] tracking-tighter">
-                <span className="gradient-text">{t("heroTitle")}</span>
-              </h1>
+            <h1 className="text-[56px] lg:text-[72px] leading-[1.05] mb-6 font-bold tracking-tight">
+              {isIt ? (
+                <>Dal Caos al <br /><span className="text-primary italic">Controllo Totale.</span></>
+              ) : (
+                <>From Chaos to <br /><span className="text-primary italic">Total Control.</span></>
+              )}
+            </h1>
 
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                {t("heroTagline")}
-              </p>
-            </div>
+            <p className="text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+              {isIt
+                ? "I leader visionari creano il futuro. Io costruisco l'infrastruttura per raggiungerlo. Come Senior Delivery Manager & Head of Operations (PMP®), trasformo idee ambiziose in esecuzione impeccabile."
+                : "Visionary leaders create the future. I build the infrastructure to reach it. As a Senior Delivery Manager & Head of Operations (PMP®), I turn ambitious ideas into flawless execution."}
+            </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-wrap gap-4 mb-[120px]">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/30 px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
+                className="bg-primary text-black px-8 py-4 text-xs font-bold tracking-widest transition-all hover:brightness-110 luminous-glow"
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  {t("heroCta")}
-                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
+                {isIt ? "PRENOTA UNA STRATEGY CALL" : "BOOK A STRATEGY CALL"}
               </Link>
               <Link
-                href="/about"
-                className="group inline-flex items-center justify-center gap-2 h-12 rounded-xl border border-border/60 bg-background/50 backdrop-blur-sm px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5"
+                href="/#results"
+                className="bg-transparent text-foreground border border-outline-variant px-8 py-4 text-xs font-bold tracking-widest hover:bg-surface-container-high transition-all flex items-center gap-2 group"
               >
-                {t("heroCta2")}
-                <ArrowUpRight className="size-4" />
+                {isIt ? "ESPLORA I RISULTATI" : "EXPLORE RESULTS"}
+                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
-            {/* Key metrics */}
-            <div className="flex items-center justify-center gap-8 sm:gap-12 mt-12 pt-8 border-t border-border/30 max-w-xl mx-auto">
-              <div className="text-center">
-                <span className="text-2xl font-bold text-foreground">€500K+</span>
-                <p className="text-xs text-muted-foreground/60 mt-1">{isIt ? "portfolio progetti" : "portfolio value"}</p>
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-6 border-t border-outline-variant">
+              <div>
+                <div className="text-xs text-primary mb-1 font-semibold tracking-wide">
+                  {isIt ? "IL PROBLEMA" : "THE PROBLEM"}
+                </div>
+                <div className="text-lg font-semibold text-foreground line-through opacity-50">
+                  {isIt ? "Ritardi & Burnout" : "Delays & Burnout"}
+                </div>
               </div>
-              <div className="w-px h-10 bg-border/40" />
-              <div className="text-center">
-                <span className="text-2xl font-bold text-foreground">8-12</span>
-                <p className="text-xs text-muted-foreground/60 mt-1">{isIt ? "team size" : "team size"}</p>
+              <div>
+                <div className="text-xs text-primary mb-1 font-semibold tracking-wide">
+                  {isIt ? "LA SOLUZIONE" : "THE SOLUTION"}
+                </div>
+                <div className="text-lg font-semibold text-primary">
+                  {isIt ? "-40% Time-to-Market" : "-40% Time-to-Market"}
+                </div>
               </div>
-              <div className="w-px h-10 bg-border/40" />
-              <div className="text-center">
-                <span className="text-2xl font-bold text-foreground">-40%</span>
-                <p className="text-xs text-muted-foreground/60 mt-1">time-to-market</p>
+              <div>
+                <div className="text-xs text-primary mb-1 font-semibold tracking-wide">
+                  {isIt ? "L'IMPATTO" : "THE IMPACT"}
+                </div>
+                <div className="text-lg font-semibold text-foreground">
+                  {isIt ? "€500K+ Consegnati" : "€500K+ Delivered"}
+                </div>
               </div>
             </div>
           </div>
@@ -135,257 +142,294 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ════════════════════════════════════════════
-           SERVICES — Asymmetric Grid
+           VISION — La Visione
          ════════════════════════════════════════════ */}
-      <Section animate className="overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          {/* Section label — senza pill, più pulito */}
-          <div className="mb-12">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/40 font-medium">
-              {t("servicesSubtitle")}
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2">
-              {t("servicesTitle")}
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 auto-rows-fr">
-            {serviceList.map((svc, i) => {
-              // Make AI Agents and Turnkey span 2 rows tall
-              const isTall = svc.icon === "cpu" || svc.icon === "package";
-              return (
-                <Link
+      <section id="vision" className="bg-surface-container-lowest py-[120px] border-y border-outline-variant relative overflow-hidden">
+        <div className="absolute -left-64 top-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="max-w-[1200px] mx-auto px-4 md:px-16 relative z-10">
+          <div className="flex flex-col md:flex-row gap-[64px] items-center">
+            <div className="md:w-1/2">
+              <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
+                {isIt ? "LA VISIONE" : "THE VISION"}
+              </p>
+              <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-6">
+                {isIt
+                  ? "Le aziende non falliscono per mancanza di idee. Falliscono nell'esecuzione."
+                  : "Companies don't fail from lack of ideas. They fail at execution."}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                {isIt
+                  ? "Ho visto startup brillanti implodere sotto il peso della loro stessa crescita e dipartimenti enterprise paralizzati dalla burocrazia. In 7+ anni, dal retail management alla consulenza IT, ho affinato un'unica ossessione: rendere l'operatività invisibile ed efficiente."
+                  : "I've seen brilliant startups implode under their own growth and enterprise departments paralyzed by bureaucracy. In 7+ years, from retail management to IT consulting, I've honed a single obsession: making operations invisible and efficient."}
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "Non porto solo metodologie Agile o framework complessi. Porto chiarezza. Allineo i team, elimino i colli di bottiglia e costruisco sistemi scalabili. Il mio lavoro inizia quando la strategia finisce e la realtà colpisce."
+                  : "I don't just bring Agile methodologies or complex frameworks. I bring clarity. I align teams, eliminate bottlenecks, and build scalable systems. My work begins when strategy ends and reality hits."}
+              </p>
+            </div>
+            <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Metric Cards */}
+              {[
+                { icon: "cpu", label: isIt ? "ARCHITETTURA DEI PROCESSI" : "PROCESS ARCHITECTURE", title: isIt ? "Design & Governance" : "Design & Governance" },
+                { icon: "users", label: isIt ? "ALLINEAMENTO TEAM" : "TEAM ALIGNMENT", title: isIt ? "Leadership Cross-funzionale" : "Cross-functional Leadership" },
+                { icon: "speed", label: isIt ? "EFFICIENZA SCALABILE" : "SCALABLE EFFICIENCY", title: isIt ? "Automazione & AI Ops" : "Automation & AI Ops" },
+                { icon: "euro", label: isIt ? "GESTIONE DEL VALORE" : "VALUE MANAGEMENT", title: isIt ? "Portfolio & P&L Control" : "Portfolio & P&L Control" },
+              ].map((card, i) => (
+                <div
                   key={i}
-                  href="/services"
-                  className={`group relative rounded-2xl border border-border/50 overflow-hidden transition-all duration-500 ${
-                    isTall ? "sm:row-span-2" : ""
-                  } hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5 hover:border-accent/30`}
-                  style={{
-                    background: `linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--card)))`,
-                  }}
+                  className="bg-surface-container border border-outline-variant p-6 hover:border-primary/50 transition-colors group cursor-default"
                 >
-                  {/* Hover gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative p-6 md:p-7 flex flex-col h-full">
-                    <div className={`rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:scale-105 transition-all duration-300 ${
-                      isTall ? "size-14" : "size-12"
-                    }`}>
-                      <span className={`text-accent ${isTall ? "size-7" : "size-6"}`}>
-                        {serviceIcons[svc.icon]}
-                      </span>
-                    </div>
-                    <h3 className={`font-bold tracking-tight mb-2 group-hover:text-accent transition-colors ${
-                      isTall ? "text-xl" : "text-lg"
-                    }`}>
-                      {svc.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                      {svc.desc}
-                    </p>
-                    {/* Subtle arrow indicator on hover */}
-                    <div className="mt-4 flex items-center gap-1 text-xs text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0">
-                      <span>Scopri di più</span>
-                      <ArrowRight className="size-3" />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                  <div className="text-primary mb-4">{modelIcon(card.icon)}</div>
+                  <div className="text-xs text-muted-foreground mb-1 font-semibold tracking-wide">{card.label}</div>
+                  <div className="text-lg font-semibold text-foreground">{card.title}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* ════════════════════════════════════════════
-            RISULTATI MISURABILI — metriche chiave
-          ════════════════════════════════════════════ */}
-      <Section animate>
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-muted/30 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-4">
-            {t("featuredSubtitle")}
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            {t("featuredTitle")}
-          </h2>
-        </div>
-
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {/* Metric 1 */}
-          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
-            <span className="text-4xl md:text-5xl font-bold text-accent">€500K+</span>
-            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-              {isIt ? "Portfolio progetti enterprise gestito end-to-end" : "Enterprise project portfolio managed end-to-end"}
+           RESULTS — Risultati Misurabili
+         ════════════════════════════════════════════ */}
+      <section id="results" className="py-[120px]">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-16">
+          <div className="mb-[64px] max-w-3xl">
+            <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
+              {isIt ? "IMPATTO REALE" : "REAL IMPACT"}
+            </p>
+            <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+              {isIt ? "Risultati Misurabili, Non Teoria." : "Measurable Results, Not Theory."}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {isIt
+                ? "Ogni intervento è progettato per risolvere un problema di business specifico: costi fuori controllo, time-to-market lento o qualità instabile."
+                : "Every engagement is designed to solve a specific business problem: out-of-control costs, slow time-to-market, or unstable quality."}
             </p>
           </div>
 
-          {/* Metric 2 */}
-          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
-            <span className="text-4xl md:text-5xl font-bold text-green-500">-40%</span>
-            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-              {isIt ? "Time-to-market ridotto su implementazioni Pimcore" : "Faster time-to-market on Pimcore implementations"}
-            </p>
-          </div>
-
-          {/* Metric 3 */}
-          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
-            <span className="text-4xl md:text-5xl font-bold text-accent">+25%</span>
-            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-              {isIt ? "Produttività team con l'introduzione di Agile" : "Team productivity increase with Agile adoption"}
-            </p>
-          </div>
-
-          {/* Metric 4 */}
-          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
-            <span className="text-4xl md:text-5xl font-bold text-foreground">8-12</span>
-            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-              {isIt ? "Team distribuiti coordinati su progetti enterprise" : "Distributed team members coordinated"}
-            </p>
-          </div>
-        </div>
-
-        {/* CTA to results page */}
-        <div className="text-center mt-10">
-          <Link
-            href="/about"
-            className="group inline-flex items-center gap-2 h-11 rounded-xl border border-border/60 bg-background/50 backdrop-blur-sm px-6 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5"
-          >
-            {t("aboutCta")}
-            <ArrowUpRight className="size-4" />
-          </Link>
-        </div>
-      </Section>
-
-      {/* ════════════════════════════════════════════
-            ABOUT — Storia + Timeline
-          ════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-muted/20">
-        <Section animate className="py-20! md:!py-28">
-          <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-start">
-            {/* Left: Foto */}
-            <div className="md:col-span-2">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl" />
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 bg-gradient-to-br from-accent/20 via-accent/10 to-card">
-                  <Image
-                    src="/images/riccardo-bozzato-photo-hero.jpg"
-                    alt="Riccardo Bozzato"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                    priority
-                  />
-                  <div className="absolute top-3 right-3 size-8 rounded-lg bg-background/60 backdrop-blur-sm flex items-center justify-center">
-                    <MapPin className="size-4 text-accent/60" />
+          <div className="space-y-6">
+            {/* Enterprise Case: Esse Solutions */}
+            <div className="bg-surface-container-low border border-outline-variant p-6 md:p-[64px] flex flex-col md:flex-row gap-8 items-start group hover:border-primary/30 transition-colors">
+              <div className="md:w-1/3 shrink-0">
+                <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
+                  {isIt ? "IL PROBLEMA: RITARDI ENTERPRISE" : "THE PROBLEM: ENTERPRISE DELAYS"}
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  {isIt ? "Gestione Portfolio €500K+" : "Managing a €500K+ Portfolio"}
+                </h3>
+                <div className="text-xs tracking-[0.1em] text-muted-foreground mb-6">
+                  {isIt ? "ESSE SOLUTIONS | 19 MESI" : "ESSE SOLUTIONS | 19 MONTHS"}
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="text-primary text-2xl font-bold w-16">-40%</div>
+                    <div className="text-sm text-muted-foreground">
+                      {isIt ? "Time-to-market su e-commerce complessi" : "Faster time-to-market on complex e-commerce"}
+                    </div>
                   </div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-primary text-2xl font-bold w-16">+25%</div>
+                    <div className="text-sm text-muted-foreground">
+                      {isIt ? "Produttività team distribuiti (8-12 pax)" : "Distributed team productivity (8-12 people)"}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="md:w-2/3 border-t md:border-t-0 md:border-l border-outline-variant pt-6 md:pt-0 md:pl-8">
+                <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+                  {isIt
+                    ? "Un portfolio di progetti complessi (Pimcore, Magento, Shopware) soffriva di ritardi nelle consegne e frammentazione della comunicazione. Ho introdotto un framework Agile su misura, ripristinando la visibilità sullo stato di avanzamento e allineando le aspettative degli stakeholder enterprise."
+                    : "A portfolio of complex projects (Pimcore, Magento, Shopware) suffered from delivery delays and communication fragmentation. I introduced a tailored Agile framework, restoring visibility into progress and aligning enterprise stakeholder expectations."}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[isIt ? "Agile / Scrum" : "Agile / Scrum", "PIM/DAM", isIt ? "Stakeholder Management" : "Stakeholder Management"].map((tag) => (
+                    <span key={tag} className="px-3 py-1 bg-surface-container-highest text-xs text-muted-foreground font-mono">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
 
-            {/* Right: Content + Timeline */}
-            <div className="md:col-span-3 space-y-8">
-              <div>
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/40 font-medium">
-                  Chi sono
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mt-2 mb-4">
-                  {t("aboutTitle")}
-                </h2>
-                <p className="text-muted-foreground text-base leading-relaxed">
-                  {t("aboutText")}
-                </p>
-              </div>
-
-              {/* Timeline */}
-              <div className="space-y-0 timeline-line pl-8">
-                {[
-                  { year: "2018–2021", text: isIt ? "Retail Management — In's Mercato, Aldi, Terranova (leadership operativa, KPI, team)" : "Retail Management — In's Mercato, Aldi, Terranova (operational leadership, KPIs, team)" },
-                  { year: "2022–2024", text: isIt ? "Accenture — IT Systems Specialist (+30% efficienza, -15% errori, SAP UI5)" : "Accenture — IT Systems Specialist (+30% efficiency, -15% errors, SAP UI5)" },
-                  { year: "2024–2026", text: isIt ? "Esse Solutions — PM (€500K portfolio, team 8-12, Agile, -40% time-to-market)" : "Esse Solutions — PM (€500K portfolio, teams of 8-12, Agile, -40% time-to-market)" },
-                  { year: "2026", text: isIt ? "Ciao Elsa — Head of Operations (governance operativa, KPI, processi da zero)" : "Ciao Elsa — Head of Operations (ops governance, KPIs, processes from scratch)" },
-                ].map((item, i) => (
-                  <div key={i} className="relative pb-6 group">
-                    <div className="timeline-dot absolute -left-8 top-1.5 group-hover:scale-125 transition-transform duration-300" />
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-xs font-mono text-accent/60 shrink-0 w-20">{item.year}</span>
-                      <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{item.text}</span>
+            {/* Consulting Case: Accenture */}
+            <div className="bg-surface-container-low border border-outline-variant p-6 md:p-[64px] flex flex-col md:flex-row gap-8 items-start group hover:border-primary/30 transition-colors">
+              <div className="md:w-1/3 shrink-0">
+                <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
+                  {isIt ? "IL PROBLEMA: INEFFICIENZA OPERATIVA" : "THE PROBLEM: OPERATIONAL INEFFICIENCY"}
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  {isIt ? "Automazione Processi IT" : "IT Process Automation"}
+                </h3>
+                <div className="text-xs tracking-[0.1em] text-muted-foreground mb-6">
+                  {isIt ? "ACCENTURE | 2022-2024" : "ACCENTURE | 2022-2024"}
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="text-primary text-2xl font-bold w-16">+30%</div>
+                    <div className="text-sm text-muted-foreground">
+                      {isIt ? "Efficienza operativa nei processi core" : "Operational efficiency in core processes"}
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-center gap-4">
+                    <div className="text-primary text-2xl font-bold w-16">-15%</div>
+                    <div className="text-sm text-muted-foreground">
+                      {isIt ? "Tasso di errore manuale" : "Manual error rate reduction"}
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <Link
-                href="/about"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent/80 border border-accent/20 rounded-xl px-5 py-2.5 hover:bg-accent/5"
-              >
-                {t("aboutCta")}
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <div className="md:w-2/3 border-t md:border-t-0 md:border-l border-outline-variant pt-6 md:pt-0 md:pl-8">
+                <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+                  {isIt
+                    ? "Nel settore banking/insurance, i processi manuali generavano costi occulti e rischi di compliance. Come IT Systems Specialist, ho mappato e automatizzato i flussi critici utilizzando SAP UI5, creando interfacce più intuitive e riducendo drasticamente i colli di bottiglia operativi."
+                    : "In the banking/insurance sector, manual processes generated hidden costs and compliance risks. As an IT Systems Specialist, I mapped and automated critical flows using SAP UI5, creating more intuitive interfaces and drastically reducing operational bottlenecks."}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[isIt ? "Process Automation" : "Process Automation", "SAP UI5", isIt ? "Banking / Insurance" : "Banking / Insurance"].map((tag) => (
+                    <span key={tag} className="px-3 py-1 bg-surface-container-highest text-xs text-muted-foreground font-mono">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </Section>
+        </div>
       </section>
 
       {/* ════════════════════════════════════════════
-           FREEBIE CTA — Full-bleed con pattern unico
+           JOURNEY — Il Viaggio Strategico (Timeline)
          ════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden border-t border-border/30">
-        {/* Noise overlay */}
-        <div className="noise-overlay" />
+      <section id="journey" className="bg-surface-container-lowest py-[120px] border-y border-outline-variant relative">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-16">
+          <div className="mb-[120px] text-center">
+            <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
+              {isIt ? "IL VIAGGIO STRATEGICO" : "THE STRATEGIC JOURNEY"}
+            </p>
+            <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold">
+              {isIt ? "L'evoluzione di un Operation Leader" : "The Evolution of an Operations Leader"}
+            </h2>
+          </div>
 
-        {/* Pattern: diagonal grid */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(45deg, hsl(var(--accent)) 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-
-        {/* Ambient glow laterale */}
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-accent/3 blur-[100px] pointer-events-none" />
-
-        <Section animate className="py-20! md:!py-28 relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            {/* Badge minimal */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-accent/8 px-4 py-1.5 text-xs text-accent font-medium border border-accent/15">
-              <Download className="size-3" />
-              GRATIS — Accesso Immediato
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]">
-                {t("freebieTitle")}
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed">
-                {t("freebieDesc")}
+          <div className="max-w-3xl mx-auto relative pl-8 md:pl-16 timeline-line">
+            {/* Event 4: Ciao Elsa (Current) */}
+            <div className="relative pb-16">
+              <div className="absolute -left-[41px] md:-left-[73px] top-1 w-5 h-5 bg-primary rounded-full shadow-[0_0_15px_rgba(78,222,163,0.5)] border-4 border-background z-10" />
+              <div className="text-xs text-primary mb-1 font-semibold tracking-wide">2026 — {isIt ? "PRESENTE" : "PRESENT"}</div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                {isIt ? "Head of Operations" : "Head of Operations"}
+              </h3>
+              <div className="text-xs tracking-[0.1em] text-muted-foreground mb-4">
+                {isIt ? "CIAO ELSA" : "CIAO ELSA"}
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "Costruzione da zero della governance operativa, definizione KPI strategici e strutturazione dei processi per la scalabilità del business."
+                  : "Built operational governance from scratch, defined strategic KPIs, and structured processes for business scalability."}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <Link
-                href="/freebie"
-                className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 px-8 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
-              >
-                {/* Shimmer on hover */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-all duration-700" />
-                <span className="relative z-10 flex items-center gap-2">
-                  <Download className="size-4" />
-                  {t("freebieCta")}
-                </span>
-              </Link>
+            {/* Event 3: Esse Solutions */}
+            <div className="relative pb-16">
+              <div className="absolute -left-[41px] md:-left-[73px] top-1 w-5 h-5 bg-surface-container-high rounded-full border-4 border-background z-10" />
+              <div className="text-xs text-muted-foreground mb-1 font-semibold tracking-wide">2024 — 2026</div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                {isIt ? "Senior Delivery Manager" : "Senior Delivery Manager"}
+              </h3>
+              <div className="text-xs tracking-[0.1em] text-muted-foreground mb-4">
+                {isIt ? "ESSE SOLUTIONS" : "ESSE SOLUTIONS"}
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "Gestione portfolio enterprise, leadership su team multidisciplinari e trasformazione Agile per accelerare il time-to-market."
+                  : "Managed enterprise portfolio, led multidisciplinary teams, and drove Agile transformation to accelerate time-to-market."}
+              </p>
             </div>
 
-            {/* Trust */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground/50">
-              <span>No spam · Cancellati quando vuoi</span>
-              <span className="hidden sm:inline text-muted-foreground/20">|</span>
-              <span>PDF consegnato via email</span>
-              <span className="hidden sm:inline text-muted-foreground/20">|</span>
-              <span>Usato da 500+ professionisti</span>
+            {/* Event 2: Accenture */}
+            <div className="relative pb-16">
+              <div className="absolute -left-[41px] md:-left-[73px] top-1 w-5 h-5 bg-surface-container-high rounded-full border-4 border-background z-10" />
+              <div className="text-xs text-muted-foreground mb-1 font-semibold tracking-wide">2022 — 2024</div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                {isIt ? "IT Systems Specialist" : "IT Systems Specialist"}
+              </h3>
+              <div className="text-xs tracking-[0.1em] text-muted-foreground mb-4">
+                {isIt ? "ACCENTURE" : "ACCENTURE"}
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "Ottimizzazione e automazione dei processi in ambito bancario e assicurativo, migliorando efficienza e riducendo il margine d'errore."
+                  : "Optimized and automated processes in banking and insurance, improving efficiency and reducing error margins."}
+              </p>
+            </div>
+
+            {/* Event 1: Retail */}
+            <div className="relative">
+              <div className="absolute -left-[41px] md:-left-[73px] top-1 w-5 h-5 bg-surface-container-high rounded-full border-4 border-background z-10" />
+              <div className="text-xs text-muted-foreground mb-1 font-semibold tracking-wide">2018 — 2021</div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                {isIt ? "Le Fondamenta nel Retail" : "Foundations in Retail"}
+              </h3>
+              <div className="text-xs tracking-[0.1em] text-muted-foreground mb-4">
+                IN'S, ALDI, TERRANOVA
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {isIt
+                  ? "La palestra per la leadership operativa: gestione di store, team fisici, controllo KPI e operations sul campo ad alto ritmo."
+                  : "The training ground for operational leadership: managing stores, physical teams, KPI control, and high-tempo field operations."}
+              </p>
             </div>
           </div>
-        </Section>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+           LEAD MAGNET — Operational Chaos Diagnostic
+         ════════════════════════════════════════════ */}
+      <section className="max-w-[1200px] mx-auto px-4 md:px-16 py-[120px]">
+        <div className="bg-surface-container p-6 md:p-[64px] border-l-4 border-primary relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <div className="text-xs text-primary mb-4 font-semibold tracking-wider">
+                {isIt ? "RISORSA STRATEGICA GRATUITA" : "FREE STRATEGIC RESOURCE"}
+              </div>
+              <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+                {isIt ? "Operational Chaos Diagnostic" : "Operational Chaos Diagnostic"}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                {isIt
+                  ? "Prima di scalare, devi sapere cosa sta frenando il tuo team. Scarica il framework in 10 punti per mappare, misurare e prioritizzare il debito operativo nascosto nella tua azienda."
+                  : "Before scaling, you need to know what's holding your team back. Download the 10-point framework to map, measure, and prioritize the hidden operational debt in your company."}
+              </p>
+              <div className="flex flex-wrap gap-6 mt-6 opacity-80">
+                <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
+                  <Check className="size-4 text-primary" /> {isIt ? "Assessment Rapido" : "Quick Assessment"}
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
+                  <Check className="size-4 text-primary" /> {isIt ? "Framework Azionabile" : "Actionable Framework"}
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
+                  <Check className="size-4 text-primary" /> Zero Fluff
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-auto mt-8 md:mt-0">
+              <Link
+                href="/freebie"
+                className="w-full bg-primary text-black px-12 py-5 text-xl font-semibold flex items-center justify-center gap-3 transition-all hover:scale-105 active:scale-95 luminous-glow"
+              >
+                <BarChart3 className="size-6" />
+                {isIt ? "Ottieni l'Accesso" : "Get Access"}
+              </Link>
+              <p className="text-center text-xs text-muted-foreground mt-3 opacity-50">
+                {isIt ? "PDF Immediato. No spam." : "Instant PDF. No spam."}
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );

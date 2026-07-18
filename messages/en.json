@@ -6,6 +6,9 @@
               },
     "nav":  {
                 "home":  "Home",
+        "vision": "The Vision",
+        "results": "Results",
+        "journey": "The Journey",
                 "projects":  "Projects",
                 "panificio":  "Panificio",
                 "trova":  "Trova",

@@ -1,175 +1,74 @@
 "use client";
 
-import { useTranslations, useLocale } from "next-intl";
-import { Github, Linkedin, Mail, Phone, MapPin, Hexagon, ArrowUpRight, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { MapPin, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
-import { ACTIVE_PROFILES } from "@/lib/social";
-
-const SOCIAL_ICONS: Record<string, typeof Github> = {
-  github: Github,
-  linkedin: Linkedin,
-  email: Mail,
-};
-
-const FOOTER_LINKS = [
-  { key: "home", href: "/" },
-  { key: "services", href: "/services" },
-  { key: "projects", href: "/projects" },
-  { key: "freebie", href: "/freebie" },
-  { key: "blog", href: "/blog" },
-  { key: "about", href: "/about" },
-  { key: "contact", href: "/contact" },
-];
 
 export default function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
-  const locale = useLocale();
-  const isIt = locale === "it";
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-border/50 bg-gradient-to-b from-transparent via-muted/10 to-muted/20">
-      {/* Top decorative gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="grid gap-12 md:grid-cols-4">
-          {/* Brand Column */}
-          <div className="md:col-span-1">
-            <Link
-              href="/"
-              className="group inline-flex items-center gap-2.5"
-            >
-              <div className="flex items-center justify-center size-8 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                <Hexagon className="size-5 text-accent" />
-              </div>
-              <span className="text-base font-bold tracking-tight">
-                Riccardo<span className="text-accent">.</span>Bozzato
-              </span>
-            </Link>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Senior Delivery Manager | Head of Operations | PMP®
-            </p>
-            <div className="mt-5 space-y-2.5">
-              <div className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                <MapPin className="size-4 shrink-0 text-accent/60" />
-                <span>Legnaro, PD, Italy</span>
-              </div>
-              <a
-                href="tel:+393892139542"
-                className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-accent group"
-              >
-                <Phone className="size-4 shrink-0 text-accent/60" />
-                <span>+39 389 213 9542</span>
-              </a>
-              <a
-                href="mailto:riccardobozzato@gmail.com"
-                className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-accent group"
-              >
-                <Mail className="size-4 shrink-0 text-accent/60" />
-                <span className="truncate">riccardobozzato@gmail.com</span>
-              </a>
+    <footer className="bg-surface-container-lowest py-16 border-t border-outline-variant">
+      <div className="flex flex-col md:flex-row justify-between items-start px-4 md:px-16 max-w-[1200px] mx-auto gap-6">
+        {/* Brand */}
+        <div className="max-w-xs">
+          <div className="text-xl font-bold text-foreground mb-4">Riccardo Bozzato</div>
+          <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+            Senior Delivery Manager | Head of Operations | PMP®
+          </p>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="size-4" />
+              Legnaro, PD, Italy
             </div>
+            <a href="mailto:riccardobozzato@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Mail className="size-4" />
+              riccardobozzato@gmail.com
+            </a>
           </div>
+        </div>
 
-          {/* Navigation Links */}
+        {/* Links */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-16 flex-1">
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              {isIt ? "Naviga" : "Navigate"}
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">
+              {nav("home") === "Home" ? "NAVIGA" : "NAVIGATE"}
             </h4>
-            <ul className="space-y-2.5">
-              {FOOTER_LINKS.map((link) => (
-                <li key={link.key}>
-                  <Link
-                    href={link.href}
-                    className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-accent group"
-                  >
-                    {nav(link.key)}
-                    <ArrowUpRight className="size-3 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-4">
+              <li><Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("home")}</Link></li>
+              <li><Link href="/#vision" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("vision")}</Link></li>
+              <li><Link href="/#results" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("results")}</Link></li>
+              <li><Link href="/#journey" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("journey")}</Link></li>
             </ul>
           </div>
-
-          {/* Projects Quick Links */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              {isIt ? "Progetti" : "Projects"}
-            </h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/trova" className="text-sm text-muted-foreground transition-colors hover:text-accent">Trova</Link>
-              </li>
-              <li>
-                <Link href="/projects/vulnclaw" className="text-sm text-muted-foreground transition-colors hover:text-accent">VulnClaw</Link>
-              </li>
-              <li>
-                <Link href="/projects/panificio" className="text-sm text-muted-foreground transition-colors hover:text-accent">Panificio Da Sergio</Link>
-              </li>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">NETWORK</h4>
+            <ul className="space-y-4">
+              <li><a href="https://linkedin.com/in/riccardobozzato" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">LinkedIn</a></li>
+              <li><a href="https://github.com/Riccardobozzato94" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">GitHub</a></li>
             </ul>
           </div>
-
-          {/* Newsletter & Social */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              {isIt ? "Diagnostica Gratuita" : "Free Diagnostic"}
-            </h4>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              {isIt
-                ? "Ricevi il framework di 3 ore per mappare, misurare e prioritizzare il debito operativo — prima che diventi crisi."
-                : "Get the Operational Chaos Diagnostic — a 3-hour framework to map, measure, and prioritize operational debt."}
-            </p>
-            <Link
-              href="/freebie"
-              className="group inline-flex items-center gap-2 h-10 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-4 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
-            >
-              <Sparkles className="size-4" />
-              {isIt ? "Scarica Gratis" : "Download Free"}
-              <ArrowUpRight className="size-3.5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
-            </Link>
-            <div className="mt-6">
-              <h5 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-3">
-                {isIt ? "Contatti" : "Connect"}
-              </h5>
-              <div className="flex flex-wrap gap-3">
-                {ACTIVE_PROFILES.map(({ key, href, label }) => {
-                  const Icon = SOCIAL_ICONS[key];
-                  if (!Icon) return null;
-                  return (
-                    <a
-                      key={key}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center size-10 rounded-xl border border-border/60 text-muted-foreground transition-all duration-200 hover:border-accent/40 hover:text-accent hover:bg-accent/5 hover:-translate-y-0.5"
-                      aria-label={label}
-                    >
-                      <Icon className="size-4.5" />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="mt-6 space-y-2">
-              <Link
-                href="/privacy"
-                className={cn(
-                  "inline-block text-xs text-muted-foreground/50 transition-colors hover:text-accent",
-                )}
-              >
-                {isIt ? "Informativa Privacy" : "Privacy Policy"}
-              </Link>
-              <p className="text-xs text-muted-foreground/40">
-                {t("builtWith")}
-              </p>
-              <p className="text-xs text-muted-foreground/30">
-                {t("copyright", { year: currentYear })}
-              </p>
-            </div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">LEGAL</h4>
+            <ul className="space-y-4">
+              <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><span className="text-sm text-muted-foreground/40">Terms of Service</span></li>
+            </ul>
           </div>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div className="max-w-[1200px] mx-auto px-4 md:px-16 mt-12 pt-6 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-xs text-muted-foreground/60">
+          &copy; {currentYear} Riccardo Bozzato. Strategic Execution. All rights reserved.
+        </p>
+        <div className="flex items-center gap-2 opacity-40 grayscale">
+          <span className="text-[10px] font-mono text-muted-foreground">NEXT.JS</span>
+          <span className="text-[10px] font-mono text-muted-foreground">SHADCN/UI</span>
+          <span className="text-[10px] font-mono text-muted-foreground">TAILWIND CSS</span>
         </div>
       </div>
     </footer>
