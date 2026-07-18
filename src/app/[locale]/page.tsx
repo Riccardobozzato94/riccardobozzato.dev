@@ -2,9 +2,8 @@
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Download, CheckCircle2, Sparkles, Cpu, Cloud, Zap, GitBranch, Lightbulb, Package, Calendar, Terminal, MapPin, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Download, Sparkles, Cpu, Cloud, Zap, GitBranch, Lightbulb, Package, MapPin, ArrowUpRight } from "lucide-react";
 import Section from "@/components/Section";
-import ProjectCard from "@/components/ProjectCard";
 
 const baseUrl = SITE_URL;
 
@@ -185,7 +184,7 @@ export default async function HomePage({ params }: Props) {
       </Section>
 
       {/* ════════════════════════════════════════════
-            CASE STUDIES — risultati reali
+            RISULTATI MISURABILI — metriche chiave
           ════════════════════════════════════════════ */}
       <Section animate>
         <div className="text-center mb-14">
@@ -197,49 +196,49 @@ export default async function HomePage({ params }: Props) {
           </h2>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-6">
-          {/* Case 1 (featured): Esse Solutions */}
-          <ProjectCard
-            title="€500K+ Portfolio — Esse Solutions"
-            subtitle={isIt ? "Project Manager | 19 mesi" : "Project Manager | 19 months"}
-            description={isIt
-              ? "Gestito portfolio enterprise da €500K+, coordinato team distribuiti 8-12 persone. Introdotto Agile: +25% produttività, -20% tempi completamento. Implementato Pimcore per clienti manufacturing/food/furniture: -40% time-to-market."
-              : "Managed a €500K+ enterprise portfolio, coordinating distributed teams of 8-12. Introduced Agile: +25% productivity, -20% completion times. Led Pimcore implementations for manufacturing/food/furniture clients: -40% time-to-market."}
-            tags={["PIM/DAM", "Agile", "Magento", "Shopware"]}
-            href="/about"
-            image="/assets/trova-banner-1600x900.png"
-            badge={isIt ? "Enterprise" : "Enterprise"}
-            badgeColor="bg-accent/10 text-accent"
-            featured
-          />
-
-          {/* Case 2 + 3: Accenture + Trova+VulnClaw */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <ProjectCard
-              title="Process Automation — Accenture"
-              subtitle={isIt ? "IT Systems Specialist | 2022-2024" : "IT Systems Specialist | 2022-2024"}
-              description={isIt
-                ? "Automazione processi per clienti banking/insurance con SAP UI5 e JS. +30% efficienza operativa, -15% errori amministrativi, -20% tempi di risposta sistema."
-                : "Process automation for banking/insurance clients using SAP UI5 and JS. +30% operational efficiency, -15% administrative errors, -20% system response times."}
-              tags={["Automation", "SAP UI5", "Enterprise"]}
-              href="/about"
-              image="/assets/vulnclaw-banner-1600x900.png"
-              badge={isIt ? "Consulenza" : "Consulting"}
-              badgeColor="bg-blue-500/10 text-blue-400"
-            />
-            <ProjectCard
-              title={isIt ? "Trova + VulnClaw" : "Trova + VulnClaw"}
-              subtitle={isIt ? "Side projects | Product thinking" : "Side projects | Product thinking"}
-              description={isIt
-                ? "Trova: boilerplate SaaS (Next.js 16, Stripe, Auth) — aiuta founder a lanciare in giorni. VulnClaw: CLI open-source per penetration testing con AI (600+ stelle GitHub)."
-                : "Trova: SaaS boilerplate (Next.js 16, Stripe, Auth) — helps founders launch in days. VulnClaw: AI penetration testing open-source CLI (600+ GitHub stars)."}
-              tags={["SaaS", "Open Source", "AI"]}
-              href="/projects"
-              image="/assets/panificio-banner-1600x900.png"
-              badge={isIt ? "Prodotti" : "Products"}
-              badgeColor="bg-amber-500/10 text-amber-400"
-            />
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {/* Metric 1 */}
+          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
+            <span className="text-4xl md:text-5xl font-bold text-accent">€500K+</span>
+            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+              {isIt ? "Portfolio progetti enterprise gestito end-to-end" : "Enterprise project portfolio managed end-to-end"}
+            </p>
           </div>
+
+          {/* Metric 2 */}
+          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
+            <span className="text-4xl md:text-5xl font-bold text-green-500">-40%</span>
+            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+              {isIt ? "Time-to-market ridotto su implementazioni Pimcore" : "Faster time-to-market on Pimcore implementations"}
+            </p>
+          </div>
+
+          {/* Metric 3 */}
+          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
+            <span className="text-4xl md:text-5xl font-bold text-accent">+25%</span>
+            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+              {isIt ? "Produttività team con l'introduzione di Agile" : "Team productivity increase with Agile adoption"}
+            </p>
+          </div>
+
+          {/* Metric 4 */}
+          <div className="relative group rounded-2xl border border-border/50 bg-card p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/30">
+            <span className="text-4xl md:text-5xl font-bold text-foreground">8-12</span>
+            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+              {isIt ? "Team distribuiti coordinati su progetti enterprise" : "Distributed team members coordinated"}
+            </p>
+          </div>
+        </div>
+
+        {/* CTA to results page */}
+        <div className="text-center mt-10">
+          <Link
+            href="/about"
+            className="group inline-flex items-center gap-2 h-11 rounded-xl border border-border/60 bg-background/50 backdrop-blur-sm px-6 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5"
+          >
+            {t("aboutCta")}
+            <ArrowUpRight className="size-4" />
+          </Link>
         </div>
       </Section>
 
