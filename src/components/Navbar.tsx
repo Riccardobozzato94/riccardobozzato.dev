@@ -112,10 +112,10 @@ export default function Navbar() {
       <div
         className={cn(
           "md:hidden transition-all duration-300 overflow-hidden border-t border-outline-variant/30",
-          open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0",
+          open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
         )}
       >
-        <nav className="flex flex-col gap-1 bg-background/95 backdrop-blur-xl px-4 pb-5 pt-3">
+        <nav className="flex flex-col gap-1 bg-background/95 backdrop-blur-xl px-4 pb-5 pt-3 overflow-y-auto">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.key}

@@ -19,9 +19,9 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "img-src 'self' data: https:",
-      "script-src 'self' https://unpkg.com",
-      "style-src 'self' 'unsafe-inline'",
-      "font-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://unpkg.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com",
       "connect-src 'self' https://api.resend.com",
       "object-src 'none'",
       "base-uri 'self'",
