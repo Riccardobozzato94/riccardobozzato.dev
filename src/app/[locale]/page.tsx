@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Image from "next/image";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -64,10 +65,22 @@ export default async function HomePage({ params }: Props) {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-24">
           <div className="max-w-3xl mx-auto text-center">
-            {/* Role badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-8">
-              <MapPin className="size-3.5" />
-              <span>Legnaro, PD — {isIt ? "Senior Delivery Manager & Head of Operations" : "Senior Delivery Manager & Head of Operations"} | PMP®</span>
+            {/* Foto + Role badge */}
+            <div className="flex flex-col items-center gap-4 mb-8">
+              <div className="size-20 rounded-full overflow-hidden ring-2 ring-accent/20 ring-offset-2 ring-offset-background">
+                <Image
+                  src="/images/riccardo-bozzato-photo-linkedin.jpg"
+                  alt="Riccardo Bozzato"
+                  width={80}
+                  height={80}
+                  className="object-cover size-full"
+                  priority
+                />
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent">
+                <MapPin className="size-3.5" />
+                <span>Legnaro, PD — {isIt ? "Senior Delivery Manager & Head of Operations" : "Senior Delivery Manager & Head of Operations"} | PMP®</span>
+              </div>
             </div>
 
             <div className="space-y-6 mb-10">
@@ -248,20 +261,20 @@ export default async function HomePage({ params }: Props) {
       <section className="relative overflow-hidden bg-muted/20">
         <Section animate className="py-20! md:!py-28">
           <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-start">
-            {/* Left: RB avatar placeholder */}
+            {/* Left: Foto */}
             <div className="md:col-span-2">
               <div className="relative">
                 <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 bg-gradient-to-br from-accent/20 via-accent/10 to-card">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="size-24 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4 ring-2 ring-accent/30">
-                        <span className="text-3xl font-bold text-accent">RB</span>
-                      </div>
-                      <p className="text-xs text-muted-foreground/50 font-meta">PMP®</p>
-                    </div>
-                  </div>
-                  <div className="absolute top-3 right-3 size-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Image
+                    src="/images/riccardo-bozzato-photo-hero.jpg"
+                    alt="Riccardo Bozzato"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    priority
+                  />
+                  <div className="absolute top-3 right-3 size-8 rounded-lg bg-background/60 backdrop-blur-sm flex items-center justify-center">
                     <MapPin className="size-4 text-accent/60" />
                   </div>
                 </div>
