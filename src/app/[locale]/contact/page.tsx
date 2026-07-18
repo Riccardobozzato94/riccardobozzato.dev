@@ -7,10 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Github, Linkedin, Send, MessageSquare, Sparkles } from "lucide-react";
+import { useLocale } from "next-intl";
 import Section from "@/components/Section";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
+  const locale = useLocale();
+  const isIt = locale === "it";
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -49,9 +52,9 @@ export default function ContactPage() {
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px]" />
         </div>
         <Section className="pt-0! pb-0! text-center relative">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
             <MessageSquare className="size-3.5" />
-            Contact
+            {isIt ? "Contattami" : "Contact"}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
             {t("title")}
@@ -136,7 +139,7 @@ export default function ContactPage() {
                 <CardContent className="p-6 md:p-8 space-y-6">
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background px-4 py-1.5 text-xs font-medium text-muted-foreground mb-2">
                     <Sparkles className="size-3" />
-                    Reach out
+                    {isIt ? "Scrivimi" : "Reach out"}
                   </div>
                   <a
                     href={`mailto:${t("email")}`}
@@ -146,7 +149,7 @@ export default function ContactPage() {
                       <Mail className="size-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">Email</p>
+                      <p className="text-xs text-muted-foreground">{isIt ? "Email" : "Email"}</p>
                       <p className="font-medium text-foreground/90">{t("email")}</p>
                     </div>
                   </a>
@@ -183,7 +186,7 @@ export default function ContactPage() {
 
               <div className="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 via-card to-card p-6 md:p-8 text-center">
                 <p className="text-sm text-muted-foreground">
-                  Prefer a quick call? Reach out on{" "}
+                  {isIt ? "Preferisci una chiamata veloce? Contattami su" : "Prefer a quick call? Reach out on"}{" "}
                   <a
                     href={`https://${t("linkedin")}`}
                     target="_blank"

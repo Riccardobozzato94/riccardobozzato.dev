@@ -50,8 +50,10 @@ interface Step {
   desc: string;
 }
 
-export default async function ServicesPage() {
+export default async function ServicesPage({ params }: Props) {
+  const { locale } = await params;
   const t = await getTranslations("services");
+  const isIt = locale === "it";
   const packages = t.raw("packages") as Package[];
   const approach = t.raw("approach") as { title: string; steps: Step[] };
 
@@ -75,7 +77,7 @@ export default async function ServicesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <Sparkles className="size-3.5" />
-              {t("subtitle")}
+              {isIt ? "Risultati misurabili" : "Measurable results"}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -153,10 +155,11 @@ export default async function ServicesPage() {
             <div className="size-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
               <Calendar className="size-6 text-accent" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Let&apos;s Talk</h2>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{isIt ? "Parliamone" : "Let's Talk"}</h2>
             <p className="text-muted-foreground">
-              Book a free 15-minute discovery call. No commitment, just a conversation
-              about what you&apos;re building and how I can help.
+              {isIt
+                ? "Prenota una chiamata conoscitiva gratuita di 15 minuti. Nessun impegno, solo una chiacchierata su cosa stai costruendo e come posso aiutarti."
+                : "Book a free 15-minute discovery call. No commitment, just a conversation about what you're building and how I can help."}
             </p>
             <Button asChild className="h-12 rounded-xl px-8 text-base shadow-lg shadow-primary/10 hover:-translate-y-0.5 transition-all duration-300">
               <Link href="/contact">

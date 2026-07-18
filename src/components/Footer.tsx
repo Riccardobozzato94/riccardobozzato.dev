@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Github, Linkedin, Mail, Phone, MapPin, Hexagon, ArrowUpRight, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
@@ -25,6 +25,8 @@ const FOOTER_LINKS = [
 export default function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
+  const locale = useLocale();
+  const isIt = locale === "it";
   const currentYear = new Date().getFullYear();
 
   return (
@@ -75,7 +77,7 @@ export default function Footer() {
           {/* Navigation Links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              Navigate
+              {isIt ? "Naviga" : "Navigate"}
             </h4>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.map((link) => (
@@ -95,7 +97,7 @@ export default function Footer() {
           {/* Projects Quick Links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              Projects
+              {isIt ? "Progetti" : "Projects"}
             </h4>
             <ul className="space-y-2.5">
               <li>
@@ -113,23 +115,24 @@ export default function Footer() {
           {/* Newsletter & Social */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              Free Diagnostic
+              {isIt ? "Diagnostica Gratuita" : "Free Diagnostic"}
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Get the Operational Chaos Diagnostic — a 3-hour framework to map,
-              measure, and prioritize operational debt.
+              {isIt
+                ? "Ricevi il framework di 3 ore per mappare, misurare e prioritizzare il debito operativo — prima che diventi crisi."
+                : "Get the Operational Chaos Diagnostic — a 3-hour framework to map, measure, and prioritize operational debt."}
             </p>
             <Link
               href="/freebie"
               className="group inline-flex items-center gap-2 h-10 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-4 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
             >
               <Sparkles className="size-4" />
-              Download Free
+              {isIt ? "Scarica Gratis" : "Download Free"}
               <ArrowUpRight className="size-3.5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
             </Link>
             <div className="mt-6">
               <h5 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-3">
-                Connect
+                {isIt ? "Contatti" : "Connect"}
               </h5>
               <div className="flex flex-wrap gap-3">
                 {ACTIVE_PROFILES.map(({ key, href, label }) => {
@@ -157,7 +160,7 @@ export default function Footer() {
                   "inline-block text-xs text-muted-foreground/50 transition-colors hover:text-accent",
                 )}
               >
-                Privacy Policy
+                {isIt ? "Informativa Privacy" : "Privacy Policy"}
               </Link>
               <p className="text-xs text-muted-foreground/40">
                 {t("builtWith")}

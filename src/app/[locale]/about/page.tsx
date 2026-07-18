@@ -37,31 +37,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const timeline = [
   {
-    period: "2017 – 2019",
-    title: "Retail Management",
+    period: "2018 – 2021",
+    title: "Gestione Retail",
     company: "In's Mercato · Aldi · Terranova",
-    desc: "Operational leadership, team management, KPIs — learned how operations work on the ground, hands-on.",
+    desc: "Leadership operativa, gestione team, KPI. Ho imparato le operations sul campo, con le mani nei processi.",
     icon: "▹",
   },
   {
-    period: "2019 – 2022",
-    title: "Enterprise Application Development",
+    period: "2022 – 2024",
+    title: "Sviluppo Applicazioni Enterprise",
     company: "Accenture",
-    desc: "SAP UI5, JavaScript, process automation. Delivered +30% efficiency, -15% administrative errors. Enterprise scale, measurable impact.",
+    desc: "SAP UI5, JavaScript, automazione processi. +30% efficienza, -15% errori amministrativi. Scala enterprise, impatto misurabile.",
     icon: "▹",
   },
   {
-    period: "2022 – 2025",
-    title: "Digital Project Portfolio Manager",
+    period: "2024 – 2026",
+    title: "Project Manager Portfolio Digitale",
     company: "Esse Solutions",
-    desc: "Managed €500K portfolio coordinating 8-12 person distributed teams across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). Introduced Agile: +25% productivity, -40% time-to-market.",
+    desc: "Gestito portfolio da €500K coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Introdotto Agile: +25% produttività, -40% time-to-market.",
     icon: "▹",
   },
   {
-    period: "2025 → Present",
-    title: "Independent Consultant",
-    company: "Self-employed — Legnaro, PD",
-    desc: "Serverless architecture, AI agent workflows, system integration, automation. Building Trova (SaaS boilerplate) and VulnClaw (AI pentesting) as open-source side projects.",
+    period: "2026 → Presente",
+    title: "Consulente Indipendente",
+    company: "Partita IVA — Legnaro, PD",
+    desc: "Architetture operative scalabili per aziende digitali. Interim Head of Operations, process design, KPI governance. PMP® certificato. Costruisco Trova (boilerplate SaaS) e VulnClaw (AI pentesting).",
     icon: "▹",
   },
 ] as const;
@@ -118,7 +118,7 @@ export default async function AboutPage({ params }: Props) {
                       <div className="size-28 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4 ring-2 ring-accent/30 shadow-lg shadow-accent/10">
                         <span className="text-4xl font-bold text-accent">RB</span>
                       </div>
-                      <p className="text-xs text-muted-foreground/40 font-mono">&gt; faceless builder</p>
+                      <p className="text-xs text-muted-foreground/40 font-mono">&gt; operations builder</p>
                       <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1.5 text-xs text-accent">
                         <PawPrint className="size-3.5" />
                         co-pilota a 4 zampe
@@ -132,7 +132,7 @@ export default async function AboutPage({ params }: Props) {
                   {/* Dog badge bottom-left */}
                   <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-lg bg-card/80 backdrop-blur-sm border border-border/50 px-3 py-1.5 text-xs text-muted-foreground">
                     <PawPrint className="size-3.5 text-accent/70" />
-                    Aussie by my side
+                    {isIt ? "co-pilota a 4 zampe" : "aussie co-pilot"}
                   </div>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default async function AboutPage({ params }: Props) {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <Briefcase className="size-5 text-accent" />
-              <h2 className="text-2xl font-bold tracking-tight">Skills & Stack</h2>
+              <h2 className="text-2xl font-bold tracking-tight">{isIt ? "Competenze" : "Skills & Stack"}</h2>
             </div>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, i) => (
@@ -269,7 +269,7 @@ export default async function AboutPage({ params }: Props) {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <GraduationCap className="size-5 text-accent" />
-              <h2 className="text-2xl font-bold tracking-tight">Certifications</h2>
+              <h2 className="text-2xl font-bold tracking-tight">{isIt ? "Certificazioni" : "Certifications"}</h2>
             </div>
             <div className="space-y-4">
               {certifications.map((cert, i) => {
@@ -291,7 +291,7 @@ export default async function AboutPage({ params }: Props) {
         </div>
       </Section>
 
-      {/* ═══════════ Dog + Dev Life (faceless mascot) ═══════════ */}
+      {/* ═══════════ Dog + Dev Life ═══════════ */}
       <Section animate className="py-16! md:!py-20">
         <div className="max-w-3xl mx-auto">
           <div className="relative rounded-2xl border border-accent/15 bg-gradient-to-br from-accent/[0.03] via-card to-card p-8 md:p-12 overflow-hidden">
@@ -300,12 +300,12 @@ export default async function AboutPage({ params }: Props) {
               <div className="size-10 rounded-xl bg-accent/10 flex items-center justify-center">
                 <PawPrint className="size-5 text-accent" />
               </div>
-              <h2 className="text-2xl font-bold tracking-tight">Dog + Dev Life</h2>
+              <h2 className="text-2xl font-bold tracking-tight">{isIt ? "Dietro le quinte" : "Behind the Build"}</h2>
             </div>
             <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
               {isIt
-                ? "Sì, sono faceless — ma non sono solo. Il mio pastore australiano è il co-pilota a 4 zampe di ogni deploy. Mentre io buildo tool e rompo limiti, lui approva le PR (o le rifiuta con uno sguardo). Il cane non è in vendita: è la mia mascotte, e presto anche la tua, su sticker e merch."
-                : "Yes, I'm faceless — but not alone. My Australian Shepherd is the four-legged co-pilot of every deploy. While I build tools and break limits, he approves the PRs (or rejects them with a look). The dog is not for sale: he's my mascot, and soon yours too — on stickers and merch."}
+                ? "Non troverai foto selfie qui. Ma se vuoi un motivo in più per fidarti: il mio pastore australiano supervisiona ogni deploy dal divano. Mentre costruisco sistemi e risolvo problemi, lui approva le operazioni (o le critica con uno sguardo). È il mio co-pilota a 4 zampe."
+                : "You won't find selfies here. But if you need one more reason to trust the process: my Australian Shepherd supervises every deploy from the couch. While I build systems and solve problems, he approves the operations (or questions them with a look). Four-legged co-pilot since day one."}
             </p>
           </div>
         </div>

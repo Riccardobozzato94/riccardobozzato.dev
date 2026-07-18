@@ -44,9 +44,11 @@ const serviceIcons: Record<string, React.ReactNode> = {
   package: <Package className="size-6" />,
 };
 
-export default async function HomePage() {
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
   const t = await getTranslations("home");
   const tp = await getTranslations("projects");
+  const isIt = locale === "it";
 
   const serviceList = t.raw("serviceList") as { icon: string; title: string; desc: string }[];
 
@@ -239,7 +241,7 @@ export default async function HomePage() {
                     </p>
                     {/* Subtle arrow indicator on hover */}
                     <div className="mt-4 flex items-center gap-1 text-xs text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0">
-                      <span>Learn more</span>
+                      <span>Scopri di più</span>
                       <ArrowRight className="size-3" />
                     </div>
                   </div>
@@ -272,7 +274,7 @@ export default async function HomePage() {
             tags={["PIM/DAM", "Agile", "Magento", "Shopware"]}
             href="/about"
             image="/assets/trova-banner-1600x900.png"
-            badge="Enterprise"
+            badge={isIt ? "Enterprise" : "Enterprise"}
             badgeColor="bg-accent/10 text-accent"
             featured
           />
@@ -286,7 +288,7 @@ export default async function HomePage() {
               tags={["Automation", "SAP UI5", "Enterprise"]}
               href="/about"
               image="/assets/vulnclaw-banner-1600x900.png"
-              badge="Consulting"
+              badge={isIt ? "Consulenza" : "Consulting"}
               badgeColor="bg-blue-500/10 text-blue-400"
             />
             <ProjectCard
@@ -296,7 +298,7 @@ export default async function HomePage() {
               tags={["SaaS", "Open Source", "AI"]}
               href="/projects"
               image="/assets/panificio-banner-1600x900.png"
-              badge="Products"
+              badge={isIt ? "Prodotti" : "Products"}
               badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>
@@ -343,13 +345,13 @@ export default async function HomePage() {
                 </p>
               </div>
 
-              {/* Timeline — allineata al nuovo positioning */}
+              {/* Timeline */}
               <div className="space-y-0 timeline-line pl-8">
                 {[
-                  { year: "2017–2019", text: "Retail Management — In's Mercato, Aldi, Terranova (leadership operativa, KPI, team)", icon: "▹" },
-                  { year: "2019–2022", text: "Accenture — IT Systems Specialist (+30% efficienza, -15% errori, SAP UI5)", icon: "▹" },
-                  { year: "2022–2025", text: "Esse Solutions — PM (€500K portfolio, 8-12 persone, Agile, -40% time-to-market)", icon: "▹" },
-                  { year: "2025→", text: "Indipendente — Delivery & Operations Consultant (PMP®, Interim Head of Ops, advisory)", icon: "▹" },
+                  { year: "2018–2021", text: "Retail Management — In's Mercato, Aldi, Terranova (leadership operativa, KPI, team)", icon: "▹" },
+                  { year: "2022–2024", text: "Accenture — IT Systems Specialist (+30% efficienza, -15% errori, SAP UI5)", icon: "▹" },
+                  { year: "2024–2026", text: "Esse Solutions — PM (€500K portfolio, 8-12 persone, Agile, -40% time-to-market)", icon: "▹" },
+                  { year: "2026→", text: "Consulente Indipendente — Delivery & Operations Consultant (PMP®, Interim Head of Ops)", icon: "▹" },
                 ].map((item, i) => (
                   <div key={i} className="relative pb-6 group">
                     <div className="timeline-dot absolute -left-8 top-1.5 group-hover:scale-125 transition-transform duration-300" />
@@ -398,7 +400,7 @@ export default async function HomePage() {
             {/* Badge minimal */}
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/8 px-4 py-1.5 text-xs text-accent font-medium border border-accent/15">
               <Download className="size-3" />
-              FREE — Instant Access
+              GRATIS — Accesso Immediato
             </div>
 
             <div className="space-y-4">
@@ -424,13 +426,13 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            {/* Trust — più stretto, meno invadente */}
+            {/* Trust */}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground/50">
-              <span>No spam · Unsubscribe anytime</span>
+              <span>No spam · Cancellati quando vuoi</span>
               <span className="hidden sm:inline text-muted-foreground/20">|</span>
-              <span>PDF delivered to your inbox</span>
+              <span>PDF consegnato via email</span>
               <span className="hidden sm:inline text-muted-foreground/20">|</span>
-              <span>Used by 500+ professionals</span>
+              <span>Usato da 500+ professionisti</span>
             </div>
           </div>
         </Section>

@@ -39,9 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const techStack = ["Python", "Typer", "Rich", "Prompt Toolkit", "AI"];
 
-export default async function VulnClawPage() {
+export default async function VulnClawPage({ params }: Props) {
+  const { locale } = await params;
   const t = await getTranslations("projects.vulnclaw");
   const features = t.raw("features") as string[];
+  const isIt = locale === "it";
 
   return (
     <>
@@ -78,9 +80,9 @@ export default async function VulnClawPage() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
               <Sparkles className="size-3.5" />
-              Features
+              {isIt ? "Funzionalità" : "Features"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Capabilities</h2>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{isIt ? "Cosa Fa" : "Capabilities"}</h2>
           </div>
           <div className="space-y-4">
             {features.map((feature: string, i: number) => (
@@ -96,7 +98,7 @@ export default async function VulnClawPage() {
       {/* Tech Stack */}
       <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">Tech Stack</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">{isIt ? "Stack Tecnologico" : "Tech Stack"}</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {techStack.map((tech) => (
               <Badge key={tech} variant="secondary" className="text-sm px-4 py-1.5 font-normal border border-border/50 bg-card">
@@ -110,8 +112,8 @@ export default async function VulnClawPage() {
       {/* Screenshots */}
       <Section animate delay={100}>
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">Screenshots</h2>
-          <p className="text-muted-foreground mb-8">Terminal-first experience</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">{isIt ? "Screenshot" : "Screenshots"}</h2>
+          <p className="text-muted-foreground mb-8">{isIt ? "Esperienza da terminale" : "Terminal-first experience"}</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
               { src: "/assets/vulnclaw-scan-1600x1000.png", label: "CLI help & commands" },
@@ -138,10 +140,11 @@ export default async function VulnClawPage() {
       <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <Card className="max-w-2xl mx-auto border-accent/30 shadow-lg shadow-accent/5 text-center">
           <CardContent className="p-8 md:p-12 space-y-5">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Get VulnClaw</h2>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{isIt ? "Ottieni VulnClaw" : "Get VulnClaw"}</h2>
             <p className="text-muted-foreground">
-              VulnClaw is proprietary. Contact me for licensing inquiries or
-              check out the project on GitHub.
+              {isIt
+                ? "VulnClaw è un progetto proprietario. Contattami per richiedere una licenza o scopri il progetto su GitHub."
+                : "VulnClaw is proprietary. Contact me for licensing inquiries or check out the project on GitHub."}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Button asChild className="h-11 rounded-xl shadow-lg shadow-primary/10">
@@ -157,7 +160,7 @@ export default async function VulnClawPage() {
               <Button variant="outline" asChild className="h-11 rounded-xl">
                 <Link href="/contact">
                   <Mail className="mr-2 size-4" />
-                  Contact for License
+                  {isIt ? "Richiedi una Licenza" : "Contact for License"}
                 </Link>
               </Button>
             </div>
