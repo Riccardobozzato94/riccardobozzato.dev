@@ -68,6 +68,15 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
                 ? "Pensieri, progetti e lezioni imparate costruendo cose."
                 : "Thoughts, projects, and lessons learned building things."}
             </p>
+            <a
+              href="/feed.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-4 text-xs font-medium text-accent/80 hover:text-accent transition-colors border border-accent/20 rounded-full px-3 py-1 hover:border-accent/40"
+            >
+              <Sparkles className="size-3" />
+              RSS
+            </a>
           </div>
         </Section>
       </section>
