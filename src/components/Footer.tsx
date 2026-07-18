@@ -1,12 +1,14 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { MapPin, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
+  const locale = useLocale();
+  const isIt = locale === "it";
   const currentYear = new Date().getFullYear();
 
   return (
@@ -34,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-16 flex-1">
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">
-              {nav("home") === "Home" ? "NAVIGA" : "NAVIGATE"}
+              {isIt ? "NAVIGA" : "NAVIGATE"}
             </h4>
             <ul className="space-y-4">
               <li><Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("home")}</Link></li>
