@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     // ── 1. Save the lead (status = pending, confirmToken generated) ──
     const lead = await createLead(name, email);
 
-    // ── 2. Send Confirmation Email (double opt-in) ──
+    // ── 2. Send Confirmation Email (double opt-in) + notify (resilient) ──
     const confirmUrl = `${APP_URL}/confirm?token=${lead.confirmToken}`;
     const confirmHtml = confirmationTemplate({
       name: lead.name,
@@ -83,31 +83,55 @@ export async function POST(request: Request) {
       unsubscribeToken: lead.unsubscribeToken,
     });
 
-    await resend.emails.send({
-      from: `Riccardo Bozzato <${FROM_EMAIL}>`,
-      to: lead.email,
-      subject: "Please confirm your subscription",
-      html: confirmHtml,
-    });
+    let emailSent = false;
+    try {
+      await resend.emails.send({
+        from: `Riccardo Bozzato <${FROM_EMAIL}>`,
+        to: lead.email,
+        subject: "Please confirm your subscription",
+        html: confirmHtml,
+      });
+      emailSent = true;
+    } catch (sendError) {
+      console.error("Freebie confirmation email failed:", {
+        email: lead.email,
+        error: sendError instanceof Error ? sendError.message : sendError,
+      });
+    }
 
-    // ── 3. Notify me about the new pending lead ──
-    await resend.emails.send({
-      from: `Freebie Alert <${FROM_EMAIL}>`,
-      to: TO_EMAIL,
-      subject: `New Pending Lead: ${lead.name}`,
-      html: `
-        <h2>New Playbook Download (Pending Confirmation)</h2>
-        <table style="border-collapse:collapse;width:100%;max-width:400px;">
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Name</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(lead.name)}</td></tr>
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Email</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(lead.email)}</td></tr>
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Date</td><td style="padding:8px;border:1px solid #ddd;">${new Date().toLocaleString()}</td></tr>
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Lead ID</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(lead.id)}</td></tr>
-        </table>
-        <p style="margin-top:16px;font-size:13px;color:#666;">
-          Confirmation email sent. Sequence will start after they confirm via double opt-in.
-        </p>
-      `,
-    });
+    // Notify me (best-effort, never blocks the user)
+    try {
+      await resend.emails.send({
+        from: `Freebie Alert <${FROM_EMAIL}>`,
+        to: TO_EMAIL,
+        subject: `New Pending Lead: ${lead.name}`,
+        html: `
+          <h2>New Playbook Download (Pending Confirmation)</h2>
+          <table style="border-collapse:collapse;width:100%;max-width:400px;">
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Name</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(lead.name)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Email</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(lead.email)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Date</td><td style="padding:8px;border:1px solid #ddd;">${new Date().toLocaleString()}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:600;">Lead ID</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(lead.id)}</td></tr>
+          </table>
+          <p style="margin-top:16px;font-size:13px;color:#666;">
+            Confirmation email sent: ${emailSent}. Sequence starts after double opt-in.
+          </p>
+        `,
+      });
+    } catch {
+      // ignore notify failure
+    }
+
+    // If the confirmation email failed, still deliver the playbook directly
+    // so the user is never blocked. The lead is saved for manual follow-up.
+    if (!emailSent) {
+      return NextResponse.json({
+        success: true,
+        directDownload: true,
+        downloadUrl: "/files/ai-ops-security-playbook.pdf",
+        message: "Here's your playbook! Download it directly below.",
+      });
+    }
 
     return NextResponse.json({
       success: true,
@@ -115,9 +139,12 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Freebie download error:", error);
-    return NextResponse.json(
-      { error: "Failed to send the playbook. Please try again." },
-      { status: 500 }
-    );
+    // Last-resort: never block the user. Offer direct download.
+    return NextResponse.json({
+      success: true,
+      directDownload: true,
+      downloadUrl: "/files/ai-ops-security-playbook.pdf",
+      message: "Here's your playbook! Download it directly below.",
+    });
   }
 }
