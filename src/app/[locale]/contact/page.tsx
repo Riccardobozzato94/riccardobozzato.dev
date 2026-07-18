@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
@@ -48,7 +48,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px]" />
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
             <MessageSquare className="size-3.5" />
             Contact

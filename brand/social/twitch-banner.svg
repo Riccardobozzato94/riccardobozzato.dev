@@ -1,0 +1,28 @@
+<svg width="1920" height="480" viewBox="0 0 1920 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0A0B"/>
+      <stop offset="1" stop-color="#121214"/>
+    </linearGradient>
+    <linearGradient id="em" x1="0" y1="0" x2="1920" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#22C55E" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="480" fill="url(#bg)"/>
+  <rect width="1920" height="480" fill="url(#glow)"/>
+  <!-- Faceless mark -->
+  <g transform="translate(120,120)">
+    <rect width="240" height="240" rx="48" fill="#1C1C1E" stroke="#27272A" stroke-width="3"/>
+    <text x="120" y="162" font-family="'Space Grotesk', sans-serif" font-size="110" font-weight="700" fill="url(#em)" text-anchor="middle" letter-spacing="-5">RB</text>
+    <rect x="64" y="184" width="112" height="6" rx="3" fill="#22C55E"/>
+  </g>
+  <!-- Text -->
+  <text x="440" y="220" font-family="'Space Grotesk', sans-serif" font-size="76" font-weight="700" fill="#F4F4F5">riccardobozzato.dev</text>
+  <text x="444" y="290" font-family="'JetBrains Mono', monospace" font-size="34" fill="#22C55E">&gt; building tools, breaking limits</text>
+  <text x="444" y="350" font-family="'Inter', sans-serif" font-size="28" fill="#A1A1AA">LIVE coding · AI security · SaaS builds</text>
+</svg>

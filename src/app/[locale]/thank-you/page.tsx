@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useTranslations } from "next-intl";
 import { Download, Mail, ArrowRight, BookOpen, Sparkles } from "lucide-react";
@@ -15,7 +15,7 @@ export default function ThankYouPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px]" />
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
             <div className="mx-auto mb-6 size-20 rounded-2xl bg-accent/10 flex items-center justify-center">
               <Download className="size-10 text-accent" />

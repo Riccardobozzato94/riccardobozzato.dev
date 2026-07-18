@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+﻿import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -78,7 +78,7 @@ export default async function TrovaPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-accent/8 blur-[150px]" />
           <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[100px]" />
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6 text-sm px-4 py-1.5 font-normal border border-border/50 bg-card">
               Next.js 16 • Tailwind v4 • shadcn/ui
@@ -142,7 +142,7 @@ export default async function TrovaPage() {
       </div>
 
       {/* Features Grid */}
-      <Section animate className="!py-16 md:!py-20">
+      <Section animate className="py-16! md:!py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
@@ -180,16 +180,16 @@ export default async function TrovaPage() {
       </Section>
 
       {/* Demo Showcase */}
-      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
+      <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Quick Demo</h2>
           <p className="text-muted-foreground mb-8">A walkthrough of the full site experience</p>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/images/trova-home.svg" alt="Trova Home page" loading="lazy" className="w-full h-auto" />
+              <img src="/assets/trova-dashboard-1600x1000.png" alt="Trova Home page" loading="lazy" className="w-full h-auto" />
             </div>
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
-              <img src="/images/trova-projects.svg" alt="Trova Projects page" loading="lazy" className="w-full h-auto" />
+              <img src="/assets/trova-dashboard-1200x760.png" alt="Trova Projects page" loading="lazy" className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -202,10 +202,10 @@ export default async function TrovaPage() {
           <p className="text-muted-foreground mb-8">Real pages from the boilerplate</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { src: "/images/trova-home.svg", label: "Home page" },
-              { src: "/images/trova-projects.svg", label: "Projects portfolio" },
-              { src: "/images/trova-trova.svg", label: "Trova sales page" },
-              { src: "/images/trova-freebie.svg", label: "Freebie download" },
+              { src: "/assets/trova-dashboard-1600x1000.png", label: "Home page" },
+              { src: "/assets/trova-dashboard-1200x760.png", label: "Projects portfolio" },
+              { src: "/assets/trova-banner-1600x900.png", label: "Trova sales page" },
+              { src: "/assets/trova-banner-1200x630.png", label: "Freebie download" },
             ].map((img, idx) => (
               <div
                 key={idx}
@@ -225,7 +225,7 @@ export default async function TrovaPage() {
       </Section>
 
       {/* Comparison Table */}
-      <Section animate delay={100} className="!py-16 md:!py-20">
+      <Section animate delay={100} className="py-16! md:!py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why Trova?</h2>
@@ -284,7 +284,7 @@ export default async function TrovaPage() {
       </Section>
 
       {/* Urgency Banner */}
-      <Section animate className="!py-8">
+      <Section animate className="py-8!">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 via-amber-500/[0.02] to-transparent p-6 text-center">
             <p className="text-sm text-amber-500 font-medium flex items-center justify-center gap-2">
@@ -296,7 +296,7 @@ export default async function TrovaPage() {
       </Section>
 
       {/* Pricing */}
-      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
+      <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">{pricing.title}</h2>
           <p className="text-muted-foreground mb-8">{pricing.subtitle}</p>

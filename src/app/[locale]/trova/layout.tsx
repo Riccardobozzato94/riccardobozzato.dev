@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string }>;

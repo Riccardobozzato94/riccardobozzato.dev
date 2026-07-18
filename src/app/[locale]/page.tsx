@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, Download, CheckCircle2, Sparkles, Cpu, Cloud, Zap, GitBranch, Lightbulb, Package, Calendar, Terminal, MapPin, ArrowUpRight } from "lucide-react";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -52,30 +53,31 @@ export default async function HomePage() {
   return (
     <>
       {/* ════════════════════════════════════════════
-           HERO — Split Layout
-         ════════════════════════════════════════════ */}
+            HERO — Operations & Delivery
+          ════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Noise overlay */}
         <div className="noise-overlay" />
 
-        {/* Ambient gradient — più sottile, laterale */}
+        {/* Ambient aurora */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -left-40 top-1/3 w-[600px] h-[600px] rounded-full bg-accent/6 blur-[140px] animate-drift-slow" />
-          <div className="absolute -right-40 bottom-1/4 w-[400px] h-[400px] rounded-full bg-accent/3 blur-[100px] animate-drift-slow" style={{ animationDelay: "-4s" }} />
+          <div className="absolute -left-40 top-1/4 w-[600px] h-[600px] rounded-full bg-accent/12 blur-[140px] animate-drift-slow" />
+          <div className="absolute -right-40 bottom-1/4 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px] animate-drift-slow" style={{ animationDelay: "-4s" }} />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-accent/[0.06] blur-[160px]" />
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center py-24 lg:py-0">
             {/* ─── LEFT: Content ─── */}
             <div className="space-y-8">
-              {/* Location / role badge — più personale */}
+              {/* Role badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent">
                 <MapPin className="size-3.5" />
-                <span>Legnaro, PD — Operations & Delivery</span>
+                <span>Legnaro, PD — Operations & Delivery Manager | PMP®</span>
               </div>
 
-              <div className="space-y-6">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.92] tracking-tighter">
+               <div className="space-y-6">
+                <h1 className="font-heading text-[clamp(40px,7vw,88px)] font-bold leading-[0.95] tracking-tighter">
                   <span className="gradient-text">{t("heroTitle")}</span>
                 </h1>
 
@@ -84,82 +86,90 @@ export default async function HomePage() {
                 </p>
               </div>
 
-              {/* CTAs — stessi link, look diverso */}
+              {/* CTAs — ops-focused */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Link
-                  href="/freebie"
-                  className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
+                  href="/contact"
+                  className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/30 px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    {t("freebieCta")}
+                    {t("heroCta")}
                     <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </Link>
                 <Link
-                  href="/projects"
+                  href="/about"
                   className="group inline-flex items-center justify-center gap-2 h-12 rounded-xl border border-border/60 bg-background/50 backdrop-blur-sm px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5"
                 >
-                  {t("heroCta")}
+                  {t("heroCta2")}
                   <ArrowUpRight className="size-4" />
                 </Link>
               </div>
 
-              {/* Social proof — più integrato, meno "barra stats" */}
+              {/* Ops metrics — non developer stats */}
               <div className="flex items-center gap-8 pt-4 border-t border-border/30">
                 <div>
                   <span className="text-xl font-bold text-foreground stat-glow">€500K+</span>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">enterprise portfolio</p>
+                  <p className="text-xs text-muted-foreground/60 mt-0.5">portfolio value</p>
                 </div>
                 <div className="size-1 rounded-full bg-border/40" />
                 <div>
-                  <span className="text-xl font-bold text-foreground stat-glow">500+</span>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">playbook downloads</p>
+                  <span className="text-xl font-bold text-foreground stat-glow">8-12</span>
+                  <p className="text-xs text-muted-foreground/60 mt-0.5">team size led</p>
                 </div>
                 <div className="size-1 rounded-full bg-border/40" />
                 <div>
-                  <span className="text-xl font-bold text-foreground stat-glow">4.8/5</span>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">client rating</p>
+                  <span className="text-xl font-bold text-foreground stat-glow">-40%</span>
+                  <p className="text-xs text-muted-foreground/60 mt-0.5">time-to-market</p>
                 </div>
               </div>
             </div>
 
-            {/* ─── RIGHT: Terminal Mockup ─── */}
+            {/* ─── RIGHT: Ops KPI Dashboard mockup ─── */}
             <div className="hidden lg:block animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-              <div className="terminal-window">
-                <div className="terminal-header">
-                  <div className="terminal-dot close" />
-                  <div className="terminal-dot minimize" />
-                  <div className="terminal-dot maximize" />
-                  <span className="ml-2 text-xs text-muted-foreground/40 font-mono">riccardobozzato@dev — vulnclaw</span>
-                </div>
-                <div className="terminal-body">
-                  <div className="space-y-1.5">
-                    <p>
-                      <span className="terminal-prompt">$ </span>
-                      <span className="terminal-command">vulnclaw scan --target example.com</span>
-                    </p>
-                    <p className="terminal-output">→ Resolving target... <span className="terminal-success">OK</span></p>
-                    <p className="terminal-output">→ Scanning open ports... <span className="terminal-success">7 found</span></p>
-                    <p className="terminal-output">→ Enumerating services... <span className="terminal-success">4 identified</span></p>
-                    <p className="terminal-output">→ Checking vulnerabilities... <span className="terminal-error">2 critical</span></p>
-                    <p className="terminal-output">→ Generating report...</p>
-                    <p className="mt-3">
-                      <span className="terminal-success">✓</span>{" "}
-                      <span className="terminal-success font-medium">Scan complete in 12.4s</span>
-                    </p>
-                    <p className="terminal-output mt-2">
-                      Report: <span className="text-accent underline underline-offset-2">vulnclaw-report-2026-07.html</span>
-                    </p>
-                    <p className="mt-2">
-                      <span className="terminal-prompt">$ </span>
-                      <span className="terminal-command inline-flex items-center">
-                        trova deploy --prod
-                        <span className="ml-1 inline-block size-3 border-l-2 border-accent animate-blink-cursor" />
-                      </span>
-                    </p>
-                    <p className="terminal-output text-[11px] text-muted-foreground/30 mt-1 italic">
-                      // VulnClaw + Trova — built by riccardobozzato.dev
-                    </p>
+              <div className="group relative rounded-3xl border border-border/60 bg-card/40 p-2.5 backdrop-blur-xl shadow-2xl shadow-black/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-accent/20 hover:border-accent/30">
+                <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-accent/20 via-accent/5 to-transparent blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="overflow-hidden rounded-2xl border border-border/40 bg-card p-6">
+                  {/* Terminal-style KPI dashboard */}
+                  <div className="font-mono text-xs space-y-3">
+                    <div className="flex items-center gap-2 text-muted-foreground/60 mb-4">
+                      <span className="size-2 rounded-full bg-red-400/60" />
+                      <span className="size-2 rounded-full bg-yellow-400/60" />
+                      <span className="size-2 rounded-full bg-green-400/60" />
+                      <span className="ml-2">ops-dashboard — KPI overview</span>
+                    </div>
+                    <div className="space-y-2.5">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Pipeline velocity</span>
+                        <span className="text-accent font-bold">€12.4K/day</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Win rate (avg)</span>
+                        <span className="text-green-400 font-bold">34%</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Sales cycle</span>
+                        <span className="text-accent font-bold">62 days</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Coverage ratio</span>
+                        <span className="text-yellow-400 font-bold">3.2x</span>
+                      </div>
+                      <div className="pt-3 border-t border-border/30 mt-3">
+                        <div className="flex justify-between items-center">
+                          <span className="text-muted-foreground">Team capacity</span>
+                          <span className="text-green-400 font-bold">87%</span>
+                        </div>
+                        <div className="flex justify-between items-center mt-1.5">
+                          <span className="text-muted-foreground">On-time delivery</span>
+                          <span className="text-accent font-bold">94%</span>
+                        </div>
+                        <div className="flex justify-between items-center mt-1.5">
+                          <span className="text-muted-foreground">Health score</span>
+                          <span className="text-green-400 font-bold">4.2/5</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -167,7 +177,7 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Scroll indicator — più sottile */}
+        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <div className="flex flex-col items-center gap-2 opacity-40">
             <span className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">Scroll</span>
@@ -241,55 +251,52 @@ export default async function HomePage() {
       </Section>
 
       {/* ════════════════════════════════════════════
-           FEATURED PROJECTS
-         ════════════════════════════════════════════ */}
+            CASE STUDIES — risultati reali
+          ════════════════════════════════════════════ */}
       <Section animate>
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-muted/30 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-4">
-            Showcase
+            {t("featuredSubtitle")}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             {t("featuredTitle")}
           </h2>
-          <p className="text-muted-foreground mt-3 text-lg max-w-xl mx-auto">
-            {t("featuredSubtitle")}
-          </p>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-8">
-          {/* Featured: Trova */}
+        <div className="max-w-6xl mx-auto space-y-6">
+          {/* Case 1: Esse Solutions */}
           <ProjectCard
-            title={tp("trova.title")}
-            subtitle={tp("trova.subtitle")}
-            description={tp("trova.description")}
-            tags={["Next.js 16", "SaaS", "TypeScript", "€49"]}
-            href="/trova"
-            image="/images/trova-home.svg"
-            badge="Product"
+            title="€500K+ Portfolio — Esse Solutions"
+            subtitle="Project Manager | 19 mesi"
+            description="Gestito portfolio enterprise da €500K+, coordinato team distribuiti 8-12 persone. Introdotto Agile: +25% produttività, -20% tempi completamento. Implementato Pimcore per clienti manufacturing/food/furniture: -40% time-to-market."
+            tags={["PIM/DAM", "Agile", "Magento", "Shopware"]}
+            href="/about"
+            image="/assets/trova-banner-1600x900.png"
+            badge="Enterprise"
             badgeColor="bg-accent/10 text-accent"
             featured
           />
 
-          {/* VulnClaw + Panificio */}
+          {/* Case 2: Accenture */}
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <ProjectCard
-              title={tp("vulnclaw.title")}
-              subtitle={tp("vulnclaw.subtitle")}
-              description={tp("vulnclaw.description")}
-              tags={["AI", "Security", "Python"]}
-              href="/projects/vulnclaw"
-              image="/images/vulnclaw-scan.svg"
-              badge="CLI Tool"
+              title="Process Automation — Accenture"
+              subtitle="IT Systems Specialist | 2022-2024"
+              description="Automazione processi per clienti banking/insurance con SAP UI5 e JS. +30% efficienza operativa, -15% errori amministrativi, -20% tempi di risposta sistema. Team cross-funzionali, soluzioni enterprise."
+              tags={["Automation", "SAP UI5", "Enterprise"]}
+              href="/about"
+              image="/assets/vulnclaw-banner-1600x900.png"
+              badge="Consulting"
               badgeColor="bg-blue-500/10 text-blue-400"
             />
             <ProjectCard
-              title={tp("panificio.title")}
-              subtitle={tp("panificio.subtitle")}
-              description={tp("panificio.description")}
-              tags={["Next.js", "E-Commerce", "Family"]}
-              href="/projects/panificio"
-              image="/images/panificio-home.svg"
-              badge="Family Gift"
+              title="Trova + VulnClaw"
+              subtitle="Side projects | Product thinking"
+              description="Trova: SaaS boilerplate (Next.js 16, Stripe, Auth) — aiuta founder a lanciare in giorni. VulnClaw: AI pentesting CLI open-source (600+ GitHub stars). Proof che so costruire prodotti, non solo processi."
+              tags={["SaaS", "Open Source", "AI"]}
+              href="/projects"
+              image="/assets/panificio-banner-1600x900.png"
+              badge="Products"
               badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>
@@ -297,26 +304,24 @@ export default async function HomePage() {
       </Section>
 
       {/* ════════════════════════════════════════════
-           ABOUT SNIPPET — Timeline + Foto placeholder
-         ════════════════════════════════════════════ */}
+            ABOUT — Storia + Timeline
+          ════════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-muted/20">
-        <Section animate className="!py-20 md:!py-28">
+        <Section animate className="py-20! md:!py-28">
           <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-start">
-            {/* Left: Photo / Avatar placeholder */}
+            {/* Left: RB avatar placeholder */}
             <div className="md:col-span-2">
               <div className="relative">
                 <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 bg-gradient-to-br from-accent/20 via-accent/10 to-card">
-                  {/* Placeholder — in produzione: foto di Riccardo */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
                       <div className="size-24 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4 ring-2 ring-accent/30">
                         <span className="text-3xl font-bold text-accent">RB</span>
                       </div>
-                      <p className="text-xs text-muted-foreground/50 font-mono">photo → coming soon</p>
+                      <p className="text-xs text-muted-foreground/50 font-meta">PMP®</p>
                     </div>
                   </div>
-                  {/* Decorative corner */}
                   <div className="absolute top-3 right-3 size-8 rounded-lg bg-accent/10 flex items-center justify-center">
                     <MapPin className="size-4 text-accent/60" />
                   </div>
@@ -324,7 +329,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Right: Content + Mini Timeline */}
+            {/* Right: Content + Timeline */}
             <div className="md:col-span-3 space-y-8">
               <div>
                 <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/40 font-medium">
@@ -338,13 +343,13 @@ export default async function HomePage() {
                 </p>
               </div>
 
-              {/* Mini Timeline */}
+              {/* Timeline — allineata al nuovo positioning */}
               <div className="space-y-0 timeline-line pl-8">
                 {[
-                  { year: "2017–2019", text: "Retail Management — In's Mercato, Aldi, Terranova", icon: "▹" },
-                  { year: "2019–2022", text: "Accenture — SAP UI5, process automation (+30% efficiency)", icon: "▹" },
-                  { year: "2022–2025", text: "Esse Solutions — €500K portfolio, 8-12 person teams", icon: "▹" },
-                  { year: "2025→", text: "Independent — Serverless, AI agents, automation", icon: "▹" },
+                  { year: "2017–2019", text: "Retail Management — In's Mercato, Aldi, Terranova (leadership operativa, KPI, team)", icon: "▹" },
+                  { year: "2019–2022", text: "Accenture — IT Systems Specialist (+30% efficienza, -15% errori, SAP UI5)", icon: "▹" },
+                  { year: "2022–2025", text: "Esse Solutions — PM (€500K portfolio, 8-12 persone, Agile, -40% time-to-market)", icon: "▹" },
+                  { year: "2025→", text: "Indipendente — Delivery & Operations Consultant (PMP®, Interim Head of Ops, advisory)", icon: "▹" },
                 ].map((item, i) => (
                   <div key={i} className="relative pb-6 group">
                     <div className="timeline-dot absolute -left-8 top-1.5 group-hover:scale-125 transition-transform duration-300" />
@@ -388,7 +393,7 @@ export default async function HomePage() {
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
         <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-accent/3 blur-[100px] pointer-events-none" />
 
-        <Section animate className="!py-20 md:!py-28 relative z-10">
+        <Section animate className="py-20! md:!py-28 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             {/* Badge minimal */}
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/8 px-4 py-1.5 text-xs text-accent font-medium border border-accent/15">

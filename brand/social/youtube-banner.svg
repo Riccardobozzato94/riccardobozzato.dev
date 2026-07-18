@@ -1,0 +1,26 @@
+<svg width="2560" height="1440" viewBox="0 0 2560 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="2560" y2="1440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0A0B"/>
+      <stop offset="1" stop-color="#121214"/>
+    </linearGradient>
+    <linearGradient id="em" x1="0" y1="0" x2="2560" y2="1440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#22C55E" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2560" height="1440" fill="url(#bg)"/>
+  <rect width="2560" height="1440" fill="url(#glow)"/>
+  <!-- Faceless mark centered -->
+  <g transform="translate(1040,360)">
+    <rect width="480" height="480" rx="96" fill="#1C1C1E" stroke="#27272A" stroke-width="5"/>
+    <text x="240" y="330" font-family="'Space Grotesk', sans-serif" font-size="220" font-weight="700" fill="url(#em)" text-anchor="middle" letter-spacing="-10">RB</text>
+    <rect x="128" y="370" width="224" height="12" rx="6" fill="#22C55E"/>
+  </g>
+  <text x="1280" y="1010" font-family="'Space Grotesk', sans-serif" font-size="120" font-weight="700" fill="#F4F4F5" text-anchor="middle">riccardobozzato.dev</text>
+  <text x="1280" y="1110" font-family="'JetBrains Mono', monospace" font-size="44" fill="#22C55E" text-anchor="middle">&gt; code · security · ship</text>
+</svg>

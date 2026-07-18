@@ -1,4 +1,5 @@
-import { blogPosts, type BlogPost } from "@/content/blog";
+﻿import { blogPosts, type BlogPost } from "@/content/blog";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { CalendarDays, ArrowRight, Sparkles } from "lucide-react";
@@ -7,7 +8,7 @@ import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -59,7 +60,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px]" />
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <Sparkles className="size-3.5" />
@@ -78,7 +79,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
       </section>
 
       {/* Posts */}
-      <Section animate className="!py-16 md:!py-20">
+      <Section animate className="py-16! md:!py-20">
         <div className="max-w-4xl mx-auto">
           {posts.length === 0 ? (
             <div className="text-center py-16">

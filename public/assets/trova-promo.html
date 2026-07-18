@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Trova — Product Promo (recordable)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:#0A0A0B; --fg:#F4F4F5; --muted:#A1A1AA; --surface:#121214;
+    --border:#1F1F23; --accent:#22C55E; --accent2:#34D399;
+  }
+  html,body { background:#000; font-family:'Inter',sans-serif; color:var(--fg); }
+  .deck { width:1600px; height:900px; overflow:hidden; position:relative; background:var(--bg); }
+  .slide { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:110px 140px;
+    opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .slide.active { opacity:1; transform:none; }
+  .mesh { position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:radial-gradient(800px 600px at 82% 14%, rgba(34,197,94,0.20), transparent 60%),
+               radial-gradient(700px 520px at 8% 92%, rgba(99,102,241,0.16), transparent 60%); }
+  .slide > * { position:relative; z-index:1; }
+  .eyebrow { font-size:16px; letter-spacing:4px; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:22px; }
+  h1 { font-family:'Space Grotesk'; font-weight:700; font-size:88px; line-height:1.02; letter-spacing:-2.5px; }
+  h1 .g { background:linear-gradient(100deg,#F4F4F5,#22C55E 65%,#34D399); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  h2 { font-family:'Space Grotesk'; font-weight:700; font-size:60px; letter-spacing:-1.5px; margin-bottom:28px; }
+  .sub { font-size:26px; color:var(--muted); max-width:980px; line-height:1.5; margin-top:18px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:40px; }
+  .feat { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:30px; }
+  .feat .ic { width:46px; height:46px; border-radius:12px; background:rgba(34,197,94,0.14); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700; margin-bottom:16px; }
+  .feat h3 { font-family:'Space Grotesk'; font-size:23px; margin-bottom:8px; }
+  .feat p { font-size:16px; color:var(--muted); line-height:1.5; }
+  .stack { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+  .tag { font-family:'JetBrains Mono'; font-size:15px; color:#D4D4D8; background:rgba(255,255,255,0.04); border:1px solid var(--border); padding:9px 14px; border-radius:9px; }
+  .price { font-family:'Space Grotesk'; font-weight:700; font-size:90px; color:var(--fg); }
+  .price span { font-size:24px; color:var(--muted); font-weight:500; }
+  .cta { display:inline-flex; align-items:center; gap:12px; margin-top:34px; background:linear-gradient(135deg,var(--accent),#16A34A); color:#0A0A0B; font-weight:700; font-size:22px; padding:20px 38px; border-radius:14px; box-shadow:0 12px 36px rgba(34,197,94,0.32); }
+  .foot { position:absolute; bottom:40px; left:140px; right:140px; display:flex; justify-content:space-between; font-size:14px; color:#52525B; z-index:2; }
+  .brand { font-family:'Space Grotesk'; font-weight:600; color:var(--muted); }
+  .bar { position:absolute; bottom:0; left:0; height:5px; background:linear-gradient(90deg,var(--accent),var(--accent2)); width:0; transition:width .5s; z-index:3; }
+  .bar.run { width:100%; }
+  .dots { position:absolute; bottom:38px; right:140px; display:flex; gap:9px; z-index:2; }
+  .dot { width:10px; height:10px; border-radius:50%; background:#27272A; }
+  .dot.on { background:var(--accent); }
+  .center { text-align:center; align-items:center; }
+  .center .sub { margin-left:auto; margin-right:auto; }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+  <!-- 1 Title -->
+  <section class="slide active" data-dur="4">
+    <div class="mesh"></div>
+    <div class="eyebrow">Introducing</div>
+    <h1>SaaS Boilerplate<br>That <span class="g">Ships.</span></h1>
+    <div class="sub">Trova is the production-ready Next.js starter that wires up auth, database, billing &amp; email on day one. Stop rebuilding the same scaffold — start shipping.</div>
+    <div class="dots" id="dots"></div>
+    <div class="foot"><span class="brand">Trova</span><span>€49 · one-time · lifetime updates</span></div>
+  </section>
+
+  <!-- 2 Problem -->
+  <section class="slide" data-dur="4">
+    <div class="mesh"></div>
+    <div class="eyebrow">The problem</div>
+    <h2>You've shipped this 7 times already.</h2>
+    <div class="sub">Every new SaaS starts with the same 40 hours: auth flows, DB schema, Stripe webhooks, email templates, i18n, dark mode. It's not product work — it's plumbing. Trova hands you the plumbing, finished.</div>
+    <div class="dots" id="dots2"></div>
+    <div class="foot"><span class="brand">Trova</span><span>Save ~40h per project</span></div>
+  </section>
+
+  <!-- 3 Features -->
+  <section class="slide" data-dur="6">
+    <div class="mesh"></div>
+    <div class="eyebrow">What's inside</div>
+    <h2>Everything wired up.</h2>
+    <div class="grid3">
+      <div class="feat"><div class="ic">A</div><h3>Auth</h3><p>Magic links, OAuth &amp; 2FA with Better Auth — sessions handled.</p></div>
+      <div class="feat"><div class="ic">DB</div><h3>Database</h3><p>Drizzle ORM + PostgreSQL, migrations &amp; seed scripts included.</p></div>
+      <div class="feat"><div class="ic">$</div><h3>Billing</h3><p>Stripe checkout, webhooks &amp; subscription management ready.</p></div>
+      <div class="feat"><h3>Email</h3><p>Resend integration with React email templates out of the box.</p></div>
+      <div class="feat"><h3>i18n</h3><p>English/Italian via next-intl, day-1 internationalization.</p></div>
+      <div class="feat"><h3>UI</h3><p>shadcn/ui, dark theme &amp; responsive components, zero setup.</p></div>
+    </div>
+    <div class="dots"></div>
+    <div class="foot"><span class="brand">Trova</span><span>Next.js 16 · Tailwind v4</span></div>
+  </section>
+
+  <!-- 4 Stack -->
+  <section class="slide" data-dur="4">
+    <div class="mesh"></div>
+    <div class="eyebrow">Modern by default</div>
+    <h2>Built on the stack you'd pick anyway.</h2>
+    <div class="stack">
+      <span class="tag">Next.js 16</span><span class="tag">Tailwind v4</span><span class="tag">Better Auth</span>
+      <span class="tag">Drizzle</span><span class="tag">PostgreSQL</span><span class="tag">Stripe</span>
+      <span class="tag">Resend</span><span class="tag">shadcn/ui</span><span class="tag">next-intl</span>
+    </div>
+    <div class="sub" style="margin-top:34px">TypeScript-first, fully typed, tested, and documented. Fork it and you're already at v0.3 of your product.</div>
+    <div class="dots"></div>
+    <div class="foot"><span class="brand">Trova</span><span>MIT-licensed core</span></div>
+  </section>
+
+  <!-- 5 Price / CTA -->
+  <section class="slide center" data-dur="5">
+    <div class="mesh"></div>
+    <div class="eyebrow">Ship this week</div>
+    <div class="price">€49 <span>/ one-time</span></div>
+    <div class="sub">Lifetime access, all future updates, commercial license. One purchase — ship as many products as you want.</div>
+    <div class="cta">Get Trova →</div>
+    <div class="dots"></div>
+    <div class="foot"><span class="brand">Trova</span><span>riccardobozzato.dev/trova</span></div>
+  </section>
+
+  <div class="bar" id="bar"></div>
+</div>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  let i = 0;
+  const dotsWrap = document.getElementById('dots');
+  slides.forEach(()=>{ const d=document.createElement('span'); d.className='dot'; dotsWrap.appendChild(d); });
+  const dots = [...dotsWrap.children];
+  function show(n){
+    slides.forEach((s,k)=>s.classList.toggle('active',k===n));
+    dots.forEach((d,k)=>d.classList.toggle('on',k===n));
+    const bar=document.getElementById('bar'); bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run');
+    const dur=(slides[n].dataset.dur||4)*1000;
+    clearTimeout(window._t);
+    window._t=setTimeout(()=>{ i=(i+1)%slides.length; show(i); }, dur);
+  }
+  document.addEventListener('click',()=>{ i=(i+1)%slides.length; show(i); });
+  show(0);
+</script>
+</body>
+</html>

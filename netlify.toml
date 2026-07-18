@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  # publish rimosso: il Netlify Next.js Runtime Plugin gestisce automaticamente l'output
 
 [[headers]]
   for = "/*"
@@ -8,6 +8,20 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # CSP hardened: removed 'unsafe-inline' from script-src / style-src to close
+    # the XSS gap. If a future page strictly requires inline scripts/styles, use a
+    # per-request nonce instead (see comment at bottom of this file) rather than
+    # re-adding 'unsafe-inline'.
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://api.resend.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
+
+# --- Nonce note (only if inline scripts become unavoidable) ---
+# If you must allow inline scripts, do NOT re-add 'unsafe-inline'. Instead add a
+# nonce via a Next.js middleware that sets the CSP header per request and stamps
+# <script nonce={nonce}> on the inline tags. Example sketch:
+#   const nonce = crypto.randomUUID();
+#   const csp = `script-src 'self' 'nonce-${nonce}'; ...`;
+#   response.headers.set("Content-Security-Policy", csp);
+# Then read the nonce in layout/page via headers() and pass to scripts.
 
 [[headers]]
   for = "/_next/static/*"

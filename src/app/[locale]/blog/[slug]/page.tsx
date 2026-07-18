@@ -1,13 +1,14 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import { blogPosts } from "@/content/blog";
-import { CalendarDays, ArrowLeft, ArrowRight, Sparkles, Download, ShoppingCart } from "lucide-react";
+import { CalendarDays, ArrowLeft, ArrowRight, Sparkles, Download } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -41,6 +42,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const postContent: Record<string, { body: string[] }> = {
+  "diagnose-operational-chaos": {
+    body: [
+      "Every organization I've walked into has operational debt. The question is never \"is there chaos?\" — it's \"how much and where?\" The answer determines whether you're weeks away from a smooth quarter or months away from a fire drill.",
+      "Over the years I've developed a diagnostic framework that cuts through the noise. It takes about three hours and gives you a prioritized map of exactly what needs fixing. Here's how it works.",
+      "<strong>Phase 1: The Process Map (60 min)</strong>",
+      "Grab a whiteboard (or Miro) and map every business process end-to-end. Start from the trigger (a customer signup, an order, a support ticket) and trace it until the outcome (revenue recognized, ticket closed, product shipped). Mark every handoff, every approval gate, every tool change.",
+      "You're looking for three things: handoff density (how many times does work change hands?), tool switches (how many tools touch one process?), and approval bottlenecks (where does work wait for a person?).",
+      "<strong>Phase 2: The Metric Baseline (60 min)</strong>",
+      "For each process, measure three numbers: lead time (trigger to outcome), active time (actual work), and wait time (queues). The ratio of active to total is your process efficiency. Anything under 40% means your team spends more time waiting than working.",
+      "Pull your system of record (CRM, Jira, ERP) and export cycle times for the last 90 days. If you can't get this data in 10 minutes, that's your first finding — your process is invisible, which means it's unmanageable.",
+      "<strong>Phase 3: The Priority Matrix (60 min)</strong>",
+      "Score each process on two axes: operational impact (how much does this affect revenue or delivery?) and fixability (how much effort to improve?). Priority 1 = high impact, easy fix. Those are your quick wins. Priority 4 = low impact, hard fix. Ignore those.",
+      "Ruthlessly prioritize. Most teams I've worked with find 3-5 P1 items that can be resolved in 2-4 weeks. Fixing those alone typically recovers 15-25% of team capacity.",
+      "The framework is deliberately simple because operational complexity is the problem, not the solution. You don't need a tool or a consultant — you need a whiteboard, three hours, and the willingness to look at your own processes honestly."
+    ]
+  },
   "ops-security-alignment": {
     body: [
       "For years, the relationship between operations and security teams has been adversarial. Security says \"no\" — operations finds a way around it. Security adds a gate — operations discovers a bypass. The result is a brittle, theater-of-security posture that frustrates everyone.",
@@ -54,31 +71,16 @@ const postContent: Record<string, { body: string[] }> = {
       "The teams that get this right don't see security as a cost center. They see it as a force multiplier. When security makes ops faster (not slower), everyone wins."
     ]
   },
-  "building-vulnclaw": {
-    body: [
-      "VulnClaw started as a side project — a way to automate the tedious parts of penetration testing that I kept doing manually. What began as a few hundred lines of Python grew into a full AI-driven pentesting CLI with MCP toolchain integration.",
-      "<strong>Why CLI-first?</strong>",
-      "Most security tools try to be everything: web UI, API, CLI, dashboard. The result is usually mediocre at everything. I chose CLI-first because penetration testers live in the terminal. A CLI is composable, scriptable, and integrates naturally with CI/CD pipelines.",
-      "The architecture is straightforward: an LLM agent (OpenAI-compatible) orchestrates a toolchain of MCP servers for recon, scanning, and exploitation. Each phase feeds into the next — recon results determine scan targets, scan findings guide exploitation.",
-      "<strong>Key lessons:</strong>",
-      "1. Start with the narrowest possible scope. VulnClaw v0.1 only did port scanning + service detection.",
-      "2. LLM agents are powerful but unpredictable. Always validate outputs before execution.",
-      "3. MCP (Model Context Protocol) was a game-changer — it decouples the agent from specific tools.",
-      "4. Open source drove the quality up faster than any QA process could have.",
-      "The project is now at v0.4.0 with active community contributions. Available on GitHub under MIT license."
-    ]
-  },
   "saas-boilerplate-lessons": {
     body: [
       "I've built the same auth system five times. Magic links, OAuth, 2FA, session management — every time a new project, every time from scratch. The fifth time, I stopped and asked: why isn't there a production-ready boilerplate that just works?",
-      "So I built Trova.",
-      "Trova is a Next.js 16 SaaS boilerplate with everything you need to launch: Better Auth, Drizzle ORM, Resend emails, Stripe billing, i18n (en/it), and shadcn/ui. It's not a demo app — it's a production foundation.",
-      "<strong>What I learned:</strong>",
-      "1. <strong>Auth is the hardest part.</strong> Magic links, OAuth providers, 2FA, session rotation — getting all of these right without a managed service is deceptively complex. Better Auth handled most of it, but edge cases still required careful handling.",
-      "2. <strong>i18n must be there from day one.</strong> Adding internationalization later is a painful refactor. next-intl made it straightforward, but only because it was baked into the architecture from the start.",
-      "3. <strong>Stripe integration is never \"done\".</strong> Webhooks, idempotency, failure recovery — Stripe requires careful state management. The boilerplate handles the 90% case; every SaaS will need to customize the remaining 10%.",
-      "4. <strong>Email is infrastructure, not a feature.</strong> Transactional emails (welcome, reset password, invoices) must be reliable. Using Resend with React Email templates gave us type-safe, beautiful emails out of the box.",
-      "Trova is available as a one-time purchase (€49) with full source code, lifetime updates, and priority support."
+      "So I built Trova. It's a Next.js 16 SaaS boilerplate with Better Auth, Drizzle ORM, Resend, Stripe billing, i18n, and shadcn/ui. But this isn't a post about the product — it's about what building it taught me about delivery, scope, and operations.",
+      "<strong>1. The last 10% takes 50% of the time.</strong> Every time. The auth system worked on day 3. The edge cases (session rotation, provider unlinking, race conditions) took two more weeks. I've seen this pattern in every project I've managed, from e-commerce platforms to enterprise integrations. The 90% milestone is a mirage. Plan for it.",
+      "<strong>2. Scope is a negotiation, not a specification.</strong> I started with a clear feature list. Halfway through, I found myself building a demo generator, a license key system, and a changelog page. None of these were in the original plan. Every feature had a reasonable justification. The aggregate cost was two extra months. Saying \"no\" to a good feature is harder than saying \"no\" to a bad one — and more important.",
+      "<strong>3. Tools are multipliers, not solutions.</strong> I chose each tool carefully: Better Auth for auth, Resend for email, Stripe for billing. Each saved me weeks. But the integration cost between them — data synchronization, error handling, idempotency — was higher than any individual tool's overhead. This is exactly the pattern I see in operations: buying best-in-class tools for each function, then suffering the integration tax. The toolchain is only as strong as its weakest interface.",
+      "<strong>4. Documentation is delivery.</strong> I wrote comprehensive setup guides, API references, and migration documents. Not because users asked for them, but because good documentation is the difference between a product that ships and one that sits on a shelf. In operations, the same applies: a well-documented process is one that can be executed, audited, and improved. An undocumented process is tribal knowledge with a single point of failure.",
+      "<strong>5. You can't optimize what you don't measure.</strong> I tracked every build time, every deploy cycle, every customer issue. The data showed patterns I wouldn't have noticed otherwise — like the fact that Stripe webhook failures clustered around Monday mornings (a caching issue with the idempotency layer). In operations, this is the whole game. If you don't have metrics, you're navigating by anecdote.",
+      "Building Trova took four months longer than I expected. But the operational lessons I learned from that process have saved me years of mistakes in every project since."
     ]
   },
   "operazioni-e-sicurezza-allineamento": {
@@ -94,18 +96,32 @@ const postContent: Record<string, { body: string[] }> = {
       "I team che capiscono questo non vedono la sicurezza come un centro di costo. La vedono come un moltiplicatore di forza."
     ]
   },
-  "costruire-vulnclaw": {
+  "lezioni-operazioni-prodotto": {
     body: [
-      "VulnClaw è nato come progetto secondario — un modo per automatizzare le parti noiose del penetration testing che facevo manualmente. Quello che è iniziato come poche centinaia di righe di Python è cresciuto in un CLI completo di pentesting AI con integrazione MCP.",
-      "<strong>Perché CLI-first?</strong>",
-      "La maggior parte degli strumenti di sicurezza cerca di fare tutto: web UI, API, CLI, dashboard. Il risultato è di solito mediocre in tutto. Ho scelto CLI-first perché i penetration tester vivono nel terminale.",
-      "L'architettura è semplice: un agente LLM orchestra una toolchain di server MCP per ricognizione, scansione e exploitation.",
-      "<strong>Lezioni chiave:</strong>",
-      "1. Inizia con lo scope più ristretto possibile. VulnClaw v0.1 faceva solo port scanning.",
-      "2. Gli agenti LLM sono potenti ma imprevedibili. Valida sempre gli output prima dell'esecuzione.",
-      "3. MCP è stato un punto di svolta — disaccoppia l'agente dagli strumenti specifici.",
-      "4. L'open source ha guidato la qualità più velocemente di qualsiasi processo QA.",
-      "Il progetto è ora alla v0.4.0 con contributi attivi della community."
+      "Ho costruito lo stesso sistema di autenticazione cinque volte. Magic link, OAuth, 2FA, gestione sessioni — ogni volta un progetto nuovo, ogni volta da zero. Alla quinta volta mi sono fermato e ho chiesto: perché non esiste un boilerplate production-ready che funziona e basta?",
+      "Così ho costruito Trova. Un boilerplate SaaS con Next.js 16, Better Auth, Drizzle ORM, Resend, Stripe, i18n e shadcn/ui. Ma questo non è un post sul prodotto — è su cosa ho imparato costruendolo: delivery, scope, operations.",
+      "<strong>1. L'ultimo 10% prende il 50% del tempo.</strong> Sempre. L'auth system funzionava al giorno 3. I casi limite (session rotation, provider unlinking, race condition) hanno preso altre due settimane. Vedo questo pattern in ogni progetto che ho gestito, dalle piattaforme e-commerce alle integrazioni enterprise. Il traguardo del 90% è un miraggio. Pianifica per quello vero.",
+      "<strong>2. Lo scope è una negoziazione, non una specifica.</strong> Sono partito con una lista chiara di funzionalità. A metà strada mi sono ritrovato a costruire un generatore di demo, un sistema di licenze e una pagina changelog. Nessuna di queste era nel piano originale. Ogni feature aveva una giustificazione ragionevole. Il costo aggregato? Due mesi extra. Dire \"no\" a una buona feature è più difficile che dire \"no\" a una cattiva — ed è più importante.",
+      "<strong>3. Gli strumenti sono moltiplicatori, non soluzioni.</strong> Ho scelto ogni tool con cura: Better Auth per l'auth, Resend per le email, Stripe per i pagamenti. Ognuno mi ha risparmiato settimane. Ma il costo d'integrazione — sincronizzazione dati, gestione errori, idempotenza — è stato più alto del beneficio di ogni singolo tool. Questo è esattamente il pattern che vedo nelle operations: comprare il meglio di ogni categoria, poi soffrire la tassa d'integrazione.",
+      "<strong>4. La documentazione è delivery.</strong> Ho scritto guide di setup complete, API reference e documenti di migrazione. Non perché gli utenti le chiedessero, ma perché una buona documentazione è la differenza tra un prodotto che viene adottato e uno che prende polvere. Nelle operations vale lo stesso: un processo ben documentato può essere eseguito, auditato e migliorato. Un processo non documentato è conoscenza tribale con un singolo punto di fallimento.",
+      "<strong>5. Non puoi ottimizzare ciò che non misuri.</strong> Ho tracciato ogni tempo di build, ogni deploy, ogni segnalazione utente. I dati hanno mostrato pattern che non avrei notato altrimenti — come il fatto che gli errori dei webhook Stripe si concentravano il lunedì mattina (un problema di cache con il layer di idempotenza). Nelle operations, questo è il gioco. Se non hai metriche, navighi a vista.",
+      "Costruire Trova ha preso quattro mesi in più del previsto. Ma le lezioni operative che ho imparato da quel processo mi hanno fatto risparmiare anni di errori in ogni progetto successivo."
+    ]
+  },
+  "diagnosticare-caos-operativo": {
+    body: [
+      "Ogni organizzazione in cui sono entrato aveva debito operativo. La domanda non è mai \"c'è caos?\" — è \"quanto e dove?\" La risposta determina se sei a settimane da un trimestre fluido o a mesi da un incendio.",
+      "Negli anni ho sviluppato un framework diagnostico che taglia il rumore. Richiede circa tre ore e ti dà una mappa prioritizzata di esattamente cosa sistemare. Ecco come funziona.",
+      "<strong>Fase 1: La Mappa dei Processi (60 min)</strong>",
+      "Prendi una lavagna (o Miro) e mappa ogni processo end-to-end. Parti dal trigger (un cliente che si iscrive, un ordine, un ticket di supporto) e traccia fino all'outcome (ricavi riconosciuti, ticket chiuso, prodotto rilasciato). Segna ogni passaggio di mano, ogni gate di approvazione, ogni cambio di strumento.",
+      "Cerca tre cose: densità di passaggi (quante volte il lavoro cambia mano?), cambi di strumento (quanti tool toccano un processo?) e colli di bottiglia di approvazione (dove il lavoro aspetta una persona?).",
+      "<strong>Fase 2: La Baseline delle Metriche (60 min)</strong>",
+      "Per ogni processo, misura tre numeri: lead time (dal trigger all'outcome), active time (lavoro effettivo) e wait time (code). Il rapporto tra active e totale è la tua efficienza di processo. Sotto il 40% significa che il team passa più tempo ad aspettare che a lavorare.",
+      "Esporta dal tuo sistema di registrazione (CRM, Jira, ERP) i cycle time degli ultimi 90 giorni. Se non riesci a ottenere questi dati in 10 minuti, questa è la tua prima scoperta — il tuo processo è invisibile, quindi è ingestibile.",
+      "<strong>Fase 3: La Matrice di Priorità (60 min)</strong>",
+      "Valuta ogni processo su due assi: impatto operativo (quanto influisce su ricavi o delivery?) e risolvibilità (quanto sforzo per migliorare?). Priorità 1 = alto impatto, facile da risolvere. Questi sono i tuoi quick win. Priorità 4 = basso impatto, difficile. Ignorali.",
+      "Sii spietato nelle priorità. La maggior parte dei team con cui ho lavorato ha trovato 3-5 item P1 risolvibili in 2-4 settimane. Sistemare solo quelli recupera tipicamente il 15-25% della capacità del team.",
+      "Il framework è deliberatamente semplice perché la complessità operativa è il problema, non la soluzione. Non ti serve un tool o un consulente — ti servono una lavagna, tre ore, e la volontà di guardare onestamente ai tuoi processi."
     ]
   }
 };
@@ -125,7 +141,7 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       {/* Back link */}
       <div className="pt-28 md:pt-36">
-        <Section className="!pt-0 !pb-0">
+        <Section className="pt-0! pb-0!">
           <div className="max-w-3xl mx-auto">
             <Link
               href="/blog"
@@ -143,7 +159,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-accent/6 blur-[120px]" />
         </div>
-        <Section className="!pt-0 !pb-0 relative">
+        <Section className="pt-0! pb-0! relative">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
               <span className="flex items-center gap-1.5">
@@ -166,7 +182,7 @@ export default async function BlogPostPage({ params }: Props) {
       </section>
 
       {/* Post body */}
-      <Section animate className="bg-muted/30 !py-16 md:!py-20">
+      <Section animate className="bg-muted/30 py-16! md:!py-20">
         <article className="max-w-3xl mx-auto">
           {content.body.map((paragraph, i) => (
             <p
@@ -197,9 +213,9 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
           </div>
 
-          {/* Contextual product CTA */}
+          {/* Contextual CTA */}
           <div className="flex flex-wrap justify-center gap-3">
-            {(slug.includes("ops-security") || slug.includes("operazioni")) && (
+            {(slug.includes("chaos") || slug.includes("caos") || slug.includes("ops-security") || slug.includes("operazioni")) && (
               <Link
                 href="/freebie"
                 className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
@@ -208,24 +224,13 @@ export default async function BlogPostPage({ params }: Props) {
                 {isIt ? "Scarica il Playbook" : "Download the Playbook"}
               </Link>
             )}
-            {(slug.includes("vulnclaw") || slug.includes("costruire")) && (
-              <Link
-                href="/projects/vulnclaw"
-                className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <ArrowRight className="size-4" />
-                {isIt ? "Scopri VulnClaw" : "Explore VulnClaw"}
-              </Link>
-            )}
-            {(slug.includes("saas") || slug.includes("boilerplate")) && (
-              <Link
-                href="/trova"
-                className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <ShoppingCart className="size-4" />
-                {isIt ? "Scopri Trova" : "Get Trova (€49)"}
-              </Link>
-            )}
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <ArrowRight className="size-4" />
+              {isIt ? "Parlami del tuo progetto" : "Tell me about your project"}
+            </Link>
             <Link
               href="/blog"
               className="group inline-flex items-center justify-center gap-2 h-11 rounded-xl border border-border/50 bg-card shadow-sm hover:border-accent/30 hover:bg-accent/5 px-5 text-sm font-medium transition-all duration-300"

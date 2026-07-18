@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
@@ -7,7 +8,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 import "@/styles/globals.css";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   children: React.ReactNode;
@@ -41,9 +42,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: `${baseUrl}/images/og-default.svg`,
-          width: 1200,
-          height: 630,
+          url: `${baseUrl}/assets/trova-banner-1600x900.png`,
+          width: 1600,
+          height: 900,
           alt: `${title} — ${t("tagline")}`,
         },
       ],
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [`${baseUrl}/images/og-default.svg`],
+      images: [`${baseUrl}/assets/trova-banner-1600x900.png`],
     },
     robots: {
       index: true,
@@ -99,7 +100,7 @@ export default async function LocaleLayout({
           addressRegion: "PD",
           addressCountry: "IT",
         },
-        url: "https://riccardobozzato.netlify.app",
+        url: SITE_URL,
         sameAs: [
           "https://github.com/Riccardobozzato94",
           "https://linkedin.com/in/riccardobozzato",
@@ -110,7 +111,7 @@ export default async function LocaleLayout({
         name: "Trova SaaS Boilerplate",
         description:
           "Production-ready Next.js 16 SaaS boilerplate with auth, database, email, billing, i18n, and shadcn/ui.",
-        image: "https://riccardobozzato.netlify.app/images/trova-home.svg",
+        image: `${SITE_URL}/assets/trova-banner-1600x900.png`,
         offers: {
           "@type": "Offer",
           price: "49",

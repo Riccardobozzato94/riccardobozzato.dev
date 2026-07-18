@@ -5,6 +5,13 @@ OUTPUT = os.path.join(os.path.dirname(__file__), "ai-ops-security-playbook.pdf")
 
 FONT_DIR = "C:\\Windows\\Fonts"
 
+# Brand accent: emerald #22C55E => rgb(34, 197, 94)
+ACCENT = (34, 197, 94)
+BG = (10, 10, 11)
+CARD = (18, 18, 20)
+TEXT = (220, 220, 225)
+MUTED = (150, 150, 160)
+
 
 class PlaybookPDF(FPDF):
     def __init__(self):
@@ -17,11 +24,11 @@ class PlaybookPDF(FPDF):
         self.add_font("Arial", "BI", os.path.join(FONT_DIR, "arialbi.ttf"), uni=True)
 
     def dark_rect(self, x, y, w, h):
-        self.set_fill_color(20, 24, 35)
+        self.set_fill_color(*BG)
         self.rect(x, y, w, h, "F")
 
     def accent_line(self, x, y, w):
-        self.set_draw_color(0, 180, 255)
+        self.set_draw_color(*ACCENT)
         self.set_line_width(0.6)
         self.line(x, y, x + w, y)
 
@@ -29,54 +36,70 @@ class PlaybookPDF(FPDF):
         if self.page_no() == 1:
             return
         self.set_y(-18)
-        self.set_text_color(130, 130, 130)
+        self.set_text_color(*MUTED)
         self.set_font("Arial", "I", 8)
-        self.cell(0, 8, f"AI Ops Security Playbook  |  Riccardo Bozzato  |  Page {self.page_no()}", align="C")
+        self.cell(0, 8, f"AI Ops Security Playbook  |  riccardobozzato.dev  |  Page {self.page_no()}", align="C")
 
     def section_title(self, num, title):
         self.ln(4)
-        self.set_text_color(0, 180, 255)
+        self.set_text_color(*ACCENT)
         self.set_font("Arial", "B", 15)
-        title_full = f"Strategy {num}: {title}" if num else title
+        title_full = f"Playbook {num}: {title}" if num else title
         self.cell(0, 9, title_full)
         self.ln(5)
         self.accent_line(self.get_x(), self.get_y(), 60)
         self.ln(7)
 
     def body_text(self, text):
-        self.set_text_color(220, 220, 225)
+        self.set_text_color(*TEXT)
         self.set_font("Arial", "", 10)
         self.multi_cell(0, 5.5, text)
         self.ln(2)
 
     def bullet(self, text, bold_prefix=None):
-        self.set_text_color(220, 220, 225)
+        w = self.epw - 6
+        self.set_x(self.l_margin)
+        self.set_text_color(*ACCENT)
+        self.set_font("Arial", "B", 10)
+        self.cell(6, 5.5, "\u2022")
+        self.set_text_color(*TEXT)
         self.set_font("Arial", "", 10)
-        self.cell(6)
-        self.set_text_color(0, 180, 255)
-        self.write(5.5, "\u2022 ")
-        self.set_text_color(220, 220, 225)
-        if bold_prefix:
-            self.set_font("Arial", "B", 10)
-            self.write(5.5, bold_prefix + " ")
-            self.set_font("Arial", "", 10)
-        self.multi_cell(0, 5.5, text)
+        self.multi_cell(w, 5.5, (bold_prefix + " " if bold_prefix else "") + text)
         self.ln(1)
 
     def numbered_item(self, num, text, bold_prefix=None):
-        self.set_text_color(220, 220, 225)
-        self.set_font("Arial", "", 10)
-        self.cell(6)
-        self.set_text_color(0, 180, 255)
+        w = self.epw - 6
+        self.set_x(self.l_margin)
+        self.set_text_color(*ACCENT)
         self.set_font("Arial", "B", 10)
-        self.write(5.5, f"{num}. ")
-        self.set_text_color(220, 220, 225)
-        if bold_prefix:
-            self.set_font("Arial", "B", 10)
-            self.write(5.5, bold_prefix)
-            self.set_font("Arial", "", 10)
-        self.multi_cell(0, 5.5, text)
+        self.cell(6, 5.5, f"{num}.")
+        self.set_text_color(*TEXT)
+        self.set_font("Arial", "", 10)
+        self.multi_cell(w, 5.5, (bold_prefix if bold_prefix else "") + text)
         self.ln(1)
+
+    def callout(self, text):
+        self.ln(2)
+        self.set_fill_color(*CARD)
+        self.set_draw_color(*ACCENT)
+        self.set_line_width(0.3)
+        self.set_x(self.l_margin)
+        self.set_text_color(*TEXT)
+        self.set_font("Arial", "I", 10)
+        self.multi_cell(self.epw, 5.5, text, border="L", fill=True)
+        self.ln(3)
+
+    def code_block(self, lines):
+        self.ln(1)
+        self.set_fill_color(*CARD)
+        self.set_text_color(180, 255, 200)
+        self.set_font("Arial", "", 9)
+        w = self.epw - 6
+        self.set_x(self.l_margin)
+        for ln in lines:
+            self.cell(6)
+            self.multi_cell(w, 5, ln, fill=True)
+        self.ln(3)
 
 
 pdf = PlaybookPDF()
@@ -85,15 +108,15 @@ pdf = PlaybookPDF()
 pdf.add_page()
 pdf.dark_rect(0, 0, 210, 297)
 
-pdf.set_y(65)
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 32)
+pdf.set_y(55)
+pdf.set_text_color(*ACCENT)
+pdf.set_font("Arial", "B", 30)
 pdf.cell(0, 14, "The AI Ops Security Playbook", align="C")
-pdf.ln(16)
+pdf.ln(15)
 
 pdf.set_text_color(200, 200, 210)
 pdf.set_font("Arial", "", 13)
-pdf.multi_cell(0, 7.5, "5 Strategies to Secure Your Operations\nWithout Slowing Down Innovation", align="C")
+pdf.multi_cell(0, 7.5, "7 field-tested playbooks to align security with operations\nusing AI-driven workflows \u2014 copy-paste ready", align="C")
 pdf.ln(10)
 
 pdf.accent_line(55, pdf.get_y(), 100)
@@ -101,305 +124,159 @@ pdf.ln(14)
 
 pdf.set_text_color(180, 180, 190)
 pdf.set_font("Arial", "", 11)
-pdf.cell(0, 7, "Riccardo Bozzato", align="C")
+pdf.cell(0, 7, "Riccardo Bozzato \u2014 faceless builder", align="C")
 pdf.ln(8)
-pdf.set_text_color(130, 130, 145)
+pdf.set_text_color(*MUTED)
 pdf.set_font("Arial", "I", 10)
-pdf.cell(0, 6, "Operations & Delivery Consultant | PMP®", align="C")
+pdf.cell(0, 6, "Operations & Delivery Consultant | PMP\u00ae | Security Tool Builder", align="C")
 pdf.ln(30)
 
 pdf.set_text_color(90, 90, 105)
 pdf.set_font("Arial", "", 8)
-pdf.cell(0, 5, "riccardobozzato@gmail.com  \u2022  linkedin.com/in/riccardobozzato", align="C")
+pdf.cell(0, 5, "riccardobozzato.dev  \u2022  VulnClaw \u2022 Trova \u2022 OmniVoice", align="C")
 
-# ─── PAGE 2 — INTRODUCTION ─────────────────────────────────────
+# ─── PAGE 2 — HOW TO USE ─────────────────────────────────────
 pdf.add_page()
 pdf.dark_rect(0, 0, 210, 297)
 
-pdf.set_text_color(0, 180, 255)
+pdf.set_text_color(*ACCENT)
 pdf.set_font("Arial", "B", 18)
-pdf.cell(0, 10, "Introduction")
+pdf.cell(0, 10, "How to use this playbook")
 pdf.ln(6)
 pdf.accent_line(pdf.get_x(), pdf.get_y(), 50)
 pdf.ln(10)
 
 pdf.body_text(
-    "After years running operations at a fintech-adjacent company while building security "
-    "tools in my spare time, I've learned what actually works. This playbook distills the "
-    "tactics I use daily \u2014 no theory, just field-tested practices."
+    "This is not a theory book. Each playbook is a ready-to-run procedure you can apply this "
+    "week. The co-pilot (my Australian Shepherd) approves every deploy \u2014 you should too, after testing."
 )
-pdf.ln(2)
-pdf.body_text(
-    "My name is Riccardo Bozzato. I am an Operations & Delivery Consultant with a passion for building "
-    "secure, resilient systems. My work spans cloud infrastructure, incident response, "
-    "compliance automation, and open-source security tooling. I believe that security and "
-    "operations are not opposing forces \u2014 when aligned correctly, they amplify each other."
-)
-pdf.ln(2)
-pdf.body_text(
-    "This playbook is written for ops leaders, platform engineers, and security builders "
-    "who need practical answers. Every strategy here has been tested in production. Use what "
-    "fits, adapt what doesn't, and keep shipping."
-)
-
-# ─── PAGE 3 — STRATEGY 1 ───────────────────────────────────────
-pdf.add_page()
-pdf.dark_rect(0, 0, 210, 297)
-
-pdf.section_title(1, "The Ops-Security Alignment Framework")
-pdf.body_text(
-    "Most security initiatives fail because ops sees them as blockers. When a new control "
-    "slows down a deploy or adds friction to incident response, teams route around it. The "
-    "result? Shadow IT, alert fatigue, and a false sense of safety."
-)
-pdf.body_text(
-    "The Ops-Security Alignment Framework solves this by requiring every security control "
-    "to map directly to an ops metric. If it doesn't improve uptime, reduce response time, "
-    "or lower error rate, it needs rethinking \u2014 or it gets cut."
-)
-pdf.ln(2)
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "How it works:")
-pdf.ln(8)
-pdf.bullet("Map each security control to an ops KPI (uptime, MTTR, error budget)")
-pdf.bullet("Replace manual approval gates with automated policy checks")
-pdf.bullet("Measure security adoption by ops velocity, not compliance scorecards")
-pdf.bullet("Review quarterly: if a control doesn't move an ops needle, deprecate it")
-pdf.ln(4)
-pdf.set_text_color(200, 200, 210)
-pdf.set_font("Arial", "I", 10)
-pdf.multi_cell(0, 5.5, "Key takeaway: Security shouldn't be a gate. It should be a gear in the machine.")
-pdf.ln(2)
-pdf.accent_line(pdf.get_x(), pdf.get_y(), 55)
-
-# ─── PAGE 4 — STRATEGY 2 ───────────────────────────────────────
-pdf.add_page()
-pdf.dark_rect(0, 0, 210, 297)
-
-pdf.section_title(2, "3 Automation Plays That Save 10+ Hours/Week")
-pdf.body_text(
-    "The biggest time sink in ops-security is manual toil. These three plays eliminate the "
-    "busywork so you can focus on what matters."
-)
-pdf.ln(2)
-
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Play 1: Automated Incident Triage")
-pdf.ln(8)
-pdf.body_text("Trigger: Alert fires in monitoring system (e.g., Grafana, Prometheus).")
-pdf.body_text("Automation: Logs are fed to an AI classification layer that enriches the alert with severity, affected service, and probable cause. A Slack notification is posted with a structured summary and a link to the runbook.")
-pdf.body_text("Time saved: ~4 hours/week per on-call engineer.")
+pdf.body_text("Two ways to consume it:")
+pdf.numbered_item(1, "Pick the playbook that matches your biggest pain (slow deploys, alert fatigue, pentest backlog).")
+pdf.numbered_item(2, "Run the commands / copy the checklist into your workflow. Tweak to your stack.")
 pdf.ln(3)
+pdf.callout("Rule of thumb: if a security control slows your MTTR, it is a liability, not a control. Re-engineer it.")
 
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Play 2: Compliance as Code")
-pdf.ln(8)
-pdf.body_text("Trigger: A pull request modifies infrastructure definitions (Terraform, Kubernetes manifests).")
-pdf.body_text("Automation: Policy-as-code tools (e.g., Open Policy Agent, Checkov) scan the changes against compliance baselines (SOC2, ISO 27001, internal controls). The pipeline blocks or flags violations before merge.")
-pdf.body_text("Time saved: ~3 hours/week per auditor-facing engineer.")
-pdf.ln(3)
-
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Play 3: Self-Healing Runbooks")
-pdf.ln(8)
-pdf.body_text("Trigger: A known incident pattern is detected (disk full, service crash-loop, cert expiry).")
-pdf.body_text("Automation: A runbook automation engine executes remediation steps automatically \u2014 restart service, rotate certificate, scale replica count. Human is notified after resolution.")
-pdf.body_text("Time saved: ~4 hours/week in reduced incident response time.")
-pdf.ln(4)
-pdf.set_text_color(200, 200, 210)
-pdf.set_font("Arial", "I", 10)
-pdf.multi_cell(0, 5.5, "Total: 10\u201312 hours/week recovered. That's a full shift back to strategic work.")
-
-# ─── PAGE 5 — STRATEGY 3 ───────────────────────────────────────
+# ─── PLAYBOOK 1 — AI threat-model helper ─────────────────────
 pdf.add_page()
 pdf.dark_rect(0, 0, 210, 297)
-
-pdf.section_title(3, "Build a Security Culture Without Fear")
+pdf.section_title(1, "AI-Assisted Threat Modeling (in 15 min)")
 pdf.body_text(
-    "The strongest security posture is worthless if your team is afraid to report issues. "
-    "Fear-driven security cultures breed cover-ups and burnout. Here's how to build the "
-    "opposite."
+    "Use an LLM as a brainstorming partner to surface threats fast. Do NOT let it write the final "
+    "report \u2014 you validate. Prompt it as an adversary, then as a defender."
 )
-pdf.ln(2)
+pdf.body_text("Copy-paste prompt (defender mode):")
+pdf.code_block([
+    "You are a senior AppSec reviewer. For the system below, list the",
+    "top 10 STRIDE threats. For each: component, attack vector,",
+    "likelihood (H/M/L), impact (H/M/L), and one concrete mitigation.",
+    "System: <paste your architecture in 5 lines>",
+])
+pdf.bullet("Validate every LLM output against your real attack surface \u2014 hallucinations are common.")
+pdf.bullet("Feed the output into your issue tracker as DRAFT, not as truth.")
+pdf.callout("Output: a triaged threat list in 15 min instead of a 2-hour meeting.")
 
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Blameless Post-Mortems")
-pdf.ln(8)
-pdf.body_text(
-    'Every incident ends with a post-mortem that asks "what broke in the system?" not '
-    '"who broke it?" The goal is to find the process gap, not the scapegoat. Publish them '
-    "internally (anonymized if needed) so the whole org learns."
-)
-pdf.ln(2)
-
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Security Champions in Every Team")
-pdf.ln(8)
-pdf.body_text(
-    "Instead of a centralised security team that reviews everything, embed a security "
-    "champion in each product team. They get training, tooling access, and a direct line to "
-    "the ops security lead. No separate function \u2014 security is everyone's job."
-)
-pdf.ln(2)
-
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Metrics That Track Progress, Not Punish Mistakes")
-pdf.ln(8)
-pdf.body_text(
-    "Measure mean time to detect (MTTD), mean time to resolve (MTTR), and vulnerability "
-    "remediation rate. Never track individual error counts. Share dashboards publicly within "
-    "the org \u2014 transparency builds trust."
-)
-pdf.ln(2)
-
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, 'The "You Found It, You Own It" Policy')
-pdf.ln(8)
-pdf.body_text(
-    "Whoever discovers a vulnerability owns the fix \u2014 with full support from the team. "
-    "This turns finding issues into a point of pride, not a burden. Reward finders with "
-    "recognition, not more work."
-)
-
-# ─── PAGE 6 — STRATEGY 4 ───────────────────────────────────────
+# ─── PLAYBOOK 2 — VulnClaw quick pentest ─────────────────────
 pdf.add_page()
 pdf.dark_rect(0, 0, 210, 297)
-
-pdf.section_title(4, "The Open Source Toolchain I Actually Use")
+pdf.section_title(2, "Your First Local AI Pentest (VulnClaw)")
 pdf.body_text(
-    "Proprietary security tools lock you into their roadmap and pricing. Open source gives "
-    "you transparency, community-driven threat intelligence, and full control over your data. "
-    "Here's the stack I run in production."
+    "VulnClaw is a local-first AI pentest CLI. No cloud, no data leaving your machine. "
+    "Install and run a scoped scan in under 5 minutes."
 )
-pdf.ln(2)
+pdf.code_block([
+    "pip install vulnclaw",
+    "vulnclaw init --target http://localhost:3000",
+    "vulnclaw run --scope auth,api --mode authorized-only",
+])
+pdf.bullet("Always set --mode authorized-only. Unauthorized scanning is illegal.")
+pdf.bullet("Review the verifier output: VulnClaw re-runs the PoC before reporting (kills false positives).")
+pdf.bullet("Export: vulnclaw report --format owasp > findings.json")
+pdf.callout("Never run python_execute on untrusted targets without a sandbox. Your machine is not a lab.")
 
-tools = [
-    ("Wazuh (SIEM)", "Endpoint detection, log analysis, and file integrity monitoring. Deploy the agent on every server. Centralised dashboard for alerts and compliance reports."),
-    ("VulnClaw (Pentesting)", "My own open-source AI-driven penetration testing CLI. Automates recon, exploitation, and reporting. Integrates with CI/CD for pre-merge security gates."),
-    ("OpenVAS (Scanning)", "Vulnerability scanning on a weekly cadence. Schedule scans against your internal and external ranges. Feed results into Grafana for trend tracking."),
-    ("Grafana (Dashboards)", "Unified observability. Pipe in Wazuh alerts, OpenVAS findings, and VulnClaw reports into a single pane of glass. Correlate security events with ops metrics."),
-]
-for name, desc in tools:
-    pdf.set_text_color(0, 180, 255)
-    pdf.set_font("Arial", "B", 11)
-    pdf.cell(0, 7, name)
-    pdf.ln(7)
-    pdf.body_text(desc)
-    pdf.ln(1)
-
-pdf.ln(2)
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Docker Compose for Testing")
-pdf.ln(8)
-pdf.set_text_color(180, 200, 210)
-pdf.set_font("Arial", "", 8)
-compose = """version: '3.8'
-services:
-  wazuh:
-    image: wazuh/wazuh-oss:latest
-    ports:
-      - "55000:55000"
-      - "1514:1514/udp"
-  openvas:
-    image: greenbone/openvas:latest
-    ports:
-      - "9392:9392"
-  grafana:
-    image: grafana/grafana:latest
-    ports:
-      - "3000:3000"
-  vulnclaw:
-    build: ./vulnclaw
-    depends_on: [wazuh]"""
-for line in compose.split("\n"):
-    pdf.cell(8)
-    pdf.cell(0, 4, line)
-    pdf.ln(4)
-
-# ─── PAGE 7 — STRATEGY 5 ───────────────────────────────────────
+# ─── PLAYBOOK 3 — Ops KPI alignment ──────────────────────────
 pdf.add_page()
 pdf.dark_rect(0, 0, 210, 297)
-
-pdf.section_title(5, "My Personal Incident Response Checklist")
+pdf.section_title(3, "Map Security to Ops KPIs")
 pdf.body_text(
-    "When something goes wrong, you don't have time to think. You follow a checklist. "
-    "This is mine \u2014 refined after dozens of real incidents."
+    "Security wins adoption when it moves an ops number. Use this table to justify every control."
 )
-pdf.ln(3)
+pdf.bullet("MFA rollout \u2192 measure: failed-login incidents / account-takeover tickets", bold_prefix="")
+pdf.bullet("Secrets scanner in CI \u2192 measure: leaked-credential incidents / MTTR on leaks")
+pdf.bullet("Policy-as-code \u2192 measure: deploy lead time (should NOT increase)")
+pdf.bullet("WAF / rate-limit \u2192 measure: p95 latency (should stay flat)")
+pdf.ln(2)
+pdf.callout("If a control does not move a KPI in 90 days, deprecate it. Dead controls create alert fatigue.")
 
-checklist = [
-    ("Detect & validate", "Is this a real incident or a false positive? Cross-check with at least two data sources before declaring."),
-    ("Classify severity", "P1 (service down / data breach) through P4 (cosmetic issue, no user impact). Severity drives response speed."),
-    ("Assemble response team", "Pull in the on-call engineer, subject matter expert, and ops lead. Use a dedicated Slack channel."),
-    ("Contain", "Stop the bleeding. Isolate affected systems, roll back bad deployments, block malicious IPs. Speed over perfection."),
-    ("Eradicate", "Remove the root cause. Patch the vulnerability, delete the malware, rotate compromised credentials."),
-    ("Recover", "Restore service to normal. Verify through monitoring that all systems are healthy."),
-    ("Document timeline", "Every action, timestamped. This becomes the backbone of your post-mortem."),
-    ("Root cause analysis", "Dig into why it happened. Use the 5 Whys. Find the systemic gap, not the surface error."),
-    ("Implement preventive measures", "Deploy the fix, update runbooks, add monitoring alerts so this never happens again."),
-    ("Post-mortem", "Blameless, actionable, shared. What went well? What went wrong? What will we change?"),
-]
-for i, (title, desc) in enumerate(checklist, 1):
-    pdf.numbered_item(i, desc, bold_prefix=f"{title} \u2014 ")
-
-# ─── LAST PAGE — ABOUT ─────────────────────────────────────────
+# ─── PLAYBOOK 4 — Alert fatigue fix ──────────────────────────
 pdf.add_page()
 pdf.dark_rect(0, 0, 210, 297)
+pdf.section_title(4, "Kill Alert Fatigue in 3 Steps")
+pdf.body_text("Most SecOps teams drown in noise. Fix it before adding more tooling.")
+pdf.numbered_item(1, "Tag every alert: actionable / informative / noise. Delete 'noise' after 2 weeks.")
+pdf.numbered_item(2, "Route actionable alerts to on-call with a runbook link \u2014 never to a shared inbox.")
+pdf.numbered_item(3, "Auto-triage with an LLM agent: classify, enrich, draft the first response.")
+pdf.callout("Target: <5 actionable pages/week per engineer. Above that, your pipeline is the bug.")
 
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 18)
-pdf.cell(0, 10, "About Riccardo Bozzato")
-pdf.ln(6)
-pdf.accent_line(pdf.get_x(), pdf.get_y(), 50)
-pdf.ln(10)
+# ─── PLAYBOOK 5 — Secure deploy checklist ────────────────────
+pdf.add_page()
+pdf.dark_rect(0, 0, 210, 297)
+pdf.section_title(5, "The 1-Minute Secure Deploy Checklist")
+pdf.body_text("Run this before every production release. Cheap insurance.")
+pdf.bullet("Secrets scanned (no .env committed, no keys in image layers)")
+pdf.bullet("SBOM generated + dependencies CVE-checked")
+pdf.bullet("Feature flag on for risky changes (instant rollback)")
+pdf.bullet("Error budget remaining > 20%")
+pdf.bullet("Rollback command tested in staging this sprint")
+pdf.ln(2)
+pdf.code_block([
+    "# quick CVE check in CI",
+    "pip-audit || echo 'FAIL: fix before deploy'",
+])
+pdf.callout("The dog approves the deploy only after this checklist is green. So should you.")
 
-pdf.body_text(
-    "Riccardo Bozzato is an Operations & Delivery Consultant (PMP\u00ae) who helps digital "
-    "companies bring order to their operations. With a track record of managing enterprise "
-    "projects worth \u20ac500K+ and coordinating teams of up to 12 people, he combines "
-    "methodological rigor with operational speed."
-)
-pdf.body_text(
-    "He is the creator of VulnClaw, an AI-driven penetration testing CLI, and Trova, a "
-    "SaaS boilerplate. Both projects reflect his belief that the best operators are also "
-    "builders."
-)
-pdf.ln(6)
+# ─── PLAYBOOK 6 — AI agent guardrails ────────────────────────
+pdf.add_page()
+pdf.dark_rect(0, 0, 210, 297)
+pdf.section_title(6, "Guardrails for AI Agents in Prod")
+pdf.body_text("Autonomous agents call tools. One bad tool call = incident. Constrain them.")
+pdf.bullet("Allow-list tools per agent \u2014 deny-by-default.")
+pdf.bullet("Cap spend per run (e.g. max $0.05) + circuit breaker on 5xx spike.")
+pdf.bullet("Log every tool call with input hash for audit.")
+pdf.bullet("Human-in-the-loop for any write/delete/external-pay action.")
+pdf.callout("Pattern: route cheap model first, promote to expensive only if eval passes. Never open-ended retry loops.")
 
-pdf.set_text_color(0, 180, 255)
-pdf.set_font("Arial", "B", 11)
-pdf.cell(0, 7, "Contact & Links")
-pdf.ln(8)
-pdf.set_text_color(220, 220, 225)
-pdf.set_font("Arial", "", 10)
-pdf.cell(8)
-pdf.cell(0, 6, "Email: riccardobozzato@gmail.com")
-pdf.ln(6)
-pdf.cell(8)
-pdf.cell(0, 6, "LinkedIn: linkedin.com/in/riccardobozzato")
-pdf.ln(6)
-pdf.cell(8)
-pdf.cell(0, 6, "GitHub: github.com/0x1717")
-pdf.ln(6)
-pdf.cell(8)
-pdf.cell(0, 6, "VulnClaw: github.com/0x1717/VulnClaw")
-pdf.ln(6)
-pdf.cell(8)
-pdf.cell(0, 6, "Trova: github.com/0x1717/Trova")
+# ─── PLAYBOOK 7 — Delivery metrics ───────────────────────────
+pdf.add_page()
+pdf.dark_rect(0, 0, 210, 297)
+pdf.section_title(7, "Delivery Health Scorecard")
+pdf.body_text("A weekly 1-page view for Heads of Ops/Delivery. Track these 5 only.")
+pdf.bullet("On-time delivery % (vs sprint commitment)")
+pdf.bullet("Cycle time (idea \u2192 prod, median days)")
+pdf.bullet("Change failure rate (< 15% is healthy)")
+pdf.bullet("MTTR (hours)")
+pdf.bullet("Team velocity trend (not absolute \u2014 trend matters)")
+pdf.ln(2)
+pdf.callout("Review weekly, 15 min standup. If 2 of 5 are red for 3 weeks, freeze features, fix flow.")
+
+# ─── FINAL CTA ───────────────────────────────────────────────
+pdf.add_page()
+pdf.dark_rect(0, 0, 210, 297)
+pdf.set_y(70)
+pdf.set_text_color(*ACCENT)
+pdf.set_font("Arial", "B", 22)
+pdf.cell(0, 12, "Start this week.", align="C")
 pdf.ln(14)
+pdf.set_text_color(200, 200, 210)
+pdf.set_font("Arial", "", 12)
+pdf.multi_cell(0, 7, "Pick ONE playbook. Run it. Then grab the free Trova boilerplate or test VulnClaw.", align="C")
+pdf.ln(12)
+pdf.accent_line(65, pdf.get_y(), 80)
+pdf.ln(14)
+pdf.set_text_color(*MUTED)
+pdf.set_font("Arial", "I", 10)
+pdf.cell(0, 6, "riccardobozzato.dev  \u2022  @riccardobozzato.dev (IG)  \u2022  riccardobozzato (Twitch)", align="C")
+pdf.ln(8)
+pdf.cell(0, 6, "Faceless builder. Four-legged co-pilot. Just code.", align="C")
 
-pdf.accent_line(pdf.get_x(), pdf.get_y(), 60)
-
-# ─── OUTPUT ─────────────────────────────────────────────────────
 pdf.output(OUTPUT)
-print(f"PDF created: {OUTPUT}")
-print(f"Size: {os.path.getsize(OUTPUT) / 1024:.1f} KB")
+print(f"PDF generated: {OUTPUT}")

@@ -13,4 +13,4 @@ export function getResendClient(): Resend | null {
 
 export const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
 export const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "riccardobozzato@gmail.com";
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://idyllic-cranachan-b2c666.netlify.app";
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.dev";

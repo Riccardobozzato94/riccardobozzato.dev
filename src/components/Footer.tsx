@@ -4,24 +4,13 @@ import { useTranslations } from "next-intl";
 import { Github, Linkedin, Mail, Phone, MapPin, Hexagon, ArrowUpRight, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { ACTIVE_PROFILES } from "@/lib/social";
 
-const SOCIAL_LINKS = [
-  {
-    label: "github",
-    href: "https://github.com/Riccardobozzato94",
-    icon: Github,
-  },
-  {
-    label: "linkedin",
-    href: "https://www.linkedin.com/in/riccardobozzato/",
-    icon: Linkedin,
-  },
-  {
-    label: "email",
-    href: "mailto:riccardobozzato@gmail.com",
-    icon: Mail,
-  },
-];
+const SOCIAL_ICONS: Record<string, typeof Github> = {
+  github: Github,
+  linkedin: Linkedin,
+  email: Mail,
+};
 
 const FOOTER_LINKS = [
   { key: "home", href: "/" },
@@ -124,11 +113,11 @@ export default function Footer() {
           {/* Newsletter & Social */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
-              Free Playbook
+              Free Diagnostic
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Get the AI Ops Security Playbook — 5 field-tested strategies
-              to align security with operations.
+              Get the Operational Chaos Diagnostic — a 3-hour framework to map,
+              measure, and prioritize operational debt.
             </p>
             <Link
               href="/freebie"
@@ -143,18 +132,22 @@ export default function Footer() {
                 Connect
               </h5>
               <div className="flex flex-wrap gap-3">
-                {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center size-10 rounded-xl border border-border/60 text-muted-foreground transition-all duration-200 hover:border-accent/40 hover:text-accent hover:bg-accent/5 hover:-translate-y-0.5"
-                    aria-label={t(`social.${label}`)}
-                  >
-                    <Icon className="size-4.5" />
-                  </a>
-                ))}
+                {ACTIVE_PROFILES.map(({ key, href, label }) => {
+                  const Icon = SOCIAL_ICONS[key];
+                  if (!Icon) return null;
+                  return (
+                    <a
+                      key={key}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center size-10 rounded-xl border border-border/60 text-muted-foreground transition-all duration-200 hover:border-accent/40 hover:text-accent hover:bg-accent/5 hover:-translate-y-0.5"
+                      aria-label={label}
+                    >
+                      <Icon className="size-4.5" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
             <div className="mt-6 space-y-2">

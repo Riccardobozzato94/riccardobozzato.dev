@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operational Chaos Diagnostic — Worksheet</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #1a1a2e;
+      background: #f8f9fc;
+      padding: 20px;
+    }
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 20px 24px;
+    }
+    /* ─── Header ─── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #6c5ce7;
+    }
+    .header h1 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #1a1a2e;
+    }
+    .header h1 span { color: #6c5ce7; }
+    .header .meta {
+      text-align: right;
+      font-size: 9px;
+      color: #6b7280;
+    }
+    .header .meta input {
+      display: block;
+      width: 180px;
+      padding: 3px 6px;
+      font-size: 9px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+    /* ─── Sections ─── */
+    .section {
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6c5ce7;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section-title .badge {
+      font-size: 8px;
+      background: #6c5ce7;
+      color: #fff;
+      border-radius: 10px;
+      padding: 1px 7px;
+      font-weight: 600;
+    }
+    .section-desc {
+      font-size: 9px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+    /* ─── Phase 1: Process Map ─── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .process-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: #fafbfc;
+    }
+    .process-card h4 {
+      font-size: 9px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #374151;
+    }
+    .process-card .field {
+      margin-bottom: 3px;
+      font-size: 8px;
+      color: #6b7280;
+    }
+    .process-card .field input,
+    .process-card .field textarea {
+      width: 100%;
+      padding: 2px 5px;
+      font-size: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 3px;
+      background: #fff;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .process-card .field textarea { min-height: 28px; }
+    .process-card .indicators {
+      display: flex;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .process-card .indicators input {
+      width: 100%;
+      padding: 2px 5px;
+      font-size: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 3px;
+      background: #fff;
+    }
+    .label-sm {
+      display: block;
+      font-size: 7px;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 1px;
+    }
+    /* ─── Phase 2: Metrics ─── */
+    .metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8px;
+    }
+    .metrics-table th {
+      background: #6c5ce7;
+      color: #fff;
+      padding: 5px 6px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .metrics-table td {
+      padding: 4px 6px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .metrics-table input {
+      width: 100%;
+      padding: 2px 5px;
+      font-size: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 3px;
+    }
+    .metrics-table .formula {
+      font-size: 7px;
+      color: #6b7280;
+      font-style: italic;
+    }
+    /* ─── Phase 3: Priority Matrix ─── */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .matrix-quadrant {
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 8px 10px;
+      min-height: 90px;
+    }
+    .matrix-quadrant.p1 { border-left: 3px solid #ef4444; background: #fef2f2; }
+    .matrix-quadrant.p2 { border-left: 3px solid #f59e0b; background: #fffbeb; }
+    .matrix-quadrant.p3 { border-left: 3px solid #3b82f6; background: #eff6ff; }
+    .matrix-quadrant.p4 { border-left: 3px solid #9ca3af; background: #f9fafb; }
+    .matrix-quadrant h4 {
+      font-size: 9px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .matrix-quadrant .tag {
+      font-size: 7px;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .matrix-quadrant textarea {
+      width: 100%;
+      min-height: 36px;
+      padding: 2px 5px;
+      font-size: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 3px;
+      background: #fff;
+      font-family: inherit;
+      resize: vertical;
+    }
+    /* ─── Quick Wins ─── */
+    .wins-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .win-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 4px;
+    }
+    .win-item input {
+      flex: 1;
+      padding: 2px 5px;
+      font-size: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 3px;
+      background: #fff;
+    }
+    .win-item .impact {
+      font-size: 7px;
+      color: #16a34a;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    /* ─── Footer ─── */
+    .footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7px;
+      color: #9ca3af;
+    }
+    .footer a {
+      color: #6c5ce7;
+      text-decoration: none;
+    }
+    /* ─── Print ─── */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; max-width: 100%; padding: 15px 18px; }
+      .matrix-quadrant textarea, .process-card .field textarea { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <h1>Operational <span>Chaos</span> Diagnostic</h1>
+        <p style="font-size:9px;color:#6b7280;margin-top:2px;">A 3-hour framework to map, measure, and prioritize operational debt</p>
+      </div>
+      <div class="meta">
+        <div style="margin-bottom:4px;">Date: <input type="text" placeholder="YYYY-MM-DD"></div>
+        <div>Team/Department: <input type="text" placeholder="e.g., Engineering, Ops"></div>
+      </div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="section">
+      <div class="section-title">
+        <span>🔍 Phase 1: Process Map</span>
+        <span class="badge">60 min</span>
+      </div>
+      <p class="section-desc">
+        Map each process end-to-end (trigger → outcome). Mark every handoff, approval gate, and tool change.
+        Identify: <strong>handoff density</strong> (how many times work changes hands),
+        <strong>tool switches</strong> (how many tools touch one process),
+        <strong>approval bottlenecks</strong> (where work waits for a person).
+      </p>
+      <div class="process-grid">
+        <div class="process-card">
+          <h4>Process 1</h4>
+          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Customer onboarding"></div>
+          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., Signup → First invoice paid"></textarea></div>
+          <div class="indicators">
+            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
+          </div>
+        </div>
+        <div class="process-card">
+          <h4>Process 2</h4>
+          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Support ticket"></div>
+          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., Ticket created → Ticket closed"></textarea></div>
+          <div class="indicators">
+            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
+          </div>
+        </div>
+        <div class="process-card">
+          <h4>Process 3</h4>
+          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Deploy pipeline"></div>
+          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., PR merged → Production live"></textarea></div>
+          <div class="indicators">
+            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
+          </div>
+        </div>
+        <div class="process-card">
+          <h4>Process 4</h4>
+          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Budget request"></div>
+          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., Request submitted → Approved/Declined"></textarea></div>
+          <div class="indicators">
+            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
+            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="section">
+      <div class="section-title">
+        <span>📊 Phase 2: Metric Baseline</span>
+        <span class="badge">60 min</span>
+      </div>
+      <p class="section-desc">
+        For each process, measure <strong>Lead Time</strong> (trigger to outcome),
+        <strong>Active Time</strong> (actual work), and <strong>Wait Time</strong> (queues).
+        Efficiency = Active ÷ Total. Below 40%? Your team spends more time waiting than working.
+      </p>
+      <table class="metrics-table">
+        <thead>
+          <tr>
+            <th style="width:18%">Process</th>
+            <th style="width:18%">Lead Time</th>
+            <th style="width:18%">Active Time</th>
+            <th style="width:18%">Wait Time</th>
+            <th style="width:18%">Efficiency</th>
+            <th style="width:10%">Data Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="Process 1"></td>
+            <td><input type="text" placeholder="e.g., 5d"></td>
+            <td><input type="text" placeholder="e.g., 8h"></td>
+            <td><input type="text" placeholder="e.g., 4d 2h"></td>
+            <td><input type="text" placeholder="e.g., 20%"></td>
+            <td><input type="text" placeholder="Jira"></td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Process 2"></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Process 3"></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Process 4"></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="formula" style="margin-top:4px;">
+        Efficiency = Active Time ÷ (Active Time + Wait Time) × 100. If you can&apos;t get this data in 10 minutes, your process is invisible.
+      </p>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="section">
+      <div class="section-title">
+        <span>🎯 Phase 3: Priority Matrix</span>
+        <span class="badge">60 min</span>
+      </div>
+      <p class="section-desc">
+        Score each process on two axes: <strong>Operational Impact</strong> (how much does this affect revenue/delivery? 1-5)
+        and <strong>Fixability</strong> (how much effort to improve? 1-5 where 1 = trivial, 5 = massive). Plot below.
+      </p>
+      <div class="matrix-grid">
+        <div class="matrix-quadrant p1">
+          <h4>🔴 P1 — Quick Wins</h4>
+          <div class="tag">High Impact · Easy to Fix · Do this week</div>
+          <textarea placeholder="List processes that are both impactful and fixable..."></textarea>
+        </div>
+        <div class="matrix-quadrant p2">
+          <h4>🟡 P2 — Strategic Projects</h4>
+          <div class="tag">High Impact · Hard to Fix · Plan next quarter</div>
+          <textarea placeholder="List processes that are impactful but need investment..."></textarea>
+        </div>
+        <div class="matrix-quadrant p3">
+          <h4>🔵 P3 — Nice to Haves</h4>
+          <div class="tag">Low Impact · Easy to Fix · When you have time</div>
+          <textarea placeholder="List quick fixes that won't move the needle much..."></textarea>
+        </div>
+        <div class="matrix-quadrant p4">
+          <h4>⚪ P4 — Ignore</h4>
+          <div class="tag">Low Impact · Hard to Fix · Leave alone</div>
+          <textarea placeholder="Processes that are not worth the effort right now..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Items -->
+    <div class="section">
+      <div class="section-title">
+        <span>⚡ Top 3 Actions This Week</span>
+        <span class="badge">Focus</span>
+      </div>
+      <div class="wins-list">
+        <div class="win-item">
+          <span style="color:#6c5ce7;font-weight:700;">1.</span>
+          <input type="text" placeholder="What's the single highest-impact fix?">
+          <span class="impact">⚡</span>
+        </div>
+        <div class="win-item">
+          <span style="color:#6c5ce7;font-weight:700;">2.</span>
+          <input type="text" placeholder="What can you unblock this week?">
+          <span class="impact">⚡</span>
+        </div>
+        <div class="win-item">
+          <span style="color:#6c5ce7;font-weight:700;">3.</span>
+          <input type="text" placeholder="What metric will tell you it's working?">
+          <span class="impact">📈</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Part of the <strong>Operational Chaos Diagnostic</strong> framework by Riccardo Bozzato</span>
+      <span>
+        <a href="https://riccardobozzato.dev">riccardobozzato.dev</a> ·
+        Need help? <a href="https://riccardobozzato.dev/contact">Book a call</a>
+      </span>
+    </div>
+  </div>
+</body>
+</html>

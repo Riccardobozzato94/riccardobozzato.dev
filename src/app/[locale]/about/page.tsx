@@ -1,11 +1,12 @@
-import { getTranslations } from "next-intl/server";
+﻿import { getTranslations } from "next-intl/server";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Quote, ArrowRight, Sparkles, MapPin, Mail, Briefcase, GraduationCap, Award, ArrowUpRight } from "lucide-react";
+import { Quote, ArrowRight, Sparkles, MapPin, Mail, Briefcase, GraduationCap, Award, ArrowUpRight, PawPrint } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.dev";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -105,28 +106,33 @@ export default async function AboutPage({ params }: Props) {
           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] animate-drift-slow" />
         </div>
 
-        <Section className="!pt-0 !pb-0 relative">
+        <Section className="pt-0! pb-0! relative">
           <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-center">
-            {/* Photo area */}
+            {/* Mascot area (faceless: RB mark + dog co-pilot, no human face) */}
             <div className="md:col-span-2 order-2 md:order-1">
               <div className="relative">
                 <div className="absolute -inset-3 bg-accent/5 rounded-3xl blur-xl" />
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 bg-gradient-to-br from-accent/15 via-accent/5 to-card">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
+                    <div className="text-center px-6">
                       <div className="size-28 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4 ring-2 ring-accent/30 shadow-lg shadow-accent/10">
                         <span className="text-4xl font-bold text-accent">RB</span>
                       </div>
-                      <p className="text-xs text-muted-foreground/40 font-mono">photo coming soon</p>
+                      <p className="text-xs text-muted-foreground/40 font-mono">&gt; faceless builder</p>
+                      <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1.5 text-xs text-accent">
+                        <PawPrint className="size-3.5" />
+                        co-pilota a 4 zampe
+                      </div>
                     </div>
                   </div>
                   {/* Location pin */}
                   <div className="absolute top-4 right-4 size-10 rounded-xl bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center">
                     <MapPin className="size-5 text-accent/70" />
                   </div>
-                  {/* Signature at bottom */}
-                  <div className="absolute bottom-4 left-4">
-                    <img src="/images/signature.svg" alt="RB" className="h-8 w-auto opacity-60" />
+                  {/* Dog badge bottom-left */}
+                  <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-lg bg-card/80 backdrop-blur-sm border border-border/50 px-3 py-1.5 text-xs text-muted-foreground">
+                    <PawPrint className="size-3.5 text-accent/70" />
+                    Aussie by my side
                   </div>
                 </div>
               </div>
@@ -172,7 +178,7 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       {/* ═══════════ Full Timeline ═══════════ */}
-      <Section animate className="bg-muted/20 !py-20 md:!py-28">
+      <Section animate className="bg-muted/20 py-20! md:!py-28">
         <div className="max-w-4xl mx-auto">
           <div className="mb-14">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/40 font-medium">
@@ -223,7 +229,7 @@ export default async function AboutPage({ params }: Props) {
       </Section>
 
       {/* ═══════════ Philosophy ═══════════ */}
-      <Section animate className="!py-16 md:!py-20">
+      <Section animate className="py-16! md:!py-20">
         <div className="max-w-3xl mx-auto">
           <div className="relative rounded-2xl border border-accent/15 bg-gradient-to-br from-accent/[0.03] via-card to-card p-8 md:p-12 overflow-hidden">
             {/* Decorative accent bar */}
@@ -237,7 +243,7 @@ export default async function AboutPage({ params }: Props) {
       </Section>
 
       {/* ═══════════ Skills + Certs Grid ═══════════ */}
-      <Section animate delay={100} className="bg-muted/20 !py-16 md:!py-20">
+      <Section animate delay={100} className="bg-muted/20 py-16! md:!py-20">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16">
           {/* Skills */}
           <div>
@@ -281,6 +287,26 @@ export default async function AboutPage({ params }: Props) {
                 );
               })}
             </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ═══════════ Dog + Dev Life (faceless mascot) ═══════════ */}
+      <Section animate className="py-16! md:!py-20">
+        <div className="max-w-3xl mx-auto">
+          <div className="relative rounded-2xl border border-accent/15 bg-gradient-to-br from-accent/[0.03] via-card to-card p-8 md:p-12 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent/60 via-accent/20 to-transparent" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="size-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                <PawPrint className="size-5 text-accent" />
+              </div>
+              <h2 className="text-2xl font-bold tracking-tight">Dog + Dev Life</h2>
+            </div>
+            <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              {isIt
+                ? "Sì, sono faceless — ma non sono solo. Il mio pastore australiano è il co-pilota a 4 zampe di ogni deploy. Mentre io buildo tool e rompo limiti, lui approva le PR (o le rifiuta con uno sguardo). Il cane non è in vendita: è la mia mascotte, e presto anche la tua, su sticker e merch."
+                : "Yes, I'm faceless — but not alone. My Australian Shepherd is the four-legged co-pilot of every deploy. While I build tools and break limits, he approves the PRs (or rejects them with a look). The dog is not for sale: he's my mascot, and soon yours too — on stickers and merch."}
+            </p>
           </div>
         </div>
       </Section>

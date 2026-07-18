@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+﻿import { getTranslations } from "next-intl/server";
 import { Shield, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
 
@@ -18,7 +18,7 @@ export default async function PrivacyPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px]" />
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <Shield className="size-3.5" />
@@ -35,7 +35,7 @@ export default async function PrivacyPage() {
       </section>
 
       {/* Content */}
-      <Section animate className="!py-16 md:!py-20">
+      <Section animate className="py-16! md:!py-20">
         <div className="max-w-3xl mx-auto">
           <p className="text-lg leading-relaxed text-muted-foreground mb-12">
             {t("intro")}
@@ -57,7 +57,7 @@ export default async function PrivacyPage() {
       </Section>
 
       {/* Contact CTA */}
-      <Section animate className="bg-muted/30 !py-16 md:!py-20">
+      <Section animate className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <div className="size-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
             <Sparkles className="size-6 text-accent" />

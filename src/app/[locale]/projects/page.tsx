@@ -1,10 +1,11 @@
-import { getTranslations } from "next-intl/server";
+﻿import { getTranslations } from "next-intl/server";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Briefcase } from "lucide-react";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -43,11 +44,11 @@ export default async function ProjectsPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px]" />
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
-              <Sparkles className="size-3.5" />
-              Portfolio
+              <Briefcase className="size-3.5" />
+              Case Studies
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -59,17 +60,17 @@ export default async function ProjectsPage() {
         </Section>
       </section>
 
-      <Section animate className="!pt-0">
+      <Section animate className="pt-0!">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Featured: Trova */}
           <ProjectCard
             title={t("trova.title")}
             subtitle={t("trova.subtitle")}
             description={t("trova.description")}
-            tags={["Next.js 16", "SaaS", "TypeScript", "€49"]}
+            tags={["SaaS", "Product Delivery", "Process Design"]}
             href="/trova"
-            image="/images/trova-home.svg"
-            badge="Product"
+            image="/assets/trova-banner-1600x900.png"
+            badge="Case Study"
             badgeColor="bg-accent/10 text-accent"
             featured
           />
@@ -80,20 +81,20 @@ export default async function ProjectsPage() {
               title={t("vulnclaw.title")}
               subtitle={t("vulnclaw.subtitle")}
               description={t("vulnclaw.description")}
-              tags={["AI", "Security", "Python"]}
+              tags={["AI", "Open Source", "Product Mgmt"]}
               href="/projects/vulnclaw"
-              image="/images/vulnclaw-scan.svg"
-              badge="CLI Tool"
+              image="/assets/vulnclaw-banner-1600x900.png"
+              badge="Case Study"
               badgeColor="bg-blue-500/10 text-blue-400"
             />
             <ProjectCard
               title={t("panificio.title")}
               subtitle={t("panificio.subtitle")}
               description={t("panificio.description")}
-              tags={["Next.js", "E-Commerce", "Family"]}
+              tags={["E-Commerce", "Stakeholder Mgmt", "Delivery"]}
               href="/projects/panificio"
-              image="/images/panificio-home.svg"
-              badge="Family Gift"
+              image="/assets/panificio-banner-1600x900.png"
+              badge="Case Study"
               badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>

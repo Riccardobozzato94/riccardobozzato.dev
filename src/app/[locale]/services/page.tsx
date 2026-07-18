@@ -1,11 +1,12 @@
-import { getTranslations } from "next-intl/server";
+﻿import { getTranslations } from "next-intl/server";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import { CheckCircle2, ArrowRight, Sparkles, Calendar } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -70,11 +71,11 @@ export default async function ServicesPage() {
             <rect width="100%" height="100%" fill="url(#dots-svc)" />
           </svg>
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <Sparkles className="size-3.5" />
-              Consulting
+              {t("subtitle")}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -90,7 +91,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* Packages */}
-      <Section animate className="!py-16 md:!py-20">
+      <Section animate className="py-16! md:!py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6">
             {packages.map((pkg: Package, i: number) => (
@@ -126,7 +127,7 @@ export default async function ServicesPage() {
       </Section>
 
       {/* How I Work */}
-      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
+      <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{approach.title}</h2>

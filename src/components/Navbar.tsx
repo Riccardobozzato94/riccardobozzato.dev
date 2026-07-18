@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import {
   Menu,
@@ -8,17 +8,19 @@ import {
   Languages,
   Hexagon,
   Sparkles,
-  ChevronDown,
-  Bot,
-  Calculator,
-  Workflow,
-  GitMerge,
-  Shield,
-  Package,
-  LogIn,
+  Instagram,
+  Youtube,
+  Twitch,
 } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { ACTIVE_PROFILES } from "@/lib/social";
+
+const CHANNEL_ICONS: Record<string, typeof Instagram> = {
+  instagram: Instagram,
+  youtube: Youtube,
+  twitch: Twitch,
+};
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
@@ -29,14 +31,9 @@ const NAV_ITEMS = [
   { key: "contact", href: "/contact" },
 ] as const;
 
-const DEMO_ITEMS = [
-  { key: "AI Agent", href: "/demo/ai-agent", icon: Bot },
-  { key: "Cost Calculator", href: "/demo/cost-calculator", icon: Calculator },
-  { key: "Automation", href: "/demo/automation", icon: Workflow },
-  { key: "Integration", href: "/demo/integration", icon: GitMerge },
-  { key: "Tech Audit", href: "/demo/tech-audit", icon: Shield },
-  { key: "Project Planner", href: "/demo/turnkey", icon: Package },
-];
+// DEMO_ITEMS rimosse dal nav principale — il sito è stato riposizionato
+// su Operations & Delivery (non developer portfolio). Le pagine demo esistono
+// ancora ai loro URL originali ma non sono promosse dalla navigazione.
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -44,25 +41,12 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [demoOpen, setDemoOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const otherLocale = locale === "en" ? "it" : "en";
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
-  }, []);
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDemoOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const isActive = (href: string) => {
@@ -108,73 +92,35 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Demos Dropdown */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setDemoOpen(!demoOpen)}
-              className={cn(
-                "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-200 flex items-center gap-1",
-                pathname.startsWith("/demo")
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
-              )}
-            >
-              Demos
-              <ChevronDown
-                className={cn(
-                  "size-3.5 transition-transform duration-200",
-                  demoOpen && "rotate-180",
-                )}
-              />
-              {pathname.startsWith("/demo") && (
-                <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 size-1 rounded-full bg-accent" />
-              )}
-            </button>
-
-            {demoOpen && (
-              <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-border/50 bg-card shadow-xl shadow-black/10 p-1.5 animate-in fade-in slide-in-from-top-2 duration-200">
-                {/* Small arrow */}
-                <div className="absolute -top-[5px] right-6 size-2.5 rotate-45 border-l border-t border-border/50 bg-card" />
-                {DEMO_ITEMS.map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setDemoOpen(false)}
-                      className={cn(
-                        "flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-all duration-200 animate-in fade-in",
-                        pathname === item.href
-                          ? "bg-accent/10 text-accent"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
-                      )}
-                      style={{ animationDelay: `${i * 30}ms`, animationFillMode: "both" }}
-                    >
-                      <Icon className="size-4 shrink-0" />
-                      {item.key}
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-
-          {/* Login */}
-          <Link
-            href="/login"
-            className={cn(
-              "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-200 group",
-              pathname.startsWith("/login")
-                ? "text-accent"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
-            )}
-          >
-            <LogIn className="size-3.5 inline mr-1 transition-transform duration-200 group-hover:-translate-y-0.5" />
-            Login
-          </Link>
+          {/* Demos e Login rimossi — repositioning su Operations & Delivery */}
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* Faceless channels (Instagram / YouTube / Twitch) */}
+          <div className="hidden lg:flex items-center gap-1 mr-1">
+            {ACTIVE_PROFILES.map(({ key, href, label }) => {
+              const Icon = CHANNEL_ICONS[key];
+              if (!Icon) return null;
+              return (
+                <a
+                  key={key}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className={cn(
+                    "inline-flex items-center justify-center size-8 rounded-lg border transition-all duration-200",
+                    scrolled
+                      ? "border-border/60 text-muted-foreground hover:border-accent/40 hover:text-accent hover:bg-accent/5"
+                      : "border-white/10 text-white/70 hover:border-white/30 hover:text-white hover:bg-white/10",
+                  )}
+                >
+                  <Icon className="size-4" />
+                </a>
+              );
+            })}
+          </div>
+
           {/* Free Playbook CTA */}
           <Link
             href="/freebie"
@@ -239,43 +185,6 @@ export default function Navbar() {
               {t(item.key)}
             </Link>
           ))}
-
-          {/* Mobile Demos Section */}
-          <div className="mt-2 mb-1">
-            <div className="px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/50">
-              Demos
-            </div>
-            {DEMO_ITEMS.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    "flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-all duration-200 animate-in fade-in slide-in-from-left-2",
-                    pathname === item.href
-                      ? "text-accent bg-accent/5"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
-                  )}
-                  style={{ animationDelay: `${(NAV_ITEMS.length + i + 1) * 40}ms`, animationFillMode: "both" }}
-                >
-                  <Icon className="size-4 shrink-0" />
-                  {item.key}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Mobile Login */}
-          <Link
-            href="/login"
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-2 rounded-lg px-3.5 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-          >
-            <LogIn className="size-4" />
-            Login
-          </Link>
 
           {/* Mobile Free Playbook CTA */}
           <Link

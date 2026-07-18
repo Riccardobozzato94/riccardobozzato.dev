@@ -1,8 +1,12 @@
 import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "dev-jwt-secret-change-in-production-32chars!"
-);
+// ⚠️ SECURITY: no hardcoded fallback. JWT_SECRET MUST be set in production.
+// A known fallback would let anyone forge valid admin tokens.
+const JWT_SECRET_VALUE = process.env.JWT_SECRET;
+if (!JWT_SECRET_VALUE) {
+  throw new Error("JWT_SECRET environment variable is required but not set.");
+}
+const JWT_SECRET = new TextEncoder().encode(JWT_SECRET_VALUE);
 
 const JWT_ISSUER = "riccardobozzato.dev";
 const JWT_AUDIENCE = "api.riccardobozzato.dev";
@@ -52,7 +56,9 @@ export function extractBearerToken(authHeader?: string | null): string | null {
  * Verify credentials against environment config.
  */
 export function validateCredentials(username: string, password: string): boolean {
-  const adminUser = process.env.ADMIN_USERNAME || "admin";
-  const adminPass = process.env.ADMIN_PASSWORD || "demo";
+  const adminUser = process.env.ADMIN_USERNAME;
+  const adminPass = process.env.ADMIN_PASSWORD;
+  // No credentials configured => reject all (fail closed, never default to "demo").
+  if (!adminUser || !adminPass) return false;
   return username === adminUser && password === adminPass;
 }

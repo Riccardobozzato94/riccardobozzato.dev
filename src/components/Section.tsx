@@ -45,7 +45,7 @@ export default function Section({
       id={id}
       ref={ref}
       className={cn(
-        "mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24",
+        "mx-auto max-w-6xl px-4 py-[clamp(80px,10vw,120px)] sm:px-6",
         animate && "transition-all duration-700 ease-out",
         animate && !visible && "opacity-0 translate-y-8",
         animate && visible && "opacity-100 translate-y-0",

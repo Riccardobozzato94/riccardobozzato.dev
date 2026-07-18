@@ -1,91 +1,84 @@
 {
     "site":  {
-                  "title":  "Riccardo Bozzato",
-                  "tagline":  "Architettura serverless, AI agenti, automazione — da €1.500. PMP®, €500K+ consegnati su eCommerce e PIM/DAM.",
-                  "description":  "Consulente Operations & Delivery (PMP®) da Legnaro, PD. Progetto e consegno soluzioni chiavi in mano: infrastruttura serverless al costo più basso, workflow AI agenti, system integration, automazione end-to-end. Portfolio enterprise da €500K+ su eCommerce (Magento, Shopware) e PIM/DAM (Pimcore)."
+                    "title":  "Riccardo Bozzato",
+                    "tagline":  "Operations & Delivery Manager (PMP®). Portfolio €500K+, team 8-12, -40% time-to-market.",
+                    "description":  "Operations & Delivery Manager (PMP®) da Legnaro, PD. Costruisco architetture operative che scalano: process design, team leadership, delivery eCommerce/PIM-DAM, operations AI-assisted. Portfolio enterprise €500K+, team 8-12 persone, 25-40% miglioramento efficienza."
               },
     "nav":  {
                 "home":  "Home",
                 "projects":  "Progetti",
                 "panificio":  "Panificio",
                 "trova":  "Trova",
-                "freebie":  "Guida Gratuita",
+                "freebie":  "Diagnostica Gratuita",
         "blog":  "Blog",
                 "services":  "Servizi",
                 "about":  "Chi Sono",
                 "contact":  "Contatti"
             },
     "home":  {
-                  "heroTitle":  "Costruisco Sistemi. Consegno Risultati.",
-                  "heroRole":  "Serverless · AI Agenti · Automazione · System Integration",
-                  "heroTagline":  "Da Legnaro, PD — progetto e consegno soluzioni pronte per la produzione: infrastruttura serverless al costo più basso, agenti AI che automatizzano i workflow, system integration che unifica il tuo stack. Certificato PMP®, €500K+ consegnati su eCommerce e PIM/DAM.",
-                  "heroCta":  "Vedi i Miei Lavori",
-                  "heroCta2":  "Prenota una Call Gratuita",
-                  "featuredTitle":  "Cosa Costruisco",
-                  "featuredSubtitle": "Prodotti e strumenti che ho costruito perché quelli esistenti non erano abbastanza buoni.",
-                  "viewProject":  "Vedi Progetto →",
-                  "aboutTitle":  "Risolvo problemi. Costruisco sistemi. Consegno.",
-                  "aboutText":  "Sono un consulente indipendente specializzato in problemi operativi complessi. Architettura serverless, workflow con AI agenti, system integration e automazione aziendale. Certificato PMP®, portfolio enterprise da €500K+ su eCommerce e PIM/DAM. Ho costruito Trova (boilerplate SaaS) e VulnClaw (pentesting AI) perché gli strumenti esistenti non erano abbastanza buoni. Ora faccio lo stesso per la tua azienda — soluzioni chiavi in mano che funzionano.",
-                  "aboutCta":  "Lavora Con Me →",
+                  "heroTitle":  "Operations & Delivery per team digital che scalano",
+                  "heroRole":  "Niente caos. Solo processi che funzionano.",
+                  "heroTagline":  "Operations & Delivery Leader certificato PMP®. Costruisco l'architettura operativa — processi, KPI, governance, automazione — che trasforma il caos della crescita in un sistema prevedibile. Portfolio enterprise €500K+, team 8-12, -40% time-to-market.",
+                  "heroCta":  "Parliamone",
+                  "heroCta2":  "Vedi i Risultati",
+                  "featuredTitle":  "Risultati Misurabili",
+                  "featuredSubtitle": "Numeri che parlano. Niente storie.",
+                  "viewProject":  "Dettagli →",
+                  "aboutTitle":  "Dal retail alla cabina di regia.",
+                  "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). PMP® certificato. Ora aiuto team digitali a scalare senza implodere.",
+                  "aboutCta":  "Storia Completa →",
                   "freebieTitle":  "Gratis: AI Ops Security Playbook",
-                  "freebieDesc":  "5 strategie per allineare sicurezza e operations con workflow AI. Usato da 500+ professionisti.",
+                  "freebieDesc":  "5 strategie testate sul campo per allineare sicurezza e operations. Usato da 500+ professionisti.",
                   "freebieCta":  "Scarica Gratis →",
-                  "servicesTitle": "Cosa Posso Fare Per Te",
-                  "servicesSubtitle": "Soluzioni chiavi in mano. Prezzi fissi. Consegnate.",
+                  "servicesTitle": "Come Ti Aiuto",
+                  "servicesSubtitle": "Tre modi per portare ordine nelle operations.",
                   "serviceList": [
                     {
-                      "icon": "cpu",
-                      "title": "AI Agent Workflow",
-                      "desc": "Agenti AI personalizzati per i tuoi processi aziendali — customer support, pipeline dati, operations dei contenuti. Costruiti su misura per il tuo flusso di lavoro."
-                    },
-                    {
-                      "icon": "cloud",
-                      "title": "Architettura Serverless",
-                      "desc": "Infrastruttura auto-scalante al costo più basso. Paghi solo quello che usi. Dal prototipo alla produzione in giorni, non mesi."
-                    },
-                    {
-                      "icon": "zap",
-                      "title": "Workflow di Automazione",
-                      "desc": "Automazione end-to-end dei processi. Collega i tuoi strumenti, elimina il lavoro manuale e misura il ROI — tipicamente 10-40 ore/settimana recuperate."
-                    },
-                    {
                       "icon": "git-branch",
-                      "title": "System Integration",
-                      "desc": "Fai parlare i tuoi strumenti tra loro. ERP, CRM, PIM, eCommerce — costruisco i ponti che rendono il tuo stack un sistema unico."
-                    },
-                    {
-                      "icon": "lightbulb",
-                      "title": "Consulenza Tech Business",
-                      "desc": "Consulenza strategica da qualcuno che ha costruito. Revisioni architetturali, selezione tecnologica, valutazione fornitori e road map esecutive."
+                      "title": "Delivery & Process Design",
+                      "desc": "Agile, Scrum, Kanban. Release planning, capacity management, risk mitigation. Team 8-12, portfolio €500K+. Riduzione time-to-market 20-40%."
                     },
                     {
                       "icon": "package",
-                      "title": "Soluzioni Chiavi in Mano",
-                      "desc": "Soluzioni a prezzo fisso. Definisci il problema una volta — mi occupo di architettura, implementazione, deployment e consegna."
+                      "title": "eCommerce & PIM-DAM Operations",
+                      "desc": "Pimcore, Magento, Shopware. Implementazioni enterprise, integrazione piattaforme, governance del dato. Riduzione time-to-market del 40% su progetti PIM."
+                    },
+                    {
+                      "icon": "zap",
+                      "title": "AI-Assisted Operations",
+                      "desc": "Automazione flussi, dashboard KPI real-time, knowledge base centralizzata. Documentazione processi + AI workflow = 10-40 ore/settimana recuperate."
+                    },
+                    {
+                      "icon": "cpu",
+                      "title": "Fractional Head of Ops / Delivery",
+                      "desc": "Per startup early-stage che non hanno ancora un Head of Operations interno. Interim o part-time. Costruisco l'architettura, formo il team, lascio il sistema funzionante."
                     }
                   ]
               },
     "footer":  {
                    "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
                    "builtWith":  "Realizzato con Next.js \u0026 shadcn/ui",
-                   "social":  {
-                                  "github":  "GitHub",
-                                  "linkedin":  "LinkedIn",
-                                  "email":  "Email"
-                              }
+                    "social":  {
+                                   "github":  "GitHub",
+                                   "linkedin":  "LinkedIn",
+                                   "email":  "Email",
+                                   "instagram":  "Instagram",
+                                   "youtube":  "YouTube",
+                                   "twitch":  "Twitch"
+                               }
                },
     "projects":  {
-                     "title":  "Progetti",
-                     "subtitle":  "Cose che ho costruito perché quelle esistenti non erano abbastanza buone.",
+                     "title":  "Case Studies",
+                     "subtitle":  "Prodotti, progetti e processi che ho costruito — con tutto quello che ho imparato lungo la strada.",
                      "vulnclaw":  {
                                       "title":  "VulnClaw",
-                                      "subtitle":  "CLI per Penetration Testing con AI",
-                                      "description":  "Un agente CLI che automatizza le valutazioni di sicurezza. Ricognizione basata su AI, scansione vulnerabilità e exploitation — tutto dal terminale. Open source.",
+                                      "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
+                                      "description":  "Ho costruito un CLI open-source di penetration testing AI da zero. Gestione dello scope, contributi della community, priorità roadmap e shipping della v0.4.0 con utenti attivi. Lezione chiave: iniziare stretto batte costruire largo ogni volta.",
                                       "features":  [
-                                                       "Ricognizione AI e analisi dei target",
-                                                       "Scansione automatica delle vulnerabilità",
-                                                       "Suggerimenti intelligenti per l\u0027exploitation",
-                                                       "Interfaccia terminale con Rich e prompt_toolkit"
+                                                       "Product scoping: da port scanner ad agente AI in 6 mesi",
+                                                       "Community management: triage di PR, issue e feature request",
+                                                       "Prioritizzazione roadmap: dire \"no\" alle buone idee per ship quelle essenziali",
+                                                       "Open source come strategia di delivery"
                                                    ],
                                       "techstack":  [
                                                         "Python",
@@ -94,33 +87,31 @@
                                                         "Prompt Toolkit",
                                                         "AI/LLM"
                                                     ],
-                                      "cta":  "Scopri di Più",
-                                      "status":  "Alpha v0.4.0"
+                                      "cta":  "Leggi il Case Study",
+                                      "status":  "Shippato v0.4.0"
                                   },
     "trova":  {
                                    "title":  "Trova",
-                                   "subtitle":  "SaaS Boilerplate che va in produzione",
-                                   "description":  "Next.js 16, Tailwind v4, Better Auth, Drizzle ORM, i18n, Resend, Stripe, shadcn/ui. Tutto ciò che serve per lanciare un SaaS in giorni, non in settimane.",
+                                   "subtitle":  "Prodotto SaaS: dall'Idea al Prodotto a Pagamento (€49)",
+                                   "description":  "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: requisiti, controllo scope, pagamenti, documentazione e supporto.",
                                    "features":  [
-                                                    "Next.js 16 + Turbopack",
-                                                    "Better Auth (magic link, OAuth, 2FA)",
-                                                    "Drizzle ORM + PostgreSQL",
-                                                    "i18n (en/it) già pronto",
-                                                    "Email con Resend + React Email",
-                                                    "Stripe già configurato"
+                                                    "Ciclo di vita completo del prodotto: concept → build → ship → supporto",
+                                                    "Controllo dello scope: 12 mesi compressi in 8 con priorità spietate",
+                                                    "Integrazione pagamenti: Stripe, webhook, idempotenza, recovery fallimenti",
+                                                    "Internazionalizzazione: i18n nell'architettura dal giorno uno",
+                                                    "Documentazione come delivery: guide setup, API ref, migrazioni"
                                                 ],
-                                   "cta":  "Ottieni Trova"
+                                   "cta":  "Leggi il Case Study"
                                },
                      "panificio":  {
                                        "title":  "Panificio Da Sergio",
-                                       "subtitle":  "Panetteria Artigianale \u0026 E-Commerce",
-                                       "description":  "E-commerce Next.js per un panificio tradizionale italiano. Catalogo, multilingua, SEO, ordinazioni online. Un regalo per la famiglia.",
+                                       "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
+                                       "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali.",
                                        "features":  [
-                                                        "Catalogo prodotti completo",
-                                                        "Multi-lingua (EN/IT)",
-                                                        "SEO per ricerca locale",
-                                                        "Dashboard admin ordini",
-                                                        "Design responsivo"
+                                                        "Gestione stakeholder: tradurre bisogni familiari in requisiti tecnici",
+                                                        "Delivery con budget limitato: e-commerce completo sotto vincoli reali",
+                                                        "Multi-lingua (EN/IT) con SEO locale",
+                                                        "End-to-end: catalogo prodotti → ordini → dashboard admin"
                                                     ],
                                        "techstack":  [
                                                          "Next.js",
@@ -129,92 +120,68 @@
                                                          "i18n",
                                                          "PostgreSQL"
                                                      ],
-                                       "cta":  "Vedi Progetto",
-                                       "note":  "Un regalo per la famiglia"
+                                       "cta":  "Leggi il Case Study",
+                                       "note":  "Progetto familiare, consegnato sotto budget"
                                    }
                                },
     "services":  {
-                      "title":  "Cosa Consegno — In Tempo, Prezzo Fisso",
-                      "subtitle":  "Da €1.500. Pronto per la produzione. Zero sorprese.",
-                      "heroDesc":  "Hai un problema operativo. Progetto e consegno la soluzione — prezzo fisso, in tempo, pronta per la produzione. Dagli agenti AI che automatizzano i workflow all'infrastruttura serverless che costa penny a scala. Certificato PMP®, portfolio €500K+ su Magento, Shopware, Pimcore e piattaforme custom.",
-                     "cta":  "Prenota una Call Gratuita",
-                     "packages":  [
-                                      {
-                                          "title":  "AI Agent Workflow",
-                                          "price":  "Da €2.500",
-                                          "desc":  "Agenti AI personalizzati per i tuoi processi aziendali. Automazione customer support, pipeline dati, operations contenuti — progettati, costruiti e deployati.",
-                                          "features":  [
-                                                           "Architettura AI agente personalizzata",
-                                                           "Integrazione con i tuoi strumenti esistenti",
-                                                           "Human-in-the-loop dove serve",
-                                                           "Monitoraggio performance e ottimizzazione",
-                                                           "Documentazione e formazione"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "Architettura Serverless",
-                                          "price":  "Da €1.500",
-                                          "desc":  "Infrastruttura auto-scalante al costo più basso. Pay-as-you-go, zero costo idle, deployment globale. AWS Lambda, Cloudflare Workers o il tuo provider preferito.",
-                                          "features":  [
-                                                           "Design architetturale e modellazione costi",
-                                                           "Implementazione e deployment",
-                                                           "Setup pipeline CI/CD",
-                                                           "Monitoraggio e alerting",
-                                                           "Ottimizzazione costi (20-60% risparmio)"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "Automazione Processi",
-                                          "price":  "Da €3.000",
-                                          "desc":  "Automazione end-to-end dei tuoi flussi di lavoro operativi. Dall'analisi dello stato attuale all'automazione deployata — tipicamente recupera 10-40 ore a settimana.",
-                                          "features":  [
-                                                           "Audit dei processi attuali",
-                                                           "Mappatura opportunità di automazione",
-                                                           "Sviluppo e deployment pipeline",
-                                                           "Design gestione eccezioni",
-                                                           "Dashboard misurazione ROI"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "System Integration",
-                                          "price":  "Da €2.000",
-                                          "desc":  "Fai funzionare i tuoi strumenti come un sistema unico. ERP ↔ CRM, PIM ↔ eCommerce, legacy ↔ cloud. Progetto e costruisco il layer di integrazione.",
-                                          "features":  [
-                                                           "Design architettura integrazione",
-                                                           "Sviluppo API e middleware",
-                                                           "Migrazione e sincronizzazione dati",
-                                                           "Gestione errori e recovery",
-                                                           "Test e documentazione"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "Consulenza Tech Business",
-                                          "price":  "€200 – €300 / ora",
-                                          "desc":  "Consulenza tecnologica strategica da qualcuno che ha costruito e consegnato. Revisioni architetturali, selezione tecnologica, valutazione fornitori, strutturazione team, road map esecutive.",
-                                          "features":  [
-                                                           "Review architettura e codice",
-                                                           "Valutazione stack tecnologico",
-                                                           "Supporto selezione e negoziazione fornitori",
-                                                           "Design struttura team e processi",
-                                                           "Disponibile ritainer trimestrale"
-                                                       ]
-                                      },
-                                      {
-                                          "title":  "Soluzione Chiavi in Mano",
-                                          "price":  "Preventivo personalizzato",
-                                          "desc":  "Definisci il problema una volta. Gestisco tutto: architettura, implementazione, deployment, documentazione, consegna. Prezzo fisso. Nessuna sorpresa.",
-                                          "features":  [
-                                                           "Raccolta requisiti completa",
-                                                           "Architettura e design soluzione",
-                                                           "Implementazione end-to-end",
-                                                           "Test e quality assurance",
-                                                           "Deployment e formazione finale"
-                                                       ]
-                                      }
-                                  ],
-                     "approach":  {
-                                     "title": "Come Consegno",
-                                     "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
+                      "title":  "Operations & Delivery — Risultati Misurabili",
+                      "subtitle":  "Prezzo fisso. Consegnato.",
+                      "heroDesc":  "Hai un problema operativo? Costruisco l'architettura — processi, KPI, team, automazione — che trasforma il caos in un sistema prevedibile. PMP® certificato, portfolio €500K+, team 8-12, -40% time-to-market. Niente fuffa: solo quello che serve per scalare.",
+                      "cta":  "Parliamone",
+                      "packages":  [
+                                       {
+                                           "title":  "Delivery & Process Design",
+                                           "price":  "Da €1.500",
+                                           "desc":  "Agile transformation, release planning, capacity management, risk mitigation. Per team digital che vogliono prevedibilità senza burocrazia.",
+                                           "features":  [
+                                                            "Audit processi attuali e gap analysis",
+                                                            "Implementazione framework Agile/Scrum/Kanban",
+                                                            "Release planning e capacity modeling",
+                                                            "Framework risk management e mitigazione",
+                                                            "Dashboard KPI: velocity, quality, predictability"
+                                                        ]
+                                       },
+                                       {
+                                           "title":  "eCommerce & PIM-DAM Operations",
+                                           "price":  "Da €2.000",
+                                           "desc":  "Pimcore, Magento, Shopware — implementazioni enterprise, integrazioni, governance del dato. Riduzione time-to-market 20-40%.",
+                                           "features":  [
+                                                            "Architettura e implementazione PIM/DAM",
+                                                            "Integrazione piattaforme eCommerce",
+                                                            "Data governance e framework qualità",
+                                                            "Automazione flussi contenuti prodotto",
+                                                            "Formazione team e knowledge transfer"
+                                                        ]
+                                       },
+                                       {
+                                           "title":  "AI-Assisted Operations",
+                                           "price":  "Da €2.500",
+                                           "desc":  "Automazione flussi operativi, dashboard KPI real-time, knowledge management centralizzato. Recupera 10-40 ore/settimana.",
+                                           "features":  [
+                                                            "Documentazione processi e knowledge base",
+                                                            "Automazione flussi AI (supporto, dati, contenuti)",
+                                                            "Dashboard KPI real-time e alerting",
+                                                            "Middleware e integrazione strumenti",
+                                                            "Framework misurazione ROI"
+                                                        ]
+                                       },
+                                       {
+                                           "title":  "Fractional Head of Ops / Delivery",
+                                           "price":  "Da €3.000/mese",
+                                           "desc":  "Interim o part-time per startup early-stage. Costruisco l'architettura operativa, formo il team, lascio il sistema funzionante.",
+                                           "features":  [
+                                                            "Design architettura operations",
+                                                            "Team structure e supporto hiring",
+                                                            "Governance processi e accountability",
+                                                            "Framework SLA e escalation paths",
+                                                            "Documentazione handover e training"
+                                                        ]
+                                       }
+                                   ],
+                      "approach":  {
+                                      "title": "Come Lavoro",
+                                      "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
                                      "steps":  [
                                                    {
                                                        "step":  "1. Discovery",
@@ -258,38 +225,39 @@
                               }
               },
     "freebie":  {
-                    "title":  "AI Ops Security Playbook",
-                    "subtitle":  "5 strategie per proteggere le operations senza rallentare l\u0027innovazione.",
-                    "description":  "Dopo anni di gestione operativa e costruzione di strumenti di sicurezza, ho distillato ciò che funziona davvero. Questo playbook contiene le tattiche che uso — niente teoria, solo pratica testata sul campo.",
+                    "title":  "Operational Chaos Diagnostic",
+                    "subtitle":  "Un framework da 3 ore per mappare, misurare e prioritizzare il debito operativo — prima che diventi crisi.",
+                    "description":  "Un worksheet testato sul campo basato sullo stesso framework che uso nelle consulenze. Mappa i tuoi processi, misura le metriche di base e costruisci la matrice di priorità in tre sessioni mirate.",
                     "whatsInside":  [
-                                        "Il framework per allineare operations e sicurezza",
-                                        "3 automazioni che recuperano 10+ ore a settimana",
-                                        "Come costruire cultura della sicurezza senza paura",
-                                        "La toolchain open source che uso davvero",
-                                        "La mia checklist personale per incident response"
+                                        "La Process Map: visualizzazione end-to-end dei flussi di lavoro",
+                                        "La Metric Baseline: lead time, active time, wait time",
+                                        "La Priority Matrix: scoring impatto vs. risolvibilità",
+                                        "Esempi pre-compilati per processi reali",
+                                        "Top 3 Azioni Questa Settimana: prossimi passi immediati"
                                     ],
                     "form":  {
                                  "namePlaceholder":  "Il tuo nome",
                                  "emailPlaceholder":  "tu@azienda.com",
-                                 "cta":  "Inviami il Playbook",
+                                 "cta":  "Inviami il Diagnostic",
                                  "sending":  "Invio in corso...",
-                                 "success":  "Controlla la tua casella! Il playbook è in arrivo.",
+                                 "success":  "Controlla la tua casella! Il diagnostic è in arrivo.",
                                  "privacy":  "Niente spam. Ti cancelli quando vuoi.",
                                  "name":  "Nome",
                                  "email":  "Email",
                                  "error":  "Qualcosa è andato storto. Riprova."
                              }
-                },
+                 },
     "about":  {
-                  "title":  "Su Riccardo",
-                  "subtitle":  "Operations & Delivery. PMP®. Build-at-heart.",
-                  "intro":  "Sono un consulente Operations & Delivery certificato PMP®. Porto ordine nelle aziende digitali che crescono: progetti enterprise, team cross-funzionali, processi data-driven. Portfolio da €500K+.",
+                   "title":  "Su Riccardo",
+                  "subtitle":  "Operations & Delivery. PMP®. Dalla trincea alla cabina di regia.",
+                  "intro":  "Operations & Delivery Manager (PMP®). 7+ anni a costruire architetture operative che scalano. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ora aiuto team digitali a scalare senza implodere.",
                   "story":  [
-                                "Il mio percorso inizia nel retail management — In\u0027s Mercato, Aldi, Terranova — dove ho imparato leadership operativa, gestione team e KPI sul campo. Poi il salto in Accenture: sviluppo applicazioni enterprise (SAP UI5, JavaScript), automazione processi con risultati misurabili: +30% efficienza, -15% errori amministrativi.",
-                                "In Esse Solutions ho gestito un portfolio progetti digitali da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto processi Agile strutturati con risultati concreti: +25% produttività team, -40% time-to-market, -20% tempi di completamento.",
-                                "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire architetture operative scalabili — processi, KPI, governance — che trasformano la complessità in automazione. Nel tempo libero costruisco strumenti: VulnClaw (pentesting AI) e Trova (boilerplate SaaS). Perché chi costruisce operations migliori è anche chi costruisce prodotti."
+                                "Il mio percorso inizia nel retail management — In\u0027s Mercato, Aldi, Terranova — dove ho imparato leadership operativa, gestione team e KPI sul campo, gestendo turni, costi e performance di punto vendita.",
+                                "Poi Accenture: sviluppo applicazioni enterprise (SAP UI5, JavaScript), automazione processi con risultati misurabili: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. La prima volta che ho capito che i processi giusti battono il talento grezzo.",
+                                "In Esse Solutions ho gestito un portfolio progetti digitali da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Introdotto Agile strutturato: +25% produttività, -40% time-to-market, -20% tempi di completamento.",
+                                "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire architetture operative scalabili — processi, KPI, governance, automazione — che trasformano il caos in esecuzione prevedibile. Certificato PMP®. Nel tempo libero costruisco strumenti (Trova, VulnClaw), perché chi costruisce operations migliori è anche chi costruisce prodotti."
                             ],
-                  "philosophy":  "Il problema non è la mancanza di talento o di idee. Il problema è che le operations collassano sotto il peso della crescita. Il mio lavoro è costruire l\u0027architettura operativa che trasforma il potenziale in esecuzione prevedibile. Combino rigore metodologico (PMP®), esperienza enterprise e velocità operativa. Niente buffer. Niente attriti. Solo processi che funzionano.",
+                  "philosophy":  "Il problema non è la mancanza di talento o di idee. Il problema è che le operations collassano sotto il peso della crescita. Il mio lavoro è costruire l'architettura operativa che trasforma il potenziale in esecuzione prevedibile. Combino rigore metodologico (PMP®), esperienza enterprise e velocità operativa. Niente buffer. Niente attriti. Solo processi che funzionano.",
                   "certifications":  [
                                          "PMP® — Project Management Professional (2026)",
                                          "Cisco Cybersecurity Operation Associate (2024)",

@@ -3,8 +3,25 @@ import { getResendClient, FROM_EMAIL, TO_EMAIL } from "@/lib/resend";
 import { createLead, markStepSent } from "@/lib/lead-store";
 import { welcomeTemplate } from "@/lib/email/templates";
 import { SEQUENCE } from "@/lib/email/sequence";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
+  // ── Rate limiting (5 req/IP/60s) ──
+  const limit = rateLimit(request);
+  if (limit.limited) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(limit.retryAfter),
+          "X-RateLimit-Limit": "5",
+          "X-RateLimit-Remaining": "0",
+        },
+      }
+    );
+  }
+
   try {
     const { name, email } = await request.json();
 
@@ -30,7 +47,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         success: true,
         directDownload: true,
-        downloadUrl: "/files/ai-ops-security-playbook.pdf",
+        downloadUrl: "/files/operational-chaos-diagnostic.pdf",
         message: "Here's your playbook! Download it directly below.",
       });
     }

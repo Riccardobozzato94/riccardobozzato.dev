@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "generate-pdf": "node scripts/generate-pdf.mjs"
   },
   "dependencies": {
     "@netlify/blobs": "^10.7.9",
@@ -38,6 +39,7 @@
     "@types/react-dom": "^19.1.2",
     "eslint": "^9.25.0",
     "eslint-config-next": "16.2.10",
+    "puppeteer": "^25.3.0",
     "tailwindcss": "^4.1.6",
     "typescript": "^5.8.3"
   },

@@ -37,14 +37,14 @@ export default function ProjectCard({
     <Link href={href} className="group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-xl">
       <div
         className={cn(
-          "relative overflow-hidden rounded-xl border transition-all duration-500",
+          "relative overflow-hidden rounded-2xl border transition-all duration-500",
           featured
-            ? "border-accent/20 hover:border-accent/40"
-            : "border-border/60 hover:border-border",
+            ? "border-accent/20 hover:border-accent/50"
+            : "border-border/60 hover:border-accent/30",
           "hover:-translate-y-1.5",
           featured
-            ? "shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-accent/5"
-            : "shadow-sm shadow-black/10 hover:shadow-lg hover:shadow-black/15",
+            ? "shadow-lg shadow-black/20 hover:shadow-2xl hover:shadow-accent/20"
+            : "shadow-sm shadow-black/10 hover:shadow-xl hover:shadow-accent/10",
           "bg-gradient-to-b from-card to-card/80",
           className,
         )}

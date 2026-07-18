@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -50,7 +50,7 @@ export default function UnsubscribePage() {
         )}
 
         {status === "success" && (
-          <Section animate className="!p-0">
+          <Section animate className="p-0!">
             <div className="space-y-6">
               <div className="size-20 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="size-10 text-accent" />
@@ -72,7 +72,7 @@ export default function UnsubscribePage() {
         )}
 
         {status === "already" && (
-          <Section animate className="!p-0">
+          <Section animate className="p-0!">
             <div className="space-y-6">
               <div className="size-20 rounded-2xl bg-blue-500/10 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="size-10 text-blue-500" />
@@ -94,7 +94,7 @@ export default function UnsubscribePage() {
         )}
 
         {status === "error" && (
-          <Section animate className="!p-0">
+          <Section animate className="p-0!">
             <div className="space-y-6">
               <div className="size-20 rounded-2xl bg-destructive/10 flex items-center justify-center mx-auto">
                 <XCircle className="size-10 text-destructive" />

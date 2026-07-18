@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import { CheckCircle2, Heart, Mail, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.netlify.app";
+const baseUrl = SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -48,7 +49,7 @@ export default async function PanificioPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-amber-500/8 blur-[120px]" />
         </div>
-        <Section className="!pt-0 !pb-0 text-center relative">
+        <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-1.5 text-sm text-amber-500 mb-6">
               <Heart className="size-4" />
@@ -68,7 +69,7 @@ export default async function PanificioPage() {
       </section>
 
       {/* Features */}
-      <Section animate className="!py-16 md:!py-20">
+      <Section animate className="py-16! md:!py-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-1.5 text-sm text-amber-500 mb-4">
@@ -89,7 +90,7 @@ export default async function PanificioPage() {
       </Section>
 
       {/* Tech Stack */}
-      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
+      <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">Tech Stack</h2>
           <div className="flex flex-wrap justify-center gap-3">
@@ -110,7 +111,7 @@ export default async function PanificioPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <img
-                src="/images/panificio-home.svg"
+                src="/assets/panificio-storefront-1600x1000.png"
                 alt="Panificio Da Sergio home page"
                 loading="lazy"
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
@@ -119,7 +120,7 @@ export default async function PanificioPage() {
             </div>
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <img
-                src="/images/panificio-mobile.svg"
+                src="/assets/panificio-storefront-1200x760.png"
                 alt="Panificio Da Sergio mobile view"
                 loading="lazy"
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
@@ -131,7 +132,7 @@ export default async function PanificioPage() {
       </Section>
 
       {/* Note */}
-      <Section animate className="!py-12">
+      <Section animate className="py-12!">
         <div className="max-w-2xl mx-auto text-center">
           <div className="inline-flex items-center gap-3 rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 via-amber-500/[0.02] to-transparent px-6 py-4 text-amber-500">
             <Heart className="size-5 shrink-0" />
@@ -143,7 +144,7 @@ export default async function PanificioPage() {
       </Section>
 
       {/* CTA */}
-      <Section animate delay={100} className="bg-muted/30 !py-16 md:!py-20">
+      <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <Card className="max-w-2xl mx-auto border-accent/30 shadow-lg shadow-accent/5 text-center">
           <CardContent className="p-8 md:p-12 space-y-5">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Want something similar?</h2>
