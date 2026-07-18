@@ -48,7 +48,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Operations & Delivery Consultant | PMP®
+              Senior Delivery Manager | Head of Operations | PMP®
             </p>
             <div className="mt-5 space-y-2.5">
               <div className="flex items-center gap-2.5 text-sm text-muted-foreground">

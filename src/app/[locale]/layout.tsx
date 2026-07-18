@@ -89,7 +89,7 @@ export default async function LocaleLayout({
         familyName: "Bozzato",
         email: "riccardobozzato@gmail.com",
         telephone: "+393892139542",
-        jobTitle: "Operations & Delivery Consultant",
+        jobTitle: "Senior Delivery Manager | Head of Operations | PMP®",
         worksFor: {
           "@type": "Organization",
           name: "Riccardo Bozzato Consulting",
