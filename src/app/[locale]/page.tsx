@@ -57,134 +57,66 @@ export default async function HomePage({ params }: Props) {
       {/* ════════════════════════════════════════════
             HERO — Operations & Delivery
           ════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Noise overlay */}
-        <div className="noise-overlay" />
-
-        {/* Ambient aurora */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Single clean ambient glow */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -left-40 top-1/4 w-[600px] h-[600px] rounded-full bg-accent/12 blur-[140px] animate-drift-slow" />
-          <div className="absolute -right-40 bottom-1/4 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px] animate-drift-slow" style={{ animationDelay: "-4s" }} />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-accent/[0.06] blur-[160px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-accent/8 blur-[160px]" />
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center py-24 lg:py-0">
-            {/* ─── LEFT: Content ─── */}
-            <div className="space-y-8">
-              {/* Role badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent">
-                <MapPin className="size-3.5" />
-                <span>Legnaro, PD — Operations & Delivery Manager | PMP®</span>
-              </div>
-
-               <div className="space-y-6">
-                <h1 className="font-heading text-[clamp(40px,7vw,88px)] font-bold leading-[0.95] tracking-tighter">
-                  <span className="gradient-text">{t("heroTitle")}</span>
-                </h1>
-
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  {t("heroTagline")}
-                </p>
-              </div>
-
-              {/* CTAs — ops-focused */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/30 px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    {t("heroCta")}
-                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </Link>
-                <Link
-                  href="/about"
-                  className="group inline-flex items-center justify-center gap-2 h-12 rounded-xl border border-border/60 bg-background/50 backdrop-blur-sm px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5"
-                >
-                  {t("heroCta2")}
-                  <ArrowUpRight className="size-4" />
-                </Link>
-              </div>
-
-              {/* Ops metrics — non developer stats */}
-              <div className="flex items-center gap-8 pt-4 border-t border-border/30">
-                <div>
-                  <span className="text-xl font-bold text-foreground stat-glow">€500K+</span>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">portfolio value</p>
-                </div>
-                <div className="size-1 rounded-full bg-border/40" />
-                <div>
-                  <span className="text-xl font-bold text-foreground stat-glow">8-12</span>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">team size led</p>
-                </div>
-                <div className="size-1 rounded-full bg-border/40" />
-                <div>
-                  <span className="text-xl font-bold text-foreground stat-glow">-40%</span>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">time-to-market</p>
-                </div>
-              </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-24">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Role badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-8">
+              <MapPin className="size-3.5" />
+              <span>Legnaro, PD — {isIt ? "Senior Delivery Manager & Head of Operations" : "Senior Delivery Manager & Head of Operations"} | PMP®</span>
             </div>
 
-            {/* ─── RIGHT: Ops KPI Dashboard mockup ─── */}
-            <div className="hidden lg:block animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-              <div className="group relative rounded-3xl border border-border/60 bg-card/40 p-2.5 backdrop-blur-xl shadow-2xl shadow-black/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-accent/20 hover:border-accent/30">
-                <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-accent/20 via-accent/5 to-transparent blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="overflow-hidden rounded-2xl border border-border/40 bg-card p-6">
-                  {/* Terminal-style KPI dashboard */}
-                  <div className="font-mono text-xs space-y-3">
-                    <div className="flex items-center gap-2 text-muted-foreground/60 mb-4">
-                      <span className="size-2 rounded-full bg-red-400/60" />
-                      <span className="size-2 rounded-full bg-yellow-400/60" />
-                      <span className="size-2 rounded-full bg-green-400/60" />
-                      <span className="ml-2">ops-dashboard — KPI overview</span>
-                    </div>
-                    <div className="space-y-2.5">
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Pipeline velocity</span>
-                        <span className="text-accent font-bold">€12.4K/day</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Win rate (avg)</span>
-                        <span className="text-green-400 font-bold">34%</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Sales cycle</span>
-                        <span className="text-accent font-bold">62 days</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Coverage ratio</span>
-                        <span className="text-yellow-400 font-bold">3.2x</span>
-                      </div>
-                      <div className="pt-3 border-t border-border/30 mt-3">
-                        <div className="flex justify-between items-center">
-                          <span className="text-muted-foreground">Team capacity</span>
-                          <span className="text-green-400 font-bold">87%</span>
-                        </div>
-                        <div className="flex justify-between items-center mt-1.5">
-                          <span className="text-muted-foreground">On-time delivery</span>
-                          <span className="text-accent font-bold">94%</span>
-                        </div>
-                        <div className="flex justify-between items-center mt-1.5">
-                          <span className="text-muted-foreground">Health score</span>
-                          <span className="text-green-400 font-bold">4.2/5</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            <div className="space-y-6 mb-10">
+              <h1 className="font-heading text-[clamp(36px,6vw,72px)] font-bold leading-[1.05] tracking-tighter">
+                <span className="gradient-text">{t("heroTitle")}</span>
+              </h1>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 opacity-40">
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">Scroll</span>
-            <div className="size-4 rounded-full border border-border/30 flex items-center justify-center">
-              <div className="size-1 rounded-full bg-muted-foreground/30 animate-bounce" />
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                {t("heroTagline")}
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/contact"
+                className="group relative inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/30 px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  {t("heroCta")}
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+              </Link>
+              <Link
+                href="/about"
+                className="group inline-flex items-center justify-center gap-2 h-12 rounded-xl border border-border/60 bg-background/50 backdrop-blur-sm px-7 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5"
+              >
+                {t("heroCta2")}
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
+
+            {/* Key metrics */}
+            <div className="flex items-center justify-center gap-8 sm:gap-12 mt-12 pt-8 border-t border-border/30 max-w-xl mx-auto">
+              <div className="text-center">
+                <span className="text-2xl font-bold text-foreground">€500K+</span>
+                <p className="text-xs text-muted-foreground/60 mt-1">{isIt ? "portfolio progetti" : "portfolio value"}</p>
+              </div>
+              <div className="w-px h-10 bg-border/40" />
+              <div className="text-center">
+                <span className="text-2xl font-bold text-foreground">8-12</span>
+                <p className="text-xs text-muted-foreground/60 mt-1">{isIt ? "team size" : "team size"}</p>
+              </div>
+              <div className="w-px h-10 bg-border/40" />
+              <div className="text-center">
+                <span className="text-2xl font-bold text-foreground">-40%</span>
+                <p className="text-xs text-muted-foreground/60 mt-1">time-to-market</p>
+              </div>
             </div>
           </div>
         </div>
@@ -266,39 +198,45 @@ export default async function HomePage({ params }: Props) {
         </div>
 
         <div className="max-w-6xl mx-auto space-y-6">
-          {/* Project 1: Panificio Da Sergio (featured) */}
+          {/* Case 1 (featured): Esse Solutions */}
           <ProjectCard
-            title="Panificio Da Sergio"
-            subtitle="Stakeholder Delivery: E-Commerce for a Family Bakery"
-            description="Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints."
-            tags={["Next.js", "Stakeholder", "i18n", "Delivery"]}
-            href="/projects/panificio"
-            image="/assets/panificio-banner-1600x900.png"
-            badge={isIt ? "Delivery" : "Delivery"}
+            title="€500K+ Portfolio — Esse Solutions"
+            subtitle={isIt ? "Project Manager | 19 mesi" : "Project Manager | 19 months"}
+            description={isIt
+              ? "Gestito portfolio enterprise da €500K+, coordinato team distribuiti 8-12 persone. Introdotto Agile: +25% produttività, -20% tempi completamento. Implementato Pimcore per clienti manufacturing/food/furniture: -40% time-to-market."
+              : "Managed a €500K+ enterprise portfolio, coordinating distributed teams of 8-12. Introduced Agile: +25% productivity, -20% completion times. Led Pimcore implementations for manufacturing/food/furniture clients: -40% time-to-market."}
+            tags={["PIM/DAM", "Agile", "Magento", "Shopware"]}
+            href="/about"
+            image="/assets/trova-banner-1600x900.png"
+            badge={isIt ? "Enterprise" : "Enterprise"}
             badgeColor="bg-accent/10 text-accent"
             featured
           />
 
-          {/* Project 2 + 3: VulnClaw + Trova */}
+          {/* Case 2 + 3: Accenture + Trova+VulnClaw */}
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <ProjectCard
-              title="VulnClaw"
-              subtitle="Product Delivery: AI CLI from Zero to Open Source"
-              description="Built an open-source AI penetration testing CLI from scratch. Managed scope, community contributions, roadmap prioritization, and shipping a v0.4.0 with active users. Key lesson: starting narrow beats building broad every time."
-              tags={["Python", "Open Source", "AI", "CLI"]}
-              href="/projects/vulnclaw"
+              title="Process Automation — Accenture"
+              subtitle={isIt ? "IT Systems Specialist | 2022-2024" : "IT Systems Specialist | 2022-2024"}
+              description={isIt
+                ? "Automazione processi per clienti banking/insurance con SAP UI5 e JS. +30% efficienza operativa, -15% errori amministrativi, -20% tempi di risposta sistema."
+                : "Process automation for banking/insurance clients using SAP UI5 and JS. +30% operational efficiency, -15% administrative errors, -20% system response times."}
+              tags={["Automation", "SAP UI5", "Enterprise"]}
+              href="/about"
               image="/assets/vulnclaw-banner-1600x900.png"
-              badge={isIt ? "Open Source" : "Open Source"}
+              badge={isIt ? "Consulenza" : "Consulting"}
               badgeColor="bg-blue-500/10 text-blue-400"
             />
             <ProjectCard
-              title="Trova"
-              subtitle="SaaS Product: From Idea to €49 Paid Product"
-              description="Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements, scope control, payments, documentation, and support."
-              tags={["SaaS", "Next.js", "Stripe", "Product"]}
-              href="/trova"
-              image="/assets/trova-banner-1600x900.png"
-              badge={isIt ? "Prodotto" : "Product"}
+              title={isIt ? "Trova + VulnClaw" : "Trova + VulnClaw"}
+              subtitle={isIt ? "Side projects | Product thinking" : "Side projects | Product thinking"}
+              description={isIt
+                ? "Trova: boilerplate SaaS (Next.js 16, Stripe, Auth) — aiuta founder a lanciare in giorni. VulnClaw: CLI open-source per penetration testing con AI (600+ stelle GitHub)."
+                : "Trova: SaaS boilerplate (Next.js 16, Stripe, Auth) — helps founders launch in days. VulnClaw: AI penetration testing open-source CLI (600+ GitHub stars)."}
+              tags={["SaaS", "Open Source", "AI"]}
+              href="/projects"
+              image="/assets/panificio-banner-1600x900.png"
+              badge={isIt ? "Prodotti" : "Products"}
               badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>
@@ -348,10 +286,10 @@ export default async function HomePage({ params }: Props) {
               {/* Timeline */}
               <div className="space-y-0 timeline-line pl-8">
                 {[
-                  { year: "2018–2021", text: "Retail Management — In's Mercato, Aldi, Terranova (leadership operativa, KPI, team)", icon: "▹" },
-                  { year: "2022–2024", text: "Accenture — IT Systems Specialist (+30% efficienza, -15% errori, SAP UI5)", icon: "▹" },
-                  { year: "2024–2026", text: "Esse Solutions — PM (€500K portfolio, 8-12 persone, Agile, -40% time-to-market)", icon: "▹" },
-                  { year: "2026→", text: "Consulente Indipendente — Delivery & Operations Consultant (PMP®, Interim Head of Ops)", icon: "▹" },
+                  { year: "2018–2021", text: isIt ? "Retail Management — In's Mercato, Aldi, Terranova (leadership operativa, KPI, team)" : "Retail Management — In's Mercato, Aldi, Terranova (operational leadership, KPIs, team)" },
+                  { year: "2022–2024", text: isIt ? "Accenture — IT Systems Specialist (+30% efficienza, -15% errori, SAP UI5)" : "Accenture — IT Systems Specialist (+30% efficiency, -15% errors, SAP UI5)" },
+                  { year: "2024–2026", text: isIt ? "Esse Solutions — PM (€500K portfolio, team 8-12, Agile, -40% time-to-market)" : "Esse Solutions — PM (€500K portfolio, teams of 8-12, Agile, -40% time-to-market)" },
+                  { year: "2026", text: isIt ? "Ciao Elsa — Head of Operations (governance operativa, KPI, processi da zero)" : "Ciao Elsa — Head of Operations (ops governance, KPIs, processes from scratch)" },
                 ].map((item, i) => (
                   <div key={i} className="relative pb-6 group">
                     <div className="timeline-dot absolute -left-8 top-1.5 group-hover:scale-125 transition-transform duration-300" />

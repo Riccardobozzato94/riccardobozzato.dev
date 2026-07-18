@@ -58,10 +58,10 @@ const timeline = [
     icon: "▹",
   },
   {
-    period: "2026 → Presente",
-    title: "Consulente Indipendente",
-    company: "Partita IVA — Legnaro, PD",
-    desc: "Architetture operative scalabili per aziende digitali. Interim Head of Operations, process design, KPI governance. PMP® certificato. Costruisco Trova (boilerplate SaaS) e VulnClaw (AI pentesting).",
+    period: "2026",
+    title: "Head of Operations",
+    company: "Ciao Elsa — Legnaro, PD",
+    desc: "Architettura operativa costruita da zero per una startup AI-native. Processi, KPI, governance, struttura del team. Engagement breve e mirato: sistema costruito, formato il team, consegnato.",
     icon: "▹",
   },
 ] as const;

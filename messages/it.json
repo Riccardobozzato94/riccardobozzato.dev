@@ -2,7 +2,7 @@
     "site":  {
                     "title":  "Riccardo Bozzato",
                     "tagline":  "Senior Delivery Manager | Head of Operations | PMP® — operations, execution, processi AI-enabled.",
-                    "description":  "Senior Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Rendo i team digitali più veloci, meno caotici e più prevedibili. Process design, team leadership, delivery eCommerce/PIM-DAM, operations AI-enabled. €500K+ consegnati, team 8-12, 25-40% miglioramento efficienza."
+                    "description":  "Senior Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Rendo i team digitali più veloci, meno caotici e più prevedibili. Process design, team leadership, delivery eCommerce/PIM-DAM, operations. €500K+ consegnati, team 8-12, 25-40% miglioramento efficienza."
               },
     "nav":  {
                 "home":  "Home",
@@ -25,7 +25,7 @@
                    "featuredSubtitle": "Numeri che parlano. Niente storie.",
                    "viewProject":  "Dettagli →",
                    "aboutTitle":  "Dal retail alla cabina di regia.",
-                   "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). Head of Operations da Ciao Elsa (2026). PMP® certificato. Ora aiuto team digitali a scalare senza implodere.",
+                   "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). Head of Operations da Ciao Elsa (2026). PMP® certificato. Ora cerco il prossimo progetto — se il tuo team ha bisogno di ordine operativo, ne parliamo.",
                    "aboutCta":  "Storia Completa →",
                    "freebieTitle":  "Gratis: Operational Chaos Diagnostic",
                     "freebieDesc":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
@@ -246,16 +246,16 @@
                  },
     "about":  {
                     "title":  "Su Riccardo",
-                   "subtitle":  "Operations & Delivery. PMP®. Ho iniziato nel retail, ora guido delivery.",
+                   "subtitle":  "Operations & Delivery. PMP®. Dal retail al digitale — risultati misurabili in ogni ruolo.",
                    "intro":  "Senior Delivery Manager & Head of Operations (PMP®). 7+ anni a rendere i team più veloci e meno caotici. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Il filo conduttore: costruisco sistemi che permettono alle brave persone di fare il loro miglior lavoro.",
                    "story": [
                                  "Il mio percorso inizia nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
                                  "Poi Accenture. Ho costruito applicazioni enterprise (SAP UI5, JavaScript) e automatizzato processi che erano manuali da anni: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. È stata la prima volta che ho capito che il processo giusto batte il talento grezzo — sempre.",
                                  "In Esse Solutions gestivo un portfolio digitale da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto Agile strutturato dove non c'era niente: produttività +25%, time-to-market -40%, tempi di completamento -20%.",
                                  "In Ciao Elsa sono stato Head of Operations per 8 settimane — per scelta. La startup aveva bisogno di una funzione operations da zero: processi, KPI, struttura del team, governance. L'ho costruita, consegnata, e me ne sono andato. Un engagement breve che ha dimostrato che l'approccio funziona anche a velocità startup.",
-                                 "Oggi opero come consulente indipendente. Aiuto aziende digitali a costruire il sistema operativo per la loro crescita — processi, metriche, struttura del team — che trasforma le buone idee in prodotti shippati. Certificato PMP®. Nel tempo libero costruisco strumenti (Trova, VulnClaw), perché non puoi progettare buoni sistemi se non hai mai costruito niente."
+                                  "Oggi sono in fase di transizione — ho chiuso l'esperienza da Ciao Elsa e sono aperto a nuove opportunità. Porto con me un bagaglio solido: architetture operative costruite in contesti enterprise e startup, certificazione PMP®, e la convinzione che i processi giusti battono il talento grezzo — sempre. Nel frattempo costruisco strumenti (Trova, VulnClaw) perché non puoi progettare buoni sistemi se non hai mai costruito niente."
                              ],
-                   "philosophy":  "La maggior parte delle aziende non fallisce per mancanza di talento o idee. Fallisce perché le operations non reggono il peso della crescita. Costruisco il sistema operativo che risolve il problema — combinando il rigore del PMP® con la velocità di chi è stato in trincea. Niente gergo. Niente teatro. Solo sistemi che funzionano.",
+                   "philosophy":  "La maggior parte delle aziende non fallisce per mancanza di talento o idee. Fallisce perché le operations non reggono il peso della crescita. Costruisco il sistema operativo che risolve il problema — combinando il rigore del PMP® con la velocità di chi è stato in trincea. Niente gergo. Niente teatro. Solo processi che funzionano.",
                   "certifications":  [
                                          "PMP® — Project Management Professional (2026)",
                                          "Cisco Cybersecurity Operation Associate (2024)",
