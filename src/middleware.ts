@@ -71,6 +71,6 @@ export default async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Include API routes for auth
-    "/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\..*).*)",
+    "/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|admin|.*\\..*).*)",
   ],
 };

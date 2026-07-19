@@ -20,7 +20,12 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Decap CMS redirect
+# Decap CMS redirect — catch both /admin and /admin/ (with subpaths)
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
