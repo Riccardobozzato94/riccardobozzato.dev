@@ -13,7 +13,7 @@
     # CSP hardened: removed 'unsafe-inline' from script-src to close the XSS gap.
     # Next.js serves its scripts from /_next/static/ ('self'), Decap CMS loads
     # from unpkg. Inline styles are required by Next.js for CSS-in-JS hydration.
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.resend.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.resend.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
 
 [[headers]]
   for = "/_next/static/*"
