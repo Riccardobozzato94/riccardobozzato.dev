@@ -263,15 +263,15 @@
                                     "billing":  "Stripe — piani abbonamento, webhook, portale clienti",
                                     "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, custom"
                                 },
-                   "pricing":  {
-                                   "title":  "Prezzo Semplice",
-                                   "subtitle":  "Un prezzo. Tutto incluso.",
-                                   "price":  "€49",
-                                   "period":  "una tantum",
-                                   "includes":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
-                                   "cta":  "Acquista ShipKit",
-                                   "guarantee":  "Garanzia rimborso 30 giorni"
-                               }
+                    "pricing":  {
+                                    "title":  "Ottieni ShipKit",
+                                    "subtitle":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario.",
+                                    "price":  "Contattami",
+                                    "period":  "",
+                                    "includes":  "",
+                                    "cta":  "Contattami",
+                                    "guarantee":  ""
+                                }
                },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
