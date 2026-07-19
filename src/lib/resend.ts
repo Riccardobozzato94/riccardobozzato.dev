@@ -11,10 +11,8 @@ export function getResendClient(): Resend | null {
   return _client;
 }
 
-// Production sender: emails are sent FROM riccardobozzato@gmail.com.
-// Resend allows sending from a verified Gmail address via the "Verified
-// Senders" feature (Personal, one-time confirmation) — no domain DNS needed.
-// Override with CONTACT_FROM_EMAIL env var if a custom sender is configured later.
-export const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "riccardobozzato@gmail.com";
+// Production sender: hello@riccardobozzato.com via Resend (domain verified).
+// Override with CONTACT_FROM_EMAIL env var if needed.
+export const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "hello@riccardobozzato.com";
 export const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "riccardobozzato@gmail.com";
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.com";
