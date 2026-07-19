@@ -69,13 +69,29 @@
                                 }
                },
     "projects":  {
-                      "title":  "Case Studies",
-                      "subtitle":  "Progetti reali, problemi reali, soluzioni reali. Lezioni incluse.",
+                       "title":  "Casi Studio",
+                       "subtitle":  "Progetti reali, problemi reali, soluzioni reali. Lezioni incluse.",
+                       "badge":  "Casi Studio",
+                       "badgeLabel":  "Case Study",
                        "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
-                                        "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali. La piattaforma gestisce l'intero ciclo degli ordini: catalogo prodotti con articoli freschi quotidiani, ordinazione online con pianificazione ritiro, e dashboard admin per la gestione ordini. Costruita con Next.js per performance SSR, Tailwind CSS per un look artigianale e PostgreSQL per persistenza dati affidabile.",
-                                        "features":  [
+"description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali. La piattaforma gestisce l'intero ciclo degli ordini: catalogo prodotti con articoli freschi quotidiani, ordinazione online con pianificazione ritiro, e dashboard admin per la gestione ordini. Costruita con Next.js per performance SSR, Tailwind CSS per un look artigianale e PostgreSQL per persistenza dati affidabile.",
+                                         "badge":  "Progetto Familiare",
+                                         "sectionFeatures":  "Funzionalità",
+                                         "sectionWhatItDoes":  "Cosa Fa",
+                                         "sectionTechStack":  "Stack Tecnologico",
+                                         "sectionScreenshots":  "Screenshot",
+                                         "sectionScreenshotsDesc":  "Design responsive in azione",
+                                         "screenshots":  [
+                                                             {
+                                                               "label":  "Home page — tema caldo da panificio"
+                                                             },
+                                                             {
+                                                               "label":  "Vista responsive mobile"
+                                                             }
+                                                           ],
+                                         "features":  [
                                                          "Gestione stakeholder: tradotto i requisiti di 3 generazioni familiari in specifiche tecniche, bilanciando tradizione con UX moderna",
                                                          "Delivery con budget limitato: e-commerce completo sotto €2K di budget materiali, usando stack open-source e tier gratuito Netlify",
                                                          "Multi-lingua (EN/IT) con SEO locale per clienti italiani e internazionali",
@@ -91,8 +107,11 @@
                                                           "Netlify"
                                                       ],
                                         "cta":  "Leggi il Case Study",
-                                        "note":  "Progetto familiare, consegnato sotto budget"
-                                    },
+"note":  "Realizzato come regalo per la famiglia — non in vendita",
+                                         "ctaTitle":  "Vuoi qualcosa di simile?",
+                                         "ctaDesc":  "Costruisco soluzioni e-commerce personalizzate e strumenti operativi. Parliamo del tuo progetto.",
+                                         "ctaButton":  "Contattami"
+                                     },
                        "vulnclaw":  {
                                         "title":  "VulnClaw",
                                         "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
@@ -127,10 +146,18 @@
                                                      "Internazionalizzazione: next-intl con supporto EN/IT completo, RTL-ready, routing locale-aware dal giorno uno",
                                                      "Documentazione come delivery: 40+ pagine di guide setup, API reference, walkthrough deploy e troubleshooting"
                                                  ],
-                                    "cta":  "Leggi il Case Study"
-                                }
-                                },
-    "services":  {
+                                     "cta":  "Leggi il Case Study"
+                                 },
+                        "ric2brain":  {
+                                         "title":  "ric2brain — Il mio Second Brain AI-Nativo",
+                                         "subtitle":  "Vault Obsidian | 9000+ note | RAG | LLM Wiki | Agent Memory",
+                                         "description":  "Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. MCP integration per agenti AI.",
+                                         "badge":  "Second Brain",
+                                         "techstack":  ["Obsidian", "Python", "ChromaDB", "Sentence Transformers", "RAG", "LLM Wiki", "Agent Memory", "MCP"],
+                                         "cta":  "Leggi il Case Study"
+                                 }
+                                 },
+     "services":  {
                        "title":  "Operations & Delivery — Risultati Misurabili",
                        "subtitle":  "Prezzo fisso. Consegnato.",
                        "heroDesc":  "Hai un problema operativo. Magari il tuo team cresce più veloce dei processi. Magari passi il tempo a spegnere incendi invece che a costruire. Progetto e implemento i sistemi — flussi di lavoro, framework KPI, struttura del team — che lo risolvono. PMP® certificato, €500K+ consegnati, team 8-12.",
@@ -291,7 +318,7 @@
                                  "Knowledge Management"
                              ],
                   "cta":  "Parliamone",
-                "ctaTitle":  "Parliamone",
+                 "ctaTitle":  "Costruiamo Qualcosa Insieme",
                 "ctaDesc":  "Hai un progetto, un'idea o semplicemente curiosità? Sono sempre aperto a conversazioni interessanti."
               },
     "books":  {
@@ -318,7 +345,7 @@
                     "linkedin":  "linkedin.com/in/riccardobozzato"
                 },
     "privacy":  {
-                    "title":  "Privacy Policy",
+                     "title":  "Informativa sulla Privacy",
                     "lastUpdated":  "Ultimo aggiornamento: 18 Luglio 2026",
                     "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse o richiedi i miei servizi di consulenza. Prendo la tua privacy sul serio — seguo il GDPR (Reg. UE 2016/679) e il Codice in materia di protezione dei dati personali italiano (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018), e mantengo la raccolta dati al minimo necessario.",
                     "sections":  [
@@ -410,7 +437,7 @@
                      "description":  "Utilizziamo cookie tecnici e analytics anonimizzati per migliorare la tua esperienza. Nessun cookie di profilazione.",
                      "accept":  "Accetta tutti",
                      "reject":  "Solo necessari",
-                     "privacyLink":  "Privacy Policy"
+                      "privacyLink":  "Informativa sulla Privacy"
                  },
     "notFound":  {
                      "title":  "404",

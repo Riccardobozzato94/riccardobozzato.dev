@@ -69,13 +69,29 @@
                                 }
                },
     "projects":  {
-                      "title":  "Case Studies",
-                       "subtitle":  "Real projects, real problems, real solutions. Lessons included.",
+                       "title":  "Case Studies",
+                        "subtitle":  "Real projects, real problems, real solutions. Lessons included.",
+                        "badge":  "Case Studies",
+                        "badgeLabel":  "Case Study",
                        "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Stakeholder Delivery: E-Commerce for a Family Bakery",
-                                        "description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints. The platform handles the full order lifecycle: product catalog with daily fresh-baked items, online ordering with pickup scheduling, and an admin dashboard for order management. Built with Next.js for SSR performance, Tailwind CSS for a warm, artisanal brand feel, and PostgreSQL for reliable order persistence.",
-                                        "features":  [
+"description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints. The platform handles the full order lifecycle: product catalog with daily fresh-baked items, online ordering with pickup scheduling, and an admin dashboard for order management. Built with Next.js for SSR performance, Tailwind CSS for a warm, artisanal brand feel, and PostgreSQL for reliable order persistence.",
+                                         "badge":  "Family Project",
+                                         "sectionFeatures":  "Features",
+                                         "sectionWhatItDoes":  "What It Does",
+                                         "sectionTechStack":  "Tech Stack",
+                                         "sectionScreenshots":  "Screenshots",
+                                         "sectionScreenshotsDesc":  "Responsive design in action",
+                                         "screenshots":  [
+                                                             {
+                                                               "label":  "Home page — warm bakery theme"
+                                                             },
+                                                             {
+                                                               "label":  "Mobile responsive view"
+                                                             }
+                                                           ],
+                                         "features":  [
                                                          "Stakeholder management: translated 3 generations of family requirements into technical specs, balancing tradition with modern UX",
                                                          "Budget-constrained delivery: full e-commerce platform delivered under €2K material budget, using open-source stack and Netlify free tier",
                                                          "Multi-language (EN/IT) with local SEO for Italian and international customers",
@@ -91,8 +107,11 @@
                                                           "Netlify"
                                                       ],
                                         "cta":  "Read Case Study",
-                                        "note":  "Family project, delivered under budget"
-                                    },
+"note":  "Built as a gift for family — not for sale",
+                                         "ctaTitle":  "Want something similar?",
+                                         "ctaDesc":  "I build custom e-commerce solutions and operational tools. Let's talk about your project.",
+                                         "ctaButton":  "Get in Touch"
+                                     },
                        "vulnclaw":  {
                                         "title":  "VulnClaw",
                                         "subtitle":  "Product Delivery: AI-Powered CLI from Zero to Open Source Community",
@@ -127,9 +146,17 @@
                                                      "Internationalization: next-intl with full EN/IT support, RTL-ready, locale-aware routing baked in from day one",
                                                      "Documentation as delivery: 40+ pages of setup guides, API references, deployment walkthroughs, and troubleshooting"
                                                  ],
-                                    "cta":  "Read Case Study"
-                                }
-                                },
+                                     "cta":  "Read Case Study"
+                                 },
+                        "ric2brain":  {
+                                         "title":  "ric2brain — My AI-Native Second Brain",
+                                         "subtitle":  "Obsidian Vault | 9000+ notes | RAG | LLM Wiki | Agent Memory",
+                                         "description":  "A unified 9000+ note Obsidian vault, indexed by AI engines (semantic RAG + LLM Wiki + Agent Memory). I search by meaning, not keywords. Every note is a node in a living knowledge graph. MCP integration for AI agents.",
+                                         "badge":  "Second Brain",
+                                         "techstack":  ["Obsidian", "Python", "ChromaDB", "Sentence Transformers", "RAG", "LLM Wiki", "Agent Memory", "MCP"],
+                                         "cta":  "Read Case Study"
+                                 }
+                                 },
     "services":  {
                        "title":  "Operations & Delivery — Measurable Results",
                        "subtitle":  "Fixed price. Delivered.",

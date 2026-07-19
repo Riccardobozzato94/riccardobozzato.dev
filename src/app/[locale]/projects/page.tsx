@@ -48,7 +48,7 @@ export default async function ProjectsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <Briefcase className="size-3.5" />
-              Case Studies
+              {t("badge")}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -70,7 +70,7 @@ export default async function ProjectsPage() {
             tags={["SaaS", "Product Delivery", "Process Design"]}
             href="/shipkit"
             image="/assets/shipkit-banner-1600x900.png"
-            badge="Case Study"
+            badge={t("badgeLabel")}
             badgeColor="bg-accent/10 text-accent"
             featured
           />
@@ -84,8 +84,8 @@ export default async function ProjectsPage() {
               tags={["AI", "Open Source", "Product Mgmt"]}
               href="/projects/vulnclaw"
               image="/assets/vulnclaw-banner-1600x900.png"
-              badge="Case Study"
-              badgeColor="bg-blue-500/10 text-blue-400"
+            badge={t("badgeLabel")}
+            badgeColor="bg-blue-500/10 text-blue-400"
             />
             <ProjectCard
               title={t("panificio.title")}
@@ -94,20 +94,20 @@ export default async function ProjectsPage() {
               tags={["E-Commerce", "Stakeholder Mgmt", "Delivery"]}
               href="/projects/panificio"
               image="/assets/panificio-banner-1600x900.png"
-              badge="Case Study"
-              badgeColor="bg-amber-500/10 text-amber-400"
+            badge={t("badgeLabel")}
+            badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>
 
           {/* ric2brain: full width */}
           <ProjectCard
-            title="ric2brain — Il mio Second Brain AI-Nativo"
-            subtitle="Obsidian Vault | 9000+ note | RAG | LLM Wiki | Agent Memory"
-            description="Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. MCP integration per agenti AI."
+            title={t("ric2brain.title")}
+            subtitle={t("ric2brain.subtitle")}
+            description={t("ric2brain.description")}
             tags={["AI", "Obsidian", "RAG", "Knowledge Mgmt", "Python"]}
             href="/projects/ric2brain"
             image="/assets/ric2brain-banner-1600x900.png"
-            badge="Second Brain"
+            badge={t("ric2brain.badge")}
             badgeColor="bg-purple-500/10 text-purple-400"
           />
         </div>

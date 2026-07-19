@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "@/styles/globals.css";
 
 const baseUrl = SITE_URL;
@@ -156,6 +157,7 @@ export default async function LocaleLayout({
           <Footer />
           <CookieConsent />
           <Analytics />
+          <GoogleAnalytics />
         </NextIntlClientProvider>
       </body>
     </html>

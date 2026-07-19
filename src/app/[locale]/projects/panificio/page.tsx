@@ -42,6 +42,7 @@ export default async function PanificioPage() {
   const t = await getTranslations("projects.panificio");
   const features = t.raw("features") as string[];
   const techstack = t.raw("techstack") as string[];
+  const screenshots = t.raw("screenshots") as { label: string }[];
 
   return (
     <>
@@ -54,7 +55,7 @@ export default async function PanificioPage() {
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-1.5 text-sm text-amber-500 mb-6">
               <Heart className="size-4" />
-              Family Project
+              {t("badge")}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -75,9 +76,9 @@ export default async function PanificioPage() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-1.5 text-sm text-amber-500 mb-4">
               <Sparkles className="size-3.5" />
-              Features
+              {t("sectionFeatures")}
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">What It Does</h2>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{t("sectionWhatItDoes")}</h2>
           </div>
           <div className="space-y-4">
             {features.map((feature: string, i: number) => (
@@ -93,7 +94,7 @@ export default async function PanificioPage() {
       {/* Tech Stack */}
       <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">Tech Stack</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">{t("sectionTechStack")}</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {techstack.map((tech: string) => (
               <Badge key={tech} variant="secondary" className="text-sm px-4 py-1.5 font-normal border border-border/50 bg-card">
@@ -107,34 +108,34 @@ export default async function PanificioPage() {
       {/* Screenshots */}
       <Section animate delay={100}>
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">Screenshots</h2>
-          <p className="text-muted-foreground mb-8">Responsive design in action</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">{t("sectionScreenshots")}</h2>
+          <p className="text-muted-foreground mb-8">{t("sectionScreenshotsDesc")}</p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
                   src="/assets/panificio-storefront-1600x1000.png"
-                  alt="Panificio Da Sergio home page"
+                  alt={screenshots[0].label}
                   fill
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
-              <p className="text-xs text-muted-foreground p-3">Home page — warm bakery theme</p>
+              <p className="text-xs text-muted-foreground p-3">{screenshots[0].label}</p>
             </div>
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
                   src="/assets/panificio-storefront-1200x760.png"
-                  alt="Panificio Da Sergio mobile view"
+                  alt={screenshots[1].label}
                   fill
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
-              <p className="text-xs text-muted-foreground p-3">Mobile responsive view</p>
+              <p className="text-xs text-muted-foreground p-3">{screenshots[1].label}</p>
             </div>
           </div>
         </div>
@@ -146,7 +147,7 @@ export default async function PanificioPage() {
           <div className="inline-flex items-center gap-3 rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 via-amber-500/[0.02] to-transparent px-6 py-4 text-amber-500">
             <Heart className="size-5 shrink-0" />
             <p className="text-base font-medium">
-              Built as a gift for family &mdash; not for sale
+              {t("note")}
             </p>
           </div>
         </div>
@@ -156,16 +157,15 @@ export default async function PanificioPage() {
       <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <Card className="max-w-2xl mx-auto border-accent/30 shadow-lg shadow-accent/5 text-center">
           <CardContent className="p-8 md:p-12 space-y-5">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Want something similar?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{t("ctaTitle")}</h2>
             <p className="text-muted-foreground">
-              I build custom e-commerce solutions and operational tools.
-              Let&apos;s talk about your project.
+              {t("ctaDesc")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Button asChild className="h-11 rounded-xl shadow-lg shadow-primary/10">
                 <Link href="/contact">
                   <Mail className="mr-2 size-4" />
-                  Get in Touch
+                  {t("ctaButton")}
                 </Link>
               </Button>
             </div>
