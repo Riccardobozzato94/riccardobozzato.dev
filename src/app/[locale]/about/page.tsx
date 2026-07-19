@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const timeline = [
+const timelineIt = [
   {
     period: "2018 – 2021",
     title: "Gestione Retail",
@@ -62,6 +62,37 @@ const timeline = [
     title: "Head of Operations",
     company: "Ciao Elsa — Legnaro, PD",
     desc: "Architettura operativa costruita da zero per una startup AI-native. Processi, KPI, governance, struttura del team. Engagement breve e mirato: sistema costruito, formato il team, consegnato.",
+    icon: "▹",
+  },
+] as const;
+
+const timelineEn = [
+  {
+    period: "2018 – 2021",
+    title: "Retail Management",
+    company: "In's Mercato · Aldi · Terranova",
+    desc: "Operational leadership, team management, KPI tracking. Learned operations hands-on, with my hands in the processes.",
+    icon: "▹",
+  },
+  {
+    period: "2022 – 2024",
+    title: "Enterprise Application Development",
+    company: "Accenture",
+    desc: "SAP UI5, JavaScript, process automation. +30% efficiency, -15% administrative errors. Enterprise scale, measurable impact.",
+    icon: "▹",
+  },
+  {
+    period: "2024 – 2026",
+    title: "Digital Portfolio Manager",
+    company: "Esse Solutions",
+    desc: "Managed a €500K portfolio coordinating distributed teams of 8-12 across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). Introduced Agile: +25% productivity, -40% time-to-market.",
+    icon: "▹",
+  },
+  {
+    period: "2026",
+    title: "Head of Operations",
+    company: "Ciao Elsa — Legnaro, PD",
+    desc: "Built operational architecture from scratch for an AI-native startup. Processes, KPIs, governance, team structure. Short, focused engagement: system built, team trained, handed over.",
     icon: "▹",
   },
 ] as const;
@@ -96,6 +127,7 @@ export default async function AboutPage({ params }: Props) {
   const story = t.raw("story") as string[];
   const philosophy = t("philosophy");
   const isIt = locale === "it";
+  const timeline = isIt ? timelineIt : timelineEn;
 
   return (
     <>

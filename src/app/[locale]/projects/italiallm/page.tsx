@@ -63,7 +63,7 @@ export default async function ItaliaLLMPage({ params }: Props) {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />
                 <span className="relative inline-flex size-2 rounded-full bg-accent" />
               </span>
-              AI • LLM • Startup
+              {isIt ? "AI • LLM • Startup" : "AI • LLM • Startup"}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}

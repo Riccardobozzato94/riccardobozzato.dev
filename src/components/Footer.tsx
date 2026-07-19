@@ -49,7 +49,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">NETWORK</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">{isIt ? "RETE" : "NETWORK"}</h4>
             <ul className="space-y-4">
               <li><a href="https://linkedin.com/in/riccardobozzato" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">LinkedIn</a></li>
               <li><a href="https://github.com/Riccardobozzato94" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">GitHub</a></li>
@@ -66,16 +66,16 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">LEGAL</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">{isIt ? "LEGALE" : "LEGAL"}</h4>
             <ul className="space-y-4">
-              <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><span className="text-sm text-muted-foreground/40">Terms of Service</span></li>
+              <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Informativa sulla Privacy" : "Privacy Policy"}</Link></li>
+              <li><span className="text-sm text-muted-foreground/40">{isIt ? "Termini di Servizio" : "Terms of Service"}</span></li>
             </ul>
           </div>
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">CMS</h4>
             <ul className="space-y-4">
-              <li><a href="/admin/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog Admin</a></li>
+              <li><a href="/admin/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Amministrazione Blog" : "Blog Admin"}</a></li>
             </ul>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-4 md:px-16 mt-12 pt-6 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-col gap-1">
           <p className="text-xs text-muted-foreground/60">
-            &copy; {currentYear} Riccardo Bozzato. Strategic Execution. All rights reserved.
+            &copy; {currentYear} Riccardo Bozzato. {isIt ? "Tutti i diritti riservati." : "All rights reserved."}
           </p>
           <p className="text-[10px] text-muted-foreground/30">
             {isIt

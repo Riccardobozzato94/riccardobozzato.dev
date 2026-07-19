@@ -34,8 +34,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function ProjectsPage() {
+export default async function ProjectsPage({ params }: Props) {
+  const { locale } = await params;
   const t = await getTranslations("projects");
+  const isIt = locale === "it";
 
   return (
     <>
@@ -67,7 +69,7 @@ export default async function ProjectsPage() {
             title={t("shipkit.title")}
             subtitle={t("shipkit.subtitle")}
             description={t("shipkit.description")}
-            tags={["SaaS", "Product Delivery", "Process Design"]}
+            tags={["SaaS", "Product Delivery", isIt ? "Progettazione Processi" : "Process Design"]}
             href="/shipkit"
             image="/assets/shipkit-banner-1600x900.png"
             badge={t("badgeLabel")}
@@ -81,7 +83,7 @@ export default async function ProjectsPage() {
               title={t("vulnclaw.title")}
               subtitle={t("vulnclaw.subtitle")}
               description={t("vulnclaw.description")}
-              tags={["AI", "Open Source", "Product Mgmt"]}
+              tags={["AI", "Open Source", isIt ? "Gestione Prodotto" : "Product Mgmt"]}
               href="/projects/vulnclaw"
               image="/assets/vulnclaw-banner-1600x900.png"
             badge={t("badgeLabel")}
@@ -91,7 +93,7 @@ export default async function ProjectsPage() {
               title={t("panificio.title")}
               subtitle={t("panificio.subtitle")}
               description={t("panificio.description")}
-              tags={["E-Commerce", "Stakeholder Mgmt", "Delivery"]}
+              tags={["E-Commerce", isIt ? "Gestione Stakeholder" : "Stakeholder Mgmt", "Delivery"]}
               href="/projects/panificio"
               image="/assets/panificio-banner-1600x900.png"
             badge={t("badgeLabel")}
@@ -104,7 +106,7 @@ export default async function ProjectsPage() {
             title={t("ric2brain.title")}
             subtitle={t("ric2brain.subtitle")}
             description={t("ric2brain.description")}
-            tags={["AI", "Obsidian", "RAG", "Knowledge Mgmt", "Python"]}
+            tags={["AI", "Obsidian", "RAG", isIt ? "Gestione Conoscenza" : "Knowledge Mgmt", "Python"]}
             href="/projects/ric2brain"
             image="/assets/ric2brain-banner-1600x900.png"
             badge={t("ric2brain.badge")}
@@ -116,7 +118,7 @@ export default async function ProjectsPage() {
             title={t("italiallm.title")}
             subtitle={t("italiallm.subtitle")}
             description={t("italiallm.description")}
-            tags={["AI", "LLM", "Startup", "Compliance", "Infrastructure"]}
+            tags={["AI", "LLM", "Startup", "Compliance", isIt ? "Infrastruttura" : "Infrastructure"]}
             href="/projects/italiallm"
             image="/assets/italiallm-banner-1600x900.png"
             badge={t("italiallm.badge")}

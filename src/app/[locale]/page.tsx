@@ -76,7 +76,7 @@ export default async function HomePage({ params }: Props) {
           <div className="w-full lg:w-7/12 relative z-10">
             <div className="flex items-center gap-2 mb-8 border-b border-outline-variant pb-4 inline-block">
               <span className="text-xs tracking-[0.1em] text-primary font-semibold">
-                {isIt ? "RICCARDO BOZZATO — STRATEGIC OPERATIONS" : "RICCARDO BOZZATO — STRATEGIC OPERATIONS"}
+                {isIt ? "RICCARDO BOZZATO — OPERATIONS STRATEGICHE" : "RICCARDO BOZZATO — STRATEGIC OPERATIONS"}
               </span>
             </div>
 
@@ -171,10 +171,10 @@ export default async function HomePage({ params }: Props) {
             <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Metric Cards */}
               {[
-                { icon: "cpu", label: isIt ? "ARCHITETTURA DEI PROCESSI" : "PROCESS ARCHITECTURE", title: isIt ? "Design & Governance" : "Design & Governance" },
+                { icon: "cpu", label: isIt ? "ARCHITETTURA DEI PROCESSI" : "PROCESS ARCHITECTURE", title: isIt ? "Progettazione & Governance" : "Design & Governance" },
                 { icon: "users", label: isIt ? "ALLINEAMENTO TEAM" : "TEAM ALIGNMENT", title: isIt ? "Leadership Cross-funzionale" : "Cross-functional Leadership" },
                 { icon: "speed", label: isIt ? "EFFICIENZA SCALABILE" : "SCALABLE EFFICIENCY", title: isIt ? "Automazione & AI Ops" : "Automation & AI Ops" },
-                { icon: "euro", label: isIt ? "GESTIONE DEL VALORE" : "VALUE MANAGEMENT", title: isIt ? "Portfolio & P&L Control" : "Portfolio & P&L Control" },
+                { icon: "euro", label: isIt ? "GESTIONE DEL VALORE" : "VALUE MANAGEMENT", title: isIt ? "Controllo Portfolio & P&L" : "Portfolio & P&L Control" },
               ].map((card, i) => (
                 <div
                   key={i}
@@ -244,7 +244,7 @@ export default async function HomePage({ params }: Props) {
                     : "A portfolio of complex projects (Pimcore, Magento, Shopware) suffered from delivery delays and communication fragmentation. I introduced a tailored Agile framework, restoring visibility into progress and aligning enterprise stakeholder expectations."}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {[isIt ? "Agile / Scrum" : "Agile / Scrum", "PIM/DAM", isIt ? "Stakeholder Management" : "Stakeholder Management"].map((tag) => (
+                  {[isIt ? "Agile / Scrum" : "Agile / Scrum", "PIM/DAM", isIt ? "Gestione Stakeholder" : "Stakeholder Management"].map((tag) => (
                     <span key={tag} className="px-3 py-1 bg-surface-container-highest text-xs text-muted-foreground font-mono">
                       {tag}
                     </span>
@@ -287,7 +287,7 @@ export default async function HomePage({ params }: Props) {
                     : "In the banking/insurance sector, manual processes generated hidden costs and compliance risks. As an IT Systems Specialist, I mapped and automated critical flows using SAP UI5, creating more intuitive interfaces and drastically reducing operational bottlenecks."}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {[isIt ? "Process Automation" : "Process Automation", "SAP UI5", isIt ? "Banking / Insurance" : "Banking / Insurance"].map((tag) => (
+                  {[isIt ? "Automazione Processi" : "Process Automation", "SAP UI5", isIt ? "Bancario / Assicurativo" : "Banking / Insurance"].map((tag) => (
                     <span key={tag} className="px-3 py-1 bg-surface-container-highest text-xs text-muted-foreground font-mono">
                       {tag}
                     </span>
@@ -525,7 +525,7 @@ export default async function HomePage({ params }: Props) {
                   <Check className="size-4 text-primary" /> {isIt ? "Framework Azionabile" : "Actionable Framework"}
                 </div>
                 <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
-                  <Check className="size-4 text-primary" /> Zero Fluff
+                  <Check className="size-4 text-primary" /> {isIt ? "Senza Inutili Giri di Parole" : "Zero Fluff"}
                 </div>
               </div>
             </div>

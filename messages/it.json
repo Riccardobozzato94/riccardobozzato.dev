@@ -1,7 +1,7 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Delivery Manager | Head of Operations | PMP® — operations, execution, processi AI-enabled.",
+                    "tagline":  "Delivery Manager | Head of Operations | PMP® — operations, execution, workflow potenziati dall'AI.",
                     "description":  "Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Rendo i team digitali più veloci, meno caotici e più prevedibili. Process design, team leadership, delivery eCommerce/PIM-DAM, operations. €500K+ consegnati, team 8-12, 25-40% miglioramento efficienza."
               },
     "nav":  {
@@ -75,7 +75,7 @@
                        "badgeLabel":  "Case Study",
                        "panificio":  {
                                         "title":  "Panificio Da Sergio",
-                                        "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
+                                        "subtitle":  "Gestione Stakeholder: E-Commerce per un'Attività di Famiglia",
 "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali. La piattaforma gestisce l'intero ciclo degli ordini: catalogo prodotti con articoli freschi quotidiani, ordinazione online con pianificazione ritiro, e dashboard admin per la gestione ordini. Costruita con Next.js per performance SSR, Tailwind CSS per un look artigianale e PostgreSQL per persistenza dati affidabile.",
                                          "badge":  "Progetto Familiare",
                                          "sectionFeatures":  "Funzionalità",
@@ -115,9 +115,9 @@
                        "vulnclaw":  {
                                         "title":  "VulnClaw",
                                         "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
-                                        "description":  "Costruito un CLI open-source di penetration testing AI da zero. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione architetturale, costruzione della community, prioritizzazione roadmap e shipping della v0.4.0 con utenti attivi in 3 continenti. Lo strumento integra agenti AI per ricognizione autonoma, scansione vulnerabilità e generazione report. Lezione chiave: iniziare stretto batte costruire largo ogni volta. 1.200+ stelle GitHub, 40+ fork, 15+ contributor della community.",
+                                        "description":  "Ho costruito un CLI open-source di penetration testing AI da zero. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione architetturale, costruzione della community, prioritizzazione roadmap e shipping della v0.4.0 con utenti attivi in 3 continenti. Lo strumento integra agenti AI per ricognizione autonoma, scansione vulnerabilità e generazione report. Lezione chiave: iniziare stretto batte costruire largo ogni volta. 1.200+ stelle GitHub, 40+ fork, 15+ contributor della community.",
                                         "features":  [
-                                                         "Product scoping: evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
+                                                         "Product scoping: si è evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
                                                          "Architettura AI: 3 agenti specializzati — Recon, Exploit, Report — che collaborano autonomamente usando LLM",
                                                          "Community management: triage di 80+ PR e 200+ issue, mantenendo SLA di 48h per la prima risposta su report di sicurezza critici",
                                                          "Prioritizzazione roadmap: detto 'no' al 60% delle richieste di feature per ship il 40% essenziale — controllo dello scope spietato",
@@ -151,7 +151,7 @@
                         "ric2brain":  {
                                           "title":  "ric2brain — Il mio Second Brain AI-Nativo",
                                           "subtitle":  "Vault Obsidian | 9000+ note | RAG | LLM Wiki | Agent Memory",
-                                          "description":  "Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. MCP integration per agenti AI.",
+                                          "description":  "Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. Integrazione MCP per agenti AI.",
                                           "badge":  "Second Brain",
                                           "techstack":  ["Obsidian", "Python", "ChromaDB", "Sentence Transformers", "RAG", "LLM Wiki", "Agent Memory", "MCP"],
                                           "cta":  "Leggi il Case Study"
@@ -276,7 +276,7 @@
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
                     "subtitle":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
-                    "description":  "Lo stesso framework che uso con i miei clienti di consulenza — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
+                    "description":  "Lo stesso framework che uso con i miei clienti — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
                     "whatsInside":  [
                                         "La Process Map: visualizzazione end-to-end dei flussi di lavoro",
                                         "La Metric Baseline: lead time, active time, wait time",
@@ -301,7 +301,7 @@
                    "subtitle":  "Operations & Delivery. PMP®. Dal retail al digitale — risultati misurabili in ogni ruolo.",
                    "intro":  "Delivery Manager & Head of Operations (PMP®). 7+ anni a rendere i team più veloci e meno caotici. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Il filo conduttore: costruisco sistemi che permettono alle brave persone di fare il loro miglior lavoro.",
                    "story": [
-                                 "Il mio percorso inizia nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
+                                 "Il mio percorso è iniziato nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
                                  "Poi Accenture. Ho costruito applicazioni enterprise (SAP UI5, JavaScript) e automatizzato processi che erano manuali da anni: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. È stata la prima volta che ho capito che il processo giusto batte il talento grezzo — sempre.",
                                  "In Esse Solutions gestivo un portfolio digitale da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto Agile strutturato dove non c'era niente: produttività +25%, time-to-market -40%, tempi di completamento -20%.",
                                  "In Ciao Elsa sono stato Head of Operations per 8 settimane — per scelta. La startup aveva bisogno di una funzione operations da zero: processi, KPI, struttura del team, governance. L'ho costruita, consegnata, e me ne sono andato. Un engagement breve che ha dimostrato che l'approccio funziona anche a velocità startup.",

@@ -60,7 +60,7 @@ export default async function VulnClawPage({ params }: Props) {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />
                 <span className="relative inline-flex size-2 rounded-full bg-accent" />
               </span>
-              AI • CLI • Security
+              {isIt ? "AI • CLI • Sicurezza" : "AI • CLI • Security"}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -117,9 +117,9 @@ export default async function VulnClawPage({ params }: Props) {
           <p className="text-muted-foreground mb-8">{isIt ? "Esperienza da terminale" : "Terminal-first experience"}</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: "CLI help & commands" },
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: "Live reconnaissance scan" },
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: "Findings & results" },
+              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Aiuto e comandi CLI" : "CLI help & commands" },
+              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Scansione live di ricognizione" : "Live reconnaissance scan" },
+              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Risultati e findings" : "Findings & results" },
             ].map((img, idx) => (
               <div
                 key={idx}
