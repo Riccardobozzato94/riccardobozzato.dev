@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useState, type FormEvent } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CheckCircle2, Download, Lock, Sparkles, Map, BarChart3, Target, ArrowRight, FileText } from "lucide-react";
@@ -28,8 +28,31 @@ const phases = [
   },
 ];
 
+const phasesIt = [
+  {
+    icon: <Map className="size-5" />,
+    title: "Fase 1: Process Map",
+    time: "60 min",
+    desc: "Mappa ogni processo aziendale end-to-end. Segnala passaggi di consegna, cambi di strumento e colli di bottiglia nelle approvazioni.",
+  },
+  {
+    icon: <BarChart3 className="size-5" />,
+    title: "Fase 2: Metric Baseline",
+    time: "60 min",
+    desc: "Misura lead time, active time e wait time. Calcola l'efficienza del processo.",
+  },
+  {
+    icon: <Target className="size-5" />,
+    title: "Fase 3: Priority Matrix",
+    time: "60 min",
+    desc: "Valuta ogni processo per impatto e risolvibilità. Costruisci il tuo piano d'azione.",
+  },
+];
+
 export default function FreebiePage() {
   const t = useTranslations("freebie");
+  const locale = useLocale();
+  const isIt = locale === "it";
   const whatsInside = t.raw("whatsInside") as string[];
 
   const [name, setName] = useState("");
@@ -86,12 +109,11 @@ export default function FreebiePage() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
                 <Sparkles className="size-3.5" />
-                Free Resource · Printable Worksheet
+                {isIt ? "Risorsa Gratuita · PDF Stampabile" : "Free Resource · Printable Worksheet"}
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight leading-[1.1]">
-                Operational<br />
-                <span className="text-accent">Chaos</span> Diagnostic
+                {t("title")}
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground/80 mb-8 leading-relaxed">
@@ -100,7 +122,7 @@ export default function FreebiePage() {
 
               {/* Phase preview */}
               <div className="space-y-3 mb-8">
-                {phases.map((phase, i) => (
+                {(isIt ? phasesIt : phases).map((phase, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-muted/30 border border-border/40">
                     <div className="size-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 text-accent">
                       {phase.icon}
@@ -119,13 +141,13 @@ export default function FreebiePage() {
               {/* Trust badges */}
               <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5">
-                  <FileText className="size-3.5" /> Printable one-page worksheet
+                  <FileText className="size-3.5" /> {isIt ? "PDF stampabile di una pagina" : "Printable one-page worksheet"}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Lock className="size-3.5" /> No spam, ever
+                  <Lock className="size-3.5" /> {isIt ? "Niente spam, mai" : "No spam, ever"}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="size-3.5" /> Unsubscribe anytime
+                  <CheckCircle2 className="size-3.5" /> {isIt ? "Ti cancelli quando vuoi" : "Unsubscribe anytime"}
                 </span>
               </div>
             </div>
@@ -138,7 +160,7 @@ export default function FreebiePage() {
                   <div className="h-1.5 bg-gradient-to-r from-accent/80 via-accent to-accent/80" />
 
                   <div className="p-6 md:p-8">
-                    {status === "success" ? (
+                        {status === "success" ? (
                       <div className="flex flex-col items-center justify-center py-12 text-center space-y-5">
                         <div className="size-20 rounded-2xl bg-accent/10 flex items-center justify-center">
                           <Download className="size-10 text-accent" />
@@ -146,7 +168,7 @@ export default function FreebiePage() {
                         <div className="space-y-2">
                           <p className="text-2xl font-bold tracking-tight">{t("form.success")}</p>
                           <p className="text-muted-foreground text-sm">
-                            Check your inbox for the confirmation link — then download your diagnostic.
+                            {isIt ? "Controlla la tua casella per il link di conferma — poi scarica il diagnostic." : "Check your inbox for the confirmation link — then download your diagnostic."}
                           </p>
                         </div>
                         {directDownload && (
@@ -156,19 +178,19 @@ export default function FreebiePage() {
                             className="group inline-flex items-center justify-center h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 px-8 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5"
                           >
                             <Download className="mr-2 size-4" />
-                            Download Now
+                            {isIt ? "Scarica Ora" : "Download Now"}
                           </a>
                         )}
                         <p className="text-xs text-muted-foreground">
-                          PDF will also be sent to your inbox.
+                          {isIt ? "Il PDF ti sarà anche inviato via email." : "PDF will also be sent to your inbox."}
                         </p>
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="text-center mb-2">
-                          <h3 className="text-xl font-bold tracking-tight">Get Your Free Copy</h3>
+                          <h3 className="text-xl font-bold tracking-tight">{isIt ? "Ricevi la tua Copia Gratuita" : "Get Your Free Copy"}</h3>
                           <p className="text-sm text-muted-foreground mt-1">
-                            Printable worksheet. No credit card required.
+                            {isIt ? "PDF stampabile. Non serve carta di credito." : "Printable worksheet. No credit card required."}
                           </p>
                         </div>
 
@@ -212,7 +234,7 @@ export default function FreebiePage() {
                             className="mt-1 size-4 shrink-0 rounded border-border/60 bg-background/50 text-accent focus-visible:ring-accent/30 focus-visible:ring-2 focus-visible:ring-offset-2"
                           />
                           <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed select-none">
-                            I agree to receive the 6-email educational sequence about operations and security (unsubscribe anytime).{" "}
+                            {isIt ? "Accetto di ricevere la sequenza educativa di 6 email su operations e security (mi cancello quando voglio)." : "I agree to receive the 6-email educational sequence about operations and security (unsubscribe anytime)."}{" "}
                             <a href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
                               Privacy Policy
                             </a>
@@ -237,7 +259,7 @@ export default function FreebiePage() {
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                               </svg>
-                              Sending...
+                              {isIt ? "Invio in corso..." : "Sending..."}
                             </span>
                           ) : (
                             <span className="flex items-center justify-center gap-2">
@@ -248,7 +270,7 @@ export default function FreebiePage() {
 
                         <p className="text-xs text-muted-foreground/60 text-center">
                           <Lock className="size-3 inline mr-1" />
-                          Your data is safe. Worksheet delivered instantly to your inbox.{" "}
+                          {isIt ? "I tuoi dati sono al sicuro. Il worksheet ti viene consegnato immediatamente via email." : "Your data is safe. Worksheet delivered instantly to your inbox."}{" "}
                           <a href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
                             Privacy Policy
                           </a>
@@ -269,13 +291,13 @@ export default function FreebiePage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
               <Sparkles className="size-3.5" />
-              What&apos;s Inside
+              {isIt ? "Cosa Include" : "What&apos;s Inside"}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Everything in the Diagnostic
+              {isIt ? "Tutto nel Diagnostic" : "Everything in the Diagnostic"}
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              A ready-to-use printable worksheet — not theory, just the framework.
+              {isIt ? "Un PDF stampabile pronto all'uso — non teoria, solo il framework." : "A ready-to-use printable worksheet — not theory, just the framework."}
             </p>
           </div>
 
@@ -302,15 +324,31 @@ export default function FreebiePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              How to Use It
+              {isIt ? "Come Usarlo" : "How to Use It"}
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              Three focused sessions. One whiteboard. A clear action plan.
+              {isIt ? "Tre sessioni mirate. Una lavagna. Un piano d'azione chiaro." : "Three focused sessions. One whiteboard. A clear action plan."}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
+            {(isIt ? [
+              {
+                step: "01",
+                title: "Stampa o Apri",
+                desc: "Stampa il worksheet o aprilo su un tablet. Prepara una lavagna per la sessione di team.",
+              },
+              {
+                step: "02",
+                title: "Esegui le 3 Fasi",
+                desc: "Segui il framework: Process Map → Metric Baseline → Priority Matrix. Una fase alla volta.",
+              },
+              {
+                step: "03",
+                title: "Azione!",
+                desc: "Identifica le tue Top 3 P1 quick win. Implementa questa settimana. Misura la prossima.",
+              },
+            ] : [
               {
                 step: "01",
                 title: "Print or Open",
@@ -326,7 +364,7 @@ export default function FreebiePage() {
                 title: "Take Action",
                 desc: "Identify your Top 3 P1 quick wins. Implement this week. Measure next week.",
               },
-            ].map((item, i) => (
+            ]).map((item, i) => (
               <div key={i} className="relative p-6 rounded-2xl border border-border/50 bg-card text-center">
                 <div className="text-4xl font-black text-accent/20 mb-3">{item.step}</div>
                 <h3 className="text-lg font-bold mb-2">{item.title}</h3>
@@ -344,10 +382,10 @@ export default function FreebiePage() {
             <Target className="size-7 text-accent" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Ready to Diagnose Your Operational Chaos?
+            {isIt ? "Pronto a Diagnosticare il Tuo Chaos Operativo?" : "Ready to Diagnose Your Operational Chaos?"}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Download the worksheet and turn invisible complexity into a clear action plan — in three hours.
+            {isIt ? "Scarica il worksheet e trasforma la complessità invisibile in un piano d'azione chiaro — in tre ore." : "Download the worksheet and turn invisible complexity into a clear action plan — in three hours."}
           </p>
           <a
             href="#"
@@ -357,7 +395,7 @@ export default function FreebiePage() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            Get Your Free Copy <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            {isIt ? "Ricevi la tua Copia Gratuita" : "Get Your Free Copy"} <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
       </Section>
