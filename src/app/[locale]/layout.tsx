@@ -2,15 +2,11 @@
 import { SITE_URL } from "@/lib/site";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
-import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@/components/Analytics";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer, CookieConsent } from "@/components/ClientOnlyComponents";
 import "@/styles/globals.css";
-
-// Lazy-load below-the-fold components
-const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
-const CookieConsent = dynamic(() => import("@/components/CookieConsent").then(m => ({ default: m.CookieConsent })), { ssr: false });
 
 const baseUrl = SITE_URL;
 

@@ -181,7 +181,7 @@
                        "packages":  [
                                         {
                                             "title":  "Delivery & Process Design",
-                                             "price":  "From €1,500",
+                                              "price":  "Contact me",
                                              "desc":  "Stop firefighting. I'll help you set up the planning, capacity, and risk frameworks that let your team ship predictably. No Agile theater — just the practices that actually work for your team size.",
                                             "features":  [
                                                              "Current-state process audit & gap analysis",
@@ -193,7 +193,7 @@
                                         },
                                         {
                                             "title":  "eCommerce & PIM-DAM Operations",
-                                            "price":  "From €2,000",
+                                             "price":  "Contact me",
                                             "desc":  "Pimcore, Magento, Shopware — enterprise implementations, integrations, data governance. 20-40% faster time-to-market.",
                                             "features":  [
                                                              "PIM/DAM architecture & implementation",
@@ -205,7 +205,7 @@
                                         },
                                         {
                                             "title":  "AI-Assisted Operations",
-                                            "price":  "From €2,500",
+                                             "price":  "Contact me",
                                             "desc":  "Operational workflow automation, real-time KPI dashboards, centralized knowledge management. Recover 10-40 hours/week.",
                                             "features":  [
                                                              "Process documentation & knowledge base setup",
@@ -217,7 +217,7 @@
                                         },
                                         {
                                             "title":  "Fractional Head of Ops / Delivery",
-                                            "price":  "From €3,000/mo",
+                                             "price":  "Contact me",
                                             "desc":  "Interim or part-time for early-stage startups. I build the operational architecture, train the team, leave a working system.",
                                             "features":  [
                                                              "Operations architecture design",
@@ -263,15 +263,15 @@
                                     "billing":  "Stripe — subscriptions, webhooks, customer portal",
                                     "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, customizable"
                                 },
-                   "pricing":  {
-                                   "title":  "Simple Pricing",
-                                   "subtitle":  "One price. Everything included.",
-                                   "price":  "€49",
-                                   "period":  "one-time",
-                                   "includes":  "Full source code, lifetime updates, priority support",
-                                   "cta":  "Buy ShipKit",
-                                   "guarantee":  "30-day money-back guarantee"
-                               }
+                    "pricing":  {
+                                    "title":  "Get ShipKit",
+                                    "subtitle":  "Full source code, lifetime updates, priority support.",
+                                    "price":  "Contact me",
+                                    "period":  "",
+                                    "includes":  "",
+                                    "cta":  "Contact me",
+                                    "guarantee":  ""
+                                }
                },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",

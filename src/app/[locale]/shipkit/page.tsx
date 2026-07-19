@@ -320,11 +320,13 @@ export default async function ShipKitPage() {
               </div>
               <div className="space-y-1">
                 <span className="text-5xl md:text-6xl font-bold tracking-tight">{pricing.price}</span>
-                <span className="text-lg text-muted-foreground ml-2">
-                  {pricing.period}
-                </span>
+                {pricing.period && (
+                  <span className="text-lg text-muted-foreground ml-2">
+                    {pricing.period}
+                  </span>
+                )}
               </div>
-              <p className="text-muted-foreground">{pricing.includes}</p>
+              {pricing.includes && <p className="text-muted-foreground">{pricing.includes}</p>}
               <ul className="space-y-3 text-left">
                 {pricingFeatures.map((feat) => (
                   <li key={feat} className="flex items-center gap-3">
@@ -343,15 +345,13 @@ export default async function ShipKitPage() {
                   {pricing.cta}
                 </a>
               </Button>
-              <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">
-                  {pricing.guarantee}
-                </p>
-                <p className="text-xs text-muted-foreground/50">
-                  <span className="inline-block mr-1">🔒</span>
-                  Secure checkout · Instant access · Lifetime updates
-                </p>
-              </div>
+              {pricing.guarantee && (
+                <div className="space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    {pricing.guarantee}
+                  </p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
