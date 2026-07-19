@@ -149,14 +149,30 @@
                                      "cta":  "Leggi il Case Study"
                                  },
                         "ric2brain":  {
-                                         "title":  "ric2brain — Il mio Second Brain AI-Nativo",
-                                         "subtitle":  "Vault Obsidian | 9000+ note | RAG | LLM Wiki | Agent Memory",
-                                         "description":  "Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. MCP integration per agenti AI.",
-                                         "badge":  "Second Brain",
-                                         "techstack":  ["Obsidian", "Python", "ChromaDB", "Sentence Transformers", "RAG", "LLM Wiki", "Agent Memory", "MCP"],
-                                         "cta":  "Leggi il Case Study"
-                                 }
-                                 },
+                                          "title":  "ric2brain — Il mio Second Brain AI-Nativo",
+                                          "subtitle":  "Vault Obsidian | 9000+ note | RAG | LLM Wiki | Agent Memory",
+                                          "description":  "Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. MCP integration per agenti AI.",
+                                          "badge":  "Second Brain",
+                                          "techstack":  ["Obsidian", "Python", "ChromaDB", "Sentence Transformers", "RAG", "LLM Wiki", "Agent Memory", "MCP"],
+                                          "cta":  "Leggi il Case Study"
+                                  },
+                        "italiallm":  {
+                                          "title":  "ItaliaLLM — Piattaforma LLM Sovrana per l'Italia",
+                                          "subtitle":  "Startup AI | API OpenAI-compatibile | Residenza IT | Pronta PA",
+                                          "description":  "ItaliaLLM (ex Token Factory Italia) è la prima piattaforma LLM con API OpenAI-compatibile, piena residenza italiana dei dati, pricing in EUR e conformità PA/AgID. Pensata per PMI, software house (white-label) e pubblica amministrazione. 64 modelli, RAG su documenti, fatturazione con IVA 22% e pacchetto compliance completo (ISO 27001, SOC 2, Garante).",
+                                          "badge":  "Startup AI",
+                                          "features":  [
+                                                           "API OpenAI-compatibile — sostitutivo drop-in per integrazioni LLM esistenti, con streaming, chat completions ed embeddings",
+                                                           "Residenza dati 100% italiana — inferenza, storage ed elaborazione in Italia (regioni Milano/Roma/Bari). GDPR by design",
+                                                           "64 modelli pre-caricati — da 7B a 70B parametri, famiglie Llama, Mistral, Qwen, DeepSeek. Auto-routing per latenza/qualità ottimale",
+                                                           "RAG su documenti — carica PDF, DOCX, TXT. Retrieval semantico con similarità coseno sui documenti indicizzati",
+                                                           "Conformità PA/AgID — auth SPID/CIE mock, diritto alla spiegazione (Art. 22 GDPR), notifica breach 72h, retention policy, Fattura Elettronica con IVA 22%",
+                                                           "Pacchetto compliance completo — template DPA ISO 27001, readiness SOC 2, procedure Garante retention/breach, roadmap certificazioni"
+                                                       ],
+                                          "techstack":  ["FastAPI", "VLLM", "RAG", "Python", "Kubernetes", "Terraform", "Swift", "Kotlin", "PostgreSQL", "Redis"],
+                                          "cta":  "Leggi il Case Study"
+                                  }
+                                  },
      "services":  {
                        "title":  "Operations & Delivery — Risultati Misurabili",
                        "subtitle":  "Prezzo fisso. Consegnato.",

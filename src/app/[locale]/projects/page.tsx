@@ -110,6 +110,18 @@ export default async function ProjectsPage() {
             badge={t("ric2brain.badge")}
             badgeColor="bg-purple-500/10 text-purple-400"
           />
+
+          {/* ItaliaLLM: full width */}
+          <ProjectCard
+            title={t("italiallm.title")}
+            subtitle={t("italiallm.subtitle")}
+            description={t("italiallm.description")}
+            tags={["AI", "LLM", "Startup", "Compliance", "Infrastructure"]}
+            href="/projects/italiallm"
+            image="/assets/italiallm-banner-1600x900.png"
+            badge={t("italiallm.badge")}
+            badgeColor="bg-green-500/10 text-green-400"
+          />
         </div>
       </Section>
     </>
