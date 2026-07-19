@@ -58,18 +58,17 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const featureKeys = ["auth", "database", "email", "i18n", "billing", "ui"];
 
-export default async function ShipKitPage() {
+export default async function ShipKitPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const isIt = locale === "it";
   const t = await getTranslations("shipkit");
 
   const features = t.raw("features") as Record<string, string>;
   const pricing = t.raw("pricing") as Record<string, string>;
 
-  const pricingFeatures = [
-    "Full source code",
-    "Lifetime updates",
-    "Priority support",
-    "30-day money-back guarantee",
-  ];
+  const pricingFeatures = isIt
+    ? ["Codice sorgente completo", "Aggiornamenti a vita", "Supporto prioritario", "Garanzia rimborso 30 giorni"]
+    : ["Full source code", "Lifetime updates", "Priority support", "30-day money-back guarantee"];
 
   return (
     <>
@@ -106,7 +105,7 @@ export default async function ShipKitPage() {
             </div>
             <div>
               <span className="text-sm font-bold">500+</span>
-              <p className="text-xs text-muted-foreground">Downloads</p>
+              <p className="text-xs text-muted-foreground">{isIt ? "Download" : "Downloads"}</p>
             </div>
           </div>
           <div className="hidden md:block w-px h-8 bg-border/50" />
@@ -116,7 +115,7 @@ export default async function ShipKitPage() {
             </div>
             <div>
               <span className="text-sm font-bold">50+</span>
-              <p className="text-xs text-muted-foreground">Companies</p>
+              <p className="text-xs text-muted-foreground">{isIt ? "Aziende" : "Companies"}</p>
             </div>
           </div>
           <div className="hidden md:block w-px h-8 bg-border/50" />
@@ -126,7 +125,7 @@ export default async function ShipKitPage() {
             </div>
             <div>
               <span className="text-sm font-bold">4.8/5</span>
-              <p className="text-xs text-muted-foreground">Rating</p>
+              <p className="text-xs text-muted-foreground">{isIt ? "Valutazione" : "Rating"}</p>
             </div>
           </div>
           <div className="hidden md:block w-px h-8 bg-border/50" />
@@ -135,8 +134,8 @@ export default async function ShipKitPage() {
               <Clock className="size-4 text-amber-500" />
             </div>
             <div>
-              <span className="text-sm font-bold text-amber-500">Launch Price</span>
-              <p className="text-xs text-muted-foreground">Increases to €79</p>
+              <span className="text-sm font-bold text-amber-500">{isIt ? "Prezzo di Lancio" : "Launch Price"}</span>
+              <p className="text-xs text-muted-foreground">{isIt ? "Sale a €79" : "Increases to €79"}</p>
             </div>
           </div>
         </div>
@@ -148,10 +147,10 @@ export default async function ShipKitPage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
               <Sparkles className="size-3.5" />
-              Features
+              {isIt ? "Funzionalità" : "Features"}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Everything You Need to Ship
+              {isIt ? "Tutto Ciò che Ti Serve per Shippare" : "Everything You Need to Ship"}
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -183,8 +182,8 @@ export default async function ShipKitPage() {
       {/* Demo Showcase */}
       <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Quick Demo</h2>
-          <p className="text-muted-foreground mb-8">A walkthrough of the full site experience</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">{isIt ? "Demo Rapida" : "Quick Demo"}</h2>
+          <p className="text-muted-foreground mb-8">{isIt ? "Una panoramica dell'esperienza completa del sito" : "A walkthrough of the full site experience"}</p>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
               <div className="relative aspect-video w-full overflow-hidden">
@@ -203,14 +202,14 @@ export default async function ShipKitPage() {
       {/* Screenshots */}
       <Section animate delay={100}>
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">See It In Action</h2>
-          <p className="text-muted-foreground mb-8">Real pages from the boilerplate</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">{isIt ? "Vedilo in Azione" : "See It In Action"}</h2>
+          <p className="text-muted-foreground mb-8">{isIt ? "Pagine reali del boilerplate" : "Real pages from the boilerplate"}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { src: "/assets/shipkit-dashboard-1600x1000.png", label: "Home page" },
-              { src: "/assets/shipkit-dashboard-1200x760.png", label: "Projects portfolio" },
-              { src: "/assets/shipkit-banner-1600x900.png", label: "ShipKit sales page" },
-              { src: "/assets/shipkit-banner-1200x630.png", label: "Freebie download" },
+              { src: "/assets/shipkit-dashboard-1600x1000.png", label: isIt ? "Home page" : "Home page" },
+              { src: "/assets/shipkit-dashboard-1200x760.png", label: isIt ? "Portfolio progetti" : "Projects portfolio" },
+              { src: "/assets/shipkit-banner-1600x900.png", label: isIt ? "Pagina vendita ShipKit" : "ShipKit sales page" },
+              { src: "/assets/shipkit-banner-1200x630.png", label: isIt ? "Download gratuito" : "Freebie download" },
             ].map((img, idx) => (
               <div
                 key={idx}
@@ -237,22 +236,22 @@ export default async function ShipKitPage() {
       <Section animate delay={100} className="py-16! md:!py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why ShipKit?</h2>
-            <p className="text-muted-foreground mt-2">Compared to building from scratch or using alternatives.</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{isIt ? "Perché ShipKit?" : "Why ShipKit?"}</h2>
+            <p className="text-muted-foreground mt-2">{isIt ? "Rispetto a costruire da zero o usare alternative." : "Compared to building from scratch or using alternatives."}</p>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border/50">
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Feature</th>
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">{isIt ? "Caratteristica" : "Feature"}</th>
                   <th className="text-center py-4 px-4 font-medium text-muted-foreground">
                     <XCircle className="size-4 inline mr-1 text-red-500" />
-                    From Scratch
+                    {isIt ? "Da Zero" : "From Scratch"}
                   </th>
                   <th className="text-center py-4 px-4 font-medium text-muted-foreground">
                     <AlertTriangle className="size-4 inline mr-1 text-amber-500" />
-                    Others
+                    {isIt ? "Altri" : "Others"}
                   </th>
                   <th className="text-center py-4 px-4 font-semibold text-accent">
                     <CheckCircle2 className="size-4 inline mr-1" />
@@ -262,16 +261,16 @@ export default async function ShipKitPage() {
               </thead>
               <tbody>
                 {[
-                  { feat: "Auth (magic link, OAuth, 2FA)", scratch: "2-4 weeks", other: "Partial", shipkit: "✅ Included" },
-                  { feat: "Database (Drizzle ORM + PG)", scratch: "1-2 weeks", other: "Partial", shipkit: "✅ Included" },
-                  { feat: "Transactional Emails", scratch: "1 week", other: "Add-on", shipkit: "✅ Included" },
-                  { feat: "i18n (en/it)", scratch: "1-2 weeks", other: "Add-on", shipkit: "✅ Included" },
-                  { feat: "Stripe Billing", scratch: "2-3 weeks", other: "Partial", shipkit: "✅ Included" },
-                  { feat: "shadcn/ui Components", scratch: "1 week", other: "Included", shipkit: "✅ Included" },
-                  { feat: "Dark Mode", scratch: "3-5 days", other: "Add-on", shipkit: "✅ Included" },
-                  { feat: "CI/CD Ready", scratch: "1 week", other: "Varies", shipkit: "✅ Included" },
-                  { feat: "Time to Ship", scratch: "8-16 weeks", other: "2-4 weeks", shipkit: "⚡ Days" },
-                  { feat: "Price", scratch: "€15,000+ dev cost", other: "€99-299/yr", shipkit: "€49 once" },
+                  { feat: isIt ? "Auth (magic link, OAuth, 2FA)" : "Auth (magic link, OAuth, 2FA)", scratch: isIt ? "2-4 settimane" : "2-4 weeks", other: isIt ? "Parziale" : "Partial", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: isIt ? "Database (Drizzle ORM + PG)" : "Database (Drizzle ORM + PG)", scratch: isIt ? "1-2 settimane" : "1-2 weeks", other: isIt ? "Parziale" : "Partial", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: isIt ? "Email Transazionali" : "Transactional Emails", scratch: isIt ? "1 settimana" : "1 week", other: isIt ? "Add-on" : "Add-on", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: "i18n (en/it)", scratch: isIt ? "1-2 settimane" : "1-2 weeks", other: isIt ? "Add-on" : "Add-on", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: isIt ? "Fatturazione Stripe" : "Stripe Billing", scratch: isIt ? "2-3 settimane" : "2-3 weeks", other: isIt ? "Parziale" : "Partial", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: "shadcn/ui Components", scratch: isIt ? "1 settimana" : "1 week", other: isIt ? "Incluso" : "Included", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: isIt ? "Modalità Scura" : "Dark Mode", scratch: isIt ? "3-5 giorni" : "3-5 days", other: isIt ? "Add-on" : "Add-on", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: isIt ? "Pronto CI/CD" : "CI/CD Ready", scratch: isIt ? "1 settimana" : "1 week", other: isIt ? "Variabile" : "Varies", shipkit: isIt ? "✅ Incluso" : "✅ Included" },
+                  { feat: isIt ? "Tempo di Ship" : "Time to Ship", scratch: isIt ? "8-16 settimane" : "8-16 weeks", other: isIt ? "2-4 settimane" : "2-4 weeks", shipkit: isIt ? "⚡ Giorni" : "⚡ Days" },
+                  { feat: isIt ? "Prezzo" : "Price", scratch: isIt ? "€15.000+ costo dev" : "€15,000+ dev cost", other: isIt ? "€99-299/anno" : "€99-299/yr", shipkit: isIt ? "€49 una volta" : "€49 once" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-border/20 hover:bg-muted/20 transition-colors">
                     <td className="py-3.5 px-4 font-medium text-foreground/90">{row.feat}</td>
@@ -286,7 +285,7 @@ export default async function ShipKitPage() {
 
           <div className="text-center mt-8">
             <p className="text-sm text-muted-foreground">
-              * Time estimates based on senior developer experience. Your mileage may vary.
+              {isIt ? "* Stime basate su esperienza di sviluppatore senior. I tempi possono variare." : "* Time estimates based on senior developer experience. Your mileage may vary."}
             </p>
           </div>
         </div>
@@ -298,7 +297,7 @@ export default async function ShipKitPage() {
           <div className="rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 via-amber-500/[0.02] to-transparent p-6 text-center">
             <p className="text-sm text-amber-500 font-medium flex items-center justify-center gap-2">
               <Clock className="size-4" />
-              Launch pricing — €49 one-time. Price increases to €79 soon. Lock in now.
+              {isIt ? "Prezzo di lancio — €49 una tantum. Il prezzo sale a €79 a breve. Bloccalo ora." : "Launch pricing — €49 one-time. Price increases to €79 soon. Lock in now."}
             </p>
           </div>
         </div>
@@ -314,9 +313,9 @@ export default async function ShipKitPage() {
             <CardContent className="p-8 md:p-12 space-y-6 relative">
               {/* Trust badges row */}
               <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground">
-                <span className="flex items-center gap-1"><Users className="size-3.5" /> 50+ companies</span>
-                <span className="flex items-center gap-1"><Star className="size-3.5" /> 4.8/5 rating</span>
-                <span className="flex items-center gap-1"><Download className="size-3.5" /> 500+ downloads</span>
+                <span className="flex items-center gap-1"><Users className="size-3.5" /> {isIt ? "50+ aziende" : "50+ companies"}</span>
+                <span className="flex items-center gap-1"><Star className="size-3.5" /> {isIt ? "4.8/5 valutazione" : "4.8/5 rating"}</span>
+                <span className="flex items-center gap-1"><Download className="size-3.5" /> {isIt ? "500+ download" : "500+ downloads"}</span>
               </div>
               <div className="space-y-1">
                 <span className="text-5xl md:text-6xl font-bold tracking-tight">{pricing.price}</span>
