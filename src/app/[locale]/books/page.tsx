@@ -490,6 +490,16 @@ const categoryOrder = [
   "Fitness & Health",
 ];
 
+const categoryOrderIt = [
+  "Business & Strategy",
+  "Ingegneria del Software",
+  "Produttività & Self-Development",
+  "Mindset & Resilienza",
+  "Comunicazione & Storytelling",
+  "Filosofia & Narrativa",
+  "Fitness & Salute",
+];
+
 const allBooks = Object.values(booksByCategory).flat();
 
 function Stars({ rating }: { rating: number }) {
@@ -572,10 +582,10 @@ export default async function BooksPage({ params }: Props) {
               {t("description")}
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {categoryOrder.map((cat) => (
+              {categoryOrder.map((cat, i) => (
                 <a key={cat} href={`#${cat.replace(/\s+/g, "-").toLowerCase()}`}
                   className="text-xs font-medium text-muted-foreground/60 hover:text-accent transition-colors border border-border/30 rounded-full px-3 py-1 hover:border-accent/30">
-                  {cat}
+                  {isIt ? categoryOrderIt[i] : cat}
                 </a>
               ))}
             </div>
@@ -589,7 +599,7 @@ export default async function BooksPage({ params }: Props) {
       </section>
 
       {/* Category Sections */}
-      {categoryOrder.map((category) => {
+      {categoryOrder.map((category, ci) => {
         const books = booksByCategory[category];
         if (!books || books.length === 0) return null;
         const catId = category.replace(/\s+/g, "-").toLowerCase();
@@ -603,7 +613,7 @@ export default async function BooksPage({ params }: Props) {
               {/* Category Header */}
               <div className="mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-                  {category}
+                  {isIt ? categoryOrderIt[ci] : category}
                 </h2>
                 <div className="h-px w-12 bg-accent/40 mt-3" />
               </div>
