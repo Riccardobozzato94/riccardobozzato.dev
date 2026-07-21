@@ -169,6 +169,22 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* Netlify Identity — needed to process invite tokens on any page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                  });
+                }
+              });
+            }`,
+          }}
+        />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
