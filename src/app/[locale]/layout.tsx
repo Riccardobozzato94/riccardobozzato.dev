@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     description,
     openGraph: {
-      title,
+      title: `${title} — Head of Operations | Delivery Manager | PMP®`,
       description,
       url: baseUrl,
       siteName: title,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: `${baseUrl}/assets/shipkit-banner-1600x900.png`,
+          url: `${baseUrl}/images/og-default.svg`,
           width: 1600,
           height: 900,
           alt: `${title} — ${t("tagline")}`,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [`${baseUrl}/assets/shipkit-banner-1600x900.png`],
+      images: [`${baseUrl}/images/og-default.svg`],
     },
     robots: {
       index: true,
@@ -89,7 +89,7 @@ export default async function LocaleLayout({
         familyName: "Bozzato",
         email: "riccardobozzato@gmail.com",
         telephone: "+393892139542",
-        jobTitle: "Delivery Manager | Head of Operations | PMP®",
+        jobTitle: "Head of Operations | Delivery Manager | PMP®",
         worksFor: {
           "@type": "Organization",
           name: "Riccardo Bozzato Consulting",
@@ -107,23 +107,44 @@ export default async function LocaleLayout({
         ],
       },
       {
-        "@type": "Product",
-        name: "ShipKit SaaS Kit",
+        "@type": "ProfessionalService",
+        name: "Riccardo Bozzato — Operations & Delivery",
         description:
-          "Production-ready Next.js 16 SaaS boilerplate with auth, database, email, billing, i18n, and shadcn/ui.",
-        image: `${SITE_URL}/assets/shipkit-banner-1600x900.png`,
-        offers: {
-          "@type": "Offer",
-          price: "49",
-          priceCurrency: "EUR",
-          availability: "https://schema.org/InStock",
-          priceValidUntil: "2027-07-15",
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          bestRating: "5",
-          ratingCount: "24",
+          "Delivery Manager & Head of Operations (PMP®). Operations, delivery ed execution con risultati misurabili. €500K+ portfolio, -40% TtM, +25% produttività.",
+        url: SITE_URL,
+        image: `${SITE_URL}/images/og-default.svg`,
+        email: "riccardobozzato@gmail.com",
+        telephone: "+393892139542",
+        areaServed: ["IT", "EU"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Operations & Delivery Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Operations Audit",
+                description: "Analisi processi in 2 giorni, report con 3 quick wins. €490.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Delivery & Process Design",
+                description: "Framework Agile, release planning, capacity modeling. Da €1.500.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Fractional Head of Ops",
+                description: "Interim o part-time per startup. Da €2.500/mese.",
+              },
+            },
+          ],
         },
       },
     ],
@@ -151,6 +172,12 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
+          {/* Announcement Bar — Open to Work */}
+          <div className="bg-primary text-[10px] sm:text-xs font-semibold tracking-wider text-center py-2 px-4 text-black">
+            🟢 {locale === "it"
+              ? "Disponibile da subito — Head of Ops / DM / PM Senior — Padova · Milano · Remote"
+              : "Available immediately — Head of Ops / Delivery Manager / Senior PM — Padua · Milan · Remote"}
+          </div>
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />

@@ -1,8 +1,8 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Delivery Manager | Head of Operations | PMP® — operations, execution, workflow potenziati dall'AI.",
-                    "description":  "Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Rendo i team digitali più veloci, meno caotici e più prevedibili. Process design, team leadership, delivery eCommerce/PIM-DAM, operations. €500K+ consegnati, team 8-12, 25-40% miglioramento efficienza."
+                    "tagline":  "Head of Operations | Delivery Manager | PMP® — operations, delivery ed execution con risultati misurabili.",
+                    "description":  "Senior Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Costruisco l'architettura operativa che trasforma il caos in esecuzione prevedibile. €500K+ portfolio gestito, -40% time-to-market, team 8-12. Disponibile da subito."
               },
     "nav":  {
                 "home":  "Home",
@@ -69,29 +69,13 @@
                                 }
                },
     "projects":  {
-                       "title":  "Casi Studio",
-                       "subtitle":  "Progetti reali, problemi reali, soluzioni reali. Lezioni incluse.",
-                       "badge":  "Casi Studio",
-                       "badgeLabel":  "Case Study",
+                      "title":  "Case Studies",
+                      "subtitle":  "Progetti reali, problemi reali, soluzioni reali. Lezioni incluse.",
                        "panificio":  {
                                         "title":  "Panificio Da Sergio",
-                                        "subtitle":  "Gestione Stakeholder: E-Commerce per un'Attività di Famiglia",
-"description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali. La piattaforma gestisce l'intero ciclo degli ordini: catalogo prodotti con articoli freschi quotidiani, ordinazione online con pianificazione ritiro, e dashboard admin per la gestione ordini. Costruita con Next.js per performance SSR, Tailwind CSS per un look artigianale e PostgreSQL per persistenza dati affidabile.",
-                                         "badge":  "Progetto Familiare",
-                                         "sectionFeatures":  "Funzionalità",
-                                         "sectionWhatItDoes":  "Cosa Fa",
-                                         "sectionTechStack":  "Stack Tecnologico",
-                                         "sectionScreenshots":  "Screenshot",
-                                         "sectionScreenshotsDesc":  "Design responsive in azione",
-                                         "screenshots":  [
-                                                             {
-                                                               "label":  "Home page — tema caldo da panificio"
-                                                             },
-                                                             {
-                                                               "label":  "Vista responsive mobile"
-                                                             }
-                                                           ],
-                                         "features":  [
+                                        "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
+                                        "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali. La piattaforma gestisce l'intero ciclo degli ordini: catalogo prodotti con articoli freschi quotidiani, ordinazione online con pianificazione ritiro, e dashboard admin per la gestione ordini. Costruita con Next.js per performance SSR, Tailwind CSS per un look artigianale e PostgreSQL per persistenza dati affidabile.",
+                                        "features":  [
                                                          "Gestione stakeholder: tradotto i requisiti di 3 generazioni familiari in specifiche tecniche, bilanciando tradizione con UX moderna",
                                                          "Delivery con budget limitato: e-commerce completo sotto €2K di budget materiali, usando stack open-source e tier gratuito Netlify",
                                                          "Multi-lingua (EN/IT) con SEO locale per clienti italiani e internazionali",
@@ -107,17 +91,14 @@
                                                           "Netlify"
                                                       ],
                                         "cta":  "Leggi il Case Study",
-"note":  "Realizzato come regalo per la famiglia — non in vendita",
-                                         "ctaTitle":  "Vuoi qualcosa di simile?",
-                                         "ctaDesc":  "Costruisco soluzioni e-commerce personalizzate e strumenti operativi. Parliamo del tuo progetto.",
-                                         "ctaButton":  "Contattami"
-                                     },
+                                        "note":  "Progetto familiare, consegnato sotto budget"
+                                    },
                        "vulnclaw":  {
                                         "title":  "VulnClaw",
                                         "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
-                                        "description":  "Ho costruito un CLI open-source di penetration testing AI da zero. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione architetturale, costruzione della community, prioritizzazione roadmap e shipping della v0.4.0 con utenti attivi in 3 continenti. Lo strumento integra agenti AI per ricognizione autonoma, scansione vulnerabilità e generazione report. Lezione chiave: iniziare stretto batte costruire largo ogni volta. 1.200+ stelle GitHub, 40+ fork, 15+ contributor della community.",
+                                        "description":  "Costruito un CLI open-source di penetration testing AI da zero. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione architetturale, costruzione della community, prioritizzazione roadmap e shipping della v0.4.0 con utenti attivi in 3 continenti. Lo strumento integra agenti AI per ricognizione autonoma, scansione vulnerabilità e generazione report. Lezione chiave: iniziare stretto batte costruire largo ogni volta. 1.200+ stelle GitHub, 40+ fork, 15+ contributor della community.",
                                         "features":  [
-                                                         "Product scoping: si è evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
+                                                         "Product scoping: evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
                                                          "Architettura AI: 3 agenti specializzati — Recon, Exploit, Report — che collaborano autonomamente usando LLM",
                                                          "Community management: triage di 80+ PR e 200+ issue, mantenendo SLA di 48h per la prima risposta su report di sicurezza critici",
                                                          "Prioritizzazione roadmap: detto 'no' al 60% delle richieste di feature per ship il 40% essenziale — controllo dello scope spietato",
@@ -146,42 +127,30 @@
                                                      "Internazionalizzazione: next-intl con supporto EN/IT completo, RTL-ready, routing locale-aware dal giorno uno",
                                                      "Documentazione come delivery: 40+ pagine di guide setup, API reference, walkthrough deploy e troubleshooting"
                                                  ],
-                                     "cta":  "Leggi il Case Study"
-                                 },
-                        "ric2brain":  {
-                                          "title":  "ric2brain — Il mio Second Brain AI-Nativo",
-                                          "subtitle":  "Vault Obsidian | 9000+ note | RAG | LLM Wiki | Agent Memory",
-                                          "description":  "Un vault Obsidian unificato con 9000+ note, indicizzato da motori AI (RAG semantico + LLM Wiki + Agent Memory). Cerco per significato, non per parola chiave. Ogni nota è un nodo in un grafo della conoscenza vivo. Integrazione MCP per agenti AI.",
-                                          "badge":  "Second Brain",
-                                          "techstack":  ["Obsidian", "Python", "ChromaDB", "Sentence Transformers", "RAG", "LLM Wiki", "Agent Memory", "MCP"],
-                                          "cta":  "Leggi il Case Study"
-                                  },
-                        "italiallm":  {
-                                          "title":  "ItaliaLLM — Piattaforma LLM Sovrana per l'Italia",
-                                          "subtitle":  "Startup AI | API OpenAI-compatibile | Residenza IT | Pronta PA",
-                                          "description":  "ItaliaLLM (ex Token Factory Italia) è la prima piattaforma LLM con API OpenAI-compatibile, piena residenza italiana dei dati, pricing in EUR e conformità PA/AgID. Pensata per PMI, software house (white-label) e pubblica amministrazione. 64 modelli, RAG su documenti, fatturazione con IVA 22% e pacchetto compliance completo (ISO 27001, SOC 2, Garante).",
-                                          "badge":  "Startup AI",
-                                          "features":  [
-                                                           "API OpenAI-compatibile — sostitutivo drop-in per integrazioni LLM esistenti, con streaming, chat completions ed embeddings",
-                                                           "Residenza dati 100% italiana — inferenza, storage ed elaborazione in Italia (regioni Milano/Roma/Bari). GDPR by design",
-                                                           "64 modelli pre-caricati — da 7B a 70B parametri, famiglie Llama, Mistral, Qwen, DeepSeek. Auto-routing per latenza/qualità ottimale",
-                                                           "RAG su documenti — carica PDF, DOCX, TXT. Retrieval semantico con similarità coseno sui documenti indicizzati",
-                                                           "Conformità PA/AgID — auth SPID/CIE mock, diritto alla spiegazione (Art. 22 GDPR), notifica breach 72h, retention policy, Fattura Elettronica con IVA 22%",
-                                                           "Pacchetto compliance completo — template DPA ISO 27001, readiness SOC 2, procedure Garante retention/breach, roadmap certificazioni"
-                                                       ],
-                                          "techstack":  ["FastAPI", "VLLM", "RAG", "Python", "Kubernetes", "Terraform", "Swift", "Kotlin", "PostgreSQL", "Redis"],
-                                          "cta":  "Leggi il Case Study"
-                                  }
-                                  },
-     "services":  {
+                                    "cta":  "Leggi il Case Study"
+                                }
+                                },
+    "services":  {
                        "title":  "Operations & Delivery — Risultati Misurabili",
                        "subtitle":  "Prezzo fisso. Consegnato.",
                        "heroDesc":  "Hai un problema operativo. Magari il tuo team cresce più veloce dei processi. Magari passi il tempo a spegnere incendi invece che a costruire. Progetto e implemento i sistemi — flussi di lavoro, framework KPI, struttura del team — che lo risolvono. PMP® certificato, €500K+ consegnati, team 8-12.",
                        "cta":  "Parliamone",
-                      "packages":  [
-                                       {
-                                           "title":  "Delivery & Process Design",
-                                           "price":  "Contattami",
+                       "packages":  [
+                                        {
+                                            "title":  "Operations Audit",
+                                            "price":  "€490",
+                                             "desc":  "L'entry point. Due giorni di analisi dei tuoi processi operativi. Ricevi un report con 3 quick wins immediate e una priority matrix. Se procedi con un pacchetto completo, il costo dell'audit viene scalato.",
+                                             "features":  [
+                                                              "Analisi processi attuali e mappatura flussi",
+                                                              "Identificazione di 3 quick win a basso sforzo",
+                                                              "Priority matrix: impatto vs. sforzo",
+                                                              "Report esecutivo con raccomandazioni",
+                                                              "Call di debrief (30 min) per discutere i risultati"
+                                                          ]
+                                         },
+                                        {
+                                            "title":  "Delivery & Process Design",
+                                            "price":  "Da €1.500",
                                             "desc":  "Smetti di spegnere incendi. Ti aiuto a impostare i framework di pianificazione, capacità e rischio che permettono al tuo team di shippare in modo prevedibile. Niente Agile teatro — solo le pratiche che funzionano per la tua dimensione.",
                                             "features":  [
                                                              "Audit processi attuali e gap analysis",
@@ -193,7 +162,7 @@
                                         },
                                         {
                                             "title":  "eCommerce & PIM-DAM Operations",
-                                            "price":  "Contattami",
+                                            "price":  "Da €2.000",
                                             "desc":  "Pimcore, Magento, Shopware — implementazioni enterprise, migrazioni, governance del dato. Velocità e qualità, senza compromessi.",
                                             "features":  [
                                                              "Architettura e implementazione PIM/DAM",
@@ -205,7 +174,7 @@
                                         },
                                         {
                                             "title":  "AI-Assisted Operations",
-                                            "price":  "Contattami",
+                                            "price":  "Da €2.500",
                                             "desc":  "Automazione dei flussi operativi, dashboard KPI in tempo reale, knowledge management centralizzato. Recupera 10-40 ore/settimana.",
                                             "features":  [
                                                              "Documentazione processi e knowledge base",
@@ -217,7 +186,7 @@
                                         },
                                         {
                                             "title":  "Fractional Head of Ops / Delivery",
-                                            "price":  "Contattami",
+                                            "price":  "Da €3.000/mese",
                                             "desc":  "Interim o part-time per startup early-stage. Costruisco il sistema operativo, formo il team, consegno le chiavi.",
                                            "features":  [
                                                             "Design architettura operations",
@@ -263,20 +232,20 @@
                                     "billing":  "Stripe — piani abbonamento, webhook, portale clienti",
                                     "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, custom"
                                 },
-                    "pricing":  {
-                                    "title":  "Ottieni ShipKit",
-                                    "subtitle":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario.",
-                                    "price":  "Contattami",
-                                    "period":  "",
-                                    "includes":  "",
-                                    "cta":  "Contattami",
-                                    "guarantee":  ""
-                                }
+                   "pricing":  {
+                                   "title":  "Prezzo Semplice",
+                                   "subtitle":  "Un prezzo. Tutto incluso.",
+                                   "price":  "€49",
+                                   "period":  "una tantum",
+                                   "includes":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
+                                   "cta":  "Acquista ShipKit",
+                                   "guarantee":  "Garanzia rimborso 30 giorni"
+                               }
                },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
                     "subtitle":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
-                    "description":  "Lo stesso framework che uso con i miei clienti — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
+                    "description":  "Lo stesso framework che uso con i miei clienti di consulenza — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
                     "whatsInside":  [
                                         "La Process Map: visualizzazione end-to-end dei flussi di lavoro",
                                         "La Metric Baseline: lead time, active time, wait time",
@@ -301,7 +270,7 @@
                    "subtitle":  "Operations & Delivery. PMP®. Dal retail al digitale — risultati misurabili in ogni ruolo.",
                    "intro":  "Delivery Manager & Head of Operations (PMP®). 7+ anni a rendere i team più veloci e meno caotici. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Il filo conduttore: costruisco sistemi che permettono alle brave persone di fare il loro miglior lavoro.",
                    "story": [
-                                 "Il mio percorso è iniziato nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
+                                 "Il mio percorso inizia nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
                                  "Poi Accenture. Ho costruito applicazioni enterprise (SAP UI5, JavaScript) e automatizzato processi che erano manuali da anni: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. È stata la prima volta che ho capito che il processo giusto batte il talento grezzo — sempre.",
                                  "In Esse Solutions gestivo un portfolio digitale da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto Agile strutturato dove non c'era niente: produttività +25%, time-to-market -40%, tempi di completamento -20%.",
                                  "In Ciao Elsa sono stato Head of Operations per 8 settimane — per scelta. La startup aveva bisogno di una funzione operations da zero: processi, KPI, struttura del team, governance. L'ho costruita, consegnata, e me ne sono andato. Un engagement breve che ha dimostrato che l'approccio funziona anche a velocità startup.",
@@ -334,7 +303,7 @@
                                  "Knowledge Management"
                              ],
                   "cta":  "Parliamone",
-                 "ctaTitle":  "Costruiamo Qualcosa Insieme",
+                "ctaTitle":  "Parliamone",
                 "ctaDesc":  "Hai un progetto, un'idea o semplicemente curiosità? Sono sempre aperto a conversazioni interessanti."
               },
     "books":  {
@@ -343,14 +312,14 @@
               },
     "contact":  {
                     "title":  "Contattami",
-                    "subtitle":  "Stai costruendo qualcosa di interessante? Parliamo di operations, sicurezza o strumenti.",
+                    "subtitle":  "Per un ruolo, un progetto o una consulenza. Rispondo entro 24h.",
                     "form":  {
                                  "name":  "Nome",
                                  "namePlaceholder":  "Il tuo nome",
                                  "email":  "Email",
                                  "emailPlaceholder":  "tu@azienda.com",
                                  "message":  "Messaggio",
-                                 "messagePlaceholder":  "Cosa stai costruendo?",
+                                  "messagePlaceholder":  "Di cosa hai bisogno? Ruolo, progetto, o anche solo una domanda.",
                                  "submit":  "Invia Messaggio",
                                  "sending":  "Invio in corso...",
                                  "success":  "Grazie! Ti risponderò entro 24 ore.",
@@ -361,7 +330,7 @@
                     "linkedin":  "linkedin.com/in/riccardobozzato"
                 },
     "privacy":  {
-                     "title":  "Informativa sulla Privacy",
+                    "title":  "Privacy Policy",
                     "lastUpdated":  "Ultimo aggiornamento: 18 Luglio 2026",
                     "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse o richiedi i miei servizi di consulenza. Prendo la tua privacy sul serio — seguo il GDPR (Reg. UE 2016/679) e il Codice in materia di protezione dei dati personali italiano (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018), e mantengo la raccolta dati al minimo necessario.",
                     "sections":  [
@@ -453,7 +422,7 @@
                      "description":  "Utilizziamo cookie tecnici e analytics anonimizzati per migliorare la tua esperienza. Nessun cookie di profilazione.",
                      "accept":  "Accetta tutti",
                      "reject":  "Solo necessari",
-                      "privacyLink":  "Informativa sulla Privacy"
+                     "privacyLink":  "Privacy Policy"
                  },
     "notFound":  {
                      "title":  "404",

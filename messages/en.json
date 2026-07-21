@@ -1,8 +1,8 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Delivery Manager | Head of Operations | PMP® — operations, execution, AI-enabled workflows.",
-                    "description":  "Delivery Manager & Head of Operations (PMP®). I make digital teams faster, less chaotic, and more predictable. Process design, team leadership, eCommerce/PIM-DAM delivery, AI-enabled operations. €500K+ delivered, teams of 8-12, 25-40% efficiency gains."
+                    "tagline":  "Head of Operations | Delivery Manager | PMP® — operations, delivery, and execution with measurable results.",
+                    "description":  "Senior Delivery Manager & Head of Operations (PMP®). I build the operational architecture that turns chaos into predictable execution. €500K+ portfolio managed, -40% time-to-market, teams of 8-12. Available immediately."
               },
     "nav":  {
                 "home":  "Home",
@@ -22,7 +22,7 @@
     "home":  {
                     "heroTitle":  "Operations, delivery, and execution. With a builder mindset.",
                    "heroRole":  "No chaos. Just processes that work.",
-                    "heroTagline":  "Delivery Manager & Head of Operations (PMP®). I build the systems — processes, KPIs, team structure — that let digital companies grow without breaking. €500K+ delivered across enterprise and startup environments with teams of 8-12, achieving 40% faster time-to-market.",
+                    "heroTagline":  "Delivery Manager & Head of Operations (PMP®). I build the systems — processes, KPIs, team structure — that let digital companies grow without breaking. €500K+ delivered across enterprise and startup environments, teams of 8-12, 40% faster time-to-market.",
                    "heroCta":  "Let's Talk",
                    "heroCta2":  "See Results",
                    "featuredTitle":  "Measurable Results",
@@ -69,29 +69,13 @@
                                 }
                },
     "projects":  {
-                       "title":  "Case Studies",
-                        "subtitle":  "Real projects, real problems, real solutions. Lessons included.",
-                        "badge":  "Case Studies",
-                        "badgeLabel":  "Case Study",
+                      "title":  "Case Studies",
+                       "subtitle":  "Real projects, real problems, real solutions. Lessons included.",
                        "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Stakeholder Delivery: E-Commerce for a Family Bakery",
-"description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints. The platform handles the full order lifecycle: product catalog with daily fresh-baked items, online ordering with pickup scheduling, and an admin dashboard for order management. Built with Next.js for SSR performance, Tailwind CSS for a warm, artisanal brand feel, and PostgreSQL for reliable order persistence.",
-                                         "badge":  "Family Project",
-                                         "sectionFeatures":  "Features",
-                                         "sectionWhatItDoes":  "What It Does",
-                                         "sectionTechStack":  "Tech Stack",
-                                         "sectionScreenshots":  "Screenshots",
-                                         "sectionScreenshotsDesc":  "Responsive design in action",
-                                         "screenshots":  [
-                                                             {
-                                                               "label":  "Home page — warm bakery theme"
-                                                             },
-                                                             {
-                                                               "label":  "Mobile responsive view"
-                                                             }
-                                                           ],
-                                         "features":  [
+                                        "description":  "Delivered a full e-commerce platform for a traditional Italian bakery — managing stakeholder expectations, technical constraints, and a tight budget. A lesson in scope negotiation, client communication, and shipping under real-world constraints. The platform handles the full order lifecycle: product catalog with daily fresh-baked items, online ordering with pickup scheduling, and an admin dashboard for order management. Built with Next.js for SSR performance, Tailwind CSS for a warm, artisanal brand feel, and PostgreSQL for reliable order persistence.",
+                                        "features":  [
                                                          "Stakeholder management: translated 3 generations of family requirements into technical specs, balancing tradition with modern UX",
                                                          "Budget-constrained delivery: full e-commerce platform delivered under €2K material budget, using open-source stack and Netlify free tier",
                                                          "Multi-language (EN/IT) with local SEO for Italian and international customers",
@@ -107,11 +91,8 @@
                                                           "Netlify"
                                                       ],
                                         "cta":  "Read Case Study",
-"note":  "Built as a gift for family — not for sale",
-                                         "ctaTitle":  "Want something similar?",
-                                         "ctaDesc":  "I build custom e-commerce solutions and operational tools. Let's talk about your project.",
-                                         "ctaButton":  "Get in Touch"
-                                     },
+                                        "note":  "Family project, delivered under budget"
+                                    },
                        "vulnclaw":  {
                                         "title":  "VulnClaw",
                                         "subtitle":  "Product Delivery: AI-Powered CLI from Zero to Open Source Community",
@@ -146,42 +127,30 @@
                                                      "Internationalization: next-intl with full EN/IT support, RTL-ready, locale-aware routing baked in from day one",
                                                      "Documentation as delivery: 40+ pages of setup guides, API references, deployment walkthroughs, and troubleshooting"
                                                  ],
-                                     "cta":  "Read Case Study"
-                                 },
-                        "ric2brain":  {
-                                          "title":  "ric2brain — My AI-Native Second Brain",
-                                          "subtitle":  "Obsidian Vault | 9000+ notes | RAG | LLM Wiki | Agent Memory",
-                                          "description":  "A unified 9000+ note Obsidian vault, indexed by AI engines (semantic RAG + LLM Wiki + Agent Memory). I search by meaning, not keywords. Every note is a node in a living knowledge graph. MCP integration for AI agents.",
-                                          "badge":  "Second Brain",
-                                          "techstack":  ["Obsidian", "Python", "ChromaDB", "Sentence Transformers", "RAG", "LLM Wiki", "Agent Memory", "MCP"],
-                                          "cta":  "Read Case Study"
-                                  },
-                        "italiallm":  {
-                                          "title":  "ItaliaLLM — Sovereign LLM Platform for Italy",
-                                          "subtitle":  "AI startup | OpenAI-compatible API | Italian residency | PA-ready",
-                                          "description":  "ItaliaLLM (ex Token Factory Italia) is the first LLM platform with OpenAI-compatible API, full Italian data residency, EUR pricing, and PA/AgID compliance. Built for PMI, software houses (white-label), and public administration. 64 models, RAG on documents, billing with 22% IVA, and a complete compliance package (ISO 27001, SOC 2, Garante).",
-                                          "badge":  "AI Startup",
-                                          "features":  [
-                                                           "OpenAI-compatible API — drop-in replacement for existing LLM integrations, with streaming, chat completions, and embeddings endpoints",
-                                                           "Full Italian data residency — all inference, storage, and processing within Italy (Milan/Rome/Bari regions). GDPR by design",
-                                                           "64 pre-loaded models — from lightweight 7B to 70B parameters, covering Llama, Mistral, Qwen, DeepSeek families. Auto-routing for optimal latency/quality",
-                                                           "RAG on documents — upload PDFs, DOCX, TXT. Semantic retrieval with cosine similarity search against ingested documents",
-                                                           "PA/AgID compliance — SPID/CIE mock auth, right-to-explanation (Art. 22 GDPR), 72h breach notification, retention policies, Fattura Elettronica with 22% IVA",
-                                                           "Complete compliance package — ISO 27001 DPA templates, SOC 2 readiness assessment, Garante retention/breach procedures, certification roadmap"
-                                                       ],
-                                          "techstack":  ["FastAPI", "VLLM", "RAG", "Python", "Kubernetes", "Terraform", "Swift", "Kotlin", "PostgreSQL", "Redis"],
-                                          "cta":  "Read Case Study"
-                                  }
-                                  },
+                                    "cta":  "Read Case Study"
+                                }
+                                },
     "services":  {
                        "title":  "Operations & Delivery — Measurable Results",
                        "subtitle":  "Fixed price. Delivered.",
                        "heroDesc":  "You have an operations problem. Maybe your team is growing faster than your processes. Maybe you're firefighting instead of building. I design and implement the systems — process workflows, KPI frameworks, team structures — that fix it. PMP® certified, €500K+ delivered, teams of 8-12.",
                        "cta":  "Let's Talk",
-                       "packages":  [
-                                        {
-                                            "title":  "Delivery & Process Design",
-                                              "price":  "Contact me",
+                        "packages":  [
+                                         {
+                                             "title":  "Operations Audit",
+                                             "price":  "€490",
+                                              "desc":  "The entry point. Two-day analysis of your operational processes. You get a report with 3 immediate quick wins and a priority matrix. If you proceed with a full package, the audit cost is deducted.",
+                                              "features":  [
+                                                               "Current-state process audit and flow mapping",
+                                                               "3 low-effort quick wins identified",
+                                                               "Impact vs. effort priority matrix",
+                                                               "Executive report with recommendations",
+                                                               "30-min debrief call to discuss findings"
+                                                           ]
+                                          },
+                                         {
+                                             "title":  "Delivery & Process Design",
+                                              "price":  "From €1,500",
                                              "desc":  "Stop firefighting. I'll help you set up the planning, capacity, and risk frameworks that let your team ship predictably. No Agile theater — just the practices that actually work for your team size.",
                                             "features":  [
                                                              "Current-state process audit & gap analysis",
@@ -193,7 +162,7 @@
                                         },
                                         {
                                             "title":  "eCommerce & PIM-DAM Operations",
-                                             "price":  "Contact me",
+                                            "price":  "From €2,000",
                                             "desc":  "Pimcore, Magento, Shopware — enterprise implementations, integrations, data governance. 20-40% faster time-to-market.",
                                             "features":  [
                                                              "PIM/DAM architecture & implementation",
@@ -205,7 +174,7 @@
                                         },
                                         {
                                             "title":  "AI-Assisted Operations",
-                                             "price":  "Contact me",
+                                            "price":  "From €2,500",
                                             "desc":  "Operational workflow automation, real-time KPI dashboards, centralized knowledge management. Recover 10-40 hours/week.",
                                             "features":  [
                                                              "Process documentation & knowledge base setup",
@@ -217,7 +186,7 @@
                                         },
                                         {
                                             "title":  "Fractional Head of Ops / Delivery",
-                                             "price":  "Contact me",
+                                            "price":  "From €3,000/mo",
                                             "desc":  "Interim or part-time for early-stage startups. I build the operational architecture, train the team, leave a working system.",
                                             "features":  [
                                                              "Operations architecture design",
@@ -263,15 +232,15 @@
                                     "billing":  "Stripe — subscriptions, webhooks, customer portal",
                                     "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, customizable"
                                 },
-                    "pricing":  {
-                                    "title":  "Get ShipKit",
-                                    "subtitle":  "Full source code, lifetime updates, priority support.",
-                                    "price":  "Contact me",
-                                    "period":  "",
-                                    "includes":  "",
-                                    "cta":  "Contact me",
-                                    "guarantee":  ""
-                                }
+                   "pricing":  {
+                                   "title":  "Simple Pricing",
+                                   "subtitle":  "One price. Everything included.",
+                                   "price":  "€49",
+                                   "period":  "one-time",
+                                   "includes":  "Full source code, lifetime updates, priority support",
+                                   "cta":  "Buy ShipKit",
+                                   "guarantee":  "30-day money-back guarantee"
+                               }
                },
     "freebie":  {
                     "title":  "Operational Chaos Diagnostic",
@@ -303,7 +272,7 @@
                    "story":  [
                                   "My career started in retail management — In\u2019s Mercato, Aldi, Terranova. I learned operations the hard way: managing inventory, scheduling shifts, coaching teams, explaining to the regional manager why we missed target. It was the best possible training for delivery management, even if I didn\u2019t know it yet.",
                                   "Then Accenture. I built enterprise applications (SAP UI5, JavaScript) and automated processes that had been manual for years: +30% efficiency, -15% administrative errors, -20% response times. It was the first time I saw that the right process beats raw talent — every time.",
-                                  "At Esse Solutions I managed a \u20ac500K portfolio of digital projects, coordinating distributed teams of 8-12 across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). I introduced structured Agile where there was none: productivity went up 25%, time-to-market dropped 40%, completion times shrank 20%.",
+                                  "At Esse Solutions I owned a \u20ac500K portfolio of digital projects, coordinating distributed teams of 8-12 across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). I introduced structured Agile where there was none: productivity went up 25%, time-to-market dropped 40%, completion times shrank 20%.",
                                   "At Ciao Elsa I was Head of Operations for 8 weeks — by design. The startup needed an operations function from scratch: processes, KPIs, team structure, governance. I built it, handed it over, and left. A short engagement that proved the approach works even at startup speed.",
                                   "I'm currently in transition — my Ciao Elsa engagement has concluded and I'm open to new opportunities. I bring a strong track record: operational architectures built in both enterprise and startup environments, PMP\u00ae certification, and the conviction that the right process beats raw talent — every time. In the meantime, I build tools (ShipKit, VulnClaw) because you can't design good systems if you've never built anything."
                               ],
@@ -343,14 +312,14 @@
               },
     "contact":  {
                     "title":  "Get in Touch",
-                    "subtitle":  "Building something interesting? Let's talk operations, security, or tools.",
+                     "subtitle":  "For a role, a project, or a consultation. I'll respond within 24h.",
                     "form":  {
                                  "name":  "Name",
                                  "namePlaceholder":  "Your name",
                                  "email":  "Email",
                                  "emailPlaceholder":  "you@company.com",
                                  "message":  "Message",
-                                 "messagePlaceholder":  "What are you building?",
+                                  "messagePlaceholder":  "What do you need? Role, project, or just a question.",
                                  "submit":  "Send Message",
                                  "sending":  "Sending...",
                                  "success":  "Thanks! I'll get back to you within 24 hours.",

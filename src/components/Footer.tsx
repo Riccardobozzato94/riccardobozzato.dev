@@ -17,9 +17,16 @@ export default function Footer() {
         {/* Brand */}
         <div className="max-w-xs">
           <div className="text-xl font-bold text-foreground mb-4">Riccardo Bozzato</div>
-          <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-            Delivery Manager | Head of Operations | PMP®
+          <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+            Head of Operations | Delivery Manager | PMP®
           </p>
+          <p className="text-xs text-muted-foreground/60 mb-4 leading-relaxed">
+            €500K+ portfolio · -40% TtM · +25% produttività · 7+ anni
+          </p>
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-3 py-1 text-[10px] font-semibold text-primary mb-6">
+            <span className="size-1.5 rounded-full bg-primary animate-pulse" />
+            {isIt ? "Open to Work" : "Open to Work"}
+          </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="size-4" />

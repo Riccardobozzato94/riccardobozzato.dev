@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Cpu, Users, Gauge, Euro, Check, MapPin, Mail, BarChart3 } from "lucide-react";
+import { ArrowRight, Cpu, Users, Gauge, Euro, Check, MapPin, Mail, BarChart3, Download } from "lucide-react";
 
 const baseUrl = SITE_URL;
 
@@ -17,11 +17,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const site = await getTranslations("site");
 
   return {
-    title: `${site("title")} — ${t("heroRole")}`,
-    description: `${t("heroTagline")} €500K+ delivered.`,
+    title: `${site("title")} — Head of Operations | Delivery Manager | PMP® | Open to Work`,
+    description: `${t("heroTagline")} €500K+ consegnati, -40% time-to-market. Disponibile da subito.`,
     openGraph: {
-      title: `${site("title")} — Dal Caos al Controllo Totale.`,
-      description: t("heroTagline"),
+      title: `${site("title")} — Operations, delivery ed execution con risultati misurabili.`,
+      description: `${t("heroTagline")} €500K+ consegnati, -40% TtM, +25% produttività.`,
       url: `${baseUrl}/${locale}`,
     },
     alternates: {
@@ -53,11 +53,11 @@ export default async function HomePage({ params }: Props) {
     <>
 
       {/* ════════════════════════════════════════════
-           HERO — Portrait + Copy
+           HERO — Portrait + Copy (Open to Work)
          ════════════════════════════════════════════ */}
-      <section className="max-w-[1200px] mx-auto px-4 md:px-16 py-[120px] relative">
+      <section className="max-w-[1200px] mx-auto px-4 md:px-16 pt-28 pb-20 md:pt-32 md:pb-24 relative">
         <div className="flex flex-col lg:flex-row items-center gap-[64px]">
-          {/* Logo */}
+          {/* Logo / Photo */}
           <div className="w-full lg:w-5/12 flex items-center justify-center">
             <div className="relative w-full max-w-[400px] aspect-square">
               <Image
@@ -74,70 +74,130 @@ export default async function HomePage({ params }: Props) {
 
           {/* Copy */}
           <div className="w-full lg:w-7/12 relative z-10">
-            <div className="flex items-center gap-2 mb-8 border-b border-outline-variant pb-4 inline-block">
-              <span className="text-xs tracking-[0.1em] text-primary font-semibold">
-                {isIt ? "RICCARDO BOZZATO — OPERATIONS STRATEGICHE" : "RICCARDO BOZZATO — STRATEGIC OPERATIONS"}
+            {/* Available Badge */}
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 mb-6">
+              <span className="size-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-semibold text-primary tracking-wide">
+                {isIt ? "Disponibile da subito" : "Available immediately"}
               </span>
             </div>
 
-            <h1 className="text-[56px] lg:text-[72px] leading-[1.05] mb-6 font-bold tracking-tight">
+            <h1 className="text-[44px] sm:text-[56px] lg:text-[64px] leading-[1.05] mb-6 font-bold tracking-tight">
               {isIt ? (
-                <>Dal Caos al <br /><span className="text-primary italic">Controllo Totale.</span></>
+                <>Operations, delivery ed execution —<br />con <span className="text-primary">risultati misurabili.</span></>
               ) : (
-                <>From Chaos to <br /><span className="text-primary italic">Total Control.</span></>
+                <>Operations, delivery, and execution —<br />with <span className="text-primary">measurable results.</span></>
               )}
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
               {isIt
-              ? "I leader visionari creano il futuro. Io costruisco l'infrastruttura per raggiungerlo. Come Delivery Manager & Head of Operations (PMP®), trasformo idee ambiziose in esecuzione impeccabile."
-              : "Visionary leaders create the future. I build the infrastructure to reach it. As a Delivery Manager & Head of Operations (PMP®), I turn ambitious ideas into flawless execution."}
+              ? "Senior Delivery Manager & Head of Operations (PMP®). Costruisco l'architettura operativa che trasforma il caos in esecuzione prevedibile. €500K+ portfolio gestito, team 8-12, -40% time-to-market."
+              : "Senior Delivery Manager & Head of Operations (PMP®). I build the operational architecture that turns chaos into predictable execution. €500K+ portfolio managed, teams of 8-12, -40% time-to-market."}
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-[120px]">
+            {/* Badge Numerici */}
+            <div className="flex flex-wrap gap-4 sm:gap-8 mb-8">
+              {[
+                { num: "€500K+", label: isIt ? "Portfolio" : "Portfolio" },
+                { num: "-40%", label: isIt ? "Time-to-Market" : "Time-to-Market" },
+                { num: "+25%", label: isIt ? "Produttività" : "Productivity" },
+                { num: "7+", label: isIt ? "Anni di esperienza" : "Years experience" },
+              ].map((badge) => (
+                <div key={badge.num} className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">{badge.num}</div>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground tracking-wide">{badge.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 href="/contact"
                 className="bg-primary text-black px-8 py-4 text-xs font-bold tracking-widest transition-all hover:brightness-110 luminous-glow"
               >
-                {isIt ? "PRENOTA UNA STRATEGY CALL" : "BOOK A STRATEGY CALL"}
+                {isIt ? "PARLIAMONE" : "LET'S TALK"}
               </Link>
-              <Link
-                href="/#results"
+              <a
+                href="/files/CV-Riccardo-Bozzato.pdf"
+                download
                 className="bg-transparent text-foreground border border-outline-variant px-8 py-4 text-xs font-bold tracking-widest hover:bg-surface-container-high transition-all flex items-center gap-2 group"
               >
-                {isIt ? "ESPLORA I RISULTATI" : "EXPLORE RESULTS"}
+                {isIt ? "SCARICA CV" : "DOWNLOAD CV"}
                 <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-6 border-t border-outline-variant">
-              <div>
-                <div className="text-xs text-primary mb-1 font-semibold tracking-wide">
-                  {isIt ? "IL PROBLEMA" : "THE PROBLEM"}
-                </div>
-                <div className="text-lg font-semibold text-foreground line-through opacity-50">
-                  {isIt ? "Ritardi & Burnout" : "Delays & Burnout"}
-                </div>
+            {/* Trust Line */}
+            <div className="flex flex-wrap items-center gap-3 text-[10px] sm:text-xs text-muted-foreground">
+              <span className="font-semibold text-foreground">{isIt ? "Trust:" : "Trust:"}</span>
+              <span>PMP®</span>
+              <span className="text-outline-variant">·</span>
+              <span>{isIt ? "Ex Accenture" : "Ex Accenture"}</span>
+              <span className="text-outline-variant">·</span>
+              <span>{isIt ? "Ex Head of Ops AI Startup" : "Ex Head of Ops AI Startup"}</span>
+              <span className="text-outline-variant">·</span>
+              <span className="text-primary font-semibold">{isIt ? "Disponibile subito" : "Available now"}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+           OPEN TO WORK — Cerco il prossimo ruolo
+         ════════════════════════════════════════════ */}
+      <section className="bg-surface-container-low border-y border-outline-variant py-12">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <span className="size-3 rounded-full bg-primary animate-pulse" />
+            <div>
+              <div className="text-sm font-bold text-foreground">
+                {isIt ? "🟢 Cerco il prossimo ruolo" : "🟢 Looking for my next role"}
               </div>
-              <div>
-                <div className="text-xs text-primary mb-1 font-semibold tracking-wide">
-                  {isIt ? "LA SOLUZIONE" : "THE SOLUTION"}
-                </div>
-                <div className="text-lg font-semibold text-primary">
-                  {isIt ? "-40% Time-to-Market" : "-40% Time-to-Market"}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-primary mb-1 font-semibold tracking-wide">
-                  {isIt ? "L'IMPATTO" : "THE IMPACT"}
-                </div>
-                <div className="text-lg font-semibold text-foreground">
-                  {isIt ? "€500K+ Consegnati" : "€500K+ Delivered"}
-                </div>
+              <div className="text-xs text-muted-foreground">
+                {isIt
+                  ? "Head of Operations · Delivery Manager · Program Manager · PM Senior"
+                  : "Head of Operations · Delivery Manager · Program Manager · Senior PM"}
               </div>
             </div>
           </div>
+          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <MapPin className="size-3.5" />
+            <span>{isIt ? "Padova · Venezia · Milano · Remote Italia" : "Padua · Venice · Milan · Remote Italy"}</span>
+            <span className="text-outline-variant mx-1">|</span>
+            <a
+              href="/files/CV-Riccardo-Bozzato.pdf"
+              download
+              className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 font-semibold transition-colors"
+            >
+              {isIt ? "Scarica CV" : "Download CV"}
+              <ArrowRight className="size-3" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+           SOCIAL PROOF — Hanno lavorato con me
+         ════════════════════════════════════════════ */}
+      <section className="py-16 bg-background border-b border-outline-variant/30">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-16">
+          <p className="text-xs tracking-[0.1em] text-center text-muted-foreground mb-8 font-semibold uppercase">
+            {isIt ? "Hanno lavorato con me" : "Trusted by"}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-50">
+            {["Accenture", "Esse Solutions", "Ciao Elsa", "In's Mercato", "Aldi"].map((name) => (
+              <div key={name} className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
+                {name}
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-center text-muted-foreground/40 mt-6">
+            {isIt
+              ? "Dal retail alla consulenza IT, passando per startup AI-native."
+              : "From retail to IT consulting, through AI-native startups."}
+          </p>
         </div>
       </section>
 
@@ -171,10 +231,10 @@ export default async function HomePage({ params }: Props) {
             <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Metric Cards */}
               {[
-                { icon: "cpu", label: isIt ? "ARCHITETTURA DEI PROCESSI" : "PROCESS ARCHITECTURE", title: isIt ? "Progettazione & Governance" : "Design & Governance" },
+                { icon: "cpu", label: isIt ? "ARCHITETTURA DEI PROCESSI" : "PROCESS ARCHITECTURE", title: isIt ? "Design & Governance" : "Design & Governance" },
                 { icon: "users", label: isIt ? "ALLINEAMENTO TEAM" : "TEAM ALIGNMENT", title: isIt ? "Leadership Cross-funzionale" : "Cross-functional Leadership" },
                 { icon: "speed", label: isIt ? "EFFICIENZA SCALABILE" : "SCALABLE EFFICIENCY", title: isIt ? "Automazione & AI Ops" : "Automation & AI Ops" },
-                { icon: "euro", label: isIt ? "GESTIONE DEL VALORE" : "VALUE MANAGEMENT", title: isIt ? "Controllo Portfolio & P&L" : "Portfolio & P&L Control" },
+                { icon: "euro", label: isIt ? "GESTIONE DEL VALORE" : "VALUE MANAGEMENT", title: isIt ? "Portfolio & P&L Control" : "Portfolio & P&L Control" },
               ].map((card, i) => (
                 <div
                   key={i}
@@ -244,7 +304,7 @@ export default async function HomePage({ params }: Props) {
                     : "A portfolio of complex projects (Pimcore, Magento, Shopware) suffered from delivery delays and communication fragmentation. I introduced a tailored Agile framework, restoring visibility into progress and aligning enterprise stakeholder expectations."}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {[isIt ? "Agile / Scrum" : "Agile / Scrum", "PIM/DAM", isIt ? "Gestione Stakeholder" : "Stakeholder Management"].map((tag) => (
+                  {[isIt ? "Agile / Scrum" : "Agile / Scrum", "PIM/DAM", isIt ? "Stakeholder Management" : "Stakeholder Management"].map((tag) => (
                     <span key={tag} className="px-3 py-1 bg-surface-container-highest text-xs text-muted-foreground font-mono">
                       {tag}
                     </span>
@@ -287,7 +347,7 @@ export default async function HomePage({ params }: Props) {
                     : "In the banking/insurance sector, manual processes generated hidden costs and compliance risks. As an IT Systems Specialist, I mapped and automated critical flows using SAP UI5, creating more intuitive interfaces and drastically reducing operational bottlenecks."}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {[isIt ? "Automazione Processi" : "Process Automation", "SAP UI5", isIt ? "Bancario / Assicurativo" : "Banking / Insurance"].map((tag) => (
+                  {[isIt ? "Process Automation" : "Process Automation", "SAP UI5", isIt ? "Banking / Insurance" : "Banking / Insurance"].map((tag) => (
                     <span key={tag} className="px-3 py-1 bg-surface-container-highest text-xs text-muted-foreground font-mono">
                       {tag}
                     </span>
@@ -300,40 +360,40 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ════════════════════════════════════════════
-            PROJECTS — Side Projects & Prodotti
+            PROJECTS — Progetti & Delivery
           ════════════════════════════════════════════ */}
       <section className="py-[120px] bg-surface-container-low">
         <div className="max-w-[1200px] mx-auto px-4 md:px-16">
           <div className="text-center mb-[64px]">
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
-              {isIt ? "PROGETTI" : "PROJECTS"}
+              {isIt ? "PROGETTI & DELIVERY" : "PROJECTS & DELIVERY"}
             </p>
             <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
-              {isIt ? "Side Projects & Prodotti" : "Side Projects & Products"}
+              {isIt ? "Progetti & Delivery" : "Projects & Delivery"}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {isIt
-                ? "Strumenti che costruisco quando non costruisco sistemi per altri."
-                : "Tools I build when I'm not building systems for others."}
+                ? "Stakeholder management, product delivery, e-commerce — progetti reali con risultati concreti."
+                : "Stakeholder management, product delivery, e-commerce — real projects with concrete results."}
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
             {/* Panificio Da Sergio */}
             <Link
               href="/projects/panificio"
               className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
             >
               <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
-                {isIt ? "E-COMMERCE" : "E-COMMERCE"}
+                {isIt ? "STAKEHOLDER DELIVERY" : "STAKEHOLDER DELIVERY"}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {isIt ? "Panificio Da Sergio" : "Panificio Da Sergio"}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {isIt
-                  ? "Piattaforma e-commerce per un panificio tradizionale. Gestione stakeholder, vincoli di budget, delivery."
-                  : "E-commerce platform for a traditional bakery. Stakeholder management, budget constraints, delivery."}
+                  ? "Delivery di un e-commerce sotto vincoli di budget. Negoziazione scope, multi-lingua, SEO locale, consegnato in tempo."
+                  : "E-commerce delivery under budget constraints. Scope negotiation, multi-language, local SEO, delivered on time."}
               </p>
             </Link>
 
@@ -343,33 +403,15 @@ export default async function HomePage({ params }: Props) {
               className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
             >
               <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
-                {isIt ? "OPEN SOURCE" : "OPEN SOURCE"}
+                {isIt ? "PRODUCT DELIVERY" : "PRODUCT DELIVERY"}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                 VulnClaw
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {isIt
-                  ? "CLI open-source per penetration testing con AI. 600+ stelle GitHub, rilasciato v0.4.0."
-                  : "AI-powered penetration testing CLI. 600+ GitHub stars, v0.4.0 released."}
-              </p>
-            </Link>
-
-            {/* ric2brain - Second Brain */}
-            <Link
-              href="/projects/ric2brain"
-              className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
-            >
-              <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
-                {isIt ? "SECOND BRAIN" : "SECOND BRAIN"}
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                ric2brain
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {isIt
-                  ? "Vault Obsidian 9000+ note con AI integrata: RAG semantico, LLM Wiki, Agent Memory. Il mio Second Brain."
-                  : "Obsidian vault with 9000+ notes + integrated AI: semantic RAG, LLM Wiki, Agent Memory. My Second Brain."}
+                  ? "Da zero a community open-source (600+ ⭐). Gestione scope, roadmap, prioritizzazione, shipping v0.4.0."
+                  : "From zero to open-source community (600+ ⭐). Scope management, roadmap, prioritization, shipping v0.4.0."}
               </p>
             </Link>
           </div>
@@ -427,20 +469,20 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           <div className="max-w-3xl mx-auto relative pl-8 md:pl-16 timeline-line">
-            {/* Event 4: Ciao Elsa (Current) */}
+            {/* Event 4: Ciao Elsa (Interim Engagement) */}
             <div className="relative pb-16">
               <div className="absolute -left-[41px] md:-left-[73px] top-1 w-5 h-5 bg-primary rounded-full shadow-[0_0_15px_rgba(78,222,163,0.5)] border-4 border-background z-10" />
               <div className="text-xs text-primary mb-1 font-semibold tracking-wide">2026</div>
               <h3 className="text-2xl font-bold text-foreground mb-2">
-                {isIt ? "Head of Operations" : "Head of Operations"}
+                {isIt ? "Head of Operations — Interim" : "Head of Operations — Interim"}
               </h3>
               <div className="text-xs tracking-[0.1em] text-muted-foreground mb-4">
-                {isIt ? "CIAO ELSA" : "CIAO ELSA"}
+                {isIt ? "CIAO ELSA | 8 SETTIMANE" : "CIAO ELSA | 8 WEEKS"}
               </div>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {isIt
-                  ? "Costruzione da zero della governance operativa in una startup in fase di scaling: definizione KPI strategici, sistema di prioritizzazione impatto/urgenza, riduzione rework del 30%. Engagement completato."
-                  : "Built operational governance from scratch in a scaling startup: defined strategic KPIs, impact/urgency prioritization system, reduced rework by 30%. Engagement completed."}
+                  ? "Incarico a termine: costruire l'architettura operativa da zero in 8 settimane. Processi, KPI strategici, dashboard real-time, governance. Risultato: -30% rework interfunzionale. Documentazione completa, team formato, handover consegnato. Mandato: costruire il sistema, non restare a gestirlo."
+                  : "Fixed-term engagement: build operational architecture from scratch in 8 weeks. Processes, strategic KPIs, real-time dashboards, governance. Result: -30% cross-functional rework. Full documentation, trained team, handover delivered. Mandate: build the system, not stay to run it."}
               </p>
             </div>
 
@@ -525,7 +567,7 @@ export default async function HomePage({ params }: Props) {
                   <Check className="size-4 text-primary" /> {isIt ? "Framework Azionabile" : "Actionable Framework"}
                 </div>
                 <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
-                  <Check className="size-4 text-primary" /> {isIt ? "Senza Inutili Giri di Parole" : "Zero Fluff"}
+                  <Check className="size-4 text-primary" /> Zero Fluff
                 </div>
               </div>
             </div>

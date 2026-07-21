@@ -91,23 +91,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Trova -->
-  <url>
-    <loc>https://riccardobozzato.com/en/trova</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/trova"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/trova"/>
-    <lastmod>2026-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://riccardobozzato.com/it/trova</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://riccardobozzato.com/en/trova"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://riccardobozzato.com/it/trova"/>
-    <lastmod>2026-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- About -->
   <url>

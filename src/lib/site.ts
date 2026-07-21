@@ -7,6 +7,6 @@ export const SITE_URL =
 export const SITE_NAME = "riccardobozzato.com";
 
 export const SITE_DESCRIPTION =
-  "The personal site of Riccardo Bozzato — builder of AI-powered dev tools (VulnClaw, ShipKit, OmniVoice) and independent consultant helping solo developers and small teams ship secure, serverless, AI-integrated systems. Fractional CTO, DevSecOps and AI integration, from €1,500.";
+  "Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Rendo i team digitali più veloci, meno caotici e più prevedibili. €500K+ consegnati, team 8-12, -40% time-to-market. Disponibile da subito.";
 
-export const OG_IMAGE = "/assets/shipkit-banner-1600x900.png";
+export const OG_IMAGE = "/images/og-default.svg";
