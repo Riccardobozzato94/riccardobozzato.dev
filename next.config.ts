@@ -19,10 +19,10 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "img-src 'self' data: https:",
-      "script-src 'self' 'unsafe-inline' https://unpkg.com",
+      "script-src 'self' 'unsafe-inline' https://unpkg.com https://identity.netlify.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "connect-src 'self' https://api.resend.com",
+      "connect-src 'self' https://api.resend.com https://identity.netlify.com",
       "object-src 'none'",
       "base-uri 'self'",
       "frame-ancestors 'none'",
