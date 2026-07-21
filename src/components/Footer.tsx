@@ -12,7 +12,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface-container-lowest py-16 border-t border-outline-variant">
+    <footer role="contentinfo" className="bg-surface-container-lowest py-16 border-t border-outline-variant">
       <div className="flex flex-col md:flex-row justify-between items-start px-4 md:px-16 max-w-[1200px] mx-auto gap-6">
         {/* Brand */}
         <div className="max-w-xs">
@@ -73,10 +73,11 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">{isIt ? "LEGALE" : "LEGAL"}</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">LEGAL</h4>
             <ul className="space-y-4">
-              <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Informativa sulla Privacy" : "Privacy Policy"}</Link></li>
-              <li><span className="text-sm text-muted-foreground/40">{isIt ? "Termini di Servizio" : "Terms of Service"}</span></li>
+              <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/accessibility" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Accessibilità" : "Accessibility"}</Link></li>
+              <li><span className="text-sm text-muted-foreground/40">Terms of Service</span></li>
             </ul>
           </div>
           <div>

@@ -4,6 +4,54 @@
                     "tagline":  "Head of Operations | Delivery Manager | PMP® — operations, delivery, and execution with measurable results.",
                     "description":  "Senior Delivery Manager & Head of Operations (PMP®). I build the operational architecture that turns chaos into predictable execution. €500K+ portfolio managed, -40% time-to-market, teams of 8-12. Available immediately."
               },
+    "accessibility":  {
+                    "title":  "Accessibility Statement",
+                    "lastUpdated":  "Last updated: July 21, 2026",
+                    "intro":  "This Accessibility Statement describes the accessibility status of riccardobozzato.com under Italian law (D.Lgs. 104/2022) and the European Union (Directive 2019/882). This website is committed to ensuring accessibility for all users, regardless of their abilities or technologies used.",
+                    "sections":  [
+                                     {
+                                         "title":  "1. Compliance Status",
+                                         "content":  "riccardobozzato.com is <strong>partially compliant</strong> with the WCAG 2.1 Level AA standard (Web Content Accessibility Guidelines). The website was designed with accessibility in mind, but some elements may not fully meet all criteria."
+                                     },
+                                     {
+                                         "title":  "2. Applicable Legal Requirements",
+                                         "content":  "This statement is issued under:<br><br>• <strong>D.Lgs. 104/2022</strong> (Implementation of EU Directive 2019/882) — accessibility obligations for websites and mobile applications of public and private entities.<br>• <strong>AgID Regulation</strong> (Agency for Digital Italy) — guidelines for websites and mobile applications of public bodies.<br>• <strong>Directive 2019/882</strong> — European directive on the accessibility of digital products and services."
+                                     },
+                                     {
+                                         "title":  "3. WCAG 2.1 Level AA Criteria",
+                                         "content":  "The four WCAG principles are:<br><br><strong>Perceivable:</strong> all text content available as text; images with text alternatives; sufficient color contrast; non-text content with text alternatives.<br><br><strong>Operable:</strong> functions navigable via keyboard; sufficient time to read and use content; no content that causes seizures.<br><br><strong>Understandable:</strong> text readable and understandable; predictable appearance and behavior; assistance in form completion.<br><br><strong>Robust:</strong> content compatible with current and future assistive technologies; names, roles, and values of interface elements correctly defined."
+                                     },
+                                     {
+                                         "title":  "4. Accessibility Measures Implemented",
+                                         "content":  "• Semantic HTML structure with correct heading hierarchy (h1 → h2 → h3).<br>• Full keyboard navigation for all interactive elements.<br>• Visible focus indicators on all interactive elements (:focus-visible).<br>• Alternative text (alt text) on all informative images.<br>• Reduced motion support (prefers-reduced-motion).<br>• Color contrast compliant with 4.5:1 (normal text) and 3:1 (large text) ratio per WCAG AA.<br>• Links and buttons with descriptive text, not just \"click here\".<br>• Forms with labels associated to inputs, descriptive errors, and accessible status messages.<br>• Page structure with ARIA landmarks (banner, navigation, main, contentinfo).<br>• Screen reader support (NVDA, JAWS, VoiceOver) with descriptive text."
+                                     },
+                                     {
+                                         "title":  "5. Partial Compliance — Notable Limitations",
+                                         "content":  "The <strong>OG image SVG text</strong> may not be fully accessible to screen readers, as text content in SVG is not always read correctly. A text alternative is being developed.<br><br>The <strong>announcement bar</strong> uses pulse animations that, while supported by prefers-reduced-motion, may not be perfectly read by all screen readers. The textual content is accessible in any case.<br><br>Some <strong>card animations</strong> (hover effects, translate) use CSS transitions that may interfere with certain screen readers. The content remains accessible regardless of the animation."
+                                     },
+                                     {
+                                         "title":  "6. Techniques Used for Compliance",
+                                         "content":  "• Semantic HTML (HTML5).<br>• WAI-ARIA 1.2 (Accessible Rich Internet Applications).<br>• CSS (Cascading Style Sheets) for layout and presentation.<br>• JavaScript (React) for interactivity — all interactive elements are keyboard and screen reader accessible."
+                                     },
+                                     {
+                                         "title":  "7. Assessment Tools",
+                                         "content":  "The website has been evaluated using:<br><br>• Lighthouse Accessibility (Chrome DevTools).<br>• Axe DevTools (WAVE).<br>• Manual testing with keyboard and screen reader (VoiceOver on macOS).<br>• W3C Validator for HTML and CSS."
+                                     },
+                                     {
+                                         "title":  "8. Feedback and Contact",
+                                         "content":  "If you encounter accessibility issues on this website, please contact me:<br><br><strong>Email:</strong> riccardobozzato@gmail.com<br><strong>Phone:</strong> +39 389 213 9542<br><br>I commit to responding within 5 business days and providing an alternative solution or the content in an accessible format (e.g., PDF, text document) within 15 business days."
+                                     },
+                                     {
+                                         "title":  "9. Recourse Procedure",
+                                         "content":  "If my response is not satisfactory, you may contact:<br><br><strong>AgID — Agency for Digital Italy</strong><br>Office for Accessibility<br>https://www.agid.gov.it<br><br>AgID is the competent body for disputes regarding website accessibility in Italy."
+                                     },
+                                     {
+                                         "title":  "10. Updates to This Statement",
+                                         "content":  "This statement was last updated on July 21, 2026. It will be reviewed and updated periodically based on accessibility assessment results and regulatory changes."
+                                     }
+                                  ],
+                    "nav":  "Accessibility"
+                },
     "nav":  {
                 "home":  "Home",
         "vision": "The Vision",
@@ -331,52 +379,68 @@
                 },
     "privacy":  {
                     "title":  "Privacy Policy",
-                    "lastUpdated":  "Last updated: July 18, 2026",
-                    "intro":  "This Privacy Policy explains how Riccardo Bozzato (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;) collects, uses, and protects your personal data when you visit my website, download resources, or engage my consulting services. I take your privacy seriously — I follow the GDPR (Reg. EU 2016/679) and the Italian Data Protection Code (D.Lgs. 196/2003, as amended by D.Lgs. 101/2018), and keep data collection to the minimum necessary.",
+                    "lastUpdated":  "Last updated: July 21, 2026",
+                    "intro":  "This Privacy Policy explains how Riccardo Bozzato (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;) collects, uses, and protects your personal data when you visit my website, download resources, engage my consulting services, or purchase ShipKit. I take your privacy seriously — I follow the GDPR (Reg. EU 2016/679) and the Italian Data Protection Code (D.Lgs. 196/2003, as amended by D.Lgs. 101/2018), and keep data collection to the minimum necessary for the requested services.",
                     "sections":  [
                                      {
                                          "title":  "1. Data Controller",
                                          "content":  "Riccardo Bozzato<br>Legnaro, PD, Italy<br>Email: riccardobozzato@gmail.com<br>Phone: +39 389 213 9542"
                                      },
                                      {
-                                         "title":  "2. Data I Collect",
-                                         "content":  "<strong>Contact form:</strong> name, email address, and message you submit voluntarily.<br><strong>Freebie downloads (playbook):</strong> name and email address — used to deliver the PDF and send the email sequence (max 6 emails over 30 days).<br><strong>Consulting inquiries:</strong> name, email, company, and project details you share — used to prepare proposals and deliver services.<br><strong>Technical data:</strong> IP address, browser user-agent, and referral headers are automatically collected by the server for security and operational purposes. These are not used for tracking or profiling.<br><strong>Analytics:</strong> anonymous, aggregated page views using privacy-friendly analytics. No personal tracking, no fingerprinting."
+                                         "title":  "2. Data Collected — Per Service",
+                                         "content":  "<strong>General contact form:</strong> name, email, and message. Used for role inquiries, projects, or consultations.<br><br><strong>Operations Audit (€490):</strong> name, email, company, operational problem description. Collected to deliver the 2-day audit and prepare the report.<br><br><strong>Delivery & Process Design (from €1,500):</strong> name, email, company, current team and process details. Required to design and implement the agreed operational framework.<br><br><strong>eCommerce & PIM-DAM Operations (from €2,000):</strong> name, email, company, platform technical details (Magento, Shopware, Pimcore), temporary access credentials (if needed for implementation). Credentials are destroyed at engagement completion.<br><br><strong>AI-Assisted Operations (from €2,500):</strong> name, email, company, process data and operational documentation. Used to design automations and dashboards.<br><br><strong>Fractional Head of Ops (from €2,500/mo):</strong> name, email, company, organizational structure, financial and operational data required for the interim role.<br><br><strong>CV download:</strong> no data collected — the download is anonymous.<br><br><strong>ShipKit purchase (€49):</strong> name, email, billing address (via Stripe). I do not receive or store your credit card details — Stripe handles them on my behalf.<br><br><strong>Freebie downloads (playbook):</strong> name and email address — used to deliver the PDF and send the email sequence (max 6 emails over 30 days).<br><br><strong>Technical data:</strong> IP address, browser user-agent, and referral headers are automatically collected by the server for security and operational purposes. Not used for tracking or profiling.<br><br><strong>Analytics:</strong> anonymous, aggregated page views using Plausible Analytics (privacy-friendly, no cookies). No personal tracking, no fingerprinting."
                                      },
                                      {
                                          "title":  "3. How I Use Your Data",
-                                         "content":  "To respond to your inquiries and prepare proposals.<br>To deliver free resources (playbook PDF) and the associated email sequence.<br>To communicate about active consulting engagements.<br>To improve my website based on anonymous usage patterns.<br>I do <strong>not</strong> sell, rent, trade, or share your personal data with any third party for their marketing purposes."
+                                         "content":  "Each data point is used exclusively for its stated purpose:<br><br>• Contact inquiries: to respond and prepare proposals.<br>• Consulting services (Audit, Delivery, eCommerce, AI Ops, Fractional): to deliver the agreed service, communicate during the engagement, and handle billing.<br>• ShipKit purchase: to process payment (via Stripe) and deliver the product.<br>• Playbook download: to send the PDF and associated educational email sequence.<br>• Technical data and analytics: to improve the site and detect technical issues.<br><br>I do <strong>not</strong> sell, rent, trade, or share your personal data with any third party for their marketing purposes. Your data is never used to train AI models."
                                      },
                                      {
                                         "title":  "4. Email Marketing (Consent, Double Opt-In & Unsubscribe)",
-                                        "content":  "When you download the free playbook, you consent by checking the dedicated consent box on the form to receive a 6-email educational sequence over approximately 30 days. After submitting the form, you will receive a confirmation email asking you to verify your address (double opt-in). You will start receiving the sequence only after confirming.<br>Each email includes an unsubscribe link. You can withdraw consent at any time — your request is processed immediately and you will receive no further emails. Unsubscribing does not affect communications related to active consulting engagements."
+                                        "content":  "When you download the free playbook, you may opt in (via a dedicated checkbox) to receive a 6-email educational sequence over approximately 30 days. After submitting the form, you will receive a confirmation email asking you to verify your address (double opt-in). You will start receiving the sequence only after confirming.<br><br>Each email includes an unsubscribe link. You can withdraw consent at any time — your request is processed immediately and you will receive no further emails. Unsubscribing does not affect communications related to active consulting engagements."
                                      },
                                      {
                                         "title":  "5. Legal Basis (GDPR) & Your Right to Object",
-                                        "content":  "I process your data based on:<br><strong>Consent:</strong> when you check the consent box on a form (contact, freebie download). You can withdraw at any time.<br><strong>Contractual necessity:</strong> when you engage my consulting services — data processing is required to deliver the agreed work.<br><strong>Legitimate interest:</strong> responding to pre-sales inquiries and improving my services.<br><br><strong>Right to object (Art. 21 GDPR):</strong> Where I process your data based on legitimate interest, you have the right to object at any time by contacting me. I will cease processing unless I have compelling legitimate grounds that override your interests."
+                                        "content":  "I process your data based on:<br><br><strong>Consent (Art. 6.1.a GDPR):</strong> when you check the consent box on a form (contact, playbook download, service request). You may withdraw at any time.<br><br><strong>Contractual necessity (Art. 6.1.b GDPR):</strong> when you engage my consulting services or purchase ShipKit — processing is required to deliver the agreed work or product, including billing.<br><br><strong>Legal obligation (Art. 6.1.c GDPR):</strong> retention of fiscal and accounting data for 10 years as required by Italian law (D.P.R. 600/73).<br><br><strong>Legitimate interest (Art. 6.1.f GDPR):</strong> responding to pre-sales inquiries and improving my services.<br><br><strong>Right to object (Art. 21 GDPR):</strong> where I process your data based on legitimate interest, you have the right to object at any time by contacting me. I will cease processing unless I have compelling legitimate grounds that override your interests."
                                      },
                                      {
                                          "title":  "6. Data Retention",
-                                         "content":  "Contact form inquiries: deleted after 12 months of inactivity.<br>Freebie subscribers: retained until you unsubscribe (plus 30 days grace for re-engagement).<br>Consulting client data: retained for the duration of the engagement plus 24 months for tax/legal compliance (as required by Italian law).<br>You can request deletion of your data at any time by emailing riccardobozzato@gmail.com."
+                                         "content":  "Your data is retained only as long as necessary for the purpose collected:<br><br>• Contact form: deleted after 12 months from last contact.<br>• Operations Audit and single services: 24 months from engagement completion.<br>• Fractional Head of Ops (ongoing contracts): 24 months from contract end.<br>• ShipKit purchase: 10 years (Italian fiscal obligation).<br>• Playbook subscribers: until unsubscribe + 30 days grace period.<br>• Technical data (server logs): 30 days, then anonymized.<br><br>You may request early deletion of your data at any time by emailing riccardobozzato@gmail.com. Unless legally required (e.g., invoices), I will delete everything within 30 days."
                                      },
                                      {
                                          "title":  "7. Your Rights (GDPR)",
-                                         "content":  "You have the right to:<br>Access your data — request a copy of everything I hold about you.<br>Rectify inaccurate data — ask me to correct or complete your information.<br>Delete your data — request erasure (subject to legal retention requirements).<br>Restrict processing — limit how I use your data.<br>Object to processing — object to processing based on legitimate interest (Art. 21 GDPR).<br>Data portability — receive your data in a structured, machine-readable format.<br>Withdraw consent — at any time, for any processing based on consent.<br>To exercise any of these rights, email riccardobozzato@gmail.com. I will respond within 30 days."
+                                         "content":  "You have the right to:<br><br><strong>Access (Art. 15):</strong> request a copy of all data I hold about you.<br><strong>Rectification (Art. 16):</strong> correct inaccurate or incomplete data.<br><strong>Erasure (Art. 17):</strong> obtain deletion of your data (subject to legal retention requirements).<br><strong>Restriction (Art. 18):</strong> restrict processing in certain cases.<br><strong>Portability (Art. 20):</strong> receive your data in a structured, machine-readable format.<br><strong>Object (Art. 21):</strong> object to processing based on legitimate interest.<br><strong>Withdraw consent:</strong> at any time, without affecting the lawfulness of prior processing.<br><br>To exercise any right, email riccardobozzato@gmail.com. I will respond within 30 days (Art. 12 GDPR). If the request is complex, I will inform you within 30 days and may extend the deadline by up to 60 additional days."
                                      },
                                      {
                                         "title":  "8. Third-Party Processors",
-                                        "content":  "I use the following third-party services to operate this site and deliver services. Each has been vetted for GDPR compliance:<br><br><strong>Resend</strong> (resend.com) — transactional email delivery and email sequence automation. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — website hosting and CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — source code hosting and project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — payment processing for ShipKit purchases. Privacy: stripe.com/privacy<br><br>Data is processed within the EU and US (under SCC agreements)."
+                                        "content":  "I use the following third-party services to operate this site and deliver services. Each has been verified for GDPR compliance. Data is processed within the EU and US (under Standard Contractual Clauses):<br><br><strong>Resend</strong> (resend.com) — transactional email delivery, automated email sequences, and notifications. Privacy: resend.com/privacy — DPO: dpo@resend.com<br><br><strong>Netlify</strong> (netlify.com) — website hosting, CDN, and deployment. Privacy: netlify.com/privacy — DPO: privacy@netlify.com<br><br><strong>GitHub</strong> (github.com) — source code hosting and authentication. Privacy: github.com/privacy<br><br><strong>Stripe</strong> (stripe.com) — payment processing for ShipKit purchases. Stripe is PCI DSS Level 1 certified. Privacy: stripe.com/privacy — DPO: dpo@stripe.com<br><br><strong>Vercel</strong> (vercel.com) — deployment preview and serverless functions. Privacy: vercel.com/privacy<br><br><strong>Plausible Analytics</strong> (plausible.io) — privacy-friendly analytics without cookies. Data is anonymized server-side. Privacy: plausible.io/privacy"
                                      },
                                      {
-                                         "title":  "9. Data Security",
-                                         "content":  "I implement appropriate technical and organizational measures to protect your data: encrypted connections (HTTPS), access controls on databases, minimal data collection principle, and regular security reviews. No data transmission over the internet is 100% secure, but I follow industry best practices to minimize risk."
+                                         "title":  "9. International Transfers",
+                                         "content":  "Some of my service providers (Stripe, GitHub, Resend) may transfer data to the United States. These transfers rely on Standard Contractual Clauses (SCC) approved by the European Commission (Implementing Decision 2021/914), which ensure a level of protection equivalent to the GDPR. You may request a copy of the applicable SCC by emailing riccardobozzato@gmail.com."
                                      },
                                      {
-                                         "title":  "10. Changes to This Policy",
-                                         "content":  "I may update this privacy policy from time to time. Material changes will be communicated via email (if I have your contact for active services) or via a notice on this website. The &ldquo;Last updated&rdquo; date at the top of this page reflects the most recent revision."
+                                         "title":  "10. Data Security",
+                                         "content":  "I implement appropriate technical and organizational measures: encrypted connections (HTTPS/TLS 1.3), access controls on databases, data minimization principle, and periodic security reviews. Temporary access credentials for client platform interventions are destroyed upon engagement completion. No data transmission over the internet is 100% secure, but I follow industry best practices to minimize risk."
                                      },
                                      {
-                                         "title":  "11. Contact",
-                                         "content":  "For any questions, requests, or concerns about this privacy policy or how I handle your data:<br><br>Riccardo Bozzato<br>Legnaro, PD, Italy<br>Email: riccardobozzato@gmail.com<br>Phone: +39 389 213 9542<br><br>You also have the right to lodge a complaint with the Italian Data Protection Authority (Garante per la Protezione dei Dati Personali) at garanteprivacy.it."
+                                         "title":  "11. Cookies",
+                                         "content":  "This website uses only:<br><br>• Technical cookies: required for site functionality (no consent required).<br>• Analytics cookies: Plausible Analytics does not use cookies — data is anonymized server-side.<br><br>No profiling, advertising, or cross-site tracking cookies are used. You can manage preferences via the cookie banner displayed on your first visit."
+                                     },
+                                     {
+                                         "title":  "12. Job Application Data",
+                                         "content":  "If you contact me regarding a job position (Head of Operations, Delivery Manager, Senior PM, etc.), the data you share (CV, portfolio, references) is used exclusively to evaluate your application and, if applicable, for the selection process. Data of non-selected candidates is deleted after 12 months."
+                                     },
+                                     {
+                                         "title":  "13. Limitation of Liability",
+                                         "content":  "Consulting services are provided with the professional diligence required by the PMP® Code of Ethics. However, results (e.g., time-to-market reduction, productivity gains) depend on external factors beyond my control (team cooperation, market conditions, technological constraints). Audit reports and recommendations provided are professional opinions based on facts at the time of analysis, not contractual guarantees of outcome."
+                                     },
+                                     {
+                                         "title":  "14. Changes to This Policy",
+                                         "content":  "I may update this privacy policy periodically to reflect regulatory changes, new services, or process modifications. Material changes will be communicated via email if I have your active contact, or via a notice on this website. The &ldquo;Last updated&rdquo; date at the top of this page reflects the most recent revision."
+                                     },
+                                     {
+                                         "title":  "15. Complaints",
+                                         "content":  "For any questions, requests, or complaints:<br><br>Riccardo Bozzato<br>Legnaro, PD, Italy<br>Email: riccardobozzato@gmail.com<br>Phone: +39 389 213 9542<br><br>If you believe the processing violates the GDPR, you have the right to lodge a complaint with the Italian Data Protection Authority (Garante per la Protezione dei Dati Personali) at garanteprivacy.it — Piazza Venezia 11, 00187 Rome."
                                      }
                                  ],
                     "nav":  "Privacy"

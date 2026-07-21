@@ -172,14 +172,22 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
+          {/* Skip to main content — WCAG 2.4.1 */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary focus:text-black focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:rounded-lg"
+          >
+            {locale === "it" ? "Vai al contenuto principale" : "Skip to main content"}
+          </a>
+
           {/* Announcement Bar — Open to Work */}
-          <div className="bg-primary text-[10px] sm:text-xs font-semibold tracking-wider text-center py-2 px-4 text-black">
+          <div role="banner" className="bg-primary text-[10px] sm:text-xs font-semibold tracking-wider text-center py-2 px-4 text-black">
             🟢 {locale === "it"
               ? "Disponibile da subito — Head of Ops / DM / PM Senior — Padova · Milano · Remote"
               : "Available immediately — Head of Ops / Delivery Manager / Senior PM — Padua · Milan · Remote"}
           </div>
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main id="main-content" className="min-h-screen">{children}</main>
           <Footer />
           <CookieConsent />
           <Analytics />

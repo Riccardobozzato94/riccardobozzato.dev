@@ -4,6 +4,54 @@
                     "tagline":  "Head of Operations | Delivery Manager | PMP® — operations, delivery ed execution con risultati misurabili.",
                     "description":  "Senior Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Costruisco l'architettura operativa che trasforma il caos in esecuzione prevedibile. €500K+ portfolio gestito, -40% time-to-market, team 8-12. Disponibile da subito."
               },
+    "accessibility":  {
+                    "title":  "Dichiarazione di Accessibilità",
+                    "lastUpdated":  "Ultimo aggiornamento: 21 Luglio 2026",
+                    "intro":  "Questa Dichiarazione di Accessibilità descrive lo stato di conformità di riccardobozzato.com ai requisiti di accessibilità web previsti dalla normativa italiana (D.Lgs. 104/2022) e dall'Unione Europea (Direttiva 2019/882). Il sito si impegna a garantire l'accessibilità a tutti gli utenti, indipendentemente dalle loro capacità o tecnologie utilizzate.",
+                    "sections":  [
+                                     {
+                                         "title":  "1. Stato di Conformità",
+                                         "content":  "riccardobozzato.com è <strong>parzialmente conforme</strong> allo standard WCAG 2.1 livello AA (Web Content Accessibility Guidelines). Il sito è stato progettato con attenzione all'accessibilità, ma alcune potrebbero non soddisfare pienamente tutti i criteri."
+                                     },
+                                     {
+                                         "title":  "2. Requisiti Normativi Applicabili",
+                                         "content":  "Questa dichiarazione si applica in base a:<br><br>• <strong>D.Lgs. 104/2022</strong> (Attuazione della Direttiva UE 2019/882) — obblighi di accessibilità per i siti web e le applicazioni mobili di soggetti pubblici e privati.<br>• <strong>Regolamento AgID</strong> (Agencia per l'Italia Digitale) — Linee guida per i siti web e le applicazioni mobili di enti pubblici.<br>• <strong>Direttiva 2019/882</strong> — Direttiva europea sull'accessibilità dei prodotti e servizi digitali."
+                                     },
+                                     {
+                                         "title":  "3. Criteri WCAG 2.1 Livello AA",
+                                         "content":  "I quattro principi WCAG sono:<br><br><strong>Percepibile:</strong> tutti i contenuti testuali disponibili come testo; immagini con testo alternativo; sufficiente contrasto dei colori; contenuti non testuali con alternative testuali.<br><br><strong>Utilizzabile:</strong> funzionalità navigabili con tastiera; sufficiente tempo per leggere e utilizzare i contenuti; nessun contenuto che provochi convulsioni.<br><br><strong>Comprensibile:</strong> testo leggibile e comprensibile; aspetto e funzionamento prevedibili; assistenza nella compilazione di moduli.<br><br><strong>Robusto:</strong> contenuti compatibili con tecnologie assistive attuali e future; nomi, ruoli e valori degli elementi dell'interfaccia correttamente definiti."
+                                     },
+                                     {
+                                         "title":  "4. Misure di Accessibilità Implementate",
+                                         "content":  "• Struttura HTML semantica con gerarchia di intestazioni corretta (h1 → h2 → h3).<br>• Navigazione completa da tastiera per tutti gli elementi interattivi.<br>• Indicatori di focus visibili su tutti gli elementi interattivi (:focus-visible).<br>• Testo alternativo (alt text) su tutte le immagini informative.<br>• Supporto per la riduzione delle animazioni (prefers-reduced-motion).<br>• Contrasto dei colori conforme al rapporto 4.5:1 (testo normale) e 3:1 (testo grande) secondo WCAG AA.<br>• Link e pulsanti con testo descrittivo, non solo \"clicca qui\".<br>• Moduli con label associati agli input, errori descrittivi, e messaggi di stato accessibili.<br>• Struttura della pagina con landmark ARIA (banner, navigation, main, contentinfo).<br>• Supporto per screen reader (NVDA, JAWS, VoiceOver) con testo descrittivo."
+                                     },
+                                     {
+                                         "title":  "5. Conformità Parziale — Limiti Notevoli",
+                                         "content":  "Il <strong>testo dell'SVG dell'OG image</strong> (opengraph) potrebbe non essere accessibile ai screen reader poiché i contenuti testuali in SVG non sono sempre letti correttamente. Sto lavorando a una soluzione alternativa.<br><br>La <strong>barra di annuncio</strong> \"Disponibile da subito\" utilizza animazioni pulse che, sebbene supportate da prefers-reduced-motion, potrebbero non essere perfettamente lette da tutti i reader. Il contenuto testuale è accessibile in ogni caso.<br><br>Alcune <strong>card animazioni</strong> (hover effects, translate) utilizzano transizioni CSS che potrebbero interferire con alcuni screen reader. Il contenuto resta accessibile indipendentemente dall'animazione."
+                                     },
+                                     {
+                                         "title":  "6. Tecniche Utilizzate per la Conformità",
+                                         "content":  "• HTML semantico (HTML5).<br>• WAI-ARIA 1.2 (Accessible Rich Internet Applications).<br>• CSS (Cascading Style Sheets) per il layout e la presentazione.<br>• JavaScript (React) per l'interattività — tutti gli elementi interattivi sono accessibili via tastiera e screen reader."
+                                     },
+                                     {
+                                         "title":  "7. Strumenti di Valutazione",
+                                         "content":  "Il sito è stato valutato utilizzando:<br><br>• Lighthouse Accessibility (Chrome DevTools).<br>• Axe DevTools (WAVE).<br>• Test manuali con tastiera e screen reader (VoiceOver su macOS).<br>• Validatore W3C per HTML e CSS."
+                                     },
+                                     {
+                                         "title":  "8. Feedback e Contatti",
+                                         "content":  "Se riscontri problemi di accessibilità su questo sito, contattami:<br><br><strong>Email:</strong> riccardobozzato@gmail.com<br><strong>Telefono:</strong> +39 389 213 9542<br><br>Impegnarmi a rispondere entro 5 giorni lavorativi e a fornire una soluzione alternativa o il contenuto in formato accessibile (es. PDF, documento testuale) entro 15 giorni lavorativi."
+                                     },
+                                     {
+                                         "title":  "9. Procedura di Recupero",
+                                         "content":  "Se la mia risposta non è soddisfacente, puoi contattare:<br><br><strong>AgID — Agenzia per l'Italia Digitale</strong><br>Ufficio per l'Accessibilità<br>https://www.agid.gov.it<br><br>L'AgID è l'organismo competente per le controversie relative all'accessibilità dei siti web in Italia."
+                                     },
+                                     {
+                                         "title":  "10. Aggiornamento di Questa Dichiarazione",
+                                         "content":  "Questa dichiarazione è stata aggiornata il 21 Luglio 2026. Verrà rivista e aggiornata periodicamente in base ai risultati delle valutazioni di accessibilità e ai cambiamenti normativi."
+                                     }
+                                  ],
+                    "nav":  "Accessibilità"
+                },
     "nav":  {
                 "home":  "Home",
         "vision": "La Visione",
@@ -331,54 +379,70 @@
                 },
     "privacy":  {
                     "title":  "Privacy Policy",
-                    "lastUpdated":  "Ultimo aggiornamento: 18 Luglio 2026",
-                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse o richiedi i miei servizi di consulenza. Prendo la tua privacy sul serio — seguo il GDPR (Reg. UE 2016/679) e il Codice in materia di protezione dei dati personali italiano (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018), e mantengo la raccolta dati al minimo necessario.",
+                    "lastUpdated":  "Ultimo aggiornamento: 21 Luglio 2026",
+                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse, richiedi servizi di consulenza o acquisti prodotti (ShipKit). Prendo la tua privacy sul serio — seguo il GDPR (Reg. UE 2016/679) e il D.Lgs. 196/2003 (come modificato dal D.Lgs. 101/2018), e mantengo la raccolta dati al minimo necessario per erogare i servizi richiesti.",
                     "sections":  [
-                                     {
-                                         "title":  "1. Titolare del Trattamento",
-                                         "content":  "Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542"
-                                     },
-                                     {
-                                         "title":  "2. Dati Raccolti",
-                                         "content":  "<strong>Modulo di contatto:</strong> nome, indirizzo email e messaggio che invii volontariamente.<br><strong>Download risorse gratuite (playbook):</strong> nome e indirizzo email — utilizzati per consegnare il PDF e inviare la sequenza email (max 6 email in 30 giorni).<br><strong>Richiesta di consulenza:</strong> nome, email, azienda e dettagli del progetto che condividi — utilizzati per preparare proposte ed erogare servizi.<br><strong>Dati tecnici:</strong> indirizzo IP, user-agent del browser e header di referral vengono raccolti automaticamente dal server per motivi di sicurezza e operativi. Non vengono utilizzati per tracciamento o profilazione.<br><strong>Analytics:</strong> visualizzazioni anonime e aggregate delle pagine con analytics privacy-friendly. Nessun tracciamento personale, nessun fingerprinting."
-                                     },
-                                     {
-                                         "title":  "3. Come Utilizzo i Tuoi Dati",
-                                         "content":  "Per rispondere alle tue richieste e preparare proposte.<br>Per inviarti risorse gratuite (playbook PDF) e la sequenza email associata.<br>Per comunicare riguardo a consulenze in corso.<br>Per migliorare il sito web basandomi su dati anonimi di utilizzo.<br>Non vendo, affitto, scambio o condivido i tuoi dati personali con terze parti per i loro scopi di marketing."
-                                     },
-                                     {
-                                        "title":  "4. Email Marketing (Consenso, Double Opt-In & Disiscrizione)",
-                                        "content":  "Quando scarichi il playbook gratuito, dai il tuo consenso spuntando l'apposita casella sul modulo per ricevere una sequenza educativa di 6 email in circa 30 giorni. Dopo l'invio del modulo, riceverai una email di conferma per verificare il tuo indirizzo (double opt-in). Inizierai a ricevere la sequenza solo dopo aver confermato.<br>Ogni email include un link per disiscriverti. Puoi revocare il consenso in qualsiasi momento — la tua richiesta viene elaborata immediatamente e non riceverai ulteriori email. La disiscrizione non influisce sulle comunicazioni relative a consulenze in corso."
-                                     },
-                                     {
-                                        "title":  "5. Base Giuridica (GDPR) & Diritto di Opposizione",
-                                        "content":  "Tratto i tuoi dati in base a:<br><strong>Consenso:</strong> quando spunti la casella del consenso su un modulo (contatto, download playbook). Puoi revocarlo in qualsiasi momento.<br><strong>Necessità contrattuale:</strong> quando richiedi i miei servizi di consulenza — il trattamento è necessario per erogare il lavoro concordato.<br><strong>Legittimo interesse:</strong> rispondere a richieste pre-vendita e migliorare i miei servizi.<br><br><strong>Diritto di opposizione (Art. 21 GDPR):</strong> Se tratto i tuoi dati basandomi sul legittimo interesse, hai il diritto di opporti in qualsiasi momento contattandomi. Cesserò il trattamento a meno che non abbia motivi legittimi cogenti che prevalgano sui tuoi interessi."
-                                     },
-                                     {
-                                         "title":  "6. Conservazione dei Dati",
-                                         "content":  "Richieste dal modulo di contatto: cancellate dopo 12 mesi di inattività.<br>Iscritti alla newsletter playbook: conservati fino alla disiscrizione (più 30 giorni di tolleranza per re-engagement).<br>Dati di clienti di consulenza: conservati per la durata dell'incarico più 24 mesi per conformità fiscale/legale (come richiesto dalla legge italiana).<br>Puoi richiedere la cancellazione dei tuoi dati in qualsiasi momento scrivendo a riccardobozzato@gmail.com."
-                                     },
-                                     {
-                                         "title":  "7. I Tuoi Diritti (GDPR)",
-                                         "content":  "Hai il diritto di:<br>Accedere ai tuoi dati — richiedere una copia di tutto ciò che conservo su di te.<br>Rettificare dati inesatti — chiedermi di correggere o completare le tue informazioni.<br>Cancellare i tuoi dati — richiedere la cancellazione (salvo obblighi di conservazione legale).<br>Limitare il trattamento — limitare come utilizzo i tuoi dati.<br>Opporti al trattamento — opporti al trattamento basato sul legittimo interesse (Art. 21 GDPR).<br>Portabilità dei dati — ricevere i tuoi dati in formato strutturato e leggibile.<br>Revocare il consenso — in qualsiasi momento, per qualsiasi trattamento basato sul consenso.<br>Per esercitare questi diritti, scrivi a riccardobozzato@gmail.com. Risponderò entro 30 giorni."
-                                     },
-                                     {
-                                        "title":  "8. Servizi di Terze Parti",
-                                        "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR:<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali e automazione sequenze email. Privacy: resend.com/privacy<br><strong>Netlify</strong> (netlify.com) — hosting del sito e CDN. Privacy: netlify.com/privacy<br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e project management. Privacy: github.com/privacy<br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti ShipKit. Privacy: stripe.com/privacy<br><br>I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC)."
-                                     },
-                                     {
-                                         "title":  "9. Sicurezza dei Dati",
-                                         "content":  "Implemento misure tecniche e organizzative adeguate per proteggere i tuoi dati: connessioni crittografate (HTTPS), controlli di accesso sui database, principio di minimizzazione dei dati e revisioni periodiche di sicurezza. Nessuna trasmissione dati su internet è sicura al 100%, ma seguo le migliori pratiche del settore per ridurre al minimo i rischi."
-                                     },
-                                     {
-                                         "title":  "10. Modifiche a Questa Policy",
-                                         "content":  "Potrei aggiornare questa privacy policy periodicamente. Le modifiche sostanziali verranno comunicate via email (se ho il tuo contatto per servizi attivi) o tramite un avviso su questo sito. La data di &ldquo;Ultimo aggiornamento&rdquo; all'inizio della pagina riflette la revisione più recente."
-                                     },
-                                     {
-                                         "title":  "11. Contatti",
-                                         "content":  "Per qualsiasi domanda, richiesta o dubbio su questa privacy policy o su come gestisco i tuoi dati:<br><br>Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542<br><br>Hai anche il diritto di presentare un reclamo al Garante per la Protezione dei Dati Personali (garanteprivacy.it)."
-                                     }
-                                 ],
+                                      {
+                                          "title":  "1. Titolare del Trattamento",
+                                          "content":  "Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542<br>P.IVA: trattamento in regime de minimis / occasionale"
+                                      },
+                                      {
+                                          "title":  "2. Dati Raccolti — Per Ogni Servizio",
+                                          "content":  "<strong>Modulo di contatto generico:</strong> nome, email e messaggio. Utilizzato per richieste di ruolo lavorativo, progetti o consulenza.<br><br><strong>Operations Audit (€490):</strong> nome, email, azienda, descrizione del problema operativo. Dati raccolti per erogare l'audit di 2 giorni e preparare il report.<br><br><strong>Delivery & Process Design (da €1.500):</strong> nome, email, azienda, dettagli del team e processi attuali. Dati necessari per progettare e implementare il framework operativo concordato.<br><br><strong>eCommerce & PIM-DAM Operations (da €2.000):</strong> nome, email, azienda, dettagli tecnici della piattaforma (Magento, Shopware, Pimcore), credenziali di accesso temporanee (se necessario per l'implementazione). Le credenziali vengono distrutte al termine dell'incarico.<br><br><strong>AI-Assisted Operations (da €2.500):</strong> nome, email, azienda, dati processuali e documentazione operativa. Utilizzati per progettare automazioni e dashboard.<br><br><strong>Fractional Head of Ops (da €2.500/mese):</strong> nome, email, azienda, struttura organizzativa, dati finanziari e operativi necessari per il ruolo interim.<br><br><strong>Download CV:</strong> nessun dato raccolto — il download è anonimo.<br><br><strong>Acquisto ShipKit (€49):</strong> nome, email, indirizzo di fatturazione (tramite Stripe). Io non ricevo né memorizzo i dettagli della tua carta di credito — Stripe li gestisce per mio conto.<br><br><strong>Download risorse gratuite (playbook):</strong> nome e indirizzo email — per consegnare il PDF e inviare la sequenza email (max 6 email in 30 giorni).<br><br><strong>Dati tecnici:</strong> indirizzo IP, user-agent del browser e header di referral vengono raccolti automaticamente dal server per motivi di sicurezza e operativi. Non utilizzati per tracciamento o profilazione.<br><br><strong>Analytics:</strong> visualizzazioni anonime e aggregate delle pagine con analytics privacy-friendly (Plausible). Nessun tracciamento personale, nessun fingerprinting, nessun cookie di profilazione."
+                                      },
+                                      {
+                                          "title":  "3. Come Utilizzo i Tuoi Dati",
+                                          "content":  "Ogni dato viene utilizzato esclusivamente per lo scopo per cui è stato fornito:<br><br>• Richieste di contatto: per rispondere e preparare proposte.<br>• Servizi di consulenza (Audit, Delivery, eCommerce, AI Ops, Fractional): per erogare il servizio concordato, comunicare durante l'incarico, e fatturare.<br>• Acquisto ShipKit: per elaborare il pagamento (tramite Stripe) e consegnare il prodotto.<br>• Download playbook: per inviare il PDF e la sequenza educativa associata.<br>• Dati tecnici e analytics: per migliorare il sito e rilevare problemi tecnici.<br><br>Non vendo, affitto, scambio o condivido i tuoi dati personali con terze parti per i loro scopi di marketing. I tuoi dati non vengono mai utilizzati per addestrare modelli AI."
+                                      },
+                                      {
+                                         "title":  "4. Email Marketing (Consenso, Double Opt-In & Disiscrizione)",
+                                         "content":  "Quando scarichi il playbook gratuito, puoi dare il consenso (tramite apposita casella) per ricevere una sequenza educativa di 6 email in circa 30 giorni. Dopo l'invio del modulo, riceverai una email di conferma per verificare il tuo indirizzo (double opt-in). Inizierai a ricevere la sequenza solo dopo aver confermato.<br><br>Ogni email include un link per disiscriverti. Puoi revocare il consenso in qualsiasi momento — la tua richiesta viene elaborata immediatamente e non riceverai ulteriori email. La disiscrizione non influisce sulle comunicazioni relative a servizi di consulenza in corso."
+                                      },
+                                      {
+                                         "title":  "5. Base Giuridica (GDPR) & Diritto di Opposizione",
+                                         "content":  "Tratto i tuoi dati in base a:<br><br><strong>Consenso (Art. 6.1.a GDPR):</strong> quando spunti la casella del consenso su un modulo (contatto, download playbook, richiesta servizi). Puoi revocarlo in qualsiasi momento.<br><br><strong>Necessità contrattuale (Art. 6.1.b GDPR):</strong> quando richiedi un servizio di consulenza o acquisti ShipKit — il trattamento è necessario per erogare il lavoro o il prodotto concordato, inclusa la fatturazione.<br><br><strong>Obbligo legale (Art. 6.1.c GDPR):</strong> conservazione dei dati fiscali e contabili per 10 anni come richiesto dalla normativa italiana (D.P.R. 600/73).<br><br><strong>Legittimo interesse (Art. 6.1.f GDPR):</strong> rispondere a richieste pre-vendita e migliorare i miei servizi.<br><br><strong>Diritto di opposizione (Art. 21 GDPR):</strong> se tratto i tuoi dati basandomi sul legittimo interesse, hai il diritto di opporti in qualsiasi momento contattandomi. Cesserò il trattamento a meno che non abbia motivi legittimi cogenti che prevalgano."
+                                      },
+                                      {
+                                          "title":  "6. Conservazione dei Dati",
+                                          "content":  "I tuoi dati vengono conservati solo per il tempo necessario allo scopo per cui sono stati raccolti:<br><br>• Modulo di contatto: cancellato dopo 12 mesi dall'ultimo contatto.<br>• Operations Audit e servizi singoli: 24 mesi dalla conclusione dell'incarico.<br>• Fractional Head of Ops (contratti continuativi): 24 mesi dalla fine del contratto.<br>• Acquisto ShipKit: 10 anni (obbligo fiscale italiano).<br>• Iscritti playbook: fino alla disiscrizione + 30 giorni di tolleranza.<br>• Dati tecnici (log server): 30 giorni, poi anonimizzati.<br><br>Puoi richiedere la cancellazione anticipata dei tuoi dati in qualsiasi momento scrivendo a riccardobozzato@gmail.com. Salvo obblighi di legge (es. fatture), cancellerò tutto entro 30 giorni."
+                                      },
+                                      {
+                                          "title":  "7. I Tuoi Diritti (GDPR)",
+                                          "content":  "Hai il diritto di:<br><br><strong>Accesso (Art. 15):</strong> richiedere una copia di tutti i dati che conservo su di te.<br><strong>Rettifica (Art. 16):</strong> correggere dati inesatti o incompleti.<br><strong>Cancellazione (Art. 17):</strong> ottenere la cancellazione dei tuoi dati (salvo obblighi di legge).<br><strong>Limitazione (Art. 18):</strong> limitare il trattamento in determinati casi.<br><strong>Portabilità (Art. 20):</strong> ricevere i tuoi dati in formato strutturato e leggibile.<br><strong>Opposizione (Art. 21):</strong> opporti al trattamento basato su legittimo interesse.<br><strong>Revoca del consenso:</strong> in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente.<br><br>Per esercitare qualsiasi diritto, scrivi a riccardobozzato@gmail.com. Risponderò entro 30 giorni (Art. 12 GDPR). Se la richiesta è complessa, ti informerò entro 30 giorni e potrò estendere il termine di altri 60 giorni."
+                                      },
+                                      {
+                                         "title":  "8. Servizi di Terze Parti (Responsabili del Trattamento)",
+                                         "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR. I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC):<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali, sequenze email automatizzate e notifiche. Privacy: resend.com/privacy — DPO: dpo@resend.com<br><br><strong>Netlify</strong> (netlify.com) — hosting del sito, CDN, deploy. Privacy: netlify.com/privacy — DPO: privacy@netlify.com<br><br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e authentications. Privacy: github.com/privacy<br><br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti ShipKit. Stripe è certificato PCI DSS Level 1. Privacy: stripe.com/privacy — DPO: dpo@stripe.com<br><br><strong>Vercel</strong> (vercel.com) — deployment preview e serverless functions (utilizzato come backend complementare). Privacy: vercel.com/privacy<br><br><strong>Plausible Analytics</strong> (plausible.io) — analytics privacy-friendly senza cookie. I dati sono anonimi e aggregati. Privacy: plausible.io/privacy"
+                                      },
+                                      {
+                                          "title":  "9. Trasferimenti Internazionali",
+                                          "content":  "Alcuni dei miei fornitori di servizi (Stripe, GitHub, Resend) possono trasferire dati verso gli Stati Uniti. Questi trasferimenti si basano sulle Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea (Decisione di Esecuzione 2021/914), che garantiscono un livello di protezione equivalente a quello garantito dal GDPR. Puoi richiedere una copia delle SCC applicabili scrivendo a riccardobozzato@gmail.com."
+                                      },
+                                      {
+                                          "title":  "10. Sicurezza dei Dati",
+                                          "content":  "Implemento misure tecniche e organizzative adeguate: connessioni crittografate (HTTPS/TLS 1.3), controlli di accesso sui database, principio di minimizzazione, e revisioni periodiche di sicurezza. Le credenziali di accesso temporanee per interventi su piattaforme clienti vengono distrutte al termine dell'incarico. Nessuna trasmissione dati su internet è sicura al 100%, ma seguo le migliori pratiche del settore."
+                                      },
+                                      {
+                                          "title":  "11. Cookie",
+                                          "content":  "Questo sito utilizza esclusivamente:<br><br>• Cookie tecnici: necessari per il funzionamento del sito (nessun consenso richiesto).<br>• Cookie analytics: Plausible Analytics non utilizza cookie — i dati sono anonimizzati a livello di server.<br><br>Nessun cookie di profilazione, pubblicitario o di tracciamento cross-sito viene utilizzato. Puoi gestire le preferenze tramite il banner cookie che appare al primo accesso."
+                                      },
+                                      {
+                                          "title":  "12. Dati di Candidature Lavorative",
+                                          "content":  "Se mi contatti per una posizione lavorativa (Head of Operations, Delivery Manager, PM Senior, etc.), i dati che condividi (CV, portfolio, referenze) vengono utilizzati esclusivamente per valutare la tua candidatura e, se applicabile, per il processo di selezione. I dati dei candidati non valutati vengono cancellati dopo 12 mesi."
+                                      },
+                                      {
+                                          "title":  "13. Limiti di Responsabilità",
+                                          "content":  "I servizi di consulenza sono forniti con la diligenza professionale richiesta dal PMP® Code of Ethics. Tuttavia, i risultati (es. riduzione del time-to-market, aumento di produttività) dipendono da fattori esterni non controllabili (collaborazione del team, condizioni di mercato, vincoli tecnologici). I report degli audit e le raccomandazioni fornite sono opinioni professionali basate sullo stato dei fatti al momento dell'analisi, non garanzie contrattuali di risultato."
+                                      },
+                                      {
+                                          "title":  "14. Modifiche a Questa Policy",
+                                          "content":  "Posso aggiornare questa privacy policy periodicamente per riflettere cambiamenti normativi, nuovi servizi o modifiche nei processi. Le modifiche sostanziali verranno comunicate via email se ho un tuo contatto attivo o tramite avviso sul sito. La data di &ldquo;Ultimo aggiornamento&rdquo; all'inizio della pagina riflette la revisione più recente."
+                                      },
+                                      {
+                                          "title":  "15. Reclami",
+                                          "content":  "Per qualsiasi domanda, richiesta o reclamo:<br><br>Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542<br><br>Se ritieni che il trattamento violi il GDPR, hai il diritto di presentare un reclamo al Garante per la Protezione dei Dati Personali (garanteprivacy.it) — Piazza Venezia 11, 00187 Roma."
+                                      }
+                                  ],
                     "nav":  "Privacy"
                 },
     "confirm":  {

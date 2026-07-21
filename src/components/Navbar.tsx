@@ -39,6 +39,7 @@ export default function Navbar() {
 
   return (
     <header
+      role="banner"
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-500",
         scrolled
@@ -53,7 +54,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <nav aria-label={locale === "it" ? "Navigazione principale" : "Main navigation"} className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.key}
@@ -86,7 +87,7 @@ export default function Navbar() {
           >
             Diagnostic Rapido
           </Link>
-        </div>
+        </nav>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">
@@ -101,7 +102,11 @@ export default function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             className="inline-flex items-center justify-center size-9 text-muted-foreground"
-            aria-label={open ? "Close menu" : "Toggle menu"}
+            aria-label={open
+              ? (locale === "it" ? "Chiudi menu" : "Close menu")
+              : (locale === "it" ? "Apri menu" : "Open menu")}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -110,12 +115,15 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-menu"
+        role="navigation"
+        aria-label={locale === "it" ? "Navigazione mobile" : "Mobile navigation"}
         className={cn(
           "md:hidden transition-all duration-300 overflow-hidden border-t border-outline-variant/30",
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
         )}
       >
-        <nav className="flex flex-col gap-1 bg-background/95 backdrop-blur-xl px-4 pb-5 pt-3 overflow-y-auto">
+        <nav aria-label={locale === "it" ? "Navigazione mobile" : "Mobile navigation"} className="flex flex-col gap-1 bg-background/95 backdrop-blur-xl px-4 pb-5 pt-3 overflow-y-auto">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.key}
