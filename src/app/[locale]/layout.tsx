@@ -209,13 +209,6 @@ export default async function LocaleLayout({
             {locale === "it" ? "Vai al contenuto principale" : "Skip to main content"}
           </a>
 
-          {/* Announcement Bar — Open to Work */}
-          <div role="banner" className="bg-primary text-[10px] sm:text-xs font-semibold tracking-wider text-center py-2 px-4 text-black">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-black/60 mr-2 align-middle" />
-            {locale === "it"
-              ? "Disponibile da subito — Head of Ops / DM / PM Senior — Padova · Milano · Remote"
-              : "Available immediately — Head of Ops / Delivery Manager / Senior PM — Padua · Milan · Remote"}
-          </div>
           <Navbar />
           <main id="main-content" className="min-h-screen">{children}</main>
           <Footer />

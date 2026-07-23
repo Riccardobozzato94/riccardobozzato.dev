@@ -23,9 +23,16 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground/60 mb-4 leading-relaxed">
             €500K+ portfolio · -40% TtM · +25% produttività · 7+ anni
           </p>
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-3 py-1 text-[10px] font-semibold text-primary mb-6">
-            <span className="size-1.5 rounded-full bg-primary animate-pulse" />
-            {isIt ? "Open to Work" : "Open to Work"}
+          <div className="bg-primary/10 border border-primary/30 rounded-lg px-4 py-3 mb-6">
+            <div className="flex items-center gap-2 text-xs font-semibold text-primary mb-1">
+              <span className="size-2 rounded-full bg-primary animate-pulse shrink-0" />
+              {isIt ? "Disponibile da subito" : "Available immediately"}
+            </div>
+            <p className="text-[11px] text-muted-foreground/80 leading-relaxed">
+              {isIt
+                ? "Head of Ops / DM / PM Senior — Padova · Milano · Remote"
+                : "Head of Ops / Delivery Manager / Senior PM — Padua · Milan · Remote"}
+            </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
