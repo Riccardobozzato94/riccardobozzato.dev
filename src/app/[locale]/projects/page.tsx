@@ -101,18 +101,6 @@ export default async function ProjectsPage({ params }: Props) {
             />
           </div>
 
-          {/* CasaGiusta: full width */}
-          <ProjectCard
-            title={t("casagiusta.title")}
-            subtitle={t("casagiusta.subtitle")}
-            description={t("casagiusta.description")}
-            tags={["Full-Stack", isIt ? "Product Delivery" : "Product Delivery", "GDPR", "Open Source"]}
-            href="/projects/casagiusta"
-            image="/assets/casagiusta-banner-1600x900.png"
-            badge={t("casagiusta.badge")}
-            badgeColor="bg-teal-500/10 text-teal-400"
-          />
-
           {/* ric2brain: full width */}
           <ProjectCard
             title={t("ric2brain.title")}

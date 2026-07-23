@@ -178,27 +178,7 @@
                                          "cta":  "Leggi il Case Study",
                                          "status":  "Shippato v0.4.0 · 1.2K+ GitHub ⭐"
                                      },
-                         "casagiusta":  {
-                                          "title":  "CasaGiusta",
-                                          "subtitle":  "In Costruzione: Startup per la Tutela Locatizia",
-                                          "description":  "La mia startup — sto costruendo una piattaforma che aiuta gli inquilini ad analizzare contratti di locazione, accedere a tutele legali e gestire documentazione. Attualmente in sviluppo. Full-stack con Next.js + FastAPI, architettura GDPR-native. In progress.",
-                                          "badge":  "In Progress",
-                                         "features":  [
-                                                          "Full-stack delivery: frontend Next.js 16 con backend FastAPI, PostgreSQL su Neon, deploy via CI/CD",
-                                                          "Product scoping: validazione concept, prioritizzazione feature, controllo scope attraverso 3 cicli di iterazione",
-                                                          "Architettura GDPR-native: minimizzazione dati, crittografia a riposo, consenso informato nel layer dati",
-                                                          "Design responsive: mobile-first con capacità PWA per gestione documenti in mobilità"
-                                                      ],
-                                         "techstack":  [
-                                                           "Next.js",
-                                                           "FastAPI",
-                                                           "TypeScript",
-                                                           "Python",
-                                                           "PostgreSQL (Neon)",
-                                                           "Tailwind CSS"
-                                                       ],
-                                          "cta":  "Vedi Progetto"
-                                     },
+
                         "ric2brain":  {
                                          "title":  "ric2brain",
                                          "subtitle":  "Second Brain: Knowledge Management AI-Nativo",
