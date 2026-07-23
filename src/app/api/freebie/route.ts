@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getResendClient, FROM_EMAIL, TO_EMAIL, APP_URL } from "@/lib/resend";
+import { getResendClient, FROM_EMAIL, FROM_NAME, TO_EMAIL, APP_URL } from "@/lib/resend";
 import { createLead } from "@/lib/lead-store";
 import { confirmationTemplate } from "@/lib/email/templates";
 import { rateLimit } from "@/lib/rate-limit";
@@ -66,8 +66,8 @@ export async function POST(request: Request) {
       return NextResponse.json({
         success: true,
         directDownload: true,
-        downloadUrl: "/files/ai-ops-security-playbook.pdf",
-        message: "Here's your playbook! Download it directly below.",
+        downloadUrl: "/files/operational-chaos-diagnostic.pdf",
+        message: "Here's your diagnostic! Download it directly below.",
       });
     }
 
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
     let emailSent = false;
     try {
       await resend.emails.send({
-        from: `Riccardo Bozzato <${FROM_EMAIL}>`,
+        from: `${FROM_NAME} <${FROM_EMAIL}>`,
         to: lead.email,
         subject: "Please confirm your subscription",
         html: confirmHtml,
@@ -102,7 +102,7 @@ export async function POST(request: Request) {
     // Notify me (best-effort, never blocks the user)
     try {
       await resend.emails.send({
-        from: `Freebie Alert <${FROM_EMAIL}>`,
+        from: `${FROM_NAME} (Alert) <${FROM_EMAIL}>`,
         to: TO_EMAIL,
         subject: `New Pending Lead: ${lead.name}`,
         html: `
@@ -128,14 +128,14 @@ export async function POST(request: Request) {
       return NextResponse.json({
         success: true,
         directDownload: true,
-        downloadUrl: "/files/ai-ops-security-playbook.pdf",
-        message: "Here's your playbook! Download it directly below.",
+        downloadUrl: "/files/operational-chaos-diagnostic.pdf",
+        message: "Here's your diagnostic! Download it directly below.",
       });
     }
 
     return NextResponse.json({
       success: true,
-      message: "Check your inbox! Click the confirmation link to get your playbook.",
+      message: "Check your inbox! Click the confirmation link to get your diagnostic.",
     });
   } catch (error) {
     console.error("Freebie download error:", error);
@@ -143,8 +143,8 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       directDownload: true,
-      downloadUrl: "/files/ai-ops-security-playbook.pdf",
-      message: "Here's your playbook! Download it directly below.",
+      downloadUrl: "/files/operational-chaos-diagnostic.pdf",
+      message: "Here's your diagnostic! Download it directly below.",
     });
   }
 }

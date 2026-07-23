@@ -11,6 +11,7 @@ function getResend(): Resend | null {
 }
 
 const fromEmail = process.env.CONTACT_FROM_EMAIL || "riccardobozzato@gmail.com";
+const fromName = process.env.CONTACT_FROM_NAME || "Riccardo Bozzato";
 const toEmail = process.env.CONTACT_TO_EMAIL || "riccardobozzato@gmail.com";
 
 export async function POST(request: Request) {
@@ -74,7 +75,7 @@ export async function POST(request: Request) {
     // fallback record and still return success so the user isn't blocked.
     try {
       await resend.emails.send({
-        from: `Contact Form <${fromEmail}>`,
+        from: `${fromName} <${fromEmail}>`,
         to: toEmail,
         subject: `New Contact from ${name}`,
         html: `

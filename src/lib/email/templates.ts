@@ -134,7 +134,7 @@ export function confirmationTemplate({ name, email, confirmUrl, unsubscribeToken
       Hey ${name},
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
-      Thanks for signing up for the <strong style="color:#18181b;">AI Ops Security Playbook</strong>.
+      Thanks for signing up for the <strong style="color:#18181b;">Operational Chaos Diagnostic</strong>.
       You're almost there — just one more step to get your free copy.
     </p>
     <p style="margin:0 0 8px 0;font-size:15px;color:#52525b;line-height:1.6;">
@@ -172,23 +172,23 @@ interface TemplateInput {
 export function welcomeTemplate({ name, email, unsubscribeToken }: TemplateInput): string {
   const body = `
     <h1 style="margin:0 0 8px 0;font-size:24px;color:#18181b;letter-spacing:-0.5px;line-height:1.3;">
-      Your Playbook Has Arrived 🚀
+      Your Diagnostic Has Arrived 🚀
     </h1>
     <p style="margin:0 0 24px 0;font-size:15px;color:#52525b;line-height:1.6;">
       Hey ${name},
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
-      Thanks for downloading the <strong style="color:#18181b;">AI Ops Security Playbook</strong>.
-      I wrote this based on real client work — these are the actual strategies I use to keep operations
-      secure without slowing down innovation.
+      Thanks for downloading the <strong style="color:#18181b;">Operational Chaos Diagnostic</strong>.
+      I built this based on real client work — it's the same framework I use to help teams map,
+      measure, and prioritize operational debt.
     </p>
     <p style="margin:0 0 8px 0;font-size:15px;color:#52525b;line-height:1.6;">
       Here's your download link:
     </p>
-    ${ctaButton(`${APP_URL}/files/ai-ops-security-playbook.pdf`, "Download the Playbook")}
+    ${ctaButton(`${APP_URL}/files/operational-chaos-diagnostic.pdf`, "Download the Diagnostic")}
     <p style="margin:16px 0 0 0;font-size:13px;color:#71717a;line-height:1.5;">
       If the button doesn't work, copy this URL into your browser:<br/>
-      <span style="color:#52525b;">${APP_URL}/files/ai-ops-security-playbook.pdf</span>
+      <span style="color:#52525b;">${APP_URL}/files/operational-chaos-diagnostic.pdf</span>
     </p>
     <p style="margin:20px 0 0 0;font-size:15px;color:#52525b;line-height:1.6;">
       In the next few days, I'll send you a few follow-up emails with practical tactics you can
@@ -206,7 +206,7 @@ export function welcomeTemplate({ name, email, unsubscribeToken }: TemplateInput
 export function day1Template({ name, email, unsubscribeToken }: TemplateInput): string {
   const body = `
     <h1 style="margin:0 0 8px 0;font-size:24px;color:#18181b;letter-spacing:-0.5px;line-height:1.3;">
-      The #1 Ops-Security Mistake I See
+      The #1 Operational Mistake I See
     </h1>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
       Hey ${name},
@@ -215,19 +215,20 @@ export function day1Template({ name, email, unsubscribeToken }: TemplateInput): 
       After working with a dozen growing digital companies, I keep seeing the same pattern:
     </p>
     <p style="margin:0 0 16px 0;font-size:16px;color:#18181b;font-weight:600;line-height:1.5;padding:16px;background:#f4f4f5;border-radius:8px;">
-      "We'll add security later. Right now we need to ship."
+      "We'll fix processes later. Right now we need to ship."
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
-      The result? Security becomes a bottleneck that slows everything down. Teams end up with
-      fragmented tooling, manual compliance checks, and firefighting instead of building.
+      The result? Chaos scales faster than the team. Knowledge lives in people's heads. Every
+      handoff is a risk. Onboarding new hires takes weeks instead of days.
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
-      <strong style="color:#18181b;">The fix:</strong> Treat security as an operations discipline, not a separate gate.
-      When you align security practices with operational workflows, both improve.
+      <strong style="color:#18181b;">The fix:</strong> Treat operations as a product, not a overhead.
+      Document processes, define ownership, measure the metrics that matter. When operations
+      are designed intentionally, speed and quality go up together.
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
-      In the playbook, I dedicated a whole section to this alignment framework. If you haven't
-      read it yet, it's the first chapter.
+      In the diagnostic, I dedicated a whole section to building this alignment. If you haven't
+      worked through it yet, start with the Process Map.
     </p>
     <p style="margin:0 0 0 0;font-size:15px;color:#52525b;line-height:1.6;">
       Next time, I'll share the 3 automation plays that saved me 10+ hours a week.
@@ -250,31 +251,33 @@ export function day3Template({ name, email, unsubscribeToken }: TemplateInput): 
       Hey ${name},
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
-      Here are three automation plays from the playbook that I use daily:
+      Here are three automation plays from the diagnostic that I use daily:
     </p>
 
-    <h3 style="margin:20px 0 8px 0;font-size:16px;color:#18181b;">1. Automated dependency scanning in CI/CD</h3>
+    <h3 style="margin:20px 0 8px 0;font-size:16px;color:#18181b;">1. Automated status reporting</h3>
     <p style="margin:0 0 12px 0;font-size:14px;color:#52525b;line-height:1.6;">
-      Every PR gets scanned for vulnerable dependencies automatically. No manual checklists.
-      No "security review" gates. Just a pass/fail that keeps the pipeline moving.
+      Instead of manual weekly status updates, I set up automated dashboards that pull from
+      Jira, Linear, or GitHub Projects. Stakeholders get a daily digest without anyone spending
+      30 minutes updating a spreadsheet. Saved: 2-3 hours/week per PM.
     </p>
 
-    <h3 style="margin:16px 0 8px 0;font-size:16px;color:#18181b;">2. Infrastructure-as-Code compliance checks</h3>
+    <h3 style="margin:16px 0 8px 0;font-size:16px;color:#18181b;">2. Automated onboarding checklists</h3>
     <p style="margin:0 0 12px 0;font-size:14px;color:#52525b;line-height:1.6;">
-      Terraform and CloudFormation templates are validated against your compliance baseline
-      before deployment. Catches misconfigurations before they become incidents.
+      New hire onboarding triggers an automated sequence: Slack channels, tool access, docs,
+      intro meetings, training modules. Everything happens without the manager remembering 15
+      steps. Saved: 4-6 hours per new hire, and 2 weeks faster ramp-up.
     </p>
 
-    <h3 style="margin:16px 0 8px 0;font-size:16px;color:#18181b;">3. Automated incident response runbooks</h3>
+    <h3 style="margin:16px 0 8px 0;font-size:16px;color:#18181b;">3. Automated SLA monitoring & escalation</h3>
     <p style="margin:0 0 12px 0;font-size:14px;color:#52525b;line-height:1.6;">
-                   When alerts fire, the runbook executes automatically: creates a Slack channel,
-      pages the right person, starts logging, and drafts the initial post-mortem. Mean time
-      to response drops from hours to minutes.
+      When a ticket or task approaches its SLA deadline, an automated workflow escalates to the
+      next level: first a Slack reminder, then a manager notification, then an alert. Response
+      times dropped from hours to minutes. No one drops the ball anymore.
     </p>
 
     <p style="margin:20px 0 0 0;font-size:15px;color:#52525b;line-height:1.6;">
       These aren't hypothetical — I've implemented all three across different organizations.
-      The playbook has the implementation details for each.
+      The diagnostic has the implementation details for each.
     </p>
     ${signature(email)}
   `;
@@ -302,12 +305,12 @@ export function day5Template({ name, email, unsubscribeToken }: TemplateInput): 
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
       <strong style="color:#18181b;">The challenge:</strong> Multiple projects running in parallel, distributed teams,
-      no standardized processes. Status updates took hours, handoffs were messy, and security was
-      an afterthought tacked on at the end.
+      no standardized processes. Status updates took hours, handoffs were messy, and every new
+      project started from scratch.
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
       <strong style="color:#18181b;">What I did:</strong> Introduced structured Agile processes with automated
-      CI/CD pipelines, integrated security scanning, and centralized documentation. Not a big
+      CI/CD pipelines, standardized documentation, and centralized knowledge management. Not a big
       bang — just consistent, incremental improvements.
     </p>
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
@@ -317,7 +320,7 @@ export function day5Template({ name, email, unsubscribeToken }: TemplateInput): 
       "25% increase in team productivity",
       "40% reduction in time-to-market",
       "20% faster project completion",
-      "Zero security incidents during the engagement",
+      "Zero critical incidents during the engagement",
     ])}
     <p style="margin:20px 0 0 0;font-size:15px;color:#52525b;line-height:1.6;">
       This is what operational maturity looks like. Not perfection — just systems that make
@@ -349,8 +352,8 @@ export function day7Template({ name, email, unsubscribeToken }: TemplateInput): 
     ${bulletList([
       "10 minutes/day per manual report = 40 hours/year",
       "Context switching between tools = 20% productivity loss",
-      "Security as an afterthought = rework + technical debt",
       "No standardized onboarding = 2-4 weeks ramp-up per new hire",
+      "Tribal knowledge = single points of failure",
     ])}
     <p style="margin:0 0 16px 0;font-size:15px;color:#52525b;line-height:1.6;">
       Most companies don't notice until they hit a growth wall. Suddenly, the team is working
@@ -391,8 +394,8 @@ export function day14Template({ name, email, unsubscribeToken }: TemplateInput):
       Over the past two weeks, I've shared:
     </p>
     ${bulletList([
-      "The AI Ops Security Playbook (your download)",
-      "The #1 ops-security mistake and how to fix it",
+      "The Operational Chaos Diagnostic (your download)",
+      "The #1 operational mistake and how to fix it",
       "3 automation plays that save 10+ hours/week",
       "A real case study with measurable results",
       "The hidden cost of operational chaos",

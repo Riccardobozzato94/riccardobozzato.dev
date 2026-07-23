@@ -1,7 +1,7 @@
 from fpdf import FPDF
 import os
 
-OUTPUT = os.path.join(os.path.dirname(__file__), "ai-ops-security-playbook.pdf")
+OUTPUT = os.path.join(os.path.dirname(__file__), "public/files/operational-chaos-diagnostic.pdf")
 
 FONT_DIR = "C:\\Windows\\Fonts"
 

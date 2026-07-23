@@ -1,11 +1,11 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ExternalLink, Mail, Sparkles } from "lucide-react";
+import { CheckCircle2, ExternalLink, Github, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
 import PaywallGate from "@/components/PaywallGate";
 import { Link } from "@/i18n/navigation";
@@ -18,7 +18,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations("projects.vulnclaw");
+  const t = await getTranslations("projects.casagiusta");
   const site = await getTranslations("site");
 
   return {
@@ -27,23 +27,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${t("title")} | ${site("title")}`,
       description: t("description"),
-      url: `${baseUrl}/${locale}/projects/vulnclaw`,
+      url: `${baseUrl}/${locale}/projects/casagiusta`,
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/projects/vulnclaw`,
+      canonical: `${baseUrl}/${locale}/projects/casagiusta`,
       languages: {
-        en: `${baseUrl}/en/projects/vulnclaw`,
-        it: `${baseUrl}/it/projects/vulnclaw`,
+        en: `${baseUrl}/en/projects/casagiusta`,
+        it: `${baseUrl}/it/projects/casagiusta`,
       },
     },
   };
 }
 
-const techStack = ["Python", "Typer", "Rich", "Prompt Toolkit", "AI"];
+const techStack = ["Next.js", "FastAPI", "TypeScript", "Python", "PostgreSQL", "Tailwind CSS"];
 
-export default async function VulnClawPage({ params }: Props) {
+export default async function CasaGiustaPage({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations("projects.vulnclaw");
+  const t = await getTranslations("projects.casagiusta");
   const features = t.raw("features") as string[];
   const isIt = locale === "it";
 
@@ -52,16 +52,16 @@ export default async function VulnClawPage({ params }: Props) {
       {/* Hero */}
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/8 blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-teal-500/8 blur-[120px]" />
         </div>
         <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-500/5 px-4 py-1.5 text-sm text-teal-400 mb-6">
               <span className="relative flex size-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />
-                <span className="relative inline-flex size-2 rounded-full bg-accent" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400/40" />
+                <span className="relative inline-flex size-2 rounded-full bg-teal-400" />
               </span>
-              {isIt ? "AI • CLI • Sicurezza" : "AI • CLI • Security"}
+              {isIt ? "Product Delivery • GDPR" : "Product Delivery • GDPR"}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -77,13 +77,13 @@ export default async function VulnClawPage({ params }: Props) {
       </section>
 
       {/* Paywall — full project details behind email gate */}
-      <PaywallGate storageKey="vulnclaw">
+      <PaywallGate storageKey="casagiusta">
 
       {/* Features */}
       <Section animate className="py-16! md:!py-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-500/5 px-4 py-1.5 text-sm text-teal-400 mb-4">
               <Sparkles className="size-3.5" />
               {isIt ? "Funzionalità" : "Features"}
             </div>
@@ -92,7 +92,7 @@ export default async function VulnClawPage({ params }: Props) {
           <div className="space-y-4">
             {features.map((feature: string, i: number) => (
               <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card/50 border border-border/30">
-                <CheckCircle2 className="size-5 text-accent shrink-0 mt-0.5" />
+                <CheckCircle2 className="size-5 text-teal-500 shrink-0 mt-0.5" />
                 <span className="text-lg text-foreground/90">{feature}</span>
               </div>
             ))}
@@ -114,63 +114,51 @@ export default async function VulnClawPage({ params }: Props) {
         </div>
       </Section>
 
-      {/* Screenshots */}
+      {/* Screenshot */}
       <Section animate delay={100}>
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">{isIt ? "Screenshot" : "Screenshots"}</h2>
-          <p className="text-muted-foreground mb-8">{isIt ? "Esperienza da terminale" : "Terminal-first experience"}</p>
-          <div className="grid md:grid-cols-3 gap-4">
-            {[
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Aiuto e comandi CLI" : "CLI help & commands" },
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Scansione live di ricognizione" : "Live reconnaissance scan" },
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Risultati e findings" : "Findings & results" },
-            ].map((img, idx) => (
-              <div
-                key={idx}
-                className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-blue-500/30"
-              >
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <Image
-                    src={img.src}
-                    alt={img.label}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <p className="text-xs text-muted-foreground p-2.5">{img.label}</p>
-              </div>
-            ))}
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">{isIt ? "Anteprima" : "Preview"}</h2>
+          <p className="text-muted-foreground mb-8">{isIt ? "Piattaforma per la tutela locatizia" : "Rental protection platform"}</p>
+          <div className="rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:shadow-lg hover:border-teal-500/30">
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                src="/assets/casagiusta-banner-1600x900.png"
+                alt="CasaGiusta platform preview"
+                fill
+                loading="lazy"
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </Section>
 
       {/* CTA */}
       <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
-        <Card className="max-w-2xl mx-auto border-accent/30 shadow-lg shadow-accent/5 text-center">
+        <Card className="max-w-2xl mx-auto border-teal-500/30 shadow-lg shadow-teal-500/5 text-center">
           <CardContent className="p-8 md:p-12 space-y-5">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{isIt ? "Ottieni VulnClaw" : "Get VulnClaw"}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{isIt ? "Il Progetto" : "The Project"}</h2>
             <p className="text-muted-foreground">
               {isIt
-                ? "VulnClaw è un progetto proprietario. Contattami per richiedere una licenza o scopri il progetto su GitHub."
-                : "VulnClaw is proprietary. Contact me for licensing inquiries or check out the project on GitHub."}
+                ? "CasaGiusta è open source. Esplora il codice su GitHub o contattami per collaborazioni."
+                : "CasaGiusta is open source. Explore the code on GitHub or reach out for collaboration."}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Button asChild className="h-11 rounded-xl shadow-lg shadow-primary/10">
                 <a
-                  href="https://github.com/Riccardobozzato94"
+                  href="https://github.com/Riccardobozzato94/casagiusta"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink className="mr-2 size-4" />
-                  GitHub
+                  <Github className="mr-2 size-4" />
+                  {isIt ? "Vedi su GitHub" : "View on GitHub"}
                 </a>
               </Button>
               <Button variant="outline" asChild className="h-11 rounded-xl">
                 <Link href="/contact">
-                  <Mail className="mr-2 size-4" />
-                  {isIt ? "Richiedi una Licenza" : "Contact for License"}
+                  <ExternalLink className="mr-2 size-4" />
+                  {isIt ? "Contattami" : "Contact Me"}
                 </Link>
               </Button>
             </div>

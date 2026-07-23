@@ -234,7 +234,7 @@ export default function FreebiePage() {
                             className="mt-1 size-4 shrink-0 rounded border-border/60 bg-background/50 text-accent focus-visible:ring-accent/30 focus-visible:ring-2 focus-visible:ring-offset-2"
                           />
                           <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed select-none">
-                            {isIt ? "Accetto di ricevere la sequenza educativa di 6 email su operations e security (mi cancello quando voglio)." : "I agree to receive the 6-email educational sequence about operations and security (unsubscribe anytime)."}{" "}
+                            {isIt ? "Accetto di ricevere la sequenza educativa di 6 email su operations e processi (mi cancello quando voglio)." : "I agree to receive the 6-email educational sequence about operations and process design (unsubscribe anytime)."}{" "}
                             <a href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
                               Privacy Policy
                             </a>

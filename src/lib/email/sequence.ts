@@ -38,14 +38,14 @@ export const SEQUENCE: SequenceStep[] = [
   {
     step: 0,
     label: "Welcome & Delivery",
-    subject: "Your AI Ops Security Playbook is here!",
+    subject: "Your Operational Chaos Diagnostic is here!",
     delayDays: 0,
     render: welcomeTemplate,
   },
   {
     step: 1,
     label: "Day 1 — The #1 Mistake",
-    subject: "The #1 ops-security mistake I see (and how to fix it)",
+    subject: "The #1 operational mistake I see (and how to fix it)",
     delayDays: 1,
     render: day1Template,
   },

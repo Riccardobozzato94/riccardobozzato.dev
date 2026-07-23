@@ -50,7 +50,7 @@ export default async function ProjectsPage({ params }: Props) {
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <Briefcase className="size-3.5" />
-              {t("badge")}
+              {t("badgeLabel")}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}
@@ -101,6 +101,18 @@ export default async function ProjectsPage({ params }: Props) {
             />
           </div>
 
+          {/* CasaGiusta: full width */}
+          <ProjectCard
+            title={t("casagiusta.title")}
+            subtitle={t("casagiusta.subtitle")}
+            description={t("casagiusta.description")}
+            tags={["Full-Stack", isIt ? "Product Delivery" : "Product Delivery", "GDPR", "Open Source"]}
+            href="/projects/casagiusta"
+            image="/assets/casagiusta-banner-1600x900.png"
+            badge={t("casagiusta.badge")}
+            badgeColor="bg-teal-500/10 text-teal-400"
+          />
+
           {/* ric2brain: full width */}
           <ProjectCard
             title={t("ric2brain.title")}
@@ -111,18 +123,6 @@ export default async function ProjectsPage({ params }: Props) {
             image="/assets/ric2brain-banner-1600x900.png"
             badge={t("ric2brain.badge")}
             badgeColor="bg-purple-500/10 text-purple-400"
-          />
-
-          {/* ItaliaLLM: full width */}
-          <ProjectCard
-            title={t("italiallm.title")}
-            subtitle={t("italiallm.subtitle")}
-            description={t("italiallm.description")}
-            tags={["AI", "LLM", "Startup", "Compliance", isIt ? "Infrastruttura" : "Infrastructure"]}
-            href="/projects/italiallm"
-            image="/assets/italiallm-banner-1600x900.png"
-            badge={t("italiallm.badge")}
-            badgeColor="bg-green-500/10 text-green-400"
           />
         </div>
       </Section>

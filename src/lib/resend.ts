@@ -11,8 +11,12 @@ export function getResendClient(): Resend | null {
   return _client;
 }
 
-// Production sender: riccardobozzato@gmail.com via Resend verified sender.
-// Switch to hello@riccardobozzato.com once Resend domain verification completes.
+// Sender configuration:
+// ✅ riccardobozzato@gmail.com — verified in Resend as single sender
+//    Used for all transactional emails (contact, freebie, confirm, etc.)
+//
+// 💡 Set CONTACT_FROM_EMAIL in Netlify env vars to override if needed.
 export const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "riccardobozzato@gmail.com";
+export const FROM_NAME = process.env.CONTACT_FROM_NAME || "Riccardo Bozzato";
 export const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "riccardobozzato@gmail.com";
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://riccardobozzato.com";

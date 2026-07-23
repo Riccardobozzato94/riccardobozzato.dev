@@ -1,8 +1,8 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Head of Operations | Delivery Manager | PMP® — operations, delivery, and execution with measurable results.",
-                    "description":  "Senior Delivery Manager & Head of Operations (PMP®). I build the operational architecture that turns chaos into predictable execution. €500K+ portfolio managed, -40% time-to-market, teams of 8-12. Available immediately."
+                    "tagline":  "Delivery Manager | Head of Operations | PMP® — I make digital teams faster, less chaotic, and more predictable.",
+                    "description":  "Delivery Manager & Head of Operations (PMP®). I build the operational architecture that turns chaos into predictable execution. €500K+ portfolio, -40% time-to-market, teams of 8-12. Open to work."
               },
     "accessibility":  {
                     "title":  "Accessibility Statement",
@@ -70,7 +70,7 @@
     "home":  {
                     "heroTitle":  "Operations, delivery, and execution. With a builder mindset.",
                    "heroRole":  "No chaos. Just processes that work.",
-                    "heroTagline":  "Delivery Manager & Head of Operations (PMP®). I build the systems — processes, KPIs, team structure — that let digital companies grow without breaking. €500K+ delivered across enterprise and startup environments, teams of 8-12, 40% faster time-to-market.",
+                    "heroTagline":  "Delivery Manager & Head of Operations (PMP®). I build the systems — processes, KPIs, team structure — that let digital companies scale without imploding. €500K+ portfolio, teams of 8-12, -40% time-to-market. Open to work.",
                    "heroCta":  "Let's Talk",
                    "heroCta2":  "See Results",
                    "featuredTitle":  "Measurable Results",
@@ -116,9 +116,10 @@
                                     "email":  "Email"
                                 }
                },
-    "projects":  {
-                      "title":  "Case Studies",
-                       "subtitle":  "Real projects, real problems, real solutions. Lessons included.",
+     "projects":  {
+                        "title":  "Case Studies",
+                         "subtitle":  "From concept to production — I built each one, start to finish. Real code, real deployments, real results.",
+                        "badgeLabel":  "Case Study",
                        "panificio":  {
                                         "title":  "Panificio Da Sergio",
                                         "subtitle":  "Stakeholder Delivery: E-Commerce for a Family Bakery",
@@ -141,29 +142,72 @@
                                         "cta":  "Read Case Study",
                                         "note":  "Family project, delivered under budget"
                                     },
-                       "vulnclaw":  {
-                                        "title":  "VulnClaw",
-                                        "subtitle":  "Product Delivery: AI-Powered CLI from Zero to Open Source Community",
-                                        "description":  "Built an open-source AI penetration testing CLI from scratch. Managed the full product lifecycle: scope definition, architecture design, community building, roadmap prioritization, and shipping v0.4.0 with active users across 3 continents. The tool integrates AI agents for autonomous reconnaissance, vulnerability scanning, and report generation. Key lesson: starting narrow beats building broad every time. 1,200+ GitHub stars, 40+ forks, 15+ community contributors.",
-                                        "features":  [
-                                                         "Product scoping: evolved from a simple port scanner to a multi-agent AI penetration testing framework in 6 months (v0.1 → v0.4)",
-                                                         "AI agent architecture: 3 specialized agents — Recon, Exploit, Report — that collaborate autonomously using LLM reasoning",
-                                                         "Community management: triaged 80+ PRs and 200+ issues, maintaining a 48h first-response SLA for critical security reports",
-                                                         "Roadmap prioritization: said 'no' to 60% of feature requests to ship the essential 40% — ruthless scope control",
-                                                         "Open source as delivery strategy: MIT license, GitHub Discussions for roadmap voting, automated CI/CD with GitHub Actions"
-                                                     ],
-                                        "techstack":  [
-                                                          "Python 3.12",
-                                                          "Typer (CLI)",
-                                                          "Rich (terminal UI)",
-                                                          "Prompt Toolkit (interactive shell)",
-                                                          "AI/LLM (OpenAI, Claude)",
-                                                          "GitHub Actions"
+                        "vulnclaw":  {
+                                         "title":  "VulnClaw",
+                                         "subtitle":  "Product Delivery: AI-Powered CLI from Zero to Open Source Community",
+                                         "description":  "Built an open-source AI penetration testing CLI from scratch. Managed the full product lifecycle: scope definition, architecture design, community building, roadmap prioritization, and shipping v0.4.0 with active users across 3 continents. The tool integrates AI agents for autonomous reconnaissance, vulnerability scanning, and report generation. Key lesson: starting narrow beats building broad every time. 1,200+ GitHub stars, 40+ forks, 15+ community contributors.",
+                                         "features":  [
+                                                          "Product scoping: evolved from a simple port scanner to a multi-agent AI penetration testing framework in 6 months (v0.1 → v0.4)",
+                                                          "AI agent architecture: 3 specialized agents — Recon, Exploit, Report — that collaborate autonomously using LLM reasoning",
+                                                          "Community management: triaged 80+ PRs and 200+ issues, maintaining a 48h first-response SLA for critical security reports",
+                                                          "Roadmap prioritization: said 'no' to 60% of feature requests to ship the essential 40% — ruthless scope control",
+                                                          "Open source as delivery strategy: MIT license, GitHub Discussions for roadmap voting, automated CI/CD with GitHub Actions"
                                                       ],
-                                        "cta":  "Read Case Study",
-                                        "status":  "Shipped v0.4.0 · 1.2K+ GitHub ⭐"
-                                    },
-     "shipkit":  {
+                                         "techstack":  [
+                                                           "Python 3.12",
+                                                           "Typer (CLI)",
+                                                           "Rich (terminal UI)",
+                                                           "Prompt Toolkit (interactive shell)",
+                                                           "AI/LLM (OpenAI, Claude)",
+                                                           "GitHub Actions"
+                                                       ],
+                                         "cta":  "Read Case Study",
+                                         "status":  "Shipped v0.4.0 · 1.2K+ GitHub ⭐"
+                                     },
+                        "casagiusta":  {
+                                         "title":  "CasaGiusta",
+                                         "subtitle":  "Product Delivery: Digital Platform for Rental Protection",
+                                         "description":  "Designed and delivered a digital platform that helps tenants analyze lease agreements, access legal protections, and manage rental documentation. Full product lifecycle from concept to deployment: requirements gathering, UX design, full-stack development (Next.js + FastAPI), and deployment with CI/CD. Built with accessibility and GDPR compliance baked in from day one.",
+                                         "badge":  "Product Delivery",
+                                         "features":  [
+                                                          "Full-stack delivery: Next.js 16 frontend with FastAPI backend, PostgreSQL on Neon, deployed via CI/CD",
+                                                          "Product scoping: concept validation, feature prioritization, and scope control through 3 iteration cycles",
+                                                          "GDPR-native architecture: data minimization, encryption at rest, and consent management built into the data layer",
+                                                          "Responsive design: mobile-first with PWA capabilities for on-the-go document management"
+                                                      ],
+                                         "techstack":  [
+                                                           "Next.js",
+                                                           "FastAPI",
+                                                           "TypeScript",
+                                                           "Python",
+                                                           "PostgreSQL (Neon)",
+                                                           "Tailwind CSS"
+                                                       ],
+                                          "cta":  "View Project"
+                                     },
+                        "ric2brain":  {
+                                         "title":  "ric2brain",
+                                         "subtitle":  "Second Brain: AI-Native Knowledge Management",
+                                         "description":  "A 9,000+ note Obsidian vault connected to AI engines — semantic RAG (ChromaDB), LLM Wiki indexing, and Agent Memory. Every project, idea, lesson, and contact is indexed into a living knowledge graph, queryable in seconds by both humans and AI agents. Built with Obsidian, Python, ChromaDB, and MCP protocol integration.",
+                                         "badge":  "Second Brain",
+                                         "features":  [
+                                                          "Semantic RAG: all-MiniLM-L6-v2 embeddings turn every note into a vector — search by meaning, not keywords",
+                                                          "LLM Wiki: structured index of all 9,000+ notes grouped by area for rapid AI agent navigation",
+                                                          "Agent Memory: shared operational memory across AI sessions — agents log what they did and why",
+                                                          "MCP Integration: vault exposed as Model Context Protocol resource, accessible from any compatible AI agent"
+                                                      ],
+                                         "techstack":  [
+                                                           "Obsidian",
+                                                           "Python",
+                                                           "ChromaDB",
+                                                           "Sentence Transformers",
+                                                           "RAG",
+                                                           "MCP"
+                                                       ],
+                                         "cta":  "Learn More"
+                                     },
+
+      "shipkit":  {
                                     "title":  "ShipKit",
                                     "subtitle":  "SaaS Kit: From Idea to €49 Paid Product",
                                     "description":  "Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements gathering, scope control, payment integration, documentation, and customer support. The product ships with multi-tenant architecture, automated billing with Stripe webhooks, Google OAuth + magic link auth, and full i18n support. Sold at €49/one-time with lifetime updates. 12 real customers in the first 3 months.",

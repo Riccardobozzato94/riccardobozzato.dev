@@ -39,7 +39,7 @@ export default function ThankYouPage() {
         <Section animate>
           <div className="text-center mb-12">
             <a
-              href="/files/ai-ops-security-playbook.pdf"
+              href="/files/operational-chaos-diagnostic.pdf"
               download
               className="group inline-flex items-center justify-center h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 px-8 text-base font-medium transition-all duration-300 hover:-translate-y-0.5"
             >
