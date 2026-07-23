@@ -48,3 +48,9 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Local strategy / personal docs
+strategia sito ric/
+
+# Local CV copies
+*_CV_2026_.pdf
