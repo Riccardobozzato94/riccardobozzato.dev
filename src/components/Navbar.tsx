@@ -48,9 +48,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-lg font-bold text-foreground tracking-tight hover:text-primary transition-colors"
+          className="flex items-center gap-2 text-lg font-bold text-foreground tracking-tight hover:text-primary transition-colors"
         >
-          Riccardo<span className="text-primary">.</span>Bozzato
+          <span className="flex items-center justify-center size-7 rounded-lg bg-primary text-black text-xs font-extrabold">RB</span>
+          <span>Riccardo Bozzato</span>
         </Link>
 
         {/* Desktop Nav */}

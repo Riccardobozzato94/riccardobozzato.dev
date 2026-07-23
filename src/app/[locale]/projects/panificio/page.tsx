@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ExternalLink, Mail, Heart, Sparkles } from "lucide-react";
+import { CheckCircle2, ExternalLink, Mail, Heart, Sparkles, Globe } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
@@ -163,6 +163,12 @@ export default async function PanificioPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Button asChild className="h-11 rounded-xl shadow-lg shadow-primary/10">
+                <a href="https://www.panificiodasergio.it/" target="_blank" rel="noopener noreferrer">
+                  <Globe className="mr-2 size-4" />
+                  {t("ctaVisit")}
+                </a>
+              </Button>
+              <Button variant="outline" asChild className="h-11 rounded-xl">
                 <Link href="/contact">
                   <Mail className="mr-2 size-4" />
                   {t("ctaButton")}

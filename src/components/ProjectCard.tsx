@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
@@ -20,6 +20,11 @@ interface ProjectCardProps {
   className?: string;
 }
 
+/** Returns true if the href is an absolute URL (external link). */
+function isExternal(href: string) {
+  return href.startsWith("http://") || href.startsWith("https://");
+}
+
 export default function ProjectCard({
   title,
   subtitle,
@@ -34,8 +39,30 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const t = useTranslations("home");
 
+  const Wrapper = isExternal(href)
+    ? ({ children, ...props }: { children: React.ReactNode; [key: string]: unknown }) => (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-xl"
+          {...props}
+        >
+          {children}
+          {/* External link indicator */}
+          <span className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ExternalLink className="size-4 text-muted-foreground/60" />
+          </span>
+        </a>
+      )
+    : ({ children, ...props }: { children: React.ReactNode; [key: string]: unknown }) => (
+        <Link href={href} className="group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-xl" {...props}>
+          {children}
+        </Link>
+      );
+
   return (
-    <Link href={href} className="group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-xl">
+    <Wrapper>
       <div
         className={cn(
           "relative overflow-hidden rounded-2xl border transition-all duration-500",
@@ -142,6 +169,6 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
-    </Link>
+    </Wrapper>
   );
 }

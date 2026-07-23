@@ -120,28 +120,42 @@
                         "title":  "Case Studies",
                         "subtitle":  "Dal concept alla produzione — li ho costruiti tutti, dall'inizio alla fine. Codice vero, deploy veri, risultati veri.",
                        "badgeLabel":  "Case Study",
-                       "panificio":  {
-                                        "title":  "Panificio Da Sergio",
-                                        "subtitle":  "Delivery con Stakeholder: E-Commerce per una Famiglia",
-                                        "description":  "Consegnata una piattaforma e-commerce completa per un panificio tradizionale — gestendo aspettative degli stakeholder, vincoli tecnici e un budget stretto. Una lezione di negoziazione dello scope, comunicazione col cliente e delivery sotto vincoli reali. La piattaforma gestisce l'intero ciclo degli ordini: catalogo prodotti con articoli freschi quotidiani, ordinazione online con pianificazione ritiro, e dashboard admin per la gestione ordini. Costruita con Next.js per performance SSR, Tailwind CSS per un look artigianale e PostgreSQL per persistenza dati affidabile.",
-                                        "features":  [
-                                                         "Gestione stakeholder: tradotto i requisiti di 3 generazioni familiari in specifiche tecniche, bilanciando tradizione con UX moderna",
-                                                         "Delivery con budget limitato: e-commerce completo sotto €2K di budget materiali, usando stack open-source e tier gratuito Netlify",
-                                                         "Multi-lingua (EN/IT) con SEO locale per clienti italiani e internazionali",
-                                                         "Flusso ordini end-to-end: catalogo → carrello → pianificazione ritiro → conferma → dashboard admin",
-                                                         "Design responsive: mobile-first per ordini da smartphone, ottimizzato tablet per chiosco in negozio"
-                                                     ],
-                                        "techstack":  [
-                                                          "Next.js",
-                                                          "Tailwind CSS",
-                                                          "TypeScript",
-                                                          "i18n (next-intl)",
-                                                          "PostgreSQL (Neon)",
-                                                          "Netlify"
+                        "panificio":  {
+                                         "title":  "Panificio Da Sergio",
+                                         "subtitle":  "Live: E-Commerce per un Panificio di Famiglia",
+                                         "description":  "Live su panificiodasergio.it — piattaforma e-commerce completa per un panificio tradizionale. Negoziazione dello scope, gestione stakeholder tra 3 generazioni, consegnato sotto budget. Costruito con Next.js, Tailwind CSS e PostgreSQL.",
+                                         "badge":  "Progetto Live",
+                                         "features":  [
+                                                          "Gestione stakeholder: tradotto i requisiti di 3 generazioni familiari in specifiche tecniche, bilanciando tradizione con UX moderna",
+                                                          "Delivery con budget limitato: e-commerce completo sotto €2K di budget materiali, usando stack open-source e tier gratuito Netlify",
+                                                          "Multi-lingua (EN/IT) con SEO locale per clienti italiani e internazionali",
+                                                          "Flusso ordini end-to-end: catalogo → carrello → pianificazione ritiro → conferma → dashboard admin",
+                                                          "Design responsive: mobile-first per ordini da smartphone, ottimizzato tablet per chiosco in negozio"
                                                       ],
-                                        "cta":  "Leggi il Case Study",
-                                        "note":  "Progetto familiare, consegnato sotto budget"
-                                    },
+                                         "techstack":  [
+                                                           "Next.js",
+                                                           "Tailwind CSS",
+                                                           "TypeScript",
+                                                           "i18n (next-intl)",
+                                                           "PostgreSQL (Neon)",
+                                                           "Netlify"
+                                                       ],
+                                         "screenshots": [
+                                                          { "label": "Homepage — vetrina dei prodotti freschi" },
+                                                          { "label": "Catalogo con pianificazione ritiro" }
+                                                      ],
+                                         "sectionFeatures":  "Funzionalità",
+                                         "sectionWhatItDoes":  "Cosa Fa",
+                                         "sectionTechStack":  "Tecnologie",
+                                         "sectionScreenshots":  "Screenshot",
+                                         "sectionScreenshotsDesc":  "Anteprime del sito live",
+                                         "ctaTitle":  "Vedi dal Vivo",
+                                         "ctaDesc":  "Visita panificiodasergio.it per vedere la piattaforma in azione — costruita per un panificio reale, in produzione.",
+                                         "ctaVisit":  "Visita il Sito →",
+                                         "ctaButton":  "Contattami",
+                                         "cta":  "Leggi il Case Study",
+                                         "note":  "Progetto familiare, consegnato sotto budget"
+                                     },
                         "vulnclaw":  {
                                          "title":  "VulnClaw",
                                          "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
@@ -164,11 +178,11 @@
                                          "cta":  "Leggi il Case Study",
                                          "status":  "Shippato v0.4.0 · 1.2K+ GitHub ⭐"
                                      },
-                        "casagiusta":  {
-                                         "title":  "CasaGiusta",
-                                         "subtitle":  "Product Delivery: Piattaforma per la Tutela Locatizia",
-                                         "description":  "Progettata e consegnata una piattaforma digitale che aiuta gli inquilini ad analizzare contratti di locazione, accedere a tutele legali e gestire documentazione locatizia. Ciclo di vita completo: raccolta requisiti, UX design, sviluppo full-stack (Next.js + FastAPI) e deployment con CI/CD. Accessibilità e conformità GDPR integrate nell'architettura dal giorno uno.",
-                                         "badge":  "Product Delivery",
+                         "casagiusta":  {
+                                          "title":  "CasaGiusta",
+                                          "subtitle":  "In Costruzione: Startup per la Tutela Locatizia",
+                                          "description":  "La mia startup — sto costruendo una piattaforma che aiuta gli inquilini ad analizzare contratti di locazione, accedere a tutele legali e gestire documentazione. Attualmente in sviluppo. Full-stack con Next.js + FastAPI, architettura GDPR-native. In progress.",
+                                          "badge":  "In Progress",
                                          "features":  [
                                                           "Full-stack delivery: frontend Next.js 16 con backend FastAPI, PostgreSQL su Neon, deploy via CI/CD",
                                                           "Product scoping: validazione concept, prioritizzazione feature, controllo scope attraverso 3 cicli di iterazione",

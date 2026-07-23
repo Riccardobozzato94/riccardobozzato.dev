@@ -61,7 +61,7 @@ export default async function CasaGiustaPage({ params }: Props) {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400/40" />
                 <span className="relative inline-flex size-2 rounded-full bg-teal-400" />
               </span>
-              {isIt ? "Product Delivery • GDPR" : "Product Delivery • GDPR"}
+{isIt ? "Startup • In Costruzione" : "Startup • In Progress"}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               {t("title")}

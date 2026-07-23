@@ -93,8 +93,8 @@ export default async function ProjectsPage({ params }: Props) {
               title={t("panificio.title")}
               subtitle={t("panificio.subtitle")}
               description={t("panificio.description")}
-              tags={["E-Commerce", isIt ? "Gestione Stakeholder" : "Stakeholder Mgmt", "Delivery"]}
-              href="/projects/panificio"
+              tags={["E-Commerce", isIt ? "Live" : "Live", isIt ? "Sito Reale" : "Production"]}
+              href="https://www.panificiodasergio.it/"
               image="/assets/panificio-banner-1600x900.png"
             badge={t("badgeLabel")}
             badgeColor="bg-amber-500/10 text-amber-400"
