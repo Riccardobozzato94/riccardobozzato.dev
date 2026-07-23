@@ -42,6 +42,7 @@ const timelineIt = [
     company: "In's Mercato · Aldi · Terranova",
     desc: "Leadership operativa, gestione team, KPI. Ho imparato le operations sul campo, con le mani nei processi.",
     icon: "▹",
+    logos: ["/assets/logos/ins-mercato.png", "/assets/logos/aldi.png"],
   },
   {
     period: "2022 – 2024",
@@ -49,6 +50,7 @@ const timelineIt = [
     company: "Accenture",
     desc: "SAP UI5, JavaScript, automazione processi. +30% efficienza, -15% errori amministrativi. Scala enterprise, impatto misurabile.",
     icon: "▹",
+    logos: ["/assets/logos/accenture.jpg"],
   },
   {
     period: "2024 – 2026",
@@ -56,6 +58,7 @@ const timelineIt = [
     company: "Esse Solutions",
     desc: "Gestito portfolio da €500K coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Introdotto Agile: +25% produttività, -40% time-to-market.",
     icon: "▹",
+    logos: ["/assets/logos/esse-solutions.png"],
   },
   {
     period: "2026",
@@ -63,6 +66,7 @@ const timelineIt = [
     company: "Ciao Elsa — Legnaro, PD",
     desc: "Architettura operativa costruita da zero per una startup AI-native. Processi, KPI, governance, struttura del team. Engagement breve e mirato: sistema costruito, formato il team, consegnato.",
     icon: "▹",
+    logos: ["/assets/logos/ciao-elsa.jpg"],
   },
 ] as const;
 
@@ -73,6 +77,7 @@ const timelineEn = [
     company: "In's Mercato · Aldi · Terranova",
     desc: "Operational leadership, team management, KPI tracking. Learned operations hands-on, with my hands in the processes.",
     icon: "▹",
+    logos: ["/assets/logos/ins-mercato.png", "/assets/logos/aldi.png"],
   },
   {
     period: "2022 – 2024",
@@ -80,6 +85,7 @@ const timelineEn = [
     company: "Accenture",
     desc: "SAP UI5, JavaScript, process automation. +30% efficiency, -15% administrative errors. Enterprise scale, measurable impact.",
     icon: "▹",
+    logos: ["/assets/logos/accenture.jpg"],
   },
   {
     period: "2024 – 2026",
@@ -87,6 +93,7 @@ const timelineEn = [
     company: "Esse Solutions",
     desc: "Managed a €500K portfolio coordinating distributed teams of 8-12 across B2B eCommerce (Magento, Shopware) and PIM/DAM (Pimcore). Introduced Agile: +25% productivity, -40% time-to-market.",
     icon: "▹",
+    logos: ["/assets/logos/esse-solutions.png"],
   },
   {
     period: "2026",
@@ -94,6 +101,7 @@ const timelineEn = [
     company: "Ciao Elsa — Legnaro, PD",
     desc: "Built operational architecture from scratch for an AI-native startup. Processes, KPIs, governance, team structure. Short, focused engagement: system built, team trained, handed over.",
     icon: "▹",
+    logos: ["/assets/logos/ciao-elsa.jpg"],
   },
 ] as const;
 
@@ -226,9 +234,21 @@ export default async function AboutPage({ params }: Props) {
               <div key={i} className="relative pb-10 last:pb-0 group">
                 <div className="timeline-dot absolute -left-10 top-1.5 group-hover:scale-125 group-hover:shadow-[0_0_12px_hsl(var(--accent)/0.4)] transition-all duration-500" />
                 <div className="space-y-2">
-                  <div className="flex items-baseline gap-3 flex-wrap">
+                  <div className="flex items-center gap-3 flex-wrap">
                     <span className="text-xs font-mono text-accent/60 font-medium">{item.period}</span>
                     <span className="text-sm text-muted-foreground/50">—</span>
+                    {item.logos && (
+                      <div className="flex items-center gap-2">
+                        {item.logos.map((logo: string) => (
+                          <img
+                            key={logo}
+                            src={logo}
+                            alt=""
+                            className="h-6 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                          />
+                        ))}
+                      </div>
+                    )}
                     <span className="text-sm font-medium text-foreground/80">{item.company}</span>
                   </div>
                   <h3 className="text-lg font-bold tracking-tight">{item.title}</h3>
