@@ -158,8 +158,8 @@
                                      },
                         "vulnclaw":  {
                                          "title":  "VulnClaw",
-                                         "subtitle":  "Product Delivery: CLI AI dalla Community Open Source",
-                                         "description":  "Costruito un CLI open-source di penetration testing AI da zero. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione architetturale, costruzione della community, prioritizzazione roadmap e shipping della v0.4.0 con utenti attivi in 3 continenti. Lo strumento integra agenti AI per ricognizione autonoma, scansione vulnerabilità e generazione report. Lezione chiave: iniziare stretto batte costruire largo ogni volta. 1.200+ stelle GitHub, 40+ fork, 15+ contributor della community.",
+                                         "subtitle":  "CLI open-source di penetration testing con agenti AI",
+                                         "description":  "Costruito da zero un CLI open-source che integra agenti AI per ricognizione autonoma, scansione delle vulnerabilità e generazione automatica dei report. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione dell'architettura, roadmap e release pubblica su GitHub con documentazione, esempi e roadmap aperta. Lezione chiave: iniziare stretto batte costruire largo.",
                                          "features":  [
                                                           "Product scoping: evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
                                                           "Architettura AI: 3 agenti specializzati — Recon, Exploit, Report — che collaborano autonomamente usando LLM",
