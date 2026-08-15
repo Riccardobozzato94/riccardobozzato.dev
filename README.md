@@ -60,14 +60,7 @@ npm run dev      # → http://localhost:3000
 npm run build    # Production build
 ```
 
-## Environment Variables
 
-```env
-# Required for email features (optional — dev works without)
-RESEND_API_KEY=
-CONTACT_FROM_EMAIL=onboarding@resend.dev
-CONTACT_TO_EMAIL=riccardobozzato@gmail.com
-NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
 ## License
