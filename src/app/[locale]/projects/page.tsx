@@ -74,22 +74,15 @@ export default async function ProjectsPage({ params }: Props) {
                   title: "agent0",
                   tag: isIt ? "Piattaforma agenti self-hosted" : "Self-hosted agent platform",
                   desc: isIt
-                    ? "LLM locali (Ollama), server MCP, planner con tool-loop ed eval harness con 10+ golden case. 3 agenti in produzione su infrastruttura privata."
-                    : "Local LLMs (Ollama), MCP servers, planner with tool-loop and an eval harness with 10+ golden cases. 3 agents in production on private infrastructure.",
+                    ? "LLM locali (Ollama), registry agenti YAML, planner con tool-loop ed eval harness con golden case. 26 test, 5/5 eval: open source su GitHub."
+                    : "Local LLMs (Ollama), YAML agent registry, planner with tool-loop and an eval harness with golden cases. 26 tests, 5/5 eval: open source on GitHub.",
                 },
                 bureaucracy: {
                   title: "Bureaucracy Analyzer",
                   tag: isIt ? "Agente anti-burocrazia" : "Anti-bureaucracy agent",
                   desc: isIt
-                    ? "PDF in ingresso, verdetto in uscita: estrazione date/importi/ente e verifica prescrizione (art. 28 L. 689/1981) con LLM locali. 500+ documenti analizzati."
-                    : "PDF in, verdict out: extracts dates/amounts/agency and checks prescription (art. 28 L. 689/1981) with local LLMs. 500+ documents analyzed.",
-                },
-                voicestudio: {
-                  title: "VoiceStudio",
-                  tag: isIt ? "Voice cloning locale" : "Local voice cloning",
-                  desc: isIt
-                    ? "Fork mantenuto di OmniVoice-Studio: dettatura real-time, voice cloning zero-shot e dubbing video, 100% on-device, senza API key, 646 lingue."
-                    : "Maintained fork of OmniVoice-Studio: real-time dictation, zero-shot voice cloning and video dubbing, 100% on-device, no API keys, 646 languages.",
+                    ? "PDF in ingresso, verdetto in uscita: estrazione date/importi/ente e verifica prescrizione (art. 28 L. 689/1981). CLI + API + workflow n8n open source."
+                    : "PDF in, verdict out: extracts dates/amounts/agency and checks prescription (art. 28 L. 689/1981). Open-source CLI + API + n8n workflow.",
                 },
                 saasBoilerplate: {
                   title: "SaaS Boilerplate Max",
@@ -127,21 +120,6 @@ export default async function ProjectsPage({ params }: Props) {
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{ai.bureaucracy.desc}</p>
                     <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-warn transition-colors">
-                      {isIt ? "Leggi il case study" : "Read the case study"}
-                      <ArrowUpRight className="size-3.5" />
-                    </span>
-                  </Link>
-                  <Link
-                    href="/projects/voicestudio"
-                    className="group dossier-card flex flex-col p-6 md:p-8 hover:border-accent/40 transition-colors"
-                  >
-                    <p className="font-mono text-[10px] text-accent mb-3">{ai.label}</p>
-                    <div className="flex items-center gap-2.5 mb-3">
-                      <h2 className="text-2xl font-bold group-hover:text-accent transition-colors">{ai.voicestudio.title}</h2>
-                      <span className="rounded-md bg-accent/10 border border-accent/25 px-2 py-0.5 font-mono text-[9px] text-accent">{ai.voicestudio.tag}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{ai.voicestudio.desc}</p>
-                    <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-accent transition-colors">
                       {isIt ? "Leggi il case study" : "Read the case study"}
                       <ArrowUpRight className="size-3.5" />
                     </span>

@@ -75,9 +75,9 @@ export default async function Agent0Page({ params }: Props) {
             </div>
             <div className="terminal-body font-mono text-xs space-y-1">
               <p className="terminal-prompt">$ agent0 status --all</p>
-              <p className="console-log-ok">[ok] 3 agents online · planner: ready</p>
-              <p className="console-log-ok">[ok] mcp servers: filesystem, browser, shell (3)</p>
-              <p className="console-log-ok">[ok] eval harness: 10/10 golden cases PASS</p>
+              <p className="console-log-ok">[ok] 2 example agents · registry: YAML</p>
+              <p className="console-log-ok">[ok] tools: calculator · datetime · http_get · file_read</p>
+              <p className="console-log-ok">[ok] eval harness: 5/5 golden cases PASS</p>
               <p className="console-log-muted">[..] infra: private · ollama: local models</p>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default async function Agent0Page({ params }: Props) {
             </div>
             <div className="shrink-0 flex flex-col gap-3 md:items-end">
               <a
-                href="https://github.com/Riccardobozzato94"
+                href="https://github.com/Riccardobozzato94/agent0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-xs font-bold tracking-wider text-primary-foreground transition-all hover:brightness-110"
@@ -135,8 +135,8 @@ export default async function Agent0Page({ params }: Props) {
         <Section animate delay={200} className="pt-0!">
           <p className="text-xs text-muted-foreground/70 font-mono">
             {isIt
-              ? "// Il repository è privato: GitHub punta al profilo. Scrivi per una demo o per l'accesso al codice."
-              : "// The repo is private: GitHub links to the profile. Reach out for a demo or code access."}
+              ? "// Open source: registry, tool-loop, eval harness e 26 test — tutto sul repository."
+              : "// Open source: registry, tool-loop, eval harness and 26 tests — everything on the repo."}
           </p>
         </Section>
 

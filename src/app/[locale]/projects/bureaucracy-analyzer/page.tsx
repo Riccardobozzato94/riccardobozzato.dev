@@ -117,7 +117,7 @@ export default async function BureaucracyAnalyzerPage({ params }: Props) {
               {[
                 isIt ? "PDF in ingresso (multa, lettera INPS, cartella esattoriale)" : "PDF in (fine, INPS letter, tax notice)",
                 isIt ? "Estrazione strutturata: date, importi, ente mittente" : "Structured extraction: dates, amounts, sender agency",
-                isIt ? "Verifica prescrizione (art. 28 L. 689/1981) con LLM locale" : "Prescription check (art. 28 L. 689/1981) with local LLM",
+                isIt ? "Verifica prescrizione (art. 28 L. 689/1981) con regole deterministiche" : "Prescription check (art. 28 L. 689/1981) with deterministic rules",
                 isIt ? "Report JSON strutturato, pronto per workflow e team" : "Structured JSON report, ready for workflows and teams",
               ].map((step, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -138,7 +138,7 @@ export default async function BureaucracyAnalyzerPage({ params }: Props) {
             </div>
             <div className="shrink-0 flex flex-col gap-3 md:items-end">
               <a
-                href="https://github.com/Riccardobozzato94"
+                href="https://github.com/Riccardobozzato94/bureaucracy-analyzer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-xs font-bold tracking-wider text-primary-foreground transition-all hover:brightness-110"
@@ -156,8 +156,8 @@ export default async function BureaucracyAnalyzerPage({ params }: Props) {
           <p className="text-xs text-muted-foreground/70 font-mono flex items-center gap-2">
             <FileSearch className="size-3.5" aria-hidden />
             {isIt
-              ? "// Il repository è privato: GitHub punta al profilo. Scrivi per una demo o per l'accesso al codice."
-              : "// The repo is private: GitHub links to the profile. Reach out for a demo or code access."}
+              ? "// Open source: parser, motore prescrizione e workflow n8n inclusi — tutto sul repository."
+              : "// Open source: parser, prescription engine and n8n workflow included — everything on the repo."}
           </p>
         </Section>
 

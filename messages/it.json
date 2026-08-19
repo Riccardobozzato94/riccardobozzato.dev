@@ -38,9 +38,9 @@
                                                     "title":  "agent0",
                                                     "tag":  "Piattaforma agenti self-hosted",
                                                     "problem":  "Gli agenti \"pronti all'uso\" non girano nei tuoi server, non vedono i tuoi file e non si possono valutare. Ogni prototipo muore alla prima integrazione.",
-                                                    "solution":  "Piattaforma completa self-hosted: LLM locali (Ollama), server MCP per l'accesso a file e sistema, planner con tool-loop e eval harness con 10+ golden case che bloccano le regressioni a ogni commit.",
-                                                    "stack":  ["Python", "Ollama", "MCP", "FastAPI", "Docker"],
-                                                    "result":  "3 agenti in produzione su infrastruttura privata. Eval harness attivo: regressioni bloccate prima del deploy.",
+"solution":  "Piattaforma completa self-hosted: LLM locali (Ollama), registry agenti in YAML, planner con tool-loop e eval harness con golden case che bloccano le regressioni a ogni commit.",
+"stack":  ["Python", "FastAPI", "Ollama", "YAML", "SQLite", "Docker"],
+"result":  "Open source: registry, tool-loop, SQLite e 26 test. 3 agenti in produzione su infrastruttura privata.",
                                                     "href":  "/projects/agent0"
                                                 },
                                     "bureaucracy":  {
@@ -48,8 +48,8 @@
                                                         "tag":  "Agente anti-burocrazia: PDF in ingresso, verdetto in uscita",
                                                         "problem":  "Multe, lettere INPS, cartelle esattoriali: date e importi sepolti in paragrafi illegibili. Nessuno sa se una cartella è prescritta — e nessun tool aiuta.",
                                                         "solution":  "Agente che legge il PDF, estrae date/importi/ente e verifica la prescrizione (art. 28 L. 689/1981) → report JSON strutturato. Distribuito anche come workflow n8n per team e commercialisti.",
-                                                        "stack":  ["Python", "Ollama", "RAG", "n8n"],
-                                                        "result":  "500+ documenti analizzati con LLM locali: estrazione e verifica in secondi, invece che ore.",
+"stack":  ["Python", "pypdf", "FastAPI", "n8n"],
+"result":  "500+ documenti analizzati: estrazione e verifica prescrizione in secondi, invece che ore. CLI + API + workflow n8n open source.",
                                                         "href":  "/projects/bureaucracy-analyzer"
                                                     },
                                     "ciaoElsa":  {
@@ -61,15 +61,6 @@
                                                     "result":  "-30% rework in 8 settimane.",
                                                     "href":  "/#journey"
                                                 },
-                                    "voicestudio":  {
-                                                        "title":  "VoiceStudio",
-                                                        "tag":  "Voice cloning & dubbing locale",
-                                                        "problem":  "Le alternative a ElevenLabs costano, dipendono dal cloud e non rispettano la privacy dei dati vocali. Il TTS open source resta difficile da usare.",
-                                                        "solution":  "Fork mantenuto di OmniVoice-Studio: app desktop (Tauri + Rust) con dettatura real-time, voice cloning zero-shot e doppiaggio video — tutto locale, senza API key.",
-                                                        "stack":  ["Tauri", "Rust", "Python", "FastAPI", "AGPL-3.0"],
-                                                        "result":  "646 lingue supportate, 100% on-device: voice cloning e dubbing senza inviare audio a terzi.",
-                                                        "href":  "/projects/voicestudio"
-                                                    },
                                     "saasBoilerplate":  {
                                                         "title":  "SaaS Boilerplate Max",
                                                         "tag":  "Boilerplate SaaS production-ready",

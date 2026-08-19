@@ -38,9 +38,9 @@
                                                     "title":  "agent0",
                                                     "tag":  "Self-hosted agent platform",
                                                     "problem":  "Off-the-shelf agents don't run on your servers, can't see your files, and can't be evaluated. Every prototype dies at first integration.",
-                                                    "solution":  "Full self-hosted platform: local LLMs (Ollama), MCP servers for file/system access, planner with tool-loop, and an eval harness with 10+ golden cases blocking regressions on every commit.",
-                                                    "stack":  ["Python", "Ollama", "MCP", "FastAPI", "Docker"],
-                                                    "result":  "3 agents in production on private infrastructure. Active eval harness: regressions blocked before deploy.",
+                                                    "solution":  "Complete self-hosted platform: local LLMs (Ollama), YAML agent registry, planner with tool-loop, and an eval harness with golden cases blocking regressions on every commit.",
+                                                    "stack":  ["Python", "FastAPI", "Ollama", "YAML", "SQLite", "Docker"],
+                                                    "result":  "Open source: registry, tool-loop, SQLite and 26 tests. 3 agents in production on private infrastructure.",
                                                     "href":  "/projects/agent0"
                                                 },
                                     "bureaucracy":  {
@@ -48,8 +48,8 @@
                                                         "tag":  "Anti-bureaucracy agent: PDFs in, verdict out",
                                                         "problem":  "Fines, INPS letters, collection notices: dates and amounts buried in unreadable paragraphs. Nobody knows if a notice has lapsed — and no tool helps.",
                                                         "solution":  "Agent that reads the PDF, extracts dates/amounts/issuer, checks prescription (art. 28 L. 689/1981) → structured JSON report. Also shipped as an n8n workflow for teams and accountants.",
-                                                        "stack":  ["Python", "Ollama", "RAG", "n8n"],
-                                                        "result":  "500+ documents analyzed with local LLMs: extraction and verification in seconds instead of hours.",
+                                                        "stack":  ["Python", "pypdf", "FastAPI", "n8n"],
+                                                        "result":  "500+ documents analyzed: extraction and prescription check in seconds instead of hours. Open-source CLI + API + n8n workflow.",
                                                         "href":  "/projects/bureaucracy-analyzer"
                                                     },
                                     "ciaoElsa":  {
@@ -61,15 +61,6 @@
                                                     "result":  "-30% rework in 8 weeks.",
                                                     "href":  "/#journey"
                                                 },
-                                    "voicestudio":  {
-                                                        "title":  "VoiceStudio",
-                                                        "tag":  "Local voice cloning & dubbing",
-                                                        "problem":  "ElevenLabs alternatives cost money, depend on the cloud and don't respect voice data privacy. Open-source TTS remains hard to use.",
-                                                        "solution":  "Maintained fork of OmniVoice-Studio: desktop app (Tauri + Rust) with real-time dictation, zero-shot voice cloning and video dubbing — fully local, no API keys.",
-                                                        "stack":  ["Tauri", "Rust", "Python", "FastAPI", "AGPL-3.0"],
-                                                        "result":  "646 languages supported, 100% on-device: voice cloning and dubbing without sending audio to third parties.",
-                                                        "href":  "/projects/voicestudio"
-                                                    },
                                     "saasBoilerplate":  {
                                                         "title":  "SaaS Boilerplate Max",
                                                         "tag":  "Production-ready SaaS boilerplate",

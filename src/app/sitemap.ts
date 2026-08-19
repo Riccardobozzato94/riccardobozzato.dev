@@ -16,7 +16,6 @@ const STATIC_PAGES = [
   "projects/agent0",
   "projects/bureaucracy-analyzer",
   "projects/saas-boilerplate-max",
-  "projects/voicestudio",
   "services",
   "shipkit",
 ];
