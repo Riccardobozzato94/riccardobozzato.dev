@@ -59,6 +59,8 @@ export default async function HomePage({ params }: Props) {
     stack: string; result: string; viewCase: string;
     agent0: { title: string; tag: string; problem: string; solution: string; stack: string[]; result: string; href: string };
     bureaucracy: { title: string; tag: string; problem: string; solution: string; stack: string[]; result: string; href: string };
+    voicestudio: { title: string; tag: string; problem: string; solution: string; stack: string[]; result: string; href: string };
+    saasBoilerplate: { title: string; tag: string; problem: string; solution: string; stack: string[]; result: string; href: string };
     ciaoElsa: { title: string; tag: string; problem: string; solution: string; stack: string[]; result: string; href: string };
   };
   const method = t.raw("method") as { label: string; title: string; steps: { name: string; desc: string }[] };
@@ -263,6 +265,58 @@ export default async function HomePage({ params }: Props) {
                 </p>
               </div>
             </article>
+
+            {/* voicestudio + saas-boilerplate — compact pair */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <article className="dossier-card p-6 md:p-8 flex flex-col">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <h3 className="text-xl font-bold">{projects.voicestudio.title}</h3>
+                  <span className="rounded-md bg-accent/10 border border-accent/25 px-2.5 py-1 font-mono text-[10px] text-accent">
+                    {projects.voicestudio.tag}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  {projects.voicestudio.solution}
+                </p>
+                <ul className="flex flex-wrap gap-2 mb-5">
+                  {projects.voicestudio.stack.map((s) => (
+                    <li key={s} className="rounded-md border border-outline-variant bg-surface-container-low px-3 py-1.5 font-mono text-[11px] text-muted-foreground">{s}</li>
+                  ))}
+                </ul>
+                <div className="mt-auto">
+                  <p className="dossier-label mb-1">{projects.result}</p>
+                  <p className="text-sm text-foreground/90 leading-relaxed mb-4">{projects.voicestudio.result}</p>
+                  <Link href={projects.voicestudio.href} className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-xs font-bold tracking-wider text-primary-foreground transition-all hover:brightness-110">
+                    {projects.viewCase}
+                    <ArrowUpRight className="size-3.5" />
+                  </Link>
+                </div>
+              </article>
+              <article className="dossier-card p-6 md:p-8 flex flex-col">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <h3 className="text-xl font-bold">{projects.saasBoilerplate.title}</h3>
+                  <span className="rounded-md bg-warn/10 border border-warn/25 px-2.5 py-1 font-mono text-[10px] text-warn">
+                    {projects.saasBoilerplate.tag}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  {projects.saasBoilerplate.solution}
+                </p>
+                <ul className="flex flex-wrap gap-2 mb-5">
+                  {projects.saasBoilerplate.stack.map((s) => (
+                    <li key={s} className="rounded-md border border-outline-variant bg-surface-container-low px-3 py-1.5 font-mono text-[11px] text-muted-foreground">{s}</li>
+                  ))}
+                </ul>
+                <div className="mt-auto">
+                  <p className="dossier-label mb-1">{projects.result}</p>
+                  <p className="text-sm text-foreground/90 leading-relaxed mb-4">{projects.saasBoilerplate.result}</p>
+                  <Link href={projects.saasBoilerplate.href} className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-xs font-bold tracking-wider text-primary-foreground transition-all hover:brightness-110">
+                    {projects.viewCase}
+                    <ArrowUpRight className="size-3.5" />
+                  </Link>
+                </div>
+              </article>
+            </div>
 
             {/* ciaoElsa — band */}
             <article className="dossier-card p-6 md:p-10">

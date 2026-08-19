@@ -163,7 +163,7 @@ export default async function VulnClawPage({ params }: Props) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Button asChild className="h-11 rounded-xl shadow-lg shadow-primary/10">
                 <a
-                  href="https://github.com/Riccardobozzato94"
+                  href="https://github.com/Riccardobozzato94/VulnClaw"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

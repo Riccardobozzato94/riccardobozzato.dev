@@ -60,7 +60,25 @@
                                                     "stack":  ["Process design", "KPI", "GenAI workflow", "Governance"],
                                                     "result":  "-30% rework in 8 settimane.",
                                                     "href":  "/#journey"
-                                                }
+                                                },
+                                    "voicestudio":  {
+                                                        "title":  "VoiceStudio",
+                                                        "tag":  "Voice cloning & dubbing locale",
+                                                        "problem":  "Le alternative a ElevenLabs costano, dipendono dal cloud e non rispettano la privacy dei dati vocali. Il TTS open source resta difficile da usare.",
+                                                        "solution":  "Fork mantenuto di OmniVoice-Studio: app desktop (Tauri + Rust) con dettatura real-time, voice cloning zero-shot e doppiaggio video — tutto locale, senza API key.",
+                                                        "stack":  ["Tauri", "Rust", "Python", "FastAPI", "AGPL-3.0"],
+                                                        "result":  "646 lingue supportate, 100% on-device: voice cloning e dubbing senza inviare audio a terzi.",
+                                                        "href":  "/projects/voicestudio"
+                                                    },
+                                    "saasBoilerplate":  {
+                                                        "title":  "SaaS Boilerplate Max",
+                                                        "tag":  "Boilerplate SaaS production-ready",
+                                                        "problem":  "Ogni nuovo SaaS parte da zero: auth, RBAC, billing, i18n, admin, test. Mesi di lavoro ripetuto prima di una feature vera.",
+                                                        "solution":  "Boilerplate completo: Better Auth (email/social), RBAC multi-organizzazione, Stripe + LemonSqueezy, dashboard admin, i18n IT/EN, test unit/E2E, CI.",
+                                                        "stack":  ["Next.js", "Better Auth", "Drizzle", "Stripe", "LemonSqueezy", "Playwright", "Vitest"],
+                                                        "result":  "Da zero a MVP SaaS con auth+billing+admin in giorni, non mesi. 97 file, 3 workflow CI pronti.",
+                                                        "href":  "/projects/saas-boilerplate-max"
+                                                    }
                               },
                     "method":  {
                                     "label":  "IL METODO",

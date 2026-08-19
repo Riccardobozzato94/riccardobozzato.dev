@@ -84,6 +84,20 @@ export default async function ProjectsPage({ params }: Props) {
                     ? "PDF in ingresso, verdetto in uscita: estrazione date/importi/ente e verifica prescrizione (art. 28 L. 689/1981) con LLM locali. 500+ documenti analizzati."
                     : "PDF in, verdict out: extracts dates/amounts/agency and checks prescription (art. 28 L. 689/1981) with local LLMs. 500+ documents analyzed.",
                 },
+                voicestudio: {
+                  title: "VoiceStudio",
+                  tag: isIt ? "Voice cloning locale" : "Local voice cloning",
+                  desc: isIt
+                    ? "Fork mantenuto di OmniVoice-Studio: dettatura real-time, voice cloning zero-shot e dubbing video, 100% on-device, senza API key, 646 lingue."
+                    : "Maintained fork of OmniVoice-Studio: real-time dictation, zero-shot voice cloning and video dubbing, 100% on-device, no API keys, 646 languages.",
+                },
+                saasBoilerplate: {
+                  title: "SaaS Boilerplate Max",
+                  tag: isIt ? "SaaS production-ready" : "Production-ready SaaS",
+                  desc: isIt
+                    ? "Auth, RBAC multi-org, billing Stripe + LemonSqueezy, admin, i18n IT/EN, test unit + E2E e CI. Da zero a MVP SaaS in giorni."
+                    : "Auth, multi-org RBAC, Stripe + LemonSqueezy billing, admin, IT/EN i18n, unit + E2E tests and CI. From zero to SaaS MVP in days.",
+                },
               };
               return (
                 <>
@@ -112,6 +126,36 @@ export default async function ProjectsPage({ params }: Props) {
                       <span className="rounded-md bg-warn/10 border border-warn/25 px-2 py-0.5 font-mono text-[9px] text-warn">{ai.bureaucracy.tag}</span>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{ai.bureaucracy.desc}</p>
+                    <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-warn transition-colors">
+                      {isIt ? "Leggi il case study" : "Read the case study"}
+                      <ArrowUpRight className="size-3.5" />
+                    </span>
+                  </Link>
+                  <Link
+                    href="/projects/voicestudio"
+                    className="group dossier-card flex flex-col p-6 md:p-8 hover:border-accent/40 transition-colors"
+                  >
+                    <p className="font-mono text-[10px] text-accent mb-3">{ai.label}</p>
+                    <div className="flex items-center gap-2.5 mb-3">
+                      <h2 className="text-2xl font-bold group-hover:text-accent transition-colors">{ai.voicestudio.title}</h2>
+                      <span className="rounded-md bg-accent/10 border border-accent/25 px-2 py-0.5 font-mono text-[9px] text-accent">{ai.voicestudio.tag}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{ai.voicestudio.desc}</p>
+                    <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-accent transition-colors">
+                      {isIt ? "Leggi il case study" : "Read the case study"}
+                      <ArrowUpRight className="size-3.5" />
+                    </span>
+                  </Link>
+                  <Link
+                    href="/projects/saas-boilerplate-max"
+                    className="group dossier-card flex flex-col p-6 md:p-8 hover:border-warn/40 transition-colors"
+                  >
+                    <p className="font-mono text-[10px] text-warn mb-3">{ai.label}</p>
+                    <div className="flex items-center gap-2.5 mb-3">
+                      <h2 className="text-2xl font-bold group-hover:text-warn transition-colors">{ai.saasBoilerplate.title}</h2>
+                      <span className="rounded-md bg-warn/10 border border-warn/25 px-2 py-0.5 font-mono text-[9px] text-warn">{ai.saasBoilerplate.tag}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{ai.saasBoilerplate.desc}</p>
                     <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-warn transition-colors">
                       {isIt ? "Leggi il case study" : "Read the case study"}
                       <ArrowUpRight className="size-3.5" />
@@ -170,6 +214,70 @@ export default async function ProjectsPage({ params }: Props) {
             badge={t("ric2brain.badge")}
             badgeColor="bg-purple-500/10 text-purple-400"
           />
+
+          {/* More experiments — open source */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <p className="font-mono text-[10px] text-muted-foreground tracking-widest">
+                {isIt ? "MORE EXPERIMENTS — OPEN SOURCE" : "MORE EXPERIMENTS — OPEN SOURCE"}
+              </p>
+              <span className="h-px flex-1 bg-outline-variant" />
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  href: "https://github.com/Riccardobozzato94/job-hunter",
+                  title: "job-hunter",
+                  tag: isIt ? "Automazione ricerca lavoro" : "Job search automation",
+                  desc: isIt
+                    ? "Scraper per portali, agente LinkedIn, applier automatico e dashboard risultati. AI assistita per application su misura."
+                    : "Portal scrapers, LinkedIn agent, auto-applier and results dashboard. AI-assisted tailored applications.",
+                },
+                {
+                  href: "https://github.com/Riccardobozzato94/qwen-hermes-bridge",
+                  title: "qwen-hermes-bridge",
+                  tag: isIt ? "LLM locale + Obsidian RAG" : "Local LLM + Obsidian RAG",
+                  desc: isIt
+                    ? "Bridge tra Qwen/llama.cpp locale e il vault Obsidian: RAG sulle note con esclusione delle cartelle sensibili."
+                    : "Bridge between local Qwen/llama.cpp and the Obsidian vault: RAG over notes with sensitive-folder exclusion.",
+                },
+                {
+                  href: "https://github.com/Riccardobozzato94/condominio-demo",
+                  title: "condominio-demo",
+                  tag: isIt ? "Analytics condomini" : "Condo analytics",
+                  desc: isIt
+                    ? "Pipeline dati sintetici: risk scoring, alert automatici, dashboard ECharts, modelli Power BI e forecast."
+                    : "Synthetic data pipeline: risk scoring, automated alerts, ECharts dashboards, Power BI models and forecast.",
+                },
+                {
+                  href: "https://github.com/Riccardobozzato94/youtube-pipeline",
+                  title: "youtube-pipeline",
+                  tag: isIt ? "Pipeline contenuti YouTube" : "YouTube content pipeline",
+                  desc: isIt
+                    ? "Script e voiceover AI-assisted per 3 canali tematici: AI tools, DevSecOps ITA, storytelling finanziario."
+                    : "AI-assisted scripts and voiceovers for 3 thematic channels: AI tools, DevSecOps ITA, financial storytelling.",
+                },
+              ].map((exp) => (
+                <a
+                  key={exp.title}
+                  href={exp.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-lg border border-outline-variant bg-surface-container-low p-5 flex flex-col hover:border-accent/40 transition-colors"
+                >
+                  <div className="flex items-center gap-2.5 mb-2.5">
+                    <h3 className="font-mono text-sm font-bold group-hover:text-accent transition-colors">{exp.title}</h3>
+                    <span className="rounded-md bg-accent/10 border border-accent/20 px-2 py-0.5 font-mono text-[9px] text-accent">{exp.tag}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{exp.desc}</p>
+                  <span className="mt-auto pt-3 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-accent transition-colors">
+                    GitHub
+                    <ArrowUpRight className="size-3.5" />
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
     </>
