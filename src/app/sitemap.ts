@@ -5,7 +5,6 @@ import { getBlogPosts } from "@/lib/blog";
 const STATIC_PAGES = [
   "",
   "about",
-  "accessibility",
   "blog",
   "books",
   "contact",
@@ -13,9 +12,6 @@ const STATIC_PAGES = [
   "playbook",
   "privacy",
   "projects",
-  "projects/agent0",
-  "projects/bureaucracy-analyzer",
-  "projects/saas-boilerplate-max",
   "services",
   "shipkit",
 ];

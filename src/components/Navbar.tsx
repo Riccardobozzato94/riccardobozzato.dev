@@ -10,15 +10,13 @@ import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
-  { key: "aiProjects", href: "/#ai-projects" },
+  { key: "services", href: "/services" },
   { key: "projects", href: "/projects" },
   { key: "blog", href: "/blog" },
-  { key: "contact", href: "/contact" },
 ] as const;
 
 export default function Navbar() {
   const t = useTranslations("nav");
-  const ai = useTranslations("ai");
   const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -33,10 +31,6 @@ export default function Navbar() {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/" || pathname === "";
-    if (href.startsWith("/#")) {
-      // anchor: attivo solo se siamo sulla home (la sezione è sulla home)
-      return (pathname === "/" || pathname === "") && href === "/#ai-projects";
-    }
     return pathname.startsWith(href);
   };
 
@@ -98,7 +92,7 @@ export default function Navbar() {
             href="/contact"
             className="ml-3 inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-black px-5 py-2 text-xs font-bold tracking-wider rounded-lg transition-all active:scale-95 shadow-lg shadow-primary/25"
           >
-            {ai("hero.ctaTalk")}
+            {locale === "it" ? "Prenota una Call" : "Book a Call"}
             <ArrowRight className="size-3.5" />
           </Link>
         </nav>
@@ -109,7 +103,7 @@ export default function Navbar() {
             href="/contact"
             className="inline-flex items-center gap-1.5 bg-primary text-black px-3.5 py-2 text-xs font-bold tracking-wider rounded-lg"
           >
-            {ai("hero.ctaTalk")}
+            {locale === "it" ? "Prenota Call" : "Book a Call"}
           </Link>
           <Link
             href={pathname}

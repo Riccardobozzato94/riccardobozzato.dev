@@ -1,42 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
 
-/* ───── Design Tokens — "Engineer's Dossier / Terminal" ───── */
+/* ───── Design Tokens ───── */
 :root {
-  /* Palette esatta (addendum): bg #0B0F14 · surface #11161D · text #E6EDF3 · muted #8B949E · accent #00E58C · warn #FFB454 */
-  --background: 213 25% 6%;          /* #0B0F14 */
-  --foreground: 210 43% 93%;         /* #E6EDF3 */
-  --card: 213 26% 9%;                /* #11161D */
-  --card-foreground: 210 43% 93%;
-  --popover: 213 26% 9%;
-  --popover-foreground: 210 43% 93%;
-  --primary: 157 100% 45%;           /* #00E58C */
-  --primary-foreground: 213 25% 6%;  /* #0B0F14 */
-  --secondary: 213 26% 9%;
-  --secondary-foreground: 210 43% 93%;
-  --muted: 213 26% 9%;
-  --muted-foreground: 212 10% 58%;   /* #8B949E */
-  --accent: 157 100% 45%;            /* #00E58C */
-  --accent-foreground: 213 25% 6%;
+  --background: 0 0% 3%;
+  --foreground: 0 0% 96%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 96%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 0 0% 96%;
+  --primary-foreground: 0 0% 3%;
+  --secondary: 0 0% 11%;
+  --secondary-foreground: 0 0% 96%;
+  --muted: 0 0% 9%;
+  --muted-foreground: 0 0% 55%;
+  --accent: 152 76% 40%;
+  --accent-foreground: 0 0% 3%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 96%;
-  --warn: 32 100% 66%;               /* #FFB454 */
-  --border: 215 28% 17%;             /* #1F2937 */
-  --input: 215 28% 17%;
-  --ring: 157 100% 45%;
-  --radius: 0.5rem;                  /* max 8px */
-
-  /* Surface scale (material-style, coerente con la palette) */
-  --surface-container: 213 26% 9%;        /* #11161D */
-  --surface-container-low: 213 27% 7%;    /* #0D1218 */
-  --surface-container-lowest: 213 25% 6%; /* #0B0F14 */
-  --surface-container-high: 215 25% 12%;  /* #161D26 */
-  --surface-container-highest: 215 28% 15%; /* #1B2430 */
-  --outline-variant: 215 28% 17%;         /* #1F2937 */
-  --outline: 216 20% 23%;                 /* #2E3A48 */
+  --border: 0 0% 12%;
+  --input: 0 0% 12%;
+  --ring: 152 76% 40%;
+  --radius: 0.75rem;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
@@ -66,33 +59,14 @@
   --color-accent-foreground: hsl(var(--accent-foreground));
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-warn: hsl(var(--warn));
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  --radius: 0.5rem;
+  --radius: 0.75rem;
 
-  --color-surface-container: hsl(var(--surface-container));
-  --color-surface-container-low: hsl(var(--surface-container-low));
-  --color-surface-container-lowest: hsl(var(--surface-container-lowest));
-  --color-surface-container-high: hsl(var(--surface-container-high));
-  --color-surface-container-highest: hsl(var(--surface-container-highest));
-  --color-outline-variant: hsl(var(--outline-variant));
-  --color-outline: hsl(var(--outline));
-
-  /* Fonts self-hosted via next/font (build-time), zero CDN runtime */
-  --font-heading: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  --font-body: var(--font-inter), "Inter", sans-serif;
-  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
-
-  /* Radius scale — max 8px (addendum: radius max 8px) */
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 8px;
-  --radius-2xl: 8px;
-  --radius-3xl: 8px;
-  --radius-full: 9999px;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* Animations */
   --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -336,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
   overflow: hidden;
-  font-family: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.8125rem;
   line-height: 1.7;
   box-shadow: 0 0 40px hsl(var(--accent) / 0.06), 0 20px 60px hsl(0 0% 0% / 0.5);
@@ -446,7 +420,9 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
-/* ───── Nuovo Design System: ENGINEER'S DOSSIER / TERMINAL ───── */
+/* ───── Nuovo Design System: OPERATIONS_ELITE ───── */
+
+/* Material Symbols icon font + Geist font imported at top of file for valid CSS ordering */
 
 /* Border radius overrides for new design */
 :root {
@@ -479,41 +455,52 @@ h1, h2, h3, h4, h5, h6 {
   height: 300px;
 }
 
-/* ───── Mono data label (small data labels like "IL PROBLEMA", "LA SOLUZIONE") ───── */
+/* Timeline line — vertical bar for "Il Viaggio" */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, hsl(var(--accent) / 0.6), hsl(var(--accent) / 0.05));
+}
+
+/* Mono data label (small data labels like "IL PROBLEMA", "LA SOLUZIONE") */
 .font-mono-data {
-  font-family: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  font-family: 'Geist', 'Inter', sans-serif;
   letter-spacing: 0.05em;
 }
 
 /* Label caps (uppercase labels) */
 .font-label-caps {
-  font-family: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  font-family: 'Geist', 'Inter', sans-serif;
   letter-spacing: 0.1em;
 }
 
 /* Headline font for new design */
 .font-headline-md {
-  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  font-family: 'Geist', 'Inter', sans-serif;
   font-weight: 600;
 }
 .font-headline-lg {
-  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  font-family: 'Geist', 'Inter', sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 .font-headline-xl {
-  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  font-family: 'Geist', 'Inter', sans-serif;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
 
 /* Body font for new design */
 .font-body-md {
-  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-family: 'Geist', 'Inter', sans-serif;
   font-weight: 400;
 }
 .font-body-lg {
-  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-family: 'Geist', 'Inter', sans-serif;
   font-weight: 400;
 }
 
@@ -523,194 +510,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-on-primary, #000);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ENGINEER'S DOSSIER / TERMINAL — utilities aggiuntive
-   ═══════════════════════════════════════════════════════════ */
-
-/* ───── Texture: dot-grid + scanlines (3-4% opacity) ───── */
-.dot-grid {
-  background-image: radial-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-.scanlines {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    hsl(var(--foreground) / 0.02) 0px,
-    hsl(var(--foreground) / 0.02) 1px,
-    transparent 1px,
-    transparent 4px
-  );
-}
-
-/* ───── Hero: riga terminale typed + cursore blinking ───── */
-.typed-line {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 100%;
-  animation: type-line 0.9s steps(30) forwards;
-}
-.cursor-blink {
-  display: inline-block;
-  width: 0.6em;
-  height: 1em;
-  margin-left: 2px;
-  background: hsl(var(--accent));
-  vertical-align: text-bottom;
-  animation: blink-cursor 1s step-end infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .typed-line { animation: none; }
-  .cursor-blink { animation: none; }
-}
-
-/* ───── Console agente: log che scorrono ───── */
-.console-log {
-  opacity: 0;
-  transform: translateY(4px);
-  animation: log-in 0.45s ease-out forwards;
-}
-@keyframes log-in {
-  to { opacity: 1; transform: translateY(0); }
-}
-.console-log-ok { color: hsl(var(--accent)); }
-.console-log-muted { color: hsl(var(--muted-foreground)); }
-.console-log-warn { color: hsl(var(--warn)); }
-
-/* ───── Timeline git log --oneline ───── */
-.gitlog {
-  position: relative;
-  padding-left: 2.5rem;
-}
-.gitlog::before {
-  content: '';
-  position: absolute;
-  left: 1rem;
-  top: 0.25rem;
-  bottom: 0.25rem;
-  width: 2px;
-  background: linear-gradient(to bottom, hsl(var(--accent) / 0.5), hsl(var(--outline-variant) / 0.15));
-}
-.gitlog-row {
-  position: relative;
-}
-.gitlog-row::before {
-  content: '';
-  position: absolute;
-  left: -1.75rem;
-  top: 0.6rem;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: hsl(var(--surface-container-highest));
-  border: 2px solid hsl(var(--accent));
-  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
-}
-.gitlog-hash {
-  font-family: var(--font-jetbrains-mono), monospace;
-  color: hsl(var(--accent));
-}
-
-/* ───── Tile telemetria (AI metrics) ───── */
-.metric-tile {
-  background: hsl(var(--surface-container));
-  border: 1px solid hsl(var(--outline-variant));
-  position: relative;
-  overflow: hidden;
-}
-.metric-tile::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(hsl(var(--accent) / 0.05) 1px, transparent 1px);
-  background-size: 14px 14px;
-  pointer-events: none;
-}
-.metric-value {
-  font-family: var(--font-jetbrains-mono), monospace;
-  font-variant-numeric: tabular-nums;
-  color: hsl(var(--accent));
-}
-
-/* ───── Hover underline accent ───── */
-.hover-underline {
-  position: relative;
-}
-.hover-underline::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 1px;
-  background: hsl(var(--accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-.hover-underline:hover::after,
-.hover-underline:focus-visible::after {
-  transform: scaleX(1);
-}
-
-/* ───── Sticky mobile CTA ───── */
-.sticky-mobile-cta {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 40;
-  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-  background: hsl(var(--surface-container) / 0.96);
-  border-top: 1px solid hsl(var(--outline-variant));
-  backdrop-filter: blur(8px);
-}
-
-/* ───── CTA scroll-reveal (sobrio) ───── */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
-
-/* ───── Card dossier (case studies / progetti) ───── */
-.dossier-card {
-  background: hsl(var(--surface-container));
-  border: 1px solid hsl(var(--outline-variant));
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-.dossier-card:hover {
-  border-color: hsl(var(--accent) / 0.5);
-  transform: translateY(-2px);
-}
-.dossier-label {
-  font-family: var(--font-jetbrains-mono), monospace;
-  font-size: 0.625rem;
-  letter-spacing: 0.14em;
-  color: hsl(var(--muted-foreground));
-}
-
-/* ───── Status dot pulsante (microcopy) ───── */
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: hsl(var(--accent));
-  box-shadow: 0 0 0 0 hsl(var(--accent) / 0.5);
-  animation: status-pulse 2s ease-out infinite;
-}
-@keyframes status-pulse {
-  0% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.45); }
-  70% { box-shadow: 0 0 0 8px hsl(var(--accent) / 0); }
-  100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .status-dot { animation: none; }
+/* Material Symbols default styling */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
 }

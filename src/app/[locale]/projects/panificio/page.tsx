@@ -7,9 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, ExternalLink, Mail, Heart, Sparkles, Globe } from "lucide-react";
 import Section from "@/components/Section";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import { Link } from "@/i18n/navigation";
-import { getLocale } from "next-intl/server";
 
 const baseUrl = SITE_URL;
 
@@ -42,8 +40,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PanificioPage() {
   const t = await getTranslations("projects.panificio");
-  const locale = await getLocale();
-  const isIt = locale === "it";
   const features = t.raw("features") as string[];
   const techstack = t.raw("techstack") as string[];
   const screenshots = t.raw("screenshots") as { label: string }[];
@@ -57,9 +53,6 @@ export default async function PanificioPage() {
         </div>
         <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-6 flex justify-center">
-              <Breadcrumbs items={[{ label: isIt ? "Progetti" : "Projects", href: "/projects" }, { label: t("title") }]} />
-            </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-1.5 text-sm text-amber-500 mb-6">
               <Heart className="size-4" />
               {t("badge")}
