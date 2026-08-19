@@ -7,6 +7,6 @@ export const SITE_URL =
 export const SITE_NAME = "riccardobozzato.com";
 
 export const SITE_DESCRIPTION =
-  "Delivery Manager & Head of Operations (PMP®) da Legnaro, PD. Rendo i team digitali più veloci, meno caotici e più prevedibili. €500K+ consegnati, team 8-12, -40% time-to-market. Disponibile da subito.";
+  "AI Product Manager & AI Transformation Lead (PMP®, ex Accenture). Agenti AI, automazioni e processi enterprise con risultati misurabili. Disponibile subito — remote EU (CET ±2).";
 
 export const OG_IMAGE = "/images/og-default.svg";

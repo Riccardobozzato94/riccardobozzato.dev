@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github, Sparkles, BookOpen, Brain, Search, GitBranch, Layers, Database, Workflow } from "lucide-react";
 import Section from "@/components/Section";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Link } from "@/i18n/navigation";
 
 const baseUrl = SITE_URL;
@@ -161,6 +162,9 @@ export default async function Ric2brainPage({ params }: Props) {
         </div>
         <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
+            <div className="mb-6 flex justify-center">
+              <Breadcrumbs items={[{ label: isIt ? "Progetti" : "Projects", href: "/projects" }, { label: "ric2brain" }]} />
+            </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <Brain className="size-3.5" />
               {isIt ? "Second Brain" : "Second Brain"}

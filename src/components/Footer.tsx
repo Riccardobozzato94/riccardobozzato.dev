@@ -1,12 +1,13 @@
 "use client";
 
 import { useTranslations, useLocale } from "next-intl";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, ShieldCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
+  const ai = useTranslations("ai");
   const locale = useLocale();
   const isIt = locale === "it";
   const currentYear = new Date().getFullYear();
@@ -18,31 +19,35 @@ export default function Footer() {
         <div className="max-w-xs">
           <div className="text-xl font-bold text-foreground mb-4">Riccardo Bozzato</div>
           <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
-            Head of Operations | Delivery Manager | PMP®
+            AI & Digital Transformation Leader · PMP® · Ex Accenture
           </p>
-          <p className="text-xs text-muted-foreground/60 mb-4 leading-relaxed">
-            €500K+ portfolio · -40% TtM · +25% produttività · 7+ anni
+          <p className="text-xs text-muted-foreground/60 mb-4 leading-relaxed font-mono">
+            3 agenti in produzione · 15+ automazioni · 500+ doc analizzati
           </p>
-          <div className="bg-primary/10 border border-primary/30 rounded-lg px-4 py-3 mb-6">
-            <div className="flex items-center gap-2 text-xs font-semibold text-primary mb-1">
-              <span className="size-2 rounded-full bg-primary animate-pulse shrink-0" />
-              {isIt ? "Disponibile da subito" : "Available immediately"}
+          <div className="bg-accent/5 border border-accent/25 rounded-lg px-4 py-3 mb-6">
+            <div className="flex items-center gap-2 text-xs font-semibold text-accent mb-1">
+              <span className="status-dot shrink-0" />
+              {ai("hero.status")}
             </div>
             <p className="text-[11px] text-muted-foreground/80 leading-relaxed">
               {isIt
-                ? "Head of Ops / DM / PM Senior — Padova · Milano · Remote"
-                : "Head of Ops / Delivery Manager / Senior PM — Padua · Milan · Remote"}
+                ? "AI Product Manager · AI Transformation Lead · AI Delivery Manager"
+                : "AI Product Manager · AI Transformation Lead · AI Delivery Manager"}
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="size-4" />
-              Legnaro, PD, Italy
+              Legnaro, PD, Italy — remote EU
             </div>
             <a href="mailto:riccardobozzato@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Mail className="size-4" />
               riccardobozzato@gmail.com
             </a>
+            <p className="flex items-center gap-2 text-xs text-muted-foreground/70 font-mono pt-1">
+              <ShieldCheck className="size-3.5 text-accent" />
+              {t("promise")}
+            </p>
           </div>
         </div>
 
@@ -54,12 +59,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li><Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("home")}</Link></li>
-              <li><Link href="/#vision" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("vision")}</Link></li>
-              <li><Link href="/#results" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("results")}</Link></li>
+              <li><Link href="/#ai-projects" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("aiProjects")}</Link></li>
               <li><Link href="/projects" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("projects")}</Link></li>
               <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("blog")}</Link></li>
-              <li><Link href="/books" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("books")}</Link></li>
+              <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("contact")}</Link></li>
               <li><Link href="/#journey" className="text-sm text-muted-foreground hover:text-primary transition-colors">{nav("journey")}</Link></li>
+            </ul>
+          </div>
+          <div>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">{isIt ? "PROGETTI AI" : "AI PROJECTS"}</h4>
+            <ul className="space-y-4">
+              <li><Link href="/projects/agent0" className="text-sm text-muted-foreground hover:text-primary transition-colors">agent0</Link></li>
+              <li><Link href="/projects/bureaucracy-analyzer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Bureaucracy Analyzer</Link></li>
             </ul>
           </div>
           <div>

@@ -3,7 +3,8 @@ import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
-import { Sparkles, Briefcase } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { Sparkles, Briefcase, ArrowUpRight } from "lucide-react";
 
 const baseUrl = SITE_URL;
 
@@ -64,6 +65,63 @@ export default async function ProjectsPage({ params }: Props) {
 
       <Section animate className="pt-0!">
         <div className="max-w-6xl mx-auto space-y-8">
+          {/* AI Projects — in produzione (checklist punto 1) */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {(() => {
+              const ai = {
+                label: isIt ? "AI PROJECTS — IN PRODUZIONE" : "AI PROJECTS — IN PRODUCTION",
+                agent0: {
+                  title: "agent0",
+                  tag: isIt ? "Piattaforma agenti self-hosted" : "Self-hosted agent platform",
+                  desc: isIt
+                    ? "LLM locali (Ollama), server MCP, planner con tool-loop ed eval harness con 10+ golden case. 3 agenti in produzione su infrastruttura privata."
+                    : "Local LLMs (Ollama), MCP servers, planner with tool-loop and an eval harness with 10+ golden cases. 3 agents in production on private infrastructure.",
+                },
+                bureaucracy: {
+                  title: "Bureaucracy Analyzer",
+                  tag: isIt ? "Agente anti-burocrazia" : "Anti-bureaucracy agent",
+                  desc: isIt
+                    ? "PDF in ingresso, verdetto in uscita: estrazione date/importi/ente e verifica prescrizione (art. 28 L. 689/1981) con LLM locali. 500+ documenti analizzati."
+                    : "PDF in, verdict out: extracts dates/amounts/agency and checks prescription (art. 28 L. 689/1981) with local LLMs. 500+ documents analyzed.",
+                },
+              };
+              return (
+                <>
+                  <Link
+                    href="/projects/agent0"
+                    className="group dossier-card flex flex-col p-6 md:p-8 hover:border-accent/40 transition-colors"
+                  >
+                    <p className="font-mono text-[10px] text-accent mb-3">{ai.label}</p>
+                    <div className="flex items-center gap-2.5 mb-3">
+                      <h2 className="text-2xl font-bold group-hover:text-accent transition-colors">{ai.agent0.title}</h2>
+                      <span className="rounded-md bg-accent/10 border border-accent/25 px-2 py-0.5 font-mono text-[9px] text-accent">{ai.agent0.tag}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{ai.agent0.desc}</p>
+                    <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-accent transition-colors">
+                      {isIt ? "Leggi il case study" : "Read the case study"}
+                      <ArrowUpRight className="size-3.5" />
+                    </span>
+                  </Link>
+                  <Link
+                    href="/projects/bureaucracy-analyzer"
+                    className="group dossier-card flex flex-col p-6 md:p-8 hover:border-warn/40 transition-colors"
+                  >
+                    <p className="font-mono text-[10px] text-warn mb-3">{ai.label}</p>
+                    <div className="flex items-center gap-2.5 mb-3">
+                      <h2 className="text-2xl font-bold group-hover:text-warn transition-colors">{ai.bureaucracy.title}</h2>
+                      <span className="rounded-md bg-warn/10 border border-warn/25 px-2 py-0.5 font-mono text-[9px] text-warn">{ai.bureaucracy.tag}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{ai.bureaucracy.desc}</p>
+                    <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-xs font-bold text-foreground group-hover:text-warn transition-colors">
+                      {isIt ? "Leggi il case study" : "Read the case study"}
+                      <ArrowUpRight className="size-3.5" />
+                    </span>
+                  </Link>
+                </>
+              );
+            })()}
+          </div>
+
           {/* Featured: ShipKit */}
           <ProjectCard
             title={t("shipkit.title")}

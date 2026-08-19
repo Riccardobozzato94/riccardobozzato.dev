@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, ExternalLink, Mail, Sparkles } from "lucide-react";
 import Section from "@/components/Section";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import PaywallGate from "@/components/PaywallGate";
 import { Link } from "@/i18n/navigation";
 
@@ -56,6 +57,9 @@ export default async function VulnClawPage({ params }: Props) {
         </div>
         <Section className="pt-0! pb-0! text-center relative">
           <div className="max-w-4xl mx-auto">
+            <div className="mb-6 flex justify-center">
+              <Breadcrumbs items={[{ label: isIt ? "Progetti" : "Projects", href: "/projects" }, { label: t("title") }]} />
+            </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />

@@ -1,8 +1,183 @@
 {
     "site":  {
                     "title":  "Riccardo Bozzato",
-                    "tagline":  "Delivery Manager | Head of Operations | PMP® — rendo i team digitali più veloci, meno caotici e più prevedibili.",
-                    "description":  "Delivery Manager & Head of Operations (PMP®). Costruisco l'architettura operativa che trasforma il caos in esecuzione prevedibile. €500K+ portfolio, -40% time-to-market, team 8-12. Disponibile da subito."
+                    "tagline":  "AI & Digital Transformation Leader — costruisco agenti AI e automazioni che risolvono problemi reali.",
+                    "description":  "AI Product Manager & AI Transformation Lead (PMP®, ex Accenture). Agenti AI, automazioni e processi enterprise con risultati misurabili. Disponibile subito — remote EU (CET ±2)."
+              },
+    "ai":  {
+                    "hero":  {
+                                    "status":  "disponibile subito — remote EU (CET ±2)",
+                                    "title":  "AI & Digital Transformation Leader — costruisco agenti AI e automazioni che risolvono problemi reali.",
+                                    "sub":  "Ex Accenture · PMP® · Head of Operations in startup AI. Dal prototipo alla produzione: agenti AI, automazioni e processi enterprise con risultati misurabili.",
+                                    "trust":  [
+                                                  "PMP®",
+                                                  "Ex Accenture",
+                                                  "Ex Head of Ops AI Startup",
+                                                  "GenAI & LLM Specialist",
+                                                  "Python",
+                                                  "MCP",
+                                                  "Disponibile subito",
+                                                  "Remote EU"
+                                              ],
+                                    "ctaProjects":  "Guarda i progetti AI",
+                                    "ctaTalk":  "Parliamone",
+                                    "whoami":  "ai-delivery-lead",
+                                    "consoleTitle":  "agent console — status"
+                              },
+                    "projects":  {
+                                    "label":  "AI PROJECTS",
+                                    "title":  "Progetti AI in produzione.",
+                                    "intro":  "Niente demo: agenti con eval harness, automazioni che processano documenti veri, pipeline che producono risultati verificabili.",
+                                    "problem":  "PROBLEMA",
+                                    "solution":  "SOLUZIONE",
+                                    "stack":  "STACK",
+                                    "result":  "RISULTATO",
+                                    "viewCase":  "Leggi il case study",
+                                    "githubLink":  "Codice su GitHub",
+                                    "agent0":  {
+                                                    "title":  "agent0",
+                                                    "tag":  "Piattaforma agenti self-hosted",
+                                                    "problem":  "Gli agenti \"pronti all'uso\" non girano nei tuoi server, non vedono i tuoi file e non si possono valutare. Ogni prototipo muore alla prima integrazione.",
+                                                    "solution":  "Piattaforma completa self-hosted: LLM locali (Ollama), server MCP per l'accesso a file e sistema, planner con tool-loop e eval harness con 10+ golden case che bloccano le regressioni a ogni commit.",
+                                                    "stack":  ["Python", "Ollama", "MCP", "FastAPI", "Docker"],
+                                                    "result":  "3 agenti in produzione su infrastruttura privata. Eval harness attivo: regressioni bloccate prima del deploy.",
+                                                    "href":  "/projects/agent0"
+                                                },
+                                    "bureaucracy":  {
+                                                        "title":  "Bureaucracy Analyzer",
+                                                        "tag":  "Agente anti-burocrazia: PDF in ingresso, verdetto in uscita",
+                                                        "problem":  "Multe, lettere INPS, cartelle esattoriali: date e importi sepolti in paragrafi illegibili. Nessuno sa se una cartella è prescritta — e nessun tool aiuta.",
+                                                        "solution":  "Agente che legge il PDF, estrae date/importi/ente e verifica la prescrizione (art. 28 L. 689/1981) → report JSON strutturato. Distribuito anche come workflow n8n per team e commercialisti.",
+                                                        "stack":  ["Python", "Ollama", "RAG", "n8n"],
+                                                        "result":  "500+ documenti analizzati con LLM locali: estrazione e verifica in secondi, invece che ore.",
+                                                        "href":  "/projects/bureaucracy-analyzer"
+                                                    },
+                                    "ciaoElsa":  {
+                                                    "title":  "Ciao Elsa",
+                                                    "tag":  "Assistente GenAI con quality gate",
+                                                    "problem":  "Startup AI in crescita: processi manuali, rework tra funzioni, nessuna metrica su qualità e delivery.",
+                                                    "solution":  "Architettura operativa + quality gate sui flussi GenAI: KPI, dashboard real-time, governance. È il sistema — non la fortuna — a garantire la qualità.",
+                                                    "stack":  ["Process design", "KPI", "GenAI workflow", "Governance"],
+                                                    "result":  "-30% rework in 8 settimane.",
+                                                    "href":  "/#journey"
+                                                }
+                              },
+                    "method":  {
+                                    "label":  "IL METODO",
+                                    "title":  "Dal prototipo alla produzione, senza teatro.",
+                                    "steps":  [
+                                                  { "name": "Discovery", "desc": "Il problema vero, prima di ogni codice." },
+                                                  { "name": "Prototipo", "desc": "La cosa più piccola che funziona." },
+                                                  { "name": "Eval", "desc": "Golden case, niente vibes." },
+                                                  { "name": "Produzione", "desc": "Metriche, quality gate, ownership." }
+                                              ]
+                              },
+                    "metrics":  {
+                                    "label":  "AI METRICS",
+                                    "title":  "Numeri di telemetria, non di marketing.",
+                                    "tiles":  [
+                                                  { "value": "3", "suffix": "", "label": "agenti in produzione" },
+                                                  { "value": "15", "suffix": "+", "label": "automazioni back-office" },
+                                                  { "value": "500", "suffix": "+", "label": "documenti analizzati con LLM locali" },
+                                                  { "value": "10", "suffix": "+", "label": "golden case nell'eval harness" }
+                                              ]
+                              },
+                    "stack":  {
+                                    "label":  "TECH STACK",
+                                    "title":  "Strumenti con cui consegno.",
+                                    "items":  ["Python", "Ollama", "MCP", "RAG", "FastAPI", "Google Apps Script", "n8n", "SAP UI5", "Pimcore (certificato)", "Magento/Shopware", "Linux", "Docker", "Git"]
+                              },
+                    "cases":  {
+                                    "label":  "CASE STUDIES",
+                                    "title":  "Risultati misurabili, non teoria.",
+                                    "problemLabel":  "IL PROBLEMA",
+                                    "solutionLabel":  "LA SOLUZIONE",
+                                    "esse":  {
+                                                  "company":  "ESSE SOLUTIONS",
+                                                  "period":  "2024–2026 · DELIVERY MANAGER",
+                                                  "title":  "Automazione della delivery su portfolio €500K+",
+                                                  "problem":  "Portfolio e-commerce enterprise (Pimcore, Magento, Shopware) con ritardi di consegna e comunicazione frammentata.",
+                                                  "solution":  "Framework Agile su misura + automazione dei flussi di delivery e governance del dato.",
+                                                  "metrics":  [
+                                                                  { "v": "-40%", "l": "time-to-market" },
+                                                                  { "v": "+25%", "l": "produttività team distribuiti (8-12)" }
+                                                              ]
+                                              },
+                                    "accenture":  {
+                                                      "company":  "ACCENTURE",
+                                                      "period":  "2022–2024 · IT SYSTEMS SPECIALIST",
+                                                      "title":  "Automazione processi IT in banking/insurance",
+                                                      "problem":  "Processi manuali con costi occulti e rischi di compliance.",
+                                                      "solution":  "Mappatura e automazione dei flussi critici con SAP UI5 e interfacce più intuitive.",
+                                                      "metrics":  [
+                                                                      { "v": "+30%", "l": "efficienza operativa" },
+                                                                      { "v": "-15%", "l": "errori manuali" }
+                                                                  ]
+                                                  },
+                                    "ciaoElsa":  {
+                                                    "company":  "CIAO ELSA",
+                                                    "period":  "2026 · HEAD OF OPERATIONS — AI STARTUP",
+                                                    "title":  "Quality gate per i flussi GenAI",
+                                                    "problem":  "Nessuna architettura operativa in una startup AI in crescita: rework tra funzioni, zero metriche.",
+                                                    "solution":  "Processi, KPI e dashboard real-time con quality gate sui flussi GenAI.",
+                                                    "metrics":  [
+                                                                    { "v": "-30%", "l": "rework interfunzionale in 8 settimane" }
+                                                                ]
+                                                }
+                              },
+                    "timeline":  {
+                                    "label":  "TIMELINE",
+                                    "title":  "git log --oneline",
+                                    "entries":  [
+                                                    { "hash": "a3f9c1e", "year": "2026", "role": "Ciao Elsa — Head of Ops (AI startup)", "metric": "-30% rework in 8 settimane" },
+                                                    { "hash": "b7e2d04", "year": "2024–26", "role": "Esse Solutions — Delivery Manager", "metric": "-40% TtM · +25% produttività" },
+                                                    { "hash": "c1d5a88", "year": "2022–24", "role": "Accenture — IT Systems Specialist", "metric": "+30% efficienza · -15% errori" },
+                                                    { "hash": "e0f4b77", "year": "2018–21", "role": "Retail — IN'S, ALDI, Terranova", "metric": "fondamenta operative" }
+                                                ]
+                              },
+                    "blog":  {
+                                    "label":  "BLOG / SCRITTI",
+                                    "title":  "Cose che ho costruito, spiegate.",
+                                    "comingSoon":  "Articolo in arrivo",
+                                    "stubs":  [
+                                                    { "title":  "Ho usato un LLM locale per contestare le cartelle esattoriali", "abstract":  "Come ho costruito un agente che legge PDF burocratici, estrae date e importi e verifica la prescrizione (art. 28 L. 689/1981). Il caso d'uso più concreto dell'anno: un LLM che salva tempo e soldi senza mandare nulla nel cloud." },
+                                                    { "title":  "Quality gate per progetti GenAI: le metriche che contano", "abstract":  "La maggior parte dei progetti GenAI fallisce perché nessuno definisce cosa significa \"funziona\". Eval harness, golden case, regressioni: il sistema di qualità che uso in produzione e come replicarlo." },
+                                                    { "title":  "agent0: anatomia di una piattaforma agenti open-source", "abstract":  "LLM locali, MCP server, planner e tool-loop: come ho architettato agent0, dallo scheduler all'eval harness, e le lezioni apprese portando 3 agenti in produzione." }
+                                                ]
+                              },
+                    "faq":  {
+                                    "label":  "FAQ",
+                                    "title":  "Domande frequenti (di recruiter e founder).",
+                                    "items":  [
+                                                    { "q":  "Sei disponibile subito?", "a":  "Sì — immediatamente disponibile per un ruolo full-time o un engagement di consulenza. Remote-first in EU (CET ±2), on-site occasionale possibile." },
+                                                    { "q":  "Lavori in remoto o in sede?", "a":  "Remote-first in tutta Europa (fuso CET ±2). Base in Veneto (Legnaro, PD) per incontri e workshop on-site quando servono." },
+                                                    { "q":  "Dipendente o partita IVA?", "a":  "Entrambi. Contratto da dipendente per ruoli stabili, P.IVA per consulenza o interim. Niente dogmi: dipende dal progetto." },
+                                                    { "q":  "Qual è il tuo stack principale?", "a":  "Python, LLM locali (Ollama), MCP, RAG, FastAPI per agenti e automazioni; n8n e Google Apps Script per i flussi back-office; SAP UI5, Pimcore, Magento/Shopware per l'enterprise. Linux, Docker, Git alla base." },
+                                                    { "q":  "Come approcci un progetto AI?", "a":  "Discovery → prototipo → eval → produzione. Prima il problema vero, poi un prototipo minimo, poi l'eval harness con golden case (niente vibes), e solo dopo la produzione con metriche e quality gate." }
+                                                ]
+                              },
+                    "where":  {
+                                    "label":  "DOVE & COME LAVORO",
+                                    "title":  "Base in Veneto, impatto in tutta Europa.",
+                                    "text":  "Remote-first in EU (CET ±2), con sede a Legnaro (PD). Disponibile per on-site occasionali. Per ruoli full-time (AI Product Manager, AI Transformation Lead, AI Delivery Manager) o engagement di consulenza e interim."
+                              },
+                    "contact":  {
+                                    "label":  "CONTATTI",
+                                    "title":  "Costruiamo qualcosa che funziona.",
+                                    "text":  "Un ruolo, un progetto, un'idea: parliamone. Se cerchi qualcuno che consegni agenti e automazioni in produzione — e non slide — sono la persona giusta.",
+                                    "cta":  "Parliamone",
+                                    "promise":  "Rispondo entro 24 ore lavorative.",
+                                    "links":  "LinkedIn · GitHub · CV"
+                              },
+                    "easter":  {
+                                    "title":  "sudo hire-me",
+                                    "output":  "Access granted. Riccardo è disponibile subito — remote EU (CET ±2).",
+                                    "cta":  "Contattami",
+                                    "close":  "Chiudi"
+                              },
+                    "sticky":  {
+                                    "cta":  "Contattami"
+                              }
               },
     "accessibility":  {
                     "title":  "Dichiarazione di Accessibilità",
@@ -57,6 +232,7 @@
         "vision": "La Visione",
         "results": "Risultati",
         "journey": "Il Viaggio",
+                "aiProjects": "Progetti AI",
                 "projects":  "Progetti",
                 "panificio":  "Panificio",
                 "shipkit":  "ShipKit",
@@ -107,9 +283,10 @@
                      }
                    ]
               },
-    "footer":  {
-                   "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
-                   "builtWith":  "Realizzato con Next.js \u0026 shadcn/ui",
+"footer":  {
+                    "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
+                    "builtWith":  "Realizzato con Next.js \u0026 shadcn/ui",
+                    "promise":  "Rispondo entro 24 ore lavorative.",
                     "social":  {
                                     "github":  "GitHub",
                                     "linkedin":  "LinkedIn",
@@ -398,7 +575,9 @@
               },
     "contact":  {
                     "title":  "Contattami",
-                    "subtitle":  "Per un ruolo, un progetto o una consulenza. Rispondo entro 24h.",
+                    "subtitle":  "Per un ruolo, un progetto o una consulenza. Rispondo entro 24 ore lavorative.",
+                    "promise":  "Rispondo entro 24 ore lavorative.",
+                    "promiseDetail":  "Messaggi ricevuti in orario lavorativo EU (CET ±2) ricevono risposta entro 24 ore. Niente chatbot: rispondo io.",
                     "form":  {
                                  "name":  "Nome",
                                  "namePlaceholder":  "Il tuo nome",
@@ -507,6 +686,11 @@
     "thankYou":  {
                       "title":  "Tutto Pronto! 🎉",
                       "subtitle":  "Il tuo Operational Chaos Diagnostic è pronto. Controlla la tua casella — te l'ho inviato anche lì così non lo perdi.",
+                      "contactTitle":  "Grazie — rispondo entro 24 ore.",
+                      "contactSubtitle":  "Messaggio ricevuto e in coda di elaborazione. Nel frattempo: LinkedIn e GitHub.",
+                      "contactLinkedin":  "LinkedIn",
+                      "contactGithub":  "GitHub",
+                      "contactExplore":  "Nel frattempo, esplora",
                       "downloadAgain":  "Scarica di Nuovo",
                       "whatsNextTitle":  "Prossimi Passi",
                       "whatsNextText":  "Nelle prossime due settimane, ti invierò tattiche pratiche che puoi applicare subito:",
@@ -527,9 +711,12 @@
                      "privacyLink":  "Privacy Policy"
                  },
     "notFound":  {
-                     "title":  "404",
-                     "subtitle":  "Questa pagina non esiste.",
-                     "description":  "O non è mai esistita, o ho combinato un pasticcio. In ogni caso, rimettiamoti in carreggiata.",
-                     "cta":  "Torna alla Home"
+                     "title":  "404 — Agente non trovato",
+                     "subtitle":  "Il workflow che cercavi non esiste (ancora).",
+                     "description":  "Due opzioni: torna alla home e riprova il prompt, oppure esplora i progetti AI. Ogni buon agente ha un fallback.",
+                     "terminal":  "$ deploy /percorso/richiesto",
+                     "terminalError":  "error: agent not found (404)",
+                     "cta":  "Torna alla Home",
+                     "ctaProjects":  "Vedi i progetti AI"
                  }
 }
