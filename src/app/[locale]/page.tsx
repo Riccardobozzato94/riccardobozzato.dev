@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Cpu, Users, Gauge, Euro, Check, MapPin, Mail, BarChart3, Download } from "lucide-react";
+import { ArrowRight, Cpu, Users, Gauge, Euro, Check, BarChart3 } from "lucide-react";
 
 const baseUrl = SITE_URL;
 
@@ -140,40 +140,6 @@ export default async function HomePage({ params }: Props) {
               <span className="text-outline-variant">·</span>
               <span className="text-primary font-semibold">{isIt ? "Disponibile subito" : "Available now"}</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════
-           OPEN TO WORK — Cerco il prossimo ruolo
-         ════════════════════════════════════════════ */}
-      <section className="bg-surface-container-low border-y border-outline-variant py-12">
-        <div className="max-w-[1200px] mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <span className="size-3 rounded-full bg-primary animate-pulse" />
-            <div>
-              <div className="text-sm font-bold text-foreground">
-                {isIt ? "🟢 Cerco il prossimo ruolo" : "🟢 Looking for my next role"}
-              </div>
-              <div className="text-xs text-muted-foreground">
-                {isIt
-                  ? "Head of Operations · Delivery Manager · Program Manager · PM Senior"
-                  : "Head of Operations · Delivery Manager · Program Manager · Senior PM"}
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <MapPin className="size-3.5" />
-            <span>{isIt ? "Padova · Venezia · Milano · Remote Italia" : "Padua · Venice · Milan · Remote Italy"}</span>
-            <span className="text-outline-variant mx-1">|</span>
-            <a
-              href="/files/CV-Riccardo-Bozzato.pdf"
-              download
-              className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 font-semibold transition-colors"
-            >
-              {isIt ? "Scarica CV" : "Download CV"}
-              <ArrowRight className="size-3" />
-            </a>
           </div>
         </div>
       </section>
