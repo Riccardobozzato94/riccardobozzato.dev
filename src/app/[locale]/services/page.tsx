@@ -23,6 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    // Consulting offer hidden (no P.IVA). Page de-indexed.
+    robots: { index: false, follow: false },
     openGraph: {
       title: `${title} | ${site("title")}`,
       description,

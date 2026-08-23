@@ -16,6 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${t("title")} — ${t("tagline")}`,
     description: t("description"),
+    // Paid product hidden from navigation. De-indexed.
+    robots: { index: false, follow: false },
     openGraph: {
       title: `${t("title")} SaaS Boilerplate | ${site("title")}`,
       description: t("description"),

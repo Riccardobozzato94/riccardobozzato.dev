@@ -6,15 +6,15 @@ const STATIC_PAGES = [
   "",
   "about",
   "blog",
-  "books",
   "contact",
   "freebie",
-  "playbook",
   "privacy",
   "projects",
-  "services",
-  "shipkit",
 ];
+
+// NOTE: books / playbook / services / shipkit are intentionally excluded
+// (consulting offer hidden — hiring-first positioning). Pages stay online
+// but carry robots noindex metadata.
 
 const LOCALES = ["en", "it"] as const;
 

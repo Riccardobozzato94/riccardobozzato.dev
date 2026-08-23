@@ -21,23 +21,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isIt = locale === "it";
 
   return {
-    title: isIt ? "ric2brain — Il mio Second Brain" : "ric2brain — My Second Brain",
+    title: isIt ? "Synapse — Il mio Second Brain AI-Nativo" : "Synapse — My AI-Native Second Brain",
     description: isIt
       ? "Come ho costruito un vault Obsidian di 9000+ note collegato a motori AI (RAG + LLM Wiki + Agent Memory) per avere tutto il mio sapere sempre accessibile."
       : "How I built a 9000+ note Obsidian vault connected to AI engines (RAG + LLM Wiki + Agent Memory) to keep all my knowledge accessible.",
     openGraph: {
-      title: `${isIt ? "ric2brain — Second Brain" : "ric2brain — Second Brain"} | ${site("title")}`,
+      title: `${isIt ? "Synapse — Second Brain" : "Synapse — Second Brain"} | ${site("title")}`,
       description: isIt
         ? "Vault Obsidian con AI integrata: RAG semantico, LLM Wiki, agent memory, MCP."
         : "Obsidian vault with integrated AI: semantic RAG, LLM Wiki, agent memory, MCP.",
-      url: `${baseUrl}/${locale}/projects/ric2brain`,
+      url: `${baseUrl}/${locale}/projects/synapse`,
       images: [`${baseUrl}/assets/ric2brain-banner-1600x900.png`],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/projects/ric2brain`,
+      canonical: `${baseUrl}/${locale}/projects/synapse`,
       languages: {
-        en: `${baseUrl}/en/projects/ric2brain`,
-        it: `${baseUrl}/it/projects/ric2brain`,
+        en: `${baseUrl}/en/projects/synapse`,
+        it: `${baseUrl}/it/projects/synapse`,
       },
     },
   };
@@ -48,15 +48,15 @@ const techStack = [
   "RAG", "LLM Wiki", "Agent Memory", "MCP"
 ];
 
-export default async function Ric2brainPage({ params }: Props) {
+export default async function SynapsePage({ params }: Props) {
   const { locale } = await params;
   const isIt = locale === "it";
 
   const sections = isIt ? {
-    title: "ric2brain — Il mio Second Brain AI-Nativo",
+    title: "Synapse — Il mio Second Brain AI-Nativo",
     subtitle: "Vault Obsidian | 9000+ note | RAG | LLM Wiki | Agent Memory",
     intro: "Non prendo appunti. Costruisco un ecosistema di conoscenza vivente, indicizzato e interrogabile dall'AI.",
-    graphAlt: "Grafo della conoscenza del vault ric2brain — visualizzazione delle connessioni tra note (1300+ nodi)",
+    graphAlt: "Grafo della conoscenza del vault Synapse — visualizzazione delle connessioni tra note (1300+ nodi)",
     problem: {
       title: "Il Problema",
       desc: "Nel 2022 avevo informazioni sparse in 7 piattaforme diverse: Google Drive, note telefoniche, email, documenti locali, bookmarks. Ogni ricerca costava tempo. Ogni cambio di progetto significava ricominciare da capo.",
@@ -102,10 +102,10 @@ export default async function Ric2brainPage({ params }: Props) {
     },
     results: "Oggi il vault è la mia memoria esterna. Ogni progetto, idea, lezione e contatto è indicizzato e recuperabile in secondi. L'AI agent ci lavora sopra come un assistente che conosce tutto il mio contesto."
   } : {
-    title: "ric2brain — My AI-Native Second Brain",
+    title: "Synapse — My AI-Native Second Brain",
     subtitle: "Obsidian Vault | 9000+ notes | RAG | LLM Wiki | Agent Memory",
     intro: "I don't take notes. I build a living knowledge ecosystem — indexed and queryable by AI.",
-    graphAlt: "Knowledge graph of the ric2brain vault — visualizing 1300+ nodes across all knowledge areas",
+    graphAlt: "Knowledge graph of the Synapse vault — visualizing 1300+ nodes across all knowledge areas",
     problem: {
       title: "The Problem",
       desc: "By 2022, my information was scattered across 7 platforms: Google Drive, phone notes, emails, local documents, bookmarks. Every search cost time. Every project change meant starting from zero.",
@@ -311,8 +311,8 @@ export default async function Ric2brainPage({ params }: Props) {
             </h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               {isIt
-                ? "Il vault ric2brain è privato (contiene dati personali), ma il framework è open source. Puoi iniziare con Obsidian oggi stesso e aggiungere i motori AI man mano."
-                : "The ric2brain vault is private (it contains personal data), but the framework is open source. You can start with Obsidian today and add AI engines as you grow."}
+                ? "Il vault Synapse è privato (contiene dati personali), ma il framework è open source. Puoi iniziare con Obsidian oggi stesso e aggiungere i motori AI man mano."
+                : "The Synapse vault is private (it contains personal data), but the framework is open source. You can start with Obsidian today and add AI engines as you grow."}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild>

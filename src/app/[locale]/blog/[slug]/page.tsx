@@ -2,11 +2,10 @@
 import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import { getBlogPost } from "@/lib/blog";
-import { CalendarDays, ArrowLeft, ArrowRight, Sparkles, Download, BookOpen } from "lucide-react";
+import { CalendarDays, ArrowLeft, ArrowRight, Sparkles, Download } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -104,38 +103,6 @@ export default async function BlogPostPage({ params }: Props) {
         </article>
       </Section>
 
-      {/* Consigliato da Riccardo — Affiliate badge */}
-      <Section animate className="pb-0!">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="rounded-2xl border border-accent/20 bg-accent/5 p-6 md:p-8">
-            <div className="flex items-start gap-4">
-              <div className="size-12 shrink-0 rounded-xl bg-accent/10 flex items-center justify-center">
-                <BookOpen className="size-6 text-accent" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent mb-2">
-                  <Sparkles className="size-3" />
-                  {isIt ? "Consigliato da Riccardo" : "Recommended by Riccardo"}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {isIt
-                    ? "Alcuni link in questo articolo sono link di affiliazione Amazon. A te non costa nulla, io ricevo una piccola commissione che aiuta a mantenere il sito. Ogni libro o strumento che consiglio è stato personalmente testato e selezionato."
-                    : "Some links in this post are Amazon affiliate links. You pay nothing extra, I get a small commission that helps keep this site running. Every book or tool I recommend has been personally tested and curated."}
-                </p>
-                <div className="mt-4">
-                  <Button asChild variant="outline" size="sm" className="text-xs">
-                    <Link href="/books">
-                      {isIt ? "Vedi tutti i libri consigliati" : "See all recommended books"}
-                      <ArrowRight className="size-3 ml-1.5" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* Contextual CTA */}
       <Section animate>
         <div className="max-w-2xl mx-auto text-center space-y-8">
@@ -161,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
                 className="group inline-flex items-center gap-2 h-11 rounded-xl bg-accent/10 hover:bg-accent/20 border border-accent/20 px-5 text-sm font-medium text-accent transition-all duration-300 hover:-translate-y-0.5"
               >
                 <Download className="size-4" />
-                {isIt ? "Scarica il Playbook" : "Download the Playbook"}
+                {isIt ? "Scarica il Diagnostic gratuito" : "Get the free Diagnostic"}
               </Link>
             )}
             <Link

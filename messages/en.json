@@ -179,8 +179,8 @@
                                          "status":  "Shipped v0.4.0 · 1.2K+ GitHub ⭐"
                                      },
 
-                        "ric2brain":  {
-                                         "title":  "ric2brain",
+                        "synapse":  {
+                                         "title":  "Synapse",
                                          "subtitle":  "Second Brain: AI-Native Knowledge Management",
                                          "description":  "A 9,000+ note Obsidian vault connected to AI engines — semantic RAG (ChromaDB), LLM Wiki indexing, and Agent Memory. Every project, idea, lesson, and contact is indexed into a living knowledge graph, queryable in seconds by both humans and AI agents. Built with Obsidian, Python, ChromaDB, and MCP protocol integration.",
                                          "badge":  "Second Brain",

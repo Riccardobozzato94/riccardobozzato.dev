@@ -35,6 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: isIt
       ? "Il framework completo per trasformare il caos operativo in eccellenza misurabile. Crisis Management, SLA Design, Process Optimization e KPI Dashboard."
       : "The complete framework to transform operational chaos into measurable excellence. Crisis Management, SLA Design, Process Optimization, and KPI Dashboards.",
+    // Premium product hidden from navigation. De-indexed.
+    robots: { index: false, follow: false },
     openGraph: {
       title: isIt ? "Playbook di Eccellenza Operativa" : "Operational Excellence Playbook",
       description: isIt

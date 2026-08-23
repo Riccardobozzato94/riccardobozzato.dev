@@ -56,6 +56,21 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // ric2brain -> Synapse rebrand (301). Old URLs keep working.
+  async redirects() {
+    return [
+      {
+        source: "/:locale/projects/ric2brain",
+        destination: "/:locale/projects/synapse",
+        permanent: true,
+      },
+      {
+        source: "/projects/ric2brain",
+        destination: "/en/projects/synapse",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

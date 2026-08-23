@@ -179,8 +179,8 @@
                                          "status":  "Shippato v0.4.0 · 1.2K+ GitHub ⭐"
                                      },
 
-                        "ric2brain":  {
-                                         "title":  "ric2brain",
+                        "synapse":  {
+                                         "title":  "Synapse",
                                          "subtitle":  "Second Brain: Knowledge Management AI-Nativo",
                                          "description":  "Un vault Obsidian da 9.000+ note collegato a motori AI — RAG semantico (ChromaDB), LLM Wiki e Agent Memory. Ogni progetto, idea, lezione e contatto è indicizzato in un grafo della conoscenza vivo, interrogabile in secondi sia da umani che da agenti AI. Costruito con Obsidian, Python, ChromaDB e integrazione protocollo MCP.",
                                          "badge":  "Second Brain",

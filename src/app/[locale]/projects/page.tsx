@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
-import { Sparkles, Briefcase } from "lucide-react";
+import { Briefcase } from "lucide-react";
 
 const baseUrl = SITE_URL;
 
@@ -64,16 +64,17 @@ export default async function ProjectsPage({ params }: Props) {
 
       <Section animate className="pt-0!">
         <div className="max-w-6xl mx-auto space-y-8">
-          {/* Featured: ShipKit */}
+          {/* Featured: Synapse */}
           <ProjectCard
-            title={t("shipkit.title")}
-            subtitle={t("shipkit.subtitle")}
-            description={t("shipkit.description")}
-            tags={["SaaS", "Product Delivery", isIt ? "Progettazione Processi" : "Process Design"]}
-            href="/shipkit"
-            image="/assets/shipkit-banner-1600x900.png"
-            badge={t("badgeLabel")}
-            badgeColor="bg-accent/10 text-accent"
+            title={t("synapse.title")}
+            subtitle={t("synapse.subtitle")}
+            description={t("synapse.description")}
+            features={(t.raw("synapse.features") as string[]) ?? []}
+            tags={["AI", "Obsidian", "RAG", "MCP", "Python"]}
+            href="/projects/synapse"
+            image="/assets/ric2brain-banner-1600x900.png"
+            badge={t("synapse.badge")}
+            badgeColor="bg-purple-500/10 text-purple-400"
             featured
           />
 
@@ -86,32 +87,20 @@ export default async function ProjectsPage({ params }: Props) {
               tags={["AI", "Open Source", isIt ? "Gestione Prodotto" : "Product Mgmt"]}
               href="/projects/vulnclaw"
               image="/assets/vulnclaw-banner-1600x900.png"
-            badge={t("badgeLabel")}
-            badgeColor="bg-blue-500/10 text-blue-400"
+              badge={t("badgeLabel")}
+              badgeColor="bg-blue-500/10 text-blue-400"
             />
             <ProjectCard
               title={t("panificio.title")}
               subtitle={t("panificio.subtitle")}
               description={t("panificio.description")}
-              tags={["E-Commerce", isIt ? "Live" : "Live", isIt ? "Sito Reale" : "Production"]}
+              tags={["E-Commerce", "Live", isIt ? "Sito Reale" : "Production"]}
               href="https://www.panificiodasergio.it/"
               image="/assets/panificio-banner-1600x900.png"
-            badge={t("badgeLabel")}
-            badgeColor="bg-amber-500/10 text-amber-400"
+              badge={t("badgeLabel")}
+              badgeColor="bg-amber-500/10 text-amber-400"
             />
           </div>
-
-          {/* ric2brain: full width */}
-          <ProjectCard
-            title={t("ric2brain.title")}
-            subtitle={t("ric2brain.subtitle")}
-            description={t("ric2brain.description")}
-            tags={["AI", "Obsidian", "RAG", isIt ? "Gestione Conoscenza" : "Knowledge Mgmt", "Python"]}
-            href="/projects/ric2brain"
-            image="/assets/ric2brain-banner-1600x900.png"
-            badge={t("ric2brain.badge")}
-            badgeColor="bg-purple-500/10 text-purple-400"
-          />
         </div>
       </Section>
     </>
