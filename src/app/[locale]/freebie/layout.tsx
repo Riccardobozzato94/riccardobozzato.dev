@@ -14,11 +14,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const site = await getTranslations("site");
 
   return {
-    title: `${t("title")} — Download Gratuito`,
-    description: t("description"),
+    title: t("title"),
+    // Dedicated short description: `description` is the full pitch and is far
+    // too long to be useful in a SERP snippet.
+    description: t("metaDescription"),
     openGraph: {
       title: `${t("title")} | ${site("title")}`,
-      description: t("description"),
+      description: t("metaDescription"),
       url: `${baseUrl}/${locale}/freebie`,
     },
     alternates: {

@@ -26,7 +26,7 @@
       },
       {
         "title": "5. Partial Conformance - Known Limitations",
-        "content": "Cookie banner: while the consent window is open, the underlying content remains in the document flow because the banner does not use a modal dialog that traps navigation. Some screen reader users may need to dismiss it explicitly to reach the content.<br><br>Third-party advertising: the content and behaviour of ads depend on Google AdSense and are outside my control. They are not always labelled as advertising in an accessible way and may not meet the required contrast. They appear only if you accept the advertising category.<br><br>Amazon affiliate links: visually labelled, but the textual indication for screen reader users is not always complete.<br><br>Netlify Identity widget: present only in the /login reserved area, which is administrative and not part of the site's public content."
+        "content": "Cookie banner: while the consent window is open, the underlying content remains in the document flow because the banner does not use a modal dialog that traps navigation. Some screen reader users may need to dismiss it explicitly to reach the content.<br><br>Third-party advertising: the content and behaviour of ads depend on Google AdSense and are outside my control. They are not always labelled as advertising in an accessible way and may not meet the required contrast. They appear only if you accept the advertising category.<br><br>Amazon affiliate links: visually labelled, but the textual indication for screen reader users is not always complete.<br><br>Netlify Identity widget: the third-party script is also loaded on public pages, where it is never used. It introduces no visible content or focus traps, but it does add an unnecessary network request."
       },
       {
         "title": "6. Techniques Used",
@@ -114,7 +114,8 @@
       "email": "Email"
     },
     "cookieSettings": "Cookie settings",
-    "advertise": "Advertise"
+    "advertise": "Advertise",
+    "playbookLink": "Free worksheet"
   },
   "projects": {
     "title": "Case Studies",
@@ -429,7 +430,8 @@
       "downloadNow": "Download the worksheet",
       "privacyNote": "Six emails in 30 days, and an unsubscribe link at the bottom of each one. Your data stays in my database and is never passed on.",
       "error": "That did not go through. Try again in a second."
-    }
+    },
+    "metaDescription": "A free three-step worksheet: map one process, separate working time from waiting time, and get three actions with an owner and a deadline. For Heads of Ops and Delivery Managers."
   },
   "about": {
     "title": "About Riccardo",
@@ -533,7 +535,7 @@
       },
       {
         "title": "9. Third Parties and Processors",
-        "content": "Only strictly necessary services, with the related processing:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity for admin area authentication, and Netlify Blobs for playbook lead storage.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS and attack mitigation.<br>Google Ireland Limited (Ireland, with transfers to the USA): Google Analytics 4 and, if you accepted, Google AdSense.<br>Resend Inc. (USA): transactional and sequence email delivery.<br>Stripe Inc. (USA): payments, for the ShipKit purchase only.<br>Amazon EU S.a.r.l.: affiliate programme. Some outbound links are affiliate links and earn a commission. No additional tracking cookies are used for the affiliation."
+        "content": "Only strictly necessary services, with the related processing:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity for admin area authentication, and Netlify Blobs for playbook lead storage.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS, attack mitigation and edge content delivery.<br>Google Ireland Limited (Ireland, with transfers to the USA): Google Analytics 4 and, if you accepted, Google AdSense.<br>Resend Inc. (USA): transactional and sequence email delivery.<br>Stripe Inc. (USA): payments, for the ShipKit purchase only.<br>Amazon EU S.a.r.l.: affiliate programme. Some outbound links are affiliate links and earn a commission. No additional tracking cookies are used for the affiliation."
       },
       {
         "title": "10. International Transfers",
@@ -544,8 +546,8 @@
         "content": "HTTPS with TLS sitewide, HSTS with a two-year max-age, a restrictive CSP, rate limiting on every API and fail-closed behaviour on all protected endpoints. Secrets are never committed to the repository and admin passwords are never hardcoded in source.<br>No system is breach-proof: in the event of a data breach I will notify you by email without undue delay and with the information required by the GDPR."
       },
       {
-        "title": "12. Netlify Identity Cookies",
-        "content": "The /login area uses Netlify Identity, which uses technical cookies for the authentication session. No profiling cookies are set. The area is password protected and requests are rate limited per IP."
+        "title": "12. Third-party cookies and scripts",
+        "content": "Netlify Identity: the authentication script is loaded on every page of the site, even though it is only used in the /login reserved area. It handles the session and may set technical cookies. No profiling cookies are set.<br><br>Google Tag Manager: the GTM-5XPLS93 container is injected by the Cloudflare CDN, not by this site's code, and is requested on every visit. I can disclose this but not directly control it: whoever manages that configuration can either remove it or make it respect consent.<br><br>Google Fonts: fonts are served from fonts.gstatic.com, with the implied consequence that your IP address is sent to Google when the page loads. Fonts are served even if you refuse the analytics and advertising categories, because the page needs them to render."
       },
       {
         "title": "13. Job Application Data",

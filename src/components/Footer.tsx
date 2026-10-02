@@ -83,7 +83,7 @@ export default function Footer() {
                   {footer("advertise")}
                 </Link>
               </li>
-              <li><Link href="/freebie" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Playbook gratis" : "Free playbook"}</Link></li>
+              <li><Link href="/freebie" className="text-sm text-muted-foreground hover:text-primary transition-colors">{footer("playbookLink")}</Link></li>
               <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Contatti" : "Contact"}</Link></li>
             </ul>
           </div>

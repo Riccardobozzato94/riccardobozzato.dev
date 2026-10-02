@@ -26,7 +26,7 @@
       },
       {
         "title": "5. Conformità Parziale - Limiti Noti",
-        "content": "Banner dei cookie: finché la finestra di consenso è aperta, il contenuto sottostante resta nel flusso del documento perché il banner non usa un dialog modale che blocchi la navigazione. Alcuni utenti di screen reader potrebbero doverlo chiudere esplicitamente per raggiungere il contenuto.<br><br>Annunci pubblicitari di terze parti: contenuti e comportamenti degli annunci dipendono da Google AdSense e non sono sotto il mio controllo. Non sono sempre etichettati come pubblicità in modo accessibile e possono non rispettare il contrasto richiesto. Compaiono solo se accetti la categoria pubblicitaria.<br><br>Link affiliati Amazon: etichettati visivamente, ma l'indicazione testuale per i lettori di schermo non è sempre completa.<br><br>Widget Netlify Identity: presente solo nell'area riservata /login, che è un'area amministrativa e non fa parte del contenuto pubblico del sito."
+        "content": "Banner dei cookie: finché la finestra di consenso è aperta, il contenuto sottostante resta nel flusso del documento perché il banner non usa un dialog modale che blocchi la navigazione. Alcuni utenti di screen reader potrebbero doverlo chiudere esplicitamente per raggiungere il contenuto.<br><br>Annunci pubblicitari di terze parti: contenuti e comportamenti degli annunci dipendono da Google AdSense e non sono sotto il mio controllo. Non sono sempre etichettati come pubblicità in modo accessibile e possono non rispettare il contrasto richiesto. Compaiono solo se accetti la categoria pubblicitaria.<br><br>Link affiliati Amazon: etichettati visivamente, ma l'indicazione testuale per i lettori di schermo non è sempre completa.<br><br>Widget Netlify Identity: lo script di terze parti viene caricato anche sulle pagine pubbliche, dove non viene utilizzato. Non introduce contenuto visibile ne focali, ma aggiunge una richiesta di rete non necessaria."
       },
       {
         "title": "6. Tecniche Utilizzate",
@@ -114,7 +114,8 @@
       "email": "Email"
     },
     "cookieSettings": "Impostazioni cookie",
-    "advertise": "Sponsorizza il sito"
+    "advertise": "Sponsorizza il sito",
+    "playbookLink": "Foglio gratis"
   },
   "projects": {
     "title": "Case Studies",
@@ -429,7 +430,8 @@
       "downloadNow": "Scarica il foglio",
       "privacyNote": "Sei email in 30 giorni, e una disiscrizione con un clic in fondo a ognuna. I tuoi dati restano nel mio database e non li passo a nessuno.",
       "error": "Non è andato a buon fine. Riprova tra un secondo."
-    }
+    },
+    "metaDescription": "Foglio di lavoro gratuito in tre passi: mappa un processo, separa il tempo lavorato dal tempo di attesa, e ottieni tre azioni con responsabile e scadenza. Per Head of Ops e Delivery Manager."
   },
   "about": {
     "title": "Su Riccardo",
@@ -533,7 +535,7 @@
       },
       {
         "title": "9. Terze Parti e Responsabili del Trattamento",
-        "content": "Solo i servizi strettamente necessari, con i relativi trattamenti:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity per l'autenticazione dell'area riservata e Netlify Blobs per la conservazione dei lead del playbook.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS e mitigazione degli attacchi.<br>Google Ireland Limited (Irlanda, con trasferimenti negli USA): Google Analytics 4 e, se hai accettato, Google AdSense.<br>Resend Inc. (USA): invio delle email transazionali e della sequenza.<br>Stripe Inc. (USA): pagamenti, esclusivamente per l'acquisto di ShipKit.<br>Amazon EU S.a.r.l.: programma affiliati. Alcuni link in uscita sono link affiliati e generano una commissione. Per l'affiliazione non uso cookie di tracciamento aggiuntivi."
+        "content": "Solo i servizi strettamente necessari, con i relativi trattamenti:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity per l'autenticazione dell'area riservata e Netlify Blobs per la conservazione dei lead del playbook.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS, mitigazione degli attacchi e distribuzione dei contenuti via edge.<br>Google Ireland Limited (Irlanda, con trasferimenti negli USA): Google Analytics 4 e, se hai accettato, Google AdSense.<br>Resend Inc. (USA): invio delle email transazionali e della sequenza.<br>Stripe Inc. (USA): pagamenti, esclusivamente per l'acquisto di ShipKit.<br>Amazon EU S.a.r.l.: programma affiliati. Alcuni link in uscita sono link affiliati e generano una commissione. Per l'affiliazione non uso cookie di tracciamento aggiuntivi."
       },
       {
         "title": "10. Trasferimenti Internazionali",
@@ -544,8 +546,8 @@
         "content": "HTTPS con TLS su tutto il sito, HSTS con durata di due anni, CSP restrittiva, rate limiting su tutte le API e comportamento fail-closed su tutti gli endpoint protetti. I secret non sono mai committati nel repository e le password di amministrazione non sono hardcoded nel sorgente.<br>Nessun sistema è al riparo da violazioni: in caso di data breach ti avviso via email senza ritardo indebito e con le informazioni richieste dal GDPR."
       },
       {
-        "title": "12. Cookie di Netlify Identity",
-        "content": "L'area riservata /login usa Netlify Identity, che impiega cookie tecnici per la sessione di autenticazione. Non vengono impostati cookie di profilazione. L'area è protetta da password e le richieste sono limitate per IP."
+        "title": "12. Cookie e script di terze parti",
+        "content": "Netlify Identity: lo script di autenticazione e caricato su tutte le pagine del sito, anche se viene usato solo nell'area riservata /login. Serve a gestire la sessione e puo impostare cookie tecnici. Non viene impostato alcun cookie di profilazione.<br><br>Google Tag Manager: il container GTM-5XPLS93 e iniettato dal CDN Cloudflare, non dal codice di questo sito, e viene richiesto a ogni visita. Questo e un passaggio che posso dichiarare ma non controllare direttamente: chi ne gestisce la configurazione puo eliminarlo oppure farlo rispettare il consenso.<br><br>Google Fonts: i caratteri sono caricati da fonts.gstatic.com, con l'implicita conseguenza che il tuo indirizzo IP viene trasmesso a Google al momento del caricamento della pagina. I caratteri sono serviti anche se rifiuti la categoria analytics e pubblicita, perche' servono al funzionamento della pagina."
       },
       {
         "title": "13. Dati di Candidature Lavorative",
