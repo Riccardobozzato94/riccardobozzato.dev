@@ -2,23 +2,20 @@
   command = "npm run build"
   # publish rimosso: il Netlify Next.js Runtime Plugin gestisce automaticamente l'output
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-    # CSP hardened: removed 'unsafe-inline' from script-src to close the XSS gap.
-    # Next.js serves its scripts from /_next/static/ ('self'), Decap CMS loads
-    # from unpkg. Inline styles are required by Next.js for CSS-in-JS hydration.
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.resend.com https://identity.netlify.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
-
-[[headers]]
-  for = "/_next/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# ─────────────────────────────────────────────────────────────────────────────
+# NOTE: le security header NON stanno qui.
+#
+# Il blocco [[headers]] è stato rimosso perché, con il Netlify Next.js Runtime,
+# NON viene applicato in produzione: l'header CSP servito era quello di
+# next.config.ts (senza googletagmanager → GA bloccato) e lo Strict-Transport-
+# Security live era max-age=31536000 (default Netlify), non i 63072000 dichiarati
+# qui. Verificato il 2026-10-02 su riccardobozzato.com.
+#
+# next.config.ts -> headers() è l'unica fonte che vale. Se cambi la CSP, cambia
+# LÌ. Non duplicare qui.
+#
+# Anche /_next/static/* è gestito da next.config.ts (max-age=31536000,
+# immutable) — non serve una seconda regola.
 
 # Decap CMS redirect — catch both /admin and /admin/ (with subpaths)
 [[redirects]]

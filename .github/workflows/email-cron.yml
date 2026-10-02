@@ -2,7 +2,9 @@ name: Email Sequence Cron
 
 on:
   schedule:
-    # Run every day at 10:00 UTC (11:00 CET / 12:00 CEST)
+    # Run every day at 10:00 UTC (11:00 CET / 12:00 CEST).
+    # GitHub often starts scheduled runs late (observed: ~16:00 UTC), so treat
+    # this as "sometime during the day", not a precise time.
     - cron: "0 10 * * *"
   workflow_dispatch:
     # Allow manual trigger from GitHub UI
@@ -18,24 +20,62 @@ jobs:
         run: |
           if [ -z "${{ secrets.CRON_ENDPOINT }}" ] || [ -z "${{ secrets.CRON_SECRET }}" ]; then
             echo "configured=false" >> "$GITHUB_OUTPUT"
-            echo "::warning::CRON_ENDPOINT or CRON_SECRET is not set — skipping run. Set them in Settings → Secrets and variables → Actions."
+            echo "::warning::CRON_ENDPOINT or CRON_SECRET is not set - skipping run. Set them in Settings -> Secrets and variables -> Actions."
           else
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Trigger Email Sequence Endpoint
         if: steps.check.outputs.configured == 'true'
+        env:
+          CRON_ENDPOINT: ${{ secrets.CRON_ENDPOINT }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: |
-          HTTP_CODE=$(curl -s -o /tmp/cron_response.json -w "%{http_code}" -X GET "${{ secrets.CRON_ENDPOINT }}" \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
-            -H "User-Agent: GitHub-Actions-Cron" \
-            --max-time 120)
-          echo "HTTP status: $HTTP_CODE"
-          cat /tmp/cron_response.json
-          if [ "$HTTP_CODE" -ge 400 ]; then
-            echo "::error::Cron endpoint returned HTTP $HTTP_CODE"
+          # 3 attempts with backoff: transient Netlify cold starts / 502s happen.
+          HTTP_CODE=000
+          for ATTEMPT in 1 2 3; do
+            HTTP_CODE=$(curl -s -o /tmp/cron_response.json -w "%{http_code}" -X GET "$CRON_ENDPOINT" \
+              -H "Authorization: Bearer $CRON_SECRET" \
+              -H "User-Agent: GitHub-Actions-Cron" \
+              --max-time 120)
+            echo "Attempt $ATTEMPT -> HTTP $HTTP_CODE"
+            if [ "$HTTP_CODE" = "200" ]; then
+              break
+            fi
+            # Only retry transient failures, not auth/config problems.
+            if [ "$HTTP_CODE" = "401" ] || [ "$HTTP_CODE" = "403" ] || [ "$HTTP_CODE" = "404" ]; then
+              break
+            fi
+            sleep $((ATTEMPT * 15))
+          done
+
+          echo "--- response body ---"
+          cat /tmp/cron_response.json || true
+          echo ""
+
+          if [ "$HTTP_CODE" = "401" ]; then
+            echo "::error::401 Unauthorized - CRON_SECRET does not match the one on Netlify. Re-sync it (netlify env:set CRON_SECRET <value> --context production)."
+            exit 1
+          fi
+          if [ "$HTTP_CODE" = "403" ]; then
+            echo "::error::403 Forbidden - CRON_ENDPOINT is almost certainly pointed at the custom domain and is being bot-challenged by Cloudflare. It MUST be the netlify.app origin instead (e.g. https://<site-slug>.netlify.app/api/cron/email-sequence)."
+            exit 1
+          fi
+          if [ "$HTTP_CODE" = "404" ]; then
+            echo "::error::404 Not Found - CRON_ENDPOINT is wrong or the site is not deployed."
+            exit 1
+          fi
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::error::Cron endpoint returned HTTP $HTTP_CODE after 3 attempts."
             exit 1
           fi
 
+          # The route returns {"success":false, "errors":N} when individual
+          # sends fail. Surface that as a warning even though HTTP was 200.
+          if grep -q '"success":false' /tmp/cron_response.json; then
+            echo "::warning::Endpoint reachable but one or more emails failed to send. See the summary above."
+          fi
+
       - name: Log Result
-        run: echo "Email sequence cron completed at $(date -u) (configured=${{ steps.check.outputs.configured }})"
+        if: always()
+        run: echo "Email sequence cron finished at $(date -u) (configured=${{ steps.check.outputs.configured }})"
