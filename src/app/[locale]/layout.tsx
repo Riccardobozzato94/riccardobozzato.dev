@@ -124,24 +124,27 @@ export default async function LocaleLayout({
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Operations Audit",
-                description: "Analisi processi in 2 giorni, report con 3 quick wins. €490.",
+                name: "Operational Audit",
+                description:
+                  "Fotografia onesta delle operations in 7 giorni: top-5 sprechi quantificati e roadmap 30-60-90. Contattami per i dettagli.",
               },
             },
             {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Delivery & Process Design",
-                description: "Framework Agile, release planning, capacity modeling. Da €1.500.",
+                name: "Operations Overhaul",
+                description:
+                  "Sistema operativo completo in 6-8 settimane: redesign processi, dashboard KPI, team formato. Contattami per i dettagli.",
               },
             },
             {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Fractional Head of Ops",
-                description: "Interim o part-time per startup. Da €2.500/mese.",
+                name: "Fractional Head of Operations",
+                description:
+                  "Funzione operations per aziende post-PMF: board, gestione team ops, report. Contattami per i dettagli.",
               },
             },
           ],

@@ -217,72 +217,114 @@
                                 }
                                 },
     "services":  {
-                       "title":  "Operations & Delivery — Measurable Results",
-                       "subtitle":  "Fixed price. Delivered.",
-                       "heroDesc":  "You have an operations problem. Maybe your team is growing faster than your processes. Maybe you're firefighting instead of building. I design and implement the systems — process workflows, KPI frameworks, team structures — that fix it. PMP® certified, €500K+ delivered, teams of 8-12.",
-                       "cta":  "Let's Talk",
+                       "title":  "From chaos to predictable execution in 30 days",
+                       "subtitle":  "Fixed price. Delivered in 7 days. Measurable results.",
+                       "heroDesc":  "You have an operations problem: the team grows faster than your processes, deliveries slip, rework eats your margins. I design and implement the systems — flows, KPIs, team structure — that fix it. PMP® certified, €500K+ delivered, teams of 8-12. Everything starts with a free call.",
+                       "cta":  "Contact me here",
                         "packages":  [
-                                         {
-                                             "title":  "Operations Audit",
-                                             "price":  "€490",
-                                              "desc":  "The entry point. Two-day analysis of your operational processes. You get a report with 3 immediate quick wins and a priority matrix. If you proceed with a full package, the audit cost is deducted.",
-                                              "features":  [
-                                                               "Current-state process audit and flow mapping",
-                                                               "3 low-effort quick wins identified",
-                                                               "Impact vs. effort priority matrix",
-                                                               "Executive report with recommendations",
-                                                               "30-min debrief call to discuss findings"
-                                                           ]
+                                          {
+                                            "title": "Operational Audit",
+                                            "badge": "Starting point",
+                                            "timeline": "7 days, 2 hours of your team",
+                                            "desc": "The honest picture of your operations. In one week I map your flows, quantify your top-5 money leaks in euros and deliver a 30-60-90 day roadmap. If you continue with the Overhaul, the Audit cost is deducted.",
+                                            "features": [
+                                              "1h diagnosis call (recorded, yours forever)",
+                                              "5-7 page document: top-5 leaks quantified in €",
+                                              "30-60-90 day roadmap with priorities",
+                                              "Impact vs. effort matrix",
+                                              "30 days of email support (48h reply)",
+                                              "Bonus: Definition of Done template + KPI Sheet"
+                                            ],
+                                            "excludes": [
+                                              "Hands-on implementation (that's the Overhaul)",
+                                              "Direct access to your company tools",
+                                              "Team training"
+                                            ],
+                                            "idealFor": "Founders with teams of 5-20 people and slipping deliveries who want clarity in one week.",
+                                            "notFor": "Enterprise over 100 people or anyone looking for hourly hands.",
+                                            "guarantee": "Satisfaction guarantee: if the Audit doesn't give you clear, quantified actions, you get a refund. No questions."
                                           },
-                                         {
-                                             "title":  "Delivery & Process Design",
-                                              "price":  "From €1,500",
-                                             "desc":  "Stop firefighting. I'll help you set up the planning, capacity, and risk frameworks that let your team ship predictably. No Agile theater — just the practices that actually work for your team size.",
-                                            "features":  [
-                                                             "Current-state process audit & gap analysis",
-                                                             "Agile/Scrum/Kanban framework implementation",
-                                                             "Release planning & capacity modeling",
-                                                             "Risk management framework & mitigation",
-                                                             "KPI dashboard: velocity, quality, predictability"
-                                                         ]
-                                        },
-                                        {
-                                            "title":  "eCommerce & PIM-DAM Operations",
-                                            "price":  "From €2,000",
-                                            "desc":  "Pimcore, Magento, Shopware — enterprise implementations, integrations, data governance. 20-40% faster time-to-market.",
-                                            "features":  [
-                                                             "PIM/DAM architecture & implementation",
-                                                             "eCommerce platform integration (Magento, Shopware)",
-                                                             "Data governance & quality frameworks",
-                                                             "Workflow automation for product content",
-                                                             "Team training & knowledge transfer"
-                                                         ]
-                                        },
-                                        {
-                                            "title":  "AI-Assisted Operations",
-                                            "price":  "From €2,500",
-                                            "desc":  "Operational workflow automation, real-time KPI dashboards, centralized knowledge management. Recover 10-40 hours/week.",
-                                            "features":  [
-                                                             "Process documentation & knowledge base setup",
-                                                             "AI workflow automation (support, data, content)",
-                                                             "Real-time KPI dashboards & alerting",
-                                                             "Tool integration & middleware",
-                                                             "ROI measurement framework"
-                                                         ]
-                                        },
-                                        {
-                                            "title":  "Fractional Head of Ops / Delivery",
-                                            "price":  "From €3,000/mo",
-                                            "desc":  "Interim or part-time for early-stage startups. I build the operational architecture, train the team, leave a working system.",
-                                            "features":  [
-                                                             "Operations architecture design",
-                                                             "Team structure & hiring support",
-                                                             "Process governance & accountability",
-                                                             "SLA framework & escalation paths",
-                                                             "Handover documentation & training"
-                                                         ]
-                                        }
-                                    ],
+                                          {
+                                            "title": "Operations Overhaul",
+                                            "badge": "Most popular",
+                                            "timeline": "6-8 weeks",
+                                            "desc": "The complete operating system for scale-ups that must grow without imploding. Assessment, core process redesign, KPI dashboard and a trained team. I hand over keys, not a report.",
+                                            "features": [
+                                              "2-week assessment (interviews + shadowing)",
+                                              "Redesign of 3 core processes + 1-page SOPs",
+                                              "Real-time KPI dashboard (lead time, rework, on-time)",
+                                              "4 team training sessions",
+                                              "60 days of direct Slack support",
+                                              "Documented handover: the system stays yours"
+                                            ],
+                                            "excludes": [
+                                              "Custom software development",
+                                              "Recruiting and hiring"
+                                            ],
+                                            "idealFor": "Scale-ups at €1-10M with 10-30 people, ready to actually change.",
+                                            "notFor": "Anyone who just wants a report for the board.",
+                                            "guarantee": "Free go/no-go call before we start. If there's no fit, I'll tell you and we don't start."
+                                          },
+                                          {
+                                            "title": "Fractional Head of Operations",
+                                            "badge": "By invitation",
+                                            "timeline": "Monthly board + ongoing presence",
+                                            "desc": "For post-PMF companies without a head of operations. I build the ops function, manage the ops team and report to the board. The system, not the theater.",
+                                            "features": [
+                                              "20 hours a month dedicated to your operations",
+                                              "Board participation with monthly report",
+                                              "Ops team management and mentoring",
+                                              "Operational P&L report and quarterly OKRs",
+                                              "Hiring playbook for ops roles",
+                                              "Direct escalation: call me when it burns"
+                                            ],
+                                            "excludes": [
+                                              "Full-time on-site role",
+                                              "24/7 availability"
+                                            ],
+                                            "idealFor": "Post-PMF companies not ready for a full-time head of ops, but needing one.",
+                                            "notFor": "Anyone looking for a cheap full-time executor.",
+                                            "guarantee": "Cancel with 30 days notice. Documented handover always included."
+                                          }
+                                        ]
+                                    ,
+                       "ui":  {
+                                 "includesTitle": "What's included",
+                                 "excludesTitle": "What's NOT included",
+                                 "idealTitle": "Who it's for",
+                                 "notIdealTitle": "Who it's NOT for",
+                                 "timelineLabel": "Timeline"
+                               },
+                       "faq":  {
+                                 "title": "Frequently asked questions",
+                                 "items": [
+                                   {
+                                     "q": "How do payment and invoicing work?",
+                                     "a": "After the free call you get a written proposal with scope, timeline and fixed price. Bank transfer: 100% for the Audit, 50/50 for the Overhaul. I issue an invoice with withholding tax (occasional service)."
+                                   },
+                                   {
+                                     "q": "How much of my team's time do you need?",
+                                     "a": "Audit: about 2 hours total (call + questionnaire). Overhaul: 2-3 hours a week for key stakeholders; I handle the rest async with weekly updates."
+                                   },
+                                   {
+                                     "q": "My team is small (under 5 people)?",
+                                     "a": "Start with the Audit: it tells you if and where to act. Small teams often need just Audit + Template Pack, no Overhaul."
+                                   },
+                                   {
+                                     "q": "Do you work in Italian or English?",
+                                     "a": "Both. I've worked with distributed teams in two languages; docs and training in your team's language."
+                                   },
+                                   {
+                                     "q": "What happens after the Audit?",
+                                     "a": "You get the roadmap and decide: implement it yourself, implement it together with the Overhaul (the Audit cost is deducted), or do nothing. No pressure."
+                                   }
+                                 ]
+                               },
+                       "finalCta":  {
+                                 "title": "Let's Talk",
+                                 "desc": "Book a free 30-minute discovery call: we map your top-3 bottlenecks, even if you never buy anything.",
+                                 "cta": "Contact me here"
+                               },
                         "approach":  {
                                        "title": "How I Work",
                                        "subtitle": "Fixed price. On time. Production-ready.",
@@ -321,7 +363,6 @@
                    "pricing":  {
                                    "title":  "Simple Pricing",
                                    "subtitle":  "One price. Everything included.",
-                                   "price":  "€49",
                                    "period":  "one-time",
                                    "includes":  "Full source code, lifetime updates, priority support",
                                    "cta":  "Buy ShipKit",

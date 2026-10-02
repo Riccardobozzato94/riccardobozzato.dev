@@ -13,12 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Email Sequence Endpoint
+      - name: Check cron secrets are configured
+        id: check
         run: |
-          curl -s -X GET "${{ secrets.CRON_ENDPOINT }}" \
+          if [ -z "${{ secrets.CRON_ENDPOINT }}" ] || [ -z "${{ secrets.CRON_SECRET }}" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::CRON_ENDPOINT or CRON_SECRET is not set — skipping run. Set them in Settings → Secrets and variables → Actions."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Email Sequence Endpoint
+        if: steps.check.outputs.configured == 'true'
+        run: |
+          HTTP_CODE=$(curl -s -o /tmp/cron_response.json -w "%{http_code}" -X GET "${{ secrets.CRON_ENDPOINT }}" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
             -H "User-Agent: GitHub-Actions-Cron" \
-            --max-time 120
+            --max-time 120)
+          echo "HTTP status: $HTTP_CODE"
+          cat /tmp/cron_response.json
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::error::Cron endpoint returned HTTP $HTTP_CODE"
+            exit 1
+          fi
 
       - name: Log Result
-        run: echo "Email sequence cron completed at $(date -u)"
+        run: echo "Email sequence cron completed at $(date -u) (configured=${{ steps.check.outputs.configured }})"

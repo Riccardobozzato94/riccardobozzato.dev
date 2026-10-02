@@ -217,72 +217,114 @@
                                 }
                                 },
     "services":  {
-                       "title":  "Operations & Delivery — Risultati Misurabili",
-                       "subtitle":  "Prezzo fisso. Consegnato.",
-                       "heroDesc":  "Hai un problema operativo. Magari il tuo team cresce più veloce dei processi. Magari passi il tempo a spegnere incendi invece che a costruire. Progetto e implemento i sistemi — flussi di lavoro, framework KPI, struttura del team — che lo risolvono. PMP® certificato, €500K+ consegnati, team 8-12.",
-                       "cta":  "Parliamone",
+                       "title":  "Da caos a esecuzione prevedibile in 30 giorni",
+                       "subtitle":  "Prezzo fisso. Consegna in 7 giorni. Risultati misurabili.",
+                       "heroDesc":  "Hai un problema operativo: il team cresce più veloce dei processi, le consegne slittano, il rework mangia i margini. Progetto e implemento i sistemi — flussi, KPI, struttura del team — che lo risolvono. PMP® certificato, €500K+ consegnati, team 8-12. Si parte sempre da una call gratuita.",
+                       "cta":  "Contattami qui",
                        "packages":  [
-                                        {
-                                            "title":  "Operations Audit",
-                                            "price":  "€490",
-                                             "desc":  "L'entry point. Due giorni di analisi dei tuoi processi operativi. Ricevi un report con 3 quick wins immediate e una priority matrix. Se procedi con un pacchetto completo, il costo dell'audit viene scalato.",
-                                             "features":  [
-                                                              "Analisi processi attuali e mappatura flussi",
-                                                              "Identificazione di 3 quick win a basso sforzo",
-                                                              "Priority matrix: impatto vs. sforzo",
-                                                              "Report esecutivo con raccomandazioni",
-                                                              "Call di debrief (30 min) per discutere i risultati"
-                                                          ]
-                                         },
-                                        {
-                                            "title":  "Delivery & Process Design",
-                                            "price":  "Da €1.500",
-                                            "desc":  "Smetti di spegnere incendi. Ti aiuto a impostare i framework di pianificazione, capacità e rischio che permettono al tuo team di shippare in modo prevedibile. Niente Agile teatro — solo le pratiche che funzionano per la tua dimensione.",
-                                            "features":  [
-                                                             "Audit processi attuali e gap analysis",
-                                                             "Implementazione framework Agile/Scrum/Kanban",
-                                                             "Release planning e capacity modeling",
-                                                             "Framework risk management e mitigazione",
-                                                             "Dashboard KPI: velocity, quality, predictability"
-                                                         ]
-                                        },
-                                        {
-                                            "title":  "eCommerce & PIM-DAM Operations",
-                                            "price":  "Da €2.000",
-                                            "desc":  "Pimcore, Magento, Shopware — implementazioni enterprise, migrazioni, governance del dato. Velocità e qualità, senza compromessi.",
-                                            "features":  [
-                                                             "Architettura e implementazione PIM/DAM",
-                                                             "Integrazione piattaforme eCommerce",
-                                                             "Data governance e framework qualità",
-                                                             "Automazione flussi contenuti prodotto",
-                                                             "Formazione team e knowledge transfer"
-                                                         ]
-                                        },
-                                        {
-                                            "title":  "AI-Assisted Operations",
-                                            "price":  "Da €2.500",
-                                            "desc":  "Automazione dei flussi operativi, dashboard KPI in tempo reale, knowledge management centralizzato. Recupera 10-40 ore/settimana.",
-                                            "features":  [
-                                                             "Documentazione processi e knowledge base",
-                                                             "Automazione flussi AI (supporto, dati, contenuti)",
-                                                             "Dashboard KPI real-time e alerting",
-                                                             "Middleware e integrazione strumenti",
-                                                             "Framework misurazione ROI"
-                                                         ]
-                                        },
-                                        {
-                                            "title":  "Fractional Head of Ops / Delivery",
-                                            "price":  "Da €3.000/mese",
-                                            "desc":  "Interim o part-time per startup early-stage. Costruisco il sistema operativo, formo il team, consegno le chiavi.",
-                                           "features":  [
-                                                            "Design architettura operations",
-                                                            "Team structure e supporto hiring",
-                                                            "Governance processi e accountability",
-                                                            "Framework SLA e escalation paths",
-                                                            "Documentazione handover e training"
-                                                        ]
-                                       }
-                                   ],
+                                          {
+                                            "title": "Operational Audit",
+                                            "badge": "Punto di partenza",
+                                            "timeline": "7 giorni, 2 ore del tuo team",
+                                            "desc": "La fotografia onesta delle tue operations. In una settimana mappo i flussi, quantifico in euro i 5 sprechi principali e ti consegno una roadmap 30-60-90 giorni. Se prosegui con l'Overhaul, il costo dell'Audit viene scalato.",
+                                            "features": [
+                                              "Call diagnosi di 1h (registrata, resta tua)",
+                                              "Documento di 5-7 pagine: top-5 sprechi quantificati in €",
+                                              "Roadmap 30-60-90 giorni con priorità",
+                                              "Matrice impatto vs. sforzo",
+                                              "30 giorni di supporto email (risposta entro 48h)",
+                                              "Bonus: template Definition of Done + KPI Sheet"
+                                            ],
+                                            "excludes": [
+                                              "Implementazione operativa (è l'Overhaul)",
+                                              "Accesso diretto ai tuoi tool aziendali",
+                                              "Training del team"
+                                            ],
+                                            "idealFor": "Founder con team di 5-20 persone e consegne in ritardo, che vogliono chiarezza in una settimana.",
+                                            "notFor": "Enterprise oltre 100 persone o chi cerca manodopera a ore.",
+                                            "guarantee": "Garanzia soddisfatti o rimborsati: se l'Audit non ti consegna azioni chiare e quantificate, ti rimborsò. Senza domande."
+                                          },
+                                          {
+                                            "title": "Operations Overhaul",
+                                            "badge": "Più scelto",
+                                            "timeline": "6-8 settimane",
+                                            "desc": "Il sistema operativo completo per scale-up che devono crescere senza implodere. Assessment, redesign dei processi core, dashboard KPI e team formato. Consegno le chiavi, non un report.",
+                                            "features": [
+                                              "Assessment di 2 settimane (interviste + shadowing)",
+                                              "Redesign di 3 processi core + SOP in 1 pagina",
+                                              "Dashboard KPI real-time (lead time, rework, on-time)",
+                                              "4 sessioni di training per il team",
+                                              "60 giorni di supporto diretto su Slack",
+                                              "Handover documentato: il sistema resta tuo"
+                                            ],
+                                            "excludes": [
+                                              "Sviluppo software custom",
+                                              "Recruiting e selezione del personale"
+                                            ],
+                                            "idealFor": "Scale-up da €1-10M con team di 10-30 persone, pronte a cambiare davvero.",
+                                            "notFor": "Chi vuole solo un report da mostrare al board.",
+                                            "guarantee": "Call go/no-go gratuita prima di partire. Se non c'è fit, te lo dico e non si parte."
+                                          },
+                                          {
+                                            "title": "Fractional Head of Operations",
+                                            "badge": "Su invito",
+                                            "timeline": "Board mensile + presenza continua",
+                                            "desc": "Per aziende post-PMF senza un head of operations. Costruisco la funzione operativa, gestisco il team ops e riporto al board. Il sistema, non il teatro.",
+                                            "features": [
+                                              "20 ore al mese dedicate alle tue operations",
+                                              "Partecipazione al board con report mensile",
+                                              "Gestione e mentoring del team ops",
+                                              "Report P&L operativo e OKR quarterly",
+                                              "Hiring playbook per ruoli operativi",
+                                              "Escalation diretta: mi chiami quando brucia"
+                                            ],
+                                            "excludes": [
+                                              "Ruolo full-time in sede",
+                                              "Reperibilità 24/7"
+                                            ],
+                                            "idealFor": "Aziende post-PMF non ancora pronte per un head of ops full-time, ma che ne hanno bisogno.",
+                                            "notFor": "Chi cerca un executor full-time a basso costo.",
+                                            "guarantee": "Recesso con 30 giorni di preavviso. Handover documentato sempre incluso."
+                                          }
+                                        ]
+                                   ,
+                       "ui":  {
+                                 "includesTitle": "Cosa include",
+                                 "excludesTitle": "Cosa NON include",
+                                 "idealTitle": "Per chi è",
+                                 "notIdealTitle": "Non per chi",
+                                 "timelineLabel": "Tempi"
+                               },
+                       "faq":  {
+                                 "title": "Domande frequenti",
+                                 "items": [
+                                   {
+                                     "q": "Come funzionano pagamento e fattura?",
+                                     "a": "Dopo la call gratuita ricevi una proposta scritta con scope, tempi e prezzo fisso. Pagamento con bonifico: 100% per l'Audit, 50/50 per l'Overhaul. Emetto fattura con ritenuta d'acconto (prestazione occasionale)."
+                                   },
+                                   {
+                                     "q": "Quanto tempo chiedi al mio team?",
+                                     "a": "Audit: circa 2 ore totali (call + questionario). Overhaul: 2-3 ore a settimana per gli stakeholder chiave; il resto lo gestisco io in async con aggiornamenti settimanali."
+                                   },
+                                   {
+                                     "q": "Il mio team è piccolo (meno di 5 persone)?",
+                                     "a": "Parti dall'Audit: ti dice se e dove intervenire. Spesso per team piccoli bastano Audit + Template Pack, senza Overhaul."
+                                   },
+                                   {
+                                     "q": "Lavori in italiano o in inglese?",
+                                     "a": "Entrambi. Ho lavorato con team distribuiti in due lingue; documenti e training nella lingua del tuo team."
+                                   },
+                                   {
+                                     "q": "Cosa succede dopo l'Audit?",
+                                     "a": "Ricevi la roadmap e decidi tu: la implementi da solo, la implementiamo insieme con l'Overhaul (il costo dell'Audit viene scalato), o non facciamo nulla. Nessuna pressione."
+                                   }
+                                 ]
+                               },
+                       "finalCta":  {
+                                 "title": "Parliamone",
+                                 "desc": "Prenota una discovery call gratuita di 30 minuti: mappiamo i tuoi 3 colli principali, anche se poi non compri nulla.",
+                                 "cta": "Contattami qui"
+                               },
                       "approach":  {
                                       "title": "Come Lavoro",
                                       "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
@@ -321,7 +363,6 @@
                    "pricing":  {
                                    "title":  "Prezzo Semplice",
                                    "subtitle":  "Un prezzo. Tutto incluso.",
-                                   "price":  "€49",
                                    "period":  "una tantum",
                                    "includes":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
                                    "cta":  "Acquista ShipKit",
