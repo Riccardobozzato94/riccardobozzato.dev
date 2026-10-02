@@ -1,373 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operational Chaos Diagnostic — Worksheet</title>
+  <title>Diagnosi del Time-to-Market — foglio di lavoro</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       font-size: 10px;
-      line-height: 1.4;
-      color: #1a1a2e;
-      background: #f8f9fc;
+      line-height: 1.45;
+      color: #18181b;
+      background: #f4f4f5;
       padding: 20px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
-    .page {
-      max-width: 210mm;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      padding: 20px 24px;
+    .page { max-width: 210mm; margin: 0 auto; background: #fff; padding: 22px 24px; border-radius: 8px; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+
+    /* ── Header ── */
+    .header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10mm; margin-bottom: 14px; padding-bottom: 11px; border-bottom: 2px solid #18181b; }
+    .header .brand { flex: 1 1 auto; min-width: 0; }
+    .header h1 { font-size: 17px; font-weight: 800; letter-spacing: -.2px; }
+    .header h1 span { color: #15803d; }
+    .header .sub { font-size: 9px; color: #52525b; margin-top: 3px; }
+    .header .meta { flex: 0 0 46mm; text-align: right; font-size: 8.5px; color: #52525b; }
+    .header .meta input { display: block; width: 100%; padding: 2px 5px; font-size: 8.5px; border: 1px solid #d4d4d8; border-radius: 3px; margin-top: 2px; }
+    .header .meta .row { margin-bottom: 3px; }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 13px; break-inside: avoid; }
+    .stitle { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 5px; display: flex; align-items: baseline; gap: 6px; }
+    .stitle .n { color: #15803d; }
+    .stitle .meta-right { margin-left: auto; font-size: 8px; color: #71717a; font-weight: 400; text-transform: none; letter-spacing: 0; }
+    .sdesc { font-size: 8.5px; color: #52525b; margin-bottom: 7px; }
+    .sdesc strong { color: #18181b; }
+
+    /* ── Forms ── */
+    input[type=text], input[type=number], textarea, select {
+      width: 100%; padding: 2px 5px; font-size: 8.5px; border: 1px solid #d4d4d8; border-radius: 3px;
+      background: #fff; font-family: inherit; color: #18181b;
     }
-    /* ─── Header ─── */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 3px solid #6c5ce7;
-    }
-    .header h1 {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-      color: #1a1a2e;
-    }
-    .header h1 span { color: #6c5ce7; }
-    .header .meta {
-      text-align: right;
-      font-size: 9px;
-      color: #6b7280;
-    }
-    .header .meta input {
-      display: block;
-      width: 180px;
-      padding: 3px 6px;
-      font-size: 9px;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
-      margin-top: 2px;
-    }
-    /* ─── Sections ─── */
-    .section {
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #6c5ce7;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .section-title .badge {
-      font-size: 8px;
-      background: #6c5ce7;
-      color: #fff;
-      border-radius: 10px;
-      padding: 1px 7px;
-      font-weight: 600;
-    }
-    .section-desc {
-      font-size: 9px;
-      color: #6b7280;
-      margin-bottom: 8px;
-    }
-    /* ─── Phase 1: Process Map ─── */
-    .process-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-    }
-    .process-card {
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      padding: 8px 10px;
-      background: #fafbfc;
-    }
-    .process-card h4 {
-      font-size: 9px;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: #374151;
-    }
-    .process-card .field {
-      margin-bottom: 3px;
-      font-size: 8px;
-      color: #6b7280;
-    }
-    .process-card .field input,
-    .process-card .field textarea {
-      width: 100%;
-      padding: 2px 5px;
-      font-size: 8px;
-      border: 1px solid #e5e7eb;
-      border-radius: 3px;
-      background: #fff;
-      font-family: inherit;
-      resize: vertical;
-    }
-    .process-card .field textarea { min-height: 28px; }
-    .process-card .indicators {
-      display: flex;
-      gap: 4px;
-      margin-top: 4px;
-    }
-    .process-card .indicators input {
-      width: 100%;
-      padding: 2px 5px;
-      font-size: 8px;
-      border: 1px solid #e5e7eb;
-      border-radius: 3px;
-      background: #fff;
-    }
-    .label-sm {
-      display: block;
-      font-size: 7px;
-      color: #9ca3af;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      margin-bottom: 1px;
-    }
-    /* ─── Phase 2: Metrics ─── */
-    .metrics-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 8px;
-    }
-    .metrics-table th {
-      background: #6c5ce7;
-      color: #fff;
-      padding: 5px 6px;
-      text-align: left;
-      font-weight: 600;
-      font-size: 7px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-    .metrics-table td {
-      padding: 4px 6px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .metrics-table input {
-      width: 100%;
-      padding: 2px 5px;
-      font-size: 8px;
-      border: 1px solid #e5e7eb;
-      border-radius: 3px;
-    }
-    .metrics-table .formula {
-      font-size: 7px;
-      color: #6b7280;
-      font-style: italic;
-    }
-    /* ─── Phase 3: Priority Matrix ─── */
-    .matrix-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-    }
-    .matrix-quadrant {
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      padding: 8px 10px;
-      min-height: 90px;
-    }
-    .matrix-quadrant.p1 { border-left: 3px solid #ef4444; background: #fef2f2; }
-    .matrix-quadrant.p2 { border-left: 3px solid #f59e0b; background: #fffbeb; }
-    .matrix-quadrant.p3 { border-left: 3px solid #3b82f6; background: #eff6ff; }
-    .matrix-quadrant.p4 { border-left: 3px solid #9ca3af; background: #f9fafb; }
-    .matrix-quadrant h4 {
-      font-size: 9px;
-      font-weight: 600;
-      margin-bottom: 3px;
-    }
-    .matrix-quadrant .tag {
-      font-size: 7px;
-      color: #6b7280;
-      margin-bottom: 4px;
-    }
-    .matrix-quadrant textarea {
-      width: 100%;
-      min-height: 36px;
-      padding: 2px 5px;
-      font-size: 8px;
-      border: 1px solid #e5e7eb;
-      border-radius: 3px;
-      background: #fff;
-      font-family: inherit;
-      resize: vertical;
-    }
-    /* ─── Quick Wins ─── */
-    .wins-list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .win-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 8px;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: 4px;
-    }
-    .win-item input {
-      flex: 1;
-      padding: 2px 5px;
-      font-size: 8px;
-      border: 1px solid #e5e7eb;
-      border-radius: 3px;
-      background: #fff;
-    }
-    .win-item .impact {
-      font-size: 7px;
-      color: #16a34a;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    /* ─── Footer ─── */
-    .footer {
-      margin-top: 14px;
-      padding-top: 10px;
-      border-top: 1px solid #e5e7eb;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 7px;
-      color: #9ca3af;
-    }
-    .footer a {
-      color: #6c5ce7;
-      text-decoration: none;
-    }
-    /* ─── Print ─── */
+    input::placeholder, textarea::placeholder { color: #a1a1aa; }
+    textarea { resize: vertical; min-height: 26px; }
+    .label-sm { display: block; font-size: 7px; color: #71717a; text-transform: uppercase; letter-spacing: .3px; margin-bottom: 1px; }
+
+    /* ── Callout ── */
+    .callout { border-left: 3px solid #15803d; background: #f0fdf4; padding: 7px 10px; margin: 7px 0; font-size: 8.5px; color: #14532d; border-radius: 0 4px 4px 0; }
+    .callout.neutral { border-left-color: #a1a1aa; background: #fafafa; color: #3f3f46; }
+    .callout.warn { border-left-color: #b45309; background: #fffbeb; color: #78350f; }
+    .callout b { color: #052e16; }
+    .callout.neutral b, .callout.warn b { color: inherit; }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; font-size: 8px; }
+    th { background: #18181b; color: #fff; padding: 4px 5px; text-align: left; font-weight: 600; font-size: 7px; text-transform: uppercase; letter-spacing: .3px; }
+    td { padding: 3px 5px; border-bottom: 1px solid #e4e4e7; vertical-align: middle; }
+    td.rownum { font-weight: 700; color: #71717a; width: 6mm; text-align: center; background: #fafafa; }
+    .formula { font-size: 7.5px; color: #71717a; font-style: italic; margin-top: 5px; }
+    .verdict { font-weight: 700; font-size: 7.5px; }
+
+    /* ── Quadrants ── */
+    .quads { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .quad { border: 1px solid #e4e4e7; border-radius: 5px; padding: 7px 9px; }
+    .quad h4 { font-size: 9px; font-weight: 700; margin-bottom: 2px; display: flex; align-items: center; gap: 4px; }
+    .quad .rule { font-size: 7.5px; color: #52525b; margin-bottom: 4px; line-height: 1.35; }
+    .quad textarea { min-height: 34px; }
+    .q-a { border-left: 3px solid #15803d; background: #f0fdf4; }
+    .q-b { border-left: 3px solid #1d4ed8; background: #eff6ff; }
+    .q-c { border-left: 3px solid #b45309; background: #fffbeb; }
+    .q-d { border-left: 3px solid #a1a1aa; background: #fafafa; }
+
+    /* ── Actions ── */
+    .action { display: flex; gap: 6px; align-items: center; padding: 4px 7px; background: #fafafa; border: 1px solid #e4e4e7; border-radius: 4px; margin-bottom: 4px; }
+    .action .idx { font-weight: 800; color: #15803d; font-size: 10px; width: 4mm; }
+    .action .impact { font-size: 7.5px; font-weight: 700; color: #15803d; white-space: nowrap; }
+
+    /* ── Two-col helper ── */
+    .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .card { border: 1px solid #e4e4e7; border-radius: 5px; padding: 7px 9px; background: #fafafa; }
+    .card h4 { font-size: 9px; font-weight: 700; margin-bottom: 4px; }
+    .card ul { list-style: none; font-size: 7.8px; color: #3f3f46; }
+    .card li { padding-left: 9px; position: relative; margin-bottom: 2px; line-height: 1.4; }
+    .card li::before { content: "—"; position: absolute; left: 0; color: #15803d; }
+
+    .footer { margin-top: 14px; padding-top: 9px; border-top: 1px solid #e4e4e7; display: flex; justify-content: space-between; align-items: center; font-size: 7px; color: #a1a1aa; }
+    .footer a { color: #15803d; text-decoration: none; }
+
     @media print {
       body { background: #fff; padding: 0; }
-      .page { box-shadow: none; border-radius: 0; max-width: 100%; padding: 15px 18px; }
-      .matrix-quadrant textarea, .process-card .field textarea { min-height: auto; }
+      .page { box-shadow: none; border-radius: 0; max-width: 100%; padding: 14px 16px; }
+      .section { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- Header -->
+
+    <!-- ══ HEADER ══ -->
     <div class="header">
-      <div>
-        <h1>Operational <span>Chaos</span> Diagnostic</h1>
-        <p style="font-size:9px;color:#6b7280;margin-top:2px;">A 3-hour framework to map, measure, and prioritize operational debt</p>
+      <div class="brand">
+        <h1>Diagnosi del <span>Time-to-Market</span></h1>
+        <p class="sub">Foglio di lavoro in tre passi: misurare, isolare, decidere. Serve a capire dove un team perde tempo — e a produrre tre azioni con un nome e una data, non una lista di buone intenzioni.</p>
       </div>
       <div class="meta">
-        <div style="margin-bottom:4px;">Date: <input type="text" placeholder="YYYY-MM-DD"></div>
-        <div>Team/Department: <input type="text" placeholder="e.g., Engineering, Ops"></div>
+        <div class="row">Data: <input type="text" placeholder="gg/mm/aaaa"></div>
+        <div class="row">Area / team: <input type="text" placeholder="es. Ordini B2B"></div>
+        <div class="row">Responsabile: <input type="text" placeholder=""></div>
       </div>
     </div>
 
-    <!-- Phase 1 -->
-    <div class="section">
-      <div class="section-title">
-        <span>🔍 Phase 1: Process Map</span>
-        <span class="badge">60 min</span>
-      </div>
-      <p class="section-desc">
-        Map each process end-to-end (trigger → outcome). Mark every handoff, approval gate, and tool change.
-        Identify: <strong>handoff density</strong> (how many times work changes hands),
-        <strong>tool switches</strong> (how many tools touch one process),
-        <strong>approval bottlenecks</strong> (where work waits for a person).
-      </p>
-      <div class="process-grid">
-        <div class="process-card">
-          <h4>Process 1</h4>
-          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Customer onboarding"></div>
-          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., Signup → First invoice paid"></textarea></div>
-          <div class="indicators">
-            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
-          </div>
-        </div>
-        <div class="process-card">
-          <h4>Process 2</h4>
-          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Support ticket"></div>
-          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., Ticket created → Ticket closed"></textarea></div>
-          <div class="indicators">
-            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
-          </div>
-        </div>
-        <div class="process-card">
-          <h4>Process 3</h4>
-          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Deploy pipeline"></div>
-          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., PR merged → Production live"></textarea></div>
-          <div class="indicators">
-            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
-          </div>
-        </div>
-        <div class="process-card">
-          <h4>Process 4</h4>
-          <div class="field"><label class="label-sm">Name</label><input type="text" placeholder="e.g., Budget request"></div>
-          <div class="field"><label class="label-sm">Trigger → Outcome</label><textarea placeholder="e.g., Request submitted → Approved/Declined"></textarea></div>
-          <div class="indicators">
-            <div><label class="label-sm">Handoffs</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Tools</label><input type="number" placeholder="0"></div>
-            <div><label class="label-sm">Approvals</label><input type="number" placeholder="0"></div>
-          </div>
-        </div>
-      </div>
+    <!-- ══ NOTA DI METODO ══ -->
+    <div class="callout neutral">
+      <b>Come si usa.</b> Non serve un workshop di due giorni. Servono 90 minuti, un foglio e il tabELLone.
+      Si lavora su <b>un solo processo alla volta</b>: scegli quello che oggi ti fa perdere le promesse più spesso, non quello che è più semplice da misurare.
+      Le soglie in questo foglio sono <b>default sensati, non leggi universali</b>: servono a far partire il ragionamento. Se il tuo settore ha benchmark diversi, cambiale e annota perché. Un numero che non hai verificato è solo un'opinione travestita da metrica.
     </div>
 
-    <!-- Phase 2 -->
+    <!-- ══ PASSO 1 ══ -->
     <div class="section">
-      <div class="section-title">
-        <span>📊 Phase 2: Metric Baseline</span>
-        <span class="badge">60 min</span>
-      </div>
-      <p class="section-desc">
-        For each process, measure <strong>Lead Time</strong> (trigger to outcome),
-        <strong>Active Time</strong> (actual work), and <strong>Wait Time</strong> (queues).
-        Efficiency = Active ÷ Total. Below 40%? Your team spends more time waiting than working.
+      <div class="stitle"><span class="n">01</span> Mappa il processo<span class="meta-right">~30 minuti</span></div>
+      <p class="sdesc">
+        Scrivi il processo come una frase: <strong>quando succede X, qualcuno fa Y, e il risultato è Z</strong>.
+        Poi conta solo tre cose: quante volte il lavoro <strong>cambia di mano</strong>, quanti <strong>strumenti</strong> lo toccano, e quante <strong>approvazioni</strong> deve superare.
+        Non ottimizzare niente in questo passo: stai solo descrivendo. La regola è che se non riesci a scriverla in una frase, il processo non è ancora definito — e quella è già la prima scoperta.
       </p>
-      <table class="metrics-table">
+      <table>
         <thead>
           <tr>
-            <th style="width:18%">Process</th>
-            <th style="width:18%">Lead Time</th>
-            <th style="width:18%">Active Time</th>
-            <th style="width:18%">Wait Time</th>
-            <th style="width:18%">Efficiency</th>
-            <th style="width:10%">Data Source</th>
+            <th style="width:6mm"></th>
+            <th style="width:46%">Processo (trigger → risultato)</th>
+            <th style="width:11%">Cambi di mano</th>
+            <th style="width:11%">Strumenti</th>
+            <th style="width:11%">Approvazioni</th>
+            <th style="width:21%">Chi decide, in pratica</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><input type="text" placeholder="Process 1"></td>
-            <td><input type="text" placeholder="e.g., 5d"></td>
-            <td><input type="text" placeholder="e.g., 8h"></td>
-            <td><input type="text" placeholder="e.g., 4d 2h"></td>
-            <td><input type="text" placeholder="e.g., 20%"></td>
-            <td><input type="text" placeholder="Jira"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="Process 2"></td>
-            <td><input type="text" placeholder=""></td>
-            <td><input type="text" placeholder=""></td>
-            <td><input type="text" placeholder=""></td>
-            <td><input type="text" placeholder=""></td>
+            <td class="rownum">1</td>
+            <td><input type="text" placeholder="es. Ordine ricevuto → merce in giacenza"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
             <td><input type="text" placeholder=""></td>
           </tr>
           <tr>
-            <td><input type="text" placeholder="Process 3"></td>
+            <td class="rownum">2</td>
+            <td><input type="text" placeholder="es. Richiesta listino → preventivo inviato"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td class="rownum">3</td>
+            <td><input type="text" placeholder="es. Reso ricevuto → rimborso accreditato"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="formula">
+        Lettura: <strong>4 o più cambi di mano su un processo semplice è il segnale più forte che troverai in questo foglio.</strong>
+        Sopra i 7 strumenti di solito non è un problema di processo: è un problema di accessi e versioni diverse degli stessi dati.
+      </p>
+    </div>
+
+    <!-- ══ PASSO 2 ══ -->
+    <div class="section">
+      <div class="stitle"><span class="n">02</span> Misura, anche male<span class="meta-right">~30 minuti</span></div>
+      <p class="sdesc">
+        Per ogni processo separa il tempo in cui qualcuno <strong>lavora davvero</strong> dal tempo in cui il lavoro <strong>aspetta</strong>.
+        Il numero che ti interessa è l'efficienza. La parte che ti interessa ancora di più è <strong>da dove l'hai preso</strong>: un dato ricavato da un filtro dentro il gestionale vale molto più di un numero a memoria.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:6mm"></th>
+            <th style="width:22%">Processo</th>
+            <th style="width:14%">Lead time</th>
+            <th style="width:14%">Tempo attivo</th>
+            <th style="width:14%">Tempo di attesa</th>
+            <th style="width:12%">Efficienza</th>
+            <th style="width:18%">Da dove l'hai preso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rownum">1</td>
+            <td><input type="text" placeholder=""></td>
+            <td><input type="text" placeholder="es. 6 gg"></td>
+            <td><input type="text" placeholder="es. 14 h"></td>
+            <td><input type="text" placeholder="es. 5 gg 18 h"></td>
+            <td><input type="text" placeholder="es. 6%"></td>
+            <td><input type="text" placeholder="filtro gestionale, data"></td>
+          </tr>
+          <tr>
+            <td class="rownum">2</td>
+            <td><input type="text" placeholder=""></td>
             <td><input type="text" placeholder=""></td>
             <td><input type="text" placeholder=""></td>
             <td><input type="text" placeholder=""></td>
@@ -375,7 +208,8 @@
             <td><input type="text" placeholder=""></td>
           </tr>
           <tr>
-            <td><input type="text" placeholder="Process 4"></td>
+            <td class="rownum">3</td>
+            <td><input type="text" placeholder=""></td>
             <td><input type="text" placeholder=""></td>
             <td><input type="text" placeholder=""></td>
             <td><input type="text" placeholder=""></td>
@@ -384,76 +218,130 @@
           </tr>
         </tbody>
       </table>
-      <p class="formula" style="margin-top:4px;">
-        Efficiency = Active Time ÷ (Active Time + Wait Time) × 100. If you can&apos;t get this data in 10 minutes, your process is invisible.
+      <p class="formula">
+        <strong>Efficienza = tempo attivo ÷ (tempo attivo + tempo di attesa).</strong> In percentuale.
+        Sotto il <strong>20%</strong> il processo non è lento: è una coda di attese. Sopra il <strong>40%</strong> hai un problema diverso, quasi sempre di competenze o di strumenti, non di organizzazione.
+        Attenzione all'unità: il lead time è in giorni, il tempo attivo in ore. Converti tutto nella stessa unità prima di dividere, o il numero esce falso.
       </p>
     </div>
 
-    <!-- Phase 3 -->
+    <!-- ══ PASSO 3 ══ -->
     <div class="section">
-      <div class="section-title">
-        <span>🎯 Phase 3: Priority Matrix</span>
-        <span class="badge">60 min</span>
-      </div>
-      <p class="section-desc">
-        Score each process on two axes: <strong>Operational Impact</strong> (how much does this affect revenue/delivery? 1-5)
-        and <strong>Fixability</strong> (how much effort to improve? 1-5 where 1 = trivial, 5 = massive). Plot below.
+      <div class="stitle"><span class="n">03</span> Decidi, con una regola<span class="meta-right">~30 minuti</span></div>
+      <p class="sdesc">
+        Incrocia i due numeri del passo 1 e del passo 2. <strong>Impatto</strong> = quanto ti costa in tempo o in denaro se resta così (1-5, dove 5 è una promessa persa o un cliente perso).
+        <strong>Sforzo</strong> = quanto costa sistemarlo davvero, non quanto sembra (1-5, dove 1 è un'ora e 5 è un progetto di trimestre).
+        Il punto che conta: <strong>lo sforzo si stima solo guardando chi lo farebbe</strong>. Se non hai ancora una persona che lo farebbe, non è un'azione, è una speranza.
       </p>
-      <div class="matrix-grid">
-        <div class="matrix-quadrant p1">
-          <h4>🔴 P1 — Quick Wins</h4>
-          <div class="tag">High Impact · Easy to Fix · Do this week</div>
-          <textarea placeholder="List processes that are both impactful and fixable..."></textarea>
+      <div class="quads">
+        <div class="quad q-a">
+          <h4>Agisci subito</h4>
+          <p class="rule">Impatto alto, sforzo basso. Entro la settimana, senza chiedere il permesso a nessuno.</p>
+          <textarea placeholder=""></textarea>
         </div>
-        <div class="matrix-quadrant p2">
-          <h4>🟡 P2 — Strategic Projects</h4>
-          <div class="tag">High Impact · Hard to Fix · Plan next quarter</div>
-          <textarea placeholder="List processes that are impactful but need investment..."></textarea>
+        <div class="quad q-b">
+          <h4>Progetta con calma</h4>
+          <p class="rule">Impatto alto, sforzo alto. Va nel piano del trimestre con un nome e un budget, non nella lista dei desideri.</p>
+          <textarea placeholder=""></textarea>
         </div>
-        <div class="matrix-quadrant p3">
-          <h4>🔵 P3 — Nice to Haves</h4>
-          <div class="tag">Low Impact · Easy to Fix · When you have time</div>
-          <textarea placeholder="List quick fixes that won't move the needle much..."></textarea>
+        <div class="quad q-c">
+          <h4>Elimina</h4>
+          <p class="rule">Impatto basso, sforzo basso. Il caso più sottovalutato: togliere un passo batte sempre ottimizzarlo.</p>
+          <textarea placeholder=""></textarea>
         </div>
-        <div class="matrix-quadrant p4">
-          <h4>⚪ P4 — Ignore</h4>
-          <div class="tag">Low Impact · Hard to Fix · Leave alone</div>
-          <textarea placeholder="Processes that are not worth the effort right now..."></textarea>
+        <div class="quad q-d">
+          <h4>Lascia stare</h4>
+          <p class="rule">Impatto basso, sforzo alto. Decidi di non farlo, e annota la decisione. È una scelta, non una dimenticanza.</p>
+          <textarea placeholder=""></textarea>
         </div>
       </div>
     </div>
 
-    <!-- Action Items -->
+    <!-- ══ LE QUATTRO CAUSE ══ -->
     <div class="section">
-      <div class="section-title">
-        <span>⚡ Top 3 Actions This Week</span>
-        <span class="badge">Focus</span>
+      <div class="stitle">Dove si nascondono le cause</div>
+      <p class="sdesc">
+        Il tempo di attesa quasi mai viene da un singolo collo di bottiglia. Nella mia esperienza si riduce quasi sempre a quattro cause, e si cercano in quest'ordine perché è l'ordine in cui si trovano.
+      </p>
+      <div class="cols2">
+        <div class="card">
+          <h4>1. Attesa di una persona</h4>
+          <ul>
+            <li>Un solo approvatore per un processo che tutti usano</li>
+            <li>Approvazioni che tornano indietro senza motivo detto</li>
+            <li>Chi decide non è nella stessa fascia oraria di chi lavora</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>2. Attesa di un'informazione</h4>
+          <ul>
+            <li>Il dato esiste ma sta in un posto che nessuno guarda</li>
+            <li>Versioni diverse dello stesso file in circolazione</li>
+            <li>Si chiede ogni volta a chiunque, invece che al sistema</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>3. Attesa di una decisione di contenuto</h4>
+          <ul>
+            <li>Chi deve scegliere non ha il tempo per scegliere</li>
+            <li>Le opzioni non sono state ridotte a due</li>
+            <li>Il criterio di scelta non è mai stato scritto</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>4. Attesa di una risposta esterna</h4>
+          <ul>
+            <li>Fornitori e clienti senza un tempo di risposta atteso</li>
+            <li>Richieste che arrivano senza contesto e tornano indietro</li>
+            <li>Nessun sollecito automatico quando la scadenza passa</li>
+          </ul>
+        </div>
       </div>
-      <div class="wins-list">
-        <div class="win-item">
-          <span style="color:#6c5ce7;font-weight:700;">1.</span>
-          <input type="text" placeholder="What's the single highest-impact fix?">
-          <span class="impact">⚡</span>
-        </div>
-        <div class="win-item">
-          <span style="color:#6c5ce7;font-weight:700;">2.</span>
-          <input type="text" placeholder="What can you unblock this week?">
-          <span class="impact">⚡</span>
-        </div>
-        <div class="win-item">
-          <span style="color:#6c5ce7;font-weight:700;">3.</span>
-          <input type="text" placeholder="What metric will tell you it's working?">
-          <span class="impact">📈</span>
-        </div>
+      <div class="callout warn" style="margin-top:7px;">
+        <b>La trappola più comune.</b> Il primo tavolo che si riempie è quasi sempre "aggiungere una persona". Non risolve niente: aggiunge un passaggio di consegna e ti torna indietro come costo di coordinamento.
+        Prima prova a togliere un passaggio, poi a spostare una decisione più in alto nel flusso, e solo dopo valuta di aggiungere persone.
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- ══ AZIONI ══ -->
+    <div class="section">
+      <div class="stitle">Le tre azioni della settimana</div>
+      <p class="sdesc">
+        Tre, non sette. Una lista di sette azioni è una lista che non inizia. Per ognuna: <strong>cosa cambia da domani mattina</strong>, <strong>chi lo fa</strong>, <strong>quando è finito</strong>, e <strong>quale numero vi dirà se ha funzionato</strong>.
+      </p>
+      <div class="action">
+        <span class="idx">1.</span>
+        <input type="text" placeholder="Cosa cambia, in una frase">
+        <input type="text" placeholder="Chi" style="width:26mm">
+        <input type="text" placeholder="Entro il" style="width:22mm">
+        <input type="text" placeholder="Misuriamo" style="width:30mm">
+      </div>
+      <div class="action">
+        <span class="idx">2.</span>
+        <input type="text" placeholder="Cosa cambia, in una frase">
+        <input type="text" placeholder="Chi" style="width:26mm">
+        <input type="text" placeholder="Entro il" style="width:22mm">
+        <input type="text" placeholder="Misuriamo" style="width:30mm">
+      </div>
+      <div class="action">
+        <span class="idx">3.</span>
+        <input type="text" placeholder="Cosa cambia, in una frase">
+        <input type="text" placeholder="Chi" style="width:26mm">
+        <input type="text" placeholder="Entro il" style="width:22mm">
+        <input type="text" placeholder="Misuriamo" style="width:30mm">
+      </div>
+      <div class="callout">
+        <b>La regola per non ricominciare da capo tra tre mesi.</b> Rifai questo foglio sugli stessi tre processi, con gli stessi numeri.
+        Se il tempo di attesa non è sceso, il problema non era il processo che hai cambiato: era uno dei due vicini.
+      </div>
+    </div>
+
+    <!-- ══ FOOTER ══ -->
     <div class="footer">
-      <span>Part of the <strong>Operational Chaos Diagnostic</strong> framework by Riccardo Bozzato</span>
+      <span>Diagnosi del Time-to-Market · Riccardo Bozzato — Delivery Manager &amp; Head of Operations</span>
       <span>
-        <a href="https://riccardobozzato.com">riccardobozzato.dev</a> ·
-        Need help? <a href="https://riccardobozzato.com/contact">Book a call</a>
+        <a href="https://riccardobozzato.com">riccardobozzato.com</a> ·
+        <a href="https://riccardobozzato.com/contact">Parliamone</a>
       </span>
     </div>
   </div>

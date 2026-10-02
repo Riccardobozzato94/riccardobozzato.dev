@@ -1,67 +1,31 @@
 ﻿"use client";
 
 import { useState, type FormEvent } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CheckCircle2, Download, Lock, Sparkles, Map, BarChart3, Target, ArrowRight, FileText } from "lucide-react";
+import {
+  CheckCircle2,
+  Download,
+  ArrowRight,
+  FileText,
+  X,
+} from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
-const phases = [
-  {
-    icon: <Map className="size-5" />,
-    title: "Phase 1: Process Map",
-    time: "60 min",
-    desc: "Map every business process end-to-end. Mark handoffs, tool switches, and approval bottlenecks.",
-  },
-  {
-    icon: <BarChart3 className="size-5" />,
-    title: "Phase 2: Metric Baseline",
-    time: "60 min",
-    desc: "Measure lead time, active time, and wait time. Calculate process efficiency.",
-  },
-  {
-    icon: <Target className="size-5" />,
-    title: "Phase 3: Priority Matrix",
-    time: "60 min",
-    desc: "Score each process by impact and fixability. Build your action plan.",
-  },
-];
-
-const phasesIt = [
-  {
-    icon: <Map className="size-5" />,
-    title: "Fase 1: Process Map",
-    time: "60 min",
-    desc: "Mappa ogni processo aziendale end-to-end. Segnala passaggi di consegna, cambi di strumento e colli di bottiglia nelle approvazioni.",
-  },
-  {
-    icon: <BarChart3 className="size-5" />,
-    title: "Fase 2: Metric Baseline",
-    time: "60 min",
-    desc: "Misura lead time, active time e wait time. Calcola l'efficienza del processo.",
-  },
-  {
-    icon: <Target className="size-5" />,
-    title: "Fase 3: Priority Matrix",
-    time: "60 min",
-    desc: "Valuta ogni processo per impatto e risolvibilità. Costruisci il tuo piano d'azione.",
-  },
-];
-
 export default function FreebiePage() {
   const t = useTranslations("freebie");
-  const locale = useLocale();
-  const isIt = locale === "it";
+
   const whatsInside = t.raw("whatsInside") as string[];
+  const how = t.raw("how") as { step: string; title: string; desc: string }[];
+  const forWho = t.raw("forWho") as string[];
+  const forWhoNot = t.raw("forWhoNot") as string[];
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [directDownload, setDirectDownload] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent) {
@@ -89,315 +53,209 @@ export default function FreebiePage() {
 
   return (
     <>
-      {/* ═══════════════ HERO ═══════════════ */}
+      {/* ═══ HERO ═══ */}
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-accent/6 blur-[150px]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[100px]" />
-          <svg className="absolute inset-0 w-full h-full opacity-[0.03]">
-            <defs>
-              <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1" fill="white" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#dots)" />
-          </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Value Proposition */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-start">
+            {/* Left: the pitch */}
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-6">
-                <Sparkles className="size-3.5" />
-                {isIt ? "Risorsa Gratuita · PDF Stampabile" : "Free Resource · Printable Worksheet"}
+                <FileText className="size-3.5" />
+                {t("badge")}
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight leading-[1.1]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 tracking-tight leading-[1.08]">
                 {t("title")}
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground/80 mb-8 leading-relaxed">
-                {t("description")}
+              <p className="text-xl text-foreground/85 mb-6 font-medium leading-snug">
+                {t("subtitle")}
               </p>
 
-              {/* Phase preview */}
-              <div className="space-y-3 mb-8">
-                {(isIt ? phasesIt : phases).map((phase, i) => (
-                  <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-muted/30 border border-border/40">
-                    <div className="size-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 text-accent">
-                      {phase.icon}
-                    </div>
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2">
-                        <p className="text-sm font-medium text-foreground/90">{phase.title}</p>
-                        <span className="text-[10px] font-semibold uppercase tracking-wider text-accent bg-accent/10 px-1.5 py-0.5 rounded">{phase.time}</span>
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-0.5">{phase.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="text-muted-foreground leading-relaxed mb-6">{t("description")}</p>
 
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
-                <span className="flex items-center gap-1.5">
-                  <FileText className="size-3.5" /> {isIt ? "PDF stampabile di una pagina" : "Printable one-page worksheet"}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Lock className="size-3.5" /> {isIt ? "Niente spam, mai" : "No spam, ever"}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="size-3.5" /> {isIt ? "Ti cancelli quando vuoi" : "Unsubscribe anytime"}
-                </span>
-              </div>
+              <p className="text-sm text-muted-foreground/70 border-l-2 border-border pl-4 italic leading-relaxed">
+                {t("honestNote")}
+              </p>
             </div>
 
-            {/* Right: Form Card */}
-            <div>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl opacity-60" />
-                <div className="relative rounded-2xl border border-accent/20 bg-card shadow-2xl shadow-accent/5 overflow-hidden">
-                  <div className="h-1.5 bg-gradient-to-r from-accent/80 via-accent to-accent/80" />
-
-                  <div className="p-6 md:p-8">
-                        {status === "success" ? (
-                      <div className="flex flex-col items-center justify-center py-12 text-center space-y-5">
-                        <div className="size-20 rounded-2xl bg-accent/10 flex items-center justify-center">
-                          <Download className="size-10 text-accent" />
-                        </div>
-                        <div className="space-y-2">
-                          <p className="text-2xl font-bold tracking-tight">{t("form.success")}</p>
-                          <p className="text-muted-foreground text-sm">
-                            {isIt ? "Controlla la tua casella per il link di conferma — poi scarica il diagnostic." : "Check your inbox for the confirmation link — then download your diagnostic."}
-                          </p>
-                        </div>
-                        {directDownload && (
-                          <a
-                            href={directDownload}
-                            download
-                            className="group inline-flex items-center justify-center h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 px-8 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5"
-                          >
-                            <Download className="mr-2 size-4" />
-                            {isIt ? "Scarica Ora" : "Download Now"}
-                          </a>
-                        )}
-                        <p className="text-xs text-muted-foreground">
-                          {isIt ? "Il PDF ti sarà anche inviato via email." : "PDF will also be sent to your inbox."}
-                        </p>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleSubmit} className="space-y-5">
-                        <div className="text-center mb-2">
-                          <h3 className="text-xl font-bold tracking-tight">{isIt ? "Ricevi la tua Copia Gratuita" : "Get Your Free Copy"}</h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {isIt ? "PDF stampabile. Non serve carta di credito." : "Printable worksheet. No credit card required."}
-                          </p>
-                        </div>
-
-                        <div className="space-y-1.5">
-                          <label htmlFor="name" className="text-sm font-medium text-foreground/80">
-                            {t("form.name")}
-                          </label>
-                          <Input
-                            id="name"
-                            placeholder={t("form.namePlaceholder")}
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                            className="h-11 bg-background/50 border-border/50 focus-visible:border-accent/50 focus-visible:ring-accent/20"
-                          />
-                        </div>
-
-                        <div className="space-y-1.5">
-                          <label htmlFor="email" className="text-sm font-medium text-foreground/80">
-                            {t("form.email")}
-                          </label>
-                          <Input
-                            id="email"
-                            type="email"
-                            placeholder={t("form.emailPlaceholder")}
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            className="h-11 bg-background/50 border-border/50 focus-visible:border-accent/50 focus-visible:ring-accent/20"
-                          />
-                        </div>
-
-                        {/* Consent checkbox */}
-                        <div className="flex items-start gap-2.5">
-                          <input
-                            id="consent"
-                            type="checkbox"
-                            checked={consent}
-                            onChange={(e) => setConsent(e.target.checked)}
-                            required
-                            className="mt-1 size-4 shrink-0 rounded border-border/60 bg-background/50 text-accent focus-visible:ring-accent/30 focus-visible:ring-2 focus-visible:ring-offset-2"
-                          />
-                          <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed select-none">
-                            {isIt ? "Accetto di ricevere la sequenza educativa di 6 email su operations e processi (mi cancello quando voglio)." : "I agree to receive the 6-email educational sequence about operations and process design (unsubscribe anytime)."}{" "}
-                            <Link href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
-                              Privacy Policy
-                            </Link>
-                          </label>
-                        </div>
-
-                        {status === "error" && (
-                          <p className="text-sm text-destructive bg-destructive/5 rounded-lg p-3">
-                            {t("form.error")}
-                          </p>
-                        )}
-
-                        <Button
-                          type="submit"
-                          className="w-full h-12 rounded-xl text-base font-medium shadow-lg shadow-accent/10 hover:shadow-xl hover:shadow-accent/20 transition-all duration-300"
-                          size="lg"
-                          disabled={status === "loading" || !consent}
-                        >
-                          {status === "loading" ? (
-                            <span className="flex items-center gap-2">
-                              <svg className="animate-spin size-4" viewBox="0 0 24 24">
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                              </svg>
-                              {isIt ? "Invio in corso..." : "Sending..."}
-                            </span>
-                          ) : (
-                            <span className="flex items-center justify-center gap-2">
-                              {t("form.cta")} <ArrowRight className="size-4" />
-                            </span>
-                          )}
-                        </Button>
-
-                        <p className="text-xs text-muted-foreground/60 text-center">
-                          <Lock className="size-3 inline mr-1" />
-                          {isIt ? "I tuoi dati sono al sicuro. Il worksheet ti viene consegnato immediatamente via email." : "Your data is safe. Worksheet delivered instantly to your inbox."}{" "}
-                          <Link href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
-                            Privacy Policy
-                          </Link>
-                        </p>
-                      </form>
+            {/* Right: form */}
+            <div className="lg:sticky lg:top-28">
+              <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-xl shadow-black/5">
+                {status === "success" ? (
+                  <div className="space-y-5 text-center py-4">
+                    <div className="size-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
+                      <CheckCircle2 className="size-7 text-accent" />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-xl font-bold tracking-tight">{t("form.success")}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {t("form.successDesc")}
+                      </p>
+                    </div>
+                    {directDownload && (
+                      <a
+                        href={directDownload}
+                        download
+                        className="inline-flex items-center justify-center h-12 rounded-xl bg-primary text-primary-foreground px-8 text-sm font-medium transition-all hover:-translate-y-0.5 w-full"
+                      >
+                        <Download className="mr-2 size-4" />
+                        {t("form.downloadNow")}
+                      </a>
                     )}
                   </div>
-                </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="space-y-1.5">
+                      <label htmlFor="name" className="text-sm font-medium text-foreground/80">
+                        {t("form.name")}
+                      </label>
+                      <Input
+                        id="name"
+                        placeholder={t("form.namePlaceholder")}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                        className="h-11 bg-background/50 border-border/50"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label htmlFor="email" className="text-sm font-medium text-foreground/80">
+                        {t("form.email")}
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder={t("form.emailPlaceholder")}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="h-11 bg-background/50 border-border/50"
+                      />
+                    </div>
+
+                    <div className="flex items-start gap-2.5">
+                      <input
+                        id="consent"
+                        type="checkbox"
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
+                        required
+                        className="mt-1 size-4 shrink-0 rounded border-border/60 bg-background/50 accent-accent"
+                      />
+                      <label
+                        htmlFor="consent"
+                        className="text-xs text-muted-foreground leading-relaxed"
+                      >
+                        {t("form.privacyNote")}{" "}
+                        <Link
+                          href="/privacy"
+                          className="underline underline-offset-2 hover:text-accent transition-colors"
+                        >
+                          Privacy Policy
+                        </Link>
+                      </label>
+                    </div>
+
+                    {status === "error" && (
+                      <p className="text-sm text-destructive bg-destructive/5 rounded-lg p-3">
+                        {t("form.error")}
+                      </p>
+                    )}
+
+                    <Button
+                      type="submit"
+                      className="w-full h-12 rounded-xl text-base font-medium"
+                      disabled={status === "loading" || !consent}
+                    >
+                      {status === "loading" ? (
+                        <span className="flex items-center gap-2">{t("form.sending")}</span>
+                      ) : (
+                        <span className="flex items-center justify-center gap-2">
+                          {t("form.cta")} <ArrowRight className="size-4" />
+                        </span>
+                      )}
+                    </Button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════ WHAT'S INSIDE ═══════════════ */}
+      {/* ═══ COSA CONTIENE ═══ */}
       <Section animate className="py-16! md:!py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent mb-4">
-              <Sparkles className="size-3.5" />
-              {isIt ? "Cosa Include" : "What&apos;s Inside"}
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              {isIt ? "Tutto nel Diagnostic" : "Everything in the Diagnostic"}
-            </h2>
-            <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              {isIt ? "Un PDF stampabile pronto all'uso — non teoria, solo il framework." : "A ready-to-use printable worksheet — not theory, just the framework."}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {whatsInside.map((item: string, i: number) => (
-              <div
-                key={i}
-                className="group flex items-start gap-4 p-5 rounded-xl border border-border/50 bg-card/50 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-accent/20"
-              >
-                <div className="size-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                  <CheckCircle2 className="size-5 text-accent" />
-                </div>
-                <div>
-                  <p className="text-foreground/90 font-medium leading-snug">{item}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* ═══════════════ HOW IT WORKS ═══════════════ */}
-      <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              {isIt ? "Come Usarlo" : "How to Use It"}
-            </h2>
-            <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              {isIt ? "Tre sessioni mirate. Una lavagna. Un piano d'azione chiaro." : "Three focused sessions. One whiteboard. A clear action plan."}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {(isIt ? [
-              {
-                step: "01",
-                title: "Stampa o Apri",
-                desc: "Stampa il worksheet o aprilo su un tablet. Prepara una lavagna per la sessione di team.",
-              },
-              {
-                step: "02",
-                title: "Esegui le 3 Fasi",
-                desc: "Segui il framework: Process Map → Metric Baseline → Priority Matrix. Una fase alla volta.",
-              },
-              {
-                step: "03",
-                title: "Azione!",
-                desc: "Identifica le tue Top 3 P1 quick win. Implementa questa settimana. Misura la prossima.",
-              },
-            ] : [
-              {
-                step: "01",
-                title: "Print or Open",
-                desc: "Print the worksheet or open it on a tablet. Grab a whiteboard for the team session.",
-              },
-              {
-                step: "02",
-                title: "Run the 3 Phases",
-                desc: "Follow the framework: Process Map → Metric Baseline → Priority Matrix. One phase at a time.",
-              },
-              {
-                step: "03",
-                title: "Take Action",
-                desc: "Identify your Top 3 P1 quick wins. Implement this week. Measure next week.",
-              },
-            ]).map((item, i) => (
-              <div key={i} className="relative p-6 rounded-2xl border border-border/50 bg-card text-center">
-                <div className="text-4xl font-black text-accent/20 mb-3">{item.step}</div>
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* ═══════════════ FINAL CTA ═══════════════ */}
-      <Section animate className="py-16! md:!py-20">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="size-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
-            <Target className="size-7 text-accent" />
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            {isIt ? "Pronto a Diagnosticare il Tuo Chaos Operativo?" : "Ready to Diagnose Your Operational Chaos?"}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">
+            {t("whatsInsideTitle")}
           </h2>
-          <p className="text-muted-foreground text-lg">
-            {isIt ? "Scarica il worksheet e trasforma la complessità invisibile in un piano d'azione chiaro — in tre ore." : "Download the worksheet and turn invisible complexity into a clear action plan — in three hours."}
-          </p>
-          <a
-            href="#"
-            className="group inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 px-8 text-base font-medium transition-all duration-300 hover:-translate-y-0.5"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
-            {isIt ? "Ricevi la tua Copia Gratuita" : "Get Your Free Copy"} <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+            {whatsInside.map((item: string, i: number) => (
+              <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed">
+                <CheckCircle2 className="size-4 text-accent shrink-0 mt-1" />
+                <span className="text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* ═══ COME SI USA ═══ */}
+      <Section animate delay={100} className="bg-muted/30 py-16! md:!py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-10">
+            {t("howTitle")}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {how.map((item, i) => (
+              <div key={i}>
+                <div className="font-mono text-xs text-accent mb-2">{item.step}</div>
+                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ═══ A CHI SERVE / A CHI NO ═══ */}
+      <Section animate className="py-16! md:!py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14">
+            <div>
+              <h2 className="text-lg font-bold tracking-tight mb-5 text-accent">
+                {t("forWhoTitle")}
+              </h2>
+              <ul className="space-y-3">
+                {forWho.map((item: string, i: number) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed">
+                    <CheckCircle2 className="size-3.5 text-accent shrink-0 mt-1" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-lg font-bold tracking-tight mb-5 text-muted-foreground/70">
+                {t("forWhoNotTitle")}
+              </h2>
+              <ul className="space-y-3">
+                {forWhoNot.map((item: string, i: number) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed">
+                    <X className="size-3.5 text-muted-foreground/50 shrink-0 mt-1" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </Section>
     </>

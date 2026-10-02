@@ -371,26 +371,64 @@
     }
   },
   "freebie": {
-    "title": "Operational Chaos Diagnostic",
-    "subtitle": "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
-    "description": "Lo stesso framework che uso con i miei clienti di consulenza — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
+    "badge": "Foglio di lavoro · PDF",
+    "title": "Diagnosi del Time-to-Market",
+    "subtitle": "Novanta minuti, un foglio, tre azioni con un nome e una data.",
+    "description": "È il foglio che uso per capire dove un team perde tempo, prima di decidere cosa sistemare. Lo compili in tre passi: descrivi il processo, separi il tempo in cui qualcuno lavora davvero dal tempo in cui il lavoro aspetta, poi incroci due numeri per arrivare a una decisione. Se in novanta minuti non escono tre azioni con un responsabile, il foglio ha fallito.",
+    "honestNote": "Non contiene benchmark universali. Le soglie sono default sensati per iniziare a ragionare: cambiale quando hai un dato tuo che li contraddice.",
+    "whatsInsideTitle": "Cosa c'è dentro",
     "whatsInside": [
-      "La Process Map: visualizzazione end-to-end dei flussi di lavoro",
-      "La Metric Baseline: lead time, active time, wait time",
-      "La Priority Matrix: scoring impatto vs. risolvibilità",
-      "Esempi pre-compilati per processi reali",
-      "Top 3 Azioni Questa Settimana: prossimi passi immediati"
+      "Tre passi su un solo processo alla volta, con i tempi indicati per ciascuno",
+      "Le tre cose da contare: cambi di mano, strumenti coinvolti, approvazioni",
+      "Il calcolo dell'efficienza, e la soglia sotto cui un processo è solo attesa",
+      "Le quattro cause da cui nasce il tempo di attesa, nell'ordine in cui si cercano",
+      "Una matrice a quattro quadranti che chiude in una decisione, non in un desiderio",
+      "Tre azioni con responsabile, scadenza e il numero che dirà se ha funzionato"
+    ],
+    "howTitle": "Come si usa",
+    "how": [
+      {
+        "step": "01",
+        "title": "Scegli un processo",
+        "desc": "Quello che oggi ti fa perdere le promesse più spesso. Non il più semplice da misurare: quello no, è una trappola."
+      },
+      {
+        "step": "02",
+        "title": "Compila staccando",
+        "desc": "Novanta minuti con il tabellone aperto. Numeri a memoria non valgono: se non sai da dove viene il dato, il dato non conta."
+      },
+      {
+        "step": "03",
+        "title": "Decidi e scrivi",
+        "desc": "Tre azioni, non sette. Una lista di sette non inizia. Metti un nome e una data accanto a ognuna."
+      }
+    ],
+    "forWhoTitle": "A chi serve",
+    "forWho": [
+      "Head of Operations, Operations Manager e Delivery Manager",
+      "Project Manager e Scrum Master che rispondono delle scadenze",
+      "Founder o COO di una scale-up che è cresciuta più veloce dei processi",
+      "E-commerce Manager che risponde dell'evasione e dei resi"
+    ],
+    "forWhoNotTitle": "A chi non serve",
+    "forWhoNot": [
+      "Se cerchi un corso da seguire: qui non c'è nessun video, solo un foglio da compilare",
+      "Se la tua azienda ha meno di dieci persone e un processo solo: non c'è ancora caos da diagnosticare",
+      "Se vuoi che qualcuno lo faccia al posto tuo: per quello c'è la consulenza, e costa",
+      "Se ti serve un software che lo faccia al posto tuo: esistono, e sono lontani da quello che fai"
     ],
     "form": {
-      "namePlaceholder": "Il tuo nome",
-      "emailPlaceholder": "tu@azienda.com",
-      "cta": "Inviami il Diagnostic",
-      "sending": "Invio in corso...",
-      "success": "Controlla la tua casella! Clicca il link di conferma per ricevere il diagnostic.",
-      "privacy": "Niente spam. Ti cancelli quando vuoi.",
       "name": "Nome",
+      "namePlaceholder": "Come ti chiami",
       "email": "Email",
-      "error": "Qualcosa è andato storto. Riprova."
+      "emailPlaceholder": "tu@azienda.com",
+      "cta": "Inviami il foglio",
+      "sending": "Invio in corso...",
+      "success": "Controlla la casella",
+      "successDesc": "Ti ho mandato un link da confermare. appena lo apri parte il download del foglio, e da lì comincia la sequenza.",
+      "downloadNow": "Scarica il foglio",
+      "privacyNote": "Sei email in 30 giorni, e una disiscrizione con un clic in fondo a ognuna. I tuoi dati restano nel mio database e non li passo a nessuno.",
+      "error": "Non è andato a buon fine. Riprova tra un secondo."
     }
   },
   "about": {

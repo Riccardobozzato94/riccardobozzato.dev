@@ -371,26 +371,64 @@
     }
   },
   "freebie": {
-    "title": "Operational Chaos Diagnostic",
-    "subtitle": "Three hours. A whiteboard. A clear picture of what's broken and how to fix it.",
-    "description": "This is the same framework I use with my consulting clients — stripped of the consulting overhead. Map your workflows, baseline your metrics, and build a priority matrix in three focused hours. Works on a whiteboard or Miro.",
+    "badge": "Worksheet · PDF",
+    "title": "Time-to-Market Diagnostic",
+    "subtitle": "Ninety minutes, one worksheet, three actions with a name and a date.",
+    "description": "This is the worksheet I use to find out where a team loses time, before deciding what to fix. You fill it in three steps: describe the process, separate the time someone is genuinely working from the time the work is waiting, then cross two numbers to reach a decision. If ninety minutes don't produce three actions with an owner, the worksheet failed.",
+    "honestNote": "It contains no universal benchmarks. The thresholds are sensible defaults to get you reasoning: change them when you have your own data that contradicts them.",
+    "whatsInsideTitle": "What is inside",
     "whatsInside": [
-      "The Process Map: end-to-end workflow visualization",
-      "The Metric Baseline: lead time, active time, wait time",
-      "The Priority Matrix: impact vs. fixability scoring",
-      "Pre-filled examples for real processes",
-      "Top 3 Actions This Week: immediate next steps"
+      "Three steps on a single process at a time, with the time budget for each",
+      "The three things to count: handoffs, tools involved, approvals",
+      "The efficiency calculation, and the threshold below which a process is pure waiting",
+      "The four causes waiting time comes from, in the order you should look for them",
+      "A four-quadrant matrix that ends in a decision rather than a wish",
+      "Three actions with an owner, a deadline, and the number that tells you it worked"
+    ],
+    "howTitle": "How to use it",
+    "how": [
+      {
+        "step": "01",
+        "title": "Pick one process",
+        "desc": "The one that makes you miss promises most often. Not the easiest to measure: that is a trap."
+      },
+      {
+        "step": "02",
+        "title": "Fill it in away from your desk",
+        "desc": "Ninety minutes with the whiteboard open. Numbers from memory are worthless: if you cannot say where a number came from, it does not count."
+      },
+      {
+        "step": "03",
+        "title": "Decide and write it down",
+        "desc": "Three actions, not seven. A list of seven never starts. Put a name and a date next to each one."
+      }
+    ],
+    "forWhoTitle": "Who it is for",
+    "forWho": [
+      "Heads of Operations, Operations Managers and Delivery Managers",
+      "Project Managers and Scrum Masters who answer for deadlines",
+      "Founders and COOs of a scale-up that outgrew its processes",
+      "E-commerce Managers answerable for fulfilment and returns"
+    ],
+    "forWhoNotTitle": "Who it is not for",
+    "forWhoNot": [
+      "If you want a course to follow: there is no video here, just a sheet to fill in",
+      "If you have fewer than ten people and a single process: there is no chaos to diagnose yet",
+      "If you want someone to do it for you: that is consulting, and it costs",
+      "If you want software to do it for you: it exists, and it is nothing like what you do"
     ],
     "form": {
-      "namePlaceholder": "Your name",
-      "emailPlaceholder": "you@company.com",
-      "cta": "Send Me the Diagnostic",
-      "sending": "Sending...",
-      "success": "Check your inbox! Click the confirmation link to get your diagnostic.",
-      "privacy": "No spam. Unsubscribe anytime.",
       "name": "Name",
+      "namePlaceholder": "Your name",
       "email": "Email",
-      "error": "Something went wrong. Try again."
+      "emailPlaceholder": "you@company.com",
+      "cta": "Send me the worksheet",
+      "sending": "Sending...",
+      "success": "Check your inbox",
+      "successDesc": "I sent you a confirmation link. As soon as you click it the download starts, and the email sequence begins.",
+      "downloadNow": "Download the worksheet",
+      "privacyNote": "Six emails in 30 days, and an unsubscribe link at the bottom of each one. Your data stays in my database and is never passed on.",
+      "error": "That did not go through. Try again in a second."
     }
   },
   "about": {
