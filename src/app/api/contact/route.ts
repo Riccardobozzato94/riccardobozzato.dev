@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { rateLimit } from "@/lib/rate-limit";
+import { checkAbuse } from "@/lib/abuse";
 import { appendContactFallback } from "@/lib/contact-fallback";
 import { escapeHtml, sanitizeInput, sanitizeEmail } from "@/lib/escape";
 
@@ -31,27 +31,47 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  // ── Rate limiting (5 req/IP/60s) ──
-  const limit = rateLimit(request);
-  if (limit.limited) {
-    return NextResponse.json(
-      { error: "Too many requests. Please try again later." },
-      {
-        status: 429,
-        headers: {
-          "Retry-After": String(limit.retryAfter),
-          "X-RateLimit-Limit": "5",
-          "X-RateLimit-Remaining": "0",
-        },
-      }
-    );
+  // ── Abuse protection: honeypot + timing + per-IP limit (+ Turnstile if set) ──
+  const body = await request.clone().json().catch(() => ({}) as Record<string, unknown>);
+
+  const abuse = await checkAbuse({
+    request,
+    honeypot: body?.website,
+    formLoadedAt: body?.ts,
+    turnstileToken: body?.turnstileToken,
+    config: { max: 5, windowSeconds: 60 },
+  });
+
+  if (!abuse.ok) {
+    if (abuse.reason === "rate_limit") {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(abuse.retryAfter ?? 60),
+            "X-RateLimit-Limit": "5",
+            "X-RateLimit-Remaining": "0",
+          },
+        }
+      );
+    }
+
+    // Bots get a generic 200 so they cannot fingerprint the protection.
+    console.warn("[abuse] contact rejected", { reason: abuse.reason });
+    return NextResponse.json({ success: true });
   }
 
   try {
-    const raw = await request.json();
-    const name = sanitizeInput(raw.name, 100);
-    const email = sanitizeEmail(raw.email);
-    const message = sanitizeInput(raw.message, 5000);
+    const { name: rawName, email: rawEmail, message: rawMessage } = body as {
+      name?: unknown;
+      email?: unknown;
+      message?: unknown;
+    };
+
+    const name = sanitizeInput(typeof rawName === "string" ? rawName : "", 100);
+    const email = sanitizeEmail(typeof rawEmail === "string" ? rawEmail : "");
+    const message = sanitizeInput(typeof rawMessage === "string" ? rawMessage : "", 5000);
 
     // Validation
     if (!name || !email || !message) {

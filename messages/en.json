@@ -118,105 +118,78 @@
     "playbookLink": "Free worksheet"
   },
   "projects": {
-    "title": "Case Studies",
-    "subtitle": "From concept to production — I built each one, start to finish. Real code, real deployments, real results.",
-    "badgeLabel": "Case Study",
+    "title": "What I have run",
+    "subtitle": "Seven years in operations: retail, B2B e-commerce, consulting. Below is the full path, plus the projects where you can check the result yourself.",
+    "badgeLabel": "Track record",
+    "trackTitle": "The path",
+    "trackSubtitle": "Four companies, the same question every time: why does this team take thirty days to do something that should take three?",
+    "track": [
+      {
+        "company": "In's Mercato",
+        "role": "Operations",
+        "period": "Retail",
+        "scope": "Where I learned what happens when a process is not written down: in retail, the deadline does not move.",
+        "outcome": "Rules and flows made repeatable across stores and warehouse"
+      },
+      {
+        "company": "Aldi",
+        "role": "Operations",
+        "period": "Retail",
+        "scope": "A chain with high volumes and thin margins: here, two points of efficiency is the entire margin.",
+        "outcome": "Process automation, +30% stated efficiency"
+      },
+      {
+        "company": "Accenture",
+        "role": "Delivery & Automation",
+        "period": "Consulting",
+        "scope": "First client projects, with the stated goal of removing manual steps and waiting time.",
+        "outcome": "Automated processes, +30% stated efficiency"
+      },
+      {
+        "company": "Esse Solutions",
+        "role": "Head of Operations",
+        "period": "B2B e-commerce",
+        "scope": "A €500K portfolio across Magento, Shopware and Pimcore, with distributed teams of 8-12. Here I introduced Agile to an organisation that did not use it.",
+        "outcome": "+25% productivity, -40% time-to-market"
+      }
+    ],
+    "clientTitle": "Client project",
+    "clientSubtitle": "One project, told in full. It is the only one where you can check my work yourself.",
     "panificio": {
-      "title": "Panificio Da Sergio",
-      "subtitle": "Live: E-Commerce for a Family Bakery",
-      "description": "Live at panificiodasergio.it — a full e-commerce platform for a traditional Italian bakery. Scope negotiation, stakeholder management across 3 generations, and shipping under a tight budget. Built with Next.js, Tailwind CSS, and PostgreSQL.",
-      "badge": "Live Project",
-      "features": [
-        "Stakeholder management: translated 3 generations of family requirements into technical specs, balancing tradition with modern UX",
-        "Budget-constrained delivery: full e-commerce platform delivered under €2K material budget, using open-source stack and Netlify free tier",
-        "Multi-language (EN/IT) with local SEO for Italian and international customers",
-        "End-to-end order flow: product catalog → cart → pickup scheduling → confirmation → admin dashboard",
-        "Responsive design: mobile-first for on-the-go ordering, tablet-optimized for in-shop kiosk use"
+      "title": "Panificio da Sergio",
+      "subtitle": "E-commerce for a family bakery, delivered and still online",
+      "description": "Nobody asked me for a website. They had a recipe archive handwritten on paper, three generations who disagreed about everything, and a shop that ended each day not knowing what it had sold. The real work was deciding what to automate and what to leave to a human.",
+      "problemTitle": "The problem",
+      "problem": "Three generations with incompatible opinions on pricing, catalogue and opening hours. No data on what actually sold, because it was recorded by hand. A website with a £0 materials budget.",
+      "approachTitle": "How I handled it",
+      "approach": [
+        "A workshop with all three generations together, so principles were decided before specs",
+        "Specs written in Italian and English, so nobody could claim they had not understood",
+        "Open source and free tiers only: the budget constraint became the design constraint",
+        "A catalogue with collection scheduling, because for bread the date matters more than the price"
       ],
-      "techstack": [
-        "Next.js",
-        "Tailwind CSS",
-        "TypeScript",
-        "i18n (next-intl)",
-        "PostgreSQL (Neon)",
-        "Netlify"
+      "outcomeTitle": "The result",
+      "outcome": [
+        "A complete e-commerce site in production, under the materials budget",
+        "End-to-end order flow: catalogue, cart, collection, confirmation, dashboard",
+        "Bilingual, with care for the shop's walk-in customers",
+        "Still online months later, which is the only test that counts"
       ],
-      "screenshots": [
-        {
-          "label": "Homepage — daily fresh-baked showcase"
-        },
-        {
-          "label": "Product catalog with pickup scheduling"
-        }
-      ],
-      "sectionFeatures": "Features",
-      "sectionWhatItDoes": "What It Does",
-      "sectionTechStack": "Built With",
-      "sectionScreenshots": "Screenshots",
-      "sectionScreenshotsDesc": "Live site previews",
-      "ctaTitle": "See It Live",
-      "ctaDesc": "Visit panificiodasergio.it to see the e-commerce platform in action — built for a real bakery, running in production.",
-      "ctaVisit": "Visit Live Site →",
-      "ctaButton": "Contact Me",
-      "cta": "Read Case Study",
-      "note": "Family project, delivered under budget"
+      "stackNote": "Next.js, Tailwind, TypeScript, PostgreSQL, next-intl, Netlify",
+      "ctaVisit": "panificiodasergio.it",
+      "ctaContact": "Talk to me about it"
     },
+    "builtTitle": "What I build to do the job better",
+    "builtSubtitle": "Two projects of mine, both open. I am not listing them to pad a CV: they are the tools behind the work above.",
     "vulnclaw": {
       "title": "VulnClaw",
-      "subtitle": "Product Delivery: AI-Powered CLI from Zero to Open Source Community",
-      "description": "Built an open-source AI penetration testing CLI from scratch. Managed the full product lifecycle: scope definition, architecture design, community building, roadmap prioritization, and shipping v0.4.0 with active users across 3 continents. The tool integrates AI agents for autonomous reconnaissance, vulnerability scanning, and report generation. Key lesson: starting narrow beats building broad every time. 1,200+ GitHub stars, 40+ forks, 15+ community contributors.",
-      "features": [
-        "Product scoping: evolved from a simple port scanner to a multi-agent AI penetration testing framework in 6 months (v0.1 → v0.4)",
-        "AI agent architecture: 3 specialized agents — Recon, Exploit, Report — that collaborate autonomously using LLM reasoning",
-        "Community management: triaged 80+ PRs and 200+ issues, maintaining a 48h first-response SLA for critical security reports",
-        "Roadmap prioritization: said 'no' to 60% of feature requests to ship the essential 40% — ruthless scope control",
-        "Open source as delivery strategy: MIT license, GitHub Discussions for roadmap voting, automated CI/CD with GitHub Actions"
-      ],
-      "techstack": [
-        "Python 3.12",
-        "Typer (CLI)",
-        "Rich (terminal UI)",
-        "Prompt Toolkit (interactive shell)",
-        "AI/LLM (OpenAI, Claude)",
-        "GitHub Actions"
-      ],
-      "cta": "Read Case Study",
-      "status": "Shipped v0.4.0 · 1.2K+ GitHub ⭐"
+      "description": "An open source CLI for penetration testing. It started because I wanted to understand how an attack works without depending on tools I could not inspect.",
+      "link": "github.com/Riccardobozzato94"
     },
     "synapse": {
       "title": "Synapse",
-      "subtitle": "Second Brain: AI-Native Knowledge Management",
-      "description": "A 9,000+ note Obsidian vault connected to AI engines — semantic RAG (ChromaDB), LLM Wiki indexing, and Agent Memory. Every project, idea, lesson, and contact is indexed into a living knowledge graph, queryable in seconds by both humans and AI agents. Built with Obsidian, Python, ChromaDB, and MCP protocol integration.",
-      "badge": "Second Brain",
-      "features": [
-        "Semantic RAG: all-MiniLM-L6-v2 embeddings turn every note into a vector — search by meaning, not keywords",
-        "LLM Wiki: structured index of all 9,000+ notes grouped by area for rapid AI agent navigation",
-        "Agent Memory: shared operational memory across AI sessions — agents log what they did and why",
-        "MCP Integration: vault exposed as Model Context Protocol resource, accessible from any compatible AI agent"
-      ],
-      "techstack": [
-        "Obsidian",
-        "Python",
-        "ChromaDB",
-        "Sentence Transformers",
-        "RAG",
-        "MCP"
-      ],
-      "cta": "Learn More"
-    },
-    "shipkit": {
-      "title": "ShipKit",
-      "subtitle": "SaaS Kit: From Idea to €49 Paid Product",
-      "description": "Designed, built, and shipped a production-ready SaaS boilerplate (Next.js 16, Stripe, Auth, i18n) as a paid product. Managing the full delivery lifecycle: requirements gathering, scope control, payment integration, documentation, and customer support. The product ships with multi-tenant architecture, automated billing with Stripe webhooks, Google OAuth + magic link auth, and full i18n support. Sold at €49/one-time with lifetime updates. 12 real customers in the first 3 months.",
-      "features": [
-        "Full product lifecycle: concept validation → architecture → build → ship → support → iteration",
-        "Scope control: 12-month ideal scope compressed to 8 months with ruthless MVP prioritization — saved 4 months of dev time",
-        "Payment integration: Stripe Checkout + webhooks + idempotency keys + graceful failure recovery for failed payments",
-        "Multi-tenant architecture: isolated tenant data, custom domains per tenant, shared infrastructure for cost efficiency",
-        "Internationalization: next-intl with full EN/IT support, RTL-ready, locale-aware routing baked in from day one",
-        "Documentation as delivery: 40+ pages of setup guides, API references, deployment walkthroughs, and troubleshooting"
-      ],
-      "cta": "Read Case Study"
+      "description": "My knowledge vault with semantic search and memory shared between agents. Everything I learn about processes ends up here.",
+      "link": ""
     }
   },
   "services": {

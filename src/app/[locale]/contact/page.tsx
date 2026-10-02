@@ -22,6 +22,10 @@ export default function ContactPage() {
     "idle" | "loading" | "success" | "error"
   >("idle");
 
+  // Anti-bot fields, sent but never shown. See lib/abuse.ts for the checks.
+  const [honeypot, setHoneypot] = useState("");
+  const [formTs] = useState(() => Date.now());
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("loading");
@@ -30,7 +34,13 @@ export default function ContactPage() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          website: honeypot,
+          ts: formTs,
+        }),
       });
 
       if (!res.ok) throw new Error("Failed");
@@ -80,6 +90,19 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Honeypot: visually and semantically hidden. */}
+                    <div aria-hidden="true" className="absolute left-[-9999px] h-px w-px overflow-hidden">
+                      <label htmlFor="contact-website">Website</label>
+                      <input
+                        id="contact-website"
+                        name="website"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-foreground/80">
                         {t("form.name")}

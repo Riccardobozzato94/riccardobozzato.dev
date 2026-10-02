@@ -28,6 +28,18 @@ export default function FreebiePage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [directDownload, setDirectDownload] = useState<string | null>(null);
 
+  /**
+   * Anti-bot fields, sent but never rendered.
+   *
+   * `website` is a honeypot: real users never fill a field they cannot see, so
+   * any value in it is a script. `ts` records when the form was mounted, so the
+   * server can reject a submit that arrives faster than a human could type.
+   * Neither is announced to assistive tech: `aria-hidden` plus `tabIndex={-1}`
+   * keeps them out of the tab order and the accessibility tree.
+   */
+  const [honeypot, setHoneypot] = useState("");
+  const [formTs] = useState(() => Date.now());
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("loading");
@@ -36,7 +48,7 @@ export default function FreebiePage() {
       const res = await fetch("/api/freebie", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, consent }),
+        body: JSON.stringify({ name, email, consent, website: honeypot, ts: formTs }),
       });
 
       if (!res.ok) throw new Error("Failed");
@@ -110,6 +122,20 @@ export default function FreebiePage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Honeypot: visually and semantically hidden. */}
+                    <div aria-hidden="true" className="absolute left-[-9999px] h-px w-px overflow-hidden">
+                      <label htmlFor="fb-website">Website</label>
+                      <input
+                        id="fb-website"
+                        name="website"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
+
                     <div className="space-y-1.5">
                       <label htmlFor="name" className="text-sm font-medium text-foreground/80">
                         {t("form.name")}

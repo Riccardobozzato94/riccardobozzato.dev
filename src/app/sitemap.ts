@@ -2,11 +2,32 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { getBlogPosts } from "@/lib/blog";
 
+/**
+ * Sitemap
+ *
+ * Single source of truth. NOTE: there must be no `public/sitemap.xml` — a file
+ * in public/ shadows this metadata route and silently wins. That is exactly how
+ * a stale July 2026 sitemap (still advertising `/services`, and missing all 12
+ * blog posts) kept being served after the offer page was hidden.
+ */
+
+const LOCALES = ["en", "it"] as const;
+
+/**
+ * Public, indexable pages.
+ *
+ * A page belongs here only if it is NOT `noindex`. Keeping a noindex page in
+ * the sitemap tells search engines to crawl something you have told them to
+ * ignore, which is a contradiction. The excluded ones are:
+ *   services  - contact-gated until P.IVA, robots noindex
+ *   books, playbook, shipkit - hidden offer pages, robots noindex
+ *   login, thank-you, confirm, unsubscribe - transactional, no search value
+ *   advertise - new; opt in here once it has earned some links
+ */
 const STATIC_PAGES = [
   "",
   "about",
   "accessibility",
-  "advertise",
   "blog",
   "contact",
   "freebie",
@@ -14,29 +35,15 @@ const STATIC_PAGES = [
   "projects",
 ];
 
-// Project detail pages (indexable).
-const PROJECT_SLUGS = ["panificio", "synapse", "vulnclaw"];
-
-// NOTE: books / playbook / shipkit / services are intentionally excluded
-// (consulting offer hidden — hiring-first positioning). Pages stay online
-// but carry robots noindex metadata, so they must NOT be advertised here.
-//
-// WARNING: do not add a static `public/sitemap.xml`. A file in public/ shadows
-// this metadata route and silently wins — that is how a stale July 2026 sitemap
-// (with /services in it) kept being served after c3b8ea8 hid the offer.
-
-const LOCALES = ["en", "it"] as const;
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Static pages for each locale
   const staticRoutes: MetadataRoute.Sitemap = STATIC_PAGES.flatMap((page) =>
     LOCALES.map((locale) => ({
       url: `${SITE_URL}/${locale}${page ? `/${page}` : ""}`,
       lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: page === "" ? 1 : 0.7,
+      changeFrequency: page === "blog" ? ("daily" as const) : ("weekly" as const),
+      priority: page === "" ? 1 : page === "blog" || page === "freebie" ? 0.8 : 0.6,
       alternates: {
         languages: {
           en: `${SITE_URL}/en${page ? `/${page}` : ""}`,
@@ -46,29 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Project detail pages for each locale
-  const projectRoutes: MetadataRoute.Sitemap = PROJECT_SLUGS.flatMap((slug) =>
-    LOCALES.map((locale) => ({
-      url: `${SITE_URL}/${locale}/projects/${slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      alternates: {
-        languages: {
-          en: `${SITE_URL}/en/projects/${slug}`,
-          it: `${SITE_URL}/it/projects/${slug}`,
-        },
-      },
-    }))
-  );
-
-  // Blog posts for each locale
   const blogRoutes: MetadataRoute.Sitemap = LOCALES.flatMap((locale) =>
     getBlogPosts(locale).map((post) => ({
       url: `${SITE_URL}/${locale}/blog/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
-      priority: 0.6,
+      priority: 0.7,
       alternates: {
         languages: {
           en: `${SITE_URL}/en/blog/${post.slug}`,
@@ -78,5 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticRoutes, ...projectRoutes, ...blogRoutes];
+  return [...staticRoutes, ...blogRoutes];
 }

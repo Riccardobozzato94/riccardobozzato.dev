@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getResendClient, FROM_EMAIL, FROM_NAME, TO_EMAIL, APP_URL } from "@/lib/resend";
 import { createLead } from "@/lib/lead-store";
 import { confirmationTemplate } from "@/lib/email/templates";
-import { rateLimit } from "@/lib/rate-limit";
+import { checkAbuse } from "@/lib/abuse";
 import { escapeHtml, sanitizeInput, sanitizeEmail } from "@/lib/escape";
 import type { Lead } from "@/lib/email/types";
 
@@ -23,26 +23,50 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  // ── Rate limiting (5 req/IP/60s) ──
-  const limit = rateLimit(request);
-  if (limit.limited) {
-    return NextResponse.json(
-      { error: "Too many requests. Please try again later." },
-      {
-        status: 429,
-        headers: {
-          "Retry-After": String(limit.retryAfter),
-          "X-RateLimit-Limit": "5",
-          "X-RateLimit-Remaining": "0",
-        },
-      }
-    );
+  const payload = await request.json().catch(() => ({}) as Record<string, unknown>);
+
+  // ── Abuse protection: honeypot + timing + per-IP limit (+ Turnstile if set) ──
+  // This endpoint triggers real transactional email through Resend, so it is
+  // the most expensive one to leave open. 5/60s is per IP, and the honeypot
+  // removes the naive scripted submits entirely.
+  const abuse = await checkAbuse({
+    request,
+    honeypot: payload?.website,
+    formLoadedAt: payload?.ts,
+    turnstileToken: payload?.turnstileToken,
+    config: { max: 5, windowSeconds: 60 },
+  });
+
+  if (!abuse.ok) {
+    if (abuse.reason === "rate_limit") {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(abuse.retryAfter ?? 60),
+            "X-RateLimit-Limit": "5",
+            "X-RateLimit-Remaining": "0",
+          },
+        }
+      );
+    }
+    // Bots get a normal-looking success so they cannot fingerprint the guard.
+    console.warn("[abuse] freebie rejected", { reason: abuse.reason });
+    return NextResponse.json({
+      success: true,
+      message: "Check your inbox! Click the confirmation link to get your diagnostic.",
+    });
   }
 
   try {
-    const { name: rawName, email: rawEmail, consent: rawConsent } = await request.json();
-    const name = sanitizeInput(rawName, 100);
-    const email = sanitizeEmail(rawEmail);
+    const { name: rawName, email: rawEmail, consent: rawConsent } = payload as {
+      name?: unknown;
+      email?: unknown;
+      consent?: unknown;
+    };
+    const name = sanitizeInput(typeof rawName === "string" ? rawName : "", 100);
+    const email = sanitizeEmail(typeof rawEmail === "string" ? rawEmail : "");
     const consent = !!rawConsent;
 
     // Validation
