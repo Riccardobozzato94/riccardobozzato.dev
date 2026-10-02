@@ -17,6 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t("title"),
     description: `Privacy Policy GDPR di ${site("title")} — come raccolgo, utilizzo e proteggo i tuoi dati personali.`,
     openGraph: {
+      type: "website",
+      images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: `${t("title")} | ${site("title")}`,
       description: `Privacy Policy GDPR di ${site("title")}.`,
       url: `${baseUrl}/${locale}/privacy`,

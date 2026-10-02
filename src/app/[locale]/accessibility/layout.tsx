@@ -17,6 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t("title"),
     description: `${t("title")} — conformità WCAG 2.1 livello AA. D.Lgs. 104/2022.`,
     openGraph: {
+      type: "website",
+      images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: `${t("title")} | ${site("title")}`,
       description: `${t("title")} — conformità WCAG 2.1 livello AA.`,
       url: `${baseUrl}/${locale}/accessibility`,

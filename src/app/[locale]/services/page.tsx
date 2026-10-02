@@ -35,6 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // no public checkout). Page stays de-indexed until P.IVA is active.
     robots: { index: false, follow: false },
     openGraph: {
+      type: "website",
+      images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: `${title} | ${site("title")}`,
       description,
       url: `${baseUrl}/${locale}/services`,

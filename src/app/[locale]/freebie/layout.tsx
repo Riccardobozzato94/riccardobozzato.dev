@@ -19,6 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // too long to be useful in a SERP snippet.
     description: t("metaDescription"),
     openGraph: {
+      type: "website",
+      images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: `${t("title")} | ${site("title")}`,
       description: t("metaDescription"),
       url: `${baseUrl}/${locale}/freebie`,

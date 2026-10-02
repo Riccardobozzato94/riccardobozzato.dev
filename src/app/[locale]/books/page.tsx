@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // nothing.
     robots: { index: true, follow: true },
     openGraph: {
+      type: "website",
+      images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: `${isIt ? "La mia libreria" : "My bookshelf"} | ${site("title")}`,
       description: isIt
         ? "Una mensola di lavoro e una personale, con quello che mi hanno cambiato."

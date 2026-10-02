@@ -36,6 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // Premium product hidden from navigation. De-indexed.
     robots: { index: false, follow: false },
     openGraph: {
+      type: "website",
+      images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: isIt ? "Playbook di Eccellenza Operativa" : "Operational Excellence Playbook",
       description: isIt
         ? "4 moduli premium per Operations Manager, Delivery Lead e Head of Operations."
