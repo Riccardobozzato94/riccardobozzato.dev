@@ -6,6 +6,7 @@ const STATIC_PAGES = [
   "",
   "about",
   "accessibility",
+  "advertise",
   "blog",
   "contact",
   "freebie",

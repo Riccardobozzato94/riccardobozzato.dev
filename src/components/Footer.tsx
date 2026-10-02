@@ -1,14 +1,21 @@
 "use client";
 
 import { useTranslations, useLocale } from "next-intl";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, Megaphone, Cookie } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
   const nav = useTranslations("nav");
+  const footer = useTranslations("footer");
   const locale = useLocale();
   const isIt = locale === "it";
   const currentYear = new Date().getFullYear();
+
+  // Reopens the consent panel. GDPR: withdrawing consent must be as easy as
+  // giving it, so this has to live somewhere permanently reachable.
+  function openCookieSettings() {
+    window.dispatchEvent(new Event("rbz:open-consent"));
+  }
 
   return (
     <footer role="contentinfo" className="bg-surface-container-lowest py-16 border-t border-outline-variant">
@@ -46,7 +53,7 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 flex-1">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 flex-1">
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">
               {isIt ? "NAVIGA" : "NAVIGATE"}
@@ -68,10 +75,32 @@ export default function Footer() {
             </ul>
           </div>
           <div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">{isIt ? "LAVORA CON ME" : "WORK WITH ME"}</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/advertise" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Megaphone className="size-3.5" />
+                  {footer("advertise")}
+                </Link>
+              </li>
+              <li><Link href="/freebie" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Playbook gratis" : "Free playbook"}</Link></li>
+              <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Contatti" : "Contact"}</Link></li>
+            </ul>
+          </div>
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-6">LEGAL</h4>
             <ul className="space-y-4">
               <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link href="/accessibility" className="text-sm text-muted-foreground hover:text-primary transition-colors">{isIt ? "Accessibilità" : "Accessibility"}</Link></li>
+              <li>
+                <button
+                  onClick={openCookieSettings}
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Cookie className="size-3.5" />
+                  {footer("cookieSettings")}
+                </button>
+              </li>
             </ul>
           </div>
         </div>

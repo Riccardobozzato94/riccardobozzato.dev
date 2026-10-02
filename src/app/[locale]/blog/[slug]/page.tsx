@@ -6,6 +6,7 @@ import { CalendarDays, ArrowLeft, ArrowRight, Sparkles, Download } from "lucide-
 import { Link } from "@/i18n/navigation";
 import Section from "@/components/Section";
 import { Badge } from "@/components/ui/badge";
+import { AdSlot } from "@/components/AdSlot";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -100,6 +101,14 @@ export default async function BlogPostPage({ params }: Props) {
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {post.body}
           </ReactMarkdown>
+
+          {/* Mid-article sponsorship slot. Renders nothing unless an AdSense
+              client is configured AND the visitor accepted the ads category. */}
+          <AdSlot
+            slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_INARTICLE ?? ""}
+            format="fluid"
+            label={isIt ? "Contenuto sponsorizzato" : "Sponsored content"}
+          />
         </article>
       </Section>
 

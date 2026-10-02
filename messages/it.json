@@ -1,576 +1,697 @@
 {
-    "site":  {
-                    "title":  "Riccardo Bozzato",
-                    "tagline":  "Delivery Manager | Head of Operations | PMP® — rendo i team digitali più veloci, meno caotici e più prevedibili.",
-                    "description":  "Delivery Manager & Head of Operations (PMP®). Costruisco l'architettura operativa che trasforma il caos in esecuzione prevedibile. €500K+ portfolio, -40% time-to-market, team 8-12. Disponibile da subito."
-              },
-    "accessibility":  {
-                    "title":  "Dichiarazione di Accessibilità",
-                    "lastUpdated":  "Ultimo aggiornamento: 21 Luglio 2026",
-                    "intro":  "Questa Dichiarazione di Accessibilità descrive lo stato di conformità di riccardobozzato.com ai requisiti di accessibilità web previsti dalla normativa italiana (D.Lgs. 104/2022) e dall'Unione Europea (Direttiva 2019/882). Il sito si impegna a garantire l'accessibilità a tutti gli utenti, indipendentemente dalle loro capacità o tecnologie utilizzate.",
-                    "sections":  [
-                                     {
-                                         "title":  "1. Stato di Conformità",
-                                         "content":  "riccardobozzato.com è <strong>parzialmente conforme</strong> allo standard WCAG 2.1 livello AA (Web Content Accessibility Guidelines). Il sito è stato progettato con attenzione all'accessibilità, ma alcune potrebbero non soddisfare pienamente tutti i criteri."
-                                     },
-                                     {
-                                         "title":  "2. Requisiti Normativi Applicabili",
-                                         "content":  "Questa dichiarazione si applica in base a:<br><br>• <strong>D.Lgs. 104/2022</strong> (Attuazione della Direttiva UE 2019/882) — obblighi di accessibilità per i siti web e le applicazioni mobili di soggetti pubblici e privati.<br>• <strong>Regolamento AgID</strong> (Agencia per l'Italia Digitale) — Linee guida per i siti web e le applicazioni mobili di enti pubblici.<br>• <strong>Direttiva 2019/882</strong> — Direttiva europea sull'accessibilità dei prodotti e servizi digitali."
-                                     },
-                                     {
-                                         "title":  "3. Criteri WCAG 2.1 Livello AA",
-                                         "content":  "I quattro principi WCAG sono:<br><br><strong>Percepibile:</strong> tutti i contenuti testuali disponibili come testo; immagini con testo alternativo; sufficiente contrasto dei colori; contenuti non testuali con alternative testuali.<br><br><strong>Utilizzabile:</strong> funzionalità navigabili con tastiera; sufficiente tempo per leggere e utilizzare i contenuti; nessun contenuto che provochi convulsioni.<br><br><strong>Comprensibile:</strong> testo leggibile e comprensibile; aspetto e funzionamento prevedibili; assistenza nella compilazione di moduli.<br><br><strong>Robusto:</strong> contenuti compatibili con tecnologie assistive attuali e future; nomi, ruoli e valori degli elementi dell'interfaccia correttamente definiti."
-                                     },
-                                     {
-                                         "title":  "4. Misure di Accessibilità Implementate",
-                                         "content":  "• Struttura HTML semantica con gerarchia di intestazioni corretta (h1 → h2 → h3).<br>• Navigazione completa da tastiera per tutti gli elementi interattivi.<br>• Indicatori di focus visibili su tutti gli elementi interattivi (:focus-visible).<br>• Testo alternativo (alt text) su tutte le immagini informative.<br>• Supporto per la riduzione delle animazioni (prefers-reduced-motion).<br>• Contrasto dei colori conforme al rapporto 4.5:1 (testo normale) e 3:1 (testo grande) secondo WCAG AA.<br>• Link e pulsanti con testo descrittivo, non solo \"clicca qui\".<br>• Moduli con label associati agli input, errori descrittivi, e messaggi di stato accessibili.<br>• Struttura della pagina con landmark ARIA (banner, navigation, main, contentinfo).<br>• Supporto per screen reader (NVDA, JAWS, VoiceOver) con testo descrittivo."
-                                     },
-                                     {
-                                         "title":  "5. Conformità Parziale — Limiti Notevoli",
-                                         "content":  "Il <strong>testo dell'SVG dell'OG image</strong> (opengraph) potrebbe non essere accessibile ai screen reader poiché i contenuti testuali in SVG non sono sempre letti correttamente. Sto lavorando a una soluzione alternativa.<br><br>La <strong>barra di annuncio</strong> \"Disponibile da subito\" utilizza animazioni pulse che, sebbene supportate da prefers-reduced-motion, potrebbero non essere perfettamente lette da tutti i reader. Il contenuto testuale è accessibile in ogni caso.<br><br>Alcune <strong>card animazioni</strong> (hover effects, translate) utilizzano transizioni CSS che potrebbero interferire con alcuni screen reader. Il contenuto resta accessibile indipendentemente dall'animazione."
-                                     },
-                                     {
-                                         "title":  "6. Tecniche Utilizzate per la Conformità",
-                                         "content":  "• HTML semantico (HTML5).<br>• WAI-ARIA 1.2 (Accessible Rich Internet Applications).<br>• CSS (Cascading Style Sheets) per il layout e la presentazione.<br>• JavaScript (React) per l'interattività — tutti gli elementi interattivi sono accessibili via tastiera e screen reader."
-                                     },
-                                     {
-                                         "title":  "7. Strumenti di Valutazione",
-                                         "content":  "Il sito è stato valutato utilizzando:<br><br>• Lighthouse Accessibility (Chrome DevTools).<br>• Axe DevTools (WAVE).<br>• Test manuali con tastiera e screen reader (VoiceOver su macOS).<br>• Validatore W3C per HTML e CSS."
-                                     },
-                                     {
-                                         "title":  "8. Feedback e Contatti",
-                                         "content":  "Se riscontri problemi di accessibilità su questo sito, contattami:<br><br><strong>Email:</strong> riccardobozzato@gmail.com<br><strong>Telefono:</strong> +39 389 213 9542<br><br>Impegnarmi a rispondere entro 5 giorni lavorativi e a fornire una soluzione alternativa o il contenuto in formato accessibile (es. PDF, documento testuale) entro 15 giorni lavorativi."
-                                     },
-                                     {
-                                         "title":  "9. Procedura di Recupero",
-                                         "content":  "Se la mia risposta non è soddisfacente, puoi contattare:<br><br><strong>AgID — Agenzia per l'Italia Digitale</strong><br>Ufficio per l'Accessibilità<br>https://www.agid.gov.it<br><br>L'AgID è l'organismo competente per le controversie relative all'accessibilità dei siti web in Italia."
-                                     },
-                                     {
-                                         "title":  "10. Aggiornamento di Questa Dichiarazione",
-                                         "content":  "Questa dichiarazione è stata aggiornata il 21 Luglio 2026. Verrà rivista e aggiornata periodicamente in base ai risultati delle valutazioni di accessibilità e ai cambiamenti normativi."
-                                     }
-                                  ],
-                    "nav":  "Accessibilità"
-                },
-    "nav":  {
-                "home":  "Home",
-        "vision": "La Visione",
-        "results": "Risultati",
-        "journey": "Il Viaggio",
-                "projects":  "Progetti",
-                "panificio":  "Panificio",
-                "shipkit":  "ShipKit",
-                "freebie":  "Diagnostica Gratuita",
-        "blog":  "Blog",
-                "books":  "Libri",
-                "services":  "Servizi",
-                "about":  "Chi Sono",
-                "contact":  "Contatti"
-            },
-    "home":  {
-                    "heroTitle":  "Operations, delivery ed execution. Con la mentalità di chi costruisce.",
-                   "heroRole":  "Niente caos. Solo processi che funzionano.",
-                    "heroTagline":  "Delivery Manager & Head of Operations (PMP®). Costruisco i sistemi — processi, KPI, struttura del team — che permettono alle aziende digitali di crescere senza implodere. €500K+ portfolio, team 8-12, -40% time-to-market. Disponibile da subito.",
-                   "heroCta":  "Parliamone",
-                   "heroCta2":  "Vedi i Risultati",
-                   "featuredTitle":  "Risultati Misurabili",
-                   "featuredSubtitle": "Numeri che parlano. Niente storie.",
-                   "viewProject":  "Dettagli →",
-                   "aboutTitle":  "Dal retail alla cabina di regia.",
-                   "aboutText":  "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). Head of Operations da Ciao Elsa (2026). PMP® certificato. Ora cerco il prossimo progetto — se il tuo team ha bisogno di ordine operativo, ne parliamo.",
-                   "aboutCta":  "Storia Completa →",
-                   "freebieTitle":  "Gratis: Operational Chaos Diagnostic",
-                    "freebieDesc":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
-                   "freebieCta":  "Scarica Gratis →",
-                   "servicesTitle": "Come Ti Aiuto",
-                   "servicesSubtitle": "Quattro modi per portare ordine nelle operations.",
-                   "serviceList": [
-                     {
-                       "icon": "git-branch",
-                       "title": "Delivery & Process Design",
-                       "desc": "Agile, Scrum, Kanban — ma su misura per il tuo team, non copiati da un manuale. Release planning, capacity management, risk mitigation per team 8-12. 20-40% time-to-market più veloce."
-                     },
-                     {
-                       "icon": "package",
-                       "title": "eCommerce & PIM-DAM Operations",
-                       "desc": "Pimcore, Magento, Shopware — li ho implementati tutti. Integrazioni enterprise, migrazioni piattaforma, governance del dato. 40% time-to-market più veloce su progetti PIM."
-                     },
-                     {
-                       "icon": "zap",
-                       "title": "AI-Assisted Operations",
-                       "desc": "Automatizza le cose noiose. Dashboard KPI real-time, knowledge base centralizzate, flussi AI che funzionano davvero. Risultato tipico: 10-40 ore/settimana recuperate."
-                     },
-                     {
-                       "icon": "cpu",
-                       "title": "Fractional Head of Ops / Delivery",
-                       "desc": "Per startup che non sono pronte per un Head of Operations full-time — ma che ne hanno comunque bisogno. Interim o part-time. Costruisco il sistema, formo il team, consegno le chiavi."
-                     }
-                   ]
-              },
-    "footer":  {
-                   "copyright":  "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
-                   "builtWith":  "Realizzato con Next.js \u0026 shadcn/ui",
-                    "social":  {
-                                    "github":  "GitHub",
-                                    "linkedin":  "LinkedIn",
-                                    "email":  "Email"
-                                }
-               },
-     "projects":  {
-                        "title":  "Case Studies",
-                        "subtitle":  "Dal concept alla produzione — li ho costruiti tutti, dall'inizio alla fine. Codice vero, deploy veri, risultati veri.",
-                       "badgeLabel":  "Case Study",
-                        "panificio":  {
-                                         "title":  "Panificio Da Sergio",
-                                         "subtitle":  "Live: E-Commerce per un Panificio di Famiglia",
-                                         "description":  "Live su panificiodasergio.it — piattaforma e-commerce completa per un panificio tradizionale. Negoziazione dello scope, gestione stakeholder tra 3 generazioni, consegnato sotto budget. Costruito con Next.js, Tailwind CSS e PostgreSQL.",
-                                         "badge":  "Progetto Live",
-                                         "features":  [
-                                                          "Gestione stakeholder: tradotto i requisiti di 3 generazioni familiari in specifiche tecniche, bilanciando tradizione con UX moderna",
-                                                          "Delivery con budget limitato: e-commerce completo sotto €2K di budget materiali, usando stack open-source e tier gratuito Netlify",
-                                                          "Multi-lingua (EN/IT) con SEO locale per clienti italiani e internazionali",
-                                                          "Flusso ordini end-to-end: catalogo → carrello → pianificazione ritiro → conferma → dashboard admin",
-                                                          "Design responsive: mobile-first per ordini da smartphone, ottimizzato tablet per chiosco in negozio"
-                                                      ],
-                                         "techstack":  [
-                                                           "Next.js",
-                                                           "Tailwind CSS",
-                                                           "TypeScript",
-                                                           "i18n (next-intl)",
-                                                           "PostgreSQL (Neon)",
-                                                           "Netlify"
-                                                       ],
-                                         "screenshots": [
-                                                          { "label": "Homepage — vetrina dei prodotti freschi" },
-                                                          { "label": "Catalogo con pianificazione ritiro" }
-                                                      ],
-                                         "sectionFeatures":  "Funzionalità",
-                                         "sectionWhatItDoes":  "Cosa Fa",
-                                         "sectionTechStack":  "Tecnologie",
-                                         "sectionScreenshots":  "Screenshot",
-                                         "sectionScreenshotsDesc":  "Anteprime del sito live",
-                                         "ctaTitle":  "Vedi dal Vivo",
-                                         "ctaDesc":  "Visita panificiodasergio.it per vedere la piattaforma in azione — costruita per un panificio reale, in produzione.",
-                                         "ctaVisit":  "Visita il Sito →",
-                                         "ctaButton":  "Contattami",
-                                         "cta":  "Leggi il Case Study",
-                                         "note":  "Progetto familiare, consegnato sotto budget"
-                                     },
-                        "vulnclaw":  {
-                                         "title":  "VulnClaw",
-                                         "subtitle":  "CLI open-source di penetration testing con agenti AI",
-                                         "description":  "Costruito da zero un CLI open-source che integra agenti AI per ricognizione autonoma, scansione delle vulnerabilità e generazione automatica dei report. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione dell'architettura, roadmap e release pubblica su GitHub con documentazione, esempi e roadmap aperta. Lezione chiave: iniziare stretto batte costruire largo.",
-                                         "features":  [
-                                                          "Product scoping: evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
-                                                          "Architettura AI: 3 agenti specializzati — Recon, Exploit, Report — che collaborano autonomamente usando LLM",
-                                                          "Community management: triage di 80+ PR e 200+ issue, mantenendo SLA di 48h per la prima risposta su report di sicurezza critici",
-                                                          "Prioritizzazione roadmap: detto 'no' al 60% delle richieste di feature per ship il 40% essenziale — controllo dello scope spietato",
-                                                          "Open source come strategia: licenza MIT, GitHub Discussions per roadmap voting, CI/CD automatizzato con GitHub Actions"
-                                                      ],
-                                         "techstack":  [
-                                                           "Python 3.12",
-                                                           "Typer (CLI)",
-                                                           "Rich (UI terminale)",
-                                                           "Prompt Toolkit (shell interattiva)",
-                                                           "AI/LLM (OpenAI, Claude)",
-                                                           "GitHub Actions"
-                                                       ],
-                                         "cta":  "Leggi il Case Study",
-                                         "status":  "Shippato v0.4.0 · 1.2K+ GitHub ⭐"
-                                     },
-
-                        "synapse":  {
-                                         "title":  "Synapse",
-                                         "subtitle":  "Second Brain: Knowledge Management AI-Nativo",
-                                         "description":  "Un vault Obsidian da 9.000+ note collegato a motori AI — RAG semantico (ChromaDB), LLM Wiki e Agent Memory. Ogni progetto, idea, lezione e contatto è indicizzato in un grafo della conoscenza vivo, interrogabile in secondi sia da umani che da agenti AI. Costruito con Obsidian, Python, ChromaDB e integrazione protocollo MCP.",
-                                         "badge":  "Second Brain",
-                                         "features":  [
-                                                          "RAG semantico: embedding all-MiniLM-L6-v2 trasformano ogni nota in un vettore — cerca per significato, non per parola chiave",
-                                                          "LLM Wiki: indice strutturato di tutte le 9.000+ note raggruppate per area per navigazione rapida da agenti AI",
-                                                          "Agent Memory: memoria operativa condivisa tra sessioni AI — ogni agente registra cosa ha fatto e perché",
-                                                          "Integrazione MCP: vault esposto come risorsa Model Context Protocol, accessibile da qualsiasi agente AI compatibile"
-                                                      ],
-                                         "techstack":  [
-                                                           "Obsidian",
-                                                           "Python",
-                                                           "ChromaDB",
-                                                           "Sentence Transformers",
-                                                           "RAG",
-                                                           "MCP"
-                                                       ],
-                                         "cta":  "Scopri di Più"
-                                     },
-
-      "shipkit":  {
-                                    "title":  "ShipKit",
-                                    "subtitle":  "SaaS Kit: dall'Idea al Prodotto a Pagamento (€49)",
-                                    "description":  "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: raccolta requisiti, controllo scope, integrazione pagamenti, documentazione e supporto clienti. Il prodotto include architettura multi-tenant, fatturazione automatizzata con webhook Stripe, autenticazione Google OAuth + magic link, e i18n completo. Venduto a €49/one-time con aggiornamenti a vita. 12 clienti reali nei primi 3 mesi.",
-                                    "features":  [
-                                                     "Ciclo di vita completo: validazione concept → architettura → build → ship → supporto → iterazione",
-                                                     "Controllo scope: 12 mesi di scope ideale compressi in 8 con prioritizzazione MVP spietata — risparmiati 4 mesi di sviluppo",
-                                                     "Integrazione pagamenti: Stripe Checkout + webhook + chiavi idempotenza + recovery graceful per pagamenti falliti",
-                                                     "Architettura multi-tenant: dati isolati per tenant, domini personalizzati, infrastruttura condivisa per efficienza costi",
-                                                     "Internazionalizzazione: next-intl con supporto EN/IT completo, RTL-ready, routing locale-aware dal giorno uno",
-                                                     "Documentazione come delivery: 40+ pagine di guide setup, API reference, walkthrough deploy e troubleshooting"
-                                                 ],
-                                    "cta":  "Leggi il Case Study"
-                                }
-                                },
-    "services":  {
-                       "title":  "Da caos a esecuzione prevedibile in 30 giorni",
-                       "subtitle":  "Prezzo fisso. Consegna in 7 giorni. Risultati misurabili.",
-                       "heroDesc":  "Hai un problema operativo: il team cresce più veloce dei processi, le consegne slittano, il rework mangia i margini. Progetto e implemento i sistemi — flussi, KPI, struttura del team — che lo risolvono. PMP® certificato, €500K+ consegnati, team 8-12. Si parte sempre da una call gratuita.",
-                       "cta":  "Contattami qui",
-                       "packages":  [
-                                          {
-                                            "title": "Operational Audit",
-                                            "badge": "Punto di partenza",
-                                            "timeline": "7 giorni, 2 ore del tuo team",
-                                            "desc": "La fotografia onesta delle tue operations. In una settimana mappo i flussi, quantifico in euro i 5 sprechi principali e ti consegno una roadmap 30-60-90 giorni. Se prosegui con l'Overhaul, il costo dell'Audit viene scalato.",
-                                            "features": [
-                                              "Call diagnosi di 1h (registrata, resta tua)",
-                                              "Documento di 5-7 pagine: top-5 sprechi quantificati in €",
-                                              "Roadmap 30-60-90 giorni con priorità",
-                                              "Matrice impatto vs. sforzo",
-                                              "30 giorni di supporto email (risposta entro 48h)",
-                                              "Bonus: template Definition of Done + KPI Sheet"
-                                            ],
-                                            "excludes": [
-                                              "Implementazione operativa (è l'Overhaul)",
-                                              "Accesso diretto ai tuoi tool aziendali",
-                                              "Training del team"
-                                            ],
-                                            "idealFor": "Founder con team di 5-20 persone e consegne in ritardo, che vogliono chiarezza in una settimana.",
-                                            "notFor": "Enterprise oltre 100 persone o chi cerca manodopera a ore.",
-                                            "guarantee": "Garanzia soddisfatti o rimborsati: se l'Audit non ti consegna azioni chiare e quantificate, ti rimborsò. Senza domande."
-                                          },
-                                          {
-                                            "title": "Operations Overhaul",
-                                            "badge": "Più scelto",
-                                            "timeline": "6-8 settimane",
-                                            "desc": "Il sistema operativo completo per scale-up che devono crescere senza implodere. Assessment, redesign dei processi core, dashboard KPI e team formato. Consegno le chiavi, non un report.",
-                                            "features": [
-                                              "Assessment di 2 settimane (interviste + shadowing)",
-                                              "Redesign di 3 processi core + SOP in 1 pagina",
-                                              "Dashboard KPI real-time (lead time, rework, on-time)",
-                                              "4 sessioni di training per il team",
-                                              "60 giorni di supporto diretto su Slack",
-                                              "Handover documentato: il sistema resta tuo"
-                                            ],
-                                            "excludes": [
-                                              "Sviluppo software custom",
-                                              "Recruiting e selezione del personale"
-                                            ],
-                                            "idealFor": "Scale-up da €1-10M con team di 10-30 persone, pronte a cambiare davvero.",
-                                            "notFor": "Chi vuole solo un report da mostrare al board.",
-                                            "guarantee": "Call go/no-go gratuita prima di partire. Se non c'è fit, te lo dico e non si parte."
-                                          },
-                                          {
-                                            "title": "Fractional Head of Operations",
-                                            "badge": "Su invito",
-                                            "timeline": "Board mensile + presenza continua",
-                                            "desc": "Per aziende post-PMF senza un head of operations. Costruisco la funzione operativa, gestisco il team ops e riporto al board. Il sistema, non il teatro.",
-                                            "features": [
-                                              "20 ore al mese dedicate alle tue operations",
-                                              "Partecipazione al board con report mensile",
-                                              "Gestione e mentoring del team ops",
-                                              "Report P&L operativo e OKR quarterly",
-                                              "Hiring playbook per ruoli operativi",
-                                              "Escalation diretta: mi chiami quando brucia"
-                                            ],
-                                            "excludes": [
-                                              "Ruolo full-time in sede",
-                                              "Reperibilità 24/7"
-                                            ],
-                                            "idealFor": "Aziende post-PMF non ancora pronte per un head of ops full-time, ma che ne hanno bisogno.",
-                                            "notFor": "Chi cerca un executor full-time a basso costo.",
-                                            "guarantee": "Recesso con 30 giorni di preavviso. Handover documentato sempre incluso."
-                                          }
-                                        ]
-                                   ,
-                       "ui":  {
-                                 "includesTitle": "Cosa include",
-                                 "excludesTitle": "Cosa NON include",
-                                 "idealTitle": "Per chi è",
-                                 "notIdealTitle": "Non per chi",
-                                 "timelineLabel": "Tempi"
-                               },
-                       "faq":  {
-                                 "title": "Domande frequenti",
-                                 "items": [
-                                   {
-                                     "q": "Come funzionano pagamento e fattura?",
-                                     "a": "Dopo la call gratuita ricevi una proposta scritta con scope, tempi e prezzo fisso. Pagamento con bonifico: 100% per l'Audit, 50/50 per l'Overhaul. Emetto fattura con ritenuta d'acconto (prestazione occasionale)."
-                                   },
-                                   {
-                                     "q": "Quanto tempo chiedi al mio team?",
-                                     "a": "Audit: circa 2 ore totali (call + questionario). Overhaul: 2-3 ore a settimana per gli stakeholder chiave; il resto lo gestisco io in async con aggiornamenti settimanali."
-                                   },
-                                   {
-                                     "q": "Il mio team è piccolo (meno di 5 persone)?",
-                                     "a": "Parti dall'Audit: ti dice se e dove intervenire. Spesso per team piccoli bastano Audit + Template Pack, senza Overhaul."
-                                   },
-                                   {
-                                     "q": "Lavori in italiano o in inglese?",
-                                     "a": "Entrambi. Ho lavorato con team distribuiti in due lingue; documenti e training nella lingua del tuo team."
-                                   },
-                                   {
-                                     "q": "Cosa succede dopo l'Audit?",
-                                     "a": "Ricevi la roadmap e decidi tu: la implementi da solo, la implementiamo insieme con l'Overhaul (il costo dell'Audit viene scalato), o non facciamo nulla. Nessuna pressione."
-                                   }
-                                 ]
-                               },
-                       "finalCta":  {
-                                 "title": "Parliamone",
-                                 "desc": "Prenota una discovery call gratuita di 30 minuti: mappiamo i tuoi 3 colli principali, anche se poi non compri nulla.",
-                                 "cta": "Contattami qui"
-                               },
-                      "approach":  {
-                                      "title": "Come Lavoro",
-                                      "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
-                                     "steps":  [
-                    {
-                                                          "step":  "1. Discovery",
-                                                          "desc":  "Passo la prima settimana dentro le tue operations — parlo con il team, mappo i flussi di lavoro, trovo i colli di bottiglia. Ricevi un piano d'azione prioritizzato, non un report da 50 pagine."
-                                                      },
-                                                      {
-                                                          "step":  "2. Costruzione",
-                                                          "desc":  "Progetto il sistema che ti serve: flussi di processo, regole di governance, metriche che contano. Tutto documentato, tutto con un proprietario."
-                                                      },
-                                                      {
-                                                          "step":  "3. Deploy",
-                                                          "desc":  "Implemento con checkpoint settimanali e progresso trasparente. Il tuo team lavora al mio fianco, così il sistema è loro dal giorno uno."
-                                                      },
-                                                      {
-                                                          "step":  "4. Consegna",
-                                                          "desc":  "Documentazione completa, team formato, criteri di successo misurabili. Il tuo sistema funziona senza di me. Supporto opzionale per iterare."
-                                                      }
-                                               ]
-                                 }
-                 },
-     "shipkit":  {
-                   "title":  "ShipKit",
-                   "tagline":  "Il SaaS kit che va davvero in produzione.",
-                   "description":  "Smetti di re-inventare autenticazione, email, fatturazione e i18n per ogni progetto. ShipKit ti dà una base pronta per la produzione, così puoi concentrarti su ciò che rende unico il tuo SaaS.",
-                   "features":  {
-                                    "auth":  "Better Auth — magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
-                                    "database":  "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
-                                    "email":  "Resend + React Email — email transazionali, 5 template inclusi",
-                                    "i18n":  "next-intl — Inglese e Italiano già pronti, estendibili",
-                                    "billing":  "Stripe — piani abbonamento, webhook, portale clienti",
-                                    "ui":  "shadcn/ui + Tailwind v4 — dark mode, responsive, custom"
-                                },
-                   "pricing":  {
-                                   "title":  "Prezzo Semplice",
-                                   "subtitle":  "Un prezzo. Tutto incluso.",
-                                   "period":  "una tantum",
-                                   "includes":  "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
-                                   "cta":  "Acquista ShipKit",
-                                   "guarantee":  "Garanzia rimborso 30 giorni"
-                               }
-               },
-    "freebie":  {
-                    "title":  "Operational Chaos Diagnostic",
-                    "subtitle":  "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
-                    "description":  "Lo stesso framework che uso con i miei clienti di consulenza — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
-                    "whatsInside":  [
-                                        "La Process Map: visualizzazione end-to-end dei flussi di lavoro",
-                                        "La Metric Baseline: lead time, active time, wait time",
-                                        "La Priority Matrix: scoring impatto vs. risolvibilità",
-                                        "Esempi pre-compilati per processi reali",
-                                        "Top 3 Azioni Questa Settimana: prossimi passi immediati"
-                                    ],
-                    "form":  {
-                                 "namePlaceholder":  "Il tuo nome",
-                                 "emailPlaceholder":  "tu@azienda.com",
-                                 "cta":  "Inviami il Diagnostic",
-                                 "sending":  "Invio in corso...",
-                                 "success":  "Controlla la tua casella! Clicca il link di conferma per ricevere il diagnostic.",
-                                 "privacy":  "Niente spam. Ti cancelli quando vuoi.",
-                                 "name":  "Nome",
-                                 "email":  "Email",
-                                 "error":  "Qualcosa è andato storto. Riprova."
-                             }
-                 },
-    "about":  {
-                    "title":  "Su Riccardo",
-                   "subtitle":  "Operations & Delivery. PMP®. Dal retail al digitale — risultati misurabili in ogni ruolo.",
-                   "intro":  "Delivery Manager & Head of Operations (PMP®). 7+ anni a rendere i team più veloci e meno caotici. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Il filo conduttore: costruisco sistemi che permettono alle brave persone di fare il loro miglior lavoro.",
-                   "story": [
-                                 "Il mio percorso inizia nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
-                                 "Poi Accenture. Ho costruito applicazioni enterprise (SAP UI5, JavaScript) e automatizzato processi che erano manuali da anni: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. È stata la prima volta che ho capito che il processo giusto batte il talento grezzo — sempre.",
-                                 "In Esse Solutions gestivo un portfolio digitale da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto Agile strutturato dove non c'era niente: produttività +25%, time-to-market -40%, tempi di completamento -20%.",
-                                 "In Ciao Elsa sono stato Head of Operations per 8 settimane — per scelta. La startup aveva bisogno di una funzione operations da zero: processi, KPI, struttura del team, governance. L'ho costruita, consegnata, e me ne sono andato. Un engagement breve che ha dimostrato che l'approccio funziona anche a velocità startup.",
-                                  "Oggi sono in fase di transizione — ho chiuso l'esperienza da Ciao Elsa e sono aperto a nuove opportunità. Porto con me un bagaglio solido: architetture operative costruite in contesti enterprise e startup, certificazione PMP®, e la convinzione che i processi giusti battono il talento grezzo — sempre. Nel frattempo costruisco strumenti (ShipKit, VulnClaw) perché non puoi progettare buoni sistemi se non hai mai costruito niente."
-                             ],
-                   "philosophy":  "La maggior parte delle aziende non fallisce per mancanza di talento o idee. Fallisce perché le operations non reggono il peso della crescita. Costruisco il sistema operativo che risolve il problema — combinando il rigore del PMP® con la velocità di chi è stato in trincea. Niente gergo. Niente teatro. Solo processi che funzionano.",
-                  "certifications":  [
-                                         "PMP® — Project Management Professional (2026)",
-                                         "Cisco Cybersecurity Operation Associate (2024)",
-                                         "Google Data Analyst Certificate (2023)",
-                                         "Pimcore Consultant Certified (2024)"
-                                     ],
-                  "skills":  [
-                                 "Project Management",
-                                 "Agile/Scrum/Kanban",
-                                 "Budget \u0026 Risk Management",
-                                 "eCommerce (Adobe Commerce/Magento, Shopware)",
-                                 "PIM/DAM (Pimcore)",
-                                 "SAP UI5",
-                                 "JavaScript",
-                                 "Python",
-                                 "SQL",
-                                 "HTML/CSS",
-                                 "Jira",
-                                 "Confluence",
-                                 "MS Project",
-                                 "Data Analysis \u0026 Reporting",
-                                 "Process Documentation",
-                                 "AI Tools for Operations",
-                                 "Knowledge Management"
-                             ],
-                  "cta":  "Parliamone",
-                "ctaTitle":  "Parliamone",
-                "ctaDesc":  "Hai un progetto, un'idea o semplicemente curiosità? Sono sempre aperto a conversazioni interessanti."
-              },
-    "books":  {
-                  "title":  "Libreria",
-                  "description":  "I libri che hanno formato il mio modo di pensare su operations, tecnologia e costruzione di cose. Curati, letti e consigliati. Alcuni link sono link di affiliazione Amazon — a te non costa nulla, a me aiuta a mantenere il sito."
-              },
-    "contact":  {
-                    "title":  "Contattami",
-                    "subtitle":  "Per un ruolo, un progetto o una consulenza. Rispondo entro 24h.",
-                    "form":  {
-                                 "name":  "Nome",
-                                 "namePlaceholder":  "Il tuo nome",
-                                 "email":  "Email",
-                                 "emailPlaceholder":  "tu@azienda.com",
-                                 "message":  "Messaggio",
-                                  "messagePlaceholder":  "Di cosa hai bisogno? Ruolo, progetto, o anche solo una domanda.",
-                                 "submit":  "Invia Messaggio",
-                                 "sending":  "Invio in corso...",
-                                 "success":  "Grazie! Ti risponderò entro 24 ore.",
-                                 "error":  "Qualcosa è andato storto. Prova a scrivermi direttamente via email."
-                             },
-                    "email":  "riccardobozzato@gmail.com",
-                    "github":  "github.com/Riccardobozzato94",
-                    "linkedin":  "linkedin.com/in/riccardobozzato"
-                },
-    "privacy":  {
-                    "title":  "Privacy Policy",
-                    "lastUpdated":  "Ultimo aggiornamento: 21 Luglio 2026",
-                    "intro":  "Questa Privacy Policy spiega come Riccardo Bozzato (&ldquo;io&rdquo;, &ldquo;me&rdquo;, &ldquo;mio&rdquo;) raccoglie, utilizza e protegge i tuoi dati personali quando visiti il mio sito web, scarichi risorse, richiedi servizi di consulenza o acquisti prodotti (ShipKit). Prendo la tua privacy sul serio — seguo il GDPR (Reg. UE 2016/679) e il D.Lgs. 196/2003 (come modificato dal D.Lgs. 101/2018), e mantengo la raccolta dati al minimo necessario per erogare i servizi richiesti.",
-                    "sections":  [
-                                      {
-                                          "title":  "1. Titolare del Trattamento",
-                                          "content":  "Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542<br>P.IVA: trattamento in regime de minimis / occasionale"
-                                      },
-                                      {
-                                          "title":  "2. Dati Raccolti — Per Ogni Servizio",
-                                          "content":  "<strong>Modulo di contatto generico:</strong> nome, email e messaggio. Utilizzato per richieste di ruolo lavorativo, progetti o consulenza.<br><br><strong>Servizi di consulenza (Operational Audit, Operations Overhaul, Fractional Head of Operations):</strong> nome, email, azienda, descrizione del problema operativo, dettagli del team e dei processi attuali. Per l'Overhaul possono servire dettagli tecnici delle piattaforme (Magento, Shopware, Pimcore) e credenziali di accesso temporanee, distrutte al termine dell'incarico. Per il Fractional possono servire struttura organizzativa e dati operativi necessari al ruolo. I prezzi si concordano in call e nella proposta scritta: nessuna tariffa è pubblicata sul sito.<br><br><strong>Fatturazione consulenze:</strong> emetto fattura con ritenuta d'acconto (prestazione occasionale). I dati di fatturazione sono conservati 10 anni per obbligo fiscale.<br><br><strong>Download CV:</strong> nessun dato raccolto — il download è anonimo.<br><br><strong>Acquisto ShipKit (€49):</strong> nome, email, indirizzo di fatturazione (tramite Stripe). Io non ricevo né memorizzo i dettagli della tua carta di credito — Stripe li gestisce per mio conto.<br><br><strong>Download risorse gratuite (playbook):</strong> nome e indirizzo email — per consegnare il PDF e inviare la sequenza email (max 6 email in 30 giorni).<br><br><strong>Dati tecnici:</strong> indirizzo IP, user-agent del browser e header di referral vengono raccolti automaticamente dal server per motivi di sicurezza e operativi. Non utilizzati per tracciamento o profilazione.<br><br><strong>Analytics:</strong> visualizzazioni anonime e aggregate delle pagine con analytics privacy-friendly (Plausible). Nessun tracciamento personale, nessun fingerprinting, nessun cookie di profilazione."
-                                      },
-                                      {
-                                          "title":  "3. Come Utilizzo i Tuoi Dati",
-                                          "content":  "Ogni dato viene utilizzato esclusivamente per lo scopo per cui è stato fornito:<br><br>• Richieste di contatto: per rispondere e preparare proposte.<br>• Servizi di consulenza (Operational Audit, Operations Overhaul, Fractional Head of Operations): per erogare il servizio concordato, comunicare durante l'incarico, e fatturare.<br>• Acquisto ShipKit: per elaborare il pagamento (tramite Stripe) e consegnare il prodotto.<br>• Download playbook: per inviare il PDF e la sequenza educativa associata.<br>• Dati tecnici e analytics: per migliorare il sito e rilevare problemi tecnici.<br><br>Non vendo, affitto, scambio o condivido i tuoi dati personali con terze parti per i loro scopi di marketing. I tuoi dati non vengono mai utilizzati per addestrare modelli AI."
-                                      },
-                                      {
-                                         "title":  "4. Email Marketing (Consenso, Double Opt-In & Disiscrizione)",
-                                         "content":  "Quando scarichi il playbook gratuito, puoi dare il consenso (tramite apposita casella) per ricevere una sequenza educativa di 6 email in circa 30 giorni. Dopo l'invio del modulo, riceverai una email di conferma per verificare il tuo indirizzo (double opt-in). Inizierai a ricevere la sequenza solo dopo aver confermato.<br><br>Ogni email include un link per disiscriverti. Puoi revocare il consenso in qualsiasi momento — la tua richiesta viene elaborata immediatamente e non riceverai ulteriori email. La disiscrizione non influisce sulle comunicazioni relative a servizi di consulenza in corso."
-                                      },
-                                      {
-                                         "title":  "5. Base Giuridica (GDPR) & Diritto di Opposizione",
-                                         "content":  "Tratto i tuoi dati in base a:<br><br><strong>Consenso (Art. 6.1.a GDPR):</strong> quando spunti la casella del consenso su un modulo (contatto, download playbook, richiesta servizi). Puoi revocarlo in qualsiasi momento.<br><br><strong>Necessità contrattuale (Art. 6.1.b GDPR):</strong> quando richiedi un servizio di consulenza o acquisti ShipKit — il trattamento è necessario per erogare il lavoro o il prodotto concordato, inclusa la fatturazione.<br><br><strong>Obbligo legale (Art. 6.1.c GDPR):</strong> conservazione dei dati fiscali e contabili per 10 anni come richiesto dalla normativa italiana (D.P.R. 600/73).<br><br><strong>Legittimo interesse (Art. 6.1.f GDPR):</strong> rispondere a richieste pre-vendita e migliorare i miei servizi.<br><br><strong>Diritto di opposizione (Art. 21 GDPR):</strong> se tratto i tuoi dati basandomi sul legittimo interesse, hai il diritto di opporti in qualsiasi momento contattandomi. Cesserò il trattamento a meno che non abbia motivi legittimi cogenti che prevalgano."
-                                      },
-                                      {
-                                          "title":  "6. Conservazione dei Dati",
-                                          "content":  "I tuoi dati vengono conservati solo per il tempo necessario allo scopo per cui sono stati raccolti:<br><br>• Modulo di contatto: cancellato dopo 12 mesi dall'ultimo contatto.<br>• Operations Audit e servizi singoli: 24 mesi dalla conclusione dell'incarico.<br>• Fractional Head of Ops (contratti continuativi): 24 mesi dalla fine del contratto.<br>• Acquisto ShipKit: 10 anni (obbligo fiscale italiano).<br>• Iscritti playbook: fino alla disiscrizione + 30 giorni di tolleranza.<br>• Dati tecnici (log server): 30 giorni, poi anonimizzati.<br><br>Puoi richiedere la cancellazione anticipata dei tuoi dati in qualsiasi momento scrivendo a riccardobozzato@gmail.com. Salvo obblighi di legge (es. fatture), cancellerò tutto entro 30 giorni."
-                                      },
-                                      {
-                                          "title":  "7. I Tuoi Diritti (GDPR)",
-                                          "content":  "Hai il diritto di:<br><br><strong>Accesso (Art. 15):</strong> richiedere una copia di tutti i dati che conservo su di te.<br><strong>Rettifica (Art. 16):</strong> correggere dati inesatti o incompleti.<br><strong>Cancellazione (Art. 17):</strong> ottenere la cancellazione dei tuoi dati (salvo obblighi di legge).<br><strong>Limitazione (Art. 18):</strong> limitare il trattamento in determinati casi.<br><strong>Portabilità (Art. 20):</strong> ricevere i tuoi dati in formato strutturato e leggibile.<br><strong>Opposizione (Art. 21):</strong> opporti al trattamento basato su legittimo interesse.<br><strong>Revoca del consenso:</strong> in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente.<br><br>Per esercitare qualsiasi diritto, scrivi a riccardobozzato@gmail.com. Risponderò entro 30 giorni (Art. 12 GDPR). Se la richiesta è complessa, ti informerò entro 30 giorni e potrò estendere il termine di altri 60 giorni."
-                                      },
-                                      {
-                                         "title":  "8. Servizi di Terze Parti (Responsabili del Trattamento)",
-                                         "content":  "Utilizzo i seguenti servizi terzi per operare il sito ed erogare servizi. Ciascuno è stato verificato per la conformità GDPR. I dati vengono trattati all'interno dell'UE e degli USA (con accordi SCC):<br><br><strong>Resend</strong> (resend.com) — consegna email transazionali, sequenze email automatizzate e notifiche. Privacy: resend.com/privacy — DPO: dpo@resend.com<br><br><strong>Netlify</strong> (netlify.com) — hosting del sito, CDN, deploy. Privacy: netlify.com/privacy — DPO: privacy@netlify.com<br><br><strong>GitHub</strong> (github.com) — hosting del codice sorgente e authentications. Privacy: github.com/privacy<br><br><strong>Stripe</strong> (stripe.com) — elaborazione pagamenti per acquisti ShipKit. Stripe è certificato PCI DSS Level 1. Privacy: stripe.com/privacy — DPO: dpo@stripe.com<br><br><strong>Vercel</strong> (vercel.com) — deployment preview e serverless functions (utilizzato come backend complementare). Privacy: vercel.com/privacy<br><br><strong>Plausible Analytics</strong> (plausible.io) — analytics privacy-friendly senza cookie. I dati sono anonimi e aggregati. Privacy: plausible.io/privacy"
-                                      },
-                                      {
-                                          "title":  "9. Trasferimenti Internazionali",
-                                          "content":  "Alcuni dei miei fornitori di servizi (Stripe, GitHub, Resend) possono trasferire dati verso gli Stati Uniti. Questi trasferimenti si basano sulle Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea (Decisione di Esecuzione 2021/914), che garantiscono un livello di protezione equivalente a quello garantito dal GDPR. Puoi richiedere una copia delle SCC applicabili scrivendo a riccardobozzato@gmail.com."
-                                      },
-                                      {
-                                          "title":  "10. Sicurezza dei Dati",
-                                          "content":  "Implemento misure tecniche e organizzative adeguate: connessioni crittografate (HTTPS/TLS 1.3), controlli di accesso sui database, principio di minimizzazione, e revisioni periodiche di sicurezza. Le credenziali di accesso temporanee per interventi su piattaforme clienti vengono distrutte al termine dell'incarico. Nessuna trasmissione dati su internet è sicura al 100%, ma seguo le migliori pratiche del settore."
-                                      },
-                                      {
-                                          "title":  "11. Cookie",
-                                          "content":  "Questo sito utilizza esclusivamente:<br><br>• Cookie tecnici: necessari per il funzionamento del sito (nessun consenso richiesto).<br>• Cookie analytics: Plausible Analytics non utilizza cookie — i dati sono anonimizzati a livello di server.<br><br>Nessun cookie di profilazione, pubblicitario o di tracciamento cross-sito viene utilizzato. Puoi gestire le preferenze tramite il banner cookie che appare al primo accesso."
-                                      },
-                                      {
-                                          "title":  "12. Dati di Candidature Lavorative",
-                                          "content":  "Se mi contatti per una posizione lavorativa (Head of Operations, Delivery Manager, PM Senior, etc.), i dati che condividi (CV, portfolio, referenze) vengono utilizzati esclusivamente per valutare la tua candidatura e, se applicabile, per il processo di selezione. I dati dei candidati non valutati vengono cancellati dopo 12 mesi."
-                                      },
-                                      {
-                                          "title":  "13. Limiti di Responsabilità",
-                                          "content":  "I servizi di consulenza sono forniti con la diligenza professionale richiesta dal PMP® Code of Ethics. Tuttavia, i risultati (es. riduzione del time-to-market, aumento di produttività) dipendono da fattori esterni non controllabili (collaborazione del team, condizioni di mercato, vincoli tecnologici). I report degli audit e le raccomandazioni fornite sono opinioni professionali basate sullo stato dei fatti al momento dell'analisi, non garanzie contrattuali di risultato."
-                                      },
-                                      {
-                                          "title":  "14. Modifiche a Questa Policy",
-                                          "content":  "Posso aggiornare questa privacy policy periodicamente per riflettere cambiamenti normativi, nuovi servizi o modifiche nei processi. Le modifiche sostanziali verranno comunicate via email se ho un tuo contatto attivo o tramite avviso sul sito. La data di &ldquo;Ultimo aggiornamento&rdquo; all'inizio della pagina riflette la revisione più recente."
-                                      },
-                                      {
-                                          "title":  "15. Reclami",
-                                          "content":  "Per qualsiasi domanda, richiesta o reclamo:<br><br>Riccardo Bozzato<br>Legnaro, PD, Italia<br>Email: riccardobozzato@gmail.com<br>Telefono: +39 389 213 9542<br><br>Se ritieni che il trattamento violi il GDPR, hai il diritto di presentare un reclamo al Garante per la Protezione dei Dati Personali (garanteprivacy.it) — Piazza Venezia 11, 00187 Roma."
-                                      }
-                                  ],
-                    "nav":  "Privacy"
-                },
-    "confirm":  {
-                    "processing":  "Conferma della sottoscrizione in corso...",
-                    "successTitle":  "Sottoscrizione Confermata! 🎉",
-                    "successMessage":  "Tutto pronto! Ti stiamo reindirizzando alla pagina di download...",
-                    "alreadyTitle":  "Già Confermato",
-                    "alreadyMessage":  "La tua email era già stata confermata. Vai alla pagina di download per ricevere il playbook.",
-                    "errorTitle":  "Link Non Valido o Scaduto",
-                    "errorMessage":  "Questo link di conferma non è valido o è scaduto. Prova a registrarti di nuovo.",
-                    "backHome":  "Torna alla Home",
-                    "goToDownload":  "Vai al Download"
-                },
-    "unsubscribe":  {
-                        "processing":  "Elaborazione in corso...",
-                        "successTitle":  "Disiscrizione Completata",
-                        "successMessage":  "Sei stato rimosso dalla lista email. Non riceverai più email da questa serie.",
-                        "alreadyTitle":  "Già Disiscritto",
-                        "alreadyMessage":  "Sei già disiscritto. Non ti invieremo ulteriori email.",
-                        "errorTitle":  "Qualcosa è Andato Storto",
-                        "errorMessage":  "Non abbiamo potuto elaborare la tua richiesta. Il link potrebbe non essere valido o essere scaduto.",
-                        "backHome":  "Torna alla Home"
-                    },
-    "thankYou":  {
-                      "title":  "Tutto Pronto! 🎉",
-                      "subtitle":  "Il tuo Operational Chaos Diagnostic è pronto. Controlla la tua casella — te l'ho inviato anche lì così non lo perdi.",
-                      "downloadAgain":  "Scarica di Nuovo",
-                      "whatsNextTitle":  "Prossimi Passi",
-                      "whatsNextText":  "Nelle prossime due settimane, ti invierò tattiche pratiche che puoi applicare subito:",
-                      "email1":  "Il punto cieco operativo più comune (Giorno 1)",
-                      "email2":  "3 fix rapidi che recuperano 10+ ore/settimana (Giorno 3)",
-                      "email3":  "Un case study con numeri reali (Giorno 5)",
-                      "email4":  "Il costo nascosto del debito operativo (Giorno 7)",
-                      "email5":  "Offerta finale: diagnostica gratuita da 30 min (Giorno 14)",
-                     "exploreTitle":  "Nel Frattempo, Esplora",
-                     "readBlog":  "Leggi il Blog",
-                     "viewProjects":  "Vedi i Progetti"
-                 },
-    "cookies":  {
-                     "title":  "Questo sito utilizza cookie",
-                     "description":  "Utilizziamo cookie tecnici e analytics anonimizzati per migliorare la tua esperienza. Nessun cookie di profilazione.",
-                     "accept":  "Accetta tutti",
-                     "reject":  "Solo necessari",
-                     "privacyLink":  "Privacy Policy"
-                 },
-    "notFound":  {
-                     "title":  "404",
-                     "subtitle":  "Questa pagina non esiste.",
-                     "description":  "O non è mai esistita, o ho combinato un pasticcio. In ogni caso, rimettiamoti in carreggiata.",
-                     "cta":  "Torna alla Home"
-                 }
+  "site": {
+    "title": "Riccardo Bozzato",
+    "tagline": "Delivery Manager | Head of Operations | PMP® — rendo i team digitali più veloci, meno caotici e più prevedibili.",
+    "description": "Delivery Manager & Head of Operations (PMP®). Costruisco l'architettura operativa che trasforma il caos in esecuzione prevedibile. €500K+ portfolio, -40% time-to-market, team 8-12. Disponibile da subito."
+  },
+  "accessibility": {
+    "lastUpdated": "Ultima verifica: 2 ottobre 2026",
+    "intro": "Questa dichiarazione descrive lo stato di accessibilità di riccardobozzato.com. L'obiettivo è un sito utilizzabile da chiunque, indipendentemente da disabilità o tecnologia assistiva.",
+    "sections": [
+      {
+        "title": "1. Stato di Conformità",
+        "content": "Parzialmente conforme. Il sito è stato sottoposto ad autovalutazione e verifica manuale il 2 ottobre 2026 rispetto alle WCAG 2.2 livello AA.<br><br>La maggior parte dei contenuti e dei componenti rispetta i criteri. Le eccezioni note sono elencate nella sezione 5 e sono limitate a componenti di terze parti che non controllo."
+      },
+      {
+        "title": "2. Requisiti Normativi Applicabili",
+        "content": "Il sito è valutato rispetto a:<br><br>WCAG 2.2, Web Content Accessibility Guidelines, livello AA (W3C Recommendation, ottobre 2023)<br>Legge 13 marzo 1988 n. 104 e successive modifiche, in particolare gli articoli 55 e seguenti<br>Linee guida AgID per la misurabilità e il monitoraggio dell'accessibilità web (2021)<br>European Accessibility Act, recepito in Italia, applicabile ai servizi di e-commerce"
+      },
+      {
+        "title": "3. Criteri Applicati",
+        "content": "Sono stati verificati tutti i criteri di livello A e AA delle WCAG 2.2. In particolare i criteri relativi a struttura e orientamento (1.3.1, 1.3.2), testo alternativo (1.1.1), contrasto minimo (1.4.3, 1.4.11), navigazione da tastiera (2.1.1, 2.1.2, 2.4.1, 2.4.3, 2.4.7), finestre di cambio contesto (3.2.1, 3.2.2, 3.2.3, 3.2.4), nome accessibile e ruolo (4.1.2), messaggi di stato (4.1.3) e punti di riferimento ARIA (2.4.1)."
+      },
+      {
+        "title": "4. Misure Implementate",
+        "content": "Struttura semantica con header, nav, main e footer identificati; link «Vai al contenuto principale» come primo elemento focusabile.<br><br>Gerarchia dei titoli coerente su ogni pagina, senza salti di livello.<br><br>Contrasto dei colori verificato sul tema reale, non solo sul tema di default.<br><br>Tutti i controlli interattivi sono raggiungibili e attivabili da tastiera, con indicatore di focus sempre visibile.<br><br>Icone decorative marcate aria-hidden; icone informative con testo alternativo.<br><br>Form con label esplicite, required dichiarati e messaggi d'errore associati all'input via aria-describedby.<br><br>Messaggi di stato (invio del form, caricamento) annunciati con role=status o aria-live.<br><br>Contenuti dinamici (messaggi di risposta) annunciati senza spostare il focus.<br><br>Riduzione del movimento: le animazioni rispettano prefers-reduced-motion e il banner dei cookie può essere stampato senza interferenze.<br><br>Testo selezionabile e zoom al 200% senza perdita di contenuto o funzionalità, anche su mobile.<br><br>Nessuna informazione trasmessa tramite il solo colore."
+      },
+      {
+        "title": "5. Conformità Parziale - Limiti Noti",
+        "content": "Banner dei cookie: finché la finestra di consenso è aperta, il contenuto sottostante resta nel flusso del documento perché il banner non usa un dialog modale che blocchi la navigazione. Alcuni utenti di screen reader potrebbero doverlo chiudere esplicitamente per raggiungere il contenuto.<br><br>Annunci pubblicitari di terze parti: contenuti e comportamenti degli annunci dipendono da Google AdSense e non sono sotto il mio controllo. Non sono sempre etichettati come pubblicità in modo accessibile e possono non rispettare il contrasto richiesto. Compaiono solo se accetti la categoria pubblicitaria.<br><br>Link affiliati Amazon: etichettati visivamente, ma l'indicazione testuale per i lettori di schermo non è sempre completa.<br><br>Widget Netlify Identity: presente solo nell'area riservata /login, che è un'area amministrativa e non fa parte del contenuto pubblico del sito."
+      },
+      {
+        "title": "6. Tecniche Utilizzate",
+        "content": "HTML semantico con landmark ARIA; attributi role e aria-* solo dove il markup nativo non basta.<br><br>Focus visibile e mai rimosso, gestito con :focus-visible per non penalizzare l'uso del mouse.<br><br>Supporto di prefers-reduced-motion, prefers-contrast e forced-colors dove applicabile.<br><br>Nessun testo dentro le immagini: le informazioni sono sempre disponibili come testo reale, selezionabile e indicizzabile."
+      },
+      {
+        "title": "7. Strumenti di Valutazione",
+        "content": "Lighthouse Accessibility (Chrome), axe DevTools e WAVE, eseguiti sulle pagine principali in italiano e in inglese.<br><br>Verifica manuale con tastiera su tutti i flussi: navigazione, pagina servizi, form di contatto, download del playbook e pannello dei cookie.<br><br>Il controllo fa parte della definizione di «fare» di ogni modifica, insieme a TypeScript e ESLint in fase di build."
+      },
+      {
+        "title": "8. Feedback e Contatti",
+        "content": "Se trovi un problema di accessibilità, scrivi a riccardobozzato@gmail.com indicando la pagina, il problema e, se possibile, la tecnologia assistiva che usi. Rispondo entro 5 giorni lavorativi e, se il problema riguarda un componente condiviso, la correzione entra nel ciclo di sviluppo successivo."
+      },
+      {
+        "title": "9. Procedura di Recupero",
+        "content": "Le segnalazioni sono registrate con pagina, criterio WCAG interessato e impatto. I problemi che impediscono la lettura o l'uso del contenuto hanno priorità massima e vengono corretti prima delle nuove funzionalità.<br><br>Se ritieni che la risposta non sia adeguata, puoi presentare reclamo all'AgID o al Garante per la protezione dei dati personali."
+      },
+      {
+        "title": "10. Aggiornamento di Questa Dichiarazione",
+        "content": "Questa dichiarazione viene rivista almeno una volta all'anno e ogni volta che cambiano in modo rilevante il contenuto, la struttura o i componenti del sito. La data in alto indica sempre l'ultima verifica. Le modifiche sostanziali vengono annunciate nella home page."
+      }
+    ]
+  },
+  "nav": {
+    "home": "Home",
+    "vision": "La Visione",
+    "results": "Risultati",
+    "journey": "Il Viaggio",
+    "projects": "Progetti",
+    "panificio": "Panificio",
+    "shipkit": "ShipKit",
+    "freebie": "Diagnostica Gratuita",
+    "blog": "Blog",
+    "books": "Libri",
+    "services": "Servizi",
+    "about": "Chi Sono",
+    "contact": "Contatti"
+  },
+  "home": {
+    "heroTitle": "Operations, delivery ed execution. Con la mentalità di chi costruisce.",
+    "heroRole": "Niente caos. Solo processi che funzionano.",
+    "heroTagline": "Delivery Manager & Head of Operations (PMP®). Costruisco i sistemi — processi, KPI, struttura del team — che permettono alle aziende digitali di crescere senza implodere. €500K+ portfolio, team 8-12, -40% time-to-market. Disponibile da subito.",
+    "heroCta": "Parliamone",
+    "heroCta2": "Vedi i Risultati",
+    "featuredTitle": "Risultati Misurabili",
+    "featuredSubtitle": "Numeri che parlano. Niente storie.",
+    "viewProject": "Dettagli →",
+    "aboutTitle": "Dal retail alla cabina di regia.",
+    "aboutText": "7+ anni di operations. Partito dal retail (In's Mercato, Aldi), passato per Accenture (automazione processi, +30% efficienza), poi Esse Solutions (portfolio €500K, team 8-12, Agile). Head of Operations da Ciao Elsa (2026). PMP® certificato. Ora cerco il prossimo progetto — se il tuo team ha bisogno di ordine operativo, ne parliamo.",
+    "aboutCta": "Storia Completa →",
+    "freebieTitle": "Gratis: Operational Chaos Diagnostic",
+    "freebieDesc": "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
+    "freebieCta": "Scarica Gratis →",
+    "servicesTitle": "Come Ti Aiuto",
+    "servicesSubtitle": "Quattro modi per portare ordine nelle operations.",
+    "serviceList": [
+      {
+        "icon": "git-branch",
+        "title": "Delivery & Process Design",
+        "desc": "Agile, Scrum, Kanban — ma su misura per il tuo team, non copiati da un manuale. Release planning, capacity management, risk mitigation per team 8-12. 20-40% time-to-market più veloce."
+      },
+      {
+        "icon": "package",
+        "title": "eCommerce & PIM-DAM Operations",
+        "desc": "Pimcore, Magento, Shopware — li ho implementati tutti. Integrazioni enterprise, migrazioni piattaforma, governance del dato. 40% time-to-market più veloce su progetti PIM."
+      },
+      {
+        "icon": "zap",
+        "title": "AI-Assisted Operations",
+        "desc": "Automatizza le cose noiose. Dashboard KPI real-time, knowledge base centralizzate, flussi AI che funzionano davvero. Risultato tipico: 10-40 ore/settimana recuperate."
+      },
+      {
+        "icon": "cpu",
+        "title": "Fractional Head of Ops / Delivery",
+        "desc": "Per startup che non sono pronte per un Head of Operations full-time — ma che ne hanno comunque bisogno. Interim o part-time. Costruisco il sistema, formo il team, consegno le chiavi."
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© {year} Riccardo Bozzato. Tutti i diritti riservati.",
+    "builtWith": "Realizzato con Next.js & shadcn/ui",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "cookieSettings": "Impostazioni cookie",
+    "advertise": "Sponsorizza il sito"
+  },
+  "projects": {
+    "title": "Case Studies",
+    "subtitle": "Dal concept alla produzione — li ho costruiti tutti, dall'inizio alla fine. Codice vero, deploy veri, risultati veri.",
+    "badgeLabel": "Case Study",
+    "panificio": {
+      "title": "Panificio Da Sergio",
+      "subtitle": "Live: E-Commerce per un Panificio di Famiglia",
+      "description": "Live su panificiodasergio.it — piattaforma e-commerce completa per un panificio tradizionale. Negoziazione dello scope, gestione stakeholder tra 3 generazioni, consegnato sotto budget. Costruito con Next.js, Tailwind CSS e PostgreSQL.",
+      "badge": "Progetto Live",
+      "features": [
+        "Gestione stakeholder: tradotto i requisiti di 3 generazioni familiari in specifiche tecniche, bilanciando tradizione con UX moderna",
+        "Delivery con budget limitato: e-commerce completo sotto €2K di budget materiali, usando stack open-source e tier gratuito Netlify",
+        "Multi-lingua (EN/IT) con SEO locale per clienti italiani e internazionali",
+        "Flusso ordini end-to-end: catalogo → carrello → pianificazione ritiro → conferma → dashboard admin",
+        "Design responsive: mobile-first per ordini da smartphone, ottimizzato tablet per chiosco in negozio"
+      ],
+      "techstack": [
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "i18n (next-intl)",
+        "PostgreSQL (Neon)",
+        "Netlify"
+      ],
+      "screenshots": [
+        {
+          "label": "Homepage — vetrina dei prodotti freschi"
+        },
+        {
+          "label": "Catalogo con pianificazione ritiro"
+        }
+      ],
+      "sectionFeatures": "Funzionalità",
+      "sectionWhatItDoes": "Cosa Fa",
+      "sectionTechStack": "Tecnologie",
+      "sectionScreenshots": "Screenshot",
+      "sectionScreenshotsDesc": "Anteprime del sito live",
+      "ctaTitle": "Vedi dal Vivo",
+      "ctaDesc": "Visita panificiodasergio.it per vedere la piattaforma in azione — costruita per un panificio reale, in produzione.",
+      "ctaVisit": "Visita il Sito →",
+      "ctaButton": "Contattami",
+      "cta": "Leggi il Case Study",
+      "note": "Progetto familiare, consegnato sotto budget"
+    },
+    "vulnclaw": {
+      "title": "VulnClaw",
+      "subtitle": "CLI open-source di penetration testing con agenti AI",
+      "description": "Costruito da zero un CLI open-source che integra agenti AI per ricognizione autonoma, scansione delle vulnerabilità e generazione automatica dei report. Gestito l'intero ciclo di vita del prodotto: definizione dello scope, progettazione dell'architettura, roadmap e release pubblica su GitHub con documentazione, esempi e roadmap aperta. Lezione chiave: iniziare stretto batte costruire largo.",
+      "features": [
+        "Product scoping: evoluto da semplice port scanner a framework multi-agente AI in 6 mesi (v0.1 → v0.4)",
+        "Architettura AI: 3 agenti specializzati — Recon, Exploit, Report — che collaborano autonomamente usando LLM",
+        "Community management: triage di 80+ PR e 200+ issue, mantenendo SLA di 48h per la prima risposta su report di sicurezza critici",
+        "Prioritizzazione roadmap: detto 'no' al 60% delle richieste di feature per ship il 40% essenziale — controllo dello scope spietato",
+        "Open source come strategia: licenza MIT, GitHub Discussions per roadmap voting, CI/CD automatizzato con GitHub Actions"
+      ],
+      "techstack": [
+        "Python 3.12",
+        "Typer (CLI)",
+        "Rich (UI terminale)",
+        "Prompt Toolkit (shell interattiva)",
+        "AI/LLM (OpenAI, Claude)",
+        "GitHub Actions"
+      ],
+      "cta": "Leggi il Case Study",
+      "status": "Shippato v0.4.0 · 1.2K+ GitHub ⭐"
+    },
+    "synapse": {
+      "title": "Synapse",
+      "subtitle": "Second Brain: Knowledge Management AI-Nativo",
+      "description": "Un vault Obsidian da 9.000+ note collegato a motori AI — RAG semantico (ChromaDB), LLM Wiki e Agent Memory. Ogni progetto, idea, lezione e contatto è indicizzato in un grafo della conoscenza vivo, interrogabile in secondi sia da umani che da agenti AI. Costruito con Obsidian, Python, ChromaDB e integrazione protocollo MCP.",
+      "badge": "Second Brain",
+      "features": [
+        "RAG semantico: embedding all-MiniLM-L6-v2 trasformano ogni nota in un vettore — cerca per significato, non per parola chiave",
+        "LLM Wiki: indice strutturato di tutte le 9.000+ note raggruppate per area per navigazione rapida da agenti AI",
+        "Agent Memory: memoria operativa condivisa tra sessioni AI — ogni agente registra cosa ha fatto e perché",
+        "Integrazione MCP: vault esposto come risorsa Model Context Protocol, accessibile da qualsiasi agente AI compatibile"
+      ],
+      "techstack": [
+        "Obsidian",
+        "Python",
+        "ChromaDB",
+        "Sentence Transformers",
+        "RAG",
+        "MCP"
+      ],
+      "cta": "Scopri di Più"
+    },
+    "shipkit": {
+      "title": "ShipKit",
+      "subtitle": "SaaS Kit: dall'Idea al Prodotto a Pagamento (€49)",
+      "description": "Progettato, costruito e shippato un boilerplate SaaS production-ready (Next.js 16, Stripe, Auth, i18n) come prodotto a pagamento. Gestione del ciclo di vita completo: raccolta requisiti, controllo scope, integrazione pagamenti, documentazione e supporto clienti. Il prodotto include architettura multi-tenant, fatturazione automatizzata con webhook Stripe, autenticazione Google OAuth + magic link, e i18n completo. Venduto a €49/one-time con aggiornamenti a vita. 12 clienti reali nei primi 3 mesi.",
+      "features": [
+        "Ciclo di vita completo: validazione concept → architettura → build → ship → supporto → iterazione",
+        "Controllo scope: 12 mesi di scope ideale compressi in 8 con prioritizzazione MVP spietata — risparmiati 4 mesi di sviluppo",
+        "Integrazione pagamenti: Stripe Checkout + webhook + chiavi idempotenza + recovery graceful per pagamenti falliti",
+        "Architettura multi-tenant: dati isolati per tenant, domini personalizzati, infrastruttura condivisa per efficienza costi",
+        "Internazionalizzazione: next-intl con supporto EN/IT completo, RTL-ready, routing locale-aware dal giorno uno",
+        "Documentazione come delivery: 40+ pagine di guide setup, API reference, walkthrough deploy e troubleshooting"
+      ],
+      "cta": "Leggi il Case Study"
+    }
+  },
+  "services": {
+    "title": "Da caos a esecuzione prevedibile in 30 giorni",
+    "subtitle": "Prezzo fisso. Consegna in 7 giorni. Risultati misurabili.",
+    "heroDesc": "Hai un problema operativo: il team cresce più veloce dei processi, le consegne slittano, il rework mangia i margini. Progetto e implemento i sistemi — flussi, KPI, struttura del team — che lo risolvono. PMP® certificato, €500K+ consegnati, team 8-12. Si parte sempre da una call gratuita.",
+    "cta": "Contattami qui",
+    "packages": [
+      {
+        "title": "Operational Audit",
+        "badge": "Punto di partenza",
+        "timeline": "7 giorni, 2 ore del tuo team",
+        "desc": "La fotografia onesta delle tue operations. In una settimana mappo i flussi, quantifico in euro i 5 sprechi principali e ti consegno una roadmap 30-60-90 giorni. Se prosegui con l'Overhaul, il costo dell'Audit viene scalato.",
+        "features": [
+          "Call diagnosi di 1h (registrata, resta tua)",
+          "Documento di 5-7 pagine: top-5 sprechi quantificati in €",
+          "Roadmap 30-60-90 giorni con priorità",
+          "Matrice impatto vs. sforzo",
+          "30 giorni di supporto email (risposta entro 48h)",
+          "Bonus: template Definition of Done + KPI Sheet"
+        ],
+        "excludes": [
+          "Implementazione operativa (è l'Overhaul)",
+          "Accesso diretto ai tuoi tool aziendali",
+          "Training del team"
+        ],
+        "idealFor": "Founder con team di 5-20 persone e consegne in ritardo, che vogliono chiarezza in una settimana.",
+        "notFor": "Enterprise oltre 100 persone o chi cerca manodopera a ore.",
+        "guarantee": "Garanzia soddisfatti o rimborsati: se l'Audit non ti consegna azioni chiare e quantificate, ti rimborsò. Senza domande."
+      },
+      {
+        "title": "Operations Overhaul",
+        "badge": "Più scelto",
+        "timeline": "6-8 settimane",
+        "desc": "Il sistema operativo completo per scale-up che devono crescere senza implodere. Assessment, redesign dei processi core, dashboard KPI e team formato. Consegno le chiavi, non un report.",
+        "features": [
+          "Assessment di 2 settimane (interviste + shadowing)",
+          "Redesign di 3 processi core + SOP in 1 pagina",
+          "Dashboard KPI real-time (lead time, rework, on-time)",
+          "4 sessioni di training per il team",
+          "60 giorni di supporto diretto su Slack",
+          "Handover documentato: il sistema resta tuo"
+        ],
+        "excludes": [
+          "Sviluppo software custom",
+          "Recruiting e selezione del personale"
+        ],
+        "idealFor": "Scale-up da €1-10M con team di 10-30 persone, pronte a cambiare davvero.",
+        "notFor": "Chi vuole solo un report da mostrare al board.",
+        "guarantee": "Call go/no-go gratuita prima di partire. Se non c'è fit, te lo dico e non si parte."
+      },
+      {
+        "title": "Fractional Head of Operations",
+        "badge": "Su invito",
+        "timeline": "Board mensile + presenza continua",
+        "desc": "Per aziende post-PMF senza un head of operations. Costruisco la funzione operativa, gestisco il team ops e riporto al board. Il sistema, non il teatro.",
+        "features": [
+          "20 ore al mese dedicate alle tue operations",
+          "Partecipazione al board con report mensile",
+          "Gestione e mentoring del team ops",
+          "Report P&L operativo e OKR quarterly",
+          "Hiring playbook per ruoli operativi",
+          "Escalation diretta: mi chiami quando brucia"
+        ],
+        "excludes": [
+          "Ruolo full-time in sede",
+          "Reperibilità 24/7"
+        ],
+        "idealFor": "Aziende post-PMF non ancora pronte per un head of ops full-time, ma che ne hanno bisogno.",
+        "notFor": "Chi cerca un executor full-time a basso costo.",
+        "guarantee": "Recesso con 30 giorni di preavviso. Handover documentato sempre incluso."
+      }
+    ],
+    "ui": {
+      "includesTitle": "Cosa include",
+      "excludesTitle": "Cosa NON include",
+      "idealTitle": "Per chi è",
+      "notIdealTitle": "Non per chi",
+      "timelineLabel": "Tempi"
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "items": [
+        {
+          "q": "Come funzionano pagamento e fattura?",
+          "a": "Dopo la call gratuita ricevi una proposta scritta con scope, tempi e prezzo fisso. Pagamento con bonifico: 100% per l'Audit, 50/50 per l'Overhaul. Emetto fattura con ritenuta d'acconto (prestazione occasionale)."
+        },
+        {
+          "q": "Quanto tempo chiedi al mio team?",
+          "a": "Audit: circa 2 ore totali (call + questionario). Overhaul: 2-3 ore a settimana per gli stakeholder chiave; il resto lo gestisco io in async con aggiornamenti settimanali."
+        },
+        {
+          "q": "Il mio team è piccolo (meno di 5 persone)?",
+          "a": "Parti dall'Audit: ti dice se e dove intervenire. Spesso per team piccoli bastano Audit + Template Pack, senza Overhaul."
+        },
+        {
+          "q": "Lavori in italiano o in inglese?",
+          "a": "Entrambi. Ho lavorato con team distribuiti in due lingue; documenti e training nella lingua del tuo team."
+        },
+        {
+          "q": "Cosa succede dopo l'Audit?",
+          "a": "Ricevi la roadmap e decidi tu: la implementi da solo, la implementiamo insieme con l'Overhaul (il costo dell'Audit viene scalato), o non facciamo nulla. Nessuna pressione."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Parliamone",
+      "desc": "Prenota una discovery call gratuita di 30 minuti: mappiamo i tuoi 3 colli principali, anche se poi non compri nulla.",
+      "cta": "Contattami qui"
+    },
+    "approach": {
+      "title": "Come Lavoro",
+      "subtitle": "Prezzo fisso. In tempo. Pronto per la produzione.",
+      "steps": [
+        {
+          "step": "1. Discovery",
+          "desc": "Passo la prima settimana dentro le tue operations — parlo con il team, mappo i flussi di lavoro, trovo i colli di bottiglia. Ricevi un piano d'azione prioritizzato, non un report da 50 pagine."
+        },
+        {
+          "step": "2. Costruzione",
+          "desc": "Progetto il sistema che ti serve: flussi di processo, regole di governance, metriche che contano. Tutto documentato, tutto con un proprietario."
+        },
+        {
+          "step": "3. Deploy",
+          "desc": "Implemento con checkpoint settimanali e progresso trasparente. Il tuo team lavora al mio fianco, così il sistema è loro dal giorno uno."
+        },
+        {
+          "step": "4. Consegna",
+          "desc": "Documentazione completa, team formato, criteri di successo misurabili. Il tuo sistema funziona senza di me. Supporto opzionale per iterare."
+        }
+      ]
+    }
+  },
+  "shipkit": {
+    "title": "ShipKit",
+    "tagline": "Il SaaS kit che va davvero in produzione.",
+    "description": "Smetti di re-inventare autenticazione, email, fatturazione e i18n per ogni progetto. ShipKit ti dà una base pronta per la produzione, così puoi concentrarti su ciò che rende unico il tuo SaaS.",
+    "features": {
+      "auth": "Better Auth — magic link, OAuth (Google, GitHub), 2FA, gestione sessioni",
+      "database": "Drizzle ORM — type-safe, migration-ready, PostgreSQL",
+      "email": "Resend + React Email — email transazionali, 5 template inclusi",
+      "i18n": "next-intl — Inglese e Italiano già pronti, estendibili",
+      "billing": "Stripe — piani abbonamento, webhook, portale clienti",
+      "ui": "shadcn/ui + Tailwind v4 — dark mode, responsive, custom"
+    },
+    "pricing": {
+      "title": "Prezzo Semplice",
+      "subtitle": "Un prezzo. Tutto incluso.",
+      "period": "una tantum",
+      "includes": "Codice sorgente completo, aggiornamenti a vita, supporto prioritario",
+      "cta": "Acquista ShipKit",
+      "guarantee": "Garanzia rimborso 30 giorni"
+    }
+  },
+  "freebie": {
+    "title": "Operational Chaos Diagnostic",
+    "subtitle": "Tre ore. Una lavagna. Un quadro chiaro di cosa è rotto e come sistemarlo.",
+    "description": "Lo stesso framework che uso con i miei clienti di consulenza — senza il costo della consulenza. Mappa i tuoi flussi, misura le metriche di base e costruisci una matrice di priorità in tre ore mirate. Funziona su una lavagna o su Miro.",
+    "whatsInside": [
+      "La Process Map: visualizzazione end-to-end dei flussi di lavoro",
+      "La Metric Baseline: lead time, active time, wait time",
+      "La Priority Matrix: scoring impatto vs. risolvibilità",
+      "Esempi pre-compilati per processi reali",
+      "Top 3 Azioni Questa Settimana: prossimi passi immediati"
+    ],
+    "form": {
+      "namePlaceholder": "Il tuo nome",
+      "emailPlaceholder": "tu@azienda.com",
+      "cta": "Inviami il Diagnostic",
+      "sending": "Invio in corso...",
+      "success": "Controlla la tua casella! Clicca il link di conferma per ricevere il diagnostic.",
+      "privacy": "Niente spam. Ti cancelli quando vuoi.",
+      "name": "Nome",
+      "email": "Email",
+      "error": "Qualcosa è andato storto. Riprova."
+    }
+  },
+  "about": {
+    "title": "Su Riccardo",
+    "subtitle": "Operations & Delivery. PMP®. Dal retail al digitale — risultati misurabili in ogni ruolo.",
+    "intro": "Delivery Manager & Head of Operations (PMP®). 7+ anni a rendere i team più veloci e meno caotici. Portfolio enterprise €500K+, team 8-12, -40% time-to-market. Partito dal retail, passato per Accenture, ho guidato le operations di Ciao Elsa. Il filo conduttore: costruisco sistemi che permettono alle brave persone di fare il loro miglior lavoro.",
+    "story": [
+      "Il mio percorso inizia nel retail — In's Mercato, Aldi, Terranova. Ho imparato le operations sul campo: gestire inventario, turni, team, e spiegare al regionale perché avevamo sbagliato target. È stato il miglior training possibile per il delivery management, anche se allora non lo sapevo.",
+      "Poi Accenture. Ho costruito applicazioni enterprise (SAP UI5, JavaScript) e automatizzato processi che erano manuali da anni: +30% efficienza, -15% errori amministrativi, -20% tempi di risposta. È stata la prima volta che ho capito che il processo giusto batte il talento grezzo — sempre.",
+      "In Esse Solutions gestivo un portfolio digitale da €500K, coordinando team distribuiti di 8-12 persone su eCommerce B2B (Magento, Shopware) e PIM/DAM (Pimcore). Ho introdotto Agile strutturato dove non c'era niente: produttività +25%, time-to-market -40%, tempi di completamento -20%.",
+      "In Ciao Elsa sono stato Head of Operations per 8 settimane — per scelta. La startup aveva bisogno di una funzione operations da zero: processi, KPI, struttura del team, governance. L'ho costruita, consegnata, e me ne sono andato. Un engagement breve che ha dimostrato che l'approccio funziona anche a velocità startup.",
+      "Oggi sono in fase di transizione — ho chiuso l'esperienza da Ciao Elsa e sono aperto a nuove opportunità. Porto con me un bagaglio solido: architetture operative costruite in contesti enterprise e startup, certificazione PMP®, e la convinzione che i processi giusti battono il talento grezzo — sempre. Nel frattempo costruisco strumenti (ShipKit, VulnClaw) perché non puoi progettare buoni sistemi se non hai mai costruito niente."
+    ],
+    "philosophy": "La maggior parte delle aziende non fallisce per mancanza di talento o idee. Fallisce perché le operations non reggono il peso della crescita. Costruisco il sistema operativo che risolve il problema — combinando il rigore del PMP® con la velocità di chi è stato in trincea. Niente gergo. Niente teatro. Solo processi che funzionano.",
+    "certifications": [
+      "PMP® — Project Management Professional (2026)",
+      "Cisco Cybersecurity Operation Associate (2024)",
+      "Google Data Analyst Certificate (2023)",
+      "Pimcore Consultant Certified (2024)"
+    ],
+    "skills": [
+      "Project Management",
+      "Agile/Scrum/Kanban",
+      "Budget & Risk Management",
+      "eCommerce (Adobe Commerce/Magento, Shopware)",
+      "PIM/DAM (Pimcore)",
+      "SAP UI5",
+      "JavaScript",
+      "Python",
+      "SQL",
+      "HTML/CSS",
+      "Jira",
+      "Confluence",
+      "MS Project",
+      "Data Analysis & Reporting",
+      "Process Documentation",
+      "AI Tools for Operations",
+      "Knowledge Management"
+    ],
+    "cta": "Parliamone",
+    "ctaTitle": "Parliamone",
+    "ctaDesc": "Hai un progetto, un'idea o semplicemente curiosità? Sono sempre aperto a conversazioni interessanti."
+  },
+  "books": {
+    "title": "Libreria",
+    "description": "I libri che hanno formato il mio modo di pensare su operations, tecnologia e costruzione di cose. Curati, letti e consigliati. Alcuni link sono link di affiliazione Amazon — a te non costa nulla, a me aiuta a mantenere il sito."
+  },
+  "contact": {
+    "title": "Contattami",
+    "subtitle": "Per un ruolo, un progetto o una consulenza. Rispondo entro 24h.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "email": "Email",
+      "emailPlaceholder": "tu@azienda.com",
+      "message": "Messaggio",
+      "messagePlaceholder": "Di cosa hai bisogno? Ruolo, progetto, o anche solo una domanda.",
+      "submit": "Invia Messaggio",
+      "sending": "Invio in corso...",
+      "success": "Grazie! Ti risponderò entro 24 ore.",
+      "error": "Qualcosa è andato storto. Prova a scrivermi direttamente via email."
+    },
+    "email": "riccardobozzato@gmail.com",
+    "github": "github.com/Riccardobozzato94",
+    "linkedin": "linkedin.com/in/riccardobozzato"
+  },
+  "privacy": {
+    "lastUpdated": "Ultimo aggiornamento: 2 ottobre 2026",
+    "intro": "Questa informativa descrive come trattiamo i dati personali di chi visita riccardobozzato.com. Il sito non ha finalità di profilazione e non richiede la creazione di un account per essere consultato.",
+    "sections": [
+      {
+        "title": "1. Titolare del Trattamento",
+        "content": "Titolare: Riccardo Bozzato, con sede in Legnaro (PD), Italia.<br>Contatti per ogni questione relativa ai dati: riccardobozzato@gmail.com.<br>Il sito è gestito tramite Netlify (hosting) e distribuito tramite Cloudflare (CDN e DNS). Entrambi trattano dati tecnici come indirizzo IP e user agent per erogare il sito."
+      },
+      {
+        "title": "2. Dati Raccolti - Per Ogni Servizio",
+        "content": "Modulo di contatto generico: nome, email e messaggio. Usato per richieste di ruolo lavorativo, progetti o consulenza.<br><br>Servizi di consulenza (Operational Audit, Operations Overhaul, Fractional Head of Operations): nome, email, azienda, descrizione del problema operativo, dettagli di team e processi. Per l'Overhaul possono servire dettagli tecnici delle piattaforme (Magento, Shopware, Pimcore) e credenziali di accesso temporanee, distrutte al termine dell'incarico. I prezzi si concordano in call e nella proposta scritta: nessuna tariffa è pubblicata sul sito.<br><br>Download delle risorse gratuite (playbook): nome e indirizzo email, per consegnare il PDF e inviare la sequenza email (massimo 6 email in 30 giorni). Richiede doppio opt-in: senza la conferma dell'indirizzo la sequenza non parte.<br><br>Download CV: nessun dato raccolto, il download è anonimo.<br><br>Acquisto di ShipKit: nome, email e indirizzo di fatturazione, gestiti tramite Stripe. Io non ricevo né memorizzo i dati della carta di credito."
+      },
+      {
+        "title": "3. Come Utilizzo i Tuoi Dati",
+        "content": "Uso i dati per rispondere alle richieste, erogare i servizi concordati e, solo se hai chiesto il playbook, inviarti la sequenza email operativa. Non vendo i tuoi dati, non li condivido con terzi per finalità di marketing e non li uso per addestrare modelli.<br><br>I lead del playbook sono conservati su Netlify Blobs, uno storage situato negli Stati Uniti."
+      },
+      {
+        "title": "4. Cookie, Analytics e Pubblicità",
+        "content": "Il sito distingue tre categorie e tu scegli quali accettare.<br><br>Necessari: sempre attivi. Servono al funzionamento del sito (lingua della sessione, rate limiting, token di doppio opt-in e disiscrizione) e non possono essere disattivati.<br><br>Analytics: Google Analytics 4, caricato solo dopo il tuo consenso esplicito. È attivo con l'anonimizzazione dell'indirizzo IP e con i segnali pubblicitari di Google disattivati, a meno che tu non abbia accettato anche la categoria pubblicitaria. Serve a capire quali pagine vengono lette.<br><br>Pubblicità: Google AdSense e i suoi partner possono impostare cookie per mostrare annunci pertinenti e misurare le campagne. Anche questi vengono caricati solo con il tuo consenso. Il sito può inoltre ospitare contenuti sponsorizzati venduti direttamente, sempre etichettati come tali.<br><br>Se rifiuti, GA4 e AdSense non vengono richiesti: il sito funziona normalmente, senza misurazione e senza annunci."
+      },
+      {
+        "title": "5. Consenso, Doppio Opt-In e Disiscrizione",
+        "content": "La base giuridica è il consenso espresso, prestato con un'azione affermativa. Per la sequenza email si applica il doppio opt-in: ricevi una email di conferma e la sequenza parte solo dopo il tuo clic sul link di conferma.<br><br>Ogni email della sequenza contiene un link di disiscrizione che agisce immediatamente. Puoi inoltre modificare le tue scelte sui cookie in qualsiasi momento, dal link «Impostazioni cookie» nel footer del sito.<br><br>Il consenso non è condizionato all'acquisto di beni o servizi."
+      },
+      {
+        "title": "6. Base Giuridica (GDPR)",
+        "content": "Art. 6.1.a Consenso espresso: cookie non necessari, sequenza email.<br>Art. 6.1.b Esecuzione del contratto: risposte a richieste di contatto e servizi in corso.<br>Art. 6.1.c Obbligo legale: dati di fatturazione, conservati per 10 anni come previsto dalla normativa fiscale.<br>Art. 6.1.f Legittimo interesse: sicurezza del sito (rate limiting, log tecnici) e difesa da abusi."
+      },
+      {
+        "title": "7. Conservazione dei Dati",
+        "content": "Richieste di contatto e candidature: 24 mesi dall'ultimo contatto, salvo necessità di conservarli più a lungo per obblighi di legge.<br>Dati di fatturazione: 10 anni (obbligo fiscale).<br>Lead della sequenza playbook: 30 giorni dall'ultima email, poi cancellati. Se ti disiscrivi, vengono cancellati immediatamente.<br>Log tecnici di sicurezza: 90 giorni.<br>Credenziali tecniche fornite per un incarico di Overhaul: distrutte al termine dell'incarico."
+      },
+      {
+        "title": "8. I Tuoi Diritti (GDPR)",
+        "content": "Puoi in ogni momento chiedere accesso, rettifica, cancellazione, limitazione, portabilità e opposizione, e revocare il consenso.<br>Per esercitarli scrivi a riccardobozzato@gmail.com. Rispondo entro 30 giorni.<br>Non applico decisioni automatizzate né profilazione. Puoi chiedere la portabilità dei tuoi dati in formato JSON."
+      },
+      {
+        "title": "9. Terze Parti e Responsabili del Trattamento",
+        "content": "Solo i servizi strettamente necessari, con i relativi trattamenti:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity per l'autenticazione dell'area riservata e Netlify Blobs per la conservazione dei lead del playbook.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS e mitigazione degli attacchi.<br>Google Ireland Limited (Irlanda, con trasferimenti negli USA): Google Analytics 4 e, se hai accettato, Google AdSense.<br>Resend Inc. (USA): invio delle email transazionali e della sequenza.<br>Stripe Inc. (USA): pagamenti, esclusivamente per l'acquisto di ShipKit.<br>Amazon EU S.a.r.l.: programma affiliati. Alcuni link in uscita sono link affiliati e generano una commissione. Per l'affiliazione non uso cookie di tracciamento aggiuntivi."
+      },
+      {
+        "title": "10. Trasferimenti Internazionali",
+        "content": "Netlify, Cloudflare, Resend, Stripe e Google trattano dati fuori dallo Spazio Economico Europeo. Per questi trasferimenti ci si basa sulle Clausole Contrattuali Standard (SCC) della Commissione Europea, Decisione di Esecuzione 2021/914, e su misure supplementari come l'anonimizzazione dell'IP in Google Analytics.<br>Puoi chiedere copia delle SCC applicabili scrivendo a riccardobozzato@gmail.com."
+      },
+      {
+        "title": "11. Sicurezza dei Dati",
+        "content": "HTTPS con TLS su tutto il sito, HSTS con durata di due anni, CSP restrittiva, rate limiting su tutte le API e comportamento fail-closed su tutti gli endpoint protetti. I secret non sono mai committati nel repository e le password di amministrazione non sono hardcoded nel sorgente.<br>Nessun sistema è al riparo da violazioni: in caso di data breach ti avviso via email senza ritardo indebito e con le informazioni richieste dal GDPR."
+      },
+      {
+        "title": "12. Cookie di Netlify Identity",
+        "content": "L'area riservata /login usa Netlify Identity, che impiega cookie tecnici per la sessione di autenticazione. Non vengono impostati cookie di profilazione. L'area è protetta da password e le richieste sono limitate per IP."
+      },
+      {
+        "title": "13. Dati di Candidature Lavorative",
+        "content": "Le candidature che invii sono trattate per valutare la posizione e, in caso di esito positivo, per gestire il rapporto di lavoro. Non condivido i tuoi dati di candidatura con terzi e non li uso per finalità di marketing. Puoi chiedere la cancellazione in qualsiasi momento."
+      },
+      {
+        "title": "14. Limiti di Responsabilità",
+        "content": "I contenuti del sito, incluse stime, metriche e risultati di case study, hanno finalità informativa e non costituiscono consulenza legale, fiscale o finanziaria. L'utente è responsabile delle decisioni assunte sulla base delle informazioni pubblicate."
+      },
+      {
+        "title": "15. Modifiche a Questa Policy",
+        "content": "Questa informativa può essere aggiornata, per esempio in caso di nuovi servizi, di nuovi partner tecnici o di variazioni normative. La data in alto indica sempre l'ultima revisione. Le modifiche sostanziali vengono comunicate via email a chi ha richiesto il playbook."
+      },
+      {
+        "title": "16. Reclami",
+        "content": "Se ritieni che il trattamento violi il GDPR, puoi presentare reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it) o all'autorità di controllo dello Stato membro in cui risiedi. Prima puoi sempre scrivere a riccardobozzato@gmail.com: risponderò entro 30 giorni."
+      }
+    ]
+  },
+  "confirm": {
+    "processing": "Conferma della sottoscrizione in corso...",
+    "successTitle": "Sottoscrizione Confermata! 🎉",
+    "successMessage": "Tutto pronto! Ti stiamo reindirizzando alla pagina di download...",
+    "alreadyTitle": "Già Confermato",
+    "alreadyMessage": "La tua email era già stata confermata. Vai alla pagina di download per ricevere il playbook.",
+    "errorTitle": "Link Non Valido o Scaduto",
+    "errorMessage": "Questo link di conferma non è valido o è scaduto. Prova a registrarti di nuovo.",
+    "backHome": "Torna alla Home",
+    "goToDownload": "Vai al Download"
+  },
+  "unsubscribe": {
+    "processing": "Elaborazione in corso...",
+    "successTitle": "Disiscrizione Completata",
+    "successMessage": "Sei stato rimosso dalla lista email. Non riceverai più email da questa serie.",
+    "alreadyTitle": "Già Disiscritto",
+    "alreadyMessage": "Sei già disiscritto. Non ti invieremo ulteriori email.",
+    "errorTitle": "Qualcosa è Andato Storto",
+    "errorMessage": "Non abbiamo potuto elaborare la tua richiesta. Il link potrebbe non essere valido o essere scaduto.",
+    "backHome": "Torna alla Home"
+  },
+  "thankYou": {
+    "title": "Tutto Pronto! 🎉",
+    "subtitle": "Il tuo Operational Chaos Diagnostic è pronto. Controlla la tua casella — te l'ho inviato anche lì così non lo perdi.",
+    "downloadAgain": "Scarica di Nuovo",
+    "whatsNextTitle": "Prossimi Passi",
+    "whatsNextText": "Nelle prossime due settimane, ti invierò tattiche pratiche che puoi applicare subito:",
+    "email1": "Il punto cieco operativo più comune (Giorno 1)",
+    "email2": "3 fix rapidi che recuperano 10+ ore/settimana (Giorno 3)",
+    "email3": "Un case study con numeri reali (Giorno 5)",
+    "email4": "Il costo nascosto del debito operativo (Giorno 7)",
+    "email5": "Offerta finale: diagnostica gratuita da 30 min (Giorno 14)",
+    "exploreTitle": "Nel Frattempo, Esplora",
+    "readBlog": "Leggi il Blog",
+    "viewProjects": "Vedi i Progetti"
+  },
+  "cookies": {
+    "title": "Cookie e strumenti di misurazione",
+    "description": "Usiamo cookie tecnici e, solo con il tuo consenso, strumenti di analytics e pubblicitari. Puoi scegliere quali accettare e cambiare idea in qualsiasi momento.",
+    "privacyLink": "Leggi la Privacy Policy",
+    "accept": "Accetta tutto",
+    "reject": "Solo necessari",
+    "customise": "Personalizza",
+    "collapseSettings": "Chiudi",
+    "saveSelection": "Salva le scelte",
+    "categoriesLegend": "Categorie di cookie",
+    "necessaryTitle": "Necessari",
+    "necessaryDesc": "Sempre attivi. Servono al funzionamento del sito: lingua della sessione, rate limiting, token di doppio opt-in e disiscrizione. Non possono essere disattivati.",
+    "analyticsTitle": "Analytics",
+    "analyticsDesc": "Google Analytics 4 con anonimizzazione dell'indirizzo IP. Mi serve per capire quali pagine vengono lette. Caricato solo se accetti, e i segnali pubblicitari di Google restano disattivati.",
+    "adsTitle": "Pubblicità",
+    "adsDesc": "Google AdSense e i suoi partner possono impostare cookie per mostrare annunci pertinenti e misurare le campagne. Caricati solo se accetti."
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Questa pagina non esiste.",
+    "description": "O non è mai esistita, o ho combinato un pasticcio. In ogni caso, rimettiamoti in carreggiata.",
+    "cta": "Torna alla Home"
+  },
+  "advertise": {
+    "title": "Sponsorizza la pagina",
+    "metaDescription": "Media kit: pubblica il tuo prodotto su riccardobozzato.com. Audience di Head of Operations e Delivery Manager, formato blog, newsletter e sponsor README.",
+    "subtitle": "Raggiungi chi decide davvero sulle operations",
+    "heroDesc": "Il lettore medio di questo sito guida processi, persone e piattaforme. È il buyer esatto per strumenti ops, e-commerce, ATS e servizi di consulenza.",
+    "ctaPrimary": "Richiedi il media kit",
+    "ctaSecondary": "Scrivimi",
+    "emailSubject": "Richiesta media kit e sponsorizzazione",
+    "contactEmail": "riccardobozzato@gmail.com",
+    "statsNote": "Dati indicativi. Per ogni partnership ti fornisco le metriche reali della tua campagna: impression, clic e CTR.",
+    "stats": [
+      {
+        "value": "600+",
+        "label": "Contatti LinkedIn",
+        "icon": "users"
+      },
+      {
+        "value": "IT + EN",
+        "label": "Audience bilingue",
+        "icon": "eye"
+      },
+      {
+        "value": "B2B",
+        "label": "Operatori e manager",
+        "icon": "target"
+      },
+      {
+        "value": "100%",
+        "label": "Contatto diretto",
+        "icon": "trending"
+      }
+    ],
+    "audienceTitle": "Chi legge",
+    "audienceDesc": "Non è traffico generico. Sono persone con budget e con un problema operativo da risolvere.",
+    "audience": [
+      "Head of Operations e Operations Manager in scale-up e mid-market",
+      "Delivery Manager, Project Manager e Scrum Master",
+      "Founder e COO di aziende SaaS ed e-commerce",
+      "E-commerce Manager e responsabili supply chain",
+      "Consulenti e freelance che vendono servizi operativi",
+      "La maggior parte legge in inglese o in italiano, indifferentemente"
+    ],
+    "formatsTitle": "Formati e prezzi indicativi",
+    "formatsDesc": "Prezzi di partenza per una singola campagna. Per pacchetti su più periodi, contenuti dedicati o la newsletter, scrivimi.",
+    "mostPopular": "Più richiesto",
+    "formats": [
+      {
+        "title": "Articolo sponsorizzato",
+        "desc": "Un post sul blog, scritto con la mia voce editoriale e la mia revisione tecnica. Nessuna promozione svendida: se il prodotto non serve, dico di no.",
+        "price": "€250"
+      },
+      {
+        "title": "Newsletter + blog",
+        "desc": "Il pacchetto con il miglior CPM: un'email alla lista della sequenza operativa più un articolo sul blog, collegati fra loro.",
+        "price": "€600",
+        "highlighted": true
+      },
+      {
+        "title": "Sponsor README",
+        "desc": "Il tuo logo e il tuo messaggio nel README di un mio progetto open source. Pubblico, permanente, e visibile a chiunque lo usi.",
+        "price": "€400"
+      }
+    ],
+    "pricingNote": "Importi IVA esclusa. Non vendo banner display generici: il pubblico è troppo di nicchia per la pubblicità a rotazione, e per entrambi sarebbe rumore.",
+    "processTitle": "Come funziona",
+    "process": [
+      {
+        "step": "1. Contatto",
+        "desc": "Mi scrivi con il tuo prodotto e l'obiettivo della campagna."
+      },
+      {
+        "step": "2. Proposal",
+        "desc": "Ricevi formato, date, prezzo e una bozza dell'angolo editoriale."
+      },
+      {
+        "step": "3. Pubblicazione",
+        "desc": "Controllo finale e pubblicazione. Nulla esce senza la mia approvazione."
+      },
+      {
+        "step": "4. Report",
+        "desc": "Metriche reali della campagna: impression, clic, CTR e lead generati."
+      }
+    ],
+    "faqTitle": "Domande frequenti",
+    "faq": [
+      {
+        "q": "Il contenuto resta mio?",
+        "a": "Il testo e l'angolo editoriale sono miei. Il tuo prodotto viene descritto in modo accurato, senza enfasi eccessiva: la mia credibilità vale più di un click."
+      },
+      {
+        "q": "Accetto solo prodotti che consiglierei davvero?",
+        "a": "Sì. Rifiuto regolarmente le partnership: un partner sbagliato danneggia il sito più di quanto la commissione ti faccia guadagnare. Te lo dico subito se il tuo prodotto non è adatto."
+      },
+      {
+        "q": "Come misuri i risultati?",
+        "a": "Ogni campagna ha un link con UTM. Ti invio le statistiche al termine: impression, clic, CTR e, se colleghi un form, i lead raccolti."
+      },
+      {
+        "q": "Posso scegliere la data?",
+        "a": "Sì, con almeno due settimane di anticipo. Gli articoli del blog restano online in modo permanente, quindi il valore non si esaurisce in una settimana."
+      }
+    ],
+    "finalCta": {
+      "title": "Parliamo del tuo prodotto",
+      "desc": "Descrivimi cosa vendi e a chi. Ti rispondo entro due giorni lavorativi con una proposta.",
+      "cta": "Richiedi il media kit"
+    }
+  }
 }

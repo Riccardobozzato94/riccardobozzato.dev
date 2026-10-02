@@ -173,20 +173,12 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Google tag (gtag.js) — raw snippet is intentional: the custom
-            GoogleAnalytics component handles SPA route-change pageviews, and
-            @next/third-parties/google would double-count them.
-            CSP in netlify.toml allowlists googletagmanager + google-analytics. */}
-        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTZS8BDZLR" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-GTZS8BDZLR');`,
-          }}
-        />
+        {/* Google tag (gtag.js) is intentionally NOT loaded here.
+            It used to sit in <head> and fired on every pageview before the
+            visitor could accept or refuse cookies, which broke GDPR art. 6/7
+            and blocked AdSense. It is now injected by <GoogleAnalytics /> only
+            after analytics consent is granted, and starts from Consent Mode v2
+            denied defaults (see src/lib/consent.ts). */}
 
         {/* JSON-LD Structured Data */}
         <script
@@ -217,11 +209,6 @@ export default async function LocaleLayout({
               });
             }`,
           }}
-        />
-        <Script
-          id="netlify-identity-widget"
-          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-          strategy="lazyOnload"
         />
       </head>
       <body>
