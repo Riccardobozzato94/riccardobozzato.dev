@@ -118,7 +118,14 @@
     },
     "cookieSettings": "Impostazioni cookie",
     "advertise": "Sponsorizza il sito",
-    "playbookLink": "Foglio gratis"
+    "playbookLink": "Foglio gratis",
+    "books": "Libri",
+    "about": "Chi sono",
+    "services": "Servizi",
+    "talk": "Parliamone",
+    "contact": "Contatti",
+    "privacy": "Privacy Policy",
+    "accessibility": "Accessibilità"
   },
   "projects": {
     "title": "Cosa ho gestito",

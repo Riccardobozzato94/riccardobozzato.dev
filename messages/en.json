@@ -118,7 +118,14 @@
     },
     "cookieSettings": "Cookie settings",
     "advertise": "Advertise",
-    "playbookLink": "Free worksheet"
+    "playbookLink": "Free worksheet",
+    "books": "Books",
+    "about": "About",
+    "services": "Services",
+    "talk": "Let's talk",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "accessibility": "Accessibility"
   },
   "projects": {
     "title": "What I have run",
