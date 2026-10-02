@@ -48,7 +48,11 @@ const LINK_COLUMNS = [
 ];
 
 export default function Footer() {
-  const nav = useTranslations("nav");
+  // One translator for everything: the link keys already carry their namespace
+  // ("nav.home", "footer.contact"). Calling nav("nav.home") rendered the literal
+  // string "nav.nav.home" on screen — longer than the real label, and long enough
+  // to force a horizontal scrollbar at 320px.
+  const t = useTranslations();
   const footer = useTranslations("footer");
   const locale = useLocale();
   const isIt = locale === "it";
@@ -58,11 +62,6 @@ export default function Footer() {
   function openCookieSettings() {
     window.dispatchEvent(new Event("rbz:open-consent"));
   }
-
-  const resolved = (col: (typeof LINK_COLUMNS)[number], i: number, key: string) => {
-    if (i === 0) return nav(key);
-    return footer(key);
-  };
 
   return (
     <footer role="contentinfo" className="bg-surface-container-lowest border-t border-outline-variant">
@@ -88,13 +87,13 @@ export default function Footer() {
                 className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-primary text-primary-foreground font-medium transition-all hover:-translate-y-0.5 hover:shadow-lg"
               >
                 {isIt ? "Prenota una call" : "Book a call"}
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4 shrink-0" />
               </Link>
               <Link
                 href="/freebie"
                 className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl border border-outline-variant font-medium text-foreground transition-colors hover:bg-muted/40"
               >
-                <FileText className="size-4" />
+                <FileText className="size-4 shrink-0" />
                 {footer("playbookLink")}
               </Link>
             </div>
@@ -129,30 +128,35 @@ export default function Footer() {
                 : "Head of Ops / Delivery Manager / Senior PM — Padua · Milan · Remote"}
             </p>
 
-            {/* Numbers as a scannable row, not a wrapping sentence */}
-            <dl className="grid grid-cols-3 gap-3 mb-6">
+            {/* Numbers as a scannable row, not a wrapping sentence.
+                Labels are lowercase and break on their hyphens: uppercased,
+                "PRODUTTIVITÀ" is a single 92px word with nowhere to break and
+                pushed the third column 4px past the viewport at 320px. */}
+            <dl className="grid grid-cols-3 gap-x-3 gap-y-4 mb-6">
               {[
                 { v: "€500K", l: isIt ? "portfolio" : "portfolio" },
                 { v: "−40%", l: isIt ? "time-to-market" : "time-to-market" },
                 { v: "+25%", l: isIt ? "produttività" : "productivity" },
               ].map((s) => (
-                <div key={s.v}>
-                  <dt className="text-lg font-bold text-foreground leading-none">{s.v}</dt>
-                  <dd className="text-[10px] text-muted-foreground/70 mt-1 uppercase tracking-wide leading-tight">
+                <div key={s.v} className="min-w-0">
+                  <dt className="text-lg font-bold text-foreground leading-none tabular-nums">
+                    {s.v}
+                  </dt>
+                  <dd className="text-xs text-muted-foreground/70 mt-1.5 tracking-wide leading-tight break-words hyphens-auto">
                     {s.l}
                   </dd>
                 </div>
               ))}
             </dl>
 
-            <div className="space-y-2.5">
-              <span className="flex items-center gap-2.5 text-sm text-muted-foreground">
+            <div className="space-y-1">
+              <span className="flex min-h-11 items-center gap-2.5 text-sm text-muted-foreground">
                 <MapPin className="size-4 shrink-0" aria-hidden />
                 Legnaro, PD, Italy
               </span>
               <a
                 href="mailto:riccardobozzato@gmail.com"
-                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors break-all"
+                className="flex min-h-11 items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors break-all"
               >
                 <Mail className="size-4 shrink-0" aria-hidden />
                 riccardobozzato@gmail.com
@@ -160,21 +164,22 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+          {/* Columns. min-w-0 stops a long label from setting the column's
+              intrinsic width and pushing the grid past the viewport. */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-8 sm:gap-8">
             {LINK_COLUMNS.map((col, i) => (
-              <nav key={col.headingIt} aria-label={isIt ? col.headingIt : col.headingEn}>
-                <h3 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
+              <nav key={col.headingIt} aria-label={isIt ? col.headingIt : col.headingEn} className="min-w-0">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mb-4">
                   {isIt ? col.headingIt : col.headingEn}
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-1">
                   {col.links.map((l) => (
                     <li key={l.labelKey}>
                       <Link
                         href={l.href}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block py-0.5"
+                        className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        {resolved(col, i, l.labelKey)}
+                        {t(l.labelKey)}
                       </Link>
                     </li>
                   ))}
@@ -182,7 +187,9 @@ export default function Footer() {
                     <li>
                       <button
                         onClick={openCookieSettings}
-                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-0.5 whitespace-nowrap"
+                        // Wraps at the two-column width, stays on one line once
+                        // the four columns have room for it.
+                        className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors sm:whitespace-nowrap"
                       >
                         <Cookie className="size-3.5 shrink-0" aria-hidden />
                         {footer("cookieSettings")}
@@ -199,25 +206,27 @@ export default function Footer() {
       {/* ── Social + legal ────────────────────────────────────────────── */}
       <div className="border-t border-outline-variant/60">
         <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-6">
-          <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-x-8 gap-y-4">
             <div className="space-y-1.5">
               <p className="text-xs text-muted-foreground/70">
                 &copy; {currentYear} Riccardo Bozzato.{" "}
                 {isIt ? "Tutti i diritti riservati." : "All rights reserved."}
               </p>
-              <p className="text-[11px] text-muted-foreground/45 leading-relaxed max-w-xl">
+              <p className="text-xs text-muted-foreground/50 leading-relaxed max-w-xl">
                 {isIt
                   ? "Alcuni link sono link di affiliazione Amazon: se compri un libro attraverso questa pagina, Amazon mi versa una commissione senza che tu paghi nulla in più."
                   : "Some links are Amazon affiliate links: if you buy a book through this page, Amazon pays me a commission and you pay nothing extra."}
               </p>
             </div>
 
-            <div className="flex items-center gap-2 shrink-0">
+            {/* flex-wrap + shrink-0: at 320px the three chips are 300px wide in
+                total, so without wrapping the row overflowed the viewport. */}
+            <div className="flex flex-wrap items-center gap-2">
               <a
                 href="https://linkedin.com/in/riccardobozzato"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-outline-variant text-xs text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                className="inline-flex items-center gap-2 h-11 px-3.5 rounded-lg border border-outline-variant text-xs text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
               >
                 <Linkedin className="size-3.5" aria-hidden />
                 LinkedIn
@@ -226,14 +235,14 @@ export default function Footer() {
                 href="https://github.com/Riccardobozzato94"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-outline-variant text-xs text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                className="inline-flex items-center gap-2 h-11 px-3.5 rounded-lg border border-outline-variant text-xs text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
               >
                 <Github className="size-3.5" aria-hidden />
                 GitHub
               </a>
               <Link
                 href="/advertise"
-                className="inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-outline-variant text-xs text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                className="inline-flex items-center gap-2 h-11 px-3.5 rounded-lg border border-outline-variant text-xs text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
               >
                 <Megaphone className="size-3.5" aria-hidden />
                 {footer("advertise")}

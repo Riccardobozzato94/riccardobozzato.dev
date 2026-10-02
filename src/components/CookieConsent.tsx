@@ -84,12 +84,12 @@ export function CookieConsent() {
       role="dialog"
       aria-modal="false"
       aria-labelledby="cookie-consent-title"
-      className="fixed bottom-0 left-0 right-0 z-[100] p-4 animate-in slide-in-from-bottom-4 duration-500 print:hidden"
+      className="fixed inset-x-0 bottom-0 z-[100] p-3 sm:p-4 max-h-[80vh] overflow-y-auto overscroll-contain animate-in slide-in-from-bottom-4 duration-500 print:hidden"
     >
-      <div className="mx-auto max-w-3xl rounded-2xl border border-border/50 bg-card/95 backdrop-blur-xl shadow-2xl shadow-black/20 p-5 md:p-6">
+      <div className="mx-auto max-w-3xl rounded-2xl border border-border/50 bg-card/95 backdrop-blur-xl shadow-2xl shadow-black/20 p-4 sm:p-5 md:p-6">
         <div className="flex items-start gap-4">
           <div className="hidden sm:flex size-10 shrink-0 rounded-xl bg-accent/10 items-center justify-center">
-            <Cookie className="size-5 text-accent" />
+            <Cookie className="size-5 text-accent" aria-hidden />
           </div>
 
           <div className="flex-1 min-w-0">
@@ -110,24 +110,24 @@ export function CookieConsent() {
               </div>
               <button
                 onClick={rejectAll}
-                className="size-7 shrink-0 rounded-lg border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+                className="size-11 shrink-0 -mr-2 rounded-lg border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
                 aria-label={t("reject")}
               >
-                <X className="size-3.5" />
+                <X className="size-3.5" aria-hidden />
               </button>
             </div>
 
             {expanded && (
-              <fieldset className="mt-4 space-y-3 border-t border-border/40 pt-4">
+              <fieldset className="mt-4 space-y-2 border-t border-border/40 pt-4">
                 <legend className="sr-only">{t("categoriesLegend")}</legend>
 
-                <label className="flex items-start gap-3 cursor-not-allowed">
+                <label className="flex items-start gap-3 min-h-11 py-1 cursor-not-allowed">
                   <input
                     type="checkbox"
                     checked
                     disabled
                     readOnly
-                    className="mt-0.5 size-4 rounded border-border accent-accent"
+                    className="mt-0.5 size-5 shrink-0 rounded border-border accent-accent"
                   />
                   <span className="text-xs">
                     <span className="font-medium text-foreground">{t("necessaryTitle")}</span>
@@ -137,12 +137,12 @@ export function CookieConsent() {
                   </span>
                 </label>
 
-                <label className="flex items-start gap-3 cursor-pointer">
+                <label className="flex items-start gap-3 min-h-11 py-1 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={analytics}
                     onChange={(e) => setAnalytics(e.target.checked)}
-                    className="mt-0.5 size-4 rounded border-border accent-accent"
+                    className="mt-0.5 size-5 shrink-0 rounded border-border accent-accent"
                   />
                   <span className="text-xs">
                     <span className="font-medium text-foreground">{t("analyticsTitle")}</span>
@@ -152,12 +152,12 @@ export function CookieConsent() {
                   </span>
                 </label>
 
-                <label className="flex items-start gap-3 cursor-pointer">
+                <label className="flex items-start gap-3 min-h-11 py-1 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={ads}
                     onChange={(e) => setAds(e.target.checked)}
-                    className="mt-0.5 size-4 rounded border-border accent-accent"
+                    className="mt-0.5 size-5 shrink-0 rounded border-border accent-accent"
                   />
                   <span className="text-xs">
                     <span className="font-medium text-foreground">{t("adsTitle")}</span>
@@ -167,31 +167,35 @@ export function CookieConsent() {
 
                 <button
                   onClick={saveSelection}
-                  className="h-9 rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 px-5 text-xs font-medium shadow-lg shadow-accent/10 transition-all hover:-translate-y-0.5"
+                  className="min-h-11 rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 px-5 text-xs font-medium shadow-lg shadow-accent/10 transition-all hover:-translate-y-0.5"
                 >
                   {t("saveSelection")}
                 </button>
               </fieldset>
             )}
 
-            <div className="flex items-center gap-2.5 mt-4">
+            {/* flex-wrap: the three buttons are 297px wide in one row, so at
+                320px the accept button was pushed to x=359 and forced a
+                horizontal scrollbar on the whole page. min-h-11 keeps every
+                choice tappable with a thumb. */}
+            <div className="flex flex-wrap items-center gap-2.5 mt-4">
               <button
                 onClick={rejectAll}
-                className="h-9 rounded-xl border border-border/50 bg-background hover:bg-muted/50 px-4 text-xs font-medium text-muted-foreground hover:text-foreground transition-all"
+                className="min-h-11 rounded-xl border border-border/50 bg-background hover:bg-muted/50 px-4 text-xs font-medium text-muted-foreground hover:text-foreground transition-all"
               >
                 {t("reject")}
               </button>
               <button
                 onClick={() => setExpanded((v) => !v)}
-                className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-border/50 bg-background hover:bg-muted/50 px-4 text-xs font-medium text-muted-foreground hover:text-foreground transition-all"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/50 bg-background hover:bg-muted/50 px-4 text-xs font-medium text-muted-foreground hover:text-foreground transition-all"
                 aria-expanded={expanded}
               >
-                <Settings2 className="size-3.5" />
+                <Settings2 className="size-3.5 shrink-0" aria-hidden />
                 {expanded ? t("collapseSettings") : t("customise")}
               </button>
               <button
                 onClick={acceptAll}
-                className="ml-auto h-9 rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 px-5 text-xs font-medium shadow-lg shadow-accent/10 transition-all hover:-translate-y-0.5"
+                className="sm:ml-auto min-h-11 rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 px-5 text-xs font-medium shadow-lg shadow-accent/10 transition-all hover:-translate-y-0.5"
               >
                 {t("accept")}
               </button>

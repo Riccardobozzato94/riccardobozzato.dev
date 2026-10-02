@@ -43,14 +43,16 @@ export default function Navbar() {
           : "bg-transparent",
       )}
     >
-      <div className="flex justify-between items-center px-4 md:px-16 py-3.5 max-w-[1200px] mx-auto">
-        {/* Logo */}
+      <div className="flex justify-between items-center gap-2 px-4 md:px-16 py-3.5 max-w-[1200px] mx-auto">
+        {/* Logo. The wordmark is hidden below 380px: at 320px it wrapped onto two
+            lines and pushed the CTA off the header, which is worse than a
+            visitor not seeing the name next to the mark. */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-bold text-foreground tracking-tight hover:text-primary transition-colors"
+          className="flex shrink-0 items-center gap-2 h-11 -ml-1.5 pr-1.5 text-base sm:text-lg font-bold text-foreground tracking-tight hover:text-primary transition-colors"
         >
           <span className="flex items-center justify-center size-7 rounded-lg bg-primary text-black text-xs font-extrabold">RB</span>
-          <span>Riccardo Bozzato</span>
+          <span className="hidden min-[380px]:inline whitespace-nowrap">Riccardo Bozzato</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -96,25 +98,32 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile: CTA + Hamburger */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile: CTA + language + burger. Every control is at least 44x44:
+            at 320px the language link measured 42x16 and the burger 27x36, a
+            mis-tap every time a thumb met them. The language pair (icon + code)
+            is stacked instead of side by side so the header still fits at 320px
+            once the controls are the right size. */}
+        <div className="flex items-center gap-0.5 sm:gap-1.5 md:hidden">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 bg-primary text-black px-3.5 py-2 text-xs font-bold tracking-wider rounded-lg"
+            className="inline-flex h-11 items-center gap-1.5 bg-primary text-black px-3.5 sm:px-4 text-xs font-bold tracking-wider rounded-lg active:scale-95 whitespace-nowrap"
           >
             {locale === "it" ? "Prenota Call" : "Book a Call"}
           </Link>
           <Link
             href={pathname}
             locale={otherLocale}
-            className="inline-flex items-center gap-1 text-xs text-muted-foreground px-1"
+            className="inline-flex size-11 flex-col items-center justify-center gap-0.5 text-xs leading-none font-medium text-muted-foreground"
+            aria-label={
+              locale === "it" ? "Passa all'inglese" : "Switch to Italian"
+            }
           >
-            <Languages className="size-3.5" />
+            <Languages className="size-4" aria-hidden />
             {otherLocale.toUpperCase()}
           </Link>
           <button
             onClick={() => setOpen(!open)}
-            className="inline-flex items-center justify-center size-9 text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex size-11 items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
             aria-label={open
               ? (locale === "it" ? "Chiudi menu" : "Close menu")
               : (locale === "it" ? "Apri menu" : "Open menu")}

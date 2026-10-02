@@ -54,3 +54,6 @@ strategia sito ric/
 
 # Local CV copies
 *_CV_2026_.pdf
+
+# Screenshots produced by scripts/audit-mobile.mjs and scripts/shots.mjs
+/.mobile-audit/

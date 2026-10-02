@@ -76,9 +76,13 @@ export default function ContactPage() {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 md:pb-32">
+        {/* min-w-0 on both columns: a grid item defaults to min-width:auto, so
+            the unbreakable "linkedin.com/in/riccardobozzato" set the column to
+            its min-content width and pushed the page to 407px at a 320px
+            viewport. */}
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Form */}
-          <Section animate>
+          <Section animate className="min-w-0">
             <Card className="border-border/50 shadow-lg shadow-black/5">
               <CardContent className="p-6 md:p-8">
                 {status === "success" ? (
@@ -156,52 +160,60 @@ export default function ContactPage() {
           </Section>
 
           {/* Contact Info */}
-          <Section animate delay={100}>
+          <Section animate delay={100} className="min-w-0">
             <div className="space-y-6">
               <Card className="border-border/50 shadow-lg shadow-black/5">
-                <CardContent className="p-6 md:p-8 space-y-6">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background px-4 py-1.5 text-xs font-medium text-muted-foreground mb-2">
-                    <Sparkles className="size-3" />
+                <CardContent className="p-6 md:p-8 space-y-2">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background px-4 py-1.5 text-xs font-medium text-muted-foreground mb-4">
+                    <Sparkles className="size-3" aria-hidden />
                     {isIt ? "Scrivimi" : "Reach out"}
                   </div>
+                  {/* min-w-0 + break-all on the value: email and handles have no
+                      break opportunities, so they are what overflow the card. */}
                   <a
                     href={`mailto:${t("email")}`}
-                    className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-accent/5 transition-colors"
+                    className="flex min-h-14 items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-accent/5 transition-colors"
                   >
                     <div className="size-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 group-hover:scale-105 transition-all duration-300">
-                      <Mail className="size-5 text-accent" />
+                      <Mail className="size-5 text-accent" aria-hidden />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-xs text-muted-foreground">{isIt ? "Email" : "Email"}</p>
-                      <p className="font-medium text-foreground/90">{t("email")}</p>
+                      <p className="font-medium text-foreground/90 break-all">
+                        {t("email")}
+                      </p>
                     </div>
                   </a>
                   <a
                     href={`https://${t("github")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-accent/5 transition-colors"
+                    className="flex min-h-14 items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-accent/5 transition-colors"
                   >
                     <div className="size-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 group-hover:scale-105 transition-all duration-300">
-                      <Github className="size-5 text-accent" />
+                      <Github className="size-5 text-accent" aria-hidden />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-xs text-muted-foreground">GitHub</p>
-                      <p className="font-medium text-foreground/90">{t("github")}</p>
+                      <p className="font-medium text-foreground/90 break-all">
+                        {t("github")}
+                      </p>
                     </div>
                   </a>
                   <a
                     href={`https://${t("linkedin")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-accent/5 transition-colors"
+                    className="flex min-h-14 items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-accent/5 transition-colors"
                   >
                     <div className="size-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 group-hover:scale-105 transition-all duration-300">
-                      <Linkedin className="size-5 text-accent" />
+                      <Linkedin className="size-5 text-accent" aria-hidden />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-xs text-muted-foreground">LinkedIn</p>
-                      <p className="font-medium text-foreground/90">{t("linkedin")}</p>
+                      <p className="font-medium text-foreground/90 break-all">
+                        {t("linkedin")}
+                      </p>
                     </div>
                   </a>
                 </CardContent>

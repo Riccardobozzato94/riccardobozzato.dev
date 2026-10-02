@@ -148,7 +148,7 @@ export default async function AdvertisePage({
                 }`}
               >
                 {fmt.highlighted && (
-                  <div className="inline-flex items-center gap-1.5 self-start rounded-full bg-accent px-3 py-1 text-[11px] font-semibold text-accent-foreground mb-4">
+                  <div className="inline-flex items-center gap-1.5 self-start rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground mb-4">
                     {t("mostPopular")}
                   </div>
                 )}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 512px; height: 512px; background: transparent; }
+    /* Everything is authored at 512x512 and then scaled as one unit, so the
+       180px iOS icon is the same composition as the 512px one, not a crop. */
+    .stage {
+      width: 512px; height: 512px; position: relative; overflow: hidden;
+      transform-origin: top left;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Opaque plate: iOS does not composite transparency on home-screen icons
+       and Android's adaptive-icon mask needs a solid backdrop too. */
+    .plate { position: absolute; inset: 0; background: #0a0a0b; }
+    .glow {
+      position: absolute; width: 460px; height: 460px; border-radius: 50%;
+      top: -190px; right: -170px;
+      background: radial-gradient(circle, rgba(34,197,94,.34) 0%, rgba(34,197,94,0) 66%);
+    }
+    .glow2 {
+      position: absolute; width: 380px; height: 380px; border-radius: 50%;
+      bottom: -180px; left: -140px;
+      background: radial-gradient(circle, rgba(250,250,250,.10) 0%, rgba(250,250,250,0) 70%);
+    }
+    .dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.13) 1.5px, transparent 1.5px);
+      background-size: 40px 40px;
+      opacity: .5;
+    }
+    .ring {
+      position: absolute; border-radius: 50%;
+      border: 2px solid rgba(78,222,163,.16);
+    }
+    .mark {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 244px; height: 244px; border-radius: 62px;
+      background: linear-gradient(140deg, #fafafa 0%, #d4d4d8 100%);
+      color: #0a0a0b;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 112px; letter-spacing: -5px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.10) inset;
+      padding-right: 6px;
+    }
+    /* Maskable safe zone: the mark shrinks into the centre 80% of the canvas,
+       because Android crops the outer 20% to whatever shape the launcher uses. */
+    .stage.maskable .mark {
+      width: 196px; height: 196px; border-radius: 50px; font-size: 90px;
+    }
+    .stage.maskable .glow { opacity: .7; }
+  </style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="plate"></div>
+    <div class="glow"></div>
+    <div class="glow2"></div>
+    <div class="dots"></div>
+    <div class="ring" style="inset: 78px;"></div>
+    <div class="ring" style="inset: 128px; border-color: rgba(78,222,163,.09);"></div>
+    <div class="mark">RB</div>
+  </div>
+</body>
+</html>

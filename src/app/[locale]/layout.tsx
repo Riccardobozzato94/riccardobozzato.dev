@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { SITE_URL } from "@/lib/site";
 import { NextIntlClientProvider } from "next-intl";
@@ -60,6 +60,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       index: true,
       follow: true,
     },
+    // PWA / mobile: manifest gives the home-screen name and icon.
+    // `themeColor` does NOT belong here — Next 15+ reads it from the
+    // `viewport` export below, and silently drops it from `metadata`.
+    manifest: "/site.webmanifest",
+    appleWebApp: {
+      // Next emits `mobile-web-app-capable`, which iOS ignores: it only reads
+      // the `apple-` prefix. So the legacy tag goes in <head> by hand below.
+      capable: true,
+      title: "Riccardo Bozzato",
+      statusBarStyle: "black-translucent",
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+        { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+      ],
+      apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+    },
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: {
@@ -69,6 +88,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 }
+
+// Tints the mobile browser chrome so the address bar blends into the dark UI.
+// Kept out of generateMetadata because viewport cannot vary per locale.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  // Do not block pinch-zoom: capping it is an accessibility failure (WCAG 1.4.4)
+  // and iOS ignores it anyway.
+  maximumScale: 5,
+  themeColor: "#0a0a0b",
+  colorScheme: "dark",
+};
 
 export default async function LocaleLayout({
   children,
@@ -172,6 +203,13 @@ export default async function LocaleLayout({
         {/* Preconnect for Google Fonts (used via @import in globals.css) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Standalone on iOS. `apple-mobile-web-app-capable` is the only tag
+            Safari reads — Next's `appleWebApp.capable` renders
+            `mobile-web-app-capable`, which iOS ignores, so without this line
+            "Add to Home Screen" opens the site inside a Safari chrome. */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
 
         {/* Google tag (gtag.js) is intentionally NOT loaded here.
             It used to sit in <head> and fired on every pageview before the

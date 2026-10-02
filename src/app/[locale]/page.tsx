@@ -105,20 +105,26 @@ export default async function HomePage({ params }: Props) {
               : "Senior Delivery Manager & Head of Operations (PMP®). I build the operational architecture that turns chaos into predictable execution. €500K+ portfolio managed, teams of 8-12, -40% time-to-market."}
             </p>
 
-            {/* Badge Numerici */}
-            <div className="flex flex-wrap gap-4 sm:gap-8 mb-8">
+            {/* Badge Numerici. Two columns at 320px: labels like "Time-to-
+                Market" and "Anni di esperienza" need ~90px, so four across did
+                not fit and wrapped into an uneven row. */}
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-5 sm:flex sm:flex-wrap sm:gap-8 mb-8">
               {[
                 { num: "€500K+", label: isIt ? "Portfolio" : "Portfolio" },
                 { num: "-40%", label: isIt ? "Time-to-Market" : "Time-to-Market" },
                 { num: "+25%", label: isIt ? "Produttività" : "Productivity" },
                 { num: "7+", label: isIt ? "Anni di esperienza" : "Years experience" },
               ].map((badge) => (
-                <div key={badge.num} className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">{badge.num}</div>
-                  <div className="text-[10px] sm:text-xs text-muted-foreground tracking-wide">{badge.label}</div>
+                <div key={badge.num} className="sm:text-center">
+                  <dt className="text-2xl sm:text-3xl font-bold text-primary tabular-nums leading-none">
+                    {badge.num}
+                  </dt>
+                  <dd className="text-xs text-muted-foreground tracking-wide mt-1.5 leading-tight">
+                    {badge.label}
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 mb-8">
@@ -139,7 +145,7 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* Trust Line */}
-            <div className="flex flex-wrap items-center gap-3 text-[10px] sm:text-xs text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
               <span className="font-semibold text-foreground">{isIt ? "Trust:" : "Trust:"}</span>
               <span>PMP®</span>
               <span className="text-outline-variant">·</span>
@@ -187,7 +193,7 @@ export default async function HomePage({ params }: Props) {
               <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
                 {isIt ? "LA VISIONE" : "THE VISION"}
               </p>
-              <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-6">
+              <h2 className="text-[clamp(1.75rem,7vw,2.5rem)] leading-[1.15] tracking-tight font-bold text-balance mb-6">
                 {isIt
                   ? "Le aziende non falliscono per mancanza di idee. Falliscono nell'esecuzione."
                   : "Companies don't fail from lack of ideas. They fail at execution."}
@@ -234,7 +240,7 @@ export default async function HomePage({ params }: Props) {
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
               {isIt ? "IMPATTO REALE" : "REAL IMPACT"}
             </p>
-            <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+            <h2 className="text-[clamp(1.75rem,7vw,2.5rem)] leading-[1.15] tracking-tight font-bold text-balance mb-4">
               {isIt ? "Risultati Misurabili, Non Teoria." : "Measurable Results, Not Theory."}
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -259,13 +265,13 @@ export default async function HomePage({ params }: Props) {
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="text-primary text-2xl font-bold w-16">-40%</div>
+                    <div className="text-primary text-2xl font-bold w-[4.5rem] shrink-0 tabular-nums">-40%</div>
                     <div className="text-sm text-muted-foreground">
                       {isIt ? "Time-to-market su e-commerce complessi" : "Faster time-to-market on complex e-commerce"}
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="text-primary text-2xl font-bold w-16">+25%</div>
+                    <div className="text-primary text-2xl font-bold w-[4.5rem] shrink-0 tabular-nums">+25%</div>
                     <div className="text-sm text-muted-foreground">
                       {isIt ? "Produttività team distribuiti (8-12 pax)" : "Distributed team productivity (8-12 people)"}
                     </div>
@@ -302,13 +308,13 @@ export default async function HomePage({ params }: Props) {
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="text-primary text-2xl font-bold w-16">+30%</div>
+                    <div className="text-primary text-2xl font-bold w-[4.5rem] shrink-0 tabular-nums">+30%</div>
                     <div className="text-sm text-muted-foreground">
                       {isIt ? "Efficienza operativa nei processi core" : "Operational efficiency in core processes"}
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="text-primary text-2xl font-bold w-16">-15%</div>
+                    <div className="text-primary text-2xl font-bold w-[4.5rem] shrink-0 tabular-nums">-15%</div>
                     <div className="text-sm text-muted-foreground">
                       {isIt ? "Tasso di errore manuale" : "Manual error rate reduction"}
                     </div>
@@ -345,7 +351,7 @@ export default async function HomePage({ params }: Props) {
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
               {isIt ? "PROGETTI & DELIVERY" : "PROJECTS & DELIVERY"}
             </p>
-            <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+            <h2 className="text-[clamp(1.75rem,7vw,2.5rem)] leading-[1.15] tracking-tight font-bold text-balance mb-4">
               {isIt ? "Quello che ho gestito, non quello che ho costruito" : "What I ran, not what I built"}
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -384,7 +390,7 @@ export default async function HomePage({ params }: Props) {
           <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
             {isIt ? "BLOG" : "BLOG"}
           </p>
-          <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+          <h2 className="text-[clamp(1.75rem,7vw,2.5rem)] leading-[1.15] tracking-tight font-bold text-balance mb-4">
             {isIt ? "Approfondimenti & Tactical Advice" : "Insights & Tactical Advice"}
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">
@@ -411,7 +417,7 @@ export default async function HomePage({ params }: Props) {
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
               {isIt ? "IL VIAGGIO STRATEGICO" : "THE STRATEGIC JOURNEY"}
             </p>
-            <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold">
+            <h2 className="text-[clamp(1.75rem,7vw,2.5rem)] leading-[1.15] tracking-tight font-bold text-balance">
               {isIt ? "L'evoluzione di un Operation Leader" : "The Evolution of an Operations Leader"}
             </h2>
           </div>
@@ -499,7 +505,7 @@ export default async function HomePage({ params }: Props) {
               <div className="text-xs text-primary mb-4 font-semibold tracking-wider">
                 {isIt ? "RISORSA STRATEGICA GRATUITA" : "FREE STRATEGIC RESOURCE"}
               </div>
-              <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
+              <h2 className="text-[clamp(1.75rem,7vw,2.5rem)] leading-[1.15] tracking-tight font-bold text-balance mb-4">
                 {isIt ? "Operational Chaos Diagnostic" : "Operational Chaos Diagnostic"}
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">

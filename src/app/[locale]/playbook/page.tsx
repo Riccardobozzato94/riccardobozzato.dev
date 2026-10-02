@@ -332,7 +332,7 @@ export default async function PlaybookPage({ params }: Props) {
             {/* Premium + Coaching */}
             <Card className="border-accent/40 relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <Badge className="bg-accent text-black text-xs font-bold px-4 py-1">
+                <Badge className="bg-accent text-black text-sm font-bold px-4 py-1.5">
                   {isIt ? "Più richiesto" : "Most popular"}
                 </Badge>
               </div>
