@@ -4,6 +4,7 @@ import { createLead } from "@/lib/lead-store";
 import { confirmationTemplate } from "@/lib/email/templates";
 import { rateLimit } from "@/lib/rate-limit";
 import { escapeHtml, sanitizeInput, sanitizeEmail } from "@/lib/escape";
+import type { Lead } from "@/lib/email/types";
 
 export async function POST(request: Request) {
   // ── CSRF check: only accept requests from the site's own origin ──
@@ -72,7 +73,26 @@ export async function POST(request: Request) {
     }
 
     // ── 1. Save the lead (status = pending, confirmToken generated) ──
-    const lead = await createLead(name, email);
+    // Storage failures must NOT be hidden behind `directDownload`: that is how
+    // a completely broken lead store looked like a working funnel for weeks.
+    // If we cannot persist the lead we cannot run the sequence later, so we
+    // still hand over the PDF (never block the user) but we say so out loud.
+    let lead: Lead;
+    try {
+      lead = await createLead(name, email);
+    } catch (storeError) {
+      console.error("Lead store write FAILED (funnel broken):", {
+        email,
+        error: storeError instanceof Error ? storeError.message : storeError,
+      });
+      return NextResponse.json({
+        success: true,
+        directDownload: true,
+        downloadUrl: "/files/operational-chaos-diagnostic.pdf",
+        message:
+          "Here's your diagnostic! Download it directly below. The email sequence is temporarily unavailable.",
+      });
+    }
 
     // ── 2. Send Confirmation Email (double opt-in) + notify (resilient) ──
     const confirmUrl = `${APP_URL}/confirm?token=${lead.confirmToken}`;

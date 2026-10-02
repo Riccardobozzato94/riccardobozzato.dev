@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAllLeads } from "@/lib/lead-store";
+import { getAllLeads, backendInfo } from "@/lib/lead-store";
 import { rateLimit } from "@/lib/rate-limit";
 
 /**
@@ -34,26 +34,37 @@ export async function GET(request: Request) {
 
   try {
     const leads = await getAllLeads();
+    const info = backendInfo();
 
     return NextResponse.json({
       success: true,
+      storage: info,
       total: leads.length,
+      pending: leads.filter((l) => l.status === "pending").length,
+      confirmed: leads.filter((l) => l.status === "confirmed").length,
       active: leads.filter((l) => !l.unsubscribed).length,
       unsubscribed: leads.filter((l) => l.unsubscribed).length,
       leads: leads.map((l) => ({
         id: l.id,
         name: l.name,
         email: l.email,
+        status: l.status,
         signupDate: l.signupDate,
         lastStepSent: l.lastStepSent,
         unsubscribed: l.unsubscribed,
-        // Don't expose unsubscribeToken
+        // Don't expose unsubscribeToken / confirmToken
       })),
     });
   } catch (error) {
     console.error("Leads API error:", error);
+    // Surface the backend failure — this endpoint is how the funnel gets
+    // diagnosed, so a generic 500 here is not enough.
     return NextResponse.json(
-      { error: "Failed to fetch leads." },
+      {
+        error: "Failed to fetch leads.",
+        storage: backendInfo(),
+        detail: error instanceof Error ? error.message : String(error),
+      },
       { status: 500 }
     );
   }
