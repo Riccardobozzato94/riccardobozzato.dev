@@ -137,11 +137,22 @@ async function getBlobsStore(): Promise<BlobsStore> {
 async function readBlobsLeads(): Promise<Lead[]> {
   const store = await getBlobsStore();
   const raw = await store.get("leads", { type: "json" });
-  return Array.isArray(raw) ? (raw as Lead[]) : [];
+
+  if (raw == null) return [];
+  if (Array.isArray(raw)) return raw as Lead[];
+
+  // A single-object blob (easy to produce by accident when editing the store by
+  // hand) used to read back as an empty list, which looked exactly like "we
+  // have no leads". Normalise instead of silently losing the data.
+  if (typeof raw === "object") return [raw as Lead];
+
+  return [];
 }
 
 async function writeBlobsLeads(leads: Lead[]): Promise<void> {
   const store = await getBlobsStore();
+  // Always an array on disk: `JSON.stringify` of a single-element array keeps
+  // the brackets, but tooling that round-trips the blob may not.
   await store.set("leads", JSON.stringify(leads));
 }
 
@@ -152,7 +163,9 @@ function readLocalLeads(): Lead[] {
     if (!fs.existsSync(DATA_FILE)) return [];
     const raw = fs.readFileSync(DATA_FILE, "utf-8");
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as Lead[]) : [];
+    if (Array.isArray(parsed)) return parsed as Lead[];
+    if (parsed && typeof parsed === "object") return [parsed as Lead];
+    return [];
   } catch {
     return [];
   }
