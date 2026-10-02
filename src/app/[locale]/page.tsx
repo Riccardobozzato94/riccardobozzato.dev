@@ -1,8 +1,9 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { CvDownload } from "@/components/CvDownload";
 import { ArrowRight, Cpu, Users, Gauge, Euro, Check, BarChart3, ExternalLink } from "lucide-react";
 
 const baseUrl = SITE_URL;
@@ -132,18 +133,11 @@ export default async function HomePage({ params }: Props) {
             <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 href="/contact"
-                className="bg-primary text-black px-8 py-4 text-xs font-bold tracking-widest transition-all hover:brightness-110 luminous-glow"
+                className="inline-flex items-center justify-center h-11 px-8 text-xs font-bold tracking-widest transition-all hover:brightness-110 luminous-glow bg-primary text-black"
               >
                 {isIt ? "PARLIAMONE" : "LET'S TALK"}
               </Link>
-              <a
-                href="/files/CV-Riccardo-Bozzato.pdf"
-                download
-                className="bg-transparent text-foreground border border-outline-variant px-8 py-4 text-xs font-bold tracking-widest hover:bg-surface-container-high transition-all flex items-center gap-2 group"
-              >
-                {isIt ? "SCARICA CV" : "DOWNLOAD CV"}
-                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <CvDownload source="home-hero" />
             </div>
 
             {/* Trust Line */}
@@ -187,7 +181,7 @@ export default async function HomePage({ params }: Props) {
       {/* ════════════════════════════════════════════
            VISION — La Visione
          ════════════════════════════════════════════ */}
-      <section id="vision" className="bg-surface-container-lowest py-[120px] border-y border-outline-variant relative overflow-hidden">
+      <section id="vision" className="bg-surface-container-lowest py-[clamp(72px,8vw,120px)] border-y border-outline-variant relative overflow-hidden">
         <div className="absolute -left-64 top-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="max-w-[1200px] mx-auto px-4 md:px-16 relative z-10">
           <div className="flex flex-col md:flex-row gap-[64px] items-center">
@@ -236,7 +230,7 @@ export default async function HomePage({ params }: Props) {
       {/* ════════════════════════════════════════════
            RESULTS — Risultati Misurabili
          ════════════════════════════════════════════ */}
-      <section id="results" className="py-[120px]">
+      <section id="results" className="py-[clamp(72px,8vw,120px)]">
         <div className="max-w-[1200px] mx-auto px-4 md:px-16">
           <div className="mb-[64px] max-w-3xl">
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
@@ -347,7 +341,7 @@ export default async function HomePage({ params }: Props) {
           pages deleted on 2026-10-02, so three live 404s on the homepage.
           The full project story is now on /projects, which also covers the
           operational track record. */}
-      <section className="py-[120px] bg-surface-container-low">
+      <section className="py-[clamp(72px,8vw,120px)] bg-surface-container-low">
         <div className="max-w-[1200px] mx-auto px-4 md:px-16">
           <div className="max-w-2xl mx-auto text-center mb-[56px]">
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
@@ -387,7 +381,7 @@ export default async function HomePage({ params }: Props) {
       {/* ════════════════════════════════════════════
             BLOG — Ultimi articoli
           ════════════════════════════════════════════ */}
-      <section className="py-[120px]">
+      <section className="py-[clamp(72px,8vw,120px)]">
         <div className="max-w-[1200px] mx-auto px-4 md:px-16 text-center">
           <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
             {isIt ? "BLOG" : "BLOG"}
@@ -413,9 +407,9 @@ export default async function HomePage({ params }: Props) {
       {/* ════════════════════════════════════════════
             JOURNEY — Il Viaggio Strategico (Timeline)
           ════════════════════════════════════════════ */}
-      <section id="journey" className="bg-surface-container-lowest py-[120px] border-y border-outline-variant relative">
+      <section id="journey" className="bg-surface-container-lowest py-[clamp(72px,8vw,120px)] border-y border-outline-variant relative">
         <div className="max-w-[1200px] mx-auto px-4 md:px-16">
-          <div className="mb-[120px] text-center">
+          <div className="mb-[clamp(48px,6vw,96px)] text-center">
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
               {isIt ? "IL VIAGGIO STRATEGICO" : "THE STRATEGIC JOURNEY"}
             </p>
@@ -499,7 +493,7 @@ export default async function HomePage({ params }: Props) {
       {/* ════════════════════════════════════════════
            LEAD MAGNET — Operational Chaos Diagnostic
          ════════════════════════════════════════════ */}
-      <section className="max-w-[1200px] mx-auto px-4 md:px-16 py-[120px]">
+      <section className="max-w-[1200px] mx-auto px-4 md:px-16 py-[clamp(72px,8vw,120px)]">
         <div className="bg-surface-container p-6 md:p-[64px] border-l-4 border-primary relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">

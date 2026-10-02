@@ -21,7 +21,7 @@
  *  2. Never swallow a write failure — a lost lead is worse than a 500.
  *  3. The local JSON file is dev-only, and only if the filesystem is writable.
  */
-import type { Lead } from "./email/types";
+import type { CvDownload, Lead } from "./email/types";
 import * as fs from "fs";
 import * as path from "path";
 import * as crypto from "crypto";
@@ -336,4 +336,101 @@ export async function getLeadsDueForStep(
 
 export async function getAllLeads(): Promise<Lead[]> {
   return readLeads();
+}
+
+/* ────────── CV downloads (separate from the email sequence) ────────── */
+
+/*
+ * Why a second collection instead of reusing createLead():
+ *
+ * The CV gate only asks for an email so the file can be delivered. It is not
+ * an opt-in to the playbook sequence, so it must not produce a Lead: the
+ * nightly cron reads every lead with status "confirmed" and would start sending
+ * marketing emails to people who only wanted a PDF.
+ *
+ * createLead() also has a branch for an address that already exists, and it
+ * sets `status = "pending"` plus a fresh `signupDate`. Routing a CV download
+ * through it would therefore *unsubscribe-by-side-effect* every existing
+ * subscriber who happens to ask for the CV: their confirmed sequence would stop
+ * mid-flight with no error anywhere.
+ *
+ * So: its own key, its own shape, and no token plumbing — there is nothing to
+ * unsubscribe from, because no sequence is ever started.
+ */
+const CV_BLOBS_KEY = "cv-downloads";
+const CV_DATA_FILE = path.join(DATA_DIR, "cv-downloads.json");
+
+async function readCvDownloads(): Promise<CvDownload[]> {
+  try {
+    if (resolveBackend() === "blobs") {
+      const store = await getBlobsStore();
+      const raw = await store.get(CV_BLOBS_KEY, { type: "json" });
+      if (raw == null) return [];
+      if (Array.isArray(raw)) return raw as CvDownload[];
+      if (typeof raw === "object") return [raw as CvDownload];
+      return [];
+    }
+    if (!fs.existsSync(CV_DATA_FILE)) return [];
+    const parsed = JSON.parse(fs.readFileSync(CV_DATA_FILE, "utf-8"));
+    if (Array.isArray(parsed)) return parsed as CvDownload[];
+    if (parsed && typeof parsed === "object") return [parsed as CvDownload];
+    return [];
+  } catch {
+    return [];
+  }
+}
+
+async function writeCvDownloads(downloads: CvDownload[]): Promise<void> {
+  if (resolveBackend() === "blobs") {
+    const store = await getBlobsStore();
+    await store.set(CV_BLOBS_KEY, JSON.stringify(downloads));
+    return;
+  }
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+  fs.writeFileSync(CV_DATA_FILE, JSON.stringify(downloads, null, 2), "utf-8");
+}
+
+/**
+ * Records the request. A write failure is reported to the caller rather than
+ * swallowed: the same silent-loss bug that made the playbook funnel invisible
+ * for weeks applies here too.
+ */
+export async function recordCvDownload(
+  email: string,
+  source: string
+): Promise<CvDownload> {
+  const record: CvDownload = {
+    id: `cv_${Date.now()}_${crypto.randomBytes(4).toString("hex")}`,
+    email,
+    requestedAt: new Date().toISOString(),
+    source,
+  };
+
+  const run = writeChain.then(async () => {
+    let lastErr: unknown;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        const downloads = await readCvDownloads();
+        // One row per address per day: a visitor who reloads the dialog should
+        // not fill the store with duplicates.
+        const since = Date.now() - 24 * 60 * 60 * 1000;
+        const recent = downloads.some(
+          (d) => d.email === email && new Date(d.requestedAt).getTime() >= since
+        );
+        if (!recent) downloads.push(record);
+        await writeCvDownloads(downloads);
+        return record;
+      } catch (err) {
+        lastErr = err;
+        await new Promise((r) => setTimeout(r, 50 * (attempt + 1)));
+      }
+    }
+    throw lastErr;
+  });
+  writeChain = run.catch(() => undefined);
+  return run;
+}
+
+export async function getAllCvDownloads(): Promise<CvDownload[]> {
+  return readCvDownloads();
 }

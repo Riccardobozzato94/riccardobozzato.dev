@@ -477,6 +477,22 @@
     "title": "Libreria",
     "description": "I libri che hanno formato il mio modo di pensare su operations, tecnologia e costruzione di cose. Curati, letti e consigliati. Alcuni link sono link di affiliazione Amazon — a te non costa nulla, a me aiuta a mantenere il sito."
   },
+  "cv": {
+    "title": "Scarica il CV",
+    "intro": "Lascia la tua email e il CV parte subito. La uso solo per consegnarti il file: nessuna sequenza di email, nessun annuncio, nessuna newsletter. Puoi chiedermi di cancellarla in qualsiasi momento.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "tu@azienda.com",
+    "consent": "Ho letto la privacy policy e acconsento al trattamento del mio indirizzo email per ricevere il CV.",
+    "submit": "Scarica il CV",
+    "sending": "Preparo il download...",
+    "errorEmail": "Inserisci un indirizzo email valido.",
+    "errorConsent": "Devi acconsentire per ricevere il CV.",
+    "errorGeneric": "Qualcosa è andato storto. Riprova.",
+    "success": "Fatto. Se il download non parte, usa questo link.",
+    "directLink": "Apri il CV",
+    "close": "Chiudi",
+    "fileMeta": "PDF, 4 pagine, inglese"
+  },
   "contact": {
     "title": "Contattami",
     "subtitle": "Per un ruolo, un progetto o una consulenza. Rispondo entro 24h.",
@@ -508,7 +524,7 @@
       },
       {
         "title": "2. Dati Raccolti - Per Ogni Servizio",
-        "content": "Modulo di contatto generico: nome, email e messaggio. Usato per richieste di ruolo lavorativo, progetti o consulenza.<br><br>Servizi di consulenza (Operational Audit, Operations Overhaul, Fractional Head of Operations): nome, email, azienda, descrizione del problema operativo, dettagli di team e processi. Per l'Overhaul possono servire dettagli tecnici delle piattaforme (Magento, Shopware, Pimcore) e credenziali di accesso temporanee, distrutte al termine dell'incarico. I prezzi si concordano in call e nella proposta scritta: nessuna tariffa è pubblicata sul sito.<br><br>Download delle risorse gratuite (playbook): nome e indirizzo email, per consegnare il PDF e inviare la sequenza email (massimo 6 email in 30 giorni). Richiede doppio opt-in: senza la conferma dell'indirizzo la sequenza non parte.<br><br>Download CV: nessun dato raccolto, il download è anonimo.<br><br>Acquisto di ShipKit: nome, email e indirizzo di fatturazione, gestiti tramite Stripe. Io non ricevo né memorizzo i dati della carta di credito."
+        "content": "Modulo di contatto generico: nome, email e messaggio. Usato per richieste di ruolo lavorativo, progetti o consulenza.<br><br>Servizi di consulenza (Operational Audit, Operations Overhaul, Fractional Head of Operations): nome, email, azienda, descrizione del problema operativo, dettagli di team e processi. Per l'Overhaul possono servire dettagli tecnici delle piattaforme (Magento, Shopware, Pimcore) e credenziali di accesso temporanee, distrutte al termine dell'incarico. I prezzi si concordano in call e nella proposta scritta: nessuna tariffa è pubblicata sul sito.<br><br>Download delle risorse gratuite (playbook): nome e indirizzo email, per consegnare il PDF e inviare la sequenza email (massimo 6 email in 30 giorni). Richiede doppio opt-in: senza la conferma dell'indirizzo la sequenza non parte.<br><br>Download del CV: indirizzo email. Per consegnarti il file e, se mi scrivi, per risponderti. Il file non è più un link pubblico: viene servito solo dopo che l'indirizzo è stato inserito, tramite un link firmato che scade dopo 15 minuti. Nessuna sequenza email, nessuna newsletter, nessun annuncio.<br><br>Acquisto di ShipKit: nome, email e indirizzo di fatturazione, gestiti tramite Stripe. Io non ricevo né memorizzo i dati della carta di credito."
       },
       {
         "title": "3. Come Utilizzo i Tuoi Dati",
@@ -524,11 +540,11 @@
       },
       {
         "title": "6. Base Giuridica (GDPR)",
-        "content": "Art. 6.1.a Consenso espresso: cookie non necessari, sequenza email.<br>Art. 6.1.b Esecuzione del contratto: risposte a richieste di contatto e servizi in corso.<br>Art. 6.1.c Obbligo legale: dati di fatturazione, conservati per 10 anni come previsto dalla normativa fiscale.<br>Art. 6.1.f Legittimo interesse: sicurezza del sito (rate limiting, log tecnici) e difesa da abusi."
+        "content": "Art. 6.1.a Consenso espresso: cookie non necessari, sequenza email, indirizzo email raccolto per il download del CV.<br>Art. 6.1.b Esecuzione del contratto: risposte a richieste di contatto e servizi in corso.<br>Art. 6.1.c Obbligo legale: dati di fatturazione, conservati per 10 anni come previsto dalla normativa fiscale.<br>Art. 6.1.f Legittimo interesse: sicurezza del sito (rate limiting, log tecnici) e difesa da abusi."
       },
       {
         "title": "7. Conservazione dei Dati",
-        "content": "Richieste di contatto e candidature: 24 mesi dall'ultimo contatto, salvo necessità di conservarli più a lungo per obblighi di legge.<br>Dati di fatturazione: 10 anni (obbligo fiscale).<br>Lead della sequenza playbook: 30 giorni dall'ultima email, poi cancellati. Se ti disiscrivi, vengono cancellati immediatamente.<br>Log tecnici di sicurezza: 90 giorni.<br>Credenziali tecniche fornite per un incarico di Overhaul: distrutte al termine dell'incarico."
+        "content": "Download del CV: 24 mesi dall'ultima richiesta, poi cancellati. Non entrano in nessuna sequenza email e non ricevono comunicazioni commerciali; puoi chiederne la cancellazione in qualsiasi momento scrivendomi.<br>Richieste di contatto e candidature: 24 mesi dall'ultimo contatto, salvo necessità di conservarli più a lungo per obblighi di legge.<br>Dati di fatturazione: 10 anni (obbligo fiscale).<br>Lead della sequenza playbook: 30 giorni dall'ultima email, poi cancellati. Se ti disiscrivi, vengono cancellati immediatamente.<br>Log tecnici di sicurezza: 90 giorni.<br>Credenziali tecniche fornite per un incarico di Overhaul: distrutte al termine dell'incarico."
       },
       {
         "title": "8. I Tuoi Diritti (GDPR)",

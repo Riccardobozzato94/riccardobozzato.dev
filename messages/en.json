@@ -477,6 +477,22 @@
     "title": "Bookshelf",
     "description": "The books that shaped how I think about operations, technology, and building things. Curated, read, and recommended. Some links are Amazon affiliate links — you pay nothing extra, I get a small commission that helps keep this site running."
   },
+  "cv": {
+    "title": "Download the CV",
+    "intro": "Leave your email and the CV downloads immediately. I use it only to deliver the file: no email sequence, no ads, no newsletter. You can ask me to delete it at any time.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@company.com",
+    "consent": "I have read the privacy policy and consent to my email address being processed so I can receive the CV.",
+    "submit": "Download the CV",
+    "sending": "Preparing your download...",
+    "errorEmail": "Enter a valid email address.",
+    "errorConsent": "You must consent in order to receive the CV.",
+    "errorGeneric": "Something went wrong. Try again.",
+    "success": "Done. If the download did not start, use this link.",
+    "directLink": "Open the CV",
+    "close": "Close",
+    "fileMeta": "PDF, 4 pages, in English"
+  },
   "contact": {
     "title": "Get in Touch",
     "subtitle": "For a role, a project, or a consultation. I'll respond within 24h.",
@@ -508,7 +524,7 @@
       },
       {
         "title": "2. Data Collected - Per Service",
-        "content": "General contact form: name, email and message. Used for job applications, project enquiries or consulting.<br><br>Consulting services (Operational Audit, Operations Overhaul, Fractional Head of Operations): name, email, company, description of the operational problem, team and process details. For the Overhaul we may need platform details (Magento, Shopware, Pimcore) and temporary access credentials, destroyed at the end of the engagement. Prices are agreed on a call and in the written proposal: no rate is published on the site.<br><br>Free resource downloads (playbook): name and email address, used to deliver the PDF and send the email sequence (maximum 6 emails in 30 days). Double opt-in applies: without address confirmation the sequence does not start.<br><br>CV download: no data collected, the download is anonymous.<br><br>ShipKit purchase: name, email and billing address, handled by Stripe. I never receive or store your card details."
+        "content": "General contact form: name, email and message. Used for job applications, project enquiries or consulting.<br><br>Consulting services (Operational Audit, Operations Overhaul, Fractional Head of Operations): name, email, company, description of the operational problem, team and process details. For the Overhaul we may need platform details (Magento, Shopware, Pimcore) and temporary access credentials, destroyed at the end of the engagement. Prices are agreed on a call and in the written proposal: no rate is published on the site.<br><br>Free resource downloads (playbook): name and email address, used to deliver the PDF and send the email sequence (maximum 6 emails in 30 days). Double opt-in applies: without address confirmation the sequence does not start.<br><br>CV download: email address. To deliver the file and, if you write to me, to reply. The file is no longer a public link: it is served only after the address has been entered, through a signed link that expires after 15 minutes. No email sequence, no newsletter, no ads.<br><br>ShipKit purchase: name, email and billing address, handled by Stripe. I never receive or store your card details."
       },
       {
         "title": "3. How I Use Your Data",
@@ -524,11 +540,11 @@
       },
       {
         "title": "6. Legal Basis (GDPR)",
-        "content": "Art. 6.1.a Consent: non-essential cookies, email sequence.<br>Art. 6.1.b Performance of a contract: replies to contact requests and services in progress.<br>Art. 6.1.c Legal obligation: billing data, retained for 10 years as required by tax law.<br>Art. 6.1.f Legitimate interest: site security (rate limiting, technical logs) and defence against abuse."
+        "content": "Art. 6.1.a Consent: non-essential cookies, email sequence, the email address collected for the CV download.<br>Art. 6.1.b Performance of a contract: replies to contact requests and services in progress.<br>Art. 6.1.c Legal obligation: billing data, retained for 10 years as required by tax law.<br>Art. 6.1.f Legitimate interest: site security (rate limiting, technical logs) and defence against abuse."
       },
       {
         "title": "7. Data Retention",
-        "content": "Contact requests and applications: 24 months from last contact, unless longer retention is legally required.<br>Billing data: 10 years (tax obligation).<br>Playbook sequence leads: 30 days after the last email, then deleted. If you unsubscribe, they are deleted immediately.<br>Technical security logs: 90 days.<br>Technical credentials provided for an Overhaul engagement: destroyed at the end of the engagement."
+        "content": "CV downloads: 24 months from the last request, then deleted. They never enter an email sequence and never receive marketing communications; you can ask for erasure at any time by writing to me.<br>Contact requests and applications: 24 months from last contact, unless longer retention is legally required.<br>Billing data: 10 years (tax obligation).<br>Playbook sequence leads: 30 days after the last email, then deleted. If you unsubscribe, they are deleted immediately.<br>Technical security logs: 90 days.<br>Technical credentials provided for an Overhaul engagement: destroyed at the end of the engagement."
       },
       {
         "title": "8. Your Rights (GDPR)",

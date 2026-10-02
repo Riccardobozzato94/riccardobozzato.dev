@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAllLeads, backendInfo } from "@/lib/lead-store";
+import { getAllLeads, getAllCvDownloads, backendInfo } from "@/lib/lead-store";
 import { rateLimit } from "@/lib/rate-limit";
 
 /**
@@ -35,6 +35,9 @@ export async function GET(request: Request) {
   try {
     const leads = await getAllLeads();
     const info = backendInfo();
+    // CV downloads live in their own collection (see recordCvDownload) and are
+    // NOT part of the sequence. Surfaced here so they are visible at all.
+    const cvDownloads = await getAllCvDownloads();
 
     return NextResponse.json({
       success: true,
@@ -44,6 +47,7 @@ export async function GET(request: Request) {
       confirmed: leads.filter((l) => l.status === "confirmed").length,
       active: leads.filter((l) => !l.unsubscribed).length,
       unsubscribed: leads.filter((l) => l.unsubscribed).length,
+      cvDownloads: cvDownloads.length,
       leads: leads.map((l) => ({
         id: l.id,
         name: l.name,
@@ -53,6 +57,12 @@ export async function GET(request: Request) {
         lastStepSent: l.lastStepSent,
         unsubscribed: l.unsubscribed,
         // Don't expose unsubscribeToken / confirmToken
+      })),
+      cv: cvDownloads.map((c) => ({
+        id: c.id,
+        email: c.email,
+        requestedAt: c.requestedAt,
+        source: c.source,
       })),
     });
   } catch (error) {

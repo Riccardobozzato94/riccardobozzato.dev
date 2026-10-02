@@ -52,8 +52,10 @@ next-env.d.ts
 # Local strategy / personal docs
 strategia sito ric/
 
-# Local CV copies
+# Local CV copies at the repo root. The served one is
+# private/CV-Riccardo-Bozzato.pdf: it is tracked, it is committed, and it is
+# NOT under public/ — /api/cv/file streams it against a signed token.
 *_CV_2026_.pdf
 
-# Screenshots produced by scripts/audit-mobile.mjs and scripts/shots.mjs
+# Screenshots produced by scripts/audit-mobile.mjs, shots.mjs and review.mjs
 /.mobile-audit/

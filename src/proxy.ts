@@ -9,6 +9,10 @@ const i18nMiddleware = createMiddleware(routing);
 // - /api/leads uses LEADS_API_KEY (fail-closed)
 // - /api/cron/* uses CRON_SECRET
 // - Contact/freebie/unsubscribe/confirm are public-by-design (rate-limited)
+// - /api/cv is the CV email gate: its own defence is the signed token in
+//   /api/cv/file plus origin checking, honeypot and rate limiting. Requiring a
+//   JWT here would make the download impossible for the anonymous visitor it is
+//   meant for.
 // - /api/auth/login must be public for login to work
 const PUBLIC_API_ROUTES = [
   "/api/auth/login",
@@ -18,6 +22,8 @@ const PUBLIC_API_ROUTES = [
   "/api/unsubscribe",
   "/api/confirm",
   "/api/leads",     // Protected by LEADS_API_KEY (fail-closed)
+  "/api/cv",        // Protected by origin check + signed token + rate limit
+  "/api/cv/file",   // Protected by the signed, expiring token in the query
 ];
 
 // Cron/webhook routes that use a shared secret instead of JWT

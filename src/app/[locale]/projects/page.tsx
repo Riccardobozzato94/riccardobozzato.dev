@@ -182,14 +182,14 @@ export default async function ProjectsPage(): Promise<React.ReactNode> {
                   href="https://panificiodasergio.it"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 h-9 rounded-lg border border-border/60 px-3.5 text-xs font-medium hover:bg-muted/50 transition-colors"
+                  className="inline-flex items-center gap-1.5 min-h-11 rounded-lg border border-border/60 px-3.5 text-xs font-medium hover:bg-muted/50 transition-colors"
                 >
                   {t("panificio.ctaVisit")}
                   <ExternalLink className="size-3" />
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 h-9 rounded-lg bg-primary px-3.5 text-xs font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                  className="inline-flex items-center gap-1.5 min-h-11 rounded-lg bg-primary px-3.5 text-xs font-medium text-primary-foreground transition-opacity hover:opacity-90"
                 >
                   {t("panificio.ctaContact")}
                   <ArrowRight className="size-3" />
@@ -208,9 +208,9 @@ export default async function ProjectsPage(): Promise<React.ReactNode> {
             {t("builtSubtitle")}
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {built.map((item) => (
-              <div key={item.key} className="rounded-xl border border-border/50 bg-card/40 p-6 flex flex-col">
+              <div key={item.key} className="rounded-xl border border-border/50 bg-card/40 p-6 flex flex-col h-full">
                 <h3 className="font-semibold tracking-tight mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
 
@@ -229,10 +229,13 @@ export default async function ProjectsPage(): Promise<React.ReactNode> {
                     href={`https://${item.link}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-4 pt-1 text-xs font-mono text-accent hover:underline"
+                    /* mt-auto: the three cards hold very different amounts of
+                       text, so without pushing the link down they end at three
+                       different heights and the row reads as broken. */
+                    className="inline-flex items-center gap-1.5 mt-auto pt-4 text-xs font-mono text-accent hover:underline"
                   >
                     {item.link}
-                    <ExternalLink className="size-3" />
+                    <ExternalLink className="size-3 shrink-0" />
                   </a>
                 ) : null}
               </div>
