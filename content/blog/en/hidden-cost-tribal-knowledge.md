@@ -1,55 +1,50 @@
 ---
-title: "The Hidden Cost of Tribal Knowledge (and How to Document It Without Going Crazy)"
-date: "2026-07-22"
+title: "The hidden cost of tribal knowledge"
+date: "2026-04-22"
 locale: "en"
-description: "Every time a process lives only in one person's head, your company has an operational risk. Here's how to move from tribal knowledge to documented processes — without bureaucracy."
-tags: ["Knowledge Management", "Process", "Documentation", "Operations"]
+description: "When the only person who knows how it works leaves, the cost is not their salary. It is everybody else's time."
+tags: ["Operations", "Knowledge", "Risk"]
 author: "Riccardo Bozzato"
 published: true
 ---
+I have watched companies lose customers for the wrong reason three times in my career. None of them was pricing, product or competition. Each was one person leaving.
 
-Tribal knowledge is the silent killer of scalability. When a critical process exists only in Marco's head, and Marco is on vacation or (worse) resigns, the company grinds to a halt.
+## The mechanism
 
-I've seen 50-person startups where the only way to deploy was to DM Andrea on Slack. I've seen enterprise IT departments paralyzed because "the person who knew how to do it left last year."
+When the knowledge of a process lives in one person's head, you do not have a documentation problem. You have a process that depends on a person, and people leave.
 
-The problem isn't a lack of documentation. The problem is that traditional documentation (company wikis, Google Docs, process manuals) is too slow to keep up with reality.
+You find out at the worst possible moment: a campaign, a client scaling up, or a seasonal peak. The person is not there, nobody knows why it worked that way, and the thing that worked for three years stops working.
 
-### The 5-Minute Rule
+Reconstructing it almost always takes far longer than writing it down would have.
 
-I've developed an approach I call "the 5-minute rule": if operational information took you more than 5 minutes to discover or figure out, it deserves to be documented.
+## Why it does not happen
 
-Not a 50-page manual. Not a formal procedure. A note. A paragraph. A checklist. The standard is: good enough that someone else can execute without calling you.
+It is not lack of will. It is three concrete reasons.
 
-Examples:
-- "How to deploy to staging" → 3 lines in a shared Obsidian note
-- "Who approves expenses over €500" → one line in a README file
-- "Who to ask for AWS access" → a bullet point in a Google Doc
+**Tacit knowledge is easier to use than to write down.** For someone who has the process in their head, explaining it to a colleague costs time they do not have today. Writing it down costs time they do not have. The list of reasons it did not happen is full of people who never had two free hours in three months.
 
-### The DOC Framework
+**There is never a good moment.** The right moment was three months ago. Today there is a campaign, tomorrow there is a client. So it does not happen.
 
-For every operational process, I apply the DOC framework:
+**Nobody warns you.** The file was never written, so nobody notices it is missing. The only time you find out is when you need it.
 
-- **D**efinition: what's the input, what's the output, who's responsible
-- **O**peration: the steps to execute (max 10 bullet points)
-- **C**ontext: why it's done this way, what can go wrong, who to contact
+## What actually works
 
-A DOC process takes half a page. It takes 2 minutes to read. It takes 5 minutes to update. And if someone leaves, anyone can pick it up.
+I have tried three approaches. Only one held.
 
-### How to Start
+**The wrong format is the main cause.** I have watched documentation attempts fail because they asked people to "write the procedures manual". Nobody writes a procedures manual, not out of laziness: because a manual is an enormous job and it tells nobody what to do on Monday morning.
 
-The worst way to tackle documentation is "this Friday we'll write everything down." It never works. Instead:
+What worked was the opposite: **a sheet, one row per decision, not one page per process.** Column A: what we do. Column B: why. Column C: who decides. Column D: when we last changed it. Four columns, one row each.
 
-1. **Identify the pain points.** When someone asks "how do I do X?" on Slack for the third time, that process is a candidate.
-2. **Write while you fix.** Next time you explain a process to someone, write it down immediately instead of just telling them. Time invested: 5 minutes. Time saved: 30 minutes every time someone asks.
-3. **Use one place only.** All operational documentation in one single place (Obsidian, Notion, Google Drive). If it's scattered across 5 tools, it might as well not exist.
-4. **Cultivate the habit, not perfection.** Perfect documentation doesn't exist. Good documentation is infinitely better than none.
+Four columns, and column B is the one that matters. A process without a "why" is a process somebody will redo differently the moment that person is gone.
 
-### The Real Cost of Non-Documentation
+**Do not delegate the writing to someone who does not know the process.** The writer has always been someone who already knew. The real cost is not writing: it is explaining, and explaining needs protected time, not "if there's time".
 
-Every time a team member asks "how do I do X?" and someone explains it, the company has paid two salaries to transfer knowledge that could have been written down already.
+**Let it happen as a side effect.** The opposite of what I expected worked: documentation grew when we started recording meetings and putting the decisions made inside them. Not because anyone became more disciplined, but because that was already the moment when we were talking.
 
-Every time a new hire takes 3 weeks instead of 1 to become productive, the difference is undocumented processes.
+## The metric I use
 
-Every time a key employee resigns and leaves a 3-month gap, the cost isn't just recruitment — it's the knowledge that leaves with them.
+One thing only: how many decisions from the last six months cannot be found anywhere.
 
-Documentation isn't bureaucracy. It's an investment with measurable returns.
+Not how many procedures are written: how many decisions are traceable. Once measured, the number is always higher than the company thought, and that finding is usually enough to decide to intervene.
+
+The second metric is more uncomfortable: how many times in the last three months someone asked a person "how did we used to do this?". Those questions are the signatures of knowledge about to walk out.

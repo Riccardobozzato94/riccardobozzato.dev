@@ -1,25 +1,66 @@
 ---
-title: "5 Operations Lessons from Building and Shipping a Product"
-date: "2026-06-28"
+title: "Six lessons from shipping a SaaS product"
+date: "2025-12-15"
 locale: "en"
-description: "What building Trova (a SaaS boilerplate) taught me about delivery, scope, and why the last 10% takes 50% of the time."
-tags: ["Delivery", "Product", "Lessons", "Scoping"]
+description: "Not a commercial case study. The decisions I got right and the ones I got wrong, with the number that told me."
+tags: ["Operations", "Product", "Delivery"]
 author: "Riccardo Bozzato"
 published: true
 ---
+I built a SaaS boilerplate and sold it. The interesting part is not the product: it is the six decisions I took, two of which were wrong, and the numbers that told me.
 
-I've built the same auth system five times. Magic links, OAuth, 2FA, session management — every time a new project, every time from scratch. The fifth time, I stopped and asked: why isn't there a production-ready boilerplate that just works?
+## Lesson 1 — the ideal scope goes in a document, not in your head
 
-So I built Trova. It's a Next.js 16 SaaS boilerplate with Better Auth, Drizzle ORM, Resend, Stripe billing, i18n, and shadcn/ui. But this isn't a post about the product — it's about what building it taught me about delivery, scope, and operations.
+I spent four months on a project that could do thirty things. It did six. The part that saved me was trivial: in week three I wrote down the list of things the product would never do.
 
-**1. The last 10% takes 50% of the time.** Every time. The auth system worked on day 3. The edge cases (session rotation, provider unlinking, race conditions) took two more weeks. I've seen this pattern in every project I've managed, from e-commerce platforms to enterprise integrations. The 90% milestone is a mirage. Plan for it.
+It was not a document for other people. It was a document for me, because the me of month four no longer remembered why each choice in month one had been made.
 
-**2. Scope is a negotiation, not a specification.** I started with a clear feature list. Halfway through, I found myself building a demo generator, a license key system, and a changelog page. None of these were in the original plan. Every feature had a reasonable justification. The aggregate cost was two extra months. Saying "no" to a good feature is harder than saying "no" to a bad one — and more important.
+It is now the first thing I write on every project, before any code. Not because it is complete: because when, in month six, the good idea appears, I have something to hold it against.
 
-**3. Tools are multipliers, not solutions.** I chose each tool carefully: Better Auth for auth, Resend for email, Stripe for billing. Each saved me weeks. But the integration cost between them — data synchronization, error handling, idempotency — was higher than any individual tool's overhead. This is exactly the pattern I see in operations: buying best-in-class tools for each function, then suffering the integration tax. The toolchain is only as strong as its weakest interface.
+## Lesson 2 — "quick" is not a requirement, it is an excuse
 
-**4. Documentation is delivery.** I wrote comprehensive setup guides, API references, and migration documents. Not because users asked for them, but because good documentation is the difference between a product that ships and one that sits on a shelf. In operations, the same applies: a well-documented process is one that can be executed, audited, and improved. An undocumented process is tribal knowledge with a single point of failure.
+For six months I called "simple" everything I had not designed. Then a customer asked why something I had said was trivial took three weeks.
 
-**5. You can't optimize what you don't measure.** I tracked every build time, every deploy cycle, every customer issue. The data showed patterns I wouldn't have noticed otherwise — like the fact that Stripe webhook failures clustered around Monday mornings (a caching issue with the idempotency layer). In operations, this is the whole game. If you don't have metrics, you're navigating by anecdote.
+They were right. It was not trivial: it was undesigned, and "trivial" was how I had found not to design it yet.
 
-Building Trova took four months longer than I expected. But the operational lessons I learned from that process have saved me years of mistakes in every project since.
+The practical consequence: the time you lose calling an undesigned thing trivial is lost twice. Once building it, once rebuilding it.
+
+## Lesson 3 — the first version of an integration is almost always useless
+
+I built a complete payments integration: webhooks, idempotency, failed payment handling, reconciliation. Tested, documented, shipped.
+
+The first customer used it in a way the code did not anticipate, and wrote to say it was easier for them to do by hand. They were right: at their volume, automation did not pay for itself.
+
+That integration cost me five weeks on a use case the second customer repeated at ten times the volume. The lesson is not "do not build integrations": it is that the right integration is defined by the second customer, and the first customer is never big enough to need it.
+
+What I do now: build the manual path first, and automate on the second occurrence of the same action. It costs some repeated effort up front and saves you from automating something that never recurs.
+
+## Lesson 4 — documentation is a deliverable, not an extra
+
+I shipped a product with documentation written for me. Four pages, written in three days, full of assumptions only I held.
+
+Two customers asked me the same question in the same week. The same one. I rewrote that page and the questions stopped. Not because the documentation was badly written: because it was written in the order I built the product, not the order people use it.
+
+The rule I keep: **when someone asks a question, the answer goes into the documentation before it goes into an email.** If you have only written it once, the second person to ask is a cost you already paid once.
+
+## Lesson 5 — sell before the third feature
+
+I held a "coming soon" price for six weeks. The reasoning was sound: if somebody buys it, the product is real.
+
+Nobody bought. I kept building, fixing, refining, and the next six months did not change one person's demand. Price was not the problem. The problem was that I was asking someone to pay before giving them a reason, and that reason was a third feature that mattered to me.
+
+That lesson cost me six months I would not spend that way again.
+
+## Lesson 6 — support tells you what the product should do
+
+I kept a log of every question customers asked. Not bugs: questions.
+
+Six months of questions, twenty-three entries. Fifteen were the same question in different words. And seven pointed at things the product did not have, which nobody had explicitly requested.
+
+The seven went into the product. The fifteen went into a page called "this is already how it works". The second is the one that produced most value, because it added nothing: it removed a question that arrived every week.
+
+## What I did not learn
+
+I did not learn to predict what would work. I did not figure that out and I do not think you can.
+
+What I did learn is to notice the difference between things that work because I did them well and things that work because somebody asked for them twice. The second kind is worth more, almost always, and much easier to find: keep a log of the questions.

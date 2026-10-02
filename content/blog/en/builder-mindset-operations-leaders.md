@@ -1,23 +1,56 @@
 ---
-title: "The Builder Mindset: Why Operations Leaders Should Build Products"
-date: "2026-07-18"
+title: "The builder mindset, applied to operations"
+date: "2026-03-18"
 locale: "en"
-description: "The best operations leaders I know don't just design processes — they build things. Here's why making products makes you better at making systems."
-tags: ["Operations", "Mindset", "Product", "Delivery"]
+description: "Moving from product manager to operations manager is not a change of industry. It is a change in what you consider a bug."
+tags: ["Operations", "Culture", "Builder"]
 author: "Riccardo Bozzato"
 published: true
 ---
+I moved from product management into operations without changing company. The hardest shift was not learning a new industry: it was working out what counts as a bug.
 
-People sometimes ask why I spend my evenings and weekends building tools like Trova (a SaaS boilerplate) and VulnClaw (an AI pen-testing CLI). Isn't operations about processes, not products?
+## A bug is a process that repeats
 
-My answer: building products makes me better at building operations. Here's why.
+Someone coming from product looks for the bug in the software. That works fine until they meet the module that only works because of the override someone made by hand three months ago.
 
-**1. Scope teaches you everything.** When you build a product from scratch, you learn scope management the hard way. Every feature request seems reasonable. Every edge case needs handling. The discipline of saying "no" to good ideas — to ship the essential ones — is exactly the same skill you need in operations. A project with 50 priorities has zero priorities.
+A process that works because everyone puts a piece of it in is not a process. It is a process with a bug inside, and the bug is the undocumented exception.
 
-**2. You feel the pain of bad processes.** When you're the one waiting for a CI pipeline, debugging a webhook failure, or chasing down a deployment approval, you experience operational friction firsthand. That changes how you design systems. You stop creating processes that look good on paper and start creating processes that actually work.
+The builder question, applied to operations, is one: **if this step had to be redone tomorrow by someone who has never seen this process, would it work?**
 
-**3. Metrics are not abstract.** I track build times, deploy cycles, error rates, and customer issues for every tool I build. These are real numbers that bite back when they're bad. Operations leaders who build products don't just talk about KPIs — they live under them.
+If not, you do not have a documentation problem. You have a process standing on one person's memory.
 
-**4. Documentation is not optional.** Every tool I release comes with comprehensive docs — setup guides, API references, troubleshooting. Not because users demand it, but because I've learned that undocumented systems don't scale. Same truth applies to operations. A process that isn't documented is a single point of failure wearing tribal knowledge as armor.
+## The three symptoms I learned to look for
 
-The best operations leaders I know share this trait: they build things. Not because they need to — because understanding the act of creation makes you better at designing the systems that support it.
+**The exception with a name.** When a process only works because Marianna knows not to do a certain thing, the process has an implicit owner. When Marianna goes on holiday, the process stops. That is not a process, it is a person with an unwritten role.
+
+**The fix nobody can repeat.** A ticket closed that works and nobody can explain. It is the most insidious form of tribal knowledge: the result is there, the cause is not. Six months later it does not reproduce and nobody knows why.
+
+**The process that works "despite" the tools.** If your people keep control sheets because the system does not say what they need, that is not a discipline problem: it is a process that was never redesigned around how people actually work.
+
+## What I actually do
+
+Not document. Design.
+
+When a process leaks, my first move is not to write down how it works: it is to work out which step is unnecessary. Nine times out of ten, the step was added for a reason nobody remembers.
+
+That is the most useful thing I took from the builder side: **the first move is not to add a test, it is to delete dead code.** In a process, dead code is the step nobody can explain and everybody avoids. It costs no time, breaks nothing, and only takes up space in the head of whoever meets it.
+
+Then, and only then, I write. And when I write, I write the why.
+
+## The difference that stays comfortable
+
+Coming from product, you are used to measuring with one metric. The classic mistake is looking for a single one for operations, not finding it, and concluding the work is unmeasurable.
+
+Not true. Operations does have measures, but they are almost always pairs: waiting time and working time. Efficiency, which is the first divided by the second. Neither half says anything on its own.
+
+A delivery manager at 95% efficiency and a colleague at 40% can have the same cycle time, or different ones depending on how much work sits underneath. Look at only one of the two and you will make wrong decisions with complete confidence.
+
+## What I bring from the builder side
+
+Three things that made me useful in a department I did not know.
+
+First, the diff: when something breaks, I ask "what changed?". It is the question that avoids half the arguments, because it puts a finger on the cause without accusing anyone.
+
+Second, the small reversible change. Facing a problem, the first move is not the transformation plan: it is the smallest thing I can change today and undo tomorrow if I am wrong. In processes this matters more than in software, because the cost of an irreversible change in an operations department is invisible to engineers and very visible to customers.
+
+Third, patience for boredom. The real work of an operations manager is tidying things that do not look important for six months, and then ending up with a department that holds when everyone else's collapses. It is the least visible work there is, and the only kind you can actually see afterwards.

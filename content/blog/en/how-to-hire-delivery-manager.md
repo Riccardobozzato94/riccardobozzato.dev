@@ -1,54 +1,54 @@
 ---
-title: "How to Hire a Delivery Manager (and When You Actually Need One)"
-date: "2026-07-23"
+title: "How to hire a Delivery Manager (without trusting the CV)"
+date: "2026-05-28"
 locale: "en"
-description: "Not every company needs a Delivery Manager. Here are the signs that it's the right time — and how to hire the right person without wasting time and budget."
-tags: ["Delivery Manager", "Hiring", "Operations", "Team Growth"]
+description: "The interview question that separates people who delivered from people who chaired meetings. With follow-ups, and how to read the answers."
+tags: ["Hiring", "Delivery", "Operations"]
 author: "Riccardo Bozzato"
 published: true
 ---
+I have interviewed for delivery and operations roles for years, and I have hired them for three companies. The CV does one job: getting you to the interview. Everything else you learn in the room.
 
-Over the past few months, I've spoken with a dozen founders and CTOs. The script is always the same: "The team is talented, but we ship too slowly. We need a Delivery Manager."
+## The question that separates everything
 
-Sometimes it's true. Other times, what's needed isn't a Delivery Manager — it's some operational discipline the team can learn on its own. Spending €60K+ per year on the wrong hire is a mistake I've seen repeated too many times.
+Ask: **"describe a project that went wrong. What did you do?"**
 
-Here's how to tell which camp you're in.
+Not "what happened". What did you do.
 
-### When You DON'T Need a Delivery Manager
+Someone who has delivered starts with something concrete: the client refused the date, or accepted it because they had no alternative. They describe the moment, and then what they did in the twenty-four hours after it.
 
-If your team has 3-5 people, ships regularly, and the only problem is "we wish we were faster," the answer probably isn't hiring someone. It's:
+Someone who has chaired meetings starts with a theory. "We did a root cause analysis." "We set up a crisis committee." Both sentences are compatible with having not been watching at the time.
 
-1. **Fix your prioritization process.** If everything is a priority, nothing is. A single spreadsheet with an "impact" and "effort" column solves more problems than a DM.
-2. **Remove friction.** Is deployment manual? Do PRs wait days for review? Do requirements change mid-sprint? These are process problems, not role problems.
-3. **Document what you already know.** Most teams lose time because knowledge lives in people's heads, not in an accessible place.
+## The three follow-ups
 
-If these three things are already in order and your team is 8+ people, then yes — you probably need a Delivery Manager.
+After the answer, three questions. If the interview ends there, you already have your information.
 
-### What to Look For
+**"Who made the final call, and when?"** If the answer is "the team" or "we decided together", ask who sent the email with the date. A delivery manager who does not know who decided is not managing deliveries.
 
-A good Delivery Manager:
+**"What did you trade away?"** The question almost nobody asks. Every time you saved a date you gave something up: margin, scope, another client. If the answer is "nothing", they have never managed a hard delivery, because it is not possible.
 
-- **Removes blockers, doesn't create reports.** Spends time with the team, not in alignment meetings.
-- **Says "no" more often than "yes."** Protects the team from distractions and keeps focus on the goal.
-- **Measures what matters.** Not velocity for sport, but lead time, predictability, and customer satisfaction.
-- **Leaves the team stronger than they found it.** Doesn't create dependency on themselves.
+**"What number did you look at every week?"** If the answer is "the burndown" without you having to specify it, they are good. If they have to search for the word, they do not have their own measurement system.
 
-### The Right Interview Questions
+## The signals worth more than the CV
 
-Here are three questions I always ask when evaluating a Delivery Manager:
+**They can say no with a reason.** In an interview, "I can do it, it's a commitment" is a weak answer. "I can do it if you drop Monday" is a strong one. The best delivery manager I have worked with said no to half of what was asked, and that is the only reason I trusted him.
 
-1. "Tell me about a project where you cut scope by 50%. How did you handle the conversation with stakeholders?"
-2. "Describe your system for tracking what's happening across 3 parallel teams. No specific tools — I want to understand the principle."
-3. "When was the last time a team member challenged you on a decision? What did you do?"
+**They have a number that embarrasses them.** The best professional can tell you their worst result and why it happened. If the interview ends only with wins, either the work was easy or they were not there.
 
-The answers will tell you more than any certification.
+**They talk about their mistakes before you find them.** If they say "let me tell you about the mistake that cost me a client", you believe them. If they only admit it when you ask, they have already forgotten it.
 
-### What to Pay
+## The final question, the one nobody asks
 
-In Italy, a Delivery Manager with 3-5 years of experience falls between €40K and €55K. With 5-10 years (and PMP®), between €55K and €70K. For fractional or interim roles, between €2,500 and €4,000 per month.
+Close with this: **"on day one, what do you look at?"**
 
-If you're hiring your first DM, consider a 3-6 month interim engagement. It's a low-risk way to figure out if the role works for your context — and if it works, you already have the right person.
+Answers that impressed me: "the previous project's documents, to see whether they were current". "the decision log, if one exists". "I ask the three people who hold the project memory whether it is still valid."
 
-### The Bottom Line
+Answers that killed it: "the backlog". "the team, to see how they work". "the environment, so I'm operational".
 
-A Delivery Manager isn't a magic wand. It's an efficiency multiplier for teams that already have their operational basics in place. If the basics aren't there, start there. If they are, hire with intention — not because it's trendy or because you're desperate.
+The first person arrives looking for the why. The second arrives looking for the what. The why is what saves you the first month.
+
+## A note on the Italian market
+
+On this market I see a problem I did not see in London: people are almost always hired on cost, and the best-looking CV wins among equals. The result is that you pay the wrong person for two years before you notice.
+
+One approach that has worked for me: two interviews, with two different people, and the same question to both. Answers that do not line up are the most informative signal I have ever collected. It does not necessarily mean there is a problem: it means the company does not know what this person does, and you would find that out eventually anyway.

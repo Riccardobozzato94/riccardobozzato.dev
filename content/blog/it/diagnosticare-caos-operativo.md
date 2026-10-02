@@ -1,33 +1,52 @@
 ---
-title: "Come Diagnosticare il Caos Operativo in 3 Ore"
+title: "Dove si nasconde il tempo perso"
 date: "2026-07-17"
 locale: "it"
-description: "Un framework testato sul campo per mappare, misurare e prioritizzare il debito operativo — prima che diventi crisi."
-tags: ["Operations", "Framework", "KPI", "Processi"]
+description: "Il tempo di attesa non viene da un collo di bottiglia. Viene da quattro cause, e si cercano sempre nell'ordine sbagliato."
+tags: ["Operations", "Processi", "Diagnosi"]
 author: "Riccardo Bozzato"
 published: true
 ---
+Nessuna organizzazione in cui sono entrato aveva un problema di "produttività". Aveva un problema di attesa. Sono due cose diverse, e confonderle ti fa perdere sei mesi.
 
-Ogni organizzazione in cui sono entrato aveva debito operativo. La domanda non è mai "c'è caos?" — è "quanto e dove?" La risposta determina se sei a settimane da un trimestre fluido o a mesi da un incendio.
+## Il sintomo che ho visto in ogni audit
 
-Negli anni ho sviluppato un framework diagnostico che taglia il rumore. Richiede circa tre ore e ti dà una mappa prioritizzata di esattamente cosa sistemare. Ecco come funziona.
+Il team non lavora poco. Lavora tanto, arriva tardi, e il risultato non dipende dalle ore che ci mette ma da quante volte il lavoro si è fermato in attesa.
 
-### Fase 1: La Mappa dei Processi (60 min)
+Quando chiedi "quanto ci mette?", la risposta è sempre un numero raccontato a memoria, sempre più basso del reale. Nessuno tiene il conto di quanto tempo una pratica sta ferma a fare il giro tra tre colleghi prima di arrivare alla firma.
 
-Prendi una lavagna (o Miro) e mappa ogni processo end-to-end. Parti dal trigger (un cliente che si iscrive, un ordine, un ticket di supporto) e traccia fino all'outcome (ricavi riconosciuti, ticket chiuso, prodotto rilasciato). Segna ogni passaggio di mano, ogni gate di approvazione, ogni cambio di strumento.
+Il primo lavoro non è migliorare nulla. È misurare.
 
-Cerca tre cose: densità di passaggi (quante volte il lavoro cambia mano?), cambi di strumento (quanti tool toccano un processo?) e colli di bottiglia di approvazione (dove il lavoro aspetta una persona?).
+## Le quattro cause, in ordine
 
-### Fase 2: La Baseline delle Metriche (60 min)
+Ho risolto questo problema in retail, in e-commerce B2B e in consulenza. Il tempo di attesa si riduce quasi sempre a quattro cause, e sono sempre le stesse.
 
-Per ogni processo, misura tre numeri: lead time (dal trigger all'outcome), active time (lavoro effettivo) e wait time (code). Il rapporto tra active e totale è la tua efficienza di processo. Sotto il 40% significa che il team passa più tempo ad aspettare che a lavorare.
+**1. Attesa di una persona.** Un solo approvatore per un processo che venti persone usano. Approvazioni che tornano indietro senza che nessuno abbia scritto perché. Chi decide non è nella stessa fascia oraria di chi lavora.
 
-Esporta dal tuo sistema di registrazione (CRM, Jira, ERP) i cycle time degli ultimi 90 giorni. Se non riesci a ottenere questi dati in 10 minuti, questa è la tua prima scoperta — il tuo processo è invisibile, quindi è ingestibile.
+**2. Attesa di un'informazione.** Il dato esiste, ma sta in un posto che nessuno guarda. Due versioni dello stesso file in circolazione. Si chiede ogni volta a chiunque, quando basterebbe chiedere al sistema.
 
-### Fase 3: La Matrice di Priorità (60 min)
+**3. Attesa di una decisione.** Chi deve scegliere non ha il tempo per scegliere. Le opzioni non sono mai state ridotte a due. Il criterio di scelta non è mai stato scritto, quindi ogni decisione si rifà da zero.
 
-Valuta ogni processo su due assi: impatto operativo (quanto influisce su ricavi o delivery?) e risolvibilità (quanto sforzo per migliorare?). Priorità 1 = alto impatto, facile da risolvere. Questi sono i tuoi quick win. Priorità 4 = basso impatto, difficile. Ignorali.
+**4. Attesa di una risposta esterna.** Fornitori e clienti senza un tempo di risposta atteso. Richieste che arrivano senza contesto e quindi tornano indietro. Nessun sollecito quando la scadenza passa in silenzio.
 
-Sii spietato nelle priorità. La maggior parte dei team con cui ho lavorato ha trovato 3-5 item P1 risolvibili in 2-4 settimane. Sistemare solo quelli recupera tipicamente il 15-25% della capacità del team.
+## La trappola che vedo in quasi tutte le aziende
 
-Il framework è deliberatamente semplice perché la complessità operativa è il problema, non la soluzione. Non ti serve un tool o un consulente — ti servono una lavagna, tre ore, e la volontà di guardare onestamente ai tuoi processi.
+Il primo tavolo che si riempie è "aggiungere una persona".
+
+Non risolve niente. Aggiunge un passaggio di consegna, e quel passaggio ti torna indietro come costo di coordinamento. Ho visto budget interi di trimestri spesi così: il collo di bottiglia si sposta di due metri e il tempo totale non cala.
+
+La sequenza che funziona è sempre questa: prima togli un passaggio, poi sposti una decisione più in alto nel flusso, solo dopo valuti di aggiungere persone.
+
+## Da dove partire, concretamente
+
+Scegli un solo processo. Non quello più semplice da misurare: quello è quasi sempre il meno problematico, quindi imparirai poco. Scegli quello che ti fa perdere le promesse più spesso.
+
+Scrivilo in una frase: quando succede X, qualcuno fa Y, e il risultato è Z. Se non ci riesci, il processo non è definito, e quella è già la prima scoperta.
+
+Poi conta solo tre cose: quante volte il lavoro cambia di mano, quanti strumenti lo toccano, quante approvazioni deve superare. Se sono quattro o più cambi di mano su un processo che dovrebbe essere semplice, hai trovato il problema e non serve altro per la prima settimana.
+
+## Una regola che risparmia tempo
+
+Rifai la misura sugli stessi processi dopo un mese. Se il tempo di attesa non è sceso, il problema non era il processo che hai cambiato: era uno dei due vicini.
+
+È l'errore che vedo più spesso. Si ottimizza un processo, si dichiara vittoria, e il tempo totale dell'azienda non si muove. Perché il collo di bottiglia era altrove, e quello che hai toccato era solo dove il dolore era più rumoroso.

@@ -1,33 +1,52 @@
 ---
-title: "How to Diagnose Operational Chaos in 3 Hours"
+title: "Where the lost time actually hides"
 date: "2026-07-17"
 locale: "en"
-description: "A field-tested framework to map, measure, and prioritize operational debt — before it becomes a crisis."
-tags: ["Operations", "Framework", "KPI", "Process"]
+description: "Waiting time does not come from a bottleneck. It comes from four causes, and people always look for them in the wrong order."
+tags: ["Operations", "Process", "Diagnosis"]
 author: "Riccardo Bozzato"
 published: true
 ---
+No organisation I have joined had a productivity problem. They had a waiting problem. Those are different things, and confusing them costs you six months.
 
-Every organization I've walked into has operational debt. The question is never "is there chaos?" — it's "how much and where?" The answer determines whether you're weeks away from a smooth quarter or months away from a fire drill.
+## The symptom I see in every audit
 
-Over the years I've developed a diagnostic framework that cuts through the noise. It takes about three hours and gives you a prioritized map of exactly what needs fixing. Here's how it works.
+The team is not working little. They work a lot, arrive late, and the result does not depend on the hours they put in but on how many times the work stopped to wait.
 
-### Phase 1: The Process Map (60 min)
+When you ask "how long does it take?", the answer is always a number from memory, always lower than reality. Nobody tracks how long an item sits still moving between three colleagues before someone signs it.
 
-Grab a whiteboard (or Miro) and map every business process end-to-end. Start from the trigger (a customer signup, an order, a support ticket) and trace it until the outcome (revenue recognized, ticket closed, product shipped). Mark every handoff, every approval gate, every tool change.
+The first job is not to improve anything. It is to measure.
 
-You're looking for three things: handoff density (how many times does work change hands?), tool switches (how many tools touch one process?), and approval bottlenecks (where does work wait for a person?).
+## The four causes, in order
 
-### Phase 2: The Metric Baseline (60 min)
+I have solved this in retail, in B2B e-commerce and in consulting. Waiting time almost always reduces to four causes, and they are always the same ones.
 
-For each process, measure three numbers: lead time (trigger to outcome), active time (actual work), and wait time (queues). The ratio of active to total is your process efficiency. Anything under 40% means your team spends more time waiting than working.
+**1. Waiting on a person.** One approver for a process twenty people use. Approvals that bounce back with nobody having written why. Whoever decides is not in the same working hours as whoever works.
 
-Pull your system of record (CRM, Jira, ERP) and export cycle times for the last 90 days. If you can't get this data in 10 minutes, that's your first finding — your process is invisible, which means it's unmanageable.
+**2. Waiting on information.** The data exists, but it sits somewhere nobody looks. Two versions of the same file in circulation. Asking a person every time when you could ask the system.
 
-### Phase 3: The Priority Matrix (60 min)
+**3. Waiting on a decision.** Whoever has to choose has no time to choose. The options were never narrowed to two. The decision criteria were never written down, so every decision is redone from scratch.
 
-Score each process on two axes: operational impact (how much does this affect revenue or delivery?) and fixability (how much effort to improve?). Priority 1 = high impact, easy fix. Those are your quick wins. Priority 4 = low impact, hard fix. Ignore those.
+**4. Waiting on an outside answer.** Suppliers and customers with no expected response time. Requests that arrive without context and therefore bounce back. Nothing nudges when the deadline passes in silence.
 
-Ruthlessly prioritize. Most teams I've worked with find 3-5 P1 items that can be resolved in 2-4 weeks. Fixing those alone typically recovers 15-25% of team capacity.
+## The trap in almost every company
 
-The framework is deliberately simple because operational complexity is the problem, not the solution. You don't need a tool or a consultant — you need a whiteboard, three hours, and the willingness to look at your own processes honestly.
+The first board that fills up is "add a person".
+
+It fixes nothing. It adds a handoff, and that handoff comes back as coordination cost. I have watched whole quarters go this way: the bottleneck moves two metres and total time does not drop.
+
+The sequence that works is always the same: remove a step first, then move a decision further up the flow, and only then consider adding people.
+
+## Where to start, concretely
+
+Pick one process. Not the easiest one to measure: that is almost always the least problematic, so you will learn very little. Pick the one that makes you miss promises most often.
+
+Write it in one sentence: when X happens, someone does Y, and the result is Z. If you cannot, the process is not defined, and that is already your first finding.
+
+Then count only three things: how many times the work changes hands, how many tools touch it, how many approvals it must clear. If you find four or more handoffs on a process that should be simple, you have found the problem and you need nothing else for the first week.
+
+## One rule that saves time
+
+Measure the same processes again after a month. If waiting time has not dropped, the problem was not the process you changed: it was one of its neighbours.
+
+That is the mistake I see most often. You optimise a process, declare victory, and total company time does not move. Because the bottleneck was elsewhere, and what you touched was simply where the pain was loudest.

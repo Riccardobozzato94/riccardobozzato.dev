@@ -1,56 +1,54 @@
 ---
-title: "Come Scegliere un Delivery Manager (e Quando Ne Hai Davvero Bisogno)"
-date: "2026-07-23"
+title: "Come scegliere un Delivery Manager (senza fidarti del CV)"
+date: "2026-05-28"
 locale: "it"
-description: "Non tutte le aziende hanno bisogno di un Delivery Manager. Ecco i segnali che indicano che è il momento giusto — e come assumere la persona giusta senza sprecare tempo e budget."
-tags: ["Delivery Manager", "Assunzioni", "Operations", "Team Growth"]
+description: "Il colloquio che distingue chi ha gestito consegne da chi ha gestito riunioni. Con domande precise e risposte che ascolti."
+tags: ["Hiring", "Delivery", "Operations"]
 author: "Riccardo Bozzato"
 published: true
 ---
+Ho interviewato per ruoli di Delivery e Operations per anni, e dall'altra parte ne ho cercati per tre aziende. Il CV serve a una cosa sola: farti arrivare al colloquio. Tutto il resto lo scopri lì.
 
-Negli ultimi mesi ho parlato con una decina di fondatori e CTO. Il copione è sempre lo stesso: "Il team è talentuoso, ma shippiamo troppo lentamente. Ci serve un Delivery Manager."
+## La domanda che distingue tutto
 
-A volte è vero. Altre volte quello che serve non è un Delivery Manager — è un po' di disciplina operativa che il team può imparare da solo. Spendere €60K+ all'anno per una figura sbagliata è un errore che ho visto ripetere troppe volte.
+Chiedi: **"descrivimi un progetto che è andato storto. Cosa hai fatto?"**
 
-Ecco come capire se sei nel primo o nel secondo caso.
+Non "cosa è successo". Cosa hai fatto tu.
 
-### Quando NON hai bisogno di un Delivery Manager
+Chi ha gestito consegne parte da una cosa specifica: il cliente non ha accettato la data, o l'ha accettata perché non gli restava alternativa. Racconta il momento, e racconta cosa ha fatto nelle ventiquattro ore successive.
 
-Se il tuo team ha 3-5 persone, shippa regolarmente, e l'unico problema è "vorremmo essere più veloci", la risposta probabilmente non è assumere qualcuno. È:
+Chi ha gestito riunioni parte da una teoria. "Abbiamo analizzato la causa principale." "Abbiamo istituito un comitato di crisi." Entrambe le frasi sono compatibili con chi, in quel momento, non stava guardando.
 
-1. **Sistemare il processo di prioritizzazione.** Se tutto è prioritario, niente lo è. Un singolo foglio Excel con una colonna "impatto" e una "sforzo" risolve più problemi di un DM.
-2. **Rimuovere gli attriti.** Il deploy è manuale? Le PR aspettano giorni per essere riviste? I requisiti cambiano in corso d'opera? Questi sono problemi di processo, non di ruolo.
-3. **Documentare quello che già sapete.** La maggior parte dei team perde tempo perché la conoscenza è in testa alle persone, non in un posto accessibile.
+## Le tre domande di approfondimento
 
-Se queste tre cose sono già a posto e il team è 8+ persone, allora sì — probabilmente hai bisogno di un Delivery Manager.
+Dopo la risposta, tre domande. Se il colloquio finisce lì, quella è già l'informazione.
 
-### Cosa Cercare in un Delivery Manager
+**"Chi ha preso la decisione finale, e quando?"** Se la risposta è "il team" o "abbiamo deciso insieme", chiedi chi ha scritto la mail con la data. Un Delivery Manager che non sa chi ha deciso non sta gestendo consegne.
 
-Ho visto annunci che chiedono "10 anni di esperienza in Agile, Scrum, Kanban, SAFe, PMP® e Project Management". Questo è un campanello d'allarme. Significa che chi ha scritto l'annuncio non sa cosa vuole.
+**"Cosa hai dato via?"** La domanda che quasi nessuno fa. Ogni volta che salvavi una data hai rinunciato a qualcosa: margine, scope, un altro cliente. Se la risposta è "niente", non hai mai gestito una consegna difficile, perché è impossibile.
 
-Un buon Delivery Manager:
+**"Quale numero guardavi ogni settimana?"** Se la risposta è "il burndown" senza che tu debba specificare, è bravo. Se la risposta richiede di cercare la parola, non ha un sistema di misura proprio.
 
-- **Rimuove blocchi, non crea report.** Passa il tempo con il team, non in riunioni di allineamento.
-- **Dice "no" più spesso di quanto dice "sì".** Protegge il team dalle distrazioni e mantiene il focus sull'obiettivo.
-- **Misura ciò che conta.** Non velocity per sport, ma lead time, predictability e customer satisfaction.
-- **Lascia il team più forte di come lo ha trovato.** Non crea dipendenza da sé stesso.
+## I segnali che valgono più del CV
 
-### Le Domande Giuste da Fare in un Colloquio
+**Sa dire di no con un motivo.** In un colloquio, "posso farlo, è impegnativo" è una risposta debole. "Posso farlo se esci dal lunedì" è una risposta forte. Il Delivery Manager migliore che ho incontrato diceva no a metà delle richieste, e per questo era l'unico di cui mi fidavo.
 
-Ecco le tre domande che faccio sempre quando valuto un Delivery Manager (e che dovresti fare tu):
+**Ha un numero che lo mette in imbarazzo.** Il professionista migliore sa dirti il risultato peggiore che ha avuto, e perché è successo. Se il colloquio finisce solo con successi, o il lavoro è stato facile, o non è stato lui.
 
-1. "Raccontami di un progetto in cui hai tagliato lo scope del 50%. Come hai gestito la conversazione con gli stakeholder?"
-2. "Descrivimi il tuo sistema per tenere traccia di cosa sta succedendo in 3 team paralleli. Nessun tool specifico — voglio capire il principio."
-3. "Quando è stata l'ultima volta che un membro del team ti ha sfidato su una decisione? Cosa hai fatto?"
+**Parla dei suoi errori prima che tu li trovi.** Se ti dice "ti racconto l'errore che mi ha fatto perdere un cliente", gli credi. Se lo ammette solo quando glielo chiedi, l'ha già dimenticato.
 
-Le risposte ti diranno più di qualsiasi certificazione.
+## La domanda finale, quella che nessuno fa
 
-### Quanto Dovresti Pagare
+Chiudiamo con questa: **"il primo giorno, che cosa guardi?"**
 
-In Italia, un Delivery Manager con 3-5 anni di esperienza si colloca tra €40K e €55K. Con 5-10 anni (e PMP®), tra €55K e €70K. Per ruoli fractional o interim, tra €2.500 e €4.000 al mese.
+Le risposte che mi hanno impressionato: "i documenti del progetto precedente, per capire se erano aggiornati". "il registro delle decisioni, se esiste". "chiedo alle tre persone che hanno la memoria del progetto se è ancora tutto valido".
 
-Se stai assumendo il tuo primo DM, considera un interim di 3-6 mesi. È un modo a basso rischio per capire se la figura funziona per il tuo contesto — e se funziona, hai già la persona giusta.
+Le risposte che mi hanno spento: "il backlog". "il team, per capire come lavorano". "l'ambiente, per essere operativo".
 
-### In Sintesi
+La prima persona arriva e cerca il perché. La seconda arriva e cerca il cosa. Il perché è la parte che ti fa risparmiare il primo mese.
 
-Un Delivery Manager non è una bacchetta magica. È un moltiplicatore di efficienza per team che hanno già le basi operative a posto. Se le basi non ci sono, inizia da lì. Se ci sono, assumi con intenzione — non per mode o per disperazione.
+## Una nota sul mercato italiano
+
+Su questo mercato vedo un problema che a Londra non ho visto: si assume quasi sempre per costo, e si sceglie il CV piùLucido a parità di competenza. Il risultato è che paghi la persona sbagliata per due anni prima di accorgertene.
+
+Un criterio che mi ha funzionato: due colloqui, con due persone diverse dell'azienda, e una domanda identica a entrambe. Le risposte che non coincidono sono il segnale più informativo che ho mai raccolto. Non indica necessariamente un problema: indica che l'azienda non sa cosa fa questa persona, e quella scoperta la fai comunque.
