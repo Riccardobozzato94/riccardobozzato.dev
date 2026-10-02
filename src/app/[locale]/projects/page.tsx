@@ -59,10 +59,14 @@ export default async function ProjectsPage(): Promise<React.ReactNode> {
   const approach = t.raw("panificio.approach") as string[];
   const outcome = t.raw("panificio.outcome") as string[];
 
-  const built = [
-    { key: "vulnclaw", ...(t.raw("vulnclaw") as { title: string; description: string; link: string }) },
-    { key: "synapse", ...(t.raw("synapse") as { title: string; description: string; link: string }) },
-  ];
+  const built = t.raw("built") as {
+    key: string;
+    title: string;
+    description: string;
+    link: string;
+    reach: string;
+    lesson: string;
+  }[];
 
   return (
     <>
@@ -202,20 +206,28 @@ export default async function ProjectsPage(): Promise<React.ReactNode> {
             {t("builtSubtitle")}
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {built.map((item) => (
-              <div
-                key={item.key}
-                className="rounded-xl border border-border/50 bg-card/40 p-6"
-              >
+              <div key={item.key} className="rounded-xl border border-border/50 bg-card/40 p-6 flex flex-col">
                 <h3 className="font-semibold tracking-tight mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+
+                {item.reach ? (
+                  <p className="text-sm text-accent font-medium mt-4">{item.reach}</p>
+                ) : null}
+
+                {item.lesson ? (
+                  <p className="text-sm text-muted-foreground/80 leading-relaxed mt-3 border-t border-border/40 pt-3">
+                    {item.lesson}
+                  </p>
+                ) : null}
+
                 {item.link ? (
                   <a
                     href={`https://${item.link}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-accent hover:underline"
+                    className="inline-flex items-center gap-1.5 mt-4 pt-1 text-xs font-mono text-accent hover:underline"
                   >
                     {item.link}
                     <ExternalLink className="size-3" />

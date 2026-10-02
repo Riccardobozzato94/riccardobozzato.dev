@@ -24,8 +24,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: isIt
       ? "I libri che hanno formato il mio pensiero su operations, tecnologia, leadership e crescita personale. Con link di affiliazione Amazon."
       : "The books that shaped my thinking on operations, technology, leadership, and personal growth. With Amazon affiliate links.",
-    // Page hidden from navigation. De-indexed.
-    robots: { index: false, follow: false },
+    // Re-enabled 2026-10-02. The page had been left `noindex` and unlinked from
+    // navigation, so 25 reviewed books with Amazon affiliate links were earning
+    // nothing. Indexed and linked again: it is the only page on the site that
+    // earns while nobody touches it.
+    robots: { index: true, follow: true },
     openGraph: {
       title: `${isIt ? "Libri" : "Books"} | ${site("title")}`,
       description: isIt

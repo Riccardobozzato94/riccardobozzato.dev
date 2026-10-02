@@ -28,6 +28,7 @@ const STATIC_PAGES = [
   "",
   "about",
   "accessibility",
+  "books",
   "blog",
   "contact",
   "freebie",

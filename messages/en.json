@@ -180,17 +180,33 @@
       "ctaContact": "Talk to me about it"
     },
     "builtTitle": "What I build to do the job better",
-    "builtSubtitle": "Two projects of mine, both open. I am not listing them to pad a CV: they are the tools behind the work above.",
-    "vulnclaw": {
-      "title": "VulnClaw",
-      "description": "An open source CLI for penetration testing. It started because I wanted to understand how an attack works without depending on tools I could not inspect.",
-      "link": "github.com/Riccardobozzato94"
-    },
-    "synapse": {
-      "title": "Synapse",
-      "description": "My knowledge vault with semantic search and memory shared between agents. Everything I learn about processes ends up here.",
-      "link": ""
-    }
+    "builtSubtitle": "Three projects of mine, two open. Not listed to pad a CV: they are the tools behind the work above, and what they taught me.",
+    "built": [
+      {
+        "key": "shipkit",
+        "title": "ShipKit",
+        "description": "",
+        "link": "",
+        "reach": "12 customers in the first three months, €49 one-time",
+        "lesson": "A product built on the same rule I use in consulting: scope written in a document, and anything not written down as something it will not do."
+      },
+      {
+        "key": "vulnclaw",
+        "title": "VulnClaw",
+        "description": "An open source CLI for penetration testing. It started because I wanted to understand how an attack works without depending on tools I could not inspect.",
+        "link": "github.com/Riccardobozzato94",
+        "reach": "1.2K+ GitHub stars, 80+ PRs and 200+ issues triaged",
+        "lesson": "It exists because of one scope decision: over six months I said no to 60% of requested features to ship the 40% that mattered."
+      },
+      {
+        "key": "synapse",
+        "title": "Synapse",
+        "description": "My knowledge vault with semantic search and memory shared between agents. Everything I learn about processes ends up here.",
+        "link": "",
+        "reach": "9,000+ notes indexed, each with an embedding and a link",
+        "lesson": "It is where everything I learn about processes ends up. If I do not write it there, I forget it, and what I forget is the definition of tribal knowledge."
+      }
+    ]
   },
   "services": {
     "title": "From chaos to predictable execution in 30 days",
