@@ -15,12 +15,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: t("title"),
-    description: t("subtitle"),
+    description: t("metaDescription"),
     openGraph: {
       type: "website",
       images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: `${t("title")} | ${site("title")}`,
-      description: t("subtitle"),
+      description: t("metaDescription"),
       url: `${baseUrl}/${locale}/contact`,
     },
     alternates: {

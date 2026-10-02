@@ -5,6 +5,7 @@
     "description": "Delivery Manager & Head of Operations (PMP®). I build the operational architecture that turns chaos into predictable execution. €500K+ portfolio, -40% time-to-market, teams of 8-12. Open to work."
   },
   "accessibility": {
+    "title": "Accessibility Statement",
     "lastUpdated": "Last reviewed: 2 October 2026",
     "intro": "This statement describes the accessibility status of riccardobozzato.com. The goal is a site usable by everyone, regardless of disability or assistive technology.",
     "sections": [
@@ -48,7 +49,9 @@
         "title": "10. Updating This Statement",
         "content": "This statement is reviewed at least once a year, and whenever site content, structure or components change significantly. The date at the top always reflects the latest review. Substantial changes are announced on the home page."
       }
-    ]
+    ],
+    "nav": "Accessibility",
+    "description": "Accessibility statement for riccardobozzato.com: WCAG 2.2 level AA conformance, measures taken and known limitations."
   },
   "nav": {
     "home": "Home",
@@ -484,9 +487,11 @@
     },
     "email": "riccardobozzato@gmail.com",
     "github": "github.com/Riccardobozzato94",
-    "linkedin": "linkedin.com/in/riccardobozzato"
+    "linkedin": "linkedin.com/in/riccardobozzato",
+    "metaDescription": "Let's talk. Get in touch about a project, consulting, or a Delivery Manager or Head of Operations role."
   },
   "privacy": {
+    "title": "Privacy Policy",
     "lastUpdated": "Last updated: 2 October 2026",
     "intro": "This notice explains how we handle personal data from visitors to riccardobozzato.com. The site has no profiling purpose and does not require an account to be browsed.",
     "sections": [
@@ -554,7 +559,9 @@
         "title": "16. Complaints",
         "content": "If you believe processing infringes the GDPR, you can lodge a complaint with the Italian Data Protection Authority (www.garanteprivacy.it) or with the supervisory authority of your country of residence. You can always write to riccardobozzato@gmail.com first: I reply within 30 days."
       }
-    ]
+    ],
+    "nav": "Privacy",
+    "description": "How I collect, use and protect your personal data on riccardobozzato.com. Cookies, analytics, email marketing and GDPR rights."
   },
   "confirm": {
     "processing": "Confirming your subscription...",
@@ -565,7 +572,9 @@
     "errorTitle": "Invalid or Expired Link",
     "errorMessage": "This confirmation link is invalid or has expired. Please try signing up again.",
     "backHome": "Back to Home",
-    "goToDownload": "Go to Download Page"
+    "goToDownload": "Go to Download Page",
+    "metaTitle": "Confirm your email",
+    "metaDescription": "Confirm your address to receive the Time-to-Market Diagnostic."
   },
   "unsubscribe": {
     "processing": "Processing your request...",
@@ -575,7 +584,9 @@
     "alreadyMessage": "You're already unsubscribed. No further emails will be sent.",
     "errorTitle": "Something Went Wrong",
     "errorMessage": "We couldn't process your unsubscribe request. The link may be invalid or expired.",
-    "backHome": "Back to Home"
+    "backHome": "Back to Home",
+    "metaTitle": "Unsubscribed",
+    "metaDescription": "Unsubscribe from the email sequence. You can re-subscribe at any time."
   },
   "thankYou": {
     "title": "You're All Set! 🎉",
@@ -590,7 +601,9 @@
     "email5": "A final offer: free 30-min diagnostic call (Day 14)",
     "exploreTitle": "In the Meantime, Explore",
     "readBlog": "Read the Blog",
-    "viewProjects": "View Projects"
+    "viewProjects": "View Projects",
+    "metaTitle": "Thank you — your Diagnostic is ready",
+    "metaDescription": "Thank you. Your worksheet is ready and the email sequence has started."
   },
   "cookies": {
     "title": "Cookies and measurement tools",

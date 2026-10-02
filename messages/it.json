@@ -5,6 +5,7 @@
     "description": "Delivery Manager & Head of Operations (PMP®). Costruisco l'architettura operativa che trasforma il caos in esecuzione prevedibile. €500K+ portfolio, -40% time-to-market, team 8-12. Disponibile da subito."
   },
   "accessibility": {
+    "title": "Dichiarazione di accessibilità",
     "lastUpdated": "Ultima verifica: 2 ottobre 2026",
     "intro": "Questa dichiarazione descrive lo stato di accessibilità di riccardobozzato.com. L'obiettivo è un sito utilizzabile da chiunque, indipendentemente da disabilità o tecnologia assistiva.",
     "sections": [
@@ -48,7 +49,9 @@
         "title": "10. Aggiornamento di Questa Dichiarazione",
         "content": "Questa dichiarazione viene rivista almeno una volta all'anno e ogni volta che cambiano in modo rilevante il contenuto, la struttura o i componenti del sito. La data in alto indica sempre l'ultima verifica. Le modifiche sostanziali vengono annunciate nella home page."
       }
-    ]
+    ],
+    "nav": "Accessibilità",
+    "description": "Dichiarazione di accessibilità di riccardobozzato.com: conformità WCAG 2.2 livello AA, misure attuate e limiti noti."
   },
   "nav": {
     "home": "Home",
@@ -484,9 +487,11 @@
     },
     "email": "riccardobozzato@gmail.com",
     "github": "github.com/Riccardobozzato94",
-    "linkedin": "linkedin.com/in/riccardobozzato"
+    "linkedin": "linkedin.com/in/riccardobozzato",
+    "metaDescription": "Parliamone. Scrivimi per un progetto, una consulenza o una posizione di Delivery Manager o Head of Operations."
   },
   "privacy": {
+    "title": "Privacy Policy",
     "lastUpdated": "Ultimo aggiornamento: 2 ottobre 2026",
     "intro": "Questa informativa descrive come trattiamo i dati personali di chi visita riccardobozzato.com. Il sito non ha finalità di profilazione e non richiede la creazione di un account per essere consultato.",
     "sections": [
@@ -554,7 +559,9 @@
         "title": "16. Reclami",
         "content": "Se ritieni che il trattamento violi il GDPR, puoi presentare reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it) o all'autorità di controllo dello Stato membro in cui risiedi. Prima puoi sempre scrivere a riccardobozzato@gmail.com: risponderò entro 30 giorni."
       }
-    ]
+    ],
+    "nav": "Privacy",
+    "description": "Come raccolgo, uso e proteggio i tuoi dati personali su riccardobozzato.com. Cookie, analytics, email marketing e diritti GDPR."
   },
   "confirm": {
     "processing": "Conferma della sottoscrizione in corso...",
@@ -565,7 +572,9 @@
     "errorTitle": "Link Non Valido o Scaduto",
     "errorMessage": "Questo link di conferma non è valido o è scaduto. Prova a registrarti di nuovo.",
     "backHome": "Torna alla Home",
-    "goToDownload": "Vai al Download"
+    "goToDownload": "Vai al Download",
+    "metaTitle": "Conferma la tua email",
+    "metaDescription": "Conferma il tuo indirizzo per ricevere la Diagnosi del Time-to-Market."
   },
   "unsubscribe": {
     "processing": "Elaborazione in corso...",
@@ -575,7 +584,9 @@
     "alreadyMessage": "Sei già disiscritto. Non ti invieremo ulteriori email.",
     "errorTitle": "Qualcosa è Andato Storto",
     "errorMessage": "Non abbiamo potuto elaborare la tua richiesta. Il link potrebbe non essere valido o essere scaduto.",
-    "backHome": "Torna alla Home"
+    "backHome": "Torna alla Home",
+    "metaTitle": "Disiscrizione confermata",
+    "metaDescription": "Disiscrizione dalla sequenza email. Potrai riiscriverti in qualsiasi momento."
   },
   "thankYou": {
     "title": "Tutto Pronto! 🎉",
@@ -590,7 +601,9 @@
     "email5": "Offerta finale: diagnostica gratuita da 30 min (Giorno 14)",
     "exploreTitle": "Nel Frattempo, Esplora",
     "readBlog": "Leggi il Blog",
-    "viewProjects": "Vedi i Progetti"
+    "viewProjects": "Vedi i Progetti",
+    "metaTitle": "Grazie — la tua Diagnosi è pronta",
+    "metaDescription": "Grazie. Il tuo foglio di lavoro è pronto e la sequenza email è partita."
   },
   "cookies": {
     "title": "Cookie e strumenti di misurazione",

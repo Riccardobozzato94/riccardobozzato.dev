@@ -1,0 +1,13 @@
+﻿{
+  "name": "Riccardo Bozzato — Head of Operations",
+  "short_name": "Riccardo Bozzato",
+  "description": "Delivery Manager & Head of Operations. Rendo i team digitali piu veloci, meno caotici e prevedibili.",
+  "start_url": "/it",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "lang": "it",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
