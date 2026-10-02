@@ -6,7 +6,7 @@
   },
   "accessibility": {
     "title": "Accessibility Statement",
-    "lastUpdated": "Last reviewed: 2 October 2026",
+    "lastUpdated": "Last reviewed: 3 October 2026",
     "intro": "This statement describes the accessibility status of riccardobozzato.com. The goal is a site usable by everyone, regardless of disability or assistive technology.",
     "sections": [
       {
@@ -499,7 +499,7 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: 2 October 2026",
+    "lastUpdated": "Last updated: 3 October 2026",
     "intro": "This notice explains how we handle personal data from visitors to riccardobozzato.com. The site has no profiling purpose and does not require an account to be browsed.",
     "sections": [
       {
@@ -516,7 +516,7 @@
       },
       {
         "title": "4. Cookies, Analytics and Advertising",
-        "content": "The site separates three categories and you choose which to accept.<br><br>Necessary: always active. They make the site work (session language, rate limiting, double opt-in and unsubscribe tokens) and cannot be disabled.<br><br>Analytics: Google Analytics 4, loaded only after your explicit consent. It runs with IP anonymization and with Google's advertising signals disabled unless you also accepted the advertising category. It tells me which pages get read.<br><br>Advertising: Google AdSense and its partners may set cookies to serve relevant ads and measure campaigns. These are also loaded only with your consent. The site may also host directly sold sponsored content, always labelled as such.<br><br>If you decline, neither GA4 nor AdSense is requested: the site works normally, without measurement or ads."
+        "content": "The site separates three categories and you choose which to accept.<br><br>Necessary: always active. They make the site work (session language, rate limiting, double opt-in and unsubscribe tokens) and cannot be disabled.<br><br>Analytics: Google Analytics 4, loaded only after your explicit consent. It runs with IP anonymization and with Google's advertising signals disabled unless you also accepted the advertising category. It tells me which pages get read.<br><br>Advertising: Google AdSense and its partners may set cookies to serve relevant ads and measure campaigns. These are also loaded only with your consent. The site may also host directly sold sponsored content, always labelled as such.<br><br>If you decline, neither GA4 nor AdSense is requested: the site works normally, without measurement or ads.<br><br>One exception I have to disclose: this site's Google Tag Manager container also contains a Hotjar tag, loaded on every visit without going through your consent. In practice it has never started a recording session — it sets no Hotjar cookies and transmits no page content — but the script is requested from Hotjar (Mitribes Inc., Malta and United States), which receives your IP address and user agent. Section 12 explains how to remove it."
       },
       {
         "title": "5. Consent, Double Opt-In and Unsubscribing",
@@ -536,11 +536,11 @@
       },
       {
         "title": "9. Third Parties and Processors",
-        "content": "Only strictly necessary services, with the related processing:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity for admin area authentication, and Netlify Blobs for playbook lead storage.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS, attack mitigation and edge content delivery.<br>Google Ireland Limited (Ireland, with transfers to the USA): Google Analytics 4 and, if you accepted, Google AdSense.<br>Resend Inc. (USA): transactional and sequence email delivery.<br>Stripe Inc. (USA): payments, for the ShipKit purchase only.<br>Amazon EU S.a.r.l.: affiliate programme. Some outbound links are affiliate links and earn a commission. No additional tracking cookies are used for the affiliation."
+        "content": "Only strictly necessary services, with the related processing:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity for admin area authentication, and Netlify Blobs for playbook lead storage.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS, attack mitigation and edge content delivery.<br>Google Ireland Limited (Ireland, with transfers to the USA): Google Analytics 4 and, if you accepted, Google AdSense.<br>Mitribes Inc. (trading as Hotjar, Malta and United States): the Hotjar script is requested on every visit through the Google Tag Manager container and receives IP address and user agent. It has not started recording sessions on the site.<br>Resend Inc. (USA): transactional and sequence email delivery.<br>Stripe Inc. (USA): payments, for the ShipKit purchase only.<br>Amazon EU S.a.r.l.: affiliate programme. Some outbound links are affiliate links and earn a commission. No additional tracking cookies are used for the affiliation."
       },
       {
         "title": "10. International Transfers",
-        "content": "Netlify, Cloudflare, Resend, Stripe and Google process data outside the European Economic Area. These transfers rely on the European Commission's Standard Contractual Clauses, Commission Implementing Decision (EU) 2021/914, plus supplementary measures such as IP anonymization in Google Analytics.<br>You can request a copy of the applicable SCCs by writing to riccardobozzato@gmail.com."
+        "content": "Netlify, Cloudflare, Resend, Stripe, Google and Mitribes (Hotjar) process data outside the European Economic Area. These transfers rely on the European Commission's Standard Contractual Clauses, Commission Implementing Decision (EU) 2021/914, plus supplementary measures such as IP anonymization in Google Analytics.<br>You can request a copy of the applicable SCCs by writing to riccardobozzato@gmail.com."
       },
       {
         "title": "11. Data Security",
@@ -548,7 +548,7 @@
       },
       {
         "title": "12. Third-party cookies and scripts",
-        "content": "Netlify Identity: the authentication script is loaded on every page of the site, even though it is only used in the /login reserved area. It handles the session and may set technical cookies. No profiling cookies are set.<br><br>Google Tag Manager: the GTM-5XPLS93 container is injected by the Cloudflare CDN, not by this site's code, and is requested on every visit. I can disclose this but not directly control it: whoever manages that configuration can either remove it or make it respect consent.<br><br>Google Fonts: fonts are served from fonts.gstatic.com, with the implied consequence that your IP address is sent to Google when the page loads. Fonts are served even if you refuse the analytics and advertising categories, because the page needs them to render."
+        "content": "Netlify Identity: the authentication script is loaded on every page of the site, even though it is only used in the /login reserved area. It handles the session and may set technical cookies. No profiling cookies are set.<br><br>Google Tag Manager: the GTM-5XPLS93 container is injected by the Cloudflare CDN, not by this site's code, and is requested on every visit. I can disclose this but not directly control it: whoever manages that configuration can either remove it or make it respect consent.<br><br>Hotjar: the GTM-5XPLS93 container contains a Hotjar tag (site id 1792073) whose only trigger is page load, with no consent condition. The static.hotjar.com script is therefore requested on every visit, even if you decline every category, and Hotjar (Mitribes Inc.) receives your IP address and user agent. Checking the site I found no active recording sessions: no Hotjar cookies are set and no recording stream starts, so no page content is transmitted. If you would rather the script were not requested at all, the fix is to remove the tag from the GTM container, which I can do on request.<br><br>Google Fonts: fonts are served from fonts.gstatic.com, with the implied consequence that your IP address is sent to Google when the page loads. Fonts are served even if you refuse the analytics and advertising categories, because the page needs them to render."
       },
       {
         "title": "13. Job Application Data",
@@ -625,7 +625,7 @@
     "necessaryTitle": "Necessary",
     "necessaryDesc": "Always active. Required for the site to work: session language, rate limiting, double opt-in and unsubscribe tokens. Cannot be disabled.",
     "analyticsTitle": "Analytics",
-    "analyticsDesc": "Google Analytics 4 with IP anonymization. It tells me which pages get read. Loaded only if you accept, and Google's advertising signals stay disabled.",
+    "analyticsDesc": "Google Analytics 4 with IP anonymization, loaded only if you accept. Note: the Hotjar script is requested on every visit by the Google Tag Manager container and does not go through this consent, even though it records nothing. Details are in the privacy policy.",
     "adsTitle": "Advertising",
     "adsDesc": "Google AdSense and its partners may set cookies to show relevant ads and measure campaigns. Loaded only if you accept."
   },

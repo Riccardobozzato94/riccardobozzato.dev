@@ -77,8 +77,8 @@ const KB: Entry[] = [
   },
   {
     keys: ["privacy", "cookie", "dati", "gdpr", "privacy", "cookies", "data", "gdpr"],
-    it: "Il sito usa cookie tecnici sempre attivi, e con il tuo consenso Google Analytics 4 e gli annunci. Puoi scegliere cosa accettare e cambiare idea in qualsiasi momento dal link 'Impostazioni cookie' nel footer. La privacy policy completa è su /privacy.",
-    en: "The site uses strictly necessary cookies always on, and with your consent Google Analytics 4 and advertising. You choose what to accept and can change your mind at any time via 'Cookie settings' in the footer. The full privacy policy is on /privacy.",
+    it: "Il sito usa cookie tecnici sempre attivi, e con il tuo consenso Google Analytics 4 e gli annunci. Puoi scegliere cosa accettare e cambiare idea in qualsiasi momento dal link 'Impostazioni cookie' nel footer. Un dettaglio: il container Google Tag Manager richiede anche lo script Hotjar a ogni visita senza passare dal consenso, anche se non registra nulla. Tutto è nella privacy policy su /privacy.",
+    en: "The site uses strictly necessary cookies always on, and with your consent Google Analytics 4 and advertising. You choose what to accept and can change your mind at any time via 'Cookie settings' in the footer. One detail: the Google Tag Manager container also requests the Hotjar script on every visit without going through consent, even though it records nothing. All of it is in the privacy policy on /privacy.",
   },
 ];
 

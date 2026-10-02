@@ -6,7 +6,7 @@
   },
   "accessibility": {
     "title": "Dichiarazione di accessibilità",
-    "lastUpdated": "Ultima verifica: 2 ottobre 2026",
+    "lastUpdated": "Ultima verifica: 3 ottobre 2026",
     "intro": "Questa dichiarazione descrive lo stato di accessibilità di riccardobozzato.com. L'obiettivo è un sito utilizzabile da chiunque, indipendentemente da disabilità o tecnologia assistiva.",
     "sections": [
       {
@@ -499,7 +499,7 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Ultimo aggiornamento: 2 ottobre 2026",
+    "lastUpdated": "Ultimo aggiornamento: 3 ottobre 2026",
     "intro": "Questa informativa descrive come trattiamo i dati personali di chi visita riccardobozzato.com. Il sito non ha finalità di profilazione e non richiede la creazione di un account per essere consultato.",
     "sections": [
       {
@@ -516,7 +516,7 @@
       },
       {
         "title": "4. Cookie, Analytics e Pubblicità",
-        "content": "Il sito distingue tre categorie e tu scegli quali accettare.<br><br>Necessari: sempre attivi. Servono al funzionamento del sito (lingua della sessione, rate limiting, token di doppio opt-in e disiscrizione) e non possono essere disattivati.<br><br>Analytics: Google Analytics 4, caricato solo dopo il tuo consenso esplicito. È attivo con l'anonimizzazione dell'indirizzo IP e con i segnali pubblicitari di Google disattivati, a meno che tu non abbia accettato anche la categoria pubblicitaria. Serve a capire quali pagine vengono lette.<br><br>Pubblicità: Google AdSense e i suoi partner possono impostare cookie per mostrare annunci pertinenti e misurare le campagne. Anche questi vengono caricati solo con il tuo consenso. Il sito può inoltre ospitare contenuti sponsorizzati venduti direttamente, sempre etichettati come tali.<br><br>Se rifiuti, GA4 e AdSense non vengono richiesti: il sito funziona normalmente, senza misurazione e senza annunci."
+        "content": "Il sito distingue tre categorie e tu scegli quali accettare.<br><br>Necessari: sempre attivi. Servono al funzionamento del sito (lingua della sessione, rate limiting, token di doppio opt-in e disiscrizione) e non possono essere disattivati.<br><br>Analytics: Google Analytics 4, caricato solo dopo il tuo consenso esplicito. È attivo con l'anonimizzazione dell'indirizzo IP e con i segnali pubblicitari di Google disattivati, a meno che tu non abbia accettato anche la categoria pubblicitaria. Serve a capire quali pagine vengono lette.<br><br>Pubblicità: Google AdSense e i suoi partner possono impostare cookie per mostrare annunci pertinenti e misurare le campagne. Anche questi vengono caricati solo con il tuo consenso. Il sito può inoltre ospitare contenuti sponsorizzati venduti direttamente, sempre etichettati come tali.<br><br>Se rifiuti, GA4 e AdSense non vengono richiesti: il sito funziona normalmente, senza misurazione e senza annunci.<br><br>Un'eccezione che devo dichiarare: il container Google Tag Manager di questo sito contiene anche un tag Hotjar, caricato a ogni visita senza passare dal tuo consenso. Nella pratica non ha mai iniziato una sessione di registrazione — non imposta cookie Hotjar e non trasmette contenuto delle pagine — ma lo script viene richiesto a Hotjar (Mitribes Inc., Malta e Stati Uniti), che riceve il tuo indirizzo IP e il tuo user agent. La sezione 12 spiega come puoi eliminarlo."
       },
       {
         "title": "5. Consenso, Doppio Opt-In e Disiscrizione",
@@ -536,11 +536,11 @@
       },
       {
         "title": "9. Terze Parti e Responsabili del Trattamento",
-        "content": "Solo i servizi strettamente necessari, con i relativi trattamenti:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity per l'autenticazione dell'area riservata e Netlify Blobs per la conservazione dei lead del playbook.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS, mitigazione degli attacchi e distribuzione dei contenuti via edge.<br>Google Ireland Limited (Irlanda, con trasferimenti negli USA): Google Analytics 4 e, se hai accettato, Google AdSense.<br>Resend Inc. (USA): invio delle email transazionali e della sequenza.<br>Stripe Inc. (USA): pagamenti, esclusivamente per l'acquisto di ShipKit.<br>Amazon EU S.a.r.l.: programma affiliati. Alcuni link in uscita sono link affiliati e generano una commissione. Per l'affiliazione non uso cookie di tracciamento aggiuntivi."
+        "content": "Solo i servizi strettamente necessari, con i relativi trattamenti:<br><br>Netlify (Netlify Inc., USA): hosting, Netlify Identity per l'autenticazione dell'area riservata e Netlify Blobs per la conservazione dei lead del playbook.<br>Cloudflare (Cloudflare Inc., USA): CDN, DNS, mitigazione degli attacchi e distribuzione dei contenuti via edge.<br>Google Ireland Limited (Irlanda, con trasferimenti negli USA): Google Analytics 4 e, se hai accettato, Google AdSense.<br>Mitribes Inc. (marchio Hotjar, Malta e Stati Uniti): lo script di Hotjar viene richiesto a ogni visita tramite il container Google Tag Manager e riceve indirizzo IP e user agent. Sul sito non ha iniziato sessioni di registrazione.<br>Resend Inc. (USA): invio delle email transazionali e della sequenza.<br>Stripe Inc. (USA): pagamenti, esclusivamente per l'acquisto di ShipKit.<br>Amazon EU S.a.r.l.: programma affiliati. Alcuni link in uscita sono link affiliati e generano una commissione. Per l'affiliazione non uso cookie di tracciamento aggiuntivi."
       },
       {
         "title": "10. Trasferimenti Internazionali",
-        "content": "Netlify, Cloudflare, Resend, Stripe e Google trattano dati fuori dallo Spazio Economico Europeo. Per questi trasferimenti ci si basa sulle Clausole Contrattuali Standard (SCC) della Commissione Europea, Decisione di Esecuzione 2021/914, e su misure supplementari come l'anonimizzazione dell'IP in Google Analytics.<br>Puoi chiedere copia delle SCC applicabili scrivendo a riccardobozzato@gmail.com."
+        "content": "Netlify, Cloudflare, Resend, Stripe, Google e Mitribes (Hotjar) trattano dati fuori dallo Spazio Economico Europeo. Per questi trasferimenti ci si basa sulle Clausole Contrattuali Standard (SCC) della Commissione Europea, Decisione di Esecuzione 2021/914, e su misure supplementari come l'anonimizzazione dell'IP in Google Analytics.<br>Puoi chiedere copia delle SCC applicabili scrivendo a riccardobozzato@gmail.com."
       },
       {
         "title": "11. Sicurezza dei Dati",
@@ -548,7 +548,7 @@
       },
       {
         "title": "12. Cookie e script di terze parti",
-        "content": "Netlify Identity: lo script di autenticazione e caricato su tutte le pagine del sito, anche se viene usato solo nell'area riservata /login. Serve a gestire la sessione e puo impostare cookie tecnici. Non viene impostato alcun cookie di profilazione.<br><br>Google Tag Manager: il container GTM-5XPLS93 e iniettato dal CDN Cloudflare, non dal codice di questo sito, e viene richiesto a ogni visita. Questo e un passaggio che posso dichiarare ma non controllare direttamente: chi ne gestisce la configurazione puo eliminarlo oppure farlo rispettare il consenso.<br><br>Google Fonts: i caratteri sono caricati da fonts.gstatic.com, con l'implicita conseguenza che il tuo indirizzo IP viene trasmesso a Google al momento del caricamento della pagina. I caratteri sono serviti anche se rifiuti la categoria analytics e pubblicita, perche' servono al funzionamento della pagina."
+        "content": "Netlify Identity: lo script di autenticazione e caricato su tutte le pagine del sito, anche se viene usato solo nell'area riservata /login. Serve a gestire la sessione e puo impostare cookie tecnici. Non viene impostato alcun cookie di profilazione.<br><br>Google Tag Manager: il container GTM-5XPLS93 e iniettato dal CDN Cloudflare, non dal codice di questo sito, e viene richiesto a ogni visita. Questo e un passaggio che posso dichiarare ma non controllare direttamente: chi ne gestisce la configurazione puo eliminarlo oppure farlo rispettare il consenso.<br><br>Hotjar: il container GTM-5XPLS93 contiene un tag Hotjar (site id 1792073) il cui unico trigger e il caricamento della pagina, senza alcuna condizione legata al consenso. Percio lo script static.hotjar.com viene richiesto a ogni visita, anche rifiutando ogni categoria, e Hotjar (Mitribes Inc.) riceve indirizzo IP e user agent. Verificando il sito non ho trovato sessioni di registrazione attive: nessun cookie Hotjar viene impostato e nessun flusso di registrazione viene avviato, quindi il contenuto delle pagine non viene trasmesso. Se preferisci che lo script non venga neppure richiesto, il rimedio e rimuovere il tag dal container GTM, cosa che posso fare io su tua richiesta.<br><br>Google Fonts: i caratteri sono caricati da fonts.gstatic.com, con l'implicita conseguenza che il tuo indirizzo IP viene trasmesso a Google al momento del caricamento della pagina. I caratteri sono serviti anche se rifiuti la categoria analytics e pubblicita, perche' servono al funzionamento della pagina."
       },
       {
         "title": "13. Dati di Candidature Lavorative",
@@ -625,7 +625,7 @@
     "necessaryTitle": "Necessari",
     "necessaryDesc": "Sempre attivi. Servono al funzionamento del sito: lingua della sessione, rate limiting, token di doppio opt-in e disiscrizione. Non possono essere disattivati.",
     "analyticsTitle": "Analytics",
-    "analyticsDesc": "Google Analytics 4 con anonimizzazione dell'indirizzo IP. Mi serve per capire quali pagine vengono lette. Caricato solo se accetti, e i segnali pubblicitari di Google restano disattivati.",
+    "analyticsDesc": "Google Analytics 4 con anonimizzazione dell'indirizzo IP, caricato solo se accetti. Nota: lo script Hotjar viene richiesto a ogni visita dal container Google Tag Manager e non passa da questo consenso, anche se non registra nulla. I dettagli sono nella privacy policy.",
     "adsTitle": "Pubblicità",
     "adsDesc": "Google AdSense e i suoi partner possono impostare cookie per mostrare annunci pertinenti e misurare le campagne. Caricati solo se accetti."
   },
