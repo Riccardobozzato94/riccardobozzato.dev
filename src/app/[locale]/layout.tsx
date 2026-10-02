@@ -4,7 +4,6 @@ import { SITE_URL } from "@/lib/site";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
-import { Analytics } from "@/components/Analytics";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Footer, CookieConsent, SiteChatbot } from "@/components/ClientOnlyComponents";
 import "@/styles/globals.css";
@@ -263,7 +262,9 @@ export default async function LocaleLayout({
           <main id="main-content" className="min-h-screen">{children}</main>
           <Footer />
           <CookieConsent />
-          <Analytics />
+          {/* GA4 is the only analytics. Plausible was removed: its script was
+              blocked by the CSP in next.config.ts, so it never reported a
+              single pageview while sitting in the bundle looking like it did. */}
           <GoogleAnalytics />
           <SiteChatbot />
         </NextIntlClientProvider>
