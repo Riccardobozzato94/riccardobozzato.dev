@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "@/i18n/navigation";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { readConsent, onConsentChange, consentModeDefaults } from "@/lib/consent";
 
 declare global {
@@ -50,36 +50,34 @@ function injectGtag(): void {
 export function GoogleAnalytics() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    const sync = () => {
-      const consent = readConsent();
+  const sync = useCallback(() => {
+    const consent = readConsent();
 
-      if (!consent.categories.analytics) {
-        // Withdraw: tell Google to stop storing, even if the tag is resident.
-        window.gtag?.("consent", "update", consentModeDefaults(consent.categories));
-        return;
-      }
-
-      injectGtag();
+    if (!consent.categories.analytics) {
+      // Withdraw: tell Google to stop storing, even if the tag is resident.
       window.gtag?.("consent", "update", consentModeDefaults(consent.categories));
-      window.gtag?.("config", GA_ID, {
-        page_path: pathname,
-        anonymize_ip: true,
-        send_page_view: true,
-        // Ads features stay off unless the ads category was granted too.
-        allow_google_signals: consent.categories.ads,
-        allow_ad_personalization_signals: consent.categories.ads,
-      });
-    };
+      return;
+    }
 
-    sync();
-    return onConsentChange(() => {
-      window.gtag?.("consent", "update", consentModeDefaults(readConsent().categories));
+    // Consent granted *after* first paint — this is the common path, because
+    // the CMP is deliberately shown with a delay. The tag has to be injected
+    // here too, not just on mount.
+    injectGtag();
+    window.gtag?.("consent", "update", consentModeDefaults(consent.categories));
+    window.gtag?.("config", GA_ID, {
+      page_path: pathname,
+      anonymize_ip: true,
+      send_page_view: true,
+      // Ads features stay off unless the ads category was granted too.
+      allow_google_signals: consent.categories.ads,
+      allow_ad_personalization_signals: consent.categories.ads,
     });
-    // Intentionally only on mount: SPA route views are pushed by the
-    // pathname effect below so that consent changes do not re-config.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pathname]);
+
+  useEffect(() => {
+    sync();
+    return onConsentChange(sync);
+  }, [sync]);
 
   // SPA route change pageviews — only when the visitor opted in.
   useEffect(() => {
