@@ -187,16 +187,16 @@
         "title": "ShipKit",
         "description": "",
         "link": "",
-        "reach": "12 customers in the first three months, €49 one-time",
-        "lesson": "A product built on the same rule I use in consulting: scope written in a document, and anything not written down as something it will not do."
+        "reach": "",
+        "lesson": "A product built on the same rule I use in consulting: scope lives in a document, and anything not written down will not be done."
       },
       {
         "key": "vulnclaw",
         "title": "VulnClaw",
         "description": "An open source CLI for penetration testing. It started because I wanted to understand how an attack works without depending on tools I could not inspect.",
         "link": "github.com/Riccardobozzato94",
-        "reach": "1.2K+ GitHub stars, 80+ PRs and 200+ issues triaged",
-        "lesson": "It exists because of one scope decision: over six months I said no to 60% of requested features to ship the 40% that mattered."
+        "reach": "",
+        "lesson": "It started from one scope decision: over six months I said no to 60% of requested features to ship the 40% that mattered."
       },
       {
         "key": "synapse",

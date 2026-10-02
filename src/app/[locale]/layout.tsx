@@ -6,7 +6,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@/components/Analytics";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-import { Footer, CookieConsent } from "@/components/ClientOnlyComponents";
+import { Footer, CookieConsent, SiteChatbot } from "@/components/ClientOnlyComponents";
 import "@/styles/globals.css";
 
 const baseUrl = SITE_URL;
@@ -227,6 +227,7 @@ export default async function LocaleLayout({
           <CookieConsent />
           <Analytics />
           <GoogleAnalytics />
+          <SiteChatbot />
         </NextIntlClientProvider>
       </body>
     </html>
