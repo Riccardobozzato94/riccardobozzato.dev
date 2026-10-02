@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Github, Sparkles, BookOpen, Brain, Search, GitBranch, Layers, Database, Workflow } from "lucide-react";
+import { ExternalLink, Sparkles, BookOpen, Brain, Search, Layers } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
@@ -188,7 +188,7 @@ export default async function SynapsePage({ params }: Props) {
           {/* Graph visualization */}
           <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-gradient-to-br from-accent/5 to-card shadow-xl">
             <Image
-              src="/assets/ric2brain-graph-1200x1600.png"
+              src="/assets/ric2brain-graph-1200x1600.webp"
               alt={sections.graphAlt}
               width={600}
               height={800}

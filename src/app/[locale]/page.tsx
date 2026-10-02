@@ -36,7 +36,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations("home");
   const isIt = locale === "it";
 
   const modelIcon = (name: string) => {
@@ -494,7 +493,7 @@ export default async function HomePage({ params }: Props) {
                 {isIt ? "Le Fondamenta nel Retail" : "Foundations in Retail"}
               </h3>
               <div className="text-xs tracking-[0.1em] text-muted-foreground mb-4">
-                IN'S, ALDI, TERRANOVA
+                IN&apos;S, ALDI, TERRANOVA
               </div>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {isIt

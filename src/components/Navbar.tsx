@@ -4,7 +4,7 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { Menu, X, Languages, Sparkles, ArrowRight } from "lucide-react";
+import { Menu, X, Languages, ArrowRight } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 

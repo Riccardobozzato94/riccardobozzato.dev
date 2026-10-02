@@ -19,7 +19,6 @@ import {
   Clock,
   AlertTriangle,
   XCircle,
-  ArrowRight,
 } from "lucide-react";
 import Section from "@/components/Section";
 
@@ -187,7 +186,7 @@ export default async function ShipKitPage({ params }: { params: Promise<{ locale
           <div className="grid md:grid-cols-2 gap-4">
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
               <div className="relative aspect-video w-full overflow-hidden">
-                <Image src="/assets/shipkit-dashboard-1600x1000.png" alt="ShipKit Home page" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <Image src="/assets/shipkit-dashboard-1600x1000.webp" alt="ShipKit Home page" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               </div>
             </div>
             <div className="group rounded-2xl border border-border/50 overflow-hidden bg-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-accent/30">
@@ -206,10 +205,10 @@ export default async function ShipKitPage({ params }: { params: Promise<{ locale
           <p className="text-muted-foreground mb-8">{isIt ? "Pagine reali del boilerplate" : "Real pages from the boilerplate"}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { src: "/assets/shipkit-dashboard-1600x1000.png", label: isIt ? "Home page" : "Home page" },
+              { src: "/assets/shipkit-dashboard-1600x1000.webp", label: isIt ? "Home page" : "Home page" },
               { src: "/assets/shipkit-dashboard-1200x760.png", label: isIt ? "Portfolio progetti" : "Projects portfolio" },
-              { src: "/assets/shipkit-banner-1600x900.png", label: isIt ? "Pagina vendita ShipKit" : "ShipKit sales page" },
-              { src: "/assets/shipkit-banner-1200x630.png", label: isIt ? "Download gratuito" : "Freebie download" },
+              { src: "/assets/shipkit-banner-1600x900.webp", label: isIt ? "Pagina vendita ShipKit" : "ShipKit sales page" },
+              { src: "/assets/shipkit-banner-1200x630.webp", label: isIt ? "Download gratuito" : "Freebie download" },
             ].map((img, idx) => (
               <div
                 key={idx}

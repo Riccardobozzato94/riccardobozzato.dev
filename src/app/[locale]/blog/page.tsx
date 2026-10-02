@@ -94,7 +94,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
             </div>
           ) : (
             <div className="space-y-6">
-              {posts.map((post, idx) => (
+              {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
                   <Card className="border-border/50 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 hover:border-accent/30 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-accent/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />

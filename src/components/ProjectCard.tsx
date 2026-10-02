@@ -27,6 +27,43 @@ function isExternal(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");
 }
 
+type CardLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  [key: string]: unknown;
+};
+
+const cardLinkClass =
+  "group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-2xl";
+
+/** External card link — module scope so it keeps state across renders. */
+function ExternalCardLink({ href, children, ...props }: CardLinkProps) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cardLinkClass}
+      {...props}
+    >
+      {children}
+      {/* External link indicator */}
+      <span className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <ExternalLink className="size-4 text-muted-foreground/60" />
+      </span>
+    </a>
+  );
+}
+
+/** Internal card link — module scope so it keeps state across renders. */
+function InternalCardLink({ href, children, ...props }: CardLinkProps) {
+  return (
+    <Link href={href} className={cardLinkClass} {...props}>
+      {children}
+    </Link>
+  );
+}
+
 export default function ProjectCard({
   title,
   subtitle,
@@ -42,32 +79,12 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const t = useTranslations("home");
 
-  const Wrapper = isExternal(href)
-    ? ({ children, ...props }: { children: React.ReactNode; [key: string]: unknown }) => (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-2xl"
-          {...props}
-        >
-          {children}
-          {/* External link indicator */}
-          <span className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <ExternalLink className="size-4 text-muted-foreground/60" />
-          </span>
-        </a>
-      )
-    : ({ children, ...props }: { children: React.ReactNode; [key: string]: unknown }) => (
-        <Link href={href} className="group block focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-2xl" {...props}>
-          {children}
-        </Link>
-      );
+  const Wrapper = isExternal(href) ? ExternalCardLink : InternalCardLink;
 
   const visibleFeatures = features?.slice(0, featured ? 3 : 2) ?? [];
 
   return (
-    <Wrapper>
+    <Wrapper href={href}>
       <div
         className={cn(
           "relative overflow-hidden rounded-2xl border transition-all duration-500 h-full flex flex-col",

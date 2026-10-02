@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Script from "next/script";
 import { SITE_URL } from "@/lib/site";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -78,6 +79,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const messages = await getMessages();
+  const isIt = locale === "it";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -109,8 +111,9 @@ export default async function LocaleLayout({
       {
         "@type": "ProfessionalService",
         name: "Riccardo Bozzato — Operations & Delivery",
-        description:
-          "Delivery Manager & Head of Operations (PMP®). Operations, delivery ed execution con risultati misurabili. €500K+ portfolio, -40% TtM, +25% produttività.",
+        description: isIt
+          ? "Delivery Manager & Head of Operations (PMP®). Operations, delivery ed execution con risultati misurabili. €500K+ portfolio, -40% TtM, +25% produttività."
+          : "Delivery Manager & Head of Operations (PMP®). Operations, delivery and execution with measurable results. €500K+ portfolio, -40% TtM, +25% productivity.",
         url: SITE_URL,
         image: `${SITE_URL}/images/og-default.svg`,
         email: "riccardobozzato@gmail.com",
@@ -125,8 +128,9 @@ export default async function LocaleLayout({
               itemOffered: {
                 "@type": "Service",
                 name: "Operational Audit",
-                description:
-                  "Fotografia onesta delle operations in 7 giorni: top-5 sprechi quantificati e roadmap 30-60-90. Contattami per i dettagli.",
+                description: isIt
+                  ? "Fotografia onesta delle operations in 7 giorni: top-5 sprechi quantificati e roadmap 30-60-90. Contattami per i dettagli."
+                  : "Honest operations picture in 7 days: top-5 quantified leaks and 30-60-90 roadmap. Contact me for details.",
               },
             },
             {
@@ -134,8 +138,9 @@ export default async function LocaleLayout({
               itemOffered: {
                 "@type": "Service",
                 name: "Operations Overhaul",
-                description:
-                  "Sistema operativo completo in 6-8 settimane: redesign processi, dashboard KPI, team formato. Contattami per i dettagli.",
+                description: isIt
+                  ? "Sistema operativo completo in 6-8 settimane: redesign processi, dashboard KPI, team formato. Contattami per i dettagli."
+                  : "Complete operating system in 6-8 weeks: process redesign, KPI dashboard, trained team. Contact me for details.",
               },
             },
             {
@@ -143,8 +148,9 @@ export default async function LocaleLayout({
               itemOffered: {
                 "@type": "Service",
                 name: "Fractional Head of Operations",
-                description:
-                  "Funzione operations per aziende post-PMF: board, gestione team ops, report. Contattami per i dettagli.",
+                description: isIt
+                  ? "Funzione operations per aziende post-PMF: board, gestione team ops, report. Contattami per i dettagli."
+                  : "Operations function for post-PMF companies: board, ops team management, reporting. Contact me for details.",
               },
             },
           ],
@@ -167,7 +173,11 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) — raw snippet is intentional: the custom
+            GoogleAnalytics component handles SPA route-change pageviews, and
+            @next/third-parties/google would double-count them.
+            CSP in netlify.toml allowlists googletagmanager + google-analytics. */}
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTZS8BDZLR" />
         <script
           dangerouslySetInnerHTML={{
@@ -184,8 +194,18 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Netlify Identity — needed to process invite tokens on any page */}
-        <script
+        {/* Netlify Identity — needed to process invite tokens on any page.
+            next/script (lazyOnload) instead of sync <script>: avoids render
+            blocking and satisfies @next/next/no-sync-scripts. Order is
+            preserved: widget first, init handler second. */}
+        <Script
+          id="netlify-identity-widget"
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          id="netlify-identity-init"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `if (window.netlifyIdentity) {
               window.netlifyIdentity.on("init", user => {
@@ -198,7 +218,11 @@ export default async function LocaleLayout({
             }`,
           }}
         />
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+        <Script
+          id="netlify-identity-widget"
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          strategy="lazyOnload"
+        />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>

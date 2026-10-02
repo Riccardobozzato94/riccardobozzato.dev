@@ -1,4 +1,4 @@
-﻿import { getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 import {

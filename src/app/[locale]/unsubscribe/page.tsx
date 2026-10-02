@@ -12,12 +12,13 @@ type Status = "loading" | "success" | "already" | "error";
 export default function UnsubscribePage() {
   const t = useTranslations("unsubscribe");
   const searchParams = useSearchParams();
-  const [status, setStatus] = useState<Status>("loading");
+  const [status, setStatus] = useState<Status>(() =>
+    searchParams.get("token") ? "loading" : "error",
+  );
 
   useEffect(() => {
     const token = searchParams.get("token");
     if (!token) {
-      setStatus("error");
       return;
     }
 

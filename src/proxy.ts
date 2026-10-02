@@ -33,12 +33,19 @@ export default async function middleware(request: NextRequest) {
       return NextResponse.next();
     }
 
-    // Allow cron routes with secret
-    if (
-      CRON_ROUTES.some((route) => pathname.startsWith(route)) &&
-      request.headers.get("x-cron-secret") === process.env.CRON_SECRET
-    ) {
-      return NextResponse.next();
+    // Allow cron routes with the shared secret, via either scheme:
+    // - x-cron-secret header (used by external schedulers)
+    // - Authorization: Bearer <CRON_SECRET> (used by GitHub Actions cron
+    //   and expected by the /api/cron/* route handlers themselves)
+    if (CRON_ROUTES.some((route) => pathname.startsWith(route))) {
+      const cronSecret = process.env.CRON_SECRET;
+      const okHeader = !!cronSecret && request.headers.get("x-cron-secret") === cronSecret;
+      const okBearer =
+        !!cronSecret && request.headers.get("authorization") === `Bearer ${cronSecret}`;
+      if (okHeader || okBearer) {
+        return NextResponse.next();
+      }
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     // All other API routes require JWT

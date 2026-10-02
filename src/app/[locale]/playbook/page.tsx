@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
-import { getTranslations } from "next-intl/server";
 import {
   Shield,
   Check,
@@ -25,7 +24,6 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const site = await getTranslations("site");
   const isIt = locale === "it";
 
   return {
@@ -321,10 +319,10 @@ export default async function PlaybookPage({ params }: Props) {
                   ))}
                 </ul>
                 <Button className="w-full" asChild>
-                  <a href="/contact?subject=Playbook%20Premium">
+                  <Link href="/contact?subject=Playbook%20Premium">
                     {isIt ? "Acquista Ora" : "Buy Now"}
                     <ArrowRight className="size-4 ml-2" />
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -358,10 +356,10 @@ export default async function PlaybookPage({ params }: Props) {
                   ))}
                 </ul>
                 <Button className="w-full" variant="secondary" asChild>
-                  <a href="/contact?subject=Playbook%20Premium%20%2B%20Coaching">
+                  <Link href="/contact?subject=Playbook%20Premium%20%2B%20Coaching">
                     {isIt ? "Acquista Ora" : "Buy Now"}
                     <ArrowRight className="size-4 ml-2" />
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -415,10 +413,10 @@ export default async function PlaybookPage({ params }: Props) {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild>
-              <a href="/contact?subject=Playbook%20Premium">
+              <Link href="/contact?subject=Playbook%20Premium">
                 {isIt ? "Contattami Ora" : "Contact Me Now"}
                 <ArrowRight className="size-4 ml-2" />
-              </a>
+              </Link>
             </Button>
             <Button variant="secondary" asChild>
               <Link href="/freebie">

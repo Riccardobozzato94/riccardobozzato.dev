@@ -5,7 +5,6 @@ import { MapPin, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
-  const t = useTranslations("footer");
   const nav = useTranslations("nav");
   const locale = useLocale();
   const isIt = locale === "it";

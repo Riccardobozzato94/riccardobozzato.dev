@@ -12,12 +12,13 @@ export default function ConfirmPage() {
   const t = useTranslations("confirm");
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [status, setStatus] = useState<Status>("loading");
+  const [status, setStatus] = useState<Status>(() =>
+    searchParams.get("token") ? "loading" : "error",
+  );
 
   useEffect(() => {
     const token = searchParams.get("token");
     if (!token) {
-      setStatus("error");
       return;
     }
 

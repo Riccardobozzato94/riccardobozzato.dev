@@ -72,7 +72,7 @@ export default async function ProjectsPage({ params }: Props) {
             features={(t.raw("synapse.features") as string[]) ?? []}
             tags={["AI", "Obsidian", "RAG", "MCP", "Python"]}
             href="/projects/synapse"
-            image="/assets/ric2brain-banner-1600x900.png"
+            image="/assets/ric2brain-banner-1600x900.webp"
             badge={t("synapse.badge")}
             badgeColor="bg-purple-500/10 text-purple-400"
             featured
@@ -86,7 +86,7 @@ export default async function ProjectsPage({ params }: Props) {
               description={t("vulnclaw.description")}
               tags={["AI", "Open Source", isIt ? "Gestione Prodotto" : "Product Mgmt"]}
               href="/projects/vulnclaw"
-              image="/assets/vulnclaw-banner-1600x900.png"
+              image="/assets/vulnclaw-banner-1600x900.webp"
               badge={t("badgeLabel")}
               badgeColor="bg-blue-500/10 text-blue-400"
             />
@@ -96,7 +96,7 @@ export default async function ProjectsPage({ params }: Props) {
               description={t("panificio.description")}
               tags={["E-Commerce", "Live", isIt ? "Sito Reale" : "Production"]}
               href="https://www.panificiodasergio.it/"
-              image="/assets/panificio-banner-1600x900.png"
+              image="/assets/panificio-banner-1600x900.webp"
               badge={t("badgeLabel")}
               badgeColor="bg-amber-500/10 text-amber-400"
             />

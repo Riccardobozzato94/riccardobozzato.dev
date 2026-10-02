@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ExternalLink, Mail, Heart, Sparkles, Globe } from "lucide-react";
+import { CheckCircle2, Mail, Heart, Sparkles, Globe } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
@@ -114,7 +114,7 @@ export default async function PanificioPage() {
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
-                  src="/assets/panificio-storefront-1600x1000.png"
+                  src="/assets/panificio-storefront-1600x1000.webp"
                   alt={screenshots[0].label}
                   fill
                   loading="lazy"
@@ -127,7 +127,7 @@ export default async function PanificioPage() {
             <div className="group rounded-xl border border-border/50 overflow-hidden bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-500/30">
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
-                  src="/assets/panificio-storefront-1200x760.png"
+                  src="/assets/panificio-storefront-1200x760.webp"
                   alt={screenshots[1].label}
                   fill
                   loading="lazy"

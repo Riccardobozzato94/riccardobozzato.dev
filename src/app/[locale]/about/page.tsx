@@ -1,8 +1,9 @@
 ﻿import { getTranslations } from "next-intl/server";
 import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { Quote, ArrowRight, Sparkles, MapPin, Mail, Briefcase, GraduationCap, Award, ArrowUpRight, PawPrint } from "lucide-react";
+import { Quote, ArrowRight, MapPin, Mail, Briefcase, GraduationCap, Award, ArrowUpRight, PawPrint } from "lucide-react";
 import Section from "@/components/Section";
 import { Link } from "@/i18n/navigation";
 
@@ -42,7 +43,7 @@ const timelineIt = [
     company: "In's Mercato · Aldi · Terranova",
     desc: "Leadership operativa, gestione team, KPI. Ho imparato le operations sul campo, con le mani nei processi.",
     icon: "▹",
-    logos: ["/assets/logos/ins-mercato.png", "/assets/logos/aldi.png"],
+    logos: ["/assets/logos/ins-mercato.png", "/assets/logos/aldi.webp"],
   },
   {
     period: "2022 – 2024",
@@ -77,7 +78,7 @@ const timelineEn = [
     company: "In's Mercato · Aldi · Terranova",
     desc: "Operational leadership, team management, KPI tracking. Learned operations hands-on, with my hands in the processes.",
     icon: "▹",
-    logos: ["/assets/logos/ins-mercato.png", "/assets/logos/aldi.png"],
+    logos: ["/assets/logos/ins-mercato.png", "/assets/logos/aldi.webp"],
   },
   {
     period: "2022 – 2024",
@@ -240,10 +241,12 @@ export default async function AboutPage({ params }: Props) {
                     {item.logos && (
                       <div className="flex items-center gap-2">
                         {item.logos.map((logo: string) => (
-                          <img
+                          <Image
                             key={logo}
                             src={logo}
                             alt=""
+                            width={96}
+                            height={24}
                             className="h-6 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                           />
                         ))}

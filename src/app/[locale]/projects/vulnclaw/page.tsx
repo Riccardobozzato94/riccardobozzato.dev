@@ -121,9 +121,9 @@ export default async function VulnClawPage({ params }: Props) {
           <p className="text-muted-foreground mb-8">{isIt ? "Esperienza da terminale" : "Terminal-first experience"}</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Aiuto e comandi CLI" : "CLI help & commands" },
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Scansione live di ricognizione" : "Live reconnaissance scan" },
-              { src: "/assets/vulnclaw-scan-1600x1000.png", label: isIt ? "Risultati e findings" : "Findings & results" },
+              { src: "/assets/vulnclaw-scan-1600x1000.webp", label: isIt ? "Aiuto e comandi CLI" : "CLI help & commands" },
+              { src: "/assets/vulnclaw-scan-1600x1000.webp", label: isIt ? "Scansione live di ricognizione" : "Live reconnaissance scan" },
+              { src: "/assets/vulnclaw-scan-1600x1000.webp", label: isIt ? "Risultati e findings" : "Findings & results" },
             ].map((img, idx) => (
               <div
                 key={idx}

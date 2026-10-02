@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Loader2, Lock, Mail, User, ArrowRight, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -20,17 +20,18 @@ export default function PaywallGate({ storageKey, children, title, subtitle }: P
   const t = useTranslations("freebie.form");
   const locale = useLocale();
   const isIt = locale === "it";
-  const [unlocked, setUnlocked] = useState(false);
+  // Lazy initializer instead of an effect: reads the persisted flag during
+  // render, no cascading render. Server renders locked; client hydrates open.
+  const [unlocked, setUnlocked] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      localStorage.getItem(`paywall:${storageKey}`) === "unlocked",
+  );
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    const flag = localStorage.getItem(`paywall:${storageKey}`);
-    if (flag === "unlocked") setUnlocked(true);
-  }, [storageKey]);
 
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();

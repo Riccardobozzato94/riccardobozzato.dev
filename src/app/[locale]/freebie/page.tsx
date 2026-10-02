@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CheckCircle2, Download, Lock, Sparkles, Map, BarChart3, Target, ArrowRight, FileText } from "lucide-react";
 import Section from "@/components/Section";
+import { Link } from "@/i18n/navigation";
 
 const phases = [
   {
@@ -235,9 +236,9 @@ export default function FreebiePage() {
                           />
                           <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed select-none">
                             {isIt ? "Accetto di ricevere la sequenza educativa di 6 email su operations e processi (mi cancello quando voglio)." : "I agree to receive the 6-email educational sequence about operations and process design (unsubscribe anytime)."}{" "}
-                            <a href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
+                            <Link href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
                               Privacy Policy
-                            </a>
+                            </Link>
                           </label>
                         </div>
 
@@ -271,9 +272,9 @@ export default function FreebiePage() {
                         <p className="text-xs text-muted-foreground/60 text-center">
                           <Lock className="size-3 inline mr-1" />
                           {isIt ? "I tuoi dati sono al sicuro. Il worksheet ti viene consegnato immediatamente via email." : "Your data is safe. Worksheet delivered instantly to your inbox."}{" "}
-                          <a href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
+                          <Link href="/privacy" className="underline underline-offset-2 hover:text-accent transition-colors">
                             Privacy Policy
-                          </a>
+                          </Link>
                         </p>
                       </form>
                     )}

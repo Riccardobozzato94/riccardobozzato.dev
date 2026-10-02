@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 interface AuthState {
   token: string | null;
@@ -21,20 +21,16 @@ interface AuthState {
 const TOKEN_KEY = "rbz_token";
 
 export function useAuth() {
-  const [state, setState] = useState<AuthState>({
-    token: null,
-    isAuthenticated: false,
-    isLoading: true,
-  });
-
-  useEffect(() => {
+  // Lazy initializer reads localStorage during render instead of in an
+  // effect: no cascading render, correct value on first client paint.
+  // Server renders isLoading:true; client hydrates with the stored token.
+  const [state, setState] = useState<AuthState>(() => {
+    if (typeof window === "undefined") {
+      return { token: null, isAuthenticated: false, isLoading: true };
+    }
     const token = localStorage.getItem(TOKEN_KEY);
-    setState({
-      token,
-      isAuthenticated: !!token,
-      isLoading: false,
-    });
-  }, []);
+    return { token, isAuthenticated: !!token, isLoading: false };
+  });
 
   const login = useCallback(async (username: string, password: string) => {
     const res = await fetch("/api/auth/login", {
