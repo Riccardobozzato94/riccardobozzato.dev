@@ -43,9 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: `${baseUrl}/images/og-default.svg`,
-          width: 1600,
-          height: 900,
+          url: `${baseUrl}/images/og-default.png`,
+          width: 1200,
+          height: 630,
           alt: `${title} — ${t("tagline")}`,
         },
       ],
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [`${baseUrl}/images/og-default.svg`],
+      images: [`${baseUrl}/images/og-default.png`],
     },
     robots: {
       index: true,
@@ -115,7 +115,7 @@ export default async function LocaleLayout({
           ? "Delivery Manager & Head of Operations (PMP®). Operations, delivery ed execution con risultati misurabili. €500K+ portfolio, -40% TtM, +25% produttività."
           : "Delivery Manager & Head of Operations (PMP®). Operations, delivery and execution with measurable results. €500K+ portfolio, -40% TtM, +25% productivity.",
         url: SITE_URL,
-        image: `${SITE_URL}/images/og-default.svg`,
+        image: `${SITE_URL}/images/og-default.png`,
         email: "riccardobozzato@gmail.com",
         telephone: "+393892139542",
         areaServed: ["IT", "EU"],

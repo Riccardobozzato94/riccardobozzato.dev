@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SITE_URL } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Cpu, Users, Gauge, Euro, Check, BarChart3 } from "lucide-react";
+import { ArrowRight, Cpu, Users, Gauge, Euro, Check, BarChart3, ExternalLink } from "lucide-react";
 
 const baseUrl = SITE_URL;
 
@@ -17,12 +17,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const site = await getTranslations("site");
 
   return {
-    title: `${site("title")} — Head of Operations | Delivery Manager | PMP® | Open to Work`,
+    title: {
+      absolute: `${site("title")} — Head of Operations | Delivery Manager | PMP®`,
+    },
     description: `${t("heroTagline")} €500K+ consegnati, -40% time-to-market. Disponibile da subito.`,
     openGraph: {
+      type: "website",
+      images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "" }],
       title: `${site("title")} — Operations, delivery ed execution con risultati misurabili.`,
       description: `${t("heroTagline")} €500K+ consegnati, -40% TtM, +25% produttività.`,
       url: `${baseUrl}/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${site("title")} — Head of Operations`,
+      description: `${t("heroTagline")} €500K+ consegnati, -40% TtM.`,
+      images: ["/images/og-default.png"],
     },
     alternates: {
       canonical: `${baseUrl}/${locale}`,
@@ -324,71 +334,44 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════
-            PROJECTS — Progetti & Delivery
-          ════════════════════════════════════════════ */}
+      {/* Projects. The three cards that used to live here linked to
+          /projects/panificio, /projects/vulnclaw and /projects/synapse:
+          pages deleted on 2026-10-02, so three live 404s on the homepage.
+          The full project story is now on /projects, which also covers the
+          operational track record. */}
       <section className="py-[120px] bg-surface-container-low">
         <div className="max-w-[1200px] mx-auto px-4 md:px-16">
-          <div className="text-center mb-[64px]">
+          <div className="max-w-2xl mx-auto text-center mb-[56px]">
             <p className="text-xs tracking-[0.1em] text-primary mb-4 font-semibold">
               {isIt ? "PROGETTI & DELIVERY" : "PROJECTS & DELIVERY"}
             </p>
             <h2 className="text-[40px] leading-[1.2] tracking-tight font-bold mb-4">
-              {isIt ? "Progetti & Delivery" : "Projects & Delivery"}
+              {isIt ? "Quello che ho gestito, non quello che ho costruito" : "What I ran, not what I built"}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground">
               {isIt
-                ? "Stakeholder management, product delivery, e-commerce — progetti reali con risultati concreti."
-                : "Stakeholder management, product delivery, e-commerce — real projects with concrete results."}
+                ? "Quattro aziende, un portfolio da €500K su Magento, Shopware e Pimcore, e un progetto con cliente che puoi ancora aprire."
+                : "Four companies, a €500K portfolio on Magento, Shopware and Pimcore, and a client project you can still open."}
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-            {/* Panificio Da Sergio */}
-            <Link
-              href="/projects/panificio"
-              className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
-            >
-              <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
-                {isIt ? "STAKEHOLDER DELIVERY" : "STAKEHOLDER DELIVERY"}
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {isIt ? "Panificio Da Sergio" : "Panificio Da Sergio"}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {isIt
-                  ? "Delivery di un e-commerce sotto vincoli di budget. Negoziazione scope, multi-lingua, SEO locale, consegnato in tempo."
-                  : "E-commerce delivery under budget constraints. Scope negotiation, multi-language, local SEO, delivered on time."}
-              </p>
-            </Link>
-
-            {/* VulnClaw */}
-            <Link
-              href="/projects/vulnclaw"
-              className="group bg-surface-container border border-outline-variant p-8 hover:border-primary/50 transition-all hover:-translate-y-1"
-            >
-              <div className="text-xs text-primary mb-2 font-semibold tracking-wide">
-                {isIt ? "PRODUCT DELIVERY" : "PRODUCT DELIVERY"}
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                VulnClaw
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {isIt
-                  ? "Da zero a community open-source (600+ ⭐). Gestione scope, roadmap, prioritizzazione, shipping v0.4.0."
-                  : "From zero to open-source community (600+ ⭐). Scope management, roadmap, prioritization, shipping v0.4.0."}
-              </p>
-            </Link>
-          </div>
-
-          <div className="text-center mt-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:gap-6">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-semibold group"
+              className="inline-flex items-center justify-center gap-2 h-13 px-8 rounded-lg bg-primary text-primary-foreground font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
-              {isIt ? "Vedi tutti i progetti" : "View all projects"}
-              <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+              {isIt ? "Vedi il percorso" : "See the track record"}
+              <ArrowRight className="size-4" />
             </Link>
+            <a
+              href="https://panificiodasergio.it"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 h-13 px-8 rounded-lg border border-outline-variant font-semibold transition-all hover:border-primary/50 hover:-translate-y-0.5"
+            >
+              {isIt ? "Panificio da Sergio, dal vivo" : "Panificio da Sergio, live"}
+              <ExternalLink className="size-4" />
+            </a>
           </div>
         </div>
       </section>

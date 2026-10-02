@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1200px; height: 630px;
+      background: #0a0a0b;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #e4e4e7;
+      overflow: hidden;
+      position: relative;
+    }
+    .glow {
+      position: absolute; width: 900px; height: 900px; border-radius: 50%;
+      top: -420px; right: -260px;
+      background: radial-gradient(circle, rgba(34,197,94,.20) 0%, rgba(34,197,94,0) 68%);
+    }
+    .glow2 {
+      position: absolute; width: 700px; height: 700px; border-radius: 50%;
+      bottom: -380px; left: -180px;
+      background: radial-gradient(circle, rgba(250,250,250,.07) 0%, rgba(250,250,250,0) 70%);
+    }
+    .dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: .5;
+    }
+    .wrap { position: relative; padding: 68px 80px 190px; height: 100%; display: flex; flex-direction: column; }
+
+    .brand { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
+    .mark {
+      width: 54px; height: 54px; border-radius: 14px;
+      background: #e4e4e7; color: #0a0a0b;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 21px; letter-spacing: -.5px;
+    }
+    .name { font-size: 25px; font-weight: 700; letter-spacing: -.3px; color: #fafafa; }
+
+    h1 { font-size: 58px; line-height: 1.06; letter-spacing: -1.8px; font-weight: 800; max-width: 920px; }
+    h1 .accent { color: #22c55e; }
+
+    .sub { margin-top: 22px; font-size: 23px; line-height: 1.4; color: #a1a1aa; max-width: 820px; }
+
+    .stats { margin-top: auto; display: flex; gap: 52px; }
+    .stat .v { font-size: 37px; font-weight: 800; letter-spacing: -1px; color: #fafafa; line-height: 1; }
+    .stat .v.accent { color: #22c55e; }
+    .stat .l { font-size: 13px; color: #71717a; margin-top: 9px; letter-spacing: .4px; text-transform: uppercase; }
+
+    .rule { position: absolute; left: 80px; right: 80px; bottom: 108px; height: 1px; background: rgba(255,255,255,.10); }
+    .foot {
+      position: absolute; left: 80px; right: 80px; bottom: 52px;
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 16px; color: #71717a;
+    }
+    .foot b { color: #a1a1aa; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="dots"></div>
+
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark">RB</div>
+      <div class="name">Riccardo Bozzato</div>
+    </div>
+
+    <h1>Delivery Manager &amp; <span class="accent">Head of Operations</span></h1>
+
+    <p class="sub">Rendo i team digitali più veloci, meno caotici e prevedibili.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="v">€500K</div>
+        <div class="l">Portfolio gestito</div>
+      </div>
+      <div class="stat">
+        <div class="v accent">−40%</div>
+        <div class="l">Time-to-market</div>
+      </div>
+      <div class="stat">
+        <div class="v accent">+25%</div>
+        <div class="l">Produttività</div>
+      </div>
+      <div class="stat">
+        <div class="v">PMP®</div>
+        <div class="l">7+ anni</div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="foot">
+      <span><b>riccardobozzato.com</b></span>
+      <span>Retail · E-commerce B2B · Consulenza</span>
+    </div>
+  </div>
+</body>
+</html>
