@@ -91,7 +91,9 @@ export default async function HomePage({ params }: Props) {
               </span>
             </div>
 
-            <h1 className="text-[44px] sm:text-[56px] lg:text-[64px] leading-[1.05] mb-6 font-bold tracking-tight">
+            {/* clamp, not a fixed 44px: at 320px a 44px h1 wrapped onto four
+                lines and pushed the fold down past the trust line. */}
+            <h1 className="text-[clamp(2rem,9vw,4rem)] sm:text-[56px] lg:text-[64px] leading-[1.05] mb-6 font-bold tracking-tight text-balance">
               {isIt ? (
                 <>Operations, delivery ed execution —<br />con <span className="text-primary">risultati misurabili.</span></>
               ) : (

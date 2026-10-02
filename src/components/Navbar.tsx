@@ -28,6 +28,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  // Escape closes the panel. A disclosure opened with a button has to be
+  // dismissible from the keyboard too, or it traps the reader in a menu that
+  // covers the page.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/" || pathname === "";
     return pathname.startsWith(href);
@@ -152,7 +164,10 @@ export default function Navbar() {
               href={item.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "rounded-lg px-3.5 py-3 text-sm font-medium transition-colors",
+                // min-h-12, not py-3: py-3 gives a 44px box only by accident of
+                // the line height, and the row has to stay generous enough to
+                // hit with a thumb.
+                "flex min-h-12 items-center rounded-lg px-3.5 text-sm font-medium transition-colors",
                 isActive(item.href)
                   ? "text-foreground bg-white/5"
                   : "text-muted-foreground hover:text-foreground hover:bg-white/[0.03]",
